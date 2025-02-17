@@ -32,7 +32,7 @@ The *obs* (for 'observation') folder contains region description data in the fol
 </a>
 ```
 
-'a type' stands for 'activity type'. It tells us that in this dataset, the model is simply observing the data. Its observations consist in sets of entities, marked by the '<e>' tags. The descriptions inside the entities correspond to the region descriptions in the VG.
+'a type' stands for 'activity type'. It tells us that in this dataset, the model is simply observing the data. Its observations consist in sets of entities, marked by the 'e' tags. The descriptions inside the entities correspond to the region descriptions in the VG.
 
 The *skt* (for 'skill training') folder contains question-answer pairs in the following format:
 
@@ -59,7 +59,7 @@ Again, 'a type' stands for 'activity type'. It tells us that in this dataset, th
 
 ## Making training data for a language model
 
-Running the script *mktrain.py* will produce training data that can be fed to a language model. The script takes two arguments. The first argument corresponds to the size of the 'memory' slot given to hte model: how many entities from a situation does the model actually remember? The second argument is the number of training examples that should be generated.
+Running the script *mktrain.py* will produce training data that can be fed to a language model. The script takes two arguments. The first argument corresponds to the size of the 'memory' slot given to the model: how many entities from a situation does the model actually remember? The second argument is the number of training examples that should be generated.
 
 So for instance:
 
