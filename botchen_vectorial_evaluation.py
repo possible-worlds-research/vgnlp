@@ -1,99 +1,3 @@
-import argparse
-import pandas as pd
-import numpy as np
-import re
-import os
-
-directory = './data/chat/en/'
-
-@vectorial_space.cli.command('create_overall_matrix')
-# Create matrix without distinction between situations
-def create_overall_matrix():
-    entity_properties= {}
-    # Loop over files
-    for file_name in os.listdir(directory):
-        if file_name.startswith('ideallanguage') and file_name.endswith('.txt'):
-            file_path = os.path.join(directory, file_name)
-            # Extract utterances
-            with open(file_path, 'r') as file:
-                poppi_content = file.read()
-                utterances = re.findall(r'<u speaker=[^>]*>\((.*?)\)</u>', poppi_content)
-                # Extract properties and entities
-                for utterance in utterances:
-                    entity = utterance.split('.')[0]
-                    properties = utterance.split()[1:]
-                    properties = [re.sub(r'\.\d+', '', prop) for prop in properties]
-                    properties.insert(0, entity)
-                    if entity not in entity_properties:
-                        entity_properties[entity] = set()
-                    for prop in properties:
-                        entity_properties[entity].add(prop)
-    # Tidy up
-    all_properties = sorted(set(prop for props in entity_properties.values() for prop in props))
-    entities = list(entity_properties.keys())
-    activation_matrix = []
-
-    for entity in entities:
-        row = []
-        for prop in all_properties:
-            row.append(1 if prop in entity_properties[entity] else 0)
-        activation_matrix.append(row)
-
-    # Make up the matrix
-    activation_matrix = np.array(activation_matrix)
-    df = pd.DataFrame(activation_matrix, columns=all_properties, index=entities)
-
-    # Store it
-    df.to_csv('./data/chat/en/vectorial_dataframeCIAO.csv', index=True)
-    print('Overall matrix created! :)')
-    return activation_matrix, df
-
-@vectorial_space.cli.command('create_script_matrix')
-@click.argument('script_id')
-def create_script_matrix(script_id):
-    script_entity_properties = {}
-
-    # Loop over the files
-    for file_name in os.listdir(directory):
-        if file_name.startswith('ideallanguage') and file_name.endswith('.txt'):
-            file_path = os.path.join(directory, file_name)
-
-            # Read the content of the file
-            with open(file_path, 'r') as file:
-                content = file.read()
-                # Look at the situational script the user is interested in
-                script_block = re.split(r'(<script\.\d+ type=CONV>)', content)
-                script_pattern = r"<script." + str(script_id) + r"."
-                # Iterate over blocks and process only the matching ones
-                for block in script_block:
-                    if script_pattern in block:
-                        # Extract the utterances and extract also the entities and properties adding them to the dictionary
-                        utterances = re.findall(r'<u speaker=[^>]*>\((.*?)\)</u>', block)
-                        for utterance in utterances:
-                            entity = utterance.split('.')[0]
-                            properties = utterance.split()[1:]
-                            properties = [re.sub(r'\.\d+', '', prop) for prop in properties]
-                            properties.insert(0, entity)
-                            if entity not in script_entity_properties:
-                                script_entity_properties[entity] = set()
-                            for prop in properties:
-                                script_entity_properties[entity].add(prop)
-
-    # Tidy up the properties and entities and make up the new activation matrix
-    script_properties = sorted(set(prop for props in script_entity_properties.values() for prop in props))
-    entities = list(script_entity_properties.keys())
-    activation_matrix = []
-    for entity in entities:
-        row = []
-        for prop in script_properties:
-            row.append(1 if prop in script_entity_properties[entity] else 0)
-        activation_matrix.append(row)
-    df = pd.DataFrame(activation_matrix, columns=script_properties, index=entities)
-    print('The script matrix has been created! :)')
-    return activation_matrix, df
-
-########################################
-
 from os.path import dirname, realpath, join
 from glob import glob
 from flask import Blueprint
@@ -120,21 +24,89 @@ import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
 from app.cli.vectorial_space import create_overall_matrix, create_script_matrix
+from utils import extract_entities_properties, make_evaluating_conversation
+import argparse
+import pandas as pd
+import numpy as np
+import re
+import os
 
-torch.set_num_threads(1)
+####################
 
-training = Blueprint('training', __name__)
+directory = './data/chat/en/'
+saving_directory = './data/chat/en/vectorial_space.csv'
 
-dir_path = dirname(dirname(dirname(realpath(__file__))))
-modules_path = join(dir_path, 'app', 'modules')
-data_path = join(dir_path, 'data')
+@training.cli.command('create_matrices')
+@click.argument('script_id', type = int)
+@click.argument('optimal_matrix', type=int)
+@click.argument('entity_properties_dynamical',required=False)
+@click.argument('store_space', type=int, required=False)
 
-@vectorial_space.cli.command('evaluation_with_vectorial_space')
+# Create matrix without distinction between situations
+def create_matrices(script_id, # If we want to make a matrix from a specific situation, which one? If it is not there it retrieves the all data
+                    optimal_matrix, # Optimal means retrieving from training data, non optimal from Botchen conversation
+                    entity_properties_dynamical, # If from Botchen conversation, the entity and properties are dynamical
+                    store_space):
+
+    if optimal_matrix == 1: # Retrieve directly from training data
+        entity_properties= {}
+        # Loop over files
+        for file_name in os.listdir(directory):
+            if file_name.startswith('ideallanguage') and file_name.endswith('.txt'):
+                file_path = os.path.join(directory, file_name)
+                # Extract utterances
+                with open(file_path, 'r') as file:
+                    content = file.read()
+                if script_id != 0: # Create a situational matrix
+                    script_block = re.split(r'(<script\.\d+ type=CONV>)', content)
+                    script_pattern = r"<script." + str(script_id) + r"."
+                    # Iterate over blocks and process only the matching ones
+                    for block in script_block:
+                        if script_pattern in block:
+                            extract_entities_properties(block, entity_properties)
+                if script_id == 0: # Create the matrix from the full space
+                    extract_entities_properties(content, entity_properties)
+
+    else: # Create a matrix from the conversation with Botchen for evaluation
+        entity_properties = entity_properties_dynamical
+
+    # Retrieve properties and entities and create the matrix
+    all_properties = sorted(set(prop for props in entity_properties.values() for prop in props))
+    entities = list(entity_properties.keys())
+    activation_matrix = []
+    for entity in entities:
+        row = [1 if prop in entity_properties[entity] else 0 for prop in all_properties]
+        activation_matrix.append(row)
+    df = pd.DataFrame(activation_matrix, columns=all_properties, index=entities)
+
+    if optimal_matrix == 1:
+        print('Optimal matrix has been created')
+    if optimal_matrix == 0:
+        print('Matrix from Botchen conversation has been created')
+    if script_id != 0:
+        print('Matrix from the specific situation has been created')
+    if script_id == 0:
+        print('Matrix from the full corpus has been created')
+
+    if store_space == 1: # Store the matrix?
+        df.to_csv(saving_directory, index=True)
+        print('Matrix has been stored as {saving_directory}')
+
+    return activation_matrix, df
+
+########################################
+
+@botchen_vectorial_space.cli.command('evaluation_with_vectorial_space')
 @click.argument('module')
 @click.argument('language')
 @click.argument('topk')
 # With this script I am creating a vectorial space from the responses the model gives to prompts from the training data in order to be abl>
-def evaluation_with_vectorial_space(module, language, topk):
+# If evaluating on a situational script, see if to point the evaluation script on one situation and and if also to use the situation for the optimal one
+def evaluation_with_vectorial_space(module, language, topk,
+                                    evaluating_framework,
+                                    script_id_eval = None,
+                                    script_id_optimal = None,
+                                    store_conversation = False):
 
     # Which model are we using?
     gpt_models = load_gpt_models(module, modules_path, language)
@@ -143,222 +115,81 @@ def evaluation_with_vectorial_space(module, language, topk):
     decoder = gpt_models['chat'][3]
     print(f">> Loaded models {gpt_models.keys()}\n\n")
 
-    # User information for saving
-    conversation_time = datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
-    log_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../logs/evaluation/'))
-    log_file = os.path.join(log_dir, f'evaluation_user-{conversation_time}.txt')
-    with open(log_file, 'a') as file:
-        file.write(f">> Loaded models {gpt_models.keys()}\n\n")
+    if store_conversation:
+        # User information for saving
+        conversation_time = datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
+        log_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../logs/evaluation/'))
+        log_file = os.path.join(log_dir, f'evaluation_user-{conversation_time}.txt')
+        with open(log_file, 'a') as file:
+            file.write(f">> Loaded models {gpt_models.keys()}\n\n")
 
-    # Store the conversation
     conversation = ''
-    # For evaluation
-    correct_responses = 0
-    total_responses = 0
-    # Storing and recording
-    response_history = {}
-    # Store to evaluate with the vectorial space
     entity_properties= {}
 
     # Read the reference file with the utterances and extract the prompts
     with open('./data/chat/en/reference_script.txt', 'r') as file:
-        poppi_content = file.read()
-        utterances = re.findall(r'<u speaker=[^>]*>\((.*?)\)</u>', poppi_content)
-
-    # Go trough the utterances and prompt them
-    for utterance in utterances:
-        response_history[utterance] = []
-        # Prompt 4 times the same utterance
-        for _ in range(4):
-            # Make a conversation that the model can read
-            if len(conversation.strip()) > 0:
-                conversation += f' <u speaker=HUM>{utterance}</u> <u speaker=BOT>'
-            else:
-                conversation = f'<u speaker=HUM>{utterance}</u> <u speaker=BOT>'
-
-            # Make the conversation start
-            with torch.no_grad():
-                with ctx:
-                    response, _ = generate(utterance, conversation, model, encoder, decoder, 0.9, int(topk), 64)
-            # Clean the responses so to evaluate them
-            match = re.search(r'\((.*?)\)', response)
-            if match:
-                clean_response = match.group(1)
-            else:
-                print('Hey, too weird output to extract maybe (?) :(', response)
-                continue
-
-            # Printing statements and saving to recording file
-            print(f">> Prompt: {utterance}\n>> Response: {response} \n\n")
-            with open(log_file, 'a') as file:
-                log_entry = f"\n>> Prompt: {utterance}\n>> Response: {response} \n"
-                file.write(log_entry)
-
-            # Extracting the entity and the properties the model is outputting
-            entity = clean_response.split('.')[0]
-            properties = clean_response.split()[1:]
-            properties = [re.sub(r'\.\d+', '', prop) for prop in properties]
-            properties.insert(0, entity)
-
-        # Store them in entity_properties for evaluation
-            if entity not in entity_properties:
-                entity_properties[entity] = set()
-            for prop in properties:
-                entity_properties[entity].add(prop)
-
-    # Keeping the structure of the training-based semantic space (entities and properties in the structure that they are already), create >
-    responses_df = pd.read_csv('./data/chat/en/vectorial_dataframe.csv', index_col=0)
-    responses_df[:] = 0
-
-    # Make up the new dataframe with the new data
-    for entity, props in entity_properties.items():
-        if entity in responses_df.index:  # Ensure the entity exists in the original dataframe
-            for prop in props:
-                if prop in responses_df.columns:  # Ensure the property exists in the original columns
-                    responses_df.loc[entity, prop] = 1 # Set the cell to 1
-    responses_matrix = responses_df.values
-    print('NEW VECTORIAL SPACE FROM OUTPUTS \n\n', responses_df)
-    responses_df.to_csv('./data/chat/en/vectorial_dataframe_evaluation.csv', index=True)
-
-    # Reload the previous matrix
-    optimal_df = pd.read_csv('./data/chat/en/vectorial_dataframe.csv', index_col=0)
-    optimal_matrix = optimal_df.values
-
-    # Compare the two spaces (optimal and response based one)
-    similarity_matrix = cosine_similarity(optimal_matrix, responses_matrix)
-    similarity_df = pd.DataFrame(similarity_matrix, index=optimal_df.index, columns=responses_df.index)
-    print('COSINE SIMILARITY MATRIX \n\n', similarity_df)
-
-    # Possible numeracy value for accuracy
-    diagonal_similarity = np.diagonal(similarity_matrix)
-    average_similarity = np.mean(diagonal_similarity)
-    print(f'Average cosine similarity between the training-based and the response-based spaces: {average_similarity:.4f}')
-    # for idx, entity in enumerate(optimal_df.index):
-    #    print(f"Similarity for entity {entity}: {diagonal_similarity[idx]:.4f}")
-    
-@vectorial_space.cli.command('evaluation_with_vectorial_space_trial')
-@click.argument('module')
-@click.argument('language')
-@click.argument('topk')
-@click.argument('script_id')
-# With this script I am creating a vectorial space from the responses the model gives to prompts from the training data in order to be abl>
-def evaluation_with_vectorial_space_contextual(module, language, topk, script_id):
-
-    # Store the conversation
-    conversation = ''
-    # For evaluation
-    correct_responses = 0
-    total_responses = 0
-    # Storing and recording
-    # response_history = {}
-    # Store to evaluate with the vectorial space
-    entity_properties= {}
-
-    # MODEL used
-    gpt_models = load_gpt_models(module, modules_path, language)
-    model = gpt_models['chat'][0]
-    encoder = gpt_models['chat'][1]
-    decoder = gpt_models['chat'][3]
-    print(f">> Loaded models {gpt_models.keys()}\n\n")
-
-    with open('./data/chat/en/reference_script.txt', 'r') as file:
         content = file.read()
 
-    # Look at the situational script the user is interested in
-    script_blocks = re.split(r'(<script\.\d+ type=CONV>)', content)
-    script_dict = {script_blocks[i]: script_blocks[i + 1] for i in range(1, len(script_blocks) - 1, 2)}
-    script_pattern = f"script.{script_id} "
-    print('SCRIPT_PATTERN', script_pattern)
-    for header, content in script_dict.items():
-        if script_pattern in header:
-            print('HEADER:', header)
-            print('CONTENT:', content)
-            utterances = re.findall(r'<u speaker=[^>]*>\((.*?)\)</u>', content)
-            for utterance in utterances:
-                # CONVERSATIONAL PURPOSES
-                for _ in range(4):
-                    if len(conversation.strip()) > 0:
-                        conversation += f' <u speaker=HUM>{utterance}</u> <u speaker=BOT>'
-                    else:
-                        conversation = f'<u speaker=HUM>{utterance}</u> <u speaker=BOT>'
-                    with torch.no_grad():
-                        with ctx:
-                            response, _ = generate(utterance, conversation, model, encoder, decoder, 0.9, int(topk), 64)
+    if script_id_eval: # If evaluating on only one script situation
+        script_blocks = re.split(r'(<script\.\d+ type=CONV>)', content)
+        script_dict = {script_blocks[i]: script_blocks[i + 1] for i in range(1, len(script_blocks) - 1, 2)}
+        script_pattern = f"script.{script_id_eval} "
+        print('SCRIPT_PATTERN', script_pattern)
+        for header, script_content in script_dict.items():
+            if script_pattern in header:
+                print('HEADER:', header)
+                print('CONTENT:', script_content)
+                make_evaluating_conversation(script_content,
+                                             conversation, entity_properties, model, encoder, decoder, topk,
+                                             log_file = False, print_statement = False)
+    else: # If evaluating withing the all training data
+        make_evaluating_conversation(content,
+                                     conversation, entity_properties, model, encoder, decoder, topk,
+                                     log_file = False, print_statement = False)
 
-                    # CLEAN UP THE MATERIAL
-                    match = re.search(r'\((.*?)\)', response)
-                    if match:
-                        clean_response = match.group(1)
-                    else:
-                        print('TOO WEIRD TO EXTRACT :((', response)
-                        continue
+    # Create the matrix from the responses the model gives (evaluation)
+    # If the script id is there it creates an evaluation matrix based on the situation. If it is not there retrieves the situation
+    # Optimal matrix is false since retrieving from conversation with Botchen
+    # Entity properties is dynamical since we're updating it
+    eval_matrix, eval_df = create_matrices(script_id = script_id_eval,
+                                           optimal_matrix = False,
+                                           entity_properties_dynamical = entity_properties,
+                                           store_space = False)
+    # Create the matrix from the training data (optimal)
+    optimal_matrix, optimal_df = create_matrices(script_id = script_id_optimal,
+                                                 optimal_matrix = True,
+                                                 store_space = False)
 
-                    # EXTRACT ENTITIES AND PROPERTIES
-                    entity = clean_response.split('.')[0]
-                    properties = clean_response.split()[1:]
-                    properties = [re.sub(r'\.\d+', '', prop) for prop in properties]
-                    properties.insert(0, entity)
-                    if entity not in entity_properties:
-                        entity_properties[entity] = set()
-                    for prop in properties:
-                        entity_properties[entity].add(prop)
+    if evaluating_framework == 1: # compute similarity looking at the columns (dimensions, sets, properties)
+        # Align the new one with the index of the optimal matrix, filling the columns which are empty with 0 values
+        aligned_evaluation_df = eval_df.reindex(index=optimal_df.index, fill_value=0)
+        aligned_evaluation_df = aligned_evaluation_df.reindex(columns=optimal_df.columns, fill_value=0)
+        print('ALIGNED EVALUATION', aligned_evaluation_df)
 
-    # CREATING THE RESPONSE MATRIX
-    all_properties = sorted(set(prop for props in entity_properties.values() for prop in props))
-    entities = list(entity_properties.keys())
-    eval_matrix = []
+        # Compute the cosine similarity between rows
+        similarity_df = cosine_similarity(optimal_df.to_numpy(), aligned_evaluation_df.to_numpy())
+        similarity_df = pd.DataFrame(similarity_df, index=optimal_df.index, columns=aligned_evaluation_df.index)
+        print('ROW-WISE COSINE SIMILARITIES:')
+        print(similarity_df)
+        average_similarity_rows = np.mean(similarity_df)
+        print('Average similarity rows', average_similarity_rows)
 
-    for entity in entities:
-        row = []
-        for prop in all_properties:
-            row.append(1 if prop in entity_properties[entity] else 0)
-        eval_matrix.append(row)
-    eval_df = pd.DataFrame(eval_matrix, columns=all_properties, index=entities)
-    print('RESPONSES_DF', eval_df)
+        # Compute the cosine similarity between columns (transposed)
+        # similarity_matrix_cols = cosine_similarity(optimal_df.T.to_numpy(), aligned_evaluation_df.T.to_numpy())
+        # similarity_df_cols = pd.DataFrame(similarity_matrix_cols, index=optimal_df.columns, columns=aligned_evaluation_df.columns)
 
-    # Keeping the structure of the training-based semantic space (entities and properties in the structure that they are already), create >
-    optimal_matrix, optimal_df = create_script_matrix(script_id)
-    # optimal_matrix, optimal_df = create_script_matrix(script_id)
-    print('ORIGINAL_DF', optimal_df)
+        # average_similarity_cols = np.mean(similarity_df_cols)
 
-    # OR, FOR THE NEW DATAFRAME, USE THE STRUCTURE WHICH ALREADY EXISTS
-    # responses_df = original_script_df
-    # for entity, props in entity_properties.items():
-    #     if entity in responses_df.index:  # Ensure the entity exists in the original dataframe
-    #         for prop in props:
-    #             if prop in responses_df.columns:  # Ensure the property exists in the original columns
-    #                 responses_df.loc[entity, prop] = 1 # Set the cell to 1
-    # responses_matrix = responses_df.values
-    # print('NEW VECTORIAL SPACE FROM OUTPUTS \n\n', responses_df)
+        column_similarities = []
+        for col in optimal_df.columns:
+            optimal_col = optimal_df[col].values.reshape(-1, 1)  # Reshape to make it a 2D column vector
+            eval_col = aligned_evaluation_df[col].values.reshape(-1, 1)  # Reshape similarly
+            similarity = cosine_similarity(optimal_col.T, eval_col.T)[0][0]  # Cosine similarity between two columns
+            column_similarities.append((col, similarity))
+            print('CosSim for {col}', column_similarities)
+        column_similarity_df = pd.DataFrame(column_similarities, columns=["Column", "Cosine Similarity"])
+        print('COLUMN-WISE COSINE SIMILARITIES:')
+        print(column_similarity_df)
 
-    # Aligning U' (responses-based) to U (original)
-
-    # matching_rows = eval_df.index.intersection(optimal_df.index)
-    # matching_cols = eval_df.columns.intersection(optimal_df.columns)
-
-    # Match the dimensions (fill out with zeros)
-    aligned_evaluation_df = eval_df.reindex(index=optimal_df.index, fill_value=0)
-    aligned_evaluation_df = aligned_evaluation_df.reindex(columns=optimal_df.columns, fill_value=0)
-    print('ALIGNED EVALUATION', aligned_evaluation_df)
-    # Compute the  aggregation function (along rows)
-    aggregated_matrix = aligned_evaluation_df.sum(axis=0).to_frame().T  # Aggregating along columns
-    aggregated_matrix = aggregated_matrix.reindex(columns=optimal_df.columns, fill_value=0)  # Align columns with optimal_df
-    print('AGRREGATED_MATRIX', aggregated_matrix)
-    similarity_matrix = cosine_similarity(optimal_df.to_numpy(), aggregated_matrix.to_numpy())
-    similarity_df = pd.DataFrame(similarity_matrix, index=optimal_df.index, columns=aggregated_matrix.index)
-    print('SIMILARITY_df', similarity_df)
-    average_similarity = np.mean(similarity_matrix)
-    print('AVERAGE', average_similarity)
-
-    # missing_rows = eval_df.index.difference(optimal_df.index)
-    # missing_cols = eval_df.columns.difference(optimal_df.columns)
-    # print('MISSING ROWS', missing_rows, '\nMISSING COLUMNS', missing_cols)
-
-    # aligned_eval_df = eval_df.loc[matching_rows, matching_cols]
-    # aggregated_matrix = aligned_eval_df.sum(axis=0).to_frame().T  # Sum over features
-    # aggregated_matrix = aggregated_matrix.reindex(columns=optimal_df.columns, fill_value=0)
-    # print('AGGREGATED MATRIX', aggregated_matrix)
-
-    # similarity_matrix = cosine_similarity(optimal_df.to_numpy(), aggregated_matrix.to_numpy())
-    # similarity_df = pd.DataFrame(similarity_matrix, index=optimal_df.index, columns=["A(U')"])
-    # average_similarity = np.mean(similarity_matrix)
+        average_column_similarity = np.mean([sim[1] for sim in column_similarities])
+        print('AVERAGE COLUMN SIMILARITY:', average_column_similarity)
