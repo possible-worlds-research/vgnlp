@@ -1,0 +1,170 @@
+<script.9.1 type=CONV>
+<u speaker=HUM>(object.n)</u>
+<u speaker=BOT>(zebra.n.01 nose-of cloud-in|front|of)</u>
+<u speaker=HUM>(zebra.n.02 ear.02-of)</u>
+<u speaker=BOT>(branch.n tree)</u>
+<u speaker=HUM>(sand.n)</u>
+<u speaker=BOT>(cloud.n dust in|front|of-zebra.01)</u>
+<u speaker=HUM>(mane.n.01 black white)</u>
+<u speaker=BOT>(land.n dry sandy)</u>
+<u speaker=HUM>(building.n)</u>
+<u speaker=BOT>(ear.n.01 pointy)</u>
+<u speaker=HUM>(ear.n.02 of-zebra)</u>
+<u speaker=BOT>(nose.n black)</u>
+<u speaker=HUM>(mane.n.02)</u>
+<u speaker=BOT>(nostril.n large)</u>
+<u speaker=HUM>(mouth.n)</u>
+<u speaker=BOT>(nose.n of-zebra)</u>
+</script.9.1>
+
+<script.9.2 type=CONV>
+<u speaker=HUM>(object.n)</u>
+<u speaker=BOT>(animal.n.01 nose-of cloud-in|front|of)</u>
+<u speaker=HUM>(animal.n.02 ear.02-of)</u>
+<u speaker=BOT>(branch.n tree)</u>
+<u speaker=HUM>(sand.n)</u>
+<u speaker=BOT>(cloud.n dust in|front|of-animal.01)</u>
+<u speaker=HUM>(mane.n.01 black white)</u>
+<u speaker=BOT>(land.n dry sandy)</u>
+<u speaker=HUM>(building.n)</u>
+<u speaker=BOT>(ear.n.01 pointy)</u>
+<u speaker=HUM>(ear.n.02 of-animal)</u>
+<u speaker=BOT>(nose.n black)</u>
+<u speaker=HUM>(mane.n.02)</u>
+<u speaker=BOT>(nostril.n large)</u>
+<u speaker=HUM>(mouth.n)</u>
+<u speaker=BOT>(nose.n of-animal)</u>
+</script.9.2>
+
+<script.9.3 type=CONV>
+<u speaker=HUM>(object.n)</u>
+<u speaker=BOT>(zebra.n.01 nose-of cloud-in|front|of)</u>
+<u speaker=HUM>(zebra.n.02 ear.02-of)</u>
+<u speaker=BOT>(branch.n plant)</u>
+<u speaker=HUM>(sand.n)</u>
+<u speaker=BOT>(cloud.n dust in|front|of-zebra.01)</u>
+<u speaker=HUM>(mane.n.01 black white)</u>
+<u speaker=BOT>(land.n dry sandy)</u>
+<u speaker=HUM>(building.n)</u>
+<u speaker=BOT>(ear.n.01 pointy)</u>
+<u speaker=HUM>(ear.n.02 of-zebra)</u>
+<u speaker=BOT>(nose.n black)</u>
+<u speaker=HUM>(mane.n.02)</u>
+<u speaker=BOT>(nostril.n large)</u>
+<u speaker=HUM>(mouth.n)</u>
+<u speaker=BOT>(nose.n of-zebra)</u>
+</script.9.3>
+
+<script.9.4 type=CONV>
+<u speaker=HUM>(object.n)</u>
+<u speaker=BOT>(zebra.n.01 nose-of cloud-in|front|of)</u>
+<u speaker=HUM>(zebra.n.02 ear.02-of)</u>
+<u speaker=BOT>(branch.n tree)</u>
+<u speaker=HUM>(sand.n)</u>
+<u speaker=BOT>(cloud.n dust in|front|of-zebra.01)</u>
+<u speaker=HUM>(mane.n.01 black white)</u>
+<u speaker=BOT>(ground.n dry sandy)</u>
+<u speaker=HUM>(building.n)</u>
+<u speaker=BOT>(ear.n.01 pointy)</u>
+<u speaker=HUM>(ear.n.02 of-zebra)</u>
+<u speaker=BOT>(nose.n black)</u>
+<u speaker=HUM>(mane.n.02)</u>
+<u speaker=BOT>(nostril.n large)</u>
+<u speaker=HUM>(mouth.n)</u>
+<u speaker=BOT>(nose.n of-zebra)</u>
+</script.9.4>
+
+<script.9.5 type=CONV>
+<u speaker=HUM>(object.n)</u>
+<u speaker=BOT>(zebra.n.01 organ-of cloud-in|front|of)</u>
+<u speaker=HUM>(zebra.n.02 ear.02-of)</u>
+<u speaker=BOT>(branch.n tree)</u>
+<u speaker=HUM>(sand.n)</u>
+<u speaker=BOT>(cloud.n dust in|front|of-zebra.01)</u>
+<u speaker=HUM>(mane.n.01 black white)</u>
+<u speaker=BOT>(land.n dry sandy)</u>
+<u speaker=HUM>(building.n)</u>
+<u speaker=BOT>(organ.n.01 pointy)</u>
+<u speaker=HUM>(ear.n.02 of-zebra)</u>
+<u speaker=BOT>(organ.n black)</u>
+<u speaker=HUM>(mane.n.02)</u>
+<u speaker=BOT>(nostril.n large)</u>
+<u speaker=HUM>(mouth.n)</u>
+<u speaker=BOT>(organ.n of-zebra)</u>
+</script.9.5>
+
+<script.9.6 type=CONV>
+<u speaker=HUM>(object.n)</u>
+<u speaker=BOT>(zebra.n.01 nose-of cloud-in|front|of)</u>
+<u speaker=HUM>(zebra.n.02 ear.02-of)</u>
+<u speaker=BOT>(branch.n tree)</u>
+<u speaker=HUM>(sand.n)</u>
+<u speaker=BOT>(cloud.n dust in|front|of-zebra.01)</u>
+<u speaker=HUM>(mane.n.01 black white)</u>
+<u speaker=BOT>(land.n dry sandy)</u>
+<u speaker=HUM>(building.n)</u>
+<u speaker=BOT>(ear.n.01 pointy)</u>
+<u speaker=HUM>(ear.n.02 of-zebra)</u>
+<u speaker=BOT>(nose.n black)</u>
+<u speaker=HUM>(mane.n.02)</u>
+<u speaker=BOT>(nostril.n large)</u>
+<u speaker=HUM>(organ.n)</u>
+<u speaker=BOT>(nose.n of-zebra)</u>
+</script.9.6>
+
+<script.9.7 type=CONV>
+<u speaker=HUM>(object.n)</u>
+<u speaker=BOT>(zebra.n.01 nose-of cloud-in|front|of)</u>
+<u speaker=HUM>(zebra.n.02 ear.02-of)</u>
+<u speaker=BOT>(branch.n tree)</u>
+<u speaker=HUM>(soil.n)</u>
+<u speaker=BOT>(cloud.n dust in|front|of-zebra.01)</u>
+<u speaker=HUM>(mane.n.01 black white)</u>
+<u speaker=BOT>(land.n dry sandy)</u>
+<u speaker=HUM>(building.n)</u>
+<u speaker=BOT>(ear.n.01 pointy)</u>
+<u speaker=HUM>(ear.n.02 of-zebra)</u>
+<u speaker=BOT>(nose.n black)</u>
+<u speaker=HUM>(mane.n.02)</u>
+<u speaker=BOT>(nostril.n large)</u>
+<u speaker=HUM>(mouth.n)</u>
+<u speaker=BOT>(nose.n of-zebra)</u>
+</script.9.7>
+
+<script.9.8 type=CONV>
+<u speaker=HUM>(object.n)</u>
+<u speaker=BOT>(zebra.n.01 nose-of fog-in|front|of)</u>
+<u speaker=HUM>(zebra.n.02 ear.02-of)</u>
+<u speaker=BOT>(branch.n tree)</u>
+<u speaker=HUM>(sand.n)</u>
+<u speaker=BOT>(fog.n dust in|front|of-zebra.01)</u>
+<u speaker=HUM>(mane.n.01 black white)</u>
+<u speaker=BOT>(land.n dry sandy)</u>
+<u speaker=HUM>(building.n)</u>
+<u speaker=BOT>(ear.n.01 pointy)</u>
+<u speaker=HUM>(ear.n.02 of-zebra)</u>
+<u speaker=BOT>(nose.n black)</u>
+<u speaker=HUM>(mane.n.02)</u>
+<u speaker=BOT>(nostril.n large)</u>
+<u speaker=HUM>(mouth.n)</u>
+<u speaker=BOT>(nose.n of-zebra)</u>
+</script.9.8>
+
+<script.9.9 type=CONV>
+<u speaker=HUM>(object.n)</u>
+<u speaker=BOT>(zebra.n.01 nose-of cloud-in|front|of)</u>
+<u speaker=HUM>(zebra.n.02 ear.02-of)</u>
+<u speaker=BOT>(bough.n tree)</u>
+<u speaker=HUM>(sand.n)</u>
+<u speaker=BOT>(cloud.n dust in|front|of-zebra.01)</u>
+<u speaker=HUM>(mane.n.01 black white)</u>
+<u speaker=BOT>(land.n dry sandy)</u>
+<u speaker=HUM>(building.n)</u>
+<u speaker=BOT>(ear.n.01 pointy)</u>
+<u speaker=HUM>(ear.n.02 of-zebra)</u>
+<u speaker=BOT>(nose.n black)</u>
+<u speaker=HUM>(mane.n.02)</u>
+<u speaker=BOT>(nostril.n large)</u>
+<u speaker=HUM>(mouth.n)</u>
+<u speaker=BOT>(nose.n of-zebra)</u>
+</script.9.9>

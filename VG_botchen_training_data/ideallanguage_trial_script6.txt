@@ -1,0 +1,179 @@
+<script.6.1 type=CONV>
+<u speaker=HUM>(floor.n wood wooden rug-on lamp-on)</u>
+<u speaker=BOT>(rug.n gray plush clean purple gray on-floor)</u>
+<u speaker=HUM>(curtain.n.01 blue drawn)</u>
+<u speaker=BOT>(patio.n door-to)</u>
+<u speaker=HUM>(carpet.n)</u>
+<u speaker=BOT>(sofa.n purple wooden cloth has-frame pillow-on lamp-behind teddy-on)</u>
+<u speaker=HUM>(curtain.n.02 tied designed blue)</u>
+<u speaker=BOT>(door.n glass sliding to-patio)</u>
+<u speaker=HUM>(frame.n wooden sofa-has)</u>
+<u speaker=BOT>(chair.n black slender purple blue has-padding next|to-table)</u>
+<u speaker=HUM>(picture.n water poster black art)</u>
+<u speaker=BOT>(pillow.n white on-sofa teddy-against)</u>
+<u speaker=HUM>(desk.n wooden)</u>
+<u speaker=BOT>(teddy.n stuffed forward against-pillow has-fabric on-sofa)</u>
+<u speaker=HUM>(color.n purple)</u>
+<u speaker=BOT>(padding.n blue chair-has)</u>
+<u speaker=HUM>(fabric.n red teddy-has)</u>
+</script.6.1>
+
+<script.6.2 type=CONV>
+<u speaker=HUM>(floor.n wood wooden rug-on lamp-on)</u>
+<u speaker=BOT>(rug.n gray plush clean purple gray on-floor)</u>
+<u speaker=HUM>(curtain.n.01 blue drawn)</u>
+<u speaker=BOT>(patio.n door-to)</u>
+<u speaker=HUM>(carpet.n)</u>
+<u speaker=BOT>(couch.n purple wooden cloth has-frame pillow-on lamp-behind teddy-on)</u>
+<u speaker=HUM>(curtain.n.02 tied designed blue)</u>
+<u speaker=BOT>(door.n glass sliding to-patio)</u>
+<u speaker=HUM>(frame.n wooden couch-has)</u>
+<u speaker=BOT>(chair.n black slender purple blue has-padding next|to-table)</u>
+<u speaker=HUM>(picture.n water poster black art)</u>
+<u speaker=BOT>(pillow.n white on-couch teddy-against)</u>
+<u speaker=HUM>(desk.n wooden)</u>
+<u speaker=BOT>(teddy.n stuffed forward against-pillow has-fabric on-couch)</u>
+<u speaker=HUM>(color.n purple)</u>
+<u speaker=BOT>(padding.n blue chair-has)</u>
+<u speaker=HUM>(fabric.n red teddy-has)</u>
+</script.6.2>
+
+<script.6.3 type=CONV>
+<u speaker=HUM>(floor.n wood wooden rug-on lamp-on)</u>
+<u speaker=BOT>(rug.n gray plush clean purple gray on-floor)</u>
+<u speaker=HUM>(drape.n.01 blue drawn)</u>
+<u speaker=BOT>(patio.n door-to)</u>
+<u speaker=HUM>(carpet.n)</u>
+<u speaker=BOT>(sofa.n purple wooden cloth has-frame pillow-on lamp-behind teddy-on)</u>
+<u speaker=HUM>(drape.n.02 tied designed blue)</u>
+<u speaker=BOT>(door.n glass sliding to-patio)</u>
+<u speaker=HUM>(frame.n wooden sofa-has)</u>
+<u speaker=BOT>(chair.n black slender purple blue has-padding next|to-table)</u>
+<u speaker=HUM>(picture.n water poster black art)</u>
+<u speaker=BOT>(pillow.n white on-sofa teddy-against)</u>
+<u speaker=HUM>(desk.n wooden)</u>
+<u speaker=BOT>(teddy.n stuffed forward against-pillow has-fabric on-sofa)</u>
+<u speaker=HUM>(color.n purple)</u>
+<u speaker=BOT>(padding.n blue chair-has)</u>
+<u speaker=HUM>(fabric.n red teddy-has)</u>
+</script.6.3>
+
+<script.6.4 type=CONV>
+<u speaker=HUM>(floor.n wood wooden rug-on lamp-on)</u>
+<u speaker=BOT>(rug.n gray plush clean purple gray on-floor)</u>
+<u speaker=HUM>(curtain.n.01 blue drawn)</u>
+<u speaker=BOT>(terrace.n door-to)</u>
+<u speaker=HUM>(carpet.n)</u>
+<u speaker=BOT>(sofa.n purple wooden cloth has-frame pillow-on lamp-behind teddy-on)</u>
+<u speaker=HUM>(curtain.n.02 tied designed blue)</u>
+<u speaker=BOT>(door.n glass sliding to-patio)</u>
+<u speaker=HUM>(frame.n wooden sofa-has)</u>
+<u speaker=BOT>(chair.n black slender purple blue has-padding next|to-table)</u>
+<u speaker=HUM>(picture.n water poster black art)</u>
+<u speaker=BOT>(pillow.n white on-sofa teddy-against)</u>
+<u speaker=HUM>(desk.n wooden)</u>
+<u speaker=BOT>(teddy.n stuffed forward against-pillow has-fabric on-sofa)</u>
+<u speaker=HUM>(color.n purple)</u>
+<u speaker=BOT>(padding.n blue chair-has)</u>
+<u speaker=HUM>(fabric.n red teddy-has)</u>
+</script.6.4>
+
+<script.6.5 type=CONV>
+<u speaker=HUM>(floor.n wood wooden rug-on lamp-on)</u>
+<u speaker=BOT>(rug.n gray plush clean purple gray on-floor)</u>
+<u speaker=HUM>(curtain.n.01 blue drawn)</u>
+<u speaker=BOT>(patio.n door-to)</u>
+<u speaker=HUM>(carpet.n)</u>
+<u speaker=BOT>(sofa.n purple wooden cloth has-frame pillow-on lamp-behind teddy-on)</u>
+<u speaker=HUM>(curtain.n.02 tied designed blue)</u>
+<u speaker=BOT>(door.n glass sliding to-patio)</u>
+<u speaker=HUM>(frame.n wooden sofa-has)</u>
+<u speaker=BOT>(chair.n black slender purple blue has-padding next|to-table)</u>
+<u speaker=HUM>(picture.n water poster black art)</u>
+<u speaker=BOT>(pillow.n white on-sofa teddy-against)</u>
+<u speaker=HUM>(desk.n wooden)</u>
+<u speaker=BOT>(teddy.n stuffed forward against-pillow has-cloth on-sofa)</u>
+<u speaker=HUM>(color.n purple)</u>
+<u speaker=BOT>(padding.n blue chair-has)</u>
+<u speaker=HUM>(cloth.n red teddy-has)</u>
+</script.6.5>
+
+<script.6.6 type=CONV>
+<u speaker=HUM>(parquet.n wood wooden rug-on lamp-on)</u>
+<u speaker=BOT>(rug.n gray plush clean purple gray on-parquet)</u>
+<u speaker=HUM>(curtain.n.01 blue drawn)</u>
+<u speaker=BOT>(patio.n door-to)</u>
+<u speaker=HUM>(carpet.n)</u>
+<u speaker=BOT>(sofa.n purple wooden cloth has-frame pillow-on lamp-behind teddy-on)</u>
+<u speaker=HUM>(curtain.n.02 tied designed blue)</u>
+<u speaker=BOT>(door.n glass sliding to-patio)</u>
+<u speaker=HUM>(frame.n wooden sofa-has)</u>
+<u speaker=BOT>(chair.n black slender purple blue has-padding next|to-table)</u>
+<u speaker=HUM>(picture.n water poster black art)</u>
+<u speaker=BOT>(pillow.n white on-sofa teddy-against)</u>
+<u speaker=HUM>(desk.n wooden)</u>
+<u speaker=BOT>(teddy.n stuffed forward against-pillow has-fabric on-sofa)</u>
+<u speaker=HUM>(color.n purple)</u>
+<u speaker=BOT>(padding.n blue chair-has)</u>
+<u speaker=HUM>(fabric.n red teddy-has)</u>
+</script.6.6>
+
+<script.6.7 type=CONV>
+<u speaker=HUM>(floor.n wood wooden rug-on lamp-on)</u>
+<u speaker=BOT>(rug.n gray plush clean purple gray on-floor)</u>
+<u speaker=HUM>(curtain.n.01 blue drawn)</u>
+<u speaker=BOT>(patio.n door-to)</u>
+<u speaker=HUM>(carpet.n)</u>
+<u speaker=BOT>(sofa.n purple wooden cloth has-frame pillow-on lamp-behind puppet-on)</u>
+<u speaker=HUM>(curtain.n.02 tied designed blue)</u>
+<u speaker=BOT>(door.n glass sliding to-patio)</u>
+<u speaker=HUM>(frame.n wooden sofa-has)</u>
+<u speaker=BOT>(chair.n black slender purple blue has-padding next|to-table)</u>
+<u speaker=HUM>(picture.n water poster black art)</u>
+<u speaker=BOT>(pillow.n white on-sofa puppet-against)</u>
+<u speaker=HUM>(desk.n wooden)</u>
+<u speaker=BOT>(puppet.n stuffed forward against-pillow has-fabric on-sofa)</u>
+<u speaker=HUM>(color.n purple)</u>
+<u speaker=BOT>(padding.n blue chair-has)</u>
+<u speaker=HUM>(fabric.n red puppet-has)</u>
+</script.6.7>
+
+<script.6.8 type=CONV>
+<u speaker=HUM>(floor.n wood wooden rug-on lamp-on)</u>
+<u speaker=BOT>(rug.n gray plush clean purple gray on-floor)</u>
+<u speaker=HUM>(curtain.n.01 blue drawn)</u>
+<u speaker=BOT>(patio.n door-to)</u>
+<u speaker=HUM>(carpet.n)</u>
+<u speaker=BOT>(sofa.n purple wooden cloth has-frame pillow-on lamp-behind teddy-on)</u>
+<u speaker=HUM>(curtain.n.02 tied designed blue)</u>
+<u speaker=BOT>(door.n glass sliding to-patio)</u>
+<u speaker=HUM>(frame.n wooden sofa-has)</u>
+<u speaker=BOT>(seat.n black slender purple blue has-padding next|to-table)</u>
+<u speaker=HUM>(picture.n water poster black art)</u>
+<u speaker=BOT>(pillow.n white on-sofa teddy-against)</u>
+<u speaker=HUM>(desk.n wooden)</u>
+<u speaker=BOT>(teddy.n stuffed forward against-pillow has-fabric on-sofa)</u>
+<u speaker=HUM>(color.n purple)</u>
+<u speaker=BOT>(padding.n blue seat-has)</u>
+<u speaker=HUM>(fabric.n red teddy-has)</u>
+</script.6.8>
+
+<script.6.9 type=CONV>
+<u speaker=HUM>(floor.n wood wooden rug-on lamp-on)</u>
+<u speaker=BOT>(rug.n gray plush clean purple gray on-floor)</u>
+<u speaker=HUM>(curtain.n.01 blue drawn)</u>
+<u speaker=BOT>(patio.n door-to)</u>
+<u speaker=HUM>(carpet.n)</u>
+<u speaker=BOT>(sofa.n purple wooden cloth has-frame pillow-on lamp-behind teddy-on)</u>
+<u speaker=HUM>(curtain.n.02 tied designed blue)</u>
+<u speaker=BOT>(door.n glass sliding to-patio)</u>
+<u speaker=HUM>(frame.n wooden sofa-has)</u>
+<u speaker=BOT>(chair.n black slender purple blue has-padding next|to-table)</u>
+<u speaker=HUM>(picture.n water poster black art)</u>
+<u speaker=BOT>(pillow.n white on-sofa teddy-against)</u>
+<u speaker=HUM>(table.n wooden)</u>
+<u speaker=BOT>(teddy.n stuffed forward against-pillow has-fabric on-sofa)</u>
+<u speaker=HUM>(color.n purple)</u>
+<u speaker=BOT>(padding.n blue chair-has)</u>
+<u speaker=HUM>(fabric.n red teddy-has)</u>
+</script.6.9>
