@@ -84,10 +84,13 @@ saving_directory = './data/chat/en/vectorial_space.csv'
 # @click.argument('optimal_matrix', type=int)
 # @click.argument('entity_properties_dynamical',required=False)
 # @click.argument('store_space', type=int, required=False)
-# Create matrix without distinction between situations
-def create_matrices(script_id, # If we want to make a matrix from a specific situation, which one? If it is not there it retrieves the all data
-                    optimal_matrix, # Optimal means retrieving from training data, non optimal from Botchen conversation
-                    entity_properties_dynamical, # If from Botchen conversation, the entity and properties are dynamical
+
+# Create matrices from different content. Arguments: (A) script_id: matrix from a specific situation. If it is 0 it retrieved from the all data. (B) optimal_matrix,
+# if retrieving from training data or from Botchen conversation. 1 if from training data, 0 from Botchen conversation. (C) If we have to make the properties dynamical
+# from Botchen conversation, this is the content from which to retrieve from. (D) Store_space, 1 if we want to store the spaces
+def create_matrices(script_id,
+                    optimal_matrix,
+                    entity_properties_dynamical,
                     store_space):
 
     if optimal_matrix == 1: # Retrieve directly from training data
@@ -136,15 +139,18 @@ def create_matrices(script_id, # If we want to make a matrix from a specific sit
 
     return activation_matrix, df
 
-def make_evaluating_conversation(content, # From which to extract the utterances
-                                 conversation, # Conversation made 'til that point
-                                 entity_properties, # Specificities of script storing
-                                 model, encoder, decoder, topk, # Needed since I am calling the model live
-                                 log_file = False, # If we want to store
-                                 print_statement = False): # If we want to look live at the conversation
+# Make the conversation with Botchen for the evaluation, based on the training data, start. Arguments: (A) content from which to extract the utterances (B) conversation
+# made til that point (to make it dynamical) (C) entity_properties, still to make it dynamical (D) model encoder decoder topk to call the model live (E) log_file
+# if we want to store it somewhere (F) If we want to look at the conversation live
+def make_evaluating_conversation(content,
+                                 conversation,
+                                 entity_properties,
+                                 model, encoder, decoder, topk,
+                                 log_file = False,
+                                 print_statement = False):
+    # Extract the utterances and iterate over them as an input, then extract the responses that the model output
     utterances = re.findall(r'<u speaker=[^>]*>\((.*?)\)</u>', content)
     for utterance in utterances:
-        # CONVERSATIONAL PURPOSES
         for _ in range(4):
             if len(conversation.strip()) > 0:
                 conversation += f' <u speaker=HUM>{utterance}</u> <u speaker=BOT>'
@@ -154,7 +160,7 @@ def make_evaluating_conversation(content, # From which to extract the utterances
                 with ctx:
                     response, _ = generate(utterance, conversation, model, encoder, decoder, 0.9, int(topk), 64)
 
-            # CLEAN UP THE MATERIAL
+            # Clean the responses to be able to extrat the entities and properties
             match = re.search(r'\((.*?)\)', response)
             if match:
                 clean_response = match.group(1)
@@ -162,7 +168,6 @@ def make_evaluating_conversation(content, # From which to extract the utterances
                 print('TOO WEIRD TO EXTRACT :((', response)
                 continue
 
-            # EXTRACT ENTITIES AND PROPERTIES
             entity = clean_response.split('.')[0]
             properties = clean_response.split()[1:]
             properties = [re.sub(r'\.\d+', '', prop) for prop in properties]
@@ -179,6 +184,7 @@ def make_evaluating_conversation(content, # From which to extract the utterances
                     log_entry = f"\n>> Prompt: {utterance}\n>> Response: {response} \n"
                     file.write(log_entry)
 
+# Extract entities and properties from content
 def extract_entities_properties(content, entity_properties):
     utterance_pattern = re.compile(r'<u speaker=[^>]*>\((.*?)\)</u>')
     utterances = utterance_pattern.findall(content)
@@ -199,12 +205,15 @@ def extract_entities_properties(content, entity_properties):
 @click.argument('module')
 @click.argument('language')
 @click.argument('topk')
-@click.argument('evaluating_framework', required=False, type=int) # Which kind of evaluating framework do we want?
-@click.argument('script_id_eval', type=int) # Which script to evaluate
-@click.argument('script_id_optimal', type=int) # With which other one
+@click.argument('evaluating_framework', required=False, type=int)
+@click.argument('script_id_eval', type=int)
+@click.argument('script_id_optimal', type=int)
 @click.argument('store_conversation', required=False,type=int)
-# With this script I am creating a vectorial space from the responses the model gives to prompts from the training data in order to be abl>
-# If evaluating on a situational script, see if to point the evaluation script on one situation and and if also to use the situation for the optimal one
+# Creates the vectorial spaces, from training data and from the responses the model gives and evaluate their relation
+# Arguments: (A) module, language, topk to be able to interact with the model live
+# (B) evaluating_framework, 1 filling up the dimensionalities to align the two matrices, 2 retraction model, 3 RSA
+# (C) script_id_eval, script_id_optimal. On which situation we want to evaluate the model and from which training data to compare them with. 0 means overall space.
+# (D) store_conversation if to store the conversation somewhere. 0 no storing, 1 storing.
 def evaluation_with_vectorial_space(module, language, topk,
                                     evaluating_framework,
                                     script_id_eval,
@@ -234,10 +243,10 @@ def evaluation_with_vectorial_space(module, language, topk,
         content = file.read()
 
     if script_id_eval != 0: # If evaluating on only one script situation
+        # Extract the data from the specific situations
         script_blocks = re.split(r'(<script\.\d+ type=CONV>)', content)
         script_dict = {script_blocks[i]: script_blocks[i + 1] for i in range(1, len(script_blocks) - 1, 2)}
         script_pattern = f"script.{script_id_eval} "
-        print('SCRIPT_PATTERN', script_pattern)
         for header, script_content in script_dict.items():
             if script_pattern in header:
                 print('HEADER:', header)
@@ -251,11 +260,9 @@ def evaluation_with_vectorial_space(module, language, topk,
                                      log_file = False, print_statement = False)
 
     # Create the matrix from the responses the model gives (evaluation)
-    # If the script id is there it creates an evaluation matrix based on the situation. If it is not there retrieves the situation
-    # Optimal matrix is false since retrieving from conversation with Botchen
     # Entity properties is dynamical since we're updating it
     eval_matrix, eval_df = create_matrices(script_id_eval,
-                                           0, # non-optimal matrix
+                                           0, # non-optimal matrix (not from training data)
                                            entity_properties,
                                            0) # don't store the space
     # Create the matrix from the training data (optimal)
@@ -263,6 +270,8 @@ def evaluation_with_vectorial_space(module, language, topk,
                                                  1,
                                                  entity_properties, 0)
 
+    # Evaluation
+    # Which rows and columns are matching and non-matching
     matching_rows = eval_df.index.intersection(optimal_df.index)
     matching_columns = eval_df.columns.intersection(optimal_df.columns)
     non_matching_rows = eval_df.index.difference(optimal_df.index)
@@ -270,11 +279,13 @@ def evaluation_with_vectorial_space(module, language, topk,
 
     if evaluating_framework == 1:  # Fill up the dimensionalities
 
+        # Clean the evaluated space from dimensions which are not in the optimal space
+        # If there are dimensions in the optimal space which are not in the evaluated space fill the ones in the evaluated space with zero
         filtered_eval_df = eval_df.loc[eval_df.index.intersection(optimal_df.index), eval_df.columns.intersection(optimal_df.columns)]
         aligned_evaluation_df = filtered_eval_df.reindex(index=optimal_df.index, columns=optimal_df.columns, fill_value=0)
         print('ALIGNED EVALUATION', aligned_evaluation_df)
 
-        # Compute the cosine similarity between rows
+        # Compute the cosine similarity between rows and then average the values in one
         similarity_df = pd.DataFrame(
             cosine_similarity(optimal_df.to_numpy(), aligned_evaluation_df.to_numpy()),
             index=optimal_df.index, columns=aligned_evaluation_df.index
@@ -282,7 +293,7 @@ def evaluation_with_vectorial_space(module, language, topk,
         print('ROW-WISE COSINE SIMILARITIES:\n', similarity_df)
         print('Average similarity rows', similarity_df.values.mean())
 
-        # Compute cosine similarity between columns
+        # Compute cosine similarity between columns and then average the values in one
         column_similarity_df = pd.DataFrame(
             cosine_similarity(optimal_df.T.to_numpy(), aligned_evaluation_df.T.to_numpy()),
             index=optimal_df.columns, columns=aligned_evaluation_df.columns
@@ -292,9 +303,11 @@ def evaluation_with_vectorial_space(module, language, topk,
 
     elif evaluating_framework == 2:  # Only match dimensions
 
+        # Extract from both the training and the evaluated file just the matching dimensions (intersections)
         new_optimal_df = optimal_df.loc[matching_rows, matching_columns]
         new_eval_df = eval_df.loc[matching_rows, matching_columns]
 
+        # Compute the cosine similarity between rows
         row_similarity_df = pd.DataFrame(
             cosine_similarity(new_optimal_df.to_numpy(), new_eval_df.to_numpy()),
             index=new_optimal_df.index,
@@ -303,6 +316,7 @@ def evaluation_with_vectorial_space(module, language, topk,
         print('ROW-WISE COSINE SIMILARITIES:\n', row_similarity_df)
         print('Average similarity (rows):', row_similarity_df.values.mean())
 
+        # And between columns, transposing the matrix
         column_similarity_df = pd.DataFrame(
             cosine_similarity(new_optimal_df.T.to_numpy(), new_eval_df.T.to_numpy()),
             index=new_optimal_df.columns,
@@ -311,35 +325,6 @@ def evaluation_with_vectorial_space(module, language, topk,
         print('COLUMN-WISE COSINE SIMILARITIES:\n', column_similarity_df)
         print('Average similarity (columns):', column_similarity_df.values.mean())
 
-    if evaluating_framework == 2:
-
-        if not non_matching_rows.empty:
-            print(f"Warning: The following rows in eval_df are not in optimal_df and will be ignored: {non_matching_rows.tolist()}")
-        if not non_matching_columns.empty:
-            print(f"Warning: The following columns in eval_df are not in optimal_df and will be ignored: {non_matching_columns.tolist()}")
-
-        matching_rows = eval_df.index.intersection(optimal_df.index)
-        matching_columns = eval_df.columns.intersection(optimal_df.columns)
-        non_matching_columns = eval_df.columns.difference(optimal_df.columns)
-        new_optimal_df = optimal_df.loc[matching_rows, matching_columns]
-        new_eval_df = eval_df.loc[matching_rows, matching_columns]  # Also subset rows
-
-        if not non_matching_columns.empty:
-            print("Warning: The following columns in eval_df are not in optimal_df and will be ignored:")
-            print(non_matching_columns.tolist())
-
-        row_similarity_matrix = cosine_similarity(new_optimal_df.to_numpy(), new_eval_df.to_numpy())
-        row_similarity_df = pd.DataFrame(row_similarity_matrix, index=new_optimal_df.index, columns=new_eval_df.index)
-        print('ROW-WISE COSINE SIMILARITIES:\n', row_similarity_df)
-        average_similarity_rows = np.mean(row_similarity_matrix)
-        print('Average similarity (rows):', average_similarity_rows)
-
-        column_similarity_matrix = cosine_similarity(new_optimal_df.T.to_numpy(), new_eval_df.T.to_numpy())
-        column_similarity_df = pd.DataFrame(column_similarity_matrix, index=new_optimal_df.columns, columns=new_eval_df.columns)
-        print('COLUMN-WISE COSINE SIMILARITIES:\n', column_similarity_df)
-        average_column_similarity = np.mean(column_similarity_matrix)
-        print('Average similarity (columns):', average_column_similarity)
-
     elif evaluating_framework == 3:  # RSA-based evaluation
 
         if not non_matching_rows.empty:
@@ -347,14 +332,15 @@ def evaluation_with_vectorial_space(module, language, topk,
         if not non_matching_columns.empty:
             print(f"Warning: The following columns in eval_df are not in optimal_df and will be ignored: {non_matching_columns.tolist()}")
 
+        # Keeps only the values in the evaluated df which are present in the optimal df, aligns the indexes and fill missing values with NaN
         aligned_evaluation_df = eval_df.loc[matching_rows, matching_columns].reindex(index=optimal_df.index, columns=optimal_df.columns, fill_value=np.nan)
         print('ALIGNED EVAL 1', aligned_evaluation_df)
 
-        # Fill NaN values with the mean of other columns in the row
+        # For NaN values in one column, fills the value with the mean of the values in the same column
         aligned_evaluation_df = aligned_evaluation_df.apply(lambda col: col.fillna(col.mean()), axis=0)
         print('ALIGNED EVAL 2', aligned_evaluation_df)
 
-        # Fill NaN entire columns with the mean of the other values in the df
+        # Fill NaN columns with the average mean of the values in the df
         for column in aligned_evaluation_df.columns:
             aligned_evaluation_df[column] = aligned_evaluation_df.apply(
                 lambda row: row.drop(column).mean() if pd.isna(row[column]) else row[column],
@@ -367,7 +353,7 @@ def evaluation_with_vectorial_space(module, language, topk,
         if optimal_df.isna().sum().sum() > 0:
             print("There are still NaN values in the optimal DataFrame.")
 
-        print('ENSURING', optimal_df.dtypes)  # Ensure all columns are numeric
+        print('ENSURING', optimal_df.dtypes)  # Ensure all values are numeric
         print('ENSURING', aligned_evaluation_df.dtypes)
 
         # Compute RSA Score
