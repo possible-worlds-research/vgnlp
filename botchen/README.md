@@ -1,0 +1,13 @@
+# VGNLP Botchen
+
+VGNLP Botchen has been created to extract data from the [Visual Genome](https://homes.cs.washington.edu/~ranjay/visualgenome/index.html) dataset. This data is then turned into a format which serves as training for a tiny chatbot ('Botchen'). Evaluating scripts are also provided.   
+
+## Extracting data
+
+The *./scripts/extract_from_vg.py* script extracts the situations the user selects from the VG database ('./data/ideallanguage.txt', to extract from the zip file). It takes one situation and turns it into a format readable by the chatbot (i.e. from *<situation id=1> <entity id=1058549> tree.n.01(1058549) sparse(1058549) by(1058549,1058534)* etc. to *<script.1 type=CONV> <u speaker=HUM>(tree.n sparse by-sidewalk)</u>* etc.). The extracted data is stored in './data/extracted_scripts.txt'. The user can modify the VG situation id from which to extract from in the final part of the script. Now they're already settled to the ones we chose to work on, covering a variety of topics.
+
+The *./scripts/permutations_prompts.py* script takes the one situation from './data/extracted_scripts.txt' and applies permutations (e.g. substituting 'zebra' with 'animal' in order to make the chatbot learn how to generalize). It takes the file and based on the substitutions one wants to make, it creates the files which will be inputted to the chatbot for training (the files stored in './data/training_data/*'). It also extracts the features of one situations, with the new entities inputted by the generalization process and creates a file with the characteristics of each situation which can be used to test the model, having the utterances as prompts ('./data/prompt_file.txt')
+
+The *./scripts/controllers.py* is the file to run in Botchen to generate the conversation on which to evaluate from. The function in relation with this training to be added is the 'make_evaluating_conversation' function which takes prompts from the situation one selects to evaluate, having each utterance (line) repeated 4 times and store the conversation so one can download and evaluate it.  
+
+The *./scripts/evaluation.py* is the script to evaluate the conversation outputted from Botchen. It creates vectorial spaces from properties and entities and compare the ones got from the training data (optimal) and the ones from the chat with Botchen (evaluated). It takes as an input .txt files with the conversation with Botchen (an example is stored in './data/evaluation_data/evaluation_situation1.txt') and first creates vectorial spaces both from this conversational data and the training data (examples are in './data/vectorial_spaces/optimal/*' and './evaluation/'. Then it compares them by rows and columns within cosine similarity metrics (to add specifics)
