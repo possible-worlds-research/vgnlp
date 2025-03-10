@@ -54,7 +54,13 @@ The **`./scripts/controllers.py`** script enables the generation of a conversati
 
 The .**`/scripts/evaluation.py`** script evaluates the conversation output by comparing it with the optimal training data. The script creates vectorial spaces for both the evaluation and training data, with entities as rows and properties of them as columns. It then compares the two spaces using cosine similarity. Two frameworks are used for comparison. The first fits the evaluating space to the optimal space by adding missing dimensions (filled with zeros). The second matches the intersecting dimensions between the two spaces and compares them. Cosine similarity is computed for both rows and columns.
 
-**Usage:** (A) Evaluating framework: ```python3 ./scripts/evaluation.py evaluation 1 2 2```. Evaluates within first evaluation framework, evaluating situation 2, optimal situation 2. (B) Create matrices:   ```python3 ./scripts/evaluation.py create_matrices 1 --optimal_script --saving_directory './data/vectorial_spaces/optimal/'```. Evaluating  with situation 1, from training (otpimal) data and saving the space in the directory. If one wants to make them from evaluating data: ```python3 ./scripts/evaluation.py create_matrices 2 --saving_directory './data/vectorial_spaces/evaluation/'```. In general, the user will need **`./data/evaluation_data/*'** as input and generates './data/vectorial_spaces/evaluation/*' or './data/vectorial_spaces/optimal/*' as csv outputs. The user can dinamically select the situation in which to test the model on and if to store it.
+**Usage:** 
+- (A) Evaluating framework: ```python3 ./scripts/evaluation.py evaluation 1 2 2```. Evaluates within first evaluation framework, evaluating situation 2, optimal situation 2.
+- (B) Create matrices: ```python3 ./scripts/evaluation.py create_matrices 1 --optimal_script --saving_directory './data/vectorial_spaces/optimal/'```. Evaluating  with situation 1, from training (otpimal) data and saving the space in the directory.
+  - If one wants to make them from evaluating data: ```python3 ./scripts/evaluation.py create_matrices 2 --saving_directory './data/vectorial_spaces/evaluation/'```.
+
+The user will need **`./data/evaluation_data/*'** as input and generates **'./data/vectorial_spaces/evaluation/*'** or **'./data/vectorial_spaces/optimal/*'** as .csv outputs. 
+The user can dinamically select the situation in which to test the model on and if to store it.
 
 ## Requirements
 
