@@ -16,9 +16,9 @@ The project includes the following scripts:
   Handles automatic conversation generation in Botchen's console for evaluation. This script generates conversations from the prompts in **`./data/prompt_file.txt`** and stores the conversations in **`./data/evaluation_data/evaluation_situation{situational_id}.txt`**.
 
 - **`./scripts/evaluation.py`**  
-  Compares Botchen?s responses (evaluation data) with optimal training data (from training) using cosine similarity. It creates vectorial spaces for both the evaluation and training data and evaluates their similarity by row and column.
+  Compares Botchen's responses (evaluation data) with optimal training data (from training) using cosine similarity. It creates vectorial spaces for both the evaluation and training data and evaluates their similarity by row and column. It uses **`./data/evaluation_data/evaluation_situation{situational_id}.txt`** as input.
 
-The user can create the necessary folder structure starting with only the scripts and the **`./data/ideallanguage.zip`** file. The scripts will generate all other required files for evaluation. For simplicity, examples of the desired files and the training data used for evaluation have been provided
+The user can create the necessary folder structure starting with only the scripts and the **`./data/ideallanguage.zip`** file. The scripts will generate all other required files for evaluation. For simplicity, examples of the desired files and the training data used for evaluation have been provided.
 
 ***
 
@@ -34,21 +34,21 @@ This is converted into a conversational format suitable for training Botchen, li
 
 **Usage:** ```python3 ./scripts/extract_from_vg.py```. Takes  **`./data/ideallanguage.txt`** as input. Gives **`./data/extracted_scripts.txt'** as output. The user can change the VG situation ID which to revert to Botchen format at the end of the file. Now we selected 12 scripts, covering diverse topics.
 
-## Make up the data for the training 
+## Make up the data for the training and evaluation prompt
 
 The **`./scripts/permutations_prompts.py`** script takes the extracted data stored in **`./data/extracted_scripts.txt`** and applies permutations to create different versions of each situation. For example, it may replace specific nouns (e.g., replacing 'zebra' with more general terms like 'animal') or swap synonyms. These variations increase the generalization capability of Botchen.
 
 The output consists of 12 files in **`./data/training_data/*`**, with 9 different versions of each situational script. These are used as training input for Botchen.
 
-## Evaluation prompts and conversation
-
 The **`./scripts/permutations_prompts.py`** script creates a prompt file **`./data/prompt_file.txt`**. This file contains all the situations and their permutations, providing the inputs to evaluate Botchen's performance (each utterance of the chosen situation repeated 4 times)
 
 **Usage:** ```python3 ./scripts/permutations_prompts.py```. Takes  **`./data/extracted_scripts.txt`** as input. Gives **`./data/training_data/*'** and **`./data/prompt_file.txt'** as output. The user can change the words to substitute at the end of the file.
 
+## Evaluation prompts and conversation
+
 The **`./scripts/controllers.py`** script enables the generation of a conversation using Botchen. It uses the *make_evaluating_conversation function*, which takes the prompt file and outputs a conversation. This conversation is stored in **`./data/evaluation_data/evaluation_situation{script_id}.txt`** for evaluation.
 
-**Usage:** (on Bash Botchen console) ```flask training evaluation_with_vectorial_space chat en 2 ./data/chat/en/prompt_file.txt 1 print_statement log_file ```. Takes  **`./data/prompt_file.txt'** as input. Gives **`./data/evaluation_data/*'** as output. The user can dinamically select the situation in which to test the model on. 
+**Usage:** (on Bash Botchen console) ```flask training evaluation_with_vectorial_space chat en 2 ./data/chat/en/prompt_file.txt 1 print_statement log_file```. Takes  **`./data/prompt_file.txt'** as input. Gives **`./data/evaluation_data/*'** as output. The user can dinamically select the situation in which to test the model on. 
 
 ## Evaluation
 
