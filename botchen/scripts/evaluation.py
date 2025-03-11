@@ -35,7 +35,7 @@ def extract_entities_properties(content, optimal_script):
     if optimal_script:
         utterance_pattern = re.compile(r'<u speaker=[^>]*>\((.*?)\)</u>')
     else:
-        utterance_pattern = re.compile(r'<u speaker=[^>]+>\((.*?)\)', re.DOTALL)
+        utterance_pattern = re.compile(r'<u speaker=[^>]+>\(([^)>]+)\)', re.DOTALL)
     utterances = utterance_pattern.findall(content)
 
     for utterance in utterances:
@@ -265,4 +265,5 @@ open('./data/evaluation_file.txt', 'w').close()  # This clears the file by openi
 
 for script_id_eval in range (0,13):
     for script_id_optimal in range(0,13):
-        evaluation_with_vectorial_space(1, script_id_eval, script_id_optimal, log_file='./data/evaluation_file.txt')
+        evaluation_with_vectorial_space(2, script_id_eval, script_id_optimal, log_file='./data/evaluation_file.txt')
+# create_matrices(1, saving_directory='./data/vectorial_spaces/evaluation/')
