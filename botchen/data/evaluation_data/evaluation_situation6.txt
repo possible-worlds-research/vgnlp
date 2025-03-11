@@ -1,0 +1,403 @@
+>> Loaded models dict_keys(['chat'])
+>> Prompt: chair.n has-spindle part-of green
+>> Response:  <u speaker=HUM>(part.n of-image of-image of-image) 
+>> Prompt: chair.n has-spindle part-of green
+>> Response:  <u speaker=HUM>(part.n of-image of-image of-table image of-image) 
+>> Prompt: chair.n has-spindle part-of green
+>> Response:  <u speaker=HUM>(lamp.n on) 
+>> Prompt: chair.n has-spindle part-of green
+>> Response:  <u speaker=HUM>(lamp.n on) 
+>> Prompt: charger.n holding-ipod ipod-on
+>> Response:  <u speaker=HUM>(computer.n on-table ipod-on) 
+>> Prompt: charger.n holding-ipod ipod-on
+>> Response:  <u speaker=HUM>(ipod.n white by-on) 
+>> Prompt: charger.n holding-ipod ipod-on
+>> Response:  <u speaker=HUM>(ipod.n black on-table ipod-on) 
+>> Response:  <u speaker=HUM>(edge.n of-wall edge-of) 
+
+>> Prompt: charger.n holding-ipod ipod-on
+>> Response:  <u speaker=HUM>(ipod.n black on-table ipod-on) 
+
+>> Prompt: computer.n mouse-for monitor-for desktop on-table device-for keyboard-for screen-for on-desk
+>> Response:  <u speaker=HUM>(computer.n keyboard-on keyboard-on computer-on) 
+
+>> Prompt: computer.n mouse-for monitor-for desktop on-table device-for keyboard-for screen-for on-desk
+>> Response:  <u speaker=HUM>(computer.n on-table computer-on) 
+
+>> Prompt: computer.n mouse-for monitor-for desktop on-table device-for keyboard-for screen-for on-desk
+>> Response:  <u speaker=HUM>(computer.n computer-on computer-of) 
+
+>> Prompt: computer.n mouse-for monitor-for desktop on-table device-for keyboard-for screen-for on-desk
+>> Response:  <u speaker=HUM>(computer.n keyboard-on computer-on) 
+
+>> Prompt: desk.n laptop-on lamp-on edge-of large wood has-edge mousepad-on computer-on wooden light monitor-on keyboard-on mouse-on
+>> Response:  <u speaker=HUM>(computer.n on-desk computer-on) 
+
+>> Prompt: desk.n laptop-on lamp-on edge-of large wood has-edge mousepad-on computer-on wooden light monitor-on keyboard-on mouse-on
+>> Response:  <u speaker=HUM>(computer.n on-table keyboard-on) 
+
+>> Prompt: desk.n laptop-on lamp-on edge-of large wood has-edge mousepad-on computer-on wooden light monitor-on keyboard-on mouse-on
+>> Response:  <u speaker=HUM>(edge.n of-image) 
+
+>> Prompt: desk.n laptop-on lamp-on edge-of large wood has-edge mousepad-on computer-on wooden light monitor-on keyboard-on mouse-on
+>> Response:  <u speaker=HUM>(computer.n on-table keyboard-on computer-on computer-on computer-on computer-on keyboard-on keyboard-on computer-on computer-on) 
+
+>> Prompt: edge.n of-desk of-image desk-has of-picture of-table table-has
+>> Response:  <u speaker=HUM>(computer.n keyboard-on computer-on) 
+
+>> Prompt: edge.n of-desk of-image desk-has of-picture of-table table-has
+>> Response:  <u speaker=HUM>(computer.n computer-of) 
+
+>> Prompt: edge.n of-desk of-image desk-has of-picture of-table table-has
+>> Response:  <u speaker=HUM>(laptop.n white on-table on-table on-table on-table for-table for-computer) 
+
+>> Prompt: edge.n of-desk of-image desk-has of-picture of-table table-has
+>> Response:  <u speaker=HUM>(laptop.n black on-table on-table computer-on) 
+
+>> Prompt: gray.n ipod-contains
+>> Response:  <u speaker=HUM>(cer.n cked|of|of-t) 
+
+>> Prompt: gray.n ipod-contains
+>> Response:  <u speaker=HUM>(computer.n keyboard-on keyboard-on keyboard-on) 
+
+>> Prompt: gray.n ipod-contains
+>> Response:  <u speaker=HUM>(computer.n on-desk keyboard-on) 
+
+>> Prompt: gray.n ipod-contains
+>> Response:  <u speaker=HUM>(ce.n on-table) 
+
+>> Prompt: ipod.n contains-gray on-charger charger-holding on-shelf white
+>> Response:  <u speaker=HUM>(computer.n on-table monitor-on computer-on computer-on) 
+
+>> Prompt: ipod.n contains-gray on-charger charger-holding on-shelf white
+>> Response:  <u speaker=HUM>(computer.n keyboard-on keyboard-on) 
+
+>> Prompt: ipod.n contains-gray on-charger charger-holding on-shelf white
+>> Response:  <u speaker=HUM>(keyboard.n white on-desk on-table keyboard-on computer-on keyboard-on) 
+
+>> Prompt: ipod.n contains-gray on-charger charger-holding on-shelf white
+>> Response:  <u speaker=HUM>(keyboard.n white on-table on-desk keyboard-for computer-for) 
+
+>> Prompt: keyboard.n portion-of on-table mac for-computer part-of gray on-desk white
+>> Response:  <u speaker=HUM>(part.n of-keyboard) 
+
+>> Prompt: keyboard.n portion-of on-table mac for-computer part-of gray on-desk white
+>> Response:  <u speaker=HUM>(part.n of-image of-image) 
+
+>> Prompt: keyboard.n portion-of on-table mac for-computer part-of gray on-desk white
+>> Response:  <u speaker=HUM>(computer.n on-table on-table for-computer computer-on) 
+
+>> Prompt: keyboard.n portion-of on-table mac for-computer part-of gray on-desk white
+>> Response:  <u speaker=HUM>(computer.n on-desk on-table keyboard-on) 
+
+>> Prompt: lamp.n on-table on silver red on-desk
+>> Response:  <u speaker=HUM>(laptop.n on-table for-laptop grey on-table on-table computer-on computer-of) 
+
+>> Prompt: lamp.n on-table on silver red on-desk
+>> Response:  <u speaker=HUM>(laptop.n black on-table for-laptop computer-of) 
+
+>> Prompt: lamp.n on-table on silver red on-desk
+>> Response:  <u speaker=HUM>(laptop.n black on-table on-table on-table for-computer) 
+
+>> Prompt: lamp.n on-table on silver red on-desk
+>> Response:  <u speaker=HUM>(laptop.n on-table on-table computer-on) 
+
+>> Prompt: laptop.n screen-larger|than on-table on monitor-larger|than black on-desk
+>> Response:  <u speaker=HUM>(computer.n computer-of) 
+
+>> Prompt: laptop.n screen-larger|than on-table on monitor-larger|than black on-desk
+>> Response:  <u speaker=HUM>(computer.n computer-on computer-on computer-on computer-on) 
+
+>> Prompt: laptop.n screen-larger|than on-table on monitor-larger|than black on-desk
+>> Response:  <u speaker=HUM>(part.n of-image) 
+
+>> Prompt: laptop.n screen-larger|than on-table on monitor-larger|than black on-desk
+>> Response:  <u speaker=HUM>(computer.n on-table on-desk keyboard-on keyboard-on) 
+
+>> Prompt: barge.n bic white
+>> Response:  <u speaker=HUM>(tame.n light|brown with-cheese) 
+
+>> Prompt: barge.n bic white
+>> Response:  <u speaker=HUM>(tainsseat.n light|brow) 
+
+>> Prompt: barge.n bic white
+>> Response:  <u speaker=HUM>(t.n ) 
+
+>> Prompt: barge.n bic white
+>> Response:  <u speaker=HUM>(crain.n ) 
+
+>> Prompt: magnet.n red
+>> Response:  <u speaker=HUM>(mug.n with-mell) 
+
+>> Prompt: magnet.n red
+>> Response:  <u speaker=HUM>(cheese.n ) 
+
+>> Prompt: magnet.n red
+>> Response:  <u speaker=HUM>(mufulur.n red) 
+
+>> Prompt: magnet.n red
+>> Response:  <u speaker=HUM>(mugeat.n ) 
+
+>> Prompt: monitor.n on-table part-of for-computer larger|than-laptop black on-desk
+>> Response:  <u speaker=HUM>(computer.n computer-on keyboard-on) 
+
+>> Prompt: monitor.n on-table part-of for-computer larger|than-laptop black on-desk
+>> Response:  <u speaker=HUM>(laptop.n white by-on computer-on keyboard-on computer-on computer-on computer-on) 
+
+>> Prompt: monitor.n on-table part-of for-computer larger|than-laptop black on-desk
+>> Response:  <u speaker=HUM>(laptop.n white on-table computer-on) 
+
+>> Prompt: monitor.n on-table part-of for-computer larger|than-laptop black on-desk
+>> Response:  <u speaker=HUM>(computer.n keyboard-on computer-on computer-on keyboard-on) 
+
+>> Prompt: mountain.n picture-has image-of image-has picture-of
+>> Response:  <u speaker=HUM>(image.n hon nnn image-of image-has) 
+
+>> Prompt: mountain.n picture-has image-of image-has picture-of
+>> Response:  <u speaker=HUM>(edge.n of-picture of-wall) 
+
+>> Prompt: mountain.n picture-has image-of image-has picture-of
+>> Response:  <u speaker=HUM>(edge.n of-image of-image of-image of-table image of-image) 
+
+>> Prompt: mountain.n picture-has image-of image-has picture-of
+>> Response:  <u speaker=HUM>(image.n on-neck) 
+
+>> Prompt: mouse.n on-mousepad on-table for-computer black on-desk
+>> Response:  <u speaker=HUM>(laptop.n black on-table on-table for-computer) 
+
+>> Prompt: mouse.n on-mousepad on-table for-computer black on-desk
+>> Response:  <u speaker=HUM>(computer.n on-table keyboard-on keyboard-on) 
+
+>> Prompt: mouse.n on-mousepad on-table for-computer black on-desk
+>> Response:  <u speaker=HUM>(laptop.n black on-table on-table on-table for-computer keyboard-on keyboard-on computer-on keyboard-on keyboard-on) 
+
+>> Prompt: mouse.n on-mousepad on-table for-computer black on-desk
+>> Response:  <u speaker=HUM>(computer.n keyboard-on keyboard-on keyboard-on computer-on keyboard-on keyboard-on keyboard-on computer-on) 
+
+>> Prompt: mousepad.n device-on on-desk mouse-on on-table
+>> Response:  <u speaker=HUM>(computer.n computer-on computer-on keyboard-on) 
+
+>> Prompt: mousepad.n device-on on-desk mouse-on on-table
+>> Response:  <u speaker=HUM>(computer.n on-table on-table) 
+
+>> Prompt: mousepad.n device-on on-desk mouse-on on-table
+>> Response:  <u speaker=HUM>(computer.n keyboard-of keyboard-on computer-on) 
+
+>> Prompt: mousepad.n device-on on-desk mouse-on on-table
+>> Response:  <u speaker=HUM>(computer.n computer-on computer-on computer-on computer-on computer-on) 
+
+>> Prompt: note.n on-wall
+>> Response:  <u speaker=HUM>(wall.n green poste-on poste-on poste-on corkboard-on corkboard-on corkboard-on corkboard-on corkboard-on corkboard-on corkboard-on corkboard- 
+
+>> Prompt: note.n on-wall
+>> Response:  <u speaker=HUM>(wall.n green porter-on poste-on corkboard-on corkboard-on corkboard-on shelf-on corkboard-on corkboard-on shelf-on) 
+
+>> Prompt: note.n on-wall
+>> Response:  <u speaker=HUM>(floor.n grey corkboard-on against-on) 
+
+>> Prompt: note.n on-wall
+>> Response:  <u speaker=HUM>(wall.n green poster-on poste-on) 
+
+>> Prompt: paper.n pinned
+>> Response:  <u speaker=HUM>(lamp.n on) 
+
+>> Prompt: paper.n pinned
+>> Response:  <u speaker=HUM>(part.n of-keyboard) 
+
+>> Prompt: paper.n pinned
+>> Response:  <u speaker=HUM>(part.n of-image of-table image of-of) 
+
+>> Prompt: paper.n pinned
+>> Response:  <u speaker=HUM>(part.n of-keyboard) 
+
+>> Prompt: part.n of-wall of-screen of-couch of-chair of-keyboard of-monitor
+>> Response:  <u speaker=HUM>(computer.n computer-on computer-on) 
+
+>> Prompt: part.n of-wall of-screen of-couch of-chair of-keyboard of-monitor
+>> Response:  <u speaker=HUM>(computer.n keyboard-on keyboard-on keyboard-on computer-on computer-on computer-on) 
+
+>> Prompt: part.n of-wall of-screen of-couch of-chair of-keyboard of-monitor
+>> Response:  <u speaker=HUM>(computer.n keyboard-on computer-on keyboard-on) 
+
+>> Prompt: part.n of-wall of-screen of-couch of-chair of-keyboard of-monitor
+>> Response:  <u speaker=HUM>(computer.n keyboard-on computer-on computer-on keyboard-on) 
+
+>> Prompt: picture.n landscape has-sun on-wall of-mountain of-sunset framed has-mountain hanging edge-of
+>> Response:  <u speaker=HUM>(mountain.n edge-of image-of) 
+
+>> Prompt: picture.n landscape has-sun on-wall of-mountain of-sunset framed has-mountain hanging edge-of
+>> Response:  <u speaker=HUM>(wall.n green porter-on) 
+
+>> Prompt: picture.n landscape has-sun on-wall of-mountain of-sunset framed has-mountain hanging edge-of
+>> Response:  <u speaker=HUM>(wall.n green postte-on poste-on poste-on lamp-on) 
+
+>> Prompt: picture.n landscape has-sun on-wall of-mountain of-sunset framed has-mountain hanging edge-of
+>> Response:  <u speaker=HUM>(wall.n green poster-on poste-on poste-on poste-on corkboard-on) 
+
+>> Prompt: shelf.n ipod-on speaker-on
+>> Response:  <u speaker=HUM>(computer.n keyboard-on computer-on) 
+
+>> Prompt: shelf.n ipod-on speaker-on
+>> Response:  <u speaker=HUM>(computer.n on-desk keyboard-on computer-on keyboard-on computer-on keyboard-on) 
+
+>> Prompt: shelf.n ipod-on speaker-on
+>> Response:  <u speaker=HUM>(computer.n computer-on) 
+
+>> Prompt: shelf.n ipod-on speaker-on
+>> Response:  <u speaker=HUM>(computer.n on-desk keyboard-on keyboard-on computer-on computer-on keyboard-on) 
+
+>> Prompt: speaker.n on-shelf
+>> Response:  <u speaker=HUM>(seat.n water ) 
+
+>> Prompt: speaker.n on-shelf
+>> Response:  <u speaker=HUM>(seat.n water black with-cheese) 
+
+>> Prompt: speaker.n on-shelf
+>> Response:  <u speaker=HUM>(floor.n poster wter-on poste-on poste-on poste-on) 
+
+>> Prompt: speaker.n on-shelf
+>> Response:  <u speaker=HUM>(floor.n grey) 
+
+>> Prompt: spindle.n chair-has couch-has green
+>> Response:  <u speaker=HUM>(seat.n por poster-on lamp-on lamp-on) 
+
+>> Prompt: spindle.n chair-has couch-has green
+>> Response:  <u speaker=HUM>(supind_p.n lamp-has) 
+
+>> Prompt: spindle.n chair-has couch-has green
+>> Response:  <u speaker=HUM>(supindle.n keyboard-on computer-on) 
+
+>> Prompt: spindle.n chair-has couch-has green
+>> Response:  <u speaker=HUM>(sunice with-cheese) 
+
+>> Prompt: sun.n picture-has image-has
+>> Response:  <u speaker=HUM>(edge.n of-image of-table edge-of) 
+
+>> Prompt: sun.n picture-has image-has
+>> Response:  <u speaker=HUM>(edge.n of-image of-image of-image of-image of-image) 
+
+>> Prompt: sun.n picture-has image-has
+>> Response:  <u speaker=HUM>(edge.n of-image of-image of-table image of-table edge-of) 
+
+>> Prompt: sun.n picture-has image-has
+>> Response:  <u speaker=HUM>(image.n han image-has image-has) 
+
+>> Prompt: sunset.n image-of picture-of
+>> Response:  <u speaker=HUM>(edge.n of-image of-table image-of edge-of image-of edge-of edge-of) 
+
+>> Prompt: sunset.n image-of picture-of
+>> Response:  <u speaker=HUM>(edge.n of-image of-image of-image) 
+
+>> Prompt: sunset.n image-of picture-of
+>> Response:  <u speaker=HUM>(image.n image-of) 
+
+>> Prompt: sunset.n image-of picture-of
+>> Response:  <u speaker=HUM>(edge.n of-image of-image of-table on-table on-table on-table hand-on) 
+
+>> Prompt: wall.n portion-of picture-on part-of image-on note-on
+>> Response:  <u speaker=HUM>(edge.n image-of) 
+
+>> Prompt: wall.n portion-of picture-on part-of image-on note-on
+>> Response:  <u speaker=HUM>(edge.n of-image of-image of-image of-image of-image of-image of-image of-image of-image of-image of-image of-image of-table image of-of) 
+
+>> Prompt: wall.n portion-of picture-on part-of image-on note-on
+>> Response:  <u speaker=HUM>(edge.n of-image of-image of-image) 
+
+>> Prompt: wall.n portion-of picture-on part-of image-on note-on
+>> Response:  <u speaker=HUM>(image.n image-has image-has n image-on image-on nig-of) 
+
+>> Prompt: couch.n portion-of part-of green has-spindle
+>> Response:  <u speaker=HUM>(wall.n green poste-on corkboard-on) 
+
+>> Prompt: couch.n portion-of part-of green has-spindle
+>> Response:  <u speaker=HUM>(part.n of-image of-image of-table edge-image of-image of-image of-image of-table on-image of-image of-image of-table on-table image of-image of-image of-image of- 
+
+>> Prompt: couch.n portion-of part-of green has-spindle
+>> Response:  <u speaker=HUM>(part.n of-keyboard) 
+
+>> Prompt: couch.n portion-of part-of green has-spindle
+>> Response:  <u speaker=HUM>(part.n of-keyboard) 
+
+>> Prompt: table.n laptop-on lamp-on mouse-on wood screen-on has-edge mousepad-on light monitor-on light-on large device-on computer-on wooden keyboard-on edge-of
+>> Response:  <u speaker=HUM>(computer.n keyboard-on keyboard-on) 
+
+>> Prompt: table.n laptop-on lamp-on mouse-on wood screen-on has-edge mousepad-on light monitor-on light-on large device-on computer-on wooden keyboard-on edge-of
+>> Response:  <u speaker=HUM>(edge.n of-image of-image of-table image-has edge-of) 
+
+>> Prompt: table.n laptop-on lamp-on mouse-on wood screen-on has-edge mousepad-on light monitor-on light-on large device-on computer-on wooden keyboard-on edge-of
+>> Response:  <u speaker=HUM>(computer.n computer-on keyboard-of) 
+
+>> Prompt: table.n laptop-on lamp-on mouse-on wood screen-on has-edge mousepad-on light monitor-on light-on large device-on computer-on wooden keyboard-on edge-of
+>> Response:  <u speaker=HUM>(computer.n on-desk keyboard-on) 
+
+>> Prompt: image.n landscape has-sun on-wall of-mountain of-sunset framed has-mountain of-element hanging edge-of
+>> Response:  <u speaker=HUM>(wall.n green on-wall) 
+
+>> Prompt: image.n landscape has-sun on-wall of-mountain of-sunset framed has-mountain of-element hanging edge-of
+>> Response:  <u speaker=HUM>(wall.n green poste-on poste-on corkboard-on against corkboard-on corkboard-on) 
+
+>> Prompt: image.n landscape has-sun on-wall of-mountain of-sunset framed has-mountain of-element hanging edge-of
+>> Response:  <u speaker=HUM>(wall.n green por-on poste-on) 
+
+>> Prompt: image.n landscape has-sun on-wall of-mountain of-sunset framed has-mountain of-element hanging edge-of
+>> Response:  <u speaker=HUM>(wall.n green porten on-wall) 
+
+>> Prompt: element.n image-of
+>> Response:  <u speaker=HUM>(wall.n green) 
+
+>> Prompt: element.n image-of
+>> Response:  <u speaker=HUM>(edge.n of-picture) 
+
+>> Prompt: element.n image-of
+>> Response:  <u speaker=HUM>(edge.n of-image of-image of-image) 
+
+>> Prompt: element.n image-of
+>> Response:  <u speaker=HUM>(edge.n of-image of-table table-has image-has) 
+
+>> Prompt: light.n red on silver on-table
+>> Response:  <u speaker=HUM>(computer.n computer-on keyboard-on keyboard-on computer-on) 
+
+>> Prompt: light.n red on silver on-table
+>> Response:  <u speaker=HUM>(computer.n computer-on) 
+
+>> Prompt: light.n red on silver on-table
+>> Response:  <u speaker=HUM>(computer.n keyboard-on computer-on) 
+
+>> Prompt: light.n red on silver on-table
+>> Response:  <u speaker=HUM>(computer.n keyboard-on computer-on computer-on) 
+
+>> Prompt: device.n on-mousepad black for-computer on-table
+>> Response:  <u speaker=HUM>(computer.n keyboard-on computer-on) 
+
+>> Prompt: device.n on-mousepad black for-computer on-table
+>> Response:  <u speaker=HUM>(computer.n keyboard-on keyboard-on keyboard-on keyboard-on computer-on computer-on computer-on) 
+
+>> Prompt: device.n on-mousepad black for-computer on-table
+>> Response:  <u speaker=HUM>(computer.n keyboard-on computer-on computer-on computer-on) 
+
+>> Prompt: device.n on-mousepad black for-computer on-table
+>> Response:  <u speaker=HUM>(computer.n on-desk keyboard-on) 
+
+>> Prompt: screen.n portion-of on-table part-of for-computer larger|than-laptop black
+>> Response:  <u speaker=HUM>(computer.n keyboard-on keyboard-on computer-on) 
+
+>> Prompt: screen.n portion-of on-table part-of for-computer larger|than-laptop black
+>> Response:  <u speaker=HUM>(edge.n of-image of-image of-image of-image of-image) 
+
+>> Prompt: screen.n portion-of on-table part-of for-computer larger|than-laptop black
+>> Response:  <u speaker=HUM>(computer.n on-table on-table keyboard-for computer-on) 
+
+>> Prompt: screen.n portion-of on-table part-of for-computer larger|than-laptop black
+>> Response:  <u speaker=HUM>(edge.n of-wall edge-of) 
+
+>> Prompt: portion.n of-wall of-screen of-couch of-keyboard
+>> Response:  <u speaker=HUM>(part.n of-image of-picture) 
+
+>> Prompt: portion.n of-wall of-screen of-couch of-keyboard
+>> Response:  <u speaker=HUM>(computer.n computer-on keyboard-on computer-on computer-on computer-on) 
+
+>> Prompt: portion.n of-wall of-screen of-couch of-keyboard
+>> Response:  <u speaker=HUM>(computer.n computer-on computer-on computer-on computer-on) 
+
+>> Prompt: portion.n of-wall of-screen of-couch of-keyboard
+>> Response:  <u speaker=HUM>(part.n of-keyboard) 

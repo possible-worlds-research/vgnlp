@@ -86,11 +86,13 @@ def permutations(situations, substitutions_per_situation):
     # Process each situation and apply substitutions
     for script_id, script_text in situations.items():
         script_number = int(script_id.split()[1])
+        print(script_number)
         substitutions = substitutions_per_situation.get(script_number, [])
 
         modified_text = script_text
         situation_versions = []
         for index, (old_word, new_word) in enumerate(substitutions, start=1):
+            print(index)
             modified_text = substitute_word(modified_text, old_word, new_word, index, script_number)
             situation_versions.append(f"Situation {script_number}.{index}")
             new_situations[situation_versions[-1]] = modified_text

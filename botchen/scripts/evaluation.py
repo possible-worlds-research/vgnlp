@@ -83,9 +83,17 @@ def create_matrices(script_id, optimal_script=False, saving_directory=None):
         entity_properties = extract_entities_properties(content, optimal_script=True)
     # If not an optimal script, load the evaluation data for the given script_id
     else:
-        file_path = f'./data/evaluation_data/evaluation_situation{script_id}.txt'
-        with open(file_path, 'r') as file:
-            content = file.read()
+        if script_id == 0:
+            for file_name in os.listdir('./data/evaluation_data/'):
+                if file_name.startswith('evaluation_situation') and file_name.endswith('.txt'):
+                    file_path = os.path.join('./data/evaluation_data/', file_name)
+                    with open(file_path, 'r') as file:
+                        script_content = file.read()
+                        content += script_content
+        elif script_id != 0:
+            file_path = f'./data/evaluation_data/evaluation_situation{script_id}.txt'
+            with open(file_path, 'r') as file:
+                content = file.read()
         entity_properties = extract_entities_properties(content, optimal_script=False)
 
     # Create a sorted list of all unique properties across entities
@@ -118,7 +126,7 @@ def create_matrices(script_id, optimal_script=False, saving_directory=None):
 # script_id_eval and script_id_optimal, which situations from which to retrieve from
 def evaluation_with_vectorial_space(evaluating_framework,
                                     script_id_eval,
-                                    script_id_optimal):
+                                    script_id_optimal, log_file=None):
     """
     Evaluates the similarity between vector spaces derived from an evaluation script
     and an optimal training script. The function supports two evaluation frameworks:
@@ -138,6 +146,9 @@ def evaluation_with_vectorial_space(evaluating_framework,
       and the top 10 most similar rows and columns.
     """
     print(f"Evaluating with framework: {evaluating_framework}, script eval ID: {script_id_eval}, script optimal ID: {script_id_optimal}")
+    if log_file:
+        with open(log_file, 'a') as file:
+            file.write(f"\nNEWNEW Evaluating with framework: {evaluating_framework}, script eval ID: {script_id_eval}, script optimal ID: {script_id_optimal}\n")
 
     # Generate evaluation vector space (matrix & DataFrame)
     eval_matrix, eval_df = create_matrices(script_id_eval, saving_directory='./data/vectorial_spaces/evaluation/')
@@ -155,12 +166,25 @@ def evaluation_with_vectorial_space(evaluating_framework,
         # Ensure the evaluated space includes all optimal dimensions, filling missing values with zero
         new_eval_df = new_eval_df.reindex(index=optimal_df.index, columns=optimal_df.columns, fill_value=0)
         new_optimal_df = optimal_df
+        if log_file:
+            with open(log_file, 'a') as file:
+                file.write(f"\nEVALUATION 1 - Fill up dimensionalities evaluation\n")
 
     elif evaluating_framework == 2:
         print('EVALUATION 2 - Retraction evaluation')
         # Compare only shared dimensions from both datasets
         new_optimal_df = optimal_df.loc[matching_rows, matching_columns]
         new_eval_df = eval_df.loc[matching_rows, matching_columns]
+        if new_optimal_df.empty or new_eval_df.empty:
+            print("None - No intersection")
+            if log_file:
+                with open(log_file, 'a') as file:
+                    file.write("\nEVALUATION 2 - Retraction evaluation\nNone - No intersection\n")
+            return
+        else:
+            if log_file:
+                with open(log_file, 'a') as file:
+                    file.write(f"\nEVALUATION 2 - Retraction evaluation\n")
     else:
         print('WARNING - no evaluation framework selected')
 
@@ -172,8 +196,11 @@ def evaluation_with_vectorial_space(evaluating_framework,
     # Extract diagonal values (self-similarities) from the row similarity matrix
     row_diagonal_series = pd.Series(row_similarity_df.to_numpy().diagonal(), index=row_similarity_df.index)
 
-    print('fAverage similarity rows: {row_diagonal_series.mean():.3f}')
+    print(f'Average Rows Similarity: {row_diagonal_series.mean():.3f}')
     print('Most similar rows:\n', row_diagonal_series.nlargest(10))
+    if log_file:
+        with open(log_file, 'a') as file:
+            file.write(f"\n\nAverage Rows Similarity: {row_diagonal_series.mean():.3f}\n\n Most similar rows:\n{row_diagonal_series.nlargest(10)}\n")
 
     # Compute cosine similarity between column vectors (feature-level similarity)
     column_similarity_df = pd.DataFrame(
@@ -185,48 +212,57 @@ def evaluation_with_vectorial_space(evaluating_framework,
     # Display feature-level similarity results
     print(f'Average Column Similarity: {col_diagonal_series.mean():.3f}')
     print('Most similar columns:\n', col_diagonal_series.nlargest(10))
+    if log_file:
+        with open(log_file, 'a') as file:
+            file.write(f"\n\nAverage Column Similarity: {col_diagonal_series.mean():.3f}\n\nMost similar columns:\n{col_diagonal_series.nlargest(10)}\n")
 
-function_map = {
-    "evaluation": evaluation_with_vectorial_space,
-    "create_matrices": create_matrices
-}
+# function_map = {
+#     "evaluation": evaluation_with_vectorial_space,
+#     "create_matrices": create_matrices
+# }
 
-def main():
-    parser = argparse.ArgumentParser(description="Run evaluation or create activation matrices.")
+# def main():
+#     parser = argparse.ArgumentParser(description="Run evaluation or create activation matrices.")
+#
+#     parser.add_argument("function", type=str, choices=function_map.keys(),
+#                         help="Function to execute: 'evaluation' or 'create_matrices'")
+#
+#     # Common arguments for both functions
+#     parser.add_argument("script_id", type=int, help="Script ID to process (0 means all)")
+#
+#     # Arguments specific to evaluation
+#     parser.add_argument("--evaluating_framework", type=int, choices=[1, 2],
+#                         help="Evaluation framework: 1 (Fill up dimensionalities) or 2 (Retraction evaluation)")
+#     parser.add_argument("--script_id_optimal", type=int,
+#                         help="Optimal script ID for comparison (only for evaluation)")
+#
+#     # Arguments specific to create_matrices
+#     parser.add_argument("--optimal_script", action="store_true",
+#                         help="Flag to indicate processing an optimal script")
+#     parser.add_argument("--saving_directory", type=str, default=None,
+#                         help="Directory to save the activation matrix (optional)")
+#
+#     args = parser.parse_args()
+#
+#     func = function_map.get(args.function)
+#
+#     if func == evaluation_with_vectorial_space:
+#         if args.evaluating_framework is None or args.script_id_optimal is None:
+#             print("Error: 'evaluation' requires --evaluating_framework and --script_id_optimal.")
+#             return
+#         func(args.evaluating_framework, args.script_id, args.script_id_optimal)
+#
+#     elif func == create_matrices:
+#         func(args.script_id, args.optimal_script, args.saving_directory)
+#
+#     else:
+#         print(f"Function '{args.function}' not found.")
+#
+# if __name__ == "__main__":
+#     main()
 
-    parser.add_argument("function", type=str, choices=function_map.keys(),
-                        help="Function to execute: 'evaluation' or 'create_matrices'")
+open('./data/evaluation_file.txt', 'w').close()  # This clears the file by opening & immediately closing it
 
-    # Common arguments for both functions
-    parser.add_argument("script_id", type=int, help="Script ID to process (0 means all)")
-
-    # Arguments specific to evaluation
-    parser.add_argument("--evaluating_framework", type=int, choices=[1, 2],
-                        help="Evaluation framework: 1 (Fill up dimensionalities) or 2 (Retraction evaluation)")
-    parser.add_argument("--script_id_optimal", type=int,
-                        help="Optimal script ID for comparison (only for evaluation)")
-
-    # Arguments specific to create_matrices
-    parser.add_argument("--optimal_script", action="store_true",
-                        help="Flag to indicate processing an optimal script")
-    parser.add_argument("--saving_directory", type=str, default=None,
-                        help="Directory to save the activation matrix (optional)")
-
-    args = parser.parse_args()
-
-    func = function_map.get(args.function)
-
-    if func == evaluation_with_vectorial_space:
-        if args.evaluating_framework is None or args.script_id_optimal is None:
-            print("Error: 'evaluation' requires --evaluating_framework and --script_id_optimal.")
-            return
-        func(args.evaluating_framework, args.script_id, args.script_id_optimal)
-
-    elif func == create_matrices:
-        func(args.script_id, args.optimal_script, args.saving_directory)
-
-    else:
-        print(f"Function '{args.function}' not found.")
-
-if __name__ == "__main__":
-    main()
+for script_id_eval in range (0,13):
+    for script_id_optimal in range(0,13):
+        evaluation_with_vectorial_space(1, script_id_eval, script_id_optimal, log_file='./data/evaluation_file.txt')

@@ -1,0 +1,246 @@
+>> Loaded models dict_keys(['chat'])
+>> Prompt: body.n giraffe-has animal-has spotted topographic_point-on
+>> Response:  <u speaker=HUM>(topographic_point.n on-neck) 
+>> Prompt: body.n giraffe-has animal-has spotted topographic_point-on
+>> Response:  <u speaker=HUM>(topographic_point.n topographic_point-on animal-has) 
+>> Prompt: body.n giraffe-has animal-has spotted topographic_point-on
+>> Response:  <u speaker=HUM>(topographic_point.n on-neck) 
+>> Prompt: body.n giraffe-has animal-has spotted topographic_point-on
+>> Response:  <u speaker=HUM>(topographic_point.n on-neck on-neck) 
+>> Prompt: branch.n plant-has tree-has
+>> Response:  <u speaker=HUM>(branch.n tree-has plant-has) 
+>> Prompt: branch.n plant-has tree-has
+>> Response:  <u speaker=HUM>(plant.n green next|to-street next|to-street along-street along-street) 
+>> Prompt: branch.n plant-has tree-has
+>> Response:  <u speaker=HUM>(branch.n plant-has) 
+>> Prompt: branch.n plant-has tree-has
+>> Response:  <u speaker=HUM>(branch.n on-plant plant-has) 
+>> Prompt: limb.n plant-has
+
+>> Prompt: crate.n animal-eats|from giraffe-eats|from pasture-in holds-pasture gray has-pasture
+>> Response:  <u speaker=HUM>(animal.n animal-has animal-has animal-has) 
+
+>> Prompt: crate.n animal-eats|from giraffe-eats|from pasture-in holds-pasture gray has-pasture
+>> Response:  <u speaker=HUM>(animal.n on|therdssleft animal-has) 
+
+>> Prompt: crate.n animal-eats|from giraffe-eats|from pasture-in holds-pasture gray has-pasture
+>> Response:  <u speaker=HUM>(animal.n animal-has animal-has) 
+
+>> Prompt: crate.n animal-eats|from giraffe-eats|from pasture-in holds-pasture gray has-pasture
+>> Response:  <u speaker=HUM>(animal.n animal-has) 
+
+>> Prompt: ear.n giraffe-has head-has pointy animal-has on|right on|left black on-giraffe on-animal white
+>> Response:  <u speaker=HUM>(head.n has-horn has-horn has-horn has-horn has-horn has-horn animal-has animal-has animal-has animal-has animal-has animal-has animal-has animal-has animal- 
+
+>> Prompt: ear.n giraffe-has head-has pointy animal-has on|right on|left black on-giraffe on-animal white
+>> Response:  <u speaker=HUM>(animal.n on|the|right feding in-park has-head eats|from-crate has-head has-ear has-head eats-pasture has-ear has-head has-ear enjoying-pasture 
+
+>> Prompt: ear.n giraffe-has head-has pointy animal-has on|right on|left black on-giraffe on-animal white
+>> Response:  <u speaker=HUM>(animal.n animal-has) 
+
+>> Prompt: ear.n giraffe-has head-has pointy animal-has on|right on|left black on-giraffe on-animal white
+>> Response:  <u speaker=HUM>(head.n has-headlight) 
+
+>> Prompt: eye.n giraffe-has animal-has
+>> Response:  <u speaker=HUM>(animal.n animal-has animal-has) 
+
+>> Prompt: eye.n giraffe-has animal-has
+>> Response:  <u speaker=HUM>(animal.n animal-has) 
+
+>> Prompt: eye.n giraffe-has animal-has
+>> Response:  <u speaker=HUM>(animal.n head-has animal-has animal-has animal-has animal-has animal-has animal-has) 
+
+>> Prompt: eye.n giraffe-has animal-has
+>> Response:  <u speaker=HUM>(head.n animal-has) 
+
+>> Prompt: giraffe.n ear-on has-nose feeding eats|from-crate has-ear has-head on|the|left center tree-behind has-mouth in|center has-neck has-horn has-topographic_point eats-pasture has-eye enjoying-pasture has-body on|left in-park on|the|right eating-pasture has-mane
+>> Response:  <u speaker=HUM>(head.n has-headlight) 
+
+>> Prompt: giraffe.n ear-on has-nose feeding eats|from-crate has-ear has-head on|the|left center tree-behind has-mouth in|center has-neck has-horn has-topographic_point eats-pasture has-eye enjoying-pasture has-body on|left in-park on|the|right eating-pasture has-mane
+>> Response:  <u speaker=HUM>(ear.n animal-has animal-has animal-has) 
+
+>> Prompt: giraffe.n ear-on has-nose feeding eats|from-crate has-ear has-head on|the|left center tree-behind has-mouth in|center has-neck has-horn has-topographic_point eats-pasture has-eye enjoying-pasture has-body on|left in-park on|the|right eating-pasture has-mane
+>> Response:  <u speaker=HUM>(head.n animal-has) 
+
+>> Prompt: giraffe.n ear-on has-nose feeding eats|from-crate has-ear has-head on|the|left center tree-behind has-mouth in|center has-neck has-horn has-topographic_point eats-pasture has-eye enjoying-pasture has-body on|left in-park on|the|right eating-pasture has-mane
+>> Response:  <u speaker=HUM>(ear.n on|left woman-has) 
+
+>> Prompt: head.n giraffe-has animal-has has-horn has-ear
+>> Response:  <u speaker=HUM>(animal.n on|the|r feeding in|center feing in-park has-head has-head eats-pasture has-head has-head has-ear has-ear has-ear has-topograp 
+
+>> Prompt: head.n giraffe-has animal-has has-horn has-ear
+>> Response:  <u speaker=HUM>(head.n animal-has animal-has) 
+
+>> Prompt: head.n giraffe-has animal-has has-horn has-ear
+>> Response:  <u speaker=HUM>(animal.n on|the|left in|center feeding in-park has-head eats-head eats|from-pasture has-head eats|from-pasture has-ear has-ear has-head enjoying 
+
+>> Prompt: head.n giraffe-has animal-has has-horn has-ear
+>> Response:  <u speaker=HUM>(head.n has-head animal-has animal-has animal-has animal-has animal-has) 
+
+>> Prompt: horn.n giraffe-has animal-has head-has
+>> Response:  <u speaker=HUM>(head.n has-horn has-horn has-horn animal-has animal-has animal-has animal-has animal-has animal-has animal-has) 
+
+>> Prompt: horn.n giraffe-has animal-has head-has
+>> Response:  <u speaker=HUM>(animal.n animal-has) 
+
+>> Prompt: horn.n giraffe-has animal-has head-has
+>> Response:  <u speaker=HUM>(animal.n on|the|left feeding in-park has-head eats|from-head has-head eats-pasture has-head eats-pasture has-head has-head enjoying-pasture eats- 
+
+>> Prompt: horn.n giraffe-has animal-has head-has
+>> Response:  <u speaker=HUM>(animal.n on|therigght feed in-park eats|from-crate has-pasture eats-pasture has-head eats-pasture has-head eats-pasture has-head enjoying-pasture has 
+
+>> Prompt: leaf.n tree-has on-tree green
+>> Response:  <u speaker=HUM>(branch.n plant-has) 
+
+>> Prompt: leaf.n tree-has on-tree green
+>> Response:  <u speaker=HUM>(tree.n green next|to-next|to-street) 
+
+>> Prompt: leaf.n tree-has on-tree green
+>> Response:  <u speaker=HUM>(tree.n next|to-street) 
+
+>> Prompt: leaf.n tree-has on-tree green
+>> Response:  <u speaker=HUM>(plant.n on-plant tree-has tree-has tree-has) 
+
+>> Prompt: mane.n giraffe-has animal-has brown
+>> Response:  <u speaker=HUM>(ear.n animal-has) 
+
+>> Prompt: mane.n giraffe-has animal-has brown
+>> Response:  <u speaker=HUM>(head.n has-headlight woman-has woman-wearing woman-wearing) 
+
+>> Prompt: mane.n giraffe-has animal-has brown
+>> Response:  <u speaker=HUM>(head.n has-headlight woman-wearing woman-wearing woman-wearing) 
+
+>> Prompt: mane.n giraffe-has animal-has brown
+>> Response:  <u speaker=HUM>(animal.n animal-has) 
+
+>> Prompt: mouth.n giraffe-has animal-has
+>> Response:  <u speaker=HUM>(head.n animal-has animal-has) 
+
+>> Prompt: mouth.n giraffe-has animal-has
+>> Response:  <u speaker=HUM>(animal.n on|he|left t in|center feeding in-park eats|from-crate has-pasture eats-pasture has-ear has-ear eats-pasture has-ear has-head has-head 
+
+>> Prompt: mouth.n giraffe-has animal-has
+>> Response:  <u speaker=HUM>(head.n animal-has animal-has animal-has animal-has) 
+
+>> Prompt: mouth.n giraffe-has animal-has
+>> Response:  <u speaker=HUM>(animal.n on|the|left t in|center feeding in-park has-head eats-crate has-head eats-crate enjoying-crate-pasture has-pasture eats-pasture has-head has 
+
+>> Prompt: neck.n giraffe-has animal-has topographic_point-on
+>> Response:  <u speaker=HUM>(topographic_point.n on-neck) 
+
+>> Prompt: neck.n giraffe-has animal-has topographic_point-on
+>> Response:  <u speaker=HUM>(topographic_point.n on-neck on-neck) 
+
+>> Prompt: neck.n giraffe-has animal-has topographic_point-on
+>> Response:  <u speaker=HUM>(topographic_point.n on-neck on-neck) 
+
+>> Prompt: neck.n giraffe-has animal-has topographic_point-on
+>> Response:  <u speaker=HUM>(topographic_point.n on-neck) 
+
+>> Prompt: nose.n giraffe-has animal-has has-nostril long
+>> Response:  <u speaker=HUM>(nostril.n animal-has head-has) 
+
+>> Prompt: nose.n giraffe-has animal-has has-nostril long
+>> Response:  <u speaker=HUM>(nostril.n animal-has) 
+
+>> Prompt: nose.n giraffe-has animal-has has-nostril long
+>> Response:  <u speaker=HUM>(nostril.n nose-has animal-has) 
+
+>> Prompt: nose.n giraffe-has animal-has has-nostril long
+>> Response:  <u speaker=HUM>(horn.n animal-has animal-has animal-has animal-has) 
+
+>> Prompt: nostril.n nose-has
+>> Response:  <u speaker=HUM>(nostril.n animal-has animal-has) 
+
+>> Prompt: nostril.n nose-has
+>> Response:  <u speaker=HUM>(nostril.n animal-has animal-has) 
+
+>> Prompt: nostril.n nose-has
+>> Response:  <u speaker=HUM>(nostril.n nose-has animal-has) 
+
+>> Prompt: nostril.n nose-has
+>> Response:  <u speaker=HUM>(horn.n nose-has animal-has) 
+
+>> Prompt: park.n tree-in animal-in plant-in giraffe-in
+>> Response:  <u speaker=HUM>(animal.n animal-has) 
+
+>> Prompt: park.n tree-in animal-in plant-in giraffe-in
+>> Response:  <u speaker=HUM>(head.n animal-has) 
+
+>> Prompt: park.n tree-in animal-in plant-in giraffe-in
+>> Response:  <u speaker=HUM>(animal.n animal-has) 
+
+>> Prompt: park.n tree-in animal-in plant-in giraffe-in
+>> Response:  <u speaker=HUM>(headlight.n woman-has) 
+
+>> Prompt: pasture.n animal-eating giraffe-eating crate-holds giraffe-eats giraffe-enjoying dried animal-enjoying stalked green animal-eats in-crate crate-has
+>> Response:  <u speaker=HUM>(animal.n animal-has) 
+
+>> Prompt: pasture.n animal-eating giraffe-eating crate-holds giraffe-eats giraffe-enjoying dried animal-enjoying stalked green animal-eats in-crate crate-has
+>> Response:  <u speaker=HUM>(head.n has-head animal-has animal-has head-has animal-has animal-has animal-has) 
+
+>> Prompt: pasture.n animal-eating giraffe-eating crate-holds giraffe-eats giraffe-enjoying dried animal-enjoying stalked green animal-eats in-crate crate-has
+>> Response:  <u speaker=HUM>(animal.n animal-has animal-has animal-has) 
+
+>> Prompt: pasture.n animal-eating giraffe-eating crate-holds giraffe-eats giraffe-enjoying dried animal-enjoying stalked green animal-eats in-crate crate-has
+>> Response:  <u speaker=HUM>(head.n animal-has animal-has) 
+
+>> Prompt: topographic_point.n giraffe-has on-neck animal-has on-body black
+>> Response:  <u speaker=HUM>(topographic_point.n on-neck on-neck) 
+
+>> Prompt: topographic_point.n giraffe-has on-neck animal-has on-body black
+>> Response:  <u speaker=HUM>(topographic_point.n on-body on-neck) 
+
+>> Prompt: topographic_point.n giraffe-has on-neck animal-has on-body black
+>> Response:  <u speaker=HUM>(topographic_point.n on|tophic_pointphic_pointphic_pointphic_point.n on-neck on-neck) 
+
+>> Prompt: topographic_point.n giraffe-has on-neck animal-has on-body black
+>> Response:  <u speaker=HUM>(topographic_point.n on-neck on-neck) 
+
+>> Prompt: tree.n behind-animal has-leaf has-plant behind-giraffe plant-on has-branch leaf-on in-park
+>> Response:  <u speaker=HUM>(plant.n has-branch) 
+
+>> Prompt: tree.n behind-animal has-leaf has-plant behind-giraffe plant-on has-branch leaf-on in-park
+>> Response:  <u speaker=HUM>(plant.n has-branch) 
+
+>> Prompt: tree.n behind-animal has-leaf has-plant behind-giraffe plant-on has-branch leaf-on in-park
+>> Response:  <u speaker=HUM>(plant.n on-plant plant-has) 
+
+>> Prompt: tree.n behind-animal has-leaf has-plant behind-giraffe plant-on has-branch leaf-on in-park
+>> Response:  <u speaker=HUM>(branch.n tree-has tree-has) 
+
+>> Prompt: animal.n ear-on has-nose feeding eats|from-crate has-ear has-head plant-behind on|the|left center tree-behind has-mouth in|center has-neck has-horn has-topographic_point eats-pasture has-eye enjoying-pasture has-body on|left in-park on|the|right eating-pasture has-mane
+>> Response:  <u speaker=HUM>(head.n has-headlight) 
+
+>> Prompt: animal.n ear-on has-nose feeding eats|from-crate has-ear has-head plant-behind on|the|left center tree-behind has-mouth in|center has-neck has-horn has-topographic_point eats-pasture has-eye enjoying-pasture has-body on|left in-park on|the|right eating-pasture has-mane
+>> Response:  <u speaker=HUM>(ear.n woman-has woman-wearing) 
+
+>> Prompt: animal.n ear-on has-nose feeding eats|from-crate has-ear has-head plant-behind on|the|left center tree-behind has-mouth in|center has-neck has-horn has-topographic_point eats-pasture has-eye enjoying-pasture has-body on|left in-park on|the|right eating-pasture has-mane
+>> Response:  <u speaker=HUM>(head.n has-headlight) 
+
+>> Prompt: animal.n ear-on has-nose feeding eats|from-crate has-ear has-head plant-behind on|the|left center tree-behind has-mouth in|center has-neck has-horn has-topographic_point eats-pasture has-eye enjoying-pasture has-body on|left in-park on|the|right eating-pasture has-mane
+>> Response:  <u speaker=HUM>(ear.n animal-has animal-has animal-in animal-has) 
+
+>> Prompt: plant.n on-plant behind-animal tree-has plant-has has-plant plant-on has-limb has-branch green in-park on-tree
+>> Response:  <u speaker=HUM>(branch.n tree-has) 
+
+>> Prompt: plant.n on-plant behind-animal tree-has plant-has has-plant plant-on has-limb has-branch green in-park on-tree
+>> Response:  <u speaker=HUM>(plant.n on-plant tree-has) 
+
+>> Prompt: plant.n on-plant behind-animal tree-has plant-has has-plant plant-on has-limb has-branch green in-park on-tree
+>> Response:  <u speaker=HUM>(plant.n on-animal) 
+
+>> Prompt: plant.n on-plant behind-animal tree-has plant-has has-plant plant-on has-limb has-branch green in-park on-tree
+>> Response:  <u speaker=HUM>(plant.n on-plant tree-has) 
+
+>> Prompt: limb.n plant-has
+>> Response:  <u speaker=HUM>(branch.n plant-has plant-has) 
+
+>> Prompt: limb.n plant-has
+>> Response:  <u speaker=HUM>(plant.n on-plant tree-has) 
+
+>> Prompt: limb.n plant-has
+>> Response:  <u speaker=HUM>(branch.n plant-has) 
+
+>> Prompt: limb.n plant-has
+>> Response:  <u speaker=HUM>(plant.n on-plant plant-has) 
