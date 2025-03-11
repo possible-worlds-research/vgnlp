@@ -1,0 +1,209 @@
+>> Loaded models dict_keys(['chat'])
+>> Prompt: adult.n elephant-in|front animal-in|front
+>> Response:  <u speaker=HUM>(elephant.n fan fan feed feed farr faw.n facesed with-cheese) 
+>> Prompt: adult.n elephant-in|front animal-in|front
+>> Response:  <u speaker=HUM>(animal.n adult) 
+>> Prompt: adult.n elephant-in|front animal-in|front
+>> Response:  <u speaker=HUM>(animal.n on|the|r animal-has) 
+>> Prompt: adult.n elephant-in|front animal-in|front
+>> Response:  <u speaker=HUM>(animal.n animal-has animal-has animal-has) 
+>> Prompt: back.n animal-seen elephant-seen
+>> Response:  <u speaker=HUM>(animal.n animal-has animal-in animal-has animal-has) 
+>> Prompt: back.n animal-seen elephant-seen
+>> Response:  <u speaker=HUM>(tail.n animal-has) 
+>> Prompt: back.n animal-seen elephant-seen
+>> Response:  <u speaker=HUM>(elephant.n fan figing feeding in|front|of-sidewalk has-street van-street) 
+>> Prompt: back.n animal-seen elephant-seen
+>> Response:  <u speaker=HUM>(elephant.n fe|front) 
+
+>> Prompt: ear.n animal-has elephant-has
+>> Response:  <u speaker=HUM>(tail.n animal-has elephant-has animal-has) 
+
+>> Prompt: ear.n animal-has elephant-has
+>> Response:  <u speaker=HUM>(tail.n animal-has) 
+
+>> Prompt: ear.n animal-has elephant-has
+>> Response:  <u speaker=HUM>(elephant.n fan adult has-eye elephant-has) 
+
+>> Prompt: ear.n animal-has elephant-has
+>> Response:  <u speaker=HUM>(elephant.n elephant-has) 
+
+>> Prompt: branch.n plant-has tree-has
+>> Response:  <u speaker=HUM>(plant.n on-plant plant-has) 
+
+>> Prompt: branch.n plant-has tree-has
+>> Response:  <u speaker=HUM>(branch.n plant-has) 
+
+>> Prompt: branch.n plant-has tree-has
+>> Response:  <u speaker=HUM>(plant.n green next|to-next|to-street) 
+
+>> Prompt: branch.n plant-has tree-has
+>> Response:  <u speaker=HUM>(branch.n plant-has) 
+
+>> Prompt: elephant.n has-tail has-trunk trunk-of has-ear gray has-ivory adult braid-next|to big braid-behind small in-center in|front-adult has-eye in|herds seen|an-eye baby in-braid and-elephant elephant-and seen-back
+>> Response:  <u speaker=HUM>(animal.n elephant-has elephant-has) 
+
+>> Prompt: elephant.n has-tail has-trunk trunk-of has-ear gray has-ivory adult braid-next|to big braid-behind small in-center in|front-adult has-eye in|herds seen|an-eye baby in-braid and-elephant elephant-and seen-back
+>> Response:  <u speaker=HUM>(animal.n animal-has) 
+
+>> Prompt: elephant.n has-tail has-trunk trunk-of has-ear gray has-ivory adult braid-next|to big braid-behind small in-center in|front-adult has-eye in|herds seen|an-eye baby in-braid and-elephant elephant-and seen-back
+>> Response:  <u speaker=HUM>(ear.n elephant-has elephant-has) 
+
+>> Prompt: elephant.n has-tail has-trunk trunk-of has-ear gray has-ivory adult braid-next|to big braid-behind small in-center in|front-adult has-eye in|herds seen|an-eye baby in-braid and-elephant elephant-and seen-back
+>> Response:  <u speaker=HUM>(ear.n animal-has) 
+
+>> Prompt: eye.n animal-has elephant-seen|an animal-seen|an elephant-has
+>> Response:  <u speaker=HUM>(tail.n animal-has animal-has animal-has) 
+
+>> Prompt: eye.n animal-has elephant-seen|an animal-seen|an elephant-has
+>> Response:  <u speaker=HUM>(tail.n animal-has animal-has animal-has) 
+
+>> Prompt: eye.n animal-has elephant-seen|an animal-seen|an elephant-has
+>> Response:  <u speaker=HUM>(tail.n elephant-has) 
+
+>> Prompt: eye.n animal-has elephant-seen|an animal-seen|an elephant-has
+>> Response:  <u speaker=HUM>(tail.n animal-has) 
+
+>> Prompt: grass.n tall yellow brown
+>> Response:  <u speaker=HUM>(window.n glass house-has) 
+
+>> Prompt: grass.n tall yellow brown
+>> Response:  <u speaker=HUM>(mut.n micking sitting|in|at|a-table man-sitting|a) 
+
+>> Prompt: grass.n tall yellow brown
+>> Response:  <u speaker=HUM>(cel.n on-dish with) 
+
+>> Prompt: grass.n tall yellow brown
+>> Response:  <u speaker=HUM>(cell.n on-table with) 
+
+>> Prompt: leaf.n small on-braid
+>> Response:  <u speaker=HUM>(tail.n elephant-has) 
+
+>> Prompt: leaf.n small on-braid
+>> Response:  <u speaker=HUM>(body.n elephant-has) 
+
+>> Prompt: leaf.n small on-braid
+>> Response:  <u speaker=HUM>(tail.n elephant-has elephant-has) 
+
+>> Prompt: leaf.n small on-braid
+>> Response:  <u speaker=HUM>(body.n animal-has animal-has animal-has) 
+
+>> Prompt: center.n animal-in elephant-in
+>> Response:  <u speaker=HUM>(tail.n animal-has animal-has animal-has) 
+
+>> Prompt: center.n animal-in elephant-in
+>> Response:  <u speaker=HUM>(tail.n animal-has) 
+
+>> Prompt: center.n animal-in elephant-in
+>> Response:  <u speaker=HUM>(elephant.n elephant-has) 
+
+>> Prompt: center.n animal-in elephant-in
+>> Response:  <u speaker=HUM>(tail.n elephant-has) 
+
+>> Prompt: trunk.n of-animal elephant-has of-elephant animal-has long
+>> Response:  <u speaker=HUM>(elephant.n elephant-has) 
+
+>> Prompt: trunk.n of-animal elephant-has of-elephant animal-has long
+>> Response:  <u speaker=HUM>(elephant.n fig fe|t feed fe|front|of) 
+
+>> Prompt: trunk.n of-animal elephant-has of-elephant animal-has long
+>> Response:  <u speaker=HUM>(elephant.n elephant-has) 
+
+>> Prompt: trunk.n of-animal elephant-has of-elephant animal-has long
+>> Response:  <u speaker=HUM>(tail.n animal-has) 
+
+>> Prompt: ivory.n animal-has elephant-has
+>> Response:  <u speaker=HUM>(trunk.n animal-has) 
+
+>> Prompt: ivory.n animal-has elephant-has
+>> Response:  <u speaker=HUM>(tail.n animal-has) 
+
+>> Prompt: ivory.n animal-has elephant-has
+>> Response:  <u speaker=HUM>(trunk.n elephant-has) 
+
+>> Prompt: ivory.n animal-has elephant-has
+>> Response:  <u speaker=HUM>(tail.n animal-has) 
+
+>> Prompt: tail.n animal-has elephant-has
+>> Response:  <u speaker=HUM>(tail.n animal-has) 
+
+>> Prompt: tail.n animal-has elephant-has
+>> Response:  <u speaker=HUM>(animal.n animal-has animal-has animal-has animal-has) 
+
+>> Prompt: tail.n animal-has elephant-has
+>> Response:  <u speaker=HUM>(animal.n adult has-tail) 
+
+>> Prompt: tail.n animal-has elephant-has
+>> Response:  <u speaker=HUM>(tail.n animal-has animal-has) 
+
+>> Prompt: tree.n has-branch
+>> Response:  <u speaker=HUM>(branch.n tree-has) 
+
+>> Prompt: tree.n has-branch
+>> Response:  <u speaker=HUM>(branch.n plant-has) 
+
+>> Prompt: tree.n has-branch
+>> Response:  <u speaker=HUM>(plant.n on-plant plant-has) 
+
+>> Prompt: tree.n has-branch
+>> Response:  <u speaker=HUM>(branch.n plant-has plant-has) 
+
+>> Prompt: braid.n behind-animal next|to-elephant dense animal-in green leaf-on plant-on behind-elephant elephant-in next|to-animal
+>> Response:  <u speaker=HUM>(trunk.n animal-has) 
+
+>> Prompt: braid.n behind-animal next|to-elephant dense animal-in green leaf-on plant-on behind-elephant elephant-in next|to-animal
+>> Response:  <u speaker=HUM>(trunk.n elephant-has) 
+
+>> Prompt: braid.n behind-animal next|to-elephant dense animal-in green leaf-on plant-on behind-elephant elephant-in next|to-animal
+>> Response:  <u speaker=HUM>(plant.n on-plant tree-has plant-has) 
+
+>> Prompt: braid.n behind-animal next|to-elephant dense animal-in green leaf-on plant-on behind-elephant elephant-in next|to-animal
+>> Response:  <u speaker=HUM>(plant.n on-plant tree-has) 
+
+>> Prompt: plant.n small tall yellow has-branch brown on-braid
+>> Response:  <u speaker=HUM>(animal.n elephant-has) 
+
+>> Prompt: plant.n small tall yellow has-branch brown on-braid
+>> Response:  <u speaker=HUM>(body.n animal-has) 
+
+>> Prompt: plant.n small tall yellow has-branch brown on-braid
+>> Response:  <u speaker=HUM>(body.n animal-has) 
+
+>> Prompt: plant.n small tall yellow has-branch brown on-braid
+>> Response:  <u speaker=HUM>(body.n animal-has) 
+
+>> Prompt: animal.n has-tail and-animal has-trunk seen-body trunk-of has-ear gray has-ivory adult braid-next|to big braid-behind small in-center in|front-adult animal-and body-of has-eye in|herds has-limb seen|an-eye has-body baby in-braid seen-back
+>> Response:  <u speaker=HUM>(animal.n animal-has) 
+
+>> Prompt: animal.n has-tail and-animal has-trunk seen-body trunk-of has-ear gray has-ivory adult braid-next|to big braid-behind small in-center in|front-adult animal-and body-of has-eye in|herds has-limb seen|an-eye has-body baby in-braid seen-back
+>> Response:  <u speaker=HUM>(ear.n on|rivight animal-has animal-has) 
+
+>> Prompt: animal.n has-tail and-animal has-trunk seen-body trunk-of has-ear gray has-ivory adult braid-next|to big braid-behind small in-center in|front-adult animal-and body-of has-eye in|herds has-limb seen|an-eye has-body baby in-braid seen-back
+>> Response:  <u speaker=HUM>(animal.n animal-has animal-has animal-has) 
+
+>> Prompt: animal.n has-tail and-animal has-trunk seen-body trunk-of has-ear gray has-ivory adult braid-next|to big braid-behind small in-center in|front-adult animal-and body-of has-eye in|herds has-limb seen|an-eye has-body baby in-braid seen-back
+>> Response:  <u speaker=HUM>(animal.n animal-has animal-has) 
+
+>> Prompt: body.n animal-has of-animal animal-seen long
+>> Response:  <u speaker=HUM>(animal.n animal-has) 
+
+>> Prompt: body.n animal-has of-animal animal-seen long
+>> Response:  <u speaker=HUM>(animal.n animal-has animal-has) 
+
+>> Prompt: body.n animal-has of-animal animal-seen long
+>> Response:  <u speaker=HUM>(animal.n animal-has) 
+
+>> Prompt: body.n animal-has of-animal animal-seen long
+>> Response:  <u speaker=HUM>(animal.n animal-has head-has animal-has head-has) 
+
+>> Prompt: limb.n animal-has
+>> Response:  <u speaker=HUM>(plant.n on-plant plant-has) 
+
+>> Prompt: limb.n animal-has
+>> Response:  <u speaker=HUM>(branch.n plant-has plant-has) 
+
+>> Prompt: limb.n animal-has
+>> Response:  <u speaker=HUM>(branch.n plant-has) 
+
+>> Prompt: limb.n animal-has
+>> Response:  <u speaker=HUM>(branch.n tree-has) 

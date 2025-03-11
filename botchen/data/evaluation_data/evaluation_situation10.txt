@@ -1,0 +1,244 @@
+>> Loaded models dict_keys(['chat'])
+>> Prompt: table.n with-plate with-dish
+>> Response:  <u speaker=HUM>(dish.n ) 
+>> Prompt: table.n with-plate with-dish
+>> Response:  <u speaker=HUM>(dish.n ) 
+>> Prompt: table.n with-plate with-dish
+>> Response:  <u speaker=HUM>(dish.n ) 
+>> Prompt: table.n with-plate with-dish
+>> Response:  <u speaker=HUM>(dish.n ) 
+>> Prompt: plate.n table-with next|to-bowl plate-with with-plate of-plate cracker-on white
+>> Response:  <u speaker=HUM>(cheese.n white ) 
+>> Prompt: plate.n table-with next|to-bowl plate-with with-plate of-plate cracker-on white
+>> Response:  <u speaker=HUM>(dish.n ) 
+>> Prompt: plate.n table-with next|to-bowl plate-with with-plate of-plate cracker-on white
+>> Response:  <u speaker=HUM>(cheese.n ) 
+>> Prompt: plate.n table-with next|to-bowl plate-with with-plate of-plate cracker-on white
+>> Response:  <u speaker=HUM>(cheese.n ) 
+>> Prompt: fabric.n red
+>> Response:  <u speaker=HUM>(glass.n ) 
+>> Prompt: fabric.n red
+>> Response:  <u speaker=HUM>(food.n ) 
+>> Response:  <u speaker=HUM>(bureau.n ) 
+
+>> Prompt: fabric.n red
+>> Response:  <u speaker=HUM>(bureau.n ) 
+
+>> Prompt: fabric.n red
+>> Response:  <u speaker=HUM>(bureau.n tower-on) 
+
+>> Prompt: bowl.n plate-next|to dish-next|to of-bowl
+>> Response:  <u speaker=HUM>(plate.n ) 
+
+>> Prompt: bowl.n plate-next|to dish-next|to of-bowl
+>> Response:  <u speaker=HUM>(dish.n ) 
+
+>> Prompt: bowl.n plate-next|to dish-next|to of-bowl
+>> Response:  <u speaker=HUM>(dish.n ) 
+
+>> Prompt: bowl.n plate-next|to dish-next|to of-bowl
+>> Response:  <u speaker=HUM>(dish.n on-dish dish-dish dish-with) 
+
+>> Prompt: basket.n light|brown with-handle light|tan
+>> Response:  <u speaker=HUM>(crainsssword_puzzle.n tanding to-on) 
+
+>> Prompt: basket.n light|brown with-handle light|tan
+>> Response:  <u speaker=HUM>(cord.n ) 
+
+>> Prompt: basket.n light|brown with-handle light|tan
+>> Response:  <u speaker=HUM>(cord.n on-desk monitor-on) 
+
+>> Prompt: basket.n light|brown with-handle light|tan
+>> Response:  <u speaker=HUM>(window.n ) 
+
+>> Prompt: tray.n of-tray chopstick-in|middle|of
+>> Response:  <u speaker=HUM>(cheese.n ) 
+
+>> Prompt: tray.n of-tray chopstick-in|middle|of
+>> Response:  <u speaker=HUM>(traice.n ) 
+
+>> Prompt: tray.n of-tray chopstick-in|middle|of
+>> Response:  <u speaker=HUM>(t.n ) 
+
+>> Prompt: tray.n of-tray chopstick-in|middle|of
+>> Response:  <u speaker=HUM>(cheese.n ) 
+
+>> Prompt: vegetable.n full|of-vegetable
+>> Response:  <u speaker=HUM>(dish.n ) 
+
+>> Prompt: vegetable.n full|of-vegetable
+>> Response:  <u speaker=HUM>(dish.n ) 
+
+>> Prompt: vegetable.n full|of-vegetable
+>> Response:  <u speaker=HUM>(cheese.n flllllllar-under) 
+
+>> Prompt: vegetable.n full|of-vegetable
+>> Response:  <u speaker=HUM>(dish.n on-dish with) 
+
+>> Prompt: chopstick.n in|middle|of-platter in|middle|of-tray
+>> Response:  <u speaker=HUM>(cord.n ) 
+
+>> Prompt: chopstick.n in|middle|of-platter in|middle|of-tray
+>> Response:  <u speaker=HUM>(cheese.n ) 
+
+>> Prompt: chopstick.n in|middle|of-platter in|middle|of-tray
+>> Response:  <u speaker=HUM>(cheese.n ) 
+
+>> Prompt: chopstick.n in|middle|of-platter in|middle|of-tray
+>> Response:  <u speaker=HUM>(crop.n glass reddish) 
+
+>> Prompt: cheese.n white
+>> Response:  <u speaker=HUM>(mufin.n mainisidddle-on) 
+
+>> Prompt: cheese.n white
+>> Response:  <u speaker=HUM>(cheese.n ) 
+
+>> Prompt: cheese.n white
+>> Response:  <u speaker=HUM>(mufin.n ) 
+
+>> Prompt: cheese.n white
+>> Response:  <u speaker=HUM>(cheese.n yellllllow-under) 
+
+>> Prompt: handle.n basket-with container-with
+>> Response:  <u speaker=HUM>(cheese.n ) 
+
+>> Prompt: handle.n basket-with container-with
+>> Response:  <u speaker=HUM>(macker.n with-meames) 
+
+>> Prompt: handle.n basket-with container-with
+>> Response:  <u speaker=HUM>(maink.n man-has) 
+
+>> Prompt: handle.n basket-with container-with
+>> Response:  <u speaker=HUM>(maink.n light|micking with-memeled) 
+
+>> Prompt: cracker.n on-dish on-plate
+>> Response:  <u speaker=HUM>(plate.n with-dish) 
+
+>> Prompt: cracker.n on-dish on-plate
+>> Response:  <u speaker=HUM>(dish.n on-dish ) 
+
+>> Prompt: cracker.n on-dish on-plate
+>> Response:  <u speaker=HUM>(plate.n ) 
+
+>> Prompt: cracker.n on-dish on-plate
+>> Response:  <u speaker=HUM>(dish.n with-cheese) 
+
+>> Prompt: napkin.n white
+>> Response:  <u speaker=HUM>(dish.n with-dish) 
+
+>> Prompt: napkin.n white
+>> Response:  <u speaker=HUM>(dish.n with-dish dish-with) 
+
+>> Prompt: napkin.n white
+>> Response:  <u speaker=HUM>(dish.n ) 
+
+>> Prompt: napkin.n white
+>> Response:  <u speaker=HUM>(dish.n ) 
+
+>> Prompt: bread.n flat
+>> Response:  <u speaker=HUM>(dish.n with-cheese) 
+
+>> Prompt: bread.n flat
+>> Response:  <u speaker=HUM>(plate.n with-plate) 
+
+>> Prompt: bread.n flat
+>> Response:  <u speaker=HUM>(dish.n with-dish dish-with) 
+
+>> Prompt: bread.n flat
+>> Response:  <u speaker=HUM>(dish.n ) 
+
+>> Prompt: drop.n 
+>> Response:  <u speaker=HUM>(cheese.n ) 
+
+>> Prompt: drop.n 
+>> Response:  <u speaker=HUM>(seat.n ) 
+
+>> Prompt: drop.n 
+>> Response:  <u speaker=HUM>(sun.n ) 
+
+>> Prompt: drop.n 
+>> Response:  <u speaker=HUM>(sun.n ) 
+
+>> Prompt: ginger.n pickled
+>> Response:  <u speaker=HUM>(me.n ) 
+
+>> Prompt: ginger.n pickled
+>> Response:  <u speaker=HUM>(me.n white) 
+
+>> Prompt: ginger.n pickled
+>> Response:  <u speaker=HUM>(me.n with-meat) 
+
+>> Prompt: ginger.n pickled
+>> Response:  <u speaker=HUM>(baby.n pined) 
+
+>> Prompt: dish.n cracker-on of-dish with-dish table-with next|to-bowl next|to-container dish-with white
+>> Response:  <u speaker=HUM>(dish.n ) 
+
+>> Prompt: dish.n cracker-on of-dish with-dish table-with next|to-bowl next|to-container dish-with white
+>> Response:  <u speaker=HUM>(dish.n ) 
+
+>> Prompt: dish.n cracker-on of-dish with-dish table-with next|to-bowl next|to-container dish-with white
+>> Response:  <u speaker=HUM>(dish.n ) 
+
+>> Prompt: dish.n cracker-on of-dish with-dish table-with next|to-bowl next|to-container dish-with white
+>> Response:  <u speaker=HUM>(cheese.n mbllllllllow) 
+
+>> Prompt: container.n with-handle of-container light|tan light|brown dish-next|to
+>> Response:  <u speaker=HUM>(chord.n ) 
+
+>> Prompt: container.n with-handle of-container light|tan light|brown dish-next|to
+>> Response:  <u speaker=HUM>(cheese.n ) 
+
+>> Prompt: container.n with-handle of-container light|tan light|brown dish-next|to
+>> Response:  <u speaker=HUM>(cor.n ) 
+
+>> Prompt: container.n with-handle of-container light|tan light|brown dish-next|to
+>> Response:  <u speaker=HUM>(cor.n ) 
+
+>> Prompt: platter.n of-platter chopstick-in|middle|of object-in|middle|of
+>> Response:  <u speaker=HUM>(cor.n cked|of-than ) 
+
+>> Prompt: platter.n of-platter chopstick-in|middle|of object-in|middle|of
+>> Response:  <u speaker=HUM>(window.n large wooden woooooutsssh has-mountain.n edge-of) 
+
+>> Prompt: platter.n of-platter chopstick-in|middle|of object-in|middle|of
+>> Response:  <u speaker=HUM>(cror.n ) 
+
+>> Prompt: platter.n of-platter chopstick-in|middle|of object-in|middle|of
+>> Response:  <u speaker=HUM>(cory.n ) 
+
+>> Prompt: bulb.n pickled
+>> Response:  <u speaker=HUM>(meat.n white) 
+
+>> Prompt: bulb.n pickled
+>> Response:  <u speaker=HUM>(bled) 
+
+>> Prompt: bulb.n pickled
+>> Response:  <u speaker=HUM>(me.n with-mel) 
+
+>> Prompt: bulb.n pickled
+>> Response:  <u speaker=HUM>(bled) 
+
+>> Prompt: food.n full|of-food white
+>> Response:  <u speaker=HUM>(cheese.n ) 
+
+>> Prompt: food.n full|of-food white
+>> Response:  <u speaker=HUM>(food.n ) 
+
+>> Prompt: food.n full|of-food white
+>> Response:  <u speaker=HUM>(food.n ) 
+
+>> Prompt: food.n full|of-food white
+>> Response:  <u speaker=HUM>(food.n ) 
+
+>> Prompt: object.n in|middle|of-platter
+>> Response:  <u speaker=HUM>(cheese.n yer ) 
+
+>> Prompt: object.n in|middle|of-platter
+>> Response:  <u speaker=HUM>(cheese.n ) 
+
+>> Prompt: object.n in|middle|of-platter
+>> Response:  <u speaker=HUM>(cheese.n ) 
+
+>> Prompt: object.n in|middle|of-platter
+>> Response:  <u speaker=HUM>(cheese.n ) 

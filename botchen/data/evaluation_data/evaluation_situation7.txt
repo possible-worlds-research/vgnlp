@@ -1,0 +1,303 @@
+>> Loaded models dict_keys(['chat'])
+>> Prompt: bottle.n with-cap green
+>> Response:  <u speaker=HUM>(dish.n ) 
+>> Prompt: bottle.n with-cap green
+>> Response:  <u speaker=HUM>(cheese.n ) 
+>> Prompt: bottle.n with-cap green
+>> Response:  <u speaker=HUM>(cheese.n ) 
+>> Prompt: bottle.n with-cap green
+>> Response:  <u speaker=HUM>(cheese.n ) 
+>> Prompt: bread.n dish-with on-dish plate-with on-plate
+>> Response:  <u speaker=HUM>(plate.n ) 
+>> Prompt: bread.n dish-with on-dish plate-with on-plate
+>> Response:  <u speaker=HUM>(plate.n ) 
+>> Prompt: bread.n dish-with on-dish plate-with on-plate
+>> Response:  <u speaker=HUM>(dish.n ) 
+>> Prompt: bread.n dish-with on-dish plate-with on-plate
+>> Response:  <u speaker=HUM>(dish.n on-dish) 
+>> Prompt: cup.n glass with-liquid
+>> Response:  <u speaker=HUM>(d.n ) 
+>> Prompt: cup.n glass with-liquid
+>> Response:  <u speaker=HUM>(d.n ) 
+>> Prompt: cup.n glass with-liquid
+>> Prompt: condiment.n in-condiment
+>> Response:  <u speaker=HUM>(d.n ) 
+
+>> Prompt: cup.n glass with-liquid
+>> Response:  <u speaker=HUM>(seat.n ) 
+
+>> Prompt: drink.n red in-glass
+>> Response:  <u speaker=HUM>(glass.n on-table with) 
+
+>> Prompt: drink.n red in-glass
+>> Response:  <u speaker=HUM>(glass.n on-table with) 
+
+>> Prompt: drink.n red in-glass
+>> Response:  <u speaker=HUM>(glass.n ) 
+
+>> Prompt: drink.n red in-glass
+>> Response:  <u speaker=HUM>(drop.n ) 
+
+>> Prompt: egg.n scrambled yellow muffin-with muffin-under white
+>> Response:  <u speaker=HUM>(cheese.n mblarmamess) 
+
+>> Prompt: egg.n scrambled yellow muffin-with muffin-under white
+>> Response:  <u speaker=HUM>(mufin.n white macer-insssword_puzle) 
+
+>> Prompt: egg.n scrambled yellow muffin-with muffin-under white
+>> Response:  <u speaker=HUM>(cheese.n ) 
+
+>> Prompt: egg.n scrambled yellow muffin-with muffin-under white
+>> Response:  <u speaker=HUM>(mell.n with-cheese) 
+
+>> Prompt: food.n table-with
+>> Response:  <u speaker=HUM>(food.n ) 
+
+>> Prompt: food.n table-with
+>> Response:  <u speaker=HUM>(dish.n ) 
+
+>> Prompt: food.n table-with
+>> Response:  <u speaker=HUM>(glass.n on-table ) 
+
+>> Prompt: food.n table-with
+>> Response:  <u speaker=HUM>(glass.n ) 
+
+>> Prompt: fork.n 
+>> Response:  <u speaker=HUM>(computer.n on-table computer-on computer-on computer-on) 
+
+>> Prompt: fork.n 
+>> Response:  <u speaker=HUM>(main.n ) 
+
+>> Prompt: fork.n 
+>> Response:  <u speaker=HUM>(mufin.n ) 
+
+>> Prompt: fork.n 
+>> Response:  <u speaker=HUM>(mufin.n ) 
+
+>> Prompt: glass.n clear small plate-under on-plate on-table dish-under drink-in on-dish
+>> Response:  <u speaker=HUM>(dish.n ) 
+
+>> Prompt: glass.n clear small plate-under on-plate on-table dish-under drink-in on-dish
+>> Response:  <u speaker=HUM>(dish.n ) 
+
+>> Prompt: glass.n clear small plate-under on-plate on-table dish-under drink-in on-dish
+>> Response:  <u speaker=HUM>(dish.n ) 
+
+>> Prompt: glass.n clear small plate-under on-plate on-table dish-under drink-in on-dish
+>> Response:  <u speaker=HUM>(dish.n ) 
+
+>> Prompt: label.n orange
+>> Response:  <u speaker=HUM>(cer.n with-cheese) 
+
+>> Prompt: label.n orange
+>> Response:  <u speaker=HUM>(window.n ) 
+
+>> Prompt: label.n orange
+>> Response:  <u speaker=HUM>(baby.n cked|of-t) 
+
+>> Prompt: label.n orange
+>> Response:  <u speaker=HUM>(window.n ) 
+
+>> Prompt: liquid.n cup-with mug-with brown
+>> Response:  <u speaker=HUM>(meat.n ) 
+
+>> Prompt: liquid.n cup-with mug-with brown
+>> Response:  <u speaker=HUM>(d.n ) 
+
+>> Prompt: liquid.n cup-with mug-with brown
+>> Response:  <u speaker=HUM>(mufin.n micking in-saucess-sauce with) 
+
+>> Prompt: liquid.n cup-with mug-with brown
+>> Response:  <u speaker=HUM>(meat.n with-cheese) 
+
+>> Prompt: meat.n plate-with dish-with
+>> Response:  <u speaker=HUM>(dish.n with-cheese) 
+
+>> Prompt: meat.n plate-with dish-with
+>> Response:  <u speaker=HUM>(dish.n on-dish ) 
+
+>> Prompt: meat.n plate-with dish-with
+>> Response:  <u speaker=HUM>(plate.n ) 
+
+>> Prompt: meat.n plate-with dish-with
+>> Response:  <u speaker=HUM>(dish.n ) 
+
+>> Prompt: muffin.n under-egg with-cheese with-egg under-cheese english
+>> Response:  <u speaker=HUM>(cheese.n ) 
+
+>> Prompt: muffin.n under-egg with-cheese with-egg under-cheese english
+>> Response:  <u speaker=HUM>(cheese.n ) 
+
+>> Prompt: muffin.n under-egg with-cheese with-egg under-cheese english
+>> Response:  <u speaker=HUM>(cheese.n ) 
+
+>> Prompt: muffin.n under-egg with-cheese with-egg under-cheese english
+>> Response:  <u speaker=HUM>(cheese.n ) 
+
+>> Prompt: napkin.n dish-under on-dish plate-under on-plate
+>> Response:  <u speaker=HUM>(dish.n ) 
+
+>> Prompt: napkin.n dish-under on-dish plate-under on-plate
+>> Response:  <u speaker=HUM>(plate.n with-plate) 
+
+>> Prompt: napkin.n dish-under on-dish plate-under on-plate
+>> Response:  <u speaker=HUM>(dish.n with-dish dish-with) 
+
+>> Prompt: napkin.n dish-under on-dish plate-under on-plate
+>> Response:  <u speaker=HUM>(dish.n ) 
+
+>> Prompt: plate.n bread-on under-napkin small napkin-on on-table under-glass with-meat with-bread glass-on tomato-on
+>> Response:  <u speaker=HUM>(plate.n ) 
+
+>> Prompt: plate.n bread-on under-napkin small napkin-on on-table under-glass with-meat with-bread glass-on tomato-on
+>> Response:  <u speaker=HUM>(dish.n dish-under) 
+
+>> Prompt: plate.n bread-on under-napkin small napkin-on on-table under-glass with-meat with-bread glass-on tomato-on
+>> Response:  <u speaker=HUM>(plate.n on-dish ) 
+
+>> Prompt: plate.n bread-on under-napkin small napkin-on on-table under-glass with-meat with-bread glass-on tomato-on
+>> Response:  <u speaker=HUM>(dish.n on-dish) 
+
+>> Prompt: cap.n bottle-with
+>> Response:  <u speaker=HUM>(cheese.n ) 
+
+>> Prompt: cap.n bottle-with
+>> Response:  <u speaker=HUM>(mel.n with-cheese) 
+
+>> Prompt: cap.n bottle-with
+>> Response:  <u speaker=HUM>(mufin.n ) 
+
+>> Prompt: cap.n bottle-with
+>> Response:  <u speaker=HUM>(mufur.n ) 
+
+>> Prompt: sauce.n in-sauce
+>> Response:  <u speaker=HUM>(mut.n with-melllid) 
+
+>> Prompt: sauce.n in-sauce
+>> Response:  <u speaker=HUM>(saun.n ) 
+
+>> Prompt: sauce.n in-sauce
+>> Response:  <u speaker=HUM>(me.n on-table with) 
+
+>> Prompt: sauce.n in-sauce
+>> Response:  <u speaker=HUM>(saun.n ) 
+
+>> Prompt: sausage.n small
+>> Response:  <u speaker=HUM>(saunid.n ) 
+
+>> Prompt: sausage.n small
+>> Response:  <u speaker=HUM>(seat.n ) 
+
+>> Prompt: sausage.n small
+>> Response:  <u speaker=HUM>(seat.n ) 
+
+>> Prompt: sausage.n small
+>> Response:  <u speaker=HUM>(mug.n under-cheese) 
+
+>> Prompt: straw.n 
+>> Response:  <u speaker=HUM>(main.n meat-ow) 
+
+>> Prompt: straw.n 
+>> Response:  <u speaker=HUM>(seat.n ) 
+
+>> Prompt: straw.n 
+>> Response:  <u speaker=HUM>(seat.n ) 
+
+>> Prompt: straw.n 
+>> Response:  <u speaker=HUM>(saun.n ) 
+
+>> Prompt: table.n with-food dish-on plate-on black glass-on
+>> Response:  <u speaker=HUM>(plate.n ) 
+
+>> Prompt: table.n with-food dish-on plate-on black glass-on
+>> Response:  <u speaker=HUM>(glass.n ) 
+
+>> Prompt: table.n with-food dish-on plate-on black glass-on
+>> Response:  <u speaker=HUM>(dish.n ) 
+
+>> Prompt: table.n with-food dish-on plate-on black glass-on
+>> Response:  <u speaker=HUM>(dish.n with-dish dish-with) 
+
+>> Prompt: tomato.n on-plate on-dish
+>> Response:  <u speaker=HUM>(dish.n with-cheese) 
+
+>> Prompt: tomato.n on-plate on-dish
+>> Response:  <u speaker=HUM>(plate.n ) 
+
+>> Prompt: tomato.n on-plate on-dish
+>> Response:  <u speaker=HUM>(dish.n ) 
+
+>> Prompt: tomato.n on-plate on-dish
+>> Response:  <u speaker=HUM>(dish.n ) 
+
+>> Prompt: mug.n glass with-liquid
+>> Response:  <u speaker=HUM>(d.n ) 
+
+>> Prompt: mug.n glass with-liquid
+>> Response:  <u speaker=HUM>(d.n ) 
+
+>> Prompt: mug.n glass with-liquid
+>> Response:  <u speaker=HUM>(d.n ) 
+
+>> Prompt: mug.n glass with-liquid
+>> Response:  <u speaker=HUM>(sun.n ) 
+
+>> Prompt: cheese.n pastry-with scrambled yellow muffin-with muffin-under pastry-under white
+>> Response:  <u speaker=HUM>(cheese.n white) 
+
+>> Prompt: cheese.n pastry-with scrambled yellow muffin-with muffin-under pastry-under white
+>> Response:  <u speaker=HUM>(cheese.n ) 
+
+>> Prompt: cheese.n pastry-with scrambled yellow muffin-with muffin-under pastry-under white
+>> Response:  <u speaker=HUM>(cheese.n ) 
+
+>> Prompt: cheese.n pastry-with scrambled yellow muffin-with muffin-under pastry-under white
+>> Response:  <u speaker=HUM>(cheese.n ) 
+
+>> Prompt: pastry.n under-cheese with-cheese english
+>> Response:  <u speaker=HUM>(cheese.n ) 
+
+>> Prompt: pastry.n under-cheese with-cheese english
+>> Response:  <u speaker=HUM>(mug.n ) 
+
+>> Prompt: pastry.n under-cheese with-cheese english
+>> Response:  <u speaker=HUM>(cheese.n ) 
+
+>> Prompt: pastry.n under-cheese with-cheese english
+>> Response:  <u speaker=HUM>(cheese.n yelllllllllllllllow-with) 
+
+>> Prompt: dish.n bread-on vegetable-on under-napkin small napkin-on on-table under-glass with-meat with-bread glass-on tomato-on
+>> Response:  <u speaker=HUM>(dish.n with-dish of-plate) 
+
+>> Prompt: dish.n bread-on vegetable-on under-napkin small napkin-on on-table under-glass with-meat with-bread glass-on tomato-on
+>> Response:  <u speaker=HUM>(plate.n on-plate) 
+
+>> Prompt: dish.n bread-on vegetable-on under-napkin small napkin-on on-table under-glass with-meat with-bread glass-on tomato-on
+>> Response:  <u speaker=HUM>(plate.n plate-with) 
+
+>> Prompt: dish.n bread-on vegetable-on under-napkin small napkin-on on-table under-glass with-meat with-bread glass-on tomato-on
+>> Response:  <u speaker=HUM>(plate.n plate-with) 
+
+>> Prompt: vegetable.n on-dish
+>> Response:  <u speaker=HUM>(dish.n with-cheese) 
+
+>> Prompt: vegetable.n on-dish
+>> Response:  <u speaker=HUM>(dish.n ) 
+
+>> Prompt: vegetable.n on-dish
+>> Response:  <u speaker=HUM>(dish.n ) 
+
+>> Prompt: vegetable.n on-dish
+>> Response:  <u speaker=HUM>(dish.n with-cheese) 
+
+>> Prompt: condiment.n in-condiment
+>> Response:  <u speaker=HUM>(cheese.n ) 
+
+>> Prompt: condiment.n in-condiment
+>> Response:  <u speaker=HUM>(saun.n with-dish) 
+
+>> Prompt: condiment.n in-condiment
+>> Response:  <u speaker=HUM>(t.n ) 
+
+>> Prompt: condiment.n in-condiment
+>> Response:  <u speaker=HUM>(tame.n with-dish)
