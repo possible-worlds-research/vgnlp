@@ -16,18 +16,11 @@
 # The user can dinamically select the situation in which to test the model on and if to store it.
 
 import os
-from os.path import dirname, realpath, join
-from flask import Blueprint
-import click
-import torch
-from datetime import datetime
-import pandas as pd
-import numpy as np
-import re
 from sklearn.metrics.pairwise import cosine_similarity
-from scipy.spatial.distance import pdist, squareform
-from scipy.stats import spearmanr
-import argparse
+import pandas as pd
+import re
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 # Extract entities and properties from content
 def extract_entities_properties(content, optimal_script):
@@ -49,7 +42,13 @@ def extract_entities_properties(content, optimal_script):
             entity_properties[entity].add(prop)
     return entity_properties
 
-def create_matrices(script_id, optimal_script=False, saving_directory=None):
+def count_entities_properties(entity_properties):
+    num_entities = len(entity_properties)  # Number of unique entities
+    all_properties = set(prop for props in entity_properties.values() for prop in props)
+    num_properties = len(all_properties)  # Unique property count
+    return num_entities, num_properties
+
+def create_matrices(script_id, optimal_script=False, saving_directory=None, entity_check=False):
     """
     This function creates an activation matrix based on entity properties from a script.
     It either processes a specific script or an optimal script and generates a matrix of
@@ -119,6 +118,8 @@ def create_matrices(script_id, optimal_script=False, saving_directory=None):
         print(f'Matrix has been stored as {file_path}')
     else:
         print('No saving directory provided, matrix will not be saved.')
+    if entity_check:
+        return entity_properties
     return activation_matrix, df
 
 # Evaluate the similarity between the spaces, created from optimal training dat and Botchen conversation
@@ -126,7 +127,7 @@ def create_matrices(script_id, optimal_script=False, saving_directory=None):
 # script_id_eval and script_id_optimal, which situations from which to retrieve from
 def evaluation_with_vectorial_space(evaluating_framework,
                                     script_id_eval,
-                                    script_id_optimal, log_file=None):
+                                    script_id_optimal, log_file=None, optimal_to_optimal=False):
     """
     Evaluates the similarity between vector spaces derived from an evaluation script
     and an optimal training script. The function supports two evaluation frameworks:
@@ -140,6 +141,8 @@ def evaluation_with_vectorial_space(evaluating_framework,
     - evaluating_framework (int): The evaluation approach to use (1 or 2).
     - script_id_eval (int): The ID of the evaluation script to process.
     - script_id_optimal (int): The ID of the optimal script (training reference).
+    - log_file (bool): If one wants to store the evaluation on a file
+    - optimal_to_optimal (bool): True if comparing optimal spaces (retains optimal one)
 
     Returns:
     - None: Prints evaluation results including average similarity scores
@@ -151,7 +154,10 @@ def evaluation_with_vectorial_space(evaluating_framework,
             file.write(f"\nNEWNEW Evaluating with framework: {evaluating_framework}, script eval ID: {script_id_eval}, script optimal ID: {script_id_optimal}\n")
 
     # Generate evaluation vector space (matrix & DataFrame)
-    eval_matrix, eval_df = create_matrices(script_id_eval, saving_directory='./data/vectorial_spaces/evaluation/')
+    if optimal_to_optimal is True:
+        eval_matrix, eval_df = create_matrices(script_id_eval, optimal_script=True)
+    else:
+        eval_matrix, eval_df = create_matrices(script_id_eval, saving_directory='./data/vectorial_spaces/evaluation/')
     # Generate optimal vector space (matrix & DataFrame)
     optimal_matrix, optimal_df = create_matrices(script_id_optimal, optimal_script=True, saving_directory='./data/vectorial_spaces/optimal/')
 
@@ -162,7 +168,7 @@ def evaluation_with_vectorial_space(evaluating_framework,
     if evaluating_framework == 1:
         print('EVALUATION 1 - Fill up dimensionalities evaluation')
         # Retain only dimensions present in both datasets
-        new_eval_df = eval_df.loc[eval_df.index.intersection(optimal_df.index), eval_df.columns.intersection(optimal_df.columns)]
+        new_eval_df = eval_df.loc[matching_rows, matching_columns]
         # Ensure the evaluated space includes all optimal dimensions, filling missing values with zero
         new_eval_df = new_eval_df.reindex(index=optimal_df.index, columns=optimal_df.columns, fill_value=0)
         new_optimal_df = optimal_df
@@ -172,9 +178,13 @@ def evaluation_with_vectorial_space(evaluating_framework,
 
     elif evaluating_framework == 2:
         print('EVALUATION 2 - Retraction evaluation')
-        # Compare only shared dimensions from both datasets
-        new_optimal_df = optimal_df.loc[matching_rows, matching_columns]
-        new_eval_df = eval_df.loc[matching_rows, matching_columns]
+        combined_indices = eval_df.index.union(optimal_df.index)
+        combined_columns = eval_df.columns.union(optimal_df.columns)
+        new_eval_df = pd.DataFrame(0, index=combined_indices, columns=combined_columns)
+        new_optimal_df = pd.DataFrame(0, index=combined_indices, columns=combined_columns)
+        new_eval_df.loc[matching_rows, matching_columns] = eval_df.loc[matching_rows, matching_columns]
+        new_optimal_df.loc[matching_rows, matching_columns] = optimal_df.loc[matching_rows, matching_columns]
+
         if new_optimal_df.empty or new_eval_df.empty:
             print("None - No intersection")
             if log_file:
@@ -216,54 +226,94 @@ def evaluation_with_vectorial_space(evaluating_framework,
         with open(log_file, 'a') as file:
             file.write(f"\n\nAverage Column Similarity: {col_diagonal_series.mean():.3f}\n\nMost similar columns:\n{col_diagonal_series.nlargest(10)}\n")
 
-# function_map = {
-#     "evaluation": evaluation_with_vectorial_space,
-#     "create_matrices": create_matrices
-# }
+def make_csv_from_data(file_path, name):
+    with open(file_path, 'r') as file:
+        data = file.read()
+    evaluation_pattern = re.compile(r"Evaluating with framework: (\d+), script eval ID: (\d+), script optimal ID: (\d+)")
+    row_similarity_pattern = re.compile(r"Average Rows Similarity:\s+([\d\.]+)")
+    column_similarity_pattern = re.compile(r"Average Column Similarity:\s+([\d\.]+)")
 
-# def main():
-#     parser = argparse.ArgumentParser(description="Run evaluation or create activation matrices.")
-#
-#     parser.add_argument("function", type=str, choices=function_map.keys(),
-#                         help="Function to execute: 'evaluation' or 'create_matrices'")
-#
-#     # Common arguments for both functions
-#     parser.add_argument("script_id", type=int, help="Script ID to process (0 means all)")
-#
-#     # Arguments specific to evaluation
-#     parser.add_argument("--evaluating_framework", type=int, choices=[1, 2],
-#                         help="Evaluation framework: 1 (Fill up dimensionalities) or 2 (Retraction evaluation)")
-#     parser.add_argument("--script_id_optimal", type=int,
-#                         help="Optimal script ID for comparison (only for evaluation)")
-#
-#     # Arguments specific to create_matrices
-#     parser.add_argument("--optimal_script", action="store_true",
-#                         help="Flag to indicate processing an optimal script")
-#     parser.add_argument("--saving_directory", type=str, default=None,
-#                         help="Directory to save the activation matrix (optional)")
-#
-#     args = parser.parse_args()
-#
-#     func = function_map.get(args.function)
-#
-#     if func == evaluation_with_vectorial_space:
-#         if args.evaluating_framework is None or args.script_id_optimal is None:
-#             print("Error: 'evaluation' requires --evaluating_framework and --script_id_optimal.")
-#             return
-#         func(args.evaluating_framework, args.script_id, args.script_id_optimal)
-#
-#     elif func == create_matrices:
-#         func(args.script_id, args.optimal_script, args.saving_directory)
-#
-#     else:
-#         print(f"Function '{args.function}' not found.")
-#
-# if __name__ == "__main__":
-#     main()
+    summary_data = []
+    evaluations = data.strip().split("NEWNEW")
 
-open('./data/evaluation_file.txt', 'w').close()  # This clears the file by opening & immediately closing it
+    for eval_block in evaluations[0:]:  # Skip empty first split
+        eval_info = evaluation_pattern.search(eval_block)
+        row_sim = row_similarity_pattern.search(eval_block)
+        col_sim = column_similarity_pattern.search(eval_block)
 
-for script_id_eval in range (0,13):
-    for script_id_optimal in range(0,13):
-        evaluation_with_vectorial_space(2, script_id_eval, script_id_optimal, log_file='./data/evaluation_file.txt')
-# create_matrices(1, saving_directory='./data/vectorial_spaces/evaluation/')
+        if eval_info and row_sim and col_sim:
+            framework, eval_script, opt_script = eval_info.groups()
+            avg_row_sim = float(row_sim.group(1))
+            avg_col_sim = float(col_sim.group(1))
+
+            summary_data.append([framework, eval_script, opt_script, avg_row_sim, avg_col_sim])
+
+    summary_df = pd.DataFrame(summary_data, columns=["Framework", "Eval Script", "Optimal Script", "Avg Row Similarity", "Avg Column Similarity"])
+    summary_df.to_csv(f"{name}", index=False)
+
+def heatmap(file_path, row_column, eval_optimal, number_eval, log_file):
+    # row_column= Row/Column based on what you want to evaluate
+    # eval_optimal= Optimal/Eval based on what you are comparing
+    # number_eval = 1/2 if evaluating with 1 or 2 eval
+    df = pd.read_csv(file_path)
+    print(df.head())
+    heatmap_data = df.pivot_table(index='Eval Script', columns='Optimal Script', values=f'Avg {row_column} Similarity')
+    plt.figure(figsize=(10, 8))
+    sns.heatmap(heatmap_data, annot=True, cmap="Blues", linewidths=0.5)
+    plt.title(f'EVAL {number_eval} - Heatmap of Avg {row_column} Similarity')
+    plt.xlabel('Optimal Script')
+    plt.ylabel(f'{eval_optimal} Script')
+    plt.savefig(log_file)
+
+############# CREATE THE EVALUATION FILES
+# if not os.path.exists(os.path.dirname('./data/data_analysis/evaluations/optimal_1.txt')):
+#     os.makedirs(os.path.dirname('./data/data_analysis/evaluations/optimal_1.txt'))
+#
+# open('./data/data_analysis/evaluations/optimal_1.txt', 'w').close()
+# for script_id_eval in range (0,13):
+#     for script_id_optimal in range(0,13):
+#         evaluation_with_vectorial_space(1, script_id_eval, script_id_optimal, log_file='./data/data_analysis/evaluations/optimal_1.txt', optimal_to_optimal=True)
+#
+# open('./data/data_analysis/evaluations/optimal_2.txt', 'w').close()  # This clears the file by opening & immediately closing it
+# for script_id_eval in range (0,13):
+#     for script_id_optimal in range(0,13):
+#         evaluation_with_vectorial_space(2, script_id_eval, script_id_optimal, log_file='./data/data_analysis/evaluations/optimal_2.txt', optimal_to_optimal=True)
+#
+# open('./data/data_analysis/evaluations/evaluation_1.txt', 'w').close()
+# for script_id_eval in range (0,13):
+#     for script_id_optimal in range(0,13):
+#         evaluation_with_vectorial_space(1, script_id_eval, script_id_optimal, log_file='./data/data_analysis/evaluations/evaluation_1.txt')
+#
+# open('./data/data_analysis/evaluations/evaluation_2.txt', 'w').close()  # This clears the file by opening & immediately closing it
+# for script_id_eval in range (0,13):
+#     for script_id_optimal in range(0,13):
+#         evaluation_with_vectorial_space(2, script_id_eval, script_id_optimal, log_file='./data/data_analysis/evaluations/evaluation_2.txt')
+
+################ CREATE THE CSVs FROM THE EVALUATION FILES
+if not os.path.exists(os.path.dirname('./data/data_analysis/dataframes/optimal_1.csv')):
+    os.makedirs(os.path.dirname('./data/data_analysis/dataframes/optimal_1.csv'))
+
+open('./data/data_analysis/dataframes/optimal_1.csv', 'w').close()
+make_csv_from_data('./data/data_analysis/evaluations/optimal_1.txt', './data/data_analysis/dataframes/optimal_1.csv')
+open('./data/data_analysis/dataframes/optimal_2.csv', 'w').close()
+make_csv_from_data('./data/data_analysis/evaluations/optimal_2.txt', './data/data_analysis/dataframes/optimal_2.csv')
+open('./data/data_analysis/dataframes/evaluation_1.csv', 'w').close()
+make_csv_from_data('./data/data_analysis/evaluations/evaluation_1.txt', './data/data_analysis/dataframes/evaluation_1.csv')
+open('./data/data_analysis/dataframes/evaluation_2.csv', 'w').close()
+make_csv_from_data('./data/data_analysis/evaluations/evaluation_2.txt', './data/data_analysis/dataframes/evaluation_2.csv')
+
+####################### CREATE THE HEATMAPS
+if not os.path.exists(os.path.dirname('./data/data_analysis/images/row_optimal_1.png')):
+    os.makedirs(os.path.dirname('./data/data_analysis/images/row_optimal_1.png'))
+
+heatmap('./data/data_analysis/dataframes/optimal_1.csv', 'Row', 'Optimal', '1', './data/data_analysis/images/row_optimal_1.png')
+heatmap('./data/data_analysis/dataframes/optimal_1.csv', 'Column', 'Optimal', '1', './data/data_analysis/images/col_optimal_1.png')
+
+heatmap('./data/data_analysis/dataframes/optimal_2.csv', 'Row', 'Optimal', '2', './data/data_analysis/images/row_optimal_2.png')
+heatmap('./data/data_analysis/dataframes/optimal_2.csv', 'Column', 'Optimal', '2', './data/data_analysis/images/col_optimal_2.png')
+
+heatmap('./data/data_analysis/dataframes/evaluation_1.csv', 'Row', 'Eval', '1', './data/data_analysis/images/row_eval_1.png')
+heatmap('./data/data_analysis/dataframes/evaluation_1.csv', 'Column', 'Eval', '1', './data/data_analysis/images/col_eval_1.png')
+
+heatmap('./data/data_analysis/dataframes/evaluation_2.csv', 'Row', 'Eval', '2', './data/data_analysis/images/row_eval_2.png')
+heatmap('./data/data_analysis/dataframes/evaluation_2.csv', 'Column', 'Eval', '2', './data/data_analysis/images/col_eval_2.png')
