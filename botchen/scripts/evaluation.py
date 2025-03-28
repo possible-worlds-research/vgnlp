@@ -16,6 +16,7 @@
 # The user can dinamically select the situation in which to test the model on and if to store it.
 
 import os
+import sklearn
 from sklearn.metrics.pairwise import cosine_similarity
 import pandas as pd
 import re
@@ -157,9 +158,9 @@ def evaluation_with_vectorial_space(evaluating_framework,
     if optimal_to_optimal is True:
         eval_matrix, eval_df = create_matrices(script_id_eval, optimal_script=True)
     else:
-        eval_matrix, eval_df = create_matrices(script_id_eval, saving_directory='./data/vectorial_spaces/evaluation/')
+        eval_matrix, eval_df = create_matrices(script_id_eval, saving_directory='./data/data_analysis/vectorial_spaces/evaluation/')
     # Generate optimal vector space (matrix & DataFrame)
-    optimal_matrix, optimal_df = create_matrices(script_id_optimal, optimal_script=True, saving_directory='./data/vectorial_spaces/optimal/')
+    optimal_matrix, optimal_df = create_matrices(script_id_optimal, optimal_script=True, saving_directory='./data/data_analysis/vectorial_spaces/optimal/')
 
     # Identify matching rows (entities) and columns (features) between the evaluation and optimal datasets
     matching_rows = eval_df.index.intersection(optimal_df.index)
@@ -266,28 +267,28 @@ def heatmap(file_path, row_column, eval_optimal, number_eval, log_file):
     plt.savefig(log_file)
 
 ############# CREATE THE EVALUATION FILES
-# if not os.path.exists(os.path.dirname('./data/data_analysis/evaluations/optimal_1.txt')):
-#     os.makedirs(os.path.dirname('./data/data_analysis/evaluations/optimal_1.txt'))
-#
-# open('./data/data_analysis/evaluations/optimal_1.txt', 'w').close()
-# for script_id_eval in range (0,13):
-#     for script_id_optimal in range(0,13):
-#         evaluation_with_vectorial_space(1, script_id_eval, script_id_optimal, log_file='./data/data_analysis/evaluations/optimal_1.txt', optimal_to_optimal=True)
-#
-# open('./data/data_analysis/evaluations/optimal_2.txt', 'w').close()  # This clears the file by opening & immediately closing it
-# for script_id_eval in range (0,13):
-#     for script_id_optimal in range(0,13):
-#         evaluation_with_vectorial_space(2, script_id_eval, script_id_optimal, log_file='./data/data_analysis/evaluations/optimal_2.txt', optimal_to_optimal=True)
-#
-# open('./data/data_analysis/evaluations/evaluation_1.txt', 'w').close()
-# for script_id_eval in range (0,13):
-#     for script_id_optimal in range(0,13):
-#         evaluation_with_vectorial_space(1, script_id_eval, script_id_optimal, log_file='./data/data_analysis/evaluations/evaluation_1.txt')
-#
-# open('./data/data_analysis/evaluations/evaluation_2.txt', 'w').close()  # This clears the file by opening & immediately closing it
-# for script_id_eval in range (0,13):
-#     for script_id_optimal in range(0,13):
-#         evaluation_with_vectorial_space(2, script_id_eval, script_id_optimal, log_file='./data/data_analysis/evaluations/evaluation_2.txt')
+if not os.path.exists(os.path.dirname('./data/data_analysis/evaluations/optimal_1.txt')):
+    os.makedirs(os.path.dirname('./data/data_analysis/evaluations/optimal_1.txt'))
+
+open('./data/data_analysis/evaluations/optimal_1.txt', 'w').close()
+for script_id_eval in range (0,13):
+    for script_id_optimal in range(0,13):
+        evaluation_with_vectorial_space(1, script_id_eval, script_id_optimal, log_file='./data/data_analysis/evaluations/optimal_1.txt', optimal_to_optimal=True)
+
+open('./data/data_analysis/evaluations/optimal_2.txt', 'w').close()  # This clears the file by opening & immediately closing it
+for script_id_eval in range (0,13):
+    for script_id_optimal in range(0,13):
+        evaluation_with_vectorial_space(2, script_id_eval, script_id_optimal, log_file='./data/data_analysis/evaluations/optimal_2.txt', optimal_to_optimal=True)
+
+open('./data/data_analysis/evaluations/evaluation_1.txt', 'w').close()
+for script_id_eval in range (0,13):
+    for script_id_optimal in range(0,13):
+        evaluation_with_vectorial_space(1, script_id_eval, script_id_optimal, log_file='./data/data_analysis/evaluations/evaluation_1.txt')
+
+open('./data/data_analysis/evaluations/evaluation_2.txt', 'w').close()  # This clears the file by opening & immediately closing it
+for script_id_eval in range (0,13):
+    for script_id_optimal in range(0,13):
+        evaluation_with_vectorial_space(2, script_id_eval, script_id_optimal, log_file='./data/data_analysis/evaluations/evaluation_2.txt')
 
 ################ CREATE THE CSVs FROM THE EVALUATION FILES
 if not os.path.exists(os.path.dirname('./data/data_analysis/dataframes/optimal_1.csv')):
