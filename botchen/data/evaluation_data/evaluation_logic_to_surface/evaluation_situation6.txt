@@ -1,0 +1,638 @@
+>> Loaded models dict_keys(['chat'])
+
+
+>> Prompt: (barge.n white)
+>> Response: a sthee chair with curales 
+
+>> Prompt: (barge.n white)
+>> Response: A coles choles 
+
+>> Prompt: (barge.n white)
+>> Response: A mans is cururay charg chair 
+
+>> Prompt: (barge.n white)
+>> Response: a choles 
+
+>> Prompt: (mountain.n picture-has picture-of), (picture.n hanging framed on-wall has-sun has-mountain of-mountain of-sunset on-wall edge-of edge-of edge-of edge-of), (sun.n picture-has)
+>> Response: a chole sts 
+
+>> Prompt: (mountain.n picture-has picture-of), (picture.n hanging framed on-wall has-sun has-mountain of-mountain of-sunset on-wall edge-of edge-of edge-of edge-of), (sun.n picture-has)
+>> Response: an a cholest 
+
+>> Prompt: (mountain.n picture-has picture-of), (picture.n hanging framed on-wall has-sun has-mountain of-mountain of-sunset on-wall edge-of edge-of edge-of edge-of), (sun.n picture-has)
+>> Response: A clendraptop is curalon 
+
+>> Prompt: (mountain.n picture-has picture-of), (picture.n hanging framed on-wall has-sun has-mountain of-mountain of-sunset on-wall edge-of edge-of edge-of edge-of), (sun.n picture-has)
+>> Response: a cholll sthe ange s 
+
+>> Prompt: (computer.n on-table keyboard-for screen-for device-for), (device.n black on-mousepad on-table for-computer)
+>> Response: a monitor 
+
+>> Prompt: (computer.n on-table keyboard-for screen-for device-for), (device.n black on-mousepad on-table for-computer)
+>> Response: a computer 
+
+>> Prompt: (computer.n on-table keyboard-for screen-for device-for), (device.n black on-mousepad on-table for-computer)
+>> Response: A monitor computer computer computer 
+
+>> Prompt: (computer.n on-table keyboard-for screen-for device-for), (device.n black on-mousepad on-table for-computer)
+>> Response: asian computer monitor 
+
+>> Prompt: (desk.n large wooden wood light has-edge lamp-on laptop-on monitor-on mousepad-on lamp-on keyboard-on mousepad-on mouse-on edge-of computer-on laptop-on)
+>> Response: a is on the desk 
+
+>> Prompt: (desk.n large wooden wood light has-edge lamp-on laptop-on monitor-on mousepad-on lamp-on keyboard-on mousepad-on mouse-on edge-of computer-on laptop-on)
+>> Response: andile of a curarde ay choles 
+
+>> Prompt: (desk.n large wooden wood light has-edge lamp-on laptop-on monitor-on mousepad-on lamp-on keyboard-on mousepad-on mouse-on edge-of computer-on laptop-on)
+>> Response: a is desk 
+
+>> Prompt: (desk.n large wooden wood light has-edge lamp-on laptop-on monitor-on mousepad-on lamp-on keyboard-on mousepad-on mouse-on edge-of computer-on laptop-on)
+>> Response: an computer computer computer is on the desk 
+
+>> Prompt: (mouse.n black on-mousepad on-desk for-computer), (mousepad.n on-desk on-desk mouse-on)
+>> Response: a computer 
+
+>> Prompt: (mouse.n black on-mousepad on-desk for-computer), (mousepad.n on-desk on-desk mouse-on)
+>> Response: a is white chair 
+
+>> Prompt: (mouse.n black on-mousepad on-desk for-computer), (mousepad.n on-desk on-desk mouse-on)
+>> Response: an white on the desk 
+
+>> Prompt: (mouse.n black on-mousepad on-desk for-computer), (mousepad.n on-desk on-desk mouse-on)
+>> Response: a computer 
+
+>> Prompt: (mountain.n picture-has picture-of), (picture.n hanging framed on-wall has-sun has-mountain of-mountain of-sunset on-wall edge-of edge-of edge-of edge-of), (sunset.n picture-of)
+>> Response: a charg chair with black chor 
+
+>> Prompt: (mountain.n picture-has picture-of), (picture.n hanging framed on-wall has-sun has-mountain of-mountain of-sunset on-wall edge-of edge-of edge-of edge-of), (sunset.n picture-of)
+>> Response: A an chair with aletst on a wall 
+
+>> Prompt: (mountain.n picture-has picture-of), (picture.n hanging framed on-wall has-sun has-mountain of-mountain of-sunset on-wall edge-of edge-of edge-of edge-of), (sunset.n picture-of)
+>> Response: an andes 
+
+>> Prompt: (mountain.n picture-has picture-of), (picture.n hanging framed on-wall has-sun has-mountain of-mountain of-sunset on-wall edge-of edge-of edge-of edge-of), (sunset.n picture-of)
+>> Response: A culele chale che s 
+
+>> Prompt: (lamp.n red silver on on-desk on-desk)
+>> Response: A curale plate is on table 
+
+>> Prompt: (lamp.n red silver on on-desk on-desk)
+>> Response: A a anditsied monitor is on the desk 
+
+>> Prompt: (lamp.n red silver on on-desk on-desk)
+>> Response: A an andests are on the floor 
+
+>> Prompt: (lamp.n red silver on on-desk on-desk)
+>> Response: a computer 
+
+>> Prompt: (part.n of-wall), (wall.n picture-on part-of picture-on note-on)
+>> Response: an chair with argen chale choldes 
+
+>> Prompt: (part.n of-wall), (wall.n picture-on part-of picture-on note-on)
+>> Response: a a a a chole 
+
+>> Prompt: (part.n of-wall), (wall.n picture-on part-of picture-on note-on)
+>> Response: A andit is white chole 
+
+>> Prompt: (part.n of-wall), (wall.n picture-on part-of picture-on note-on)
+>> Response: a a chair 
+
+>> Prompt: (image.n hanging framed on-wall has-sun has-mountain of-mountain of-element on-wall edge-of edge-of edge-of edge-of), (wall.n image-on portion-of image-on note-on)
+>> Response: a a ptop of a a wall 
+
+>> Prompt: (image.n hanging framed on-wall has-sun has-mountain of-mountain of-element on-wall edge-of edge-of edge-of edge-of), (wall.n image-on portion-of image-on note-on)
+>> Response: a ande curales 
+
+>> Prompt: (image.n hanging framed on-wall has-sun has-mountain of-mountain of-element on-wall edge-of edge-of edge-of edge-of), (wall.n image-on portion-of image-on note-on)
+>> Response: A curalen che choles 
+
+>> Prompt: (image.n hanging framed on-wall has-sun has-mountain of-mountain of-element on-wall edge-of edge-of edge-of edge-of), (wall.n image-on portion-of image-on note-on)
+>> Response: a curarg chair 
+
+>> Prompt: (desk.n large wooden wood light has-edge lamp-on laptop-on monitor-on mousepad-on lamp-on keyboard-on mousepad-on mouse-on edge-of computer-on laptop-on), (mousepad.n on-desk on-desk mouse-on)
+>> Response: an white computer on the desk 
+
+>> Prompt: (desk.n large wooden wood light has-edge lamp-on laptop-on monitor-on mousepad-on lamp-on keyboard-on mousepad-on mouse-on edge-of computer-on laptop-on), (mousepad.n on-desk on-desk mouse-on)
+>> Response: a computer 
+
+>> Prompt: (desk.n large wooden wood light has-edge lamp-on laptop-on monitor-on mousepad-on lamp-on keyboard-on mousepad-on mouse-on edge-of computer-on laptop-on), (mousepad.n on-desk on-desk mouse-on)
+>> Response: a is on the desk 
+
+>> Prompt: (desk.n large wooden wood light has-edge lamp-on laptop-on monitor-on mousepad-on lamp-on keyboard-on mousepad-on mouse-on edge-of computer-on laptop-on), (mousepad.n on-desk on-desk mouse-on)
+>> Response: A computer is white is on the desk 
+
+>> Prompt: (edge.n of-picture), (picture.n hanging framed on-wall has-sun has-mountain of-mountain of-sunset on-wall edge-of edge-of edge-of edge-of)
+>> Response: an a ande 
+
+>> Prompt: (edge.n of-picture), (picture.n hanging framed on-wall has-sun has-mountain of-mountain of-sunset on-wall edge-of edge-of edge-of edge-of)
+>> Response: a is a desk 
+
+>> Prompt: (edge.n of-picture), (picture.n hanging framed on-wall has-sun has-mountain of-mountain of-sunset on-wall edge-of edge-of edge-of edge-of)
+>> Response: A man wears a gren boles 
+
+>> Prompt: (edge.n of-picture), (picture.n hanging framed on-wall has-sun has-mountain of-mountain of-sunset on-wall edge-of edge-of edge-of edge-of)
+>> Response: an chair with alaptop its 
+
+>> Prompt: (desk.n large wooden wood light has-edge lamp-on laptop-on monitor-on mousepad-on lamp-on keyboard-on mousepad-on mouse-on edge-of computer-on laptop-on), (laptop.n black on on-desk on-desk)
+>> Response: a desk 
+
+>> Prompt: (desk.n large wooden wood light has-edge lamp-on laptop-on monitor-on mousepad-on lamp-on keyboard-on mousepad-on mouse-on edge-of computer-on laptop-on), (laptop.n black on on-desk on-desk)
+>> Response: A is white coule clest 
+
+>> Prompt: (desk.n large wooden wood light has-edge lamp-on laptop-on monitor-on mousepad-on lamp-on keyboard-on mousepad-on mouse-on edge-of computer-on laptop-on), (laptop.n black on on-desk on-desk)
+>> Response: a desk 
+
+>> Prompt: (desk.n large wooden wood light has-edge lamp-on laptop-on monitor-on mousepad-on lamp-on keyboard-on mousepad-on mouse-on edge-of computer-on laptop-on), (laptop.n black on on-desk on-desk)
+>> Response: a desk 
+
+>> Prompt: (picture.n hanging framed on-wall has-sun has-mountain of-mountain of-sunset on-wall edge-of edge-of edge-of edge-of), (wall.n picture-on part-of picture-on note-on)
+>> Response: a is curarg is on desk 
+
+>> Prompt: (picture.n hanging framed on-wall has-sun has-mountain of-mountain of-sunset on-wall edge-of edge-of edge-of edge-of), (wall.n picture-on part-of picture-on note-on)
+>> Response: A andian andits 
+
+>> Prompt: (picture.n hanging framed on-wall has-sun has-mountain of-mountain of-sunset on-wall edge-of edge-of edge-of edge-of), (wall.n picture-on part-of picture-on note-on)
+>> Response: A andits are on the desk 
+
+>> Prompt: (picture.n hanging framed on-wall has-sun has-mountain of-mountain of-sunset on-wall edge-of edge-of edge-of edge-of), (wall.n picture-on part-of picture-on note-on)
+>> Response: an andes 
+
+>> Prompt: (screen.n black on-table for-computer portion-of), (portion.n of-screen)
+>> Response: ale aptop of idide 
+
+>> Prompt: (screen.n black on-table for-computer portion-of), (portion.n of-screen)
+>> Response: A culen chair with curale s 
+
+>> Prompt: (screen.n black on-table for-computer portion-of), (portion.n of-screen)
+>> Response: A tureen deen cure choles 
+
+>> Prompt: (screen.n black on-table for-computer portion-of), (portion.n of-screen)
+>> Response: a cholle cke arts 
+
+>> Prompt: (keyboard.n white gray on-table for-computer portion-of), (portion.n of-keyboard)
+>> Response: A man in is cararts curar 
+
+>> Prompt: (keyboard.n white gray on-table for-computer portion-of), (portion.n of-keyboard)
+>> Response: a chair with curalale it 
+
+>> Prompt: (keyboard.n white gray on-table for-computer portion-of), (portion.n of-keyboard)
+>> Response: A coule chart 
+
+>> Prompt: (keyboard.n white gray on-table for-computer portion-of), (portion.n of-keyboard)
+>> Response: A is white cllesit che clles 
+
+>> Prompt: (laptop.n black on on-desk on-desk), (monitor.n black on-desk for-computer part-of)
+>> Response: a computer 
+
+>> Prompt: (laptop.n black on on-desk on-desk), (monitor.n black on-desk for-computer part-of)
+>> Response: a computer 
+
+>> Prompt: (laptop.n black on on-desk on-desk), (monitor.n black on-desk for-computer part-of)
+>> Response: A monitor is white chair with clar pale chair with culallle ips 
+
+>> Prompt: (laptop.n black on on-desk on-desk), (monitor.n black on-desk for-computer part-of)
+>> Response: A monitor is white is white clale of cholder cholde 
+
+>> Prompt: (couch.n green portion-of)
+>> Response: A cole chour 
+
+>> Prompt: (couch.n green portion-of)
+>> Response: A cole che che cle s 
+
+>> Prompt: (couch.n green portion-of)
+>> Response: a chair 
+
+>> Prompt: (couch.n green portion-of)
+>> Response: A cole sile sts 
+
+>> Prompt: (chair.n green part-of), (part.n of-chair)
+>> Response: A culalll ches on plate plate under it 
+
+>> Prompt: (chair.n green part-of), (part.n of-chair)
+>> Response: A tubole sthe s 
+
+>> Prompt: (chair.n green part-of), (part.n of-chair)
+>> Response: A tubole chales on the desk 
+
+>> Prompt: (chair.n green part-of), (part.n of-chair)
+>> Response: A curart chair with curendeeen s 
+
+>> Prompt: (computer.n on-desk keyboard-for monitor-for mouse-for), (monitor.n black on-desk for-computer part-of)
+>> Response: a is on desk 
+
+>> Prompt: (computer.n on-desk keyboard-for monitor-for mouse-for), (monitor.n black on-desk for-computer part-of)
+>> Response: a computer computer computer 
+
+>> Prompt: (computer.n on-desk keyboard-for monitor-for mouse-for), (monitor.n black on-desk for-computer part-of)
+>> Response: a computer computer 
+
+>> Prompt: (computer.n on-desk keyboard-for monitor-for mouse-for), (monitor.n black on-desk for-computer part-of)
+>> Response: A is white is white clale of chour 
+
+>> Prompt: (table.n large wooden wood light has-edge light-on laptop-on screen-on mousepad-on light-on keyboard-on mousepad-on device-on edge-of computer-on laptop-on), (light.n red silver on on-table on-table)
+>> Response: A curalaptop of a curarts 
+
+>> Prompt: (table.n large wooden wood light has-edge light-on laptop-on screen-on mousepad-on light-on keyboard-on mousepad-on device-on edge-of computer-on laptop-on), (light.n red silver on on-table on-table)
+>> Response: an desk 
+
+>> Prompt: (table.n large wooden wood light has-edge light-on laptop-on screen-on mousepad-on light-on keyboard-on mousepad-on device-on edge-of computer-on laptop-on), (light.n red silver on on-table on-table)
+>> Response: A a andiandes chalde 
+
+>> Prompt: (table.n large wooden wood light has-edge light-on laptop-on screen-on mousepad-on light-on keyboard-on mousepad-on device-on edge-of computer-on laptop-on), (light.n red silver on on-table on-table)
+>> Response: an desk 
+
+>> Prompt: (device.n black on-mousepad on-table for-computer), (mousepad.n on-table on-table device-on)
+>> Response: a is on table 
+
+>> Prompt: (device.n black on-mousepad on-table for-computer), (mousepad.n on-table on-table device-on)
+>> Response: A is a chair 
+
+>> Prompt: (device.n black on-mousepad on-table for-computer), (mousepad.n on-table on-table device-on)
+>> Response: a is a table 
+
+>> Prompt: (device.n black on-mousepad on-table for-computer), (mousepad.n on-table on-table device-on)
+>> Response: A a andit 
+
+>> Prompt: (magnet.n red)
+>> Response: A clllle ches stande chalder s 
+
+>> Prompt: (magnet.n red)
+>> Response: A sit coles che cholle 
+
+>> Prompt: (magnet.n red)
+>> Response: A clar cholle che sts 
+
+>> Prompt: (magnet.n red)
+>> Response: an choles 
+
+>> Prompt: (desk.n large wooden wood light has-edge lamp-on laptop-on monitor-on mousepad-on lamp-on keyboard-on mousepad-on mouse-on edge-of computer-on laptop-on), (lamp.n red silver on on-desk on-desk)
+>> Response: a desk 
+
+>> Prompt: (desk.n large wooden wood light has-edge lamp-on laptop-on monitor-on mousepad-on lamp-on keyboard-on mousepad-on mouse-on edge-of computer-on laptop-on), (lamp.n red silver on on-desk on-desk)
+>> Response: a computer 
+
+>> Prompt: (desk.n large wooden wood light has-edge lamp-on laptop-on monitor-on mousepad-on lamp-on keyboard-on mousepad-on mouse-on edge-of computer-on laptop-on), (lamp.n red silver on on-desk on-desk)
+>> Response: A is a table 
+
+>> Prompt: (desk.n large wooden wood light has-edge lamp-on laptop-on monitor-on mousepad-on lamp-on keyboard-on mousepad-on mouse-on edge-of computer-on laptop-on), (lamp.n red silver on on-desk on-desk)
+>> Response: A is white cour 
+
+>> Prompt: (table.n large wooden wood light has-edge light-on laptop-on screen-on mousepad-on light-on keyboard-on mousepad-on device-on edge-of computer-on laptop-on), (mousepad.n on-table on-table device-on)
+>> Response: A is white colest 
+
+>> Prompt: (table.n large wooden wood light has-edge light-on laptop-on screen-on mousepad-on light-on keyboard-on mousepad-on device-on edge-of computer-on laptop-on), (mousepad.n on-table on-table device-on)
+>> Response: a is a table 
+
+>> Prompt: (table.n large wooden wood light has-edge light-on laptop-on screen-on mousepad-on light-on keyboard-on mousepad-on device-on edge-of computer-on laptop-on), (mousepad.n on-table on-table device-on)
+>> Response: A an a is a table 
+
+>> Prompt: (table.n large wooden wood light has-edge light-on laptop-on screen-on mousepad-on light-on keyboard-on mousepad-on device-on edge-of computer-on laptop-on), (mousepad.n on-table on-table device-on)
+>> Response: A a is white a chair 
+
+>> Prompt: (shelf.n speaker-on ipod-on)
+>> Response: A sig sign on a calargen chald s 
+
+>> Prompt: (shelf.n speaker-on ipod-on)
+>> Response: Asit chair with carale st 
+
+>> Prompt: (shelf.n speaker-on ipod-on)
+>> Response: a chair with choles 
+
+>> Prompt: (shelf.n speaker-on ipod-on)
+>> Response: A cllalest sth st 
+
+>> Prompt: (mountain.n image-has image-of), (image.n hanging framed on-wall has-sun has-mountain of-mountain of-element on-wall edge-of edge-of edge-of edge-of), (sun.n image-has)
+>> Response: a cholle s 
+
+>> Prompt: (mountain.n image-has image-of), (image.n hanging framed on-wall has-sun has-mountain of-mountain of-element on-wall edge-of edge-of edge-of edge-of), (sun.n image-has)
+>> Response: a ande a andgray sts 
+
+>> Prompt: (mountain.n image-has image-of), (image.n hanging framed on-wall has-sun has-mountain of-mountain of-element on-wall edge-of edge-of edge-of edge-of), (sun.n image-has)
+>> Response: an a chort 
+
+>> Prompt: (mountain.n image-has image-of), (image.n hanging framed on-wall has-sun has-mountain of-mountain of-element on-wall edge-of edge-of edge-of edge-of), (sun.n image-has)
+>> Response: A colle challes on the desk 
+
+>> Prompt: (note.n on-wall), (paper.n )
+>> Response: A tan botst 
+
+>> Prompt: (note.n on-wall), (paper.n )
+>> Response: andots 
+
+>> Prompt: (note.n on-wall), (paper.n )
+>> Response: A tuban botts 
+
+>> Prompt: (note.n on-wall), (paper.n )
+>> Response: A colllll sip cholll ck cker choles on it 
+
+>> Prompt: (monitor.n black on-desk for-computer part-of)
+>> Response: A is is is cular chair 
+
+>> Prompt: (monitor.n black on-desk for-computer part-of)
+>> Response: a is white chour 
+
+>> Prompt: (monitor.n black on-desk for-computer part-of)
+>> Response: a computer computer 
+
+>> Prompt: (monitor.n black on-desk for-computer part-of)
+>> Response: A is white clalle of plate 
+
+>> Prompt: (laptop.n black on on-desk on-desk)
+>> Response: A carthe chair 
+
+>> Prompt: (laptop.n black on on-desk on-desk)
+>> Response: a computer 
+
+>> Prompt: (laptop.n black on on-desk on-desk)
+>> Response: a desk 
+
+>> Prompt: (laptop.n black on on-desk on-desk)
+>> Response: A cularts are chair 
+
+>> Prompt: (computer.n on-desk keyboard-for monitor-for mouse-for), (mouse.n black on-mousepad on-desk for-computer)
+>> Response: a computer 
+
+>> Prompt: (computer.n on-desk keyboard-for monitor-for mouse-for), (mouse.n black on-mousepad on-desk for-computer)
+>> Response: a computer 
+
+>> Prompt: (computer.n on-desk keyboard-for monitor-for mouse-for), (mouse.n black on-mousepad on-desk for-computer)
+>> Response: a computer monitor 
+
+>> Prompt: (computer.n on-desk keyboard-for monitor-for mouse-for), (mouse.n black on-mousepad on-desk for-computer)
+>> Response: a monitor 
+
+>> Prompt: (desk.n large wooden wood light has-edge lamp-on laptop-on monitor-on mousepad-on lamp-on keyboard-on mousepad-on mouse-on edge-of computer-on laptop-on), (keyboard.n white gray on-desk for-computer part-of), (mouse.n black on-mousepad on-desk for-computer), (mousepad.n on-desk on-desk mouse-on)
+>> Response: A is computer is on desk 
+
+>> Prompt: (desk.n large wooden wood light has-edge lamp-on laptop-on monitor-on mousepad-on lamp-on keyboard-on mousepad-on mouse-on edge-of computer-on laptop-on), (keyboard.n white gray on-desk for-computer part-of), (mouse.n black on-mousepad on-desk for-computer), (mousepad.n on-desk on-desk mouse-on)
+>> Response: a is white desk 
+
+>> Prompt: (desk.n large wooden wood light has-edge lamp-on laptop-on monitor-on mousepad-on lamp-on keyboard-on mousepad-on mouse-on edge-of computer-on laptop-on), (keyboard.n white gray on-desk for-computer part-of), (mouse.n black on-mousepad on-desk for-computer), (mousepad.n on-desk on-desk mouse-on)
+>> Response: a computer computer 
+
+>> Prompt: (desk.n large wooden wood light has-edge lamp-on laptop-on monitor-on mousepad-on lamp-on keyboard-on mousepad-on mouse-on edge-of computer-on laptop-on), (keyboard.n white gray on-desk for-computer part-of), (mouse.n black on-mousepad on-desk for-computer), (mousepad.n on-desk on-desk mouse-on)
+>> Response: a computer 
+
+>> Prompt: (mountain.n image-has image-of), (image.n hanging framed on-wall has-sun has-mountain of-mountain of-element on-wall edge-of edge-of edge-of edge-of), (element.n image-of)
+>> Response: a choles on the desk 
+
+>> Prompt: (mountain.n image-has image-of), (image.n hanging framed on-wall has-sun has-mountain of-mountain of-element on-wall edge-of edge-of edge-of edge-of), (element.n image-of)
+>> Response: A taned andes are on the desk 
+
+>> Prompt: (mountain.n image-has image-of), (image.n hanging framed on-wall has-sun has-mountain of-mountain of-element on-wall edge-of edge-of edge-of edge-of), (element.n image-of)
+>> Response: A taned chair chole 
+
+>> Prompt: (mountain.n image-has image-of), (image.n hanging framed on-wall has-sun has-mountain of-mountain of-element on-wall edge-of edge-of edge-of edge-of), (element.n image-of)
+>> Response: a chair with cargen calar charge chare s 
+
+>> Prompt: (keyboard.n white gray on-desk for-computer part-of)
+>> Response: a is white chourts 
+
+>> Prompt: (keyboard.n white gray on-desk for-computer part-of)
+>> Response: a is on the desk 
+
+>> Prompt: (keyboard.n white gray on-desk for-computer part-of)
+>> Response: A curen chair 
+
+>> Prompt: (keyboard.n white gray on-desk for-computer part-of)
+>> Response: a is white chole cle chollle 
+
+>> Prompt: (table.n large wooden wood light has-edge light-on laptop-on screen-on mousepad-on light-on keyboard-on mousepad-on device-on edge-of computer-on laptop-on), (keyboard.n white gray on-table for-computer portion-of), (device.n black on-mousepad on-table for-computer), (mousepad.n on-table on-table device-on)
+>> Response: A is cururalen chair with pales 
+
+>> Prompt: (table.n large wooden wood light has-edge light-on laptop-on screen-on mousepad-on light-on keyboard-on mousepad-on device-on edge-of computer-on laptop-on), (keyboard.n white gray on-table for-computer portion-of), (device.n black on-mousepad on-table for-computer), (mousepad.n on-table on-table device-on)
+>> Response: A an angnen chair with carargens 
+
+>> Prompt: (table.n large wooden wood light has-edge light-on laptop-on screen-on mousepad-on light-on keyboard-on mousepad-on device-on edge-of computer-on laptop-on), (keyboard.n white gray on-table for-computer portion-of), (device.n black on-mousepad on-table for-computer), (mousepad.n on-table on-table device-on)
+>> Response: a is a desk 
+
+>> Prompt: (table.n large wooden wood light has-edge light-on laptop-on screen-on mousepad-on light-on keyboard-on mousepad-on device-on edge-of computer-on laptop-on), (keyboard.n white gray on-table for-computer portion-of), (device.n black on-mousepad on-table for-computer), (mousepad.n on-table on-table device-on)
+>> Response: A a is a chour 
+
+>> Prompt: (ipod.n white on-charger on-shelf contains-gray charger-holding), (shelf.n speaker-on ipod-on), (speaker.n on-shelf)
+>> Response: an is white charges 
+
+>> Prompt: (ipod.n white on-charger on-shelf contains-gray charger-holding), (shelf.n speaker-on ipod-on), (speaker.n on-shelf)
+>> Response: a chorts 
+
+>> Prompt: (ipod.n white on-charger on-shelf contains-gray charger-holding), (shelf.n speaker-on ipod-on), (speaker.n on-shelf)
+>> Response: A culestar siles 
+
+>> Prompt: (ipod.n white on-charger on-shelf contains-gray charger-holding), (shelf.n speaker-on ipod-on), (speaker.n on-shelf)
+>> Response: A is white clalest on plate 
+
+>> Prompt: (light.n red silver on on-table on-table)
+>> Response: A collle ches on plate 
+
+>> Prompt: (light.n red silver on on-table on-table)
+>> Response: a choles 
+
+>> Prompt: (light.n red silver on on-table on-table)
+>> Response: A andits are aned monitor 
+
+>> Prompt: (light.n red silver on on-table on-table)
+>> Response: a desk 
+
+>> Prompt: (table.n large wooden wood light has-edge light-on laptop-on screen-on mousepad-on light-on keyboard-on mousepad-on device-on edge-of computer-on laptop-on), (screen.n black on-table for-computer portion-of)
+>> Response: a chair with curarale chale s 
+
+>> Prompt: (table.n large wooden wood light has-edge light-on laptop-on screen-on mousepad-on light-on keyboard-on mousepad-on device-on edge-of computer-on laptop-on), (screen.n black on-table for-computer portion-of)
+>> Response: a cholle char 
+
+>> Prompt: (table.n large wooden wood light has-edge light-on laptop-on screen-on mousepad-on light-on keyboard-on mousepad-on device-on edge-of computer-on laptop-on), (screen.n black on-table for-computer portion-of)
+>> Response: A collllll chal stic on plate 
+
+>> Prompt: (table.n large wooden wood light has-edge light-on laptop-on screen-on mousepad-on light-on keyboard-on mousepad-on device-on edge-of computer-on laptop-on), (screen.n black on-table for-computer portion-of)
+>> Response: a choles 
+
+>> Prompt: (computer.n on-desk keyboard-for monitor-for mouse-for), (keyboard.n white gray on-desk for-computer part-of)
+>> Response: a is on desk 
+
+>> Prompt: (computer.n on-desk keyboard-for monitor-for mouse-for), (keyboard.n white gray on-desk for-computer part-of)
+>> Response: a computer computer 
+
+>> Prompt: (computer.n on-desk keyboard-for monitor-for mouse-for), (keyboard.n white gray on-desk for-computer part-of)
+>> Response: a is chair with aralontst on desk 
+
+>> Prompt: (computer.n on-desk keyboard-for monitor-for mouse-for), (keyboard.n white gray on-desk for-computer part-of)
+>> Response: a is on the desk 
+
+>> Prompt: (chair.n green part-of)
+>> Response: A curale chair with chole che s 
+
+>> Prompt: (chair.n green part-of)
+>> Response: A is chair 
+
+>> Prompt: (chair.n green part-of)
+>> Response: a is chair with curarar charge s 
+
+>> Prompt: (chair.n green part-of)
+>> Response: A curaren chair with black curarts 
+
+>> Prompt: (laptop.n black on on-table on-table), (screen.n black on-table for-computer portion-of)
+>> Response: a is white chair 
+
+>> Prompt: (laptop.n black on on-table on-table), (screen.n black on-table for-computer portion-of)
+>> Response: A man in a cololds 
+
+>> Prompt: (laptop.n black on on-table on-table), (screen.n black on-table for-computer portion-of)
+>> Response: an is chair with culalar p 
+
+>> Prompt: (laptop.n black on on-table on-table), (screen.n black on-table for-computer portion-of)
+>> Response: A curen curalen choullle ches 
+
+>> Prompt: (table.n large wooden wood light has-edge light-on laptop-on screen-on mousepad-on light-on keyboard-on mousepad-on device-on edge-of computer-on laptop-on), (laptop.n black on on-table on-table)
+>> Response: A is white colest 
+
+>> Prompt: (table.n large wooden wood light has-edge light-on laptop-on screen-on mousepad-on light-on keyboard-on mousepad-on device-on edge-of computer-on laptop-on), (laptop.n black on on-table on-table)
+>> Response: A a a desk 
+
+>> Prompt: (table.n large wooden wood light has-edge light-on laptop-on screen-on mousepad-on light-on keyboard-on mousepad-on device-on edge-of computer-on laptop-on), (laptop.n black on on-table on-table)
+>> Response: a computer 
+
+>> Prompt: (table.n large wooden wood light has-edge light-on laptop-on screen-on mousepad-on light-on keyboard-on mousepad-on device-on edge-of computer-on laptop-on), (laptop.n black on on-table on-table)
+>> Response: A andia computer 
+
+>> Prompt: (charger.n holding-ipod ipod-on), (ipod.n white on-charger on-shelf contains-gray charger-holding)
+>> Response: an charde chargee s 
+
+>> Prompt: (charger.n holding-ipod ipod-on), (ipod.n white on-charger on-shelf contains-gray charger-holding)
+>> Response: A coles clests 
+
+>> Prompt: (charger.n holding-ipod ipod-on), (ipod.n white on-charger on-shelf contains-gray charger-holding)
+>> Response: A an a chair chair 
+
+>> Prompt: (charger.n holding-ipod ipod-on), (ipod.n white on-charger on-shelf contains-gray charger-holding)
+>> Response: an charge s 
+
+>> Prompt: (computer.n on-table keyboard-for screen-for device-for), (screen.n black on-table for-computer portion-of)
+>> Response: a chair with calales 
+
+>> Prompt: (computer.n on-table keyboard-for screen-for device-for), (screen.n black on-table for-computer portion-of)
+>> Response: an chair chair with culalest 
+
+>> Prompt: (computer.n on-table keyboard-for screen-for device-for), (screen.n black on-table for-computer portion-of)
+>> Response: A collle ckers on desk 
+
+>> Prompt: (computer.n on-table keyboard-for screen-for device-for), (screen.n black on-table for-computer portion-of)
+>> Response: an chair with curale challe s 
+
+>> Prompt: (screen.n black on-table for-computer portion-of)
+>> Response: A taned on the desk 
+
+>> Prompt: (screen.n black on-table for-computer portion-of)
+>> Response: A curalen chair with black chargre pe s 
+
+>> Prompt: (screen.n black on-table for-computer portion-of)
+>> Response: A cular chair with black cholle cke s 
+
+>> Prompt: (screen.n black on-table for-computer portion-of)
+>> Response: a chair with calarge ptop of curalalder 
+
+>> Prompt: (monitor.n black on-desk for-computer part-of), (part.n of-monitor)
+>> Response: A monitor clllllll ch choles on the plate 
+
+>> Prompt: (monitor.n black on-desk for-computer part-of), (part.n of-monitor)
+>> Response: a cholll s 
+
+>> Prompt: (monitor.n black on-desk for-computer part-of), (part.n of-monitor)
+>> Response: A monitor is white chair bor 
+
+>> Prompt: (monitor.n black on-desk for-computer part-of), (part.n of-monitor)
+>> Response: an cholll stic on the desk 
+
+>> Prompt: (desk.n large wooden wood light has-edge lamp-on laptop-on monitor-on mousepad-on lamp-on keyboard-on mousepad-on mouse-on edge-of computer-on laptop-on), (edge.n of-desk desk-has)
+>> Response: a monitor is on the table 
+
+>> Prompt: (desk.n large wooden wood light has-edge lamp-on laptop-on monitor-on mousepad-on lamp-on keyboard-on mousepad-on mouse-on edge-of computer-on laptop-on), (edge.n of-desk desk-has)
+>> Response: a computer 
+
+>> Prompt: (desk.n large wooden wood light has-edge lamp-on laptop-on monitor-on mousepad-on lamp-on keyboard-on mousepad-on mouse-on edge-of computer-on laptop-on), (edge.n of-desk desk-has)
+>> Response: a computer computer 
+
+>> Prompt: (desk.n large wooden wood light has-edge lamp-on laptop-on monitor-on mousepad-on lamp-on keyboard-on mousepad-on mouse-on edge-of computer-on laptop-on), (edge.n of-desk desk-has)
+>> Response: A a cholle st 
+
+>> Prompt: (gray.n ipod-contains), (ipod.n white on-charger on-shelf contains-gray charger-holding)
+>> Response: A anden chor 
+
+>> Prompt: (gray.n ipod-contains), (ipod.n white on-charger on-shelf contains-gray charger-holding)
+>> Response: A collll char 
+
+>> Prompt: (gray.n ipod-contains), (ipod.n white on-charger on-shelf contains-gray charger-holding)
+>> Response: A courthe cle chard chair with stalarge s 
+
+>> Prompt: (gray.n ipod-contains), (ipod.n white on-charger on-shelf contains-gray charger-holding)
+>> Response: an angren charge con 
+
+>> Prompt: (portion.n of-wall), (wall.n image-on portion-of image-on note-on)
+>> Response: a ptop aptop ander its 
+
+>> Prompt: (portion.n of-wall), (wall.n image-on portion-of image-on note-on)
+>> Response: a charee s 
+
+>> Prompt: (portion.n of-wall), (wall.n image-on portion-of image-on note-on)
+>> Response: A cle chair chair 
+
+>> Prompt: (portion.n of-wall), (wall.n image-on portion-of image-on note-on)
+>> Response: a curen parales on desk 
+
+>> Prompt: (keyboard.n white gray on-desk for-computer part-of), (part.n of-keyboard)
+>> Response: a is on desk 
+
+>> Prompt: (keyboard.n white gray on-desk for-computer part-of), (part.n of-keyboard)
+>> Response: a computer computer 
+
+>> Prompt: (keyboard.n white gray on-desk for-computer part-of), (part.n of-keyboard)
+>> Response: A is colllll ck chour 
+
+>> Prompt: (keyboard.n white gray on-desk for-computer part-of), (part.n of-keyboard)
+>> Response: a computer is white chair 
+
+>> Prompt: (computer.n on-desk keyboard-for monitor-for mouse-for), (desk.n large wooden wood light has-edge lamp-on laptop-on monitor-on mousepad-on lamp-on keyboard-on mousepad-on mouse-on edge-of computer-on laptop-on), (laptop.n black on on-desk on-desk)
+>> Response: A is a a table desk 
+
+>> Prompt: (computer.n on-desk keyboard-for monitor-for mouse-for), (desk.n large wooden wood light has-edge lamp-on laptop-on monitor-on mousepad-on lamp-on keyboard-on mousepad-on mouse-on edge-of computer-on laptop-on), (laptop.n black on on-desk on-desk)
+>> Response: a computer 
+
+>> Prompt: (computer.n on-desk keyboard-for monitor-for mouse-for), (desk.n large wooden wood light has-edge lamp-on laptop-on monitor-on mousepad-on lamp-on keyboard-on mousepad-on mouse-on edge-of computer-on laptop-on), (laptop.n black on on-desk on-desk)
+>> Response: a desk 
+
+>> Prompt: (computer.n on-desk keyboard-for monitor-for mouse-for), (desk.n large wooden wood light has-edge lamp-on laptop-on monitor-on mousepad-on lamp-on keyboard-on mousepad-on mouse-on edge-of computer-on laptop-on), (laptop.n black on on-desk on-desk)
+>> Response: a desk 
+
+>> Prompt: (note.n on-wall), (paper.n ), (wall.n picture-on part-of picture-on note-on)
+>> Response: a is a a a wall 
+
+>> Prompt: (note.n on-wall), (paper.n ), (wall.n picture-on part-of picture-on note-on)
+>> Response: a is a a charde 
+
+>> Prompt: (note.n on-wall), (paper.n ), (wall.n picture-on part-of picture-on note-on)
+>> Response: an a a a choldsts 
+
+>> Prompt: (note.n on-wall), (paper.n ), (wall.n picture-on part-of picture-on note-on)
+>> Response: A an andit 
+
+>> Prompt: (couch.n green portion-of), (portion.n of-couch)
+>> Response: A tan chair with chale s 
+
+>> Prompt: (couch.n green portion-of), (portion.n of-couch)
+>> Response: arts curee s 
+
+>> Prompt: (couch.n green portion-of), (portion.n of-couch)
+>> Response: alles ststic chole 
+
+>> Prompt: (couch.n green portion-of), (portion.n of-couch)
+>> Response: all ches 
+
+>> Prompt: (desk.n large wooden wood light has-edge lamp-on laptop-on monitor-on mousepad-on lamp-on keyboard-on mousepad-on mouse-on edge-of computer-on laptop-on), (monitor.n black on-desk for-computer part-of)
+>> Response: an computer 
+
+>> Prompt: (desk.n large wooden wood light has-edge lamp-on laptop-on monitor-on mousepad-on lamp-on keyboard-on mousepad-on mouse-on edge-of computer-on laptop-on), (monitor.n black on-desk for-computer part-of)
+>> Response: A is white clale ptop of chour 
+
+>> Prompt: (desk.n large wooden wood light has-edge lamp-on laptop-on monitor-on mousepad-on lamp-on keyboard-on mousepad-on mouse-on edge-of computer-on laptop-on), (monitor.n black on-desk for-computer part-of)
+>> Response: A is chair 
+
+>> Prompt: (desk.n large wooden wood light has-edge lamp-on laptop-on monitor-on mousepad-on lamp-on keyboard-on mousepad-on mouse-on edge-of computer-on laptop-on), (monitor.n black on-desk for-computer part-of)
+>> Response: an computer is on the desk 

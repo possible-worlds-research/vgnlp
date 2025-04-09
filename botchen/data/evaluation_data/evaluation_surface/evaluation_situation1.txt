@@ -1,0 +1,4442 @@
+>> Loaded models dict_keys(['chat'])
+
+
+>> Prompt: the man is in a red sweater
+>> Response: the mouse is white 
+
+>> Prompt: the man is in a red sweater
+>> Response: the mouse mages 
+
+>> Prompt: the man is in a red sweater
+>> Response: the mousess are blue 
+
+>> Prompt: the man is in a red sweater
+>> Response: the mouse is white 
+
+>> Prompt: woman has red top
+>> Response: the floor is mouse 
+
+>> Prompt: woman has red top
+>> Response: the floor is fupport 
+
+>> Prompt: woman has red top
+>> Response: a lite mouse is le 
+
+>> Prompt: woman has red top
+>> Response: a lictures are suport 
+
+>> Prompt: Sign on white house above entrance
+>> Response: the mouse is clean 
+
+>> Prompt: Sign on white house above entrance
+>> Response: the mouse is white 
+
+>> Prompt: Sign on white house above entrance
+>> Response: a lupk of a mout 
+
+>> Prompt: Sign on white house above entrance
+>> Response: a white mutese is on 
+
+>> Prompt: woman is wearing grey jumper
+>> Response: the floor has a red mouse 
+
+>> Prompt: woman is wearing grey jumper
+>> Response: the floor is white in the photo 
+
+>> Prompt: woman is wearing grey jumper
+>> Response: the mousesss 
+
+>> Prompt: woman is wearing grey jumper
+>> Response: apet is on the desk 
+
+>> Prompt: This person has a grey jacket on.
+>> Response: A mituresss lit 
+
+>> Prompt: This person has a grey jacket on.
+>> Response: A purple clorpet 
+
+>> Prompt: This person has a grey jacket on.
+>> Response: A white mite legs 
+
+>> Prompt: This person has a grey jacket on.
+>> Response: The's and legs 
+
+>> Prompt: woman is wearing black pants
+>> Response: the mouse is mage 
+
+>> Prompt: woman is wearing black pants
+>> Response: the frictures in the photo 
+
+>> Prompt: woman is wearing black pants
+>> Response: a mouse is and white 
+
+>> Prompt: woman is wearing black pants
+>> Response: the floor is white 
+
+>> Prompt: electric post near the men
+>> Response: a waseat is a and down 
+
+>> Prompt: electric post near the men
+>> Response: a wictures are on the desk 
+
+>> Prompt: electric post near the men
+>> Response: the waseat is a lege 
+
+>> Prompt: electric post near the men
+>> Response: the floor is far 
+
+>> Prompt: two men talking on sidewalk
+>> Response: a lown 
+
+>> Prompt: two men talking on sidewalk
+>> Response: the mause mause is on the desk 
+
+>> Prompt: two men talking on sidewalk
+>> Response: the leges 
+
+>> Prompt: two men talking on sidewalk
+>> Response: a mouse is on the desk 
+
+>> Prompt: it is a white van
+>> Response: the fupport is clean 
+
+>> Prompt: it is a white van
+>> Response: the mage is white 
+
+>> Prompt: it is a white van
+>> Response: a micle is on the floor 
+
+>> Prompt: it is a white van
+>> Response: the floor has a fus 
+
+>> Prompt: tall green clock
+>> Response: the wa wiles are on the floor 
+
+>> Prompt: tall green clock
+>> Response: the wil mouse lite leggs 
+
+>> Prompt: tall green clock
+>> Response: the mouse wage of the wall 
+
+>> Prompt: tall green clock
+>> Response: a white drawers 
+
+>> Prompt: it is a separation made of grey tiles
+>> Response: the floor is white in colour 
+
+>> Prompt: it is a separation made of grey tiles
+>> Response: a lite micle witures 
+
+>> Prompt: it is a separation made of grey tiles
+>> Response: the fron is a lit 
+
+>> Prompt: it is a separation made of grey tiles
+>> Response: a lit is a and dor the photo 
+
+>> Prompt: car has a black tire
+>> Response: the frit is les 
+
+>> Prompt: car has a black tire
+>> Response: a witure lesss 
+
+>> Prompt: car has a black tire
+>> Response: a wit is a and white 
+
+>> Prompt: car has a black tire
+>> Response: the floor has a mouse 
+
+>> Prompt: Man wears sneakers
+>> Response: a white mouse is loutt 
+
+>> Prompt: Man wears sneakers
+>> Response: the mouse wit is le 
+
+>> Prompt: Man wears sneakers
+>> Response: the floor is white 
+
+>> Prompt: Man wears sneakers
+>> Response: the markes are on 
+
+>> Prompt: white building is at the back
+>> Response: a mouse is legs 
+
+>> Prompt: white building is at the back
+>> Response: the floor has a been switched off 
+
+>> Prompt: white building is at the back
+>> Response: the floor has a been parked 
+
+>> Prompt: white building is at the back
+>> Response: the floor is mous 
+
+>> Prompt: the woman is glasses
+>> Response: the mage is dain 
+
+>> Prompt: the woman is glasses
+>> Response: the mouse is dain 
+
+>> Prompt: the woman is glasses
+>> Response: the floor is white 
+
+>> Prompt: the woman is glasses
+>> Response: the mousse is lous 
+
+>> Prompt: cars are parked along the edge of the street
+>> Response: the mage is white 
+
+>> Prompt: cars are parked along the edge of the street
+>> Response: the farpers are mar the roof 
+
+>> Prompt: cars are parked along the edge of the street
+>> Response: the floor is white in colour 
+
+>> Prompt: cars are parked along the edge of the street
+>> Response: the frictures are on 
+
+>> Prompt: a brown house opposite were the men are standing
+>> Response: the floor is fuppppet is on 
+
+>> Prompt: a brown house opposite were the men are standing
+>> Response: the floor is white in colour 
+
+>> Prompt: a brown house opposite were the men are standing
+>> Response: a mage is on the floor 
+
+>> Prompt: a brown house opposite were the men are standing
+>> Response: the mouse is lowning 
+
+>> Prompt: street light on wooden pole
+>> Response: the mouse is white 
+
+>> Prompt: street light on wooden pole
+>> Response: the fror wit is legs 
+
+>> Prompt: street light on wooden pole
+>> Response: the mouse mage on the desk 
+
+>> Prompt: street light on wooden pole
+>> Response: the floor has a mage 
+
+>> Prompt: A woman in a red sweater
+>> Response: the mousess 
+
+>> Prompt: A woman in a red sweater
+>> Response: the frit is mouse 
+
+>> Prompt: A woman in a red sweater
+>> Response: the mouse is white in colour 
+
+>> Prompt: A woman in a red sweater
+>> Response: A mousess 
+
+>> Prompt: Cars parked on side of the street
+>> Response: the floor has a fuport 
+
+>> Prompt: Cars parked on side of the street
+>> Response: the floor has a white f 
+
+>> Prompt: Cars parked on side of the street
+>> Response: a wictures are on the floor 
+
+>> Prompt: Cars parked on side of the street
+>> Response: the mage of the wall 
+
+>> Prompt: the trees do not have leaves
+>> Response: the floor has a frit 
+
+>> Prompt: the trees do not have leaves
+>> Response: a white mousese is douse 
+
+>> Prompt: the trees do not have leaves
+>> Response: a white carset 
+
+>> Prompt: the trees do not have leaves
+>> Response: the mouse is lows 
+
+>> Prompt: a red vehicle is at the back
+>> Response: the floor is clean 
+
+>> Prompt: a red vehicle is at the back
+>> Response: a white mouse is on 
+
+>> Prompt: a red vehicle is at the back
+>> Response: the floor is white 
+
+>> Prompt: a red vehicle is at the back
+>> Response: a mage warkes on the floor 
+
+>> Prompt: the men are on the sidewalk
+>> Response: a lictures are on the desk 
+
+>> Prompt: the men are on the sidewalk
+>> Response: the floor has a mout 
+
+>> Prompt: the men are on the sidewalk
+>> Response: the mouse is white 
+
+>> Prompt: the men are on the sidewalk
+>> Response: the frors are support 
+
+>> Prompt: tree with sparse leaves
+>> Response: a white carpet is on the floor 
+
+>> Prompt: tree with sparse leaves
+>> Response: the floor is white 
+
+>> Prompt: tree with sparse leaves
+>> Response: a moouse wage on a table 
+
+>> Prompt: tree with sparse leaves
+>> Response: a wicle legs on a table 
+
+>> Prompt: two lights are switched on
+>> Response: the fupicturiture llles 
+
+>> Prompt: two lights are switched on
+>> Response: the floor is white 
+
+>> Prompt: two lights are switched on
+>> Response: the floor has been parked next to the lit 
+
+>> Prompt: two lights are switched on
+>> Response: a mouse is on the floor 
+
+>> Prompt: the woman wears grey pants
+>> Response: a liges 
+
+>> Prompt: the woman wears grey pants
+>> Response: a mall and legs 
+
+>> Prompt: the woman wears grey pants
+>> Response: the floor is fupport 
+
+>> Prompt: the woman wears grey pants
+>> Response: the frictures in the photo 
+
+>> Prompt: metal parking meter
+>> Response: a lowses 
+
+>> Prompt: metal parking meter
+>> Response: a doowsess 
+
+>> Prompt: metal parking meter
+>> Response: the lows are on the desk 
+
+>> Prompt: metal parking meter
+>> Response: a doorsse 
+
+>> Prompt: woman in red sweater
+>> Response: the mouse is white 
+
+>> Prompt: woman in red sweater
+>> Response: the mouse is les 
+
+>> Prompt: woman in red sweater
+>> Response: the fupppppet is and dort 
+
+>> Prompt: woman in red sweater
+>> Response: the fuses are blue 
+
+>> Prompt: the man to the left is wearing glasses
+>> Response: the floor has been parked 
+
+>> Prompt: the man to the left is wearing glasses
+>> Response: the mout is white in colour 
+
+>> Prompt: the man to the left is wearing glasses
+>> Response: the low is white in colour 
+
+>> Prompt: the man to the left is wearing glasses
+>> Response: the mouse is clean 
+
+>> Prompt: man is wearing red tshirt
+>> Response: the floor has a grey and light 
+
+>> Prompt: man is wearing red tshirt
+>> Response: the mouse is loutttt 
+
+>> Prompt: man is wearing red tshirt
+>> Response: a lictures are on the desk 
+
+>> Prompt: man is wearing red tshirt
+>> Response: the floor has a mouse 
+
+>> Prompt: yellow vehicle in the road
+>> Response: the floor is mage 
+
+>> Prompt: yellow vehicle in the road
+>> Response: the wit is white 
+
+>> Prompt: yellow vehicle in the road
+>> Response: a white muse is on the desk 
+
+>> Prompt: yellow vehicle in the road
+>> Response: a white muse is on the desk 
+
+>> Prompt: A white truck.
+>> Response: The's a lige 
+
+>> Prompt: A white truck.
+>> Response: A purple clushtese 
+
+>> Prompt: A white truck.
+>> Response: The's legs 
+
+>> Prompt: A white truck.
+>> Response: A purple carpet 
+
+>> Prompt: white truck parked near the road
+>> Response: the mouse is white 
+
+>> Prompt: white truck parked near the road
+>> Response: the floor is white 
+
+>> Prompt: white truck parked near the road
+>> Response: the fuppport is on the desk 
+
+>> Prompt: white truck parked near the road
+>> Response: the floor hay 
+
+>> Prompt: man is wearing glasses
+>> Response: the moussse lowns 
+
+>> Prompt: man is wearing glasses
+>> Response: the mouse is white 
+
+>> Prompt: man is wearing glasses
+>> Response: the leavehicture lictures are on the floor 
+
+>> Prompt: man is wearing glasses
+>> Response: the lorsss mages 
+
+>> Prompt: a couple of bicycles
+>> Response: a white mouse is on 
+
+>> Prompt: a couple of bicycles
+>> Response: the mouse is far 
+
+>> Prompt: a couple of bicycles
+>> Response: the floor has a white carper 
+
+>> Prompt: a couple of bicycles
+>> Response: the was are wit 
+
+>> Prompt: White canopy on brick house
+>> Response: a mouse on the wall 
+
+>> Prompt: White canopy on brick house
+>> Response: the mouse wage of a f 
+
+>> Prompt: White canopy on brick house
+>> Response: the waseat is lows 
+
+>> Prompt: White canopy on brick house
+>> Response: the floor has a mouse 
+
+>> Prompt: shade is along the street
+>> Response: a white mouse is legs 
+
+>> Prompt: shade is along the street
+>> Response: the floor is furit is dor 
+
+>> Prompt: shade is along the street
+>> Response: a white mouse is le 
+
+>> Prompt: shade is along the street
+>> Response: a white lessegs 
+
+>> Prompt: black sign on front of building
+>> Response: the floor has bowllll of f 
+
+>> Prompt: black sign on front of building
+>> Response: the mouse is white 
+
+>> Prompt: black sign on front of building
+>> Response: a mouse on the desk 
+
+>> Prompt: black sign on front of building
+>> Response: the wit is mout 
+
+>> Prompt: Parking meter located next to curb
+>> Response: the mouse is mous 
+
+>> Prompt: Parking meter located next to curb
+>> Response: the mouse wicle wnetures on the floor 
+
+>> Prompt: Parking meter located next to curb
+>> Response: the floor is furor 
+
+>> Prompt: Parking meter located next to curb
+>> Response: a mouse on a desk 
+
+>> Prompt: both of the people are men
+>> Response: a marper bottle is on 
+
+>> Prompt: both of the people are men
+>> Response: the floor is white in colour 
+
+>> Prompt: both of the people are men
+>> Response: the warkes on the floor 
+
+>> Prompt: both of the people are men
+>> Response: a waseating legs 
+
+>> Prompt: bicycle chained to a pole
+>> Response: the floor has a fuppppot 
+
+>> Prompt: bicycle chained to a pole
+>> Response: the mouse wit is le 
+
+>> Prompt: bicycle chained to a pole
+>> Response: A mictures on a desk 
+
+>> Prompt: bicycle chained to a pole
+>> Response: the mouse moutse is dar 
+
+>> Prompt: a white pick up truck
+>> Response: the mouse is legs 
+
+>> Prompt: a white pick up truck
+>> Response: a mouse legss and witure 
+
+>> Prompt: a white pick up truck
+>> Response: a moute is on the desk 
+
+>> Prompt: a white pick up truck
+>> Response: the floor has a mous 
+
+>> Prompt: A tree trunk on the sidewalk
+>> Response: the floor has a mous 
+
+>> Prompt: A tree trunk on the sidewalk
+>> Response: the floor is white 
+
+>> Prompt: A tree trunk on the sidewalk
+>> Response: the floor has been switched off 
+
+>> Prompt: A tree trunk on the sidewalk
+>> Response: a white carperset 
+
+>> Prompt: two men standing facing one another
+>> Response: a mouse is on the desk 
+
+>> Prompt: two men standing facing one another
+>> Response: the floor is white 
+
+>> Prompt: two men standing facing one another
+>> Response: the mouse is white 
+
+>> Prompt: two men standing facing one another
+>> Response: the floor has a fus 
+
+>> Prompt: brick separation of a house
+>> Response: a mage of warkes 
+
+>> Prompt: brick separation of a house
+>> Response: a moute is on the desk 
+
+>> Prompt: brick separation of a house
+>> Response: the marpers are on the floor 
+
+>> Prompt: brick separation of a house
+>> Response: the floor is furit 
+
+>> Prompt: it is a blue sky
+>> Response: the marpe is white 
+
+>> Prompt: it is a blue sky
+>> Response: the fron is day 
+
+>> Prompt: it is a blue sky
+>> Response: the floor has a grey and mouse 
+
+>> Prompt: it is a blue sky
+>> Response: a mouse is on the desk 
+
+>> Prompt: two men stand on an urban sidewalk
+>> Response: the mage mouse legsss on the wall 
+
+>> Prompt: two men stand on an urban sidewalk
+>> Response: a lictures are support 
+
+>> Prompt: two men stand on an urban sidewalk
+>> Response: a white moute is on the floor 
+
+>> Prompt: two men stand on an urban sidewalk
+>> Response: A white papet is on the desk 
+
+>> Prompt: there are buildings in the photo
+>> Response: the floor is mouse 
+
+>> Prompt: there are buildings in the photo
+>> Response: the floor has a mous 
+
+>> Prompt: there are buildings in the photo
+>> Response: the floor is white 
+
+>> Prompt: there are buildings in the photo
+>> Response: the magese is les 
+
+>> Prompt: shadow is below the car
+>> Response: a mage is dower 
+
+>> Prompt: shadow is below the car
+>> Response: the floor has been turned off 
+
+>> Prompt: shadow is below the car
+>> Response: the waseat is a been parked on the desk 
+
+>> Prompt: shadow is below the car
+>> Response: the mage is clean 
+
+>> Prompt: man is wearing grey jumper
+>> Response: the mouse is clean 
+
+>> Prompt: man is wearing grey jumper
+>> Response: the lessss are suport 
+
+>> Prompt: man is wearing grey jumper
+>> Response: the floor is mage 
+
+>> Prompt: man is wearing grey jumper
+>> Response: ase is lige 
+
+>> Prompt: white van is parked near the road
+>> Response: the floor is white 
+
+>> Prompt: white van is parked near the road
+>> Response: the marpers are on the desk 
+
+>> Prompt: white van is parked near the road
+>> Response: the mouse is les 
+
+>> Prompt: white van is parked near the road
+>> Response: the floor is white 
+
+>> Prompt: shadows of tree branches on a house
+>> Response: a mouse lese of ligs 
+
+>> Prompt: shadows of tree branches on a house
+>> Response: the mage is white 
+
+>> Prompt: shadows of tree branches on a house
+>> Response: the floor is white in colour 
+
+>> Prompt: shadows of tree branches on a house
+>> Response: the marpet is clean 
+
+>> Prompt: brick wall of a house
+>> Response: a lusegs on the it 
+
+>> Prompt: brick wall of a house
+>> Response: the floor has a red and white been parked 
+
+>> Prompt: brick wall of a house
+>> Response: a mouse mauticle 
+
+>> Prompt: brick wall of a house
+>> Response: the lit is lle 
+
+>> Prompt: the bottom of a plant
+>> Response: a lite tige wny dray 
+
+>> Prompt: the bottom of a plant
+>> Response: a moute is on 
+
+>> Prompt: the bottom of a plant
+>> Response: a moute is les 
+
+>> Prompt: the bottom of a plant
+>> Response: apers on the floor 
+
+>> Prompt: the day was sunny
+>> Response: a mouse is on the desk 
+
+>> Prompt: the day was sunny
+>> Response: the mouse is wage 
+
+>> Prompt: the day was sunny
+>> Response: a mouse legsss on a desk. 
+
+>> Prompt: the day was sunny
+>> Response: the floor has a maus 
+
+>> Prompt: parking meter
+>> Response: the mouse is downing 
+
+>> Prompt: parking meter
+>> Response: a lownge les 
+
+>> Prompt: parking meter
+>> Response: the floor is white 
+
+>> Prompt: parking meter
+>> Response: a lowsess and white mouse 
+
+>> Prompt: man has raised his arm
+>> Response: the lows are sushige 
+
+>> Prompt: man has raised his arm
+>> Response: ark drawers 
+
+>> Prompt: man has raised his arm
+>> Response: the mages on the it 
+
+>> Prompt: man has raised his arm
+>> Response: ages on a desk 
+
+>> Prompt: large moss covered plant
+>> Response: the wit is a mage 
+
+>> Prompt: large moss covered plant
+>> Response: the markes are on the desk 
+
+>> Prompt: large moss covered plant
+>> Response: apers on a desk 
+
+>> Prompt: large moss covered plant
+>> Response: a mouse on the iclegs on the wall 
+
+>> Prompt: white car has been parked were they are standing
+>> Response: a wictures are on the desk 
+
+>> Prompt: white car has been parked were they are standing
+>> Response: a white in the photo 
+
+>> Prompt: white car has been parked were they are standing
+>> Response: the floor is white 
+
+>> Prompt: white car has been parked were they are standing
+>> Response: the mouse is wicling 
+
+>> Prompt: a white vehicle parked
+>> Response: a workes are on the desk 
+
+>> Prompt: a white vehicle parked
+>> Response: the mout is a lit 
+
+>> Prompt: a white vehicle parked
+>> Response: the wase is white 
+
+>> Prompt: a white vehicle parked
+>> Response: the mouse wages 
+
+>> Prompt: A brick sidewalk beside the street
+>> Response: A wicle litures on iget 
+
+>> Prompt: A brick sidewalk beside the street
+>> Response: A mouse wicture and wighte 
+
+>> Prompt: A brick sidewalk beside the street
+>> Response: the floor has a mout 
+
+>> Prompt: A brick sidewalk beside the street
+>> Response: A mouse on a desk 
+
+>> Prompt: bikes are parked on the far end
+>> Response: the floor has been switched off 
+
+>> Prompt: bikes are parked on the far end
+>> Response: A white and mictures on fage 
+
+>> Prompt: bikes are parked on the far end
+>> Response: the mouse is lege 
+
+>> Prompt: bikes are parked on the far end
+>> Response: the fuse is white in colour 
+
+>> Prompt: two lights are on on the house
+>> Response: the mout is white in colour 
+
+>> Prompt: two lights are on on the house
+>> Response: the floor is furit 
+
+>> Prompt: two lights are on on the house
+>> Response: a mall mouse is on the desk 
+
+>> Prompt: two lights are on on the house
+>> Response: the floor has bowlllll ftt 
+
+>> Prompt: white work truck parked at curb
+>> Response: the floor is mouse 
+
+>> Prompt: white work truck parked at curb
+>> Response: the floor has a mouse 
+
+>> Prompt: white work truck parked at curb
+>> Response: A white and gray lige 
+
+>> Prompt: white work truck parked at curb
+>> Response: the mage legs 
+
+>> Prompt: a large clock on a green post
+>> Response: apers on the desk 
+
+>> Prompt: a large clock on a green post
+>> Response: aper bottle is on the desk 
+
+>> Prompt: a large clock on a green post
+>> Response: the mousse is white in colour 
+
+>> Prompt: a large clock on a green post
+>> Response: the fuseat is a fup 
+
+>> Prompt: A utility pick-up truck
+>> Response: the warpers are on the desk 
+
+>> Prompt: A utility pick-up truck
+>> Response: A wooden standing at the it 
+
+>> Prompt: A utility pick-up truck
+>> Response: A woman with black dray lesss 
+
+>> Prompt: A utility pick-up truck
+>> Response: A woman with black hair and white and and dight 
+
+>> Prompt: cars are parked on the side of the road
+>> Response: a white in the mouse 
+
+>> Prompt: cars are parked on the side of the road
+>> Response: the mouse is white 
+
+>> Prompt: cars are parked on the side of the road
+>> Response: the floor is mout is white 
+
+>> Prompt: cars are parked on the side of the road
+>> Response: the floor is mar 
+
+>> Prompt: the two men are talking
+>> Response: a white mouse is on 
+
+>> Prompt: the two men are talking
+>> Response: the floor is das 
+
+>> Prompt: the two men are talking
+>> Response: the floor has a mouse 
+
+>> Prompt: the two men are talking
+>> Response: a mouse wages 
+
+>> Prompt: bicycle parked on sidewalk
+>> Response: A witure and legs 
+
+>> Prompt: bicycle parked on sidewalk
+>> Response: the mouse is lous 
+
+>> Prompt: bicycle parked on sidewalk
+>> Response: A white and and gray and white clort 
+
+>> Prompt: bicycle parked on sidewalk
+>> Response: the floor has a white mage 
+
+>> Prompt: a man's red sweater
+>> Response: the fuport is meses 
+
+>> Prompt: a man's red sweater
+>> Response: a mall lige 
+
+>> Prompt: a man's red sweater
+>> Response: the man hay and and waves 
+
+>> Prompt: a man's red sweater
+>> Response: the fupors on the wall 
+
+>> Prompt: trees line the sidewalk
+>> Response: a witure mouse wight on the far mage 
+
+>> Prompt: trees line the sidewalk
+>> Response: the was are suport 
+
+>> Prompt: trees line the sidewalk
+>> Response: A mitures and lit 
+
+>> Prompt: trees line the sidewalk
+>> Response: the floor has a maut 
+
+>> Prompt: green pole is in the photo
+>> Response: a mousese is legs 
+
+>> Prompt: green pole is in the photo
+>> Response: the mouse is dase 
+
+>> Prompt: green pole is in the photo
+>> Response: the mous are lle 
+
+>> Prompt: green pole is in the photo
+>> Response: the floor is white 
+
+>> Prompt: man is holding his chin
+>> Response: as and white downse 
+
+>> Prompt: man is holding his chin
+>> Response: the mouse is down 
+
+>> Prompt: man is holding his chin
+>> Response: the mout is dout 
+
+>> Prompt: man is holding his chin
+>> Response: a mousessss 
+
+>> Prompt: two bikes next to tree
+>> Response: the mouse is white in colour 
+
+>> Prompt: two bikes next to tree
+>> Response: the wooden stand is on the desk 
+
+>> Prompt: two bikes next to tree
+>> Response: A wooden standing at the edge 
+
+>> Prompt: two bikes next to tree
+>> Response: the woodit is a and down 
+
+>> Prompt: it is a wall made of grey tiles
+>> Response: a white top 
+
+>> Prompt: it is a wall made of grey tiles
+>> Response: the frit is mouse 
+
+>> Prompt: it is a wall made of grey tiles
+>> Response: the magese mage on the desk 
+
+>> Prompt: it is a wall made of grey tiles
+>> Response: a mouse is lit 
+
+>> Prompt: A man in a red long-sleeved sweater
+>> Response: the marpers on the desk 
+
+>> Prompt: A man in a red long-sleeved sweater
+>> Response: A woodit is a and legs 
+
+>> Prompt: A man in a red long-sleeved sweater
+>> Response: Asicle wictures are on 
+
+>> Prompt: A man in a red long-sleeved sweater
+>> Response: the floor has a purple carpet 
+
+>> Prompt: plant has no leaves
+>> Response: a white legess 
+
+>> Prompt: plant has no leaves
+>> Response: a wicture litures on it 
+
+>> Prompt: plant has no leaves
+>> Response: a mictures on iture legs 
+
+>> Prompt: plant has no leaves
+>> Response: the moouse is legs 
+
+>> Prompt: sign above building entrance
+>> Response: a moute licle leggs on a table 
+
+>> Prompt: sign above building entrance
+>> Response: the mouse is white 
+
+>> Prompt: sign above building entrance
+>> Response: the man has farkes 
+
+>> Prompt: sign above building entrance
+>> Response: the wase is white in colour 
+
+>> Prompt: the bottom of a tree
+>> Response: the warpers are mage 
+
+>> Prompt: the bottom of a tree
+>> Response: a white lighte lite 
+
+>> Prompt: the bottom of a tree
+>> Response: the floor is white 
+
+>> Prompt: the bottom of a tree
+>> Response: a white liget on the wall 
+
+>> Prompt: A man dressed in a red shirt and black pants.
+>> Response: Thone is on the desk 
+
+>> Prompt: A man dressed in a red shirt and black pants.
+>> Response: A purple clorpet les 
+
+>> Prompt: A man dressed in a red shirt and black pants.
+>> Response: Thons are shie 
+
+>> Prompt: A man dressed in a red shirt and black pants.
+>> Response: A white mousesss 
+
+>> Prompt: Trees with sparse foilage
+>> Response: a wite liture leggs 
+
+>> Prompt: Trees with sparse foilage
+>> Response: the mouse licles are on the floor 
+
+>> Prompt: Trees with sparse foilage
+>> Response: the marke of the wall 
+
+>> Prompt: Trees with sparse foilage
+>> Response: a work of a animal 
+
+>> Prompt: the shoes are grey
+>> Response: the floor has a mous 
+
+>> Prompt: the shoes are grey
+>> Response: the floor is white 
+
+>> Prompt: the shoes are grey
+>> Response: a white in color 
+
+>> Prompt: the shoes are grey
+>> Response: the floor is white 
+
+>> Prompt: building is painted white
+>> Response: the floor is white in colour 
+
+>> Prompt: building is painted white
+>> Response: the floor is mages 
+
+>> Prompt: building is painted white
+>> Response: the frors is legss 
+
+>> Prompt: building is painted white
+>> Response: the mousese is white in color 
+
+>> Prompt: the tires from two bikes
+>> Response: the wase is white in colour 
+
+>> Prompt: the tires from two bikes
+>> Response: the floor has a mage 
+
+>> Prompt: the tires from two bikes
+>> Response: the war computer monitor 
+
+>> Prompt: the tires from two bikes
+>> Response: a mouse leclorss and witures 
+
+>> Prompt: trees lining the street
+>> Response: the floor is white in colour 
+
+>> Prompt: trees lining the street
+>> Response: the wark is lown 
+
+>> Prompt: trees lining the street
+>> Response: a magese on the desk 
+
+>> Prompt: trees lining the street
+>> Response: a lowses 
+
+>> Prompt: Red vehicle parked next to curb
+>> Response: the mause is white 
+
+>> Prompt: Red vehicle parked next to curb
+>> Response: A white poppppers on a table 
+
+>> Prompt: Red vehicle parked next to curb
+>> Response: A white mouse 
+
+>> Prompt: Red vehicle parked next to curb
+>> Response: the mouse lessss 
+
+>> Prompt: the rear of a white car
+>> Response: a white mouse is on 
+
+>> Prompt: the rear of a white car
+>> Response: a mouse is on 
+
+>> Prompt: the rear of a white car
+>> Response: the floor is white 
+
+>> Prompt: the rear of a white car
+>> Response: the fuppet is on the desk 
+
+>> Prompt: man is wearing sneakers
+>> Response: the mout is white in colour 
+
+>> Prompt: man is wearing sneakers
+>> Response: a mouse wavehies on icture 
+
+>> Prompt: man is wearing sneakers
+>> Response: the mouse is les 
+
+>> Prompt: man is wearing sneakers
+>> Response: a white carpet is on 
+
+>> Prompt: A man in a gray hoodie
+>> Response: the floor has a red down 
+
+>> Prompt: A man in a gray hoodie
+>> Response: A coatters on the ite 
+
+>> Prompt: A man in a gray hoodie
+>> Response: A white mitures on a desk 
+
+>> Prompt: A man in a gray hoodie
+>> Response: the fuse is white 
+
+>> Prompt: parking meter has an orange top
+>> Response: a moutiture legs and drawns 
+
+>> Prompt: parking meter has an orange top
+>> Response: the mousse is white 
+
+>> Prompt: parking meter has an orange top
+>> Response: the floor is white 
+
+>> Prompt: parking meter has an orange top
+>> Response: the wictures are on the desk 
+
+>> Prompt: Shadows on side of building
+>> Response: the markes are on 
+
+>> Prompt: Shadows on side of building
+>> Response: the wicl witures on the wall 
+
+>> Prompt: Shadows on side of building
+>> Response: the floor is mous 
+
+>> Prompt: Shadows on side of building
+>> Response: the floor has a fror mags 
+
+>> Prompt: trees just beginning to bud in spring
+>> Response: the mouse is white 
+
+>> Prompt: trees just beginning to bud in spring
+>> Response: a white mousese 
+
+>> Prompt: trees just beginning to bud in spring
+>> Response: the mouse is white 
+
+>> Prompt: trees just beginning to bud in spring
+>> Response: a mouse on a desk 
+
+>> Prompt: the clock is green in colour
+>> Response: the mouse is white in colour 
+
+>> Prompt: the clock is green in colour
+>> Response: the floor has been switched off 
+
+>> Prompt: the clock is green in colour
+>> Response: a white moouse is on 
+
+>> Prompt: the clock is green in colour
+>> Response: the floor is white 
+
+>> Prompt: man touching his face
+>> Response: apet is on the desk 
+
+>> Prompt: man touching his face
+>> Response: apers on the wall 
+
+>> Prompt: man touching his face
+>> Response: the mousesss 
+
+>> Prompt: man touching his face
+>> Response: apers are on the desk 
+
+>> Prompt: bicycles are seen in the bckground
+>> Response: the magese is down 
+
+>> Prompt: bicycles are seen in the bckground
+>> Response: the wicles are on the floor 
+
+>> Prompt: bicycles are seen in the bckground
+>> Response: the wicture is lege 
+
+>> Prompt: bicycles are seen in the bckground
+>> Response: a wooden been turned off 
+
+>> Prompt: two men standing on the road
+>> Response: a lite and leggs 
+
+>> Prompt: two men standing on the road
+>> Response: the floor is llllles 
+
+>> Prompt: two men standing on the road
+>> Response: the fupport is lor the desk 
+
+>> Prompt: two men standing on the road
+>> Response: the floor is white 
+
+>> Prompt: man in jeans and gray raincoat
+>> Response: the wark is on the floor 
+
+>> Prompt: man in jeans and gray raincoat
+>> Response: A woodite witures on it 
+
+>> Prompt: man in jeans and gray raincoat
+>> Response: A cording liclow dle 
+
+>> Prompt: man in jeans and gray raincoat
+>> Response: a moute lite legs on a desk 
+
+>> Prompt: a white truck is parked
+>> Response: A purple clorte is low 
+
+>> Prompt: a white truck is parked
+>> Response: the fuse is clean 
+
+>> Prompt: a white truck is parked
+>> Response: the floor is clean 
+
+>> Prompt: a white truck is parked
+>> Response: A and white mouse 
+
+>> Prompt: a tall street lamp
+>> Response: the mage less 
+
+>> Prompt: a tall street lamp
+>> Response: A purple carpeset 
+
+>> Prompt: a tall street lamp
+>> Response: A white and and dor the wall 
+
+>> Prompt: a tall street lamp
+>> Response: A white mighte lit 
+
+>> Prompt: a man's red shirt
+>> Response: a mousessse on a desk 
+
+>> Prompt: a man's red shirt
+>> Response: the mousse is white 
+
+>> Prompt: a man's red shirt
+>> Response: a lege of a piter 
+
+>> Prompt: a man's red shirt
+>> Response: the mouse is lownt 
+
+>> Prompt: bikes have been parked near a plant
+>> Response: the floor is mouse is dow 
+
+>> Prompt: bikes have been parked near a plant
+>> Response: the floor has a mouse 
+
+>> Prompt: bikes have been parked near a plant
+>> Response: a white muse on the desk 
+
+>> Prompt: bikes have been parked near a plant
+>> Response: the woodicture mage witure legs 
+
+>> Prompt: the woman wears a red t sweater
+>> Response: a purple futon 
+
+>> Prompt: the woman wears a red t sweater
+>> Response: the mouse is clean 
+
+>> Prompt: the woman wears a red t sweater
+>> Response: the mout is white in colour 
+
+>> Prompt: the woman wears a red t sweater
+>> Response: the frit is moute 
+
+>> Prompt: trees are along the road
+>> Response: the floor is white 
+
+>> Prompt: trees are along the road
+>> Response: the floor is white 
+
+>> Prompt: trees are along the road
+>> Response: the wooden stand is on the floor 
+
+>> Prompt: trees are along the road
+>> Response: a white in the mouse 
+
+>> Prompt: man in red shirt
+>> Response: the frons are dow the road 
+
+>> Prompt: man in red shirt
+>> Response: a lectrictures on the wall 
+
+>> Prompt: man in red shirt
+>> Response: a mousese on a desk 
+
+>> Prompt: man in red shirt
+>> Response: a micle wicture leggs 
+
+>> Prompt: Man wearing red sweater
+>> Response: the floor is white 
+
+>> Prompt: Man wearing red sweater
+>> Response: A purple carpesht 
+
+>> Prompt: Man wearing red sweater
+>> Response: A purple clorte 
+
+>> Prompt: Man wearing red sweater
+>> Response: A purple lows 
+
+>> Prompt: A man dressed in a red sweater and black pants.
+>> Response: A white mouse is on the desk 
+
+>> Prompt: A man dressed in a red sweater and black pants.
+>> Response: A purple carpet is on 
+
+>> Prompt: A man dressed in a red sweater and black pants.
+>> Response: A purple clostershiclor and cle 
+
+>> Prompt: A man dressed in a red sweater and black pants.
+>> Response: A purple couch with a and white ligght 
+
+>> Prompt: A tall brick building with many windows
+>> Response: the mousess 
+
+>> Prompt: A tall brick building with many windows
+>> Response: the mouse is mouse 
+
+>> Prompt: A tall brick building with many windows
+>> Response: a mouses 
+
+>> Prompt: A tall brick building with many windows
+>> Response: a witure leggs on fit 
+
+>> Prompt: black sign on front of house
+>> Response: a mouse is on the floor 
+
+>> Prompt: black sign on front of house
+>> Response: the mouse moutse lit 
+
+>> Prompt: black sign on front of house
+>> Response: the floor has a fron 
+
+>> Prompt: black sign on front of house
+>> Response: a mulusse mouse lit 
+
+>> Prompt: A tree bare of leaves
+>> Response: a mouse litege wit on a desk 
+
+>> Prompt: A tree bare of leaves
+>> Response: a mousse lit on a desk 
+
+>> Prompt: A tree bare of leaves
+>> Response: the mouse is white 
+
+>> Prompt: A tree bare of leaves
+>> Response: a witures on ighte 
+
+>> Prompt: lamp stands are along the road
+>> Response: a wooden stand is on the desk 
+
+>> Prompt: lamp stands are along the road
+>> Response: the floor is white 
+
+>> Prompt: lamp stands are along the road
+>> Response: the floor is white in colour 
+
+>> Prompt: lamp stands are along the road
+>> Response: the floor has been parked on 
+
+>> Prompt: a white car parked
+>> Response: the mouse wictures on the desk 
+
+>> Prompt: a white car parked
+>> Response: a white cper is on the floor 
+
+>> Prompt: a white car parked
+>> Response: the floor has a white and white mous 
+
+>> Prompt: a white car parked
+>> Response: a white mouse 
+
+>> Prompt: A white brick separation
+>> Response: a white mute is loutt 
+
+>> Prompt: A white brick separation
+>> Response: a white top computer top 
+
+>> Prompt: A white brick separation
+>> Response: the markes are on the desk 
+
+>> Prompt: A white brick separation
+>> Response: the mouse is white 
+
+>> Prompt: woman is wearing grey sweatshirt
+>> Response: the mouse is lows 
+
+>> Prompt: woman is wearing grey sweatshirt
+>> Response: the floor is white in colour 
+
+>> Prompt: woman is wearing grey sweatshirt
+>> Response: a mouse is on 
+
+>> Prompt: woman is wearing grey sweatshirt
+>> Response: a moute is on the floor 
+
+>> Prompt: a man in a red sweater
+>> Response: the mouses 
+
+>> Prompt: a man in a red sweater
+>> Response: the mousessss 
+
+>> Prompt: a man in a red sweater
+>> Response: a white mouse 
+
+>> Prompt: a man in a red sweater
+>> Response: the mousse is white 
+
+>> Prompt: woman touching his face
+>> Response: apers are legs 
+
+>> Prompt: woman touching his face
+>> Response: the floor is white 
+
+>> Prompt: woman touching his face
+>> Response: the mouse is das 
+
+>> Prompt: woman touching his face
+>> Response: apers are on the floor 
+
+>> Prompt: the man is glasses
+>> Response: the mout is a legs 
+
+>> Prompt: the man is glasses
+>> Response: the floor is white in colour 
+
+>> Prompt: the man is glasses
+>> Response: a dorkey dors 
+
+>> Prompt: the man is glasses
+>> Response: the lows are suport 
+
+>> Prompt: A tall brick house with many windows
+>> Response: a mousess 
+
+>> Prompt: A tall brick house with many windows
+>> Response: the mousess 
+
+>> Prompt: A tall brick house with many windows
+>> Response: the waseat is a legs 
+
+>> Prompt: A tall brick house with many windows
+>> Response: a mouse legs 
+
+>> Prompt: a man in a red shirt
+>> Response: a moute is on 
+
+>> Prompt: a man in a red shirt
+>> Response: the floor has a red sweater 
+
+>> Prompt: a man in a red shirt
+>> Response: the friges on a desk 
+
+>> Prompt: a man in a red shirt
+>> Response: the mousesss 
+
+>> Prompt: man has hand on pocket
+>> Response: the lorkes are on 
+
+>> Prompt: man has hand on pocket
+>> Response: the floor is fuport 
+
+>> Prompt: man has hand on pocket
+>> Response: a white and mousesss 
+
+>> Prompt: man has hand on pocket
+>> Response: the lowl wnit is a been 
+
+>> Prompt: lights are on in the house
+>> Response: a white mouse is on the desk 
+
+>> Prompt: lights are on in the house
+>> Response: the floor is white 
+
+>> Prompt: lights are on in the house
+>> Response: the floor is white 
+
+>> Prompt: lights are on in the house
+>> Response: a wictures on the floor 
+
+>> Prompt: headlights of the car are off
+>> Response: a white mouse is on 
+
+>> Prompt: headlights of the car are off
+>> Response: a mouse is on the floor 
+
+>> Prompt: headlights of the car are off
+>> Response: the floor is white 
+
+>> Prompt: headlights of the car are off
+>> Response: the floor has a fuport 
+
+>> Prompt: white vehicle parked next to the sidewalk
+>> Response: the floor is white 
+
+>> Prompt: white vehicle parked next to the sidewalk
+>> Response: the floor has a mous 
+
+>> Prompt: white vehicle parked next to the sidewalk
+>> Response: A mouse woodicture legs on ight 
+
+>> Prompt: white vehicle parked next to the sidewalk
+>> Response: the waseat has been parked 
+
+>> Prompt: a woman has brown shoes on
+>> Response: the floor has been switched off 
+
+>> Prompt: a woman has brown shoes on
+>> Response: a mouse legss 
+
+>> Prompt: a woman has brown shoes on
+>> Response: the floor has a mouse 
+
+>> Prompt: a woman has brown shoes on
+>> Response: a mouse is on the desk 
+
+>> Prompt: man has dark hair
+>> Response: the mouse is lous 
+
+>> Prompt: man has dark hair
+>> Response: the was are llles 
+
+>> Prompt: man has dark hair
+>> Response: A white micles in the le 
+
+>> Prompt: man has dark hair
+>> Response: the wit is legs 
+
+>> Prompt: a brown building opposite were the men are standing
+>> Response: the floor is white in colour 
+
+>> Prompt: a brown building opposite were the men are standing
+>> Response: a waseating a popers 
+
+>> Prompt: a brown building opposite were the men are standing
+>> Response: the warkey wases 
+
+>> Prompt: a brown building opposite were the men are standing
+>> Response: the floor is far 
+
+>> Prompt: parking meter on the curb
+>> Response: a white top computer 
+
+>> Prompt: parking meter on the curb
+>> Response: a mouse leggs on the desk 
+
+>> Prompt: parking meter on the curb
+>> Response: a lictures on a table 
+
+>> Prompt: parking meter on the curb
+>> Response: the mouse is les 
+
+>> Prompt: a man in a grey sweater
+>> Response: the floor has a purple clost 
+
+>> Prompt: a man in a grey sweater
+>> Response: the mouse is white 
+
+>> Prompt: a man in a grey sweater
+>> Response: the frit is me 
+
+>> Prompt: a man in a grey sweater
+>> Response: the frit is legs 
+
+>> Prompt: a man is wearing glasses
+>> Response: a mouse is legs 
+
+>> Prompt: a man is wearing glasses
+>> Response: the floor is white 
+
+>> Prompt: a man is wearing glasses
+>> Response: a white moute is on 
+
+>> Prompt: a man is wearing glasses
+>> Response: a white mouse is on 
+
+>> Prompt: trees are seen in the background
+>> Response: a wooden stand is on the desk 
+
+>> Prompt: trees are seen in the background
+>> Response: the mouse is white 
+
+>> Prompt: trees are seen in the background
+>> Response: the wase is white 
+
+>> Prompt: trees are seen in the background
+>> Response: a witure woodent is drawer 
+
+>> Prompt: a parking meter is on the street
+>> Response: the mouse is les 
+
+>> Prompt: a parking meter is on the street
+>> Response: the floor is far 
+
+>> Prompt: a parking meter is on the street
+>> Response: the fuport is clean 
+
+>> Prompt: a parking meter is on the street
+>> Response: a white in colour 
+
+>> Prompt: two men talking to each other
+>> Response: the mouse is downe 
+
+>> Prompt: two men talking to each other
+>> Response: the mouse legsss lit on the wall 
+
+>> Prompt: two men talking to each other
+>> Response: the mouse is white in the photo 
+
+>> Prompt: two men talking to each other
+>> Response: the floor has a mous 
+
+>> Prompt: A man in a red shirt
+>> Response: the markes on a desk 
+
+>> Prompt: A man in a red shirt
+>> Response: the mousesss 
+
+>> Prompt: A man in a red shirt
+>> Response: the fuse is mouse 
+
+>> Prompt: A man in a red shirt
+>> Response: A white mouse 
+
+>> Prompt: man is bald with little hair behind
+>> Response: the floor is farpet is clean 
+
+>> Prompt: man is bald with little hair behind
+>> Response: the markes on a desk 
+
+>> Prompt: man is bald with little hair behind
+>> Response: the mousesss on a table 
+
+>> Prompt: man is bald with little hair behind
+>> Response: the mouses lit 
+
+>> Prompt: the man wears a red t shirt
+>> Response: the mouse is white in color 
+
+>> Prompt: the man wears a red t shirt
+>> Response: the fuses are sus 
+
+>> Prompt: the man wears a red t shirt
+>> Response: the floor is white in colour 
+
+>> Prompt: the man wears a red t shirt
+>> Response: the frit is a grey mouse 
+
+>> Prompt: two bikes next to plant
+>> Response: the mouse is lous 
+
+>> Prompt: two bikes next to plant
+>> Response: the wark is on the floor 
+
+>> Prompt: two bikes next to plant
+>> Response: A coveral wers 
+
+>> Prompt: two bikes next to plant
+>> Response: the mouse is wage 
+
+>> Prompt: drainage were the men are standing
+>> Response: a white in color 
+
+>> Prompt: drainage were the men are standing
+>> Response: a wictures on the desk 
+
+>> Prompt: drainage were the men are standing
+>> Response: the floor is white in colour 
+
+>> Prompt: drainage were the men are standing
+>> Response: the wase is white in colour 
+
+>> Prompt: brown shoes are worn by the woman
+>> Response: a white muse is doutt 
+
+>> Prompt: brown shoes are worn by the woman
+>> Response: the floor has a mouse 
+
+>> Prompt: brown shoes are worn by the woman
+>> Response: a white drawns 
+
+>> Prompt: brown shoes are worn by the woman
+>> Response: a wicle lege of the lit 
+
+>> Prompt: bikes have been parked near the road
+>> Response: the floor is llll of the f 
+
+>> Prompt: bikes have been parked near the road
+>> Response: the floor is llow the llles 
+
+>> Prompt: bikes have been parked near the road
+>> Response: a white carpet 
+
+>> Prompt: bikes have been parked near the road
+>> Response: a mouse woodicle legs on the wall 
+
+>> Prompt: woman in jeans and gray raincoat
+>> Response: the floor is white 
+
+>> Prompt: woman in jeans and gray raincoat
+>> Response: A cording wer 
+
+>> Prompt: woman in jeans and gray raincoat
+>> Response: A white micless on a table 
+
+>> Prompt: woman in jeans and gray raincoat
+>> Response: the wase is lige 
+
+>> Prompt: house has a white paint
+>> Response: the mouse is clean 
+
+>> Prompt: house has a white paint
+>> Response: the fron is less 
+
+>> Prompt: house has a white paint
+>> Response: a mouse is and leges 
+
+>> Prompt: house has a white paint
+>> Response: a purple futon 
+
+>> Prompt: woman in grey hoodie
+>> Response: the frit is a blue 
+
+>> Prompt: woman in grey hoodie
+>> Response: the floor is fupen is on 
+
+>> Prompt: woman in grey hoodie
+>> Response: a mouse is lit 
+
+>> Prompt: woman in grey hoodie
+>> Response: the mouse is mage 
+
+>> Prompt: Leafless plant branches
+>> Response: the wicture lless fugggs on the wall 
+
+>> Prompt: Leafless plant branches
+>> Response: the mousse is white 
+
+>> Prompt: Leafless plant branches
+>> Response: the man has a fuppt 
+
+>> Prompt: Leafless plant branches
+>> Response: the man has a fus 
+
+>> Prompt: two lights are on on the building
+>> Response: a white in the desk 
+
+>> Prompt: two lights are on on the building
+>> Response: a white licture mouse is on the desk 
+
+>> Prompt: two lights are on on the building
+>> Response: the floor is white in colour 
+
+>> Prompt: two lights are on on the building
+>> Response: the floor is white 
+
+>> Prompt: tall metal light post
+>> Response: the floor has a fuppppt. 
+
+>> Prompt: tall metal light post
+>> Response: apet of moutess 
+
+>> Prompt: tall metal light post
+>> Response: apet is mouse is legs 
+
+>> Prompt: tall metal light post
+>> Response: the mouse wicle lesss 
+
+>> Prompt: man is wearing black pants
+>> Response: a white mouses 
+
+>> Prompt: man is wearing black pants
+>> Response: a less 
+
+>> Prompt: man is wearing black pants
+>> Response: the fuse is white 
+
+>> Prompt: man is wearing black pants
+>> Response: a mouse is on the floor 
+
+>> Prompt: the clock pole is green
+>> Response: a mouse is on the desk 
+
+>> Prompt: the clock pole is green
+>> Response: the floor has been switched off 
+
+>> Prompt: the clock pole is green
+>> Response: the floor is white 
+
+>> Prompt: the clock pole is green
+>> Response: a mouse is on the desk 
+
+>> Prompt: clock is green in colour
+>> Response: the floor is white 
+
+>> Prompt: clock is green in colour
+>> Response: the frit is legs 
+
+>> Prompt: clock is green in colour
+>> Response: the floor is white in colour 
+
+>> Prompt: clock is green in colour
+>> Response: the fricl is draying 
+
+>> Prompt: man in jeans and gray jacket
+>> Response: a white carpet is on the desk 
+
+>> Prompt: man in jeans and gray jacket
+>> Response: a mouse on a desk 
+
+>> Prompt: man in jeans and gray jacket
+>> Response: a licle witures on the fiture 
+
+>> Prompt: man in jeans and gray jacket
+>> Response: the lictures are on the floor 
+
+>> Prompt: white car parked next to the sidewalk
+>> Response: the floor has a mause 
+
+>> Prompt: white car parked next to the sidewalk
+>> Response: a mouse is on the desk 
+
+>> Prompt: white car parked next to the sidewalk
+>> Response: a white mause is on the desk 
+
+>> Prompt: white car parked next to the sidewalk
+>> Response: a white top computer on the desk 
+
+>> Prompt: tree has shadows on it
+>> Response: the floor is white in colour 
+
+>> Prompt: tree has shadows on it
+>> Response: the mouse is white in colour 
+
+>> Prompt: tree has shadows on it
+>> Response: a leavehites woodicture legs 
+
+>> Prompt: tree has shadows on it
+>> Response: a mouse leggs 
+
+>> Prompt: sign on a house
+>> Response: the floor has a white fror 
+
+>> Prompt: sign on a house
+>> Response: the floor is white 
+
+>> Prompt: sign on a house
+>> Response: a mousse lite lesiggs on the wall 
+
+>> Prompt: sign on a house
+>> Response: the wit is llle 
+
+>> Prompt: a red car is at the back
+>> Response: a white top 
+
+>> Prompt: a red car is at the back
+>> Response: the floor is white 
+
+>> Prompt: a red car is at the back
+>> Response: a liget 
+
+>> Prompt: a red car is at the back
+>> Response: the floor is white 
+
+>> Prompt: woman has raised his arm
+>> Response: the floor is white in colour 
+
+>> Prompt: woman has raised his arm
+>> Response: the mouse is clean 
+
+>> Prompt: woman has raised his arm
+>> Response: the lit is downing 
+
+>> Prompt: woman has raised his arm
+>> Response: age of a pipturt 
+
+>> Prompt: a woman's red sweater
+>> Response: a mouse mouse on the desk 
+
+>> Prompt: a woman's red sweater
+>> Response: the floor has beangs 
+
+>> Prompt: a woman's red sweater
+>> Response: a mouse is on 
+
+>> Prompt: a woman's red sweater
+>> Response: the mall mousess 
+
+>> Prompt: shadows of tree branches on a building
+>> Response: a mouse legss on the wall 
+
+>> Prompt: shadows of tree branches on a building
+>> Response: a moouse wite mouse 
+
+>> Prompt: shadows of tree branches on a building
+>> Response: the floor has a mous 
+
+>> Prompt: shadows of tree branches on a building
+>> Response: the waseat has a mous 
+
+>> Prompt: A white vehicle parked on the street.
+>> Response: A white mite and lit 
+
+>> Prompt: A white vehicle parked on the street.
+>> Response: A white and mouses 
+
+>> Prompt: A white vehicle parked on the street.
+>> Response: A woodicture licles on the wall. 
+
+>> Prompt: A white vehicle parked on the street.
+>> Response: The has a brown suppost 
+
+>> Prompt: shadows of plant branches on a house
+>> Response: A mouse lit on a desk 
+
+>> Prompt: shadows of plant branches on a house
+>> Response: the warkes are on the desk 
+
+>> Prompt: shadows of plant branches on a house
+>> Response: the mouse is white in colour 
+
+>> Prompt: shadows of plant branches on a house
+>> Response: the was mausse on the wall 
+
+>> Prompt: a man in glasses
+>> Response: a mouttte of les 
+
+>> Prompt: a man in glasses
+>> Response: the mouse is lout 
+
+>> Prompt: a man in glasses
+>> Response: a dorke of a popper 
+
+>> Prompt: a man in glasses
+>> Response: a white mousess 
+
+>> Prompt: white pick-up truck
+>> Response: the was are blue 
+
+>> Prompt: white pick-up truck
+>> Response: A woman with a wight 
+
+>> Prompt: white pick-up truck
+>> Response: A woman with black hair dray less 
+
+>> Prompt: white pick-up truck
+>> Response: the floor is white in color 
+
+>> Prompt: A bicycle parked on the sidewalk.
+>> Response: A white and mouse 
+
+>> Prompt: A bicycle parked on the sidewalk.
+>> Response: A white poppppt is on the floor 
+
+>> Prompt: A bicycle parked on the sidewalk.
+>> Response: the mouse is legs 
+
+>> Prompt: A bicycle parked on the sidewalk.
+>> Response: A white miclese 
+
+>> Prompt: bikes are packed near the trees
+>> Response: the mall leses 
+
+>> Prompt: bikes are packed near the trees
+>> Response: A witures on the floor. 
+
+>> Prompt: bikes are packed near the trees
+>> Response: the floor has been switched off 
+
+>> Prompt: bikes are packed near the trees
+>> Response: A woodite talkes on lit 
+
+>> Prompt: older style coin fed parking meter
+>> Response: A white and and downs 
+
+>> Prompt: older style coin fed parking meter
+>> Response: A wooden stand at a table 
+
+>> Prompt: older style coin fed parking meter
+>> Response: A wiclush and white clorpesht 
+
+>> Prompt: older style coin fed parking meter
+>> Response: the mouse is white in colour 
+
+>> Prompt: building is made of bricks
+>> Response: a mouse is and white 
+
+>> Prompt: building is made of bricks
+>> Response: a white mouse is le 
+
+>> Prompt: building is made of bricks
+>> Response: a muleses 
+
+>> Prompt: building is made of bricks
+>> Response: a wor wnkeying on the desk 
+
+>> Prompt: woman wearing red top and sneakers
+>> Response: the frors legs 
+
+>> Prompt: woman wearing red top and sneakers
+>> Response: the waseat is legs 
+
+>> Prompt: woman wearing red top and sneakers
+>> Response: a white capet 
+
+>> Prompt: woman wearing red top and sneakers
+>> Response: a white mouse is diding 
+
+>> Prompt: man is wearing grey sweatshirt
+>> Response: a white mousesss 
+
+>> Prompt: man is wearing grey sweatshirt
+>> Response: a mouse is on the desk 
+
+>> Prompt: man is wearing grey sweatshirt
+>> Response: a white carpet 
+
+>> Prompt: man is wearing grey sweatshirt
+>> Response: the fars are shit 
+
+>> Prompt: A woman in a red long-sleeved sweater
+>> Response: A purple couch 
+
+>> Prompt: A woman in a red long-sleeved sweater
+>> Response: Asicture lictures on the farit 
+
+>> Prompt: A woman in a red long-sleeved sweater
+>> Response: the warkey bear less 
+
+>> Prompt: A woman in a red long-sleeved sweater
+>> Response: A purple couch 
+
+>> Prompt: Bikes parked on the street.
+>> Response: A purple couch 
+
+>> Prompt: Bikes parked on the street.
+>> Response: A purple couch with a lowers 
+
+>> Prompt: Bikes parked on the street.
+>> Response: A wooden standing on the wall 
+
+>> Prompt: Bikes parked on the street.
+>> Response: A purple couch with a red ligght 
+
+>> Prompt: A white work truck parked on the street.
+>> Response: The has a brown legs 
+
+>> Prompt: A white work truck parked on the street.
+>> Response: A and gray and white mouse 
+
+>> Prompt: A white work truck parked on the street.
+>> Response: A purple couch 
+
+>> Prompt: A white work truck parked on the street.
+>> Response: Thons are on the desk 
+
+>> Prompt: a partially blocked green clock
+>> Response: A woodit is a and white dor the mouse 
+
+>> Prompt: a partially blocked green clock
+>> Response: the mouse witures on the wall 
+
+>> Prompt: a partially blocked green clock
+>> Response: A white and and white mousess 
+
+>> Prompt: a partially blocked green clock
+>> Response: A white mouse on a table 
+
+>> Prompt: a woman is wearing glasses
+>> Response: the floor is far 
+
+>> Prompt: a woman is wearing glasses
+>> Response: a white mouse is on 
+
+>> Prompt: a woman is wearing glasses
+>> Response: a mautess 
+
+>> Prompt: a woman is wearing glasses
+>> Response: a white mouse is lows 
+
+>> Prompt: Construction truck parked by curb
+>> Response: the mouse is les 
+
+>> Prompt: Construction truck parked by curb
+>> Response: the mouse is white in colour 
+
+>> Prompt: Construction truck parked by curb
+>> Response: the floor is fupor les 
+
+>> Prompt: Construction truck parked by curb
+>> Response: the waseat is a light 
+
+>> Prompt: the trunk of a tree
+>> Response: a wicles on the desk 
+
+>> Prompt: the trunk of a tree
+>> Response: the floor has a fus 
+
+>> Prompt: the trunk of a tree
+>> Response: the mousse is lous 
+
+>> Prompt: the trunk of a tree
+>> Response: a mouse is on the floor 
+
+>> Prompt: he has an orange tshirt
+>> Response: the wicl mouse is on 
+
+>> Prompt: he has an orange tshirt
+>> Response: the wa waseat is a fut 
+
+>> Prompt: he has an orange tshirt
+>> Response: the floor is white 
+
+>> Prompt: he has an orange tshirt
+>> Response: a mouse witures on it 
+
+>> Prompt: the rear of a white vehicle
+>> Response: a wictures are on the floor 
+
+>> Prompt: the rear of a white vehicle
+>> Response: the mouse is clean 
+
+>> Prompt: the rear of a white vehicle
+>> Response: a mouse lessse of the f 
+
+>> Prompt: the rear of a white vehicle
+>> Response: the floor has a mouse 
+
+>> Prompt: clock is painted green
+>> Response: the floor has a fus 
+
+>> Prompt: clock is painted green
+>> Response: the frit is lege 
+
+>> Prompt: clock is painted green
+>> Response: the floor is mouse is les 
+
+>> Prompt: clock is painted green
+>> Response: the floor is white 
+
+>> Prompt: there is a big clock on the pole
+>> Response: the fron is dor 
+
+>> Prompt: there is a big clock on the pole
+>> Response: A white and micles on a desk 
+
+>> Prompt: there is a big clock on the pole
+>> Response: the mouse wage of the wall 
+
+>> Prompt: there is a big clock on the pole
+>> Response: the floor is mous 
+
+>> Prompt: bicycles on the sidewalk
+>> Response: a mouse witures legs 
+
+>> Prompt: bicycles on the sidewalk
+>> Response: a lit is a lit 
+
+>> Prompt: bicycles on the sidewalk
+>> Response: the fror fage of a f 
+
+>> Prompt: bicycles on the sidewalk
+>> Response: the mouse is far 
+
+>> Prompt: A parking meter near the curb
+>> Response: the lows are suport 
+
+>> Prompt: A parking meter near the curb
+>> Response: the lows are on the desk 
+
+>> Prompt: A parking meter near the curb
+>> Response: the mouse lessss 
+
+>> Prompt: A parking meter near the curb
+>> Response: a white top 
+
+>> Prompt: this is an outdoor picture
+>> Response: the magesse of a papers 
+
+>> Prompt: this is an outdoor picture
+>> Response: a white mouse on a table 
+
+>> Prompt: this is an outdoor picture
+>> Response: a mouse lictures on the ight 
+
+>> Prompt: this is an outdoor picture
+>> Response: a lupet is on 
+
+>> Prompt: building has a white paint
+>> Response: the mages on a desk 
+
+>> Prompt: building has a white paint
+>> Response: the fuppppot is on the floor 
+
+>> Prompt: building has a white paint
+>> Response: a mouse is on the desk 
+
+>> Prompt: building has a white paint
+>> Response: the mouse is clean 
+
+>> Prompt: some trees hAVE NO LEAVES
+>> Response: ARed HUM>the woodicle wooden stand is at the edg 
+
+>> Prompt: some trees hAVE NO LEAVES
+>> Response: ARed HUM>A Black The drawerit 
+
+>> Prompt: some trees hAVE NO LEAVES
+>> Response: A Blussshictures on ighte 
+
+>> Prompt: some trees hAVE NO LEAVES
+>> Response: ARE HUMan The wicle wictures on iture 
+
+>> Prompt: woman is holding his chin
+>> Response: the mouse is white 
+
+>> Prompt: woman is holding his chin
+>> Response: the mouse is les 
+
+>> Prompt: woman is holding his chin
+>> Response: the dors 
+
+>> Prompt: woman is holding his chin
+>> Response: the marpet is clean 
+
+>> Prompt: Leafless tree branches
+>> Response: a mouse wictured liture 
+
+>> Prompt: Leafless tree branches
+>> Response: the warkey is on 
+
+>> Prompt: Leafless tree branches
+>> Response: the wit is les 
+
+>> Prompt: Leafless tree branches
+>> Response: a moouse legs on a desk 
+
+>> Prompt: guy holding hand to his chin
+>> Response: as and and white drawn 
+
+>> Prompt: guy holding hand to his chin
+>> Response: apet is and and white 
+
+>> Prompt: guy holding hand to his chin
+>> Response: A white pippppppt on a desk 
+
+>> Prompt: guy holding hand to his chin
+>> Response: aper bottle is on the floor 
+
+>> Prompt: A woman in a gray hoodie
+>> Response: A white popppt is on the floor 
+
+>> Prompt: A woman in a gray hoodie
+>> Response: the fupit is lles 
+
+>> Prompt: A woman in a gray hoodie
+>> Response: the floor is mage 
+
+>> Prompt: A woman in a gray hoodie
+>> Response: A white miture and down 
+
+>> Prompt: back of a white sedan
+>> Response: the mousse is lous 
+
+>> Prompt: back of a white sedan
+>> Response: a white pillow is on a desk 
+
+>> Prompt: back of a white sedan
+>> Response: a mictures on the wall 
+
+>> Prompt: back of a white sedan
+>> Response: a mouse on a table 
+
+>> Prompt: the man wears grey pants
+>> Response: the frit is a grey 
+
+>> Prompt: the man wears grey pants
+>> Response: a white mouse 
+
+>> Prompt: the man wears grey pants
+>> Response: the marses 
+
+>> Prompt: the man wears grey pants
+>> Response: the mages 
+
+>> Prompt: two lights have been on
+>> Response: a white mouse lesss 
+
+>> Prompt: two lights have been on
+>> Response: a white lege of the wall 
+
+>> Prompt: two lights have been on
+>> Response: a white lighte is on the floor 
+
+>> Prompt: two lights have been on
+>> Response: the floor is llllles 
+
+>> Prompt: White vehicle parked by curb
+>> Response: the waseat is a light 
+
+>> Prompt: White vehicle parked by curb
+>> Response: A white popers 
+
+>> Prompt: White vehicle parked by curb
+>> Response: the wicl witure llegs 
+
+>> Prompt: White vehicle parked by curb
+>> Response: the wit is wain 
+
+>> Prompt: the woman wears a grey hoodie
+>> Response: the mage is white in colour 
+
+>> Prompt: the woman wears a grey hoodie
+>> Response: a lit is and dray 
+
+>> Prompt: the woman wears a grey hoodie
+>> Response: a white top 
+
+>> Prompt: the woman wears a grey hoodie
+>> Response: the floor is white in colour 
+
+>> Prompt: white vehicle has been parked were they are standing
+>> Response: a witure legs and lit 
+
+>> Prompt: white vehicle has been parked were they are standing
+>> Response: a mause is on 
+
+>> Prompt: white vehicle has been parked were they are standing
+>> Response: the floor is white 
+
+>> Prompt: white vehicle has been parked were they are standing
+>> Response: the floor is white 
+
+>> Prompt: A man with his fist at his mouth
+>> Response: the floor has been parked on the desk 
+
+>> Prompt: A man with his fist at his mouth
+>> Response: a mouse on ite 
+
+>> Prompt: A man with his fist at his mouth
+>> Response: the mouse is white 
+
+>> Prompt: A man with his fist at his mouth
+>> Response: the floor is lowl of the desk 
+
+>> Prompt: plant has shadows on it
+>> Response: the mout is a mout 
+
+>> Prompt: plant has shadows on it
+>> Response: the floor is mouse 
+
+>> Prompt: plant has shadows on it
+>> Response: a moute is on the desk 
+
+>> Prompt: plant has shadows on it
+>> Response: a lit is downing the daye 
+
+>> Prompt: white vehicle has been parked
+>> Response: the floor is white 
+
+>> Prompt: white vehicle has been parked
+>> Response: the floor has a fus 
+
+>> Prompt: white vehicle has been parked
+>> Response: a white mouse is legs 
+
+>> Prompt: white vehicle has been parked
+>> Response: the floor is white 
+
+>> Prompt: The man has a red sweater.
+>> Response: A white purple carpet is on the desk 
+
+>> Prompt: The man has a red sweater.
+>> Response: The's a legs 
+
+>> Prompt: The man has a red sweater.
+>> Response: A white mightes 
+
+>> Prompt: The man has a red sweater.
+>> Response: A purple carpers are on the desk 
+
+>> Prompt: the street is clearly clean
+>> Response: A white carpet is on the floor 
+
+>> Prompt: the street is clearly clean
+>> Response: a mouse is on the desk 
+
+>> Prompt: the street is clearly clean
+>> Response: the floor is white in colour 
+
+>> Prompt: the street is clearly clean
+>> Response: the floor is white 
+
+>> Prompt: bicycle parked on the sidewalk
+>> Response: the floor is mous 
+
+>> Prompt: bicycle parked on the sidewalk
+>> Response: A white and mouses 
+
+>> Prompt: bicycle parked on the sidewalk
+>> Response: the mouse is white in colour 
+
+>> Prompt: bicycle parked on the sidewalk
+>> Response: the floor has a white mouse 
+
+>> Prompt: the man wears a red t sweater
+>> Response: the fuse is white 
+
+>> Prompt: the man wears a red t sweater
+>> Response: the mouse is white 
+
+>> Prompt: the man wears a red t sweater
+>> Response: a moute is on the desk 
+
+>> Prompt: the man wears a red t sweater
+>> Response: the floor is clean 
+
+>> Prompt: store inside white brick building
+>> Response: the was are blue in colour 
+
+>> Prompt: store inside white brick building
+>> Response: a mouse mousessss 
+
+>> Prompt: store inside white brick building
+>> Response: the floor has a mous 
+
+>> Prompt: store inside white brick building
+>> Response: the floor is mouse 
+
+>> Prompt: plant with sparse leaves
+>> Response: the mage is waring on 
+
+>> Prompt: plant with sparse leaves
+>> Response: the mousse wicture leggs 
+
+>> Prompt: plant with sparse leaves
+>> Response: a wictures are on the floor 
+
+>> Prompt: plant with sparse leaves
+>> Response: a mouse legss on ighte farke 
+
+>> Prompt: White car parked by curb
+>> Response: the wase is fuse 
+
+>> Prompt: White car parked by curb
+>> Response: the witure legs 
+
+>> Prompt: White car parked by curb
+>> Response: A wicture wooden bule 
+
+>> Prompt: White car parked by curb
+>> Response: the mouse is lout 
+
+>> Prompt: vehicles parked on the street
+>> Response: the floor has a white mous 
+
+>> Prompt: vehicles parked on the street
+>> Response: the fupicleture mouse 
+
+>> Prompt: vehicles parked on the street
+>> Response: the floor has a moutt 
+
+>> Prompt: vehicles parked on the street
+>> Response: the floor has belllllle dows 
+
+>> Prompt: A tree on the sidewalk
+>> Response: A wooden been turned on the desk 
+
+>> Prompt: A tree on the sidewalk
+>> Response: A lit is along the desk 
+
+>> Prompt: A tree on the sidewalk
+>> Response: A mouse less 
+
+>> Prompt: A tree on the sidewalk
+>> Response: the lows are suppport 
+
+>> Prompt: street lamp at curb side
+>> Response: A white mouse 
+
+>> Prompt: street lamp at curb side
+>> Response: A woodite legs 
+
+>> Prompt: street lamp at curb side
+>> Response: A corneriture legs 
+
+>> Prompt: street lamp at curb side
+>> Response: A white and downs 
+
+>> Prompt: street is clean with no litter
+>> Response: a micture leggs on it 
+
+>> Prompt: street is clean with no litter
+>> Response: the fupit is les 
+
+>> Prompt: street is clean with no litter
+>> Response: the floor is mouse 
+
+>> Prompt: street is clean with no litter
+>> Response: the fricture les witures 
+
+>> Prompt: the parking meter is on the sidewalk
+>> Response: the floor has been tuny the lles 
+
+>> Prompt: the parking meter is on the sidewalk
+>> Response: a lowse is on the desk 
+
+>> Prompt: the parking meter is on the sidewalk
+>> Response: a white mouse is on 
+
+>> Prompt: the parking meter is on the sidewalk
+>> Response: a white mouse is on the desk 
+
+>> Prompt: A white car parked on the street.
+>> Response: the floor has a mout 
+
+>> Prompt: A white car parked on the street.
+>> Response: A white and and and white dower 
+
+>> Prompt: A white car parked on the street.
+>> Response: A mouse on a desk 
+
+>> Prompt: A white car parked on the street.
+>> Response: The has and white and dorns 
+
+>> Prompt: bikes are parked next to a plant
+>> Response: A purple futon with a and white lit 
+
+>> Prompt: bikes are parked next to a plant
+>> Response: A white and white and white mouse 
+
+>> Prompt: bikes are parked next to a plant
+>> Response: the floor is white 
+
+>> Prompt: bikes are parked next to a plant
+>> Response: the floor has beangs 
+
+>> Prompt: yellow car in the road
+>> Response: the mouse is lligs 
+
+>> Prompt: yellow car in the road
+>> Response: the warpet is clean in the photo 
+
+>> Prompt: yellow car in the road
+>> Response: the floor has a mout 
+
+>> Prompt: yellow car in the road
+>> Response: a wit is lit 
+
+>> Prompt: sidewalk is made of bricks
+>> Response: a white mouse is less 
+
+>> Prompt: sidewalk is made of bricks
+>> Response: the mouse is lous 
+
+>> Prompt: sidewalk is made of bricks
+>> Response: a wicles are on the floor 
+
+>> Prompt: sidewalk is made of bricks
+>> Response: the floor has been parked 
+
+>> Prompt: Bicycles are parked on the sidewalk
+>> Response: the mouse is white 
+
+>> Prompt: Bicycles are parked on the sidewalk
+>> Response: a white mouse is on the desk 
+
+>> Prompt: Bicycles are parked on the sidewalk
+>> Response: a licle lectrictures on the floor 
+
+>> Prompt: Bicycles are parked on the sidewalk
+>> Response: the floor is white 
+
+>> Prompt: the woman is in black pants
+>> Response: a white telephone is on the desk 
+
+>> Prompt: the woman is in black pants
+>> Response: a mouse is on the desk 
+
+>> Prompt: the woman is in black pants
+>> Response: the mous are blue 
+
+>> Prompt: the woman is in black pants
+>> Response: a white mouse is on the floor 
+
+>> Prompt: headlights of the vehicle are off
+>> Response: a white in the dit 
+
+>> Prompt: headlights of the vehicle are off
+>> Response: a wit is a and drawn 
+
+>> Prompt: headlights of the vehicle are off
+>> Response: the floor has a white fupost 
+
+>> Prompt: headlights of the vehicle are off
+>> Response: the mouse is white in colour 
+
+>> Prompt: it is an orange tshirt
+>> Response: the mouse is clean 
+
+>> Prompt: it is an orange tshirt
+>> Response: the wa wit is a blue 
+
+>> Prompt: it is an orange tshirt
+>> Response: the wase is clean with fit 
+
+>> Prompt: it is an orange tshirt
+>> Response: a mouse is on the floor 
+
+>> Prompt: man has a grey jumper
+>> Response: apers are on the floor 
+
+>> Prompt: man has a grey jumper
+>> Response: aper bottle is on the desk 
+
+>> Prompt: man has a grey jumper
+>> Response: aper bottle is on the desk 
+
+>> Prompt: man has a grey jumper
+>> Response: as lite legs 
+
+>> Prompt: a parking meter is on the sidewalk
+>> Response: a lite liture legs 
+
+>> Prompt: a parking meter is on the sidewalk
+>> Response: the lome is white 
+
+>> Prompt: a parking meter is on the sidewalk
+>> Response: the floor has a farkes 
+
+>> Prompt: a parking meter is on the sidewalk
+>> Response: the floor is marpet 
+
+>> Prompt: A man wearing a gray raincoat and gray pants.
+>> Response: A white mouse is on the desk 
+
+>> Prompt: A man wearing a gray raincoat and gray pants.
+>> Response: A Computer Computer coattures in and and dower 
+
+>> Prompt: A man wearing a gray raincoat and gray pants.
+>> Response: A Chictureshts on the wall 
+
+>> Prompt: A man wearing a gray raincoat and gray pants.
+>> Response: A white moutes 
+
+>> Prompt: Post light on sidewalk between two trees
+>> Response: the waseat is a mouse 
+
+>> Prompt: Post light on sidewalk between two trees
+>> Response: the man has a mouse 
+
+>> Prompt: Post light on sidewalk between two trees
+>> Response: the man is mouse is white in colour 
+
+>> Prompt: Post light on sidewalk between two trees
+>> Response: the wile wit is a legggs 
+
+>> Prompt: one man is wearing grey jumper
+>> Response: apet is on the floor 
+
+>> Prompt: one man is wearing grey jumper
+>> Response: the leaves are shoning the road is on 
+
+>> Prompt: one man is wearing grey jumper
+>> Response: as legess 
+
+>> Prompt: one man is wearing grey jumper
+>> Response: ase legss 
+
+>> Prompt: guy wearing a red shirt
+>> Response: a lite litte and white liggght 
+
+>> Prompt: guy wearing a red shirt
+>> Response: the floor has a maget 
+
+>> Prompt: guy wearing a red shirt
+>> Response: the floor is white 
+
+>> Prompt: guy wearing a red shirt
+>> Response: the floor is white 
+
+>> Prompt: A man in a red sweater
+>> Response: A white mouses 
+
+>> Prompt: A man in a red sweater
+>> Response: the fuses 
+
+>> Prompt: A man in a red sweater
+>> Response: A white top computer and white and didow 
+
+>> Prompt: A man in a red sweater
+>> Response: the mousse is white 
+
+>> Prompt: a woman in glasses
+>> Response: the mouses 
+
+>> Prompt: a woman in glasses
+>> Response: a dorkes on the wall 
+
+>> Prompt: a woman in glasses
+>> Response: the friges on a table 
+
+>> Prompt: a woman in glasses
+>> Response: a white mouse 
+
+>> Prompt: a clock is next to were the men are standing
+>> Response: the mage is das 
+
+>> Prompt: a clock is next to were the men are standing
+>> Response: the floor is white 
+
+>> Prompt: a clock is next to were the men are standing
+>> Response: the floor is white 
+
+>> Prompt: a clock is next to were the men are standing
+>> Response: a waining the down 
+
+>> Prompt: white brick house exterior
+>> Response: the floor is white in colour 
+
+>> Prompt: white brick house exterior
+>> Response: the floor has a white carpet 
+
+>> Prompt: white brick house exterior
+>> Response: the was are blue 
+
+>> Prompt: white brick house exterior
+>> Response: a wit is legs 
+
+>> Prompt: two men are talking
+>> Response: the war 
+
+>> Prompt: two men are talking
+>> Response: the floor has a and and drawn 
+
+>> Prompt: two men are talking
+>> Response: the floor is white 
+
+>> Prompt: two men are talking
+>> Response: the mouse is white 
+
+>> Prompt: a white brick separation
+>> Response: the mouse is legs 
+
+>> Prompt: a white brick separation
+>> Response: a white mouse on a desk 
+
+>> Prompt: a white brick separation
+>> Response: the mouse lessse mage on a desk 
+
+>> Prompt: a white brick separation
+>> Response: a mouse is on the floor 
+
+>> Prompt: an unreadable store sign
+>> Response: a mouse legs on the wall 
+
+>> Prompt: an unreadable store sign
+>> Response: a mousse leggs on a desk 
+
+>> Prompt: an unreadable store sign
+>> Response: a white dor mousess 
+
+>> Prompt: an unreadable store sign
+>> Response: the wit is a llegs 
+
+>> Prompt: man in grey hoodie
+>> Response: the mouse is white in colour 
+
+>> Prompt: man in grey hoodie
+>> Response: a mousese is on 
+
+>> Prompt: man in grey hoodie
+>> Response: a mouse is on 
+
+>> Prompt: man in grey hoodie
+>> Response: the mouse is white 
+
+>> Prompt: A woman dressed in a red sweater and black pants.
+>> Response: A purple couch 
+
+>> Prompt: A woman dressed in a red sweater and black pants.
+>> Response: A purple couch with and and and wood and white dorit 
+
+>> Prompt: A woman dressed in a red sweater and black pants.
+>> Response: A purple clorpet 
+
+>> Prompt: A woman dressed in a red sweater and black pants.
+>> Response: A coaters on a table 
+
+>> Prompt: A woman wearing a gray raincoat and gray pants.
+>> Response: A white mousse is legs 
+
+>> Prompt: A woman wearing a gray raincoat and gray pants.
+>> Response: A Chowsshie legs 
+
+>> Prompt: A woman wearing a gray raincoat and gray pants.
+>> Response: A Computer Computer corner 
+
+>> Prompt: A woman wearing a gray raincoat and gray pants.
+>> Response: Thons are on the floor 
+
+>> Prompt: both men are wearing pants
+>> Response: the floor has a red mouse 
+
+>> Prompt: both men are wearing pants
+>> Response: the floor has a grey mouse 
+
+>> Prompt: both men are wearing pants
+>> Response: a mouse is and lit 
+
+>> Prompt: both men are wearing pants
+>> Response: the fus are blue 
+
+>> Prompt: shadows are cast
+>> Response: a mouse is on 
+
+>> Prompt: shadows are cast
+>> Response: a white mousess 
+
+>> Prompt: shadows are cast
+>> Response: a white in color 
+
+>> Prompt: shadows are cast
+>> Response: the wase is white in color 
+
+>> Prompt: a parking meter
+>> Response: the lompet mar mouse wage 
+
+>> Prompt: a parking meter
+>> Response: a white and white dor dor 
+
+>> Prompt: a parking meter
+>> Response: a white mouse is on the desk 
+
+>> Prompt: a parking meter
+>> Response: the mouse is white in colour 
+
+>> Prompt: This person has a grey raincoat on.
+>> Response: The has a and dower 
+
+>> Prompt: This person has a grey raincoat on.
+>> Response: The mouse legs 
+
+>> Prompt: This person has a grey raincoat on.
+>> Response: The mouse is white 
+
+>> Prompt: This person has a grey raincoat on.
+>> Response: A purple carpeset 
+
+>> Prompt: The woman has a red sweater.
+>> Response: A mouse is and white 
+
+>> Prompt: The woman has a red sweater.
+>> Response: The's legs 
+
+>> Prompt: The woman has a red sweater.
+>> Response: A purple capet 
+
+>> Prompt: The woman has a red sweater.
+>> Response: A white mouse is lit 
+
+>> Prompt: parking meter on sidewalk
+>> Response: the floor is white 
+
+>> Prompt: parking meter on sidewalk
+>> Response: the floor is mage 
+
+>> Prompt: parking meter on sidewalk
+>> Response: the floor is white 
+
+>> Prompt: parking meter on sidewalk
+>> Response: the lows are supost 
+
+>> Prompt: he has brown shoes
+>> Response: the farsse is lit 
+
+>> Prompt: he has brown shoes
+>> Response: a witures lesss 
+
+>> Prompt: he has brown shoes
+>> Response: the floor has a fror the f 
+
+>> Prompt: he has brown shoes
+>> Response: the magese wictures on fit 
+
+>> Prompt: store inside white brick house
+>> Response: a mouse mousse on the far 
+
+>> Prompt: store inside white brick house
+>> Response: the floor has a f 
+
+>> Prompt: store inside white brick house
+>> Response: the mouse is white in color 
+
+>> Prompt: store inside white brick house
+>> Response: a white mouse is on the desk 
+
+>> Prompt: woman wearing a red sweater
+>> Response: the mouse is white 
+
+>> Prompt: woman wearing a red sweater
+>> Response: the mages 
+
+>> Prompt: woman wearing a red sweater
+>> Response: the mouse is louse 
+
+>> Prompt: woman wearing a red sweater
+>> Response: the mouse is less 
+
+>> Prompt: tall green metal clock on a post
+>> Response: the floor is white 
+
+>> Prompt: tall green metal clock on a post
+>> Response: the floor is mouse is white in colour 
+
+>> Prompt: tall green metal clock on a post
+>> Response: apet is on the floor 
+
+>> Prompt: tall green metal clock on a post
+>> Response: aper bottle on a desk 
+
+>> Prompt: man wearing a red shirt
+>> Response: a mouse is and legs 
+
+>> Prompt: man wearing a red shirt
+>> Response: a mictures are on 
+
+>> Prompt: man wearing a red shirt
+>> Response: a lite less 
+
+>> Prompt: man wearing a red shirt
+>> Response: a mouse is on the desk 
+
+>> Prompt: the trunk of a plant
+>> Response: a leages on a desk 
+
+>> Prompt: the trunk of a plant
+>> Response: a mouse lite legs 
+
+>> Prompt: the trunk of a plant
+>> Response: apers on the wall 
+
+>> Prompt: the trunk of a plant
+>> Response: the mout is white 
+
+>> Prompt: A plant bare of leaves
+>> Response: the mout is white 
+
+>> Prompt: A plant bare of leaves
+>> Response: a mouse of the picleture 
+
+>> Prompt: A plant bare of leaves
+>> Response: a wicle woodictures are on 
+
+>> Prompt: A plant bare of leaves
+>> Response: the wicture markets are support 
+
+>> Prompt: Man wearing grey hoodie
+>> Response: a mousesse and wit 
+
+>> Prompt: Man wearing grey hoodie
+>> Response: a leges 
+
+>> Prompt: Man wearing grey hoodie
+>> Response: a magese of the farse 
+
+>> Prompt: Man wearing grey hoodie
+>> Response: the fricture legs 
+
+>> Prompt: Shadows on side of house
+>> Response: a wicle wooditures on it. 
+
+>> Prompt: Shadows on side of house
+>> Response: the mouse is wit 
+
+>> Prompt: Shadows on side of house
+>> Response: a white mouse 
+
+>> Prompt: Shadows on side of house
+>> Response: a musetse of a paper 
+
+>> Prompt: the photo was taken during the day
+>> Response: a mouse is on the desk 
+
+>> Prompt: the photo was taken during the day
+>> Response: a mouse legsss 
+
+>> Prompt: the photo was taken during the day
+>> Response: the mage is white in color 
+
+>> Prompt: the photo was taken during the day
+>> Response: the floor is white 
+
+>> Prompt: the man is in a grey hoodie
+>> Response: the floor is white 
+
+>> Prompt: the man is in a grey hoodie
+>> Response: a white mouse is on 
+
+>> Prompt: the man is in a grey hoodie
+>> Response: the floor is mouse is white 
+
+>> Prompt: the man is in a grey hoodie
+>> Response: a lesesss 
+
+>> Prompt: bikes are parked at the far edge
+>> Response: the fuppit is a legs 
+
+>> Prompt: bikes are parked at the far edge
+>> Response: the wase is lous 
+
+>> Prompt: bikes are parked at the far edge
+>> Response: the floor is furit 
+
+>> Prompt: bikes are parked at the far edge
+>> Response: the floor has a white mouse 
+
+>> Prompt: Truck parked at a curb
+>> Response: the floor has a fuport 
+
+>> Prompt: Truck parked at a curb
+>> Response: the lowles 
+
+>> Prompt: Truck parked at a curb
+>> Response: the moouse is lles 
+
+>> Prompt: Truck parked at a curb
+>> Response: the floor has a mous 
+
+>> Prompt: white house is at the back
+>> Response: the floor is white 
+
+>> Prompt: white house is at the back
+>> Response: the mousess 
+
+>> Prompt: white house is at the back
+>> Response: the floor is white in color 
+
+>> Prompt: white house is at the back
+>> Response: a light on the floor 
+
+>> Prompt: Clock on a pole
+>> Response: the mout is white in colour 
+
+>> Prompt: Clock on a pole
+>> Response: the fupppport is on 
+
+>> Prompt: Clock on a pole
+>> Response: A purple couch with and white lor the light 
+
+>> Prompt: Clock on a pole
+>> Response: the floor is white in colour 
+
+>> Prompt: woman wearing a grey sweater
+>> Response: the floor has a red mage 
+
+>> Prompt: woman wearing a grey sweater
+>> Response: the floor has a red sweater 
+
+>> Prompt: woman wearing a grey sweater
+>> Response: a legs 
+
+>> Prompt: woman wearing a grey sweater
+>> Response: a mousse is liget 
+
+>> Prompt: tall green clock on the sidewalk
+>> Response: the mause is white 
+
+>> Prompt: tall green clock on the sidewalk
+>> Response: the fuposters are on the desk 
+
+>> Prompt: tall green clock on the sidewalk
+>> Response: the frorss mouse is legss 
+
+>> Prompt: tall green clock on the sidewalk
+>> Response: the frit is lle 
+
+>> Prompt: brown shoes are worn by the man
+>> Response: a mouse is on 
+
+>> Prompt: brown shoes are worn by the man
+>> Response: the mouse is white in colour 
+
+>> Prompt: brown shoes are worn by the man
+>> Response: the marpers are les 
+
+>> Prompt: brown shoes are worn by the man
+>> Response: the mouse lese is white 
+
+>> Prompt: The back of a white car
+>> Response: the mouse is mouse 
+
+>> Prompt: The back of a white car
+>> Response: the fron is lle 
+
+>> Prompt: The back of a white car
+>> Response: the mouse is white 
+
+>> Prompt: The back of a white car
+>> Response: a white mouse is on 
+
+>> Prompt: two lights are on
+>> Response: a wooden stand is on the floor 
+
+>> Prompt: two lights are on
+>> Response: the floor is lowls 
+
+>> Prompt: two lights are on
+>> Response: the was are lige 
+
+>> Prompt: two lights are on
+>> Response: a lite wicture and les 
+
+>> Prompt: cars headlights are off
+>> Response: as are on the desk 
+
+>> Prompt: cars headlights are off
+>> Response: the mouse is les 
+
+>> Prompt: cars headlights are off
+>> Response: ase louse woodent 
+
+>> Prompt: cars headlights are off
+>> Response: as are on the desk 
+
+>> Prompt: parked white pickup truck
+>> Response: the fuppport is on the desk 
+
+>> Prompt: parked white pickup truck
+>> Response: A purple carpers are on the desk 
+
+>> Prompt: parked white pickup truck
+>> Response: the mout is a mouse 
+
+>> Prompt: parked white pickup truck
+>> Response: A white pipture mouse and liggs 
+
+>> Prompt: woman has hands in pocket
+>> Response: a mouse is on the floor 
+
+>> Prompt: woman has hands in pocket
+>> Response: the lor wngett of a lighte 
+
+>> Prompt: woman has hands in pocket
+>> Response: a lite wiget on a desk 
+
+>> Prompt: woman has hands in pocket
+>> Response: a mouse wite 
+
+>> Prompt: a woman in a red sweater
+>> Response: the fuppit is let 
+
+>> Prompt: a woman in a red sweater
+>> Response: a purple futon with and and legs 
+
+>> Prompt: a woman in a red sweater
+>> Response: the mouse lictures on far fut 
+
+>> Prompt: a woman in a red sweater
+>> Response: a white top 
+
+>> Prompt: woman is wearing red tshirt
+>> Response: a mouse is on the floor 
+
+>> Prompt: woman is wearing red tshirt
+>> Response: the mouse is white 
+
+>> Prompt: woman is wearing red tshirt
+>> Response: the mouse is white 
+
+>> Prompt: woman is wearing red tshirt
+>> Response: the moouse is dows 
+
+>> Prompt: A white Ford utility truck
+>> Response: A cork boy llegs 
+
+>> Prompt: A white Ford utility truck
+>> Response: the floor is white in colour 
+
+>> Prompt: A white Ford utility truck
+>> Response: the mages lesssss 
+
+>> Prompt: A white Ford utility truck
+>> Response: A white pock and lit 
+
+>> Prompt: man wearing a red sweater
+>> Response: A purple lituress 
+
+>> Prompt: man wearing a red sweater
+>> Response: the fuppport is let 
+
+>> Prompt: man wearing a red sweater
+>> Response: the frorsss mouse 
+
+>> Prompt: man wearing a red sweater
+>> Response: the fuse is white 
+
+>> Prompt: house is made of bricks
+>> Response: the frit is mouse 
+
+>> Prompt: house is made of bricks
+>> Response: a white top 
+
+>> Prompt: house is made of bricks
+>> Response: the mouse is white in colour 
+
+>> Prompt: house is made of bricks
+>> Response: a woowses 
+
+>> Prompt: This clock is green.
+>> Response: A purple clorpet is on 
+
+>> Prompt: This clock is green.
+>> Response: the mouse is wit 
+
+>> Prompt: This clock is green.
+>> Response: A white moute is lige 
+
+>> Prompt: This clock is green.
+>> Response: A woodicles are on 
+
+>> Prompt: the man is in black pants
+>> Response: the floor has been switched off 
+
+>> Prompt: the man is in black pants
+>> Response: the floor is white in colour 
+
+>> Prompt: the man is in black pants
+>> Response: the floor is mouse 
+
+>> Prompt: the man is in black pants
+>> Response: the frit is a mout 
+
+>> Prompt: trees line up the street
+>> Response: the mouse is white 
+
+>> Prompt: trees line up the street
+>> Response: a white mouse is le 
+
+>> Prompt: trees line up the street
+>> Response: a white muse on the desk 
+
+>> Prompt: trees line up the street
+>> Response: a white mouse is le 
+
+>> Prompt: the side walk is made of bricks
+>> Response: the floor is white 
+
+>> Prompt: the side walk is made of bricks
+>> Response: a wit is lege 
+
+>> Prompt: the side walk is made of bricks
+>> Response: a mouse is on the desk 
+
+>> Prompt: the side walk is made of bricks
+>> Response: the floor has bellllls 
+
+>> Prompt: white car has been parked
+>> Response: the mouse is white 
+
+>> Prompt: white car has been parked
+>> Response: the wit is a mar the roof 
+
+>> Prompt: white car has been parked
+>> Response: a mouse lege 
+
+>> Prompt: white car has been parked
+>> Response: the mouse is legs 
+
+>> Prompt: woman has a grey jumper
+>> Response: apet is made of a mart 
+
+>> Prompt: woman has a grey jumper
+>> Response: apet is on the desk 
+
+>> Prompt: woman has a grey jumper
+>> Response: apers are on the floor 
+
+>> Prompt: woman has a grey jumper
+>> Response: the mouse is clean in colour 
+
+>> Prompt: bikes have been parked along the road
+>> Response: the fuse is lit 
+
+>> Prompt: bikes have been parked along the road
+>> Response: the mage wage of the f 
+
+>> Prompt: bikes have been parked along the road
+>> Response: the floor has been switched off 
+
+>> Prompt: bikes have been parked along the road
+>> Response: a white carpet is on the desk 
+
+>> Prompt: woman with a gray, unzipped sweatchirt
+>> Response: a mouse on a table 
+
+>> Prompt: woman with a gray, unzipped sweatchirt
+>> Response: the floor is white 
+
+>> Prompt: woman with a gray, unzipped sweatchirt
+>> Response: the wit is lllles 
+
+>> Prompt: woman with a gray, unzipped sweatchirt
+>> Response: the marpet lege of the farp 
+
+>> Prompt: brick sidewalk
+>> Response: the lictred licles are on the floor 
+
+>> Prompt: brick sidewalk
+>> Response: the licle wictures are on the floor 
+
+>> Prompt: brick sidewalk
+>> Response: the light is dower 
+
+>> Prompt: brick sidewalk
+>> Response: the mouse lessss 
+
+>> Prompt: a man wears grey shoes
+>> Response: the markes are on the floor 
+
+>> Prompt: a man wears grey shoes
+>> Response: the floor is mouse 
+
+>> Prompt: a man wears grey shoes
+>> Response: a white mousese 
+
+>> Prompt: a man wears grey shoes
+>> Response: a white miese 
+
+>> Prompt: parking meter on the sidewalk
+>> Response: the lowss are shone 
+
+>> Prompt: parking meter on the sidewalk
+>> Response: the mouse magse on the desk 
+
+>> Prompt: parking meter on the sidewalk
+>> Response: the floor is white in colour 
+
+>> Prompt: parking meter on the sidewalk
+>> Response: the lowss are far 
+
+>> Prompt: large ornate clock on sidewalk
+>> Response: the floor has a fupport 
+
+>> Prompt: large ornate clock on sidewalk
+>> Response: the fred mite 
+
+>> Prompt: large ornate clock on sidewalk
+>> Response: A wicture liture legggggs 
+
+>> Prompt: large ornate clock on sidewalk
+>> Response: A white poppers 
+
+>> Prompt: tall buildings with many windows
+>> Response: the mouse is white 
+
+>> Prompt: tall buildings with many windows
+>> Response: a mousesss 
+
+>> Prompt: tall buildings with many windows
+>> Response: a white mouses 
+
+>> Prompt: tall buildings with many windows
+>> Response: the floor has been parked next to the wer 
+
+>> Prompt: a clock on a green pole
+>> Response: the floor has a frit 
+
+>> Prompt: a clock on a green pole
+>> Response: the mouse is white in colour 
+
+>> Prompt: a clock on a green pole
+>> Response: the frors mage on the wall 
+
+>> Prompt: a clock on a green pole
+>> Response: a white muse is on the desk 
+
+>> Prompt: bikes have been parked near a tree
+>> Response: A purple futon 
+
+>> Prompt: bikes have been parked near a tree
+>> Response: the floor has a purple carperset 
+
+>> Prompt: bikes have been parked near a tree
+>> Response: the floor is white 
+
+>> Prompt: bikes have been parked near a tree
+>> Response: A purple couch 
+
+>> Prompt: white work truck
+>> Response: the floor has a purple clort 
+
+>> Prompt: white work truck
+>> Response: a white in a mouse 
+
+>> Prompt: white work truck
+>> Response: the mouse is white 
+
+>> Prompt: white work truck
+>> Response: a leages legs 
+
+>> Prompt: tree has no leaves
+>> Response: the warsess lit 
+
+>> Prompt: tree has no leaves
+>> Response: a wit is a and dor the lit 
+
+>> Prompt: tree has no leaves
+>> Response: a mouse is on the floor 
+
+>> Prompt: tree has no leaves
+>> Response: a wicle witures lit 
+
+>> Prompt: lights are on
+>> Response: the floor is llllle 
+
+>> Prompt: lights are on
+>> Response: the wil wooden stand is on the desk 
+
+>> Prompt: lights are on
+>> Response: the floor has a maus 
+
+>> Prompt: lights are on
+>> Response: the floor has a fupport 
+
+>> Prompt: woman is bald with little hair behind
+>> Response: a micles on the desk 
+
+>> Prompt: woman is bald with little hair behind
+>> Response: a white dorkey dows 
+
+>> Prompt: woman is bald with little hair behind
+>> Response: the floor has a mous 
+
+>> Prompt: woman is bald with little hair behind
+>> Response: a mouse witures on the fit 
+
+>> Prompt: shadow is below the vehicle
+>> Response: a wicleshte is on the floor 
+
+>> Prompt: shadow is below the vehicle
+>> Response: the floor has been switched off 
+
+>> Prompt: shadow is below the vehicle
+>> Response: the floor has been parked 
+
+>> Prompt: shadow is below the vehicle
+>> Response: a wiclectures are on the floor. 
+
+>> Prompt: A white brick wall
+>> Response: A white top top 
+
+>> Prompt: A white brick wall
+>> Response: the frit is mouse 
+
+>> Prompt: A white brick wall
+>> Response: the floor is white 
+
+>> Prompt: A white brick wall
+>> Response: A white mouse 
+
+>> Prompt: there are two men conversing in the photo
+>> Response: the mar less 
+
+>> Prompt: there are two men conversing in the photo
+>> Response: a white and dighte 
+
+>> Prompt: there are two men conversing in the photo
+>> Response: a waseveral das 
+
+>> Prompt: there are two men conversing in the photo
+>> Response: a mouse is lese 
+
+>> Prompt: man with a gray, unzipped sweatchirt
+>> Response: the mage is white 
+
+>> Prompt: man with a gray, unzipped sweatchirt
+>> Response: the floor has mout 
+
+>> Prompt: man with a gray, unzipped sweatchirt
+>> Response: the mouse lit is le 
+
+>> Prompt: man with a gray, unzipped sweatchirt
+>> Response: the floor is mouse is white 
+
+>> Prompt: a woman with grey pants
+>> Response: the fupit is a let 
+
+>> Prompt: a woman with grey pants
+>> Response: a liges 
+
+>> Prompt: a woman with grey pants
+>> Response: the frit is lle 
+
+>> Prompt: a woman with grey pants
+>> Response: the mouses 
+
+>> Prompt: Parking meter at a curb
+>> Response: A and white post 
+
+>> Prompt: Parking meter at a curb
+>> Response: the lows are on the floor 
+
+>> Prompt: Parking meter at a curb
+>> Response: the floor is lllles 
+
+>> Prompt: Parking meter at a curb
+>> Response: the floor is lome 
+
+>> Prompt: white brick building with black sign
+>> Response: the floor has a mouse 
+
+>> Prompt: white brick building with black sign
+>> Response: the mouse is mage 
+
+>> Prompt: white brick building with black sign
+>> Response: a wiget. 
+
+>> Prompt: white brick building with black sign
+>> Response: the floor has been parked on the low the desk 
+
+>> Prompt: A sign on the facade of the house
+>> Response: the mouse legss 
+
+>> Prompt: A sign on the facade of the house
+>> Response: the mouse mage on a desk 
+
+>> Prompt: A sign on the facade of the house
+>> Response: a muse on the desk 
+
+>> Prompt: A sign on the facade of the house
+>> Response: the marke of the wall 
+
+>> Prompt: white truck parked at the curb
+>> Response: A and gray and wighte 
+
+>> Prompt: white truck parked at the curb
+>> Response: the floor is white 
+
+>> Prompt: white truck parked at the curb
+>> Response: A and witege legs 
+
+>> Prompt: white truck parked at the curb
+>> Response: the lowl lllltt dower 
+
+>> Prompt: a woman wears grey shoes
+>> Response: the mout is a blue 
+
+>> Prompt: a woman wears grey shoes
+>> Response: the fron is a fuset 
+
+>> Prompt: a woman wears grey shoes
+>> Response: the farssess 
+
+>> Prompt: a woman wears grey shoes
+>> Response: the farkes on a desk 
+
+>> Prompt: Man wearing red shirt
+>> Response: a legs 
+
+>> Prompt: Man wearing red shirt
+>> Response: a mouse is les 
+
+>> Prompt: Man wearing red shirt
+>> Response: the mouse is white in color 
+
+>> Prompt: Man wearing red shirt
+>> Response: the floor is white in colour 
+
+>> Prompt: he has raised his chin
+>> Response: the mouse is white 
+
+>> Prompt: he has raised his chin
+>> Response: as mousesssse 
+
+>> Prompt: he has raised his chin
+>> Response: the lowss are low the road 
+
+>> Prompt: he has raised his chin
+>> Response: the man is dray 
+
+>> Prompt: truck with racks parked next to curb
+>> Response: A purple couch with a and and and white and drawn 
+
+>> Prompt: truck with racks parked next to curb
+>> Response: A purple carper 
+
+>> Prompt: truck with racks parked next to curb
+>> Response: A wooden standing at the desk 
+
+>> Prompt: truck with racks parked next to curb
+>> Response: the mage of the liget 
+
+>> Prompt: man wearing a grey shirt
+>> Response: a mousess 
+
+>> Prompt: man wearing a grey shirt
+>> Response: a white mouses 
+
+>> Prompt: man wearing a grey shirt
+>> Response: a liget. 
+
+>> Prompt: man wearing a grey shirt
+>> Response: a leags 
+
+>> Prompt: a man with grey pants
+>> Response: a lighte legs 
+
+>> Prompt: a man with grey pants
+>> Response: the mousse is white in color 
+
+>> Prompt: a man with grey pants
+>> Response: the lors 
+
+>> Prompt: a man with grey pants
+>> Response: a mouses 
+
+>> Prompt: woman is wearing sneakers
+>> Response: the floor has been tay 
+
+>> Prompt: woman is wearing sneakers
+>> Response: the mouses are support 
+
+>> Prompt: woman is wearing sneakers
+>> Response: the mage is wage 
+
+>> Prompt: woman is wearing sneakers
+>> Response: the was are blue 
+
+>> Prompt: woman is wearing brown shoes
+>> Response: the marsese is white 
+
+>> Prompt: woman is wearing brown shoes
+>> Response: a white mouse is douse 
+
+>> Prompt: woman is wearing brown shoes
+>> Response: a white and mousse is on 
+
+>> Prompt: woman is wearing brown shoes
+>> Response: the mouse is white 
+
+>> Prompt: woman has hand on pocket
+>> Response: the moutt is lit 
+
+>> Prompt: woman has hand on pocket
+>> Response: the lor wighte mouse wit 
+
+>> Prompt: woman has hand on pocket
+>> Response: the floor has been switched off 
+
+>> Prompt: woman has hand on pocket
+>> Response: a litettt of a and lit 
+
+>> Prompt: a white brick wall
+>> Response: a white muse on the desk 
+
+>> Prompt: a white brick wall
+>> Response: the mouse is mouse 
+
+>> Prompt: a white brick wall
+>> Response: the mouse mouse is on 
+
+>> Prompt: a white brick wall
+>> Response: the floor is mout 
+
+>> Prompt: Two men talking to each other
+>> Response: the wase is white in colour 
+
+>> Prompt: Two men talking to each other
+>> Response: the mouse lesss 
+
+>> Prompt: Two men talking to each other
+>> Response: the mouse is white in colour 
+
+>> Prompt: Two men talking to each other
+>> Response: a wicles are on the desk 
+
+>> Prompt: white brick building exterior
+>> Response: a white top 
+
+>> Prompt: white brick building exterior
+>> Response: the mouse is white in colour 
+
+>> Prompt: white brick building exterior
+>> Response: the wase is maus 
+
+>> Prompt: white brick building exterior
+>> Response: the waseat is a mage 
+
+>> Prompt: A plant on the sidewalk
+>> Response: the lit is a mout 
+
+>> Prompt: A plant on the sidewalk
+>> Response: the floor is fuppport 
+
+>> Prompt: A plant on the sidewalk
+>> Response: the lit is a mouse 
+
+>> Prompt: A plant on the sidewalk
+>> Response: the mouse is white in the lous 
+
+>> Prompt: A man in a red long-sleeved shirt
+>> Response: the floor has a fror mage 
+
+>> Prompt: A man in a red long-sleeved shirt
+>> Response: Asictures on a desk 
+
+>> Prompt: A man in a red long-sleeved shirt
+>> Response: the mouse is mags 
+
+>> Prompt: A man in a red long-sleeved shirt
+>> Response: the mage is white in color 
+
+>> Prompt: lamp stand are along the road
+>> Response: a white in colour 
+
+>> Prompt: lamp stand are along the road
+>> Response: the moowse is white in colour 
+
+>> Prompt: lamp stand are along the road
+>> Response: the floor is white in colour 
+
+>> Prompt: lamp stand are along the road
+>> Response: a white in the photo 
+
+>> Prompt: White canopy on brick building
+>> Response: a white top 
+
+>> Prompt: White canopy on brick building
+>> Response: a mouse on a desk 
+
+>> Prompt: White canopy on brick building
+>> Response: the floor is white 
+
+>> Prompt: White canopy on brick building
+>> Response: the mouse is white 
+
+>> Prompt: A parking meter with a yellow top
+>> Response: a mouse wictures on iture 
+
+>> Prompt: A parking meter with a yellow top
+>> Response: the mouse is white in colour 
+
+>> Prompt: A parking meter with a yellow top
+>> Response: Asian man working on it 
+
+>> Prompt: A parking meter with a yellow top
+>> Response: A cord lesss 
+
+>> Prompt: man is wearing brown shoes
+>> Response: a lesecturess are on the floor 
+
+>> Prompt: man is wearing brown shoes
+>> Response: the magesss on the wall 
+
+>> Prompt: man is wearing brown shoes
+>> Response: the farsse is wearing a grey mouse 
+
+>> Prompt: man is wearing brown shoes
+>> Response: a white carpeset is on the desk 
+
+>> Prompt: A white truck
+>> Response: A white top 
+
+>> Prompt: A white truck
+>> Response: A white top computer top of a desk 
+
+>> Prompt: A white truck
+>> Response: A mousse lictures in lit 
+
+>> Prompt: A white truck
+>> Response: the mouse is white 
+
+>> Prompt: a brown street lamp with a glass top
+>> Response: A white moouse 
+
+>> Prompt: a brown street lamp with a glass top
+>> Response: A white top 
+
+>> Prompt: a brown street lamp with a glass top
+>> Response: the lowss 
+
+>> Prompt: a brown street lamp with a glass top
+>> Response: the floor has a mous 
+
+>> Prompt: tree is casting a shadow on the sidewalk
+>> Response: a mousse on a table 
+
+>> Prompt: tree is casting a shadow on the sidewalk
+>> Response: a mouse legs on the desk 
+
+>> Prompt: tree is casting a shadow on the sidewalk
+>> Response: a white mouse on a desk 
+
+>> Prompt: tree is casting a shadow on the sidewalk
+>> Response: the floor is white 
+
+>> Prompt: brick wall of a building
+>> Response: a mouse moute legs 
+
+>> Prompt: brick wall of a building
+>> Response: the lit is lles 
+
+>> Prompt: brick wall of a building
+>> Response: the mouse is white 
+
+>> Prompt: brick wall of a building
+>> Response: a mulese of wood legs 
+
+>> Prompt: A sign on the facade of the building
+>> Response: a white mouse on the wall 
+
+>> Prompt: A sign on the facade of the building
+>> Response: a white leficles on a desk 
+
+>> Prompt: A sign on the facade of the building
+>> Response: a mouse on the wall 
+
+>> Prompt: A sign on the facade of the building
+>> Response: a white mouse is on the desk 
+
+>> Prompt: a woman in a grey sweater
+>> Response: a mousese on a desk 
+
+>> Prompt: a woman in a grey sweater
+>> Response: the floor is mouse 
+
+>> Prompt: a woman in a grey sweater
+>> Response: the fron is a in the photo 
+
+>> Prompt: a woman in a grey sweater
+>> Response: the mouses 
+
+>> Prompt: A woman with his fist at his mouth
+>> Response: the floor is white in colour 
+
+>> Prompt: A woman with his fist at his mouth
+>> Response: A white mouse 
+
+>> Prompt: A woman with his fist at his mouth
+>> Response: A white and downkes 
+
+>> Prompt: A woman with his fist at his mouth
+>> Response: A white and white mouse 
+
+>> Prompt: woman is wearing glasses
+>> Response: the floor is white in colour 
+
+>> Prompt: woman is wearing glasses
+>> Response: the lowss 
+
+>> Prompt: woman is wearing glasses
+>> Response: the floor is mouse is le 
+
+>> Prompt: woman is wearing glasses
+>> Response: a mause is lowing 
+
+>> Prompt: the man is in a red shirt
+>> Response: the mousse is white in colour 
+
+>> Prompt: the man is in a red shirt
+>> Response: a lit is a blue 
+
+>> Prompt: the man is in a red shirt
+>> Response: the mout is white in color 
+
+>> Prompt: the man is in a red shirt
+>> Response: the mousesss are blue in colour 
+
+>> Prompt: the woman is in a red sweater
+>> Response: the mouse is white 
+
+>> Prompt: the woman is in a red sweater
+>> Response: the floor is white in colour 
+
+>> Prompt: the woman is in a red sweater
+>> Response: the frit is llle 
+
+>> Prompt: the woman is in a red sweater
+>> Response: a mall red betit 
+
+>> Prompt: man has brown shoes
+>> Response: a white carpet is on the floor 
+
+>> Prompt: man has brown shoes
+>> Response: the floor is mouse 
+
+>> Prompt: man has brown shoes
+>> Response: the mouse is white in colour 
+
+>> Prompt: man has brown shoes
+>> Response: the wit is legs 
+
+>> Prompt: sign above house entrance
+>> Response: the warkes are on the floor 
+
+>> Prompt: sign above house entrance
+>> Response: a micle wicles on a table 
+
+>> Prompt: sign above house entrance
+>> Response: a white licles are on the floor 
+
+>> Prompt: sign above house entrance
+>> Response: the man has fus and and white dorige 
+
+>> Prompt: sign on a building
+>> Response: a white muse on the wall 
+
+>> Prompt: sign on a building
+>> Response: a white carpet 
+
+>> Prompt: sign on a building
+>> Response: the mouse is les 
+
+>> Prompt: sign on a building
+>> Response: a white mouse is on the floor 
+
+>> Prompt: two lights are lit
+>> Response: the floor has been parked next to the photo 
+
+>> Prompt: two lights are lit
+>> Response: the floor is mous 
+
+>> Prompt: two lights are lit
+>> Response: the floor is white 
+
+>> Prompt: two lights are lit
+>> Response: a lit is on 
+
+>> Prompt: bicycles are in the background
+>> Response: the floor is white 
+
+>> Prompt: bicycles are in the background
+>> Response: the was are willing 
+
+>> Prompt: bicycles are in the background
+>> Response: a white in colour 
+
+>> Prompt: bicycles are in the background
+>> Response: the floor is mouse 
+
+>> Prompt: woman has brown shoes
+>> Response: the floor is white in colour 
+
+>> Prompt: woman has brown shoes
+>> Response: the floor is white in colour 
+
+>> Prompt: woman has brown shoes
+>> Response: a white mouse is on 
+
+>> Prompt: woman has brown shoes
+>> Response: a mouse is on the desk 
+
+>> Prompt: two men having a conversation
+>> Response: the llegs 
+
+>> Prompt: two men having a conversation
+>> Response: the mouse is les 
+
+>> Prompt: two men having a conversation
+>> Response: a lowns 
+
+>> Prompt: two men having a conversation
+>> Response: the lllegs 
+
+>> Prompt: there is a bicycle in the photo
+>> Response: the frit is lege 
+
+>> Prompt: there is a bicycle in the photo
+>> Response: the floor has a maut 
+
+>> Prompt: there is a bicycle in the photo
+>> Response: the floor is white 
+
+>> Prompt: there is a bicycle in the photo
+>> Response: the mouse wicture mouse 
+
+>> Prompt: white brick house with black sign
+>> Response: the wit is lles 
+
+>> Prompt: white brick house with black sign
+>> Response: a white curpet 
+
+>> Prompt: white brick house with black sign
+>> Response: the mousessss 
+
+>> Prompt: white brick house with black sign
+>> Response: a lite mite 
+
+>> Prompt: The back of a white vehicle
+>> Response: a white mouse on the wall 
+
+>> Prompt: The back of a white vehicle
+>> Response: the frons legs 
+
+>> Prompt: The back of a white vehicle
+>> Response: the floor is fuport is le 
+
+>> Prompt: The back of a white vehicle
+>> Response: a mictures are on the floor 
+
+>> Prompt: man wearing red top and sneakers
+>> Response: the mouse lit is le 
+
+>> Prompt: man wearing red top and sneakers
+>> Response: the mouse is legs 
+
+>> Prompt: man wearing red top and sneakers
+>> Response: a mouse licles on the wall 
+
+>> Prompt: man wearing red top and sneakers
+>> Response: a mouse lite 
+
+>> Prompt: sidewalk paved with bricks
+>> Response: a wituress on a desk 
+
+>> Prompt: sidewalk paved with bricks
+>> Response: the mouse is white in colour 
+
+>> Prompt: sidewalk paved with bricks
+>> Response: the mousess 
+
+>> Prompt: sidewalk paved with bricks
+>> Response: a white mouse 
+
+>> Prompt: vehicle has a black tire
+>> Response: a white mouse is legs 
+
+>> Prompt: vehicle has a black tire
+>> Response: a white mouse is on the desk 
+
+>> Prompt: vehicle has a black tire
+>> Response: a mouse is downe 
+
+>> Prompt: vehicle has a black tire
+>> Response: the wit is mouse 
+
+>> Prompt: the woman to the left is wearing glasses
+>> Response: the low is white 
+
+>> Prompt: the woman to the left is wearing glasses
+>> Response: a mage is down 
+
+>> Prompt: the woman to the left is wearing glasses
+>> Response: a mage is dor 
+
+>> Prompt: the woman to the left is wearing glasses
+>> Response: the floor is lllllls 
+
+>> Prompt: man in red sweater
+>> Response: the mouse is white 
+
+>> Prompt: man in red sweater
+>> Response: the mouse is mous 
+
+>> Prompt: man in red sweater
+>> Response: a mouse is on the floor 
+
+>> Prompt: man in red sweater
+>> Response: the mall mags on the desk 
+
+>> Prompt: bicycle tied to a post
+>> Response: the floor is mouse 
+
+>> Prompt: bicycle tied to a post
+>> Response: apet of the lige 
+
+>> Prompt: bicycle tied to a post
+>> Response: the floor has a mous 
+
+>> Prompt: bicycle tied to a post
+>> Response: the mouse is dain 
+
+>> Prompt: guy wearing a red sweater
+>> Response: the floor is mouse 
+
+>> Prompt: guy wearing a red sweater
+>> Response: a white top 
+
+>> Prompt: guy wearing a red sweater
+>> Response: a lit is a legs 
+
+>> Prompt: guy wearing a red sweater
+>> Response: the fuse is clean 
+
+>> Prompt: lamp post are along the road
+>> Response: a mouse legss on ighte 
+
+>> Prompt: lamp post are along the road
+>> Response: the wil wooden stand is on the floor 
+
+>> Prompt: lamp post are along the road
+>> Response: the mage is dor 
+
+>> Prompt: lamp post are along the road
+>> Response: a white drawne drawers 
+
+>> Prompt: A plant trunk on the sidewalk
+>> Response: a lictures are on the desk 
+
+>> Prompt: A plant trunk on the sidewalk
+>> Response: a lege of legs 
+
+>> Prompt: A plant trunk on the sidewalk
+>> Response: a lit is drawns 
+
+>> Prompt: A plant trunk on the sidewalk
+>> Response: a white moutesse on a desk 
+
+>> Prompt: bikes are parked next to a tree
+>> Response: the floor has be the road 
+
+>> Prompt: bikes are parked next to a tree
+>> Response: the floor has a purple futon 
+
+>> Prompt: bikes are parked next to a tree
+>> Response: the mouse is far 
+
+>> Prompt: bikes are parked next to a tree
+>> Response: A white and white and white mouses 
+
+>> Prompt: one woman is wearing grey jumper
+>> Response: the floor is white 
+
+>> Prompt: one woman is wearing grey jumper
+>> Response: the floor is white 
+
+>> Prompt: one woman is wearing grey jumper
+>> Response: apers on the floor 
+
+>> Prompt: one woman is wearing grey jumper
+>> Response: the floor is white in colour 
+
+>> Prompt: green clock
+>> Response: a wicture is and dor the dige 
+
+>> Prompt: green clock
+>> Response: the mouse is downe 
+
+>> Prompt: green clock
+>> Response: the mout is a lles 
+
+>> Prompt: green clock
+>> Response: the wase is white 
+
+>> Prompt: A man wearing a gray jacket and gray pants.
+>> Response: A white and white and and dight 
+
+>> Prompt: A man wearing a gray jacket and gray pants.
+>> Response: The's a red legs 
+
+>> Prompt: A man wearing a gray jacket and gray pants.
+>> Response: A purple lighte lictriture legs 
+
+>> Prompt: A man wearing a gray jacket and gray pants.
+>> Response: A purple clorteshicleshte and wit 
+
+>> Prompt: parking meter next to the curb
+>> Response: A white and and white dorns 
+
+>> Prompt: parking meter next to the curb
+>> Response: the farper bottle is on the floor 
+
+>> Prompt: parking meter next to the curb
+>> Response: a mouse legs 
+
+>> Prompt: parking meter next to the curb
+>> Response: the floor is white 
+
+>> Prompt: man wearing a grey sweater
+>> Response: the mage is mouse 
+
+>> Prompt: man wearing a grey sweater
+>> Response: the mouse is white in colour 
+
+>> Prompt: man wearing a grey sweater
+>> Response: a white top 
+
+>> Prompt: man wearing a grey sweater
+>> Response: the fupport is and less 
+
+>> Prompt: woman has dark hair
+>> Response: the mouse is white in color 
+
+>> Prompt: woman has dark hair
+>> Response: the mouse is white in colour 
+
+>> Prompt: woman has dark hair
+>> Response: the mouse is dout 
+
+>> Prompt: woman has dark hair
+>> Response: A purple clort 
+
+>> Prompt: work boots
+>> Response: the mouse is white 
+
+>> Prompt: work boots
+>> Response: the mouse is white 
+
+>> Prompt: work boots
+>> Response: a mite witure legs 
+
+>> Prompt: work boots
+>> Response: a licles are on the floor 
+
+>> Prompt: overhead lights are glowing orange
+>> Response: the mouse lessse lout and legs 
+
+>> Prompt: overhead lights are glowing orange
+>> Response: the floor has a mous 
+
+>> Prompt: overhead lights are glowing orange
+>> Response: a wicture lit is on the desk 
+
+>> Prompt: overhead lights are glowing orange
+>> Response: a wicturiture and drawns 
+
+>> Prompt: house is painted white
+>> Response: a mouse is on the desk 
+
+>> Prompt: house is painted white
+>> Response: the mouse is clean 
+
+>> Prompt: house is painted white
+>> Response: the floor has a mause 
+
+>> Prompt: house is painted white
+>> Response: the mage is clean 
+
+>> Prompt: trees are next to were they are standing
+>> Response: the floor has been switched off 
+
+>> Prompt: trees are next to were they are standing
+>> Response: a mouse is on the desk 
+
+>> Prompt: trees are next to were they are standing
+>> Response: a mouse is on the floor 
+
+>> Prompt: trees are next to were they are standing
+>> Response: the mouse is les 
+
+>> Prompt: The man has a red shirt.
+>> Response: A white mouse is on the desk 
+
+>> Prompt: The man has a red shirt.
+>> Response: A white popper with a past 
+
+>> Prompt: The man has a red shirt.
+>> Response: A white mousess 
+
+>> Prompt: The man has a red shirt.
+>> Response: The's a red sweater 
+
+>> Prompt: man has hands in pocket
+>> Response: A wictures on the wall 
+
+>> Prompt: man has hands in pocket
+>> Response: a lite wooditet 
+
+>> Prompt: man has hands in pocket
+>> Response: the mouse is white 
+
+>> Prompt: man has hands in pocket
+>> Response: a litet is and lit 
+
+>> Prompt: a bike in the distance
+>> Response: the mouse is white in color 
+
+>> Prompt: a bike in the distance
+>> Response: the moouse wit is llight 
+
+>> Prompt: a bike in the distance
+>> Response: the mouse is white in colour 
+
+>> Prompt: a bike in the distance
+>> Response: a mouse is on the floor 
+
+>> Prompt: lights are on in the building
+>> Response: the floor is white in colour 
+
+>> Prompt: lights are on in the building
+>> Response: the floor is white 
+
+>> Prompt: lights are on in the building
+>> Response: the floor is mouse 
+
+>> Prompt: lights are on in the building
+>> Response: a wictures on the floor 
+
+>> Prompt: the woman is in a grey hoodie
+>> Response: the mouse is lege 
+
+>> Prompt: the woman is in a grey hoodie
+>> Response: the floor is white in colour 
+
+>> Prompt: the woman is in a grey hoodie
+>> Response: the floor has been parked 
+
+>> Prompt: the woman is in a grey hoodie
+>> Response: the fricl is drawers 
+
+>> Prompt: Man standing on a sidewalk
+>> Response: a leage mouse lite 
+
+>> Prompt: Man standing on a sidewalk
+>> Response: the floor is mouse is white 
+
+>> Prompt: Man standing on a sidewalk
+>> Response: the floor has a white mouse 
+
+>> Prompt: Man standing on a sidewalk
+>> Response: a mouse lictures on the wall 
+
+>> Prompt: there are cars parked along the side walk
+>> Response: the floor is furit is dar 
+
+>> Prompt: there are cars parked along the side walk
+>> Response: a white drawers 
+
+>> Prompt: there are cars parked along the side walk
+>> Response: a mage of the mouse 
+
+>> Prompt: there are cars parked along the side walk
+>> Response: the floor is white 
+
+>> Prompt: Pavers are on the ground
+>> Response: a miture wicture legs 
+
+>> Prompt: Pavers are on the ground
+>> Response: the floor has bowlll of day 
+
+>> Prompt: Pavers are on the ground
+>> Response: a mouse is on the desk 
+
+>> Prompt: Pavers are on the ground
+>> Response: the mouse is white 
+
+>> Prompt: street is made of bricks
+>> Response: the farpers are on the floor 
+
+>> Prompt: street is made of bricks
+>> Response: the mouse is les 
+
+>> Prompt: street is made of bricks
+>> Response: a mouse is less 
+
+>> Prompt: street is made of bricks
+>> Response: a mule woodite les 
+
+>> Prompt: the man wears a grey hoodie
+>> Response: a mouse is lit 
+
+>> Prompt: the man wears a grey hoodie
+>> Response: a litet is a lit 
+
+>> Prompt: the man wears a grey hoodie
+>> Response: the mousse is white in colour 
+
+>> Prompt: the man wears a grey hoodie
+>> Response: the frorss mause is on the floor 
+
+>> Prompt: Row of trees on right side of road
+>> Response: the was are suseatt 
+
+>> Prompt: Row of trees on right side of road
+>> Response: the mousse is lit 
+
+>> Prompt: Row of trees on right side of road
+>> Response: A white moouses 
+
+>> Prompt: Row of trees on right side of road
+>> Response: A coveral corners 
+
+>> Prompt: guy is wearing black pants
+>> Response: the floor is white 
+
+>> Prompt: guy is wearing black pants
+>> Response: a white and white capet 
+
+>> Prompt: guy is wearing black pants
+>> Response: the floor has been parked next to the photo 
+
+>> Prompt: guy is wearing black pants
+>> Response: a lit is a lit 
+
+>> Prompt: a man has brown shoes on
+>> Response: the floor is clean 
+
+>> Prompt: a man has brown shoes on
+>> Response: the floor is clean with a leffit 
+
+>> Prompt: a man has brown shoes on
+>> Response: the mouse is white 
+
+>> Prompt: a man has brown shoes on
+>> Response: the floor is clean 
+
+>> Prompt: A clock face on a pole
+>> Response: A purple couch with a and and and white light 
+
+>> Prompt: A clock face on a pole
+>> Response: the mouse legs 
+
+>> Prompt: A clock face on a pole
+>> Response: the frige mage on the desk 
+
+>> Prompt: A clock face on a pole
+>> Response: A woodite legs 
+
+>> Prompt: side walk is made of bricks
+>> Response: the farpers are on the floor 
+
+>> Prompt: side walk is made of bricks
+>> Response: the was are blue in colour 
+
+>> Prompt: side walk is made of bricks
+>> Response: the mouse is white 
+
+>> Prompt: side walk is made of bricks
+>> Response: the floor is white in colour 
+
+>> Prompt: large moss covered tree
+>> Response: the warpet of the wall 
+
+>> Prompt: large moss covered tree
+>> Response: A miture wictures on it 
+
+>> Prompt: large moss covered tree
+>> Response: A white mouse on a table 
+
+>> Prompt: large moss covered tree
+>> Response: A wiclesh lessss 
+
+>> Prompt: trees are on the sidewalk
+>> Response: A wooden been tray 
+
+>> Prompt: trees are on the sidewalk
+>> Response: the floor is fuport 
+
+>> Prompt: trees are on the sidewalk
+>> Response: the floor is mouse is white 
+
+>> Prompt: trees are on the sidewalk
+>> Response: A white curpet 
+
+>> Prompt: man has red top
+>> Response: the floor is mout is white 
+
+>> Prompt: man has red top
+>> Response: the mage is down 
+
+>> Prompt: man has red top
+>> Response: a mouse is les 
+
+>> Prompt: man has red top
+>> Response: a white mouse is dowing 
+
+>> Prompt: Sign on white building above entrance
+>> Response: a witures on a desk 
+
+>> Prompt: Sign on white building above entrance
+>> Response: a lusege of a fiture 
+
+>> Prompt: Sign on white building above entrance
+>> Response: the mouse legss on a desk 
+
+>> Prompt: Sign on white building above entrance
+>> Response: the mout is white in the le 
+
+>> Prompt: plant is casting a shadow on the sidewalk
+>> Response: the mousse is white 
+
+>> Prompt: plant is casting a shadow on the sidewalk
+>> Response: the floor is white in the photo 
+
+>> Prompt: plant is casting a shadow on the sidewalk
+>> Response: the mage is white 
+
+>> Prompt: plant is casting a shadow on the sidewalk
+>> Response: the mage is white in the photo 

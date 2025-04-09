@@ -1,0 +1,1034 @@
+>> Loaded models dict_keys(['chat'])
+
+
+>> Prompt: part of a wall
+>> Response: the mouse is white 
+
+>> Prompt: part of a wall
+>> Response: A mouse micture and dight 
+
+>> Prompt: part of a wall
+>> Response: the mouse is lit 
+
+>> Prompt: part of a wall
+>> Response: A mouse on the desk 
+
+>> Prompt: a laptop and larger screen
+>> Response: the floor has a mage 
+
+>> Prompt: a laptop and larger screen
+>> Response: the floor is white 
+
+>> Prompt: a laptop and larger screen
+>> Response: A white mousse on the wall 
+
+>> Prompt: a laptop and larger screen
+>> Response: the wicles are support 
+
+>> Prompt: black laptop computer with windows background
+>> Response: the mouse is lit 
+
+>> Prompt: black laptop computer with windows background
+>> Response: the mouse is white 
+
+>> Prompt: black laptop computer with windows background
+>> Response: a wicle wood legs 
+
+>> Prompt: black laptop computer with windows background
+>> Response: the floor is mouse 
+
+>> Prompt: desktop screen with windows background
+>> Response: A white piture mous 
+
+>> Prompt: desktop screen with windows background
+>> Response: A white and white and mouses 
+
+>> Prompt: desktop screen with windows background
+>> Response: A purple carpers 
+
+>> Prompt: desktop screen with windows background
+>> Response: A witure les 
+
+>> Prompt: green couch with spindles
+>> Response: a mage on the desk 
+
+>> Prompt: green couch with spindles
+>> Response: the wit is mouse 
+
+>> Prompt: green couch with spindles
+>> Response: the floor has been switched off 
+
+>> Prompt: green couch with spindles
+>> Response: a mouses 
+
+>> Prompt: edge of a frame
+>> Response: the mouse mouse wit 
+
+>> Prompt: edge of a frame
+>> Response: the fricles are on the desk 
+
+>> Prompt: edge of a frame
+>> Response: a mouse licle witure and legs 
+
+>> Prompt: edge of a frame
+>> Response: the floor is white 
+
+>> Prompt: black mouse on mousepad
+>> Response: a mouse on a desk 
+
+>> Prompt: black mouse on mousepad
+>> Response: a white leges 
+
+>> Prompt: black mouse on mousepad
+>> Response: the floor is far 
+
+>> Prompt: black mouse on mousepad
+>> Response: the floor is farp 
+
+>> Prompt: the phone is on the table
+>> Response: a leage is on the desk 
+
+>> Prompt: the phone is on the table
+>> Response: the markes are on the floor 
+
+>> Prompt: the phone is on the table
+>> Response: the floor is white in colour 
+
+>> Prompt: the phone is on the table
+>> Response: the floor is clean 
+
+>> Prompt: a landscape picture of the sun and mountains
+>> Response: the waseat is a mout 
+
+>> Prompt: a landscape picture of the sun and mountains
+>> Response: the mage is a dor 
+
+>> Prompt: a landscape picture of the sun and mountains
+>> Response: a wicles are on the desk 
+
+>> Prompt: a landscape picture of the sun and mountains
+>> Response: the floor has a fus 
+
+>> Prompt: a black couch at the conner
+>> Response: the floor is llow 
+
+>> Prompt: a black couch at the conner
+>> Response: the floor is white in colour 
+
+>> Prompt: a black couch at the conner
+>> Response: the mouses are blue 
+
+>> Prompt: a black couch at the conner
+>> Response: ainer is dor 
+
+>> Prompt: a MacBook box on the shelf
+>> Response: the floor has been tay the floor 
+
+>> Prompt: a MacBook box on the shelf
+>> Response: a liture lighte legs 
+
+>> Prompt: a MacBook box on the shelf
+>> Response: the fred book mout 
+
+>> Prompt: a MacBook box on the shelf
+>> Response: a lit is dower 
+
+>> Prompt: white ipod apple gray
+>> Response: the floor has a white fuppport 
+
+>> Prompt: white ipod apple gray
+>> Response: a liclecles are shoning 
+
+>> Prompt: white ipod apple gray
+>> Response: a lupket of the lit 
+
+>> Prompt: white ipod apple gray
+>> Response: the floor has a mouse 
+
+>> Prompt: portion of a stand
+>> Response: a white mouse is le 
+
+>> Prompt: portion of a stand
+>> Response: the floor is white 
+
+>> Prompt: portion of a stand
+>> Response: the floor is white 
+
+>> Prompt: portion of a stand
+>> Response: the floor is fupport 
+
+>> Prompt: a image on the wall
+>> Response: a moute is wood 
+
+>> Prompt: a image on the wall
+>> Response: the mage is white in the photo 
+
+>> Prompt: a image on the wall
+>> Response: a white clorte is on the desk 
+
+>> Prompt: a image on the wall
+>> Response: the frictures are on the desk 
+
+>> Prompt: white bic lighter
+>> Response: the mage is dain 
+
+>> Prompt: white bic lighter
+>> Response: the mouse is les 
+
+>> Prompt: white bic lighter
+>> Response: a white doow mese is on 
+
+>> Prompt: white bic lighter
+>> Response: the mousse wagse 
+
+>> Prompt: light wood desk top
+>> Response: the waseat has a mags 
+
+>> Prompt: light wood desk top
+>> Response: the wase is mouse 
+
+>> Prompt: light wood desk top
+>> Response: a woor wnge of a ligggainst the wall 
+
+>> Prompt: light wood desk top
+>> Response: the mouse is white 
+
+>> Prompt: the laptop is turned on
+>> Response: the floor is fuppppet is clean 
+
+>> Prompt: the laptop is turned on
+>> Response: the floor is white in colour 
+
+>> Prompt: the laptop is turned on
+>> Response: a muse on the desk 
+
+>> Prompt: the laptop is turned on
+>> Response: the floor is muse 
+
+>> Prompt: a computer keyboard, mousepad and mouse on the desk
+>> Response: the mouse is white 
+
+>> Prompt: a computer keyboard, mousepad and mouse on the desk
+>> Response: the floor is white 
+
+>> Prompt: a computer keyboard, mousepad and mouse on the desk
+>> Response: a luppet is on the desk 
+
+>> Prompt: a computer keyboard, mousepad and mouse on the desk
+>> Response: the floor has a mage 
+
+>> Prompt: red lava lamp on desk
+>> Response: the mouse is white 
+
+>> Prompt: red lava lamp on desk
+>> Response: A white pippt. 
+
+>> Prompt: red lava lamp on desk
+>> Response: the mouse is white in colour 
+
+>> Prompt: red lava lamp on desk
+>> Response: A mouse lese of lit 
+
+>> Prompt: the computers are on the table
+>> Response: the floor has been switched off 
+
+>> Prompt: the computers are on the table
+>> Response: the floor is white 
+
+>> Prompt: the computers are on the table
+>> Response: a legs on the floor 
+
+>> Prompt: the computers are on the table
+>> Response: the mouse is white in colour 
+
+>> Prompt: edge of a laptop
+>> Response: the floor has a frit 
+
+>> Prompt: edge of a laptop
+>> Response: a white top computer top 
+
+>> Prompt: edge of a laptop
+>> Response: a white pillow on the desk 
+
+>> Prompt: edge of a laptop
+>> Response: a white mouse is on 
+
+>> Prompt: black laptop on desk
+>> Response: the floor is mouse is white in the photo 
+
+>> Prompt: black laptop on desk
+>> Response: a white muse on the desk 
+
+>> Prompt: black laptop on desk
+>> Response: the floor is white 
+
+>> Prompt: black laptop on desk
+>> Response: a moute is on 
+
+>> Prompt: a Santa Claus light on the table
+>> Response: a licles are on the floor 
+
+>> Prompt: a Santa Claus light on the table
+>> Response: the floor has a mout 
+
+>> Prompt: a Santa Claus light on the table
+>> Response: the mouse is white 
+
+>> Prompt: a Santa Claus light on the table
+>> Response: the frit is legs 
+
+>> Prompt: a whiteboard above the table
+>> Response: a white mouse on a desk 
+
+>> Prompt: a whiteboard above the table
+>> Response: the floor is white 
+
+>> Prompt: a whiteboard above the table
+>> Response: the moouse is mage 
+
+>> Prompt: a whiteboard above the table
+>> Response: a licles on the desk 
+
+>> Prompt: white iPod dock holding an iPod
+>> Response: apet is and les 
+
+>> Prompt: white iPod dock holding an iPod
+>> Response: the floor is white 
+
+>> Prompt: white iPod dock holding an iPod
+>> Response: the floor has bowlows 
+
+>> Prompt: white iPod dock holding an iPod
+>> Response: apet of a legs 
+
+>> Prompt: green chair with spindles
+>> Response: a mousese on it 
+
+>> Prompt: green chair with spindles
+>> Response: a wicle witures on the it 
+
+>> Prompt: green chair with spindles
+>> Response: the floor is fupppppt 
+
+>> Prompt: green chair with spindles
+>> Response: the mouse is white in colour 
+
+>> Prompt: red lava lamp on table
+>> Response: A wicle wictures on iture 
+
+>> Prompt: red lava lamp on table
+>> Response: A wicture witure lit 
+
+>> Prompt: red lava lamp on table
+>> Response: the fror mage on the wall 
+
+>> Prompt: red lava lamp on table
+>> Response: A wicle licture legs 
+
+>> Prompt: a Santa Claus lamp on the desk
+>> Response: the mouse is white 
+
+>> Prompt: a Santa Claus lamp on the desk
+>> Response: A white and white and mige 
+
+>> Prompt: a Santa Claus lamp on the desk
+>> Response: the fupppppet is and legs 
+
+>> Prompt: a Santa Claus lamp on the desk
+>> Response: A mictritures on fiture 
+
+>> Prompt: notes pinned on the wall
+>> Response: the floor has been parked near the road 
+
+>> Prompt: notes pinned on the wall
+>> Response: the mout is white in colour 
+
+>> Prompt: notes pinned on the wall
+>> Response: the mouse is white in colour 
+
+>> Prompt: notes pinned on the wall
+>> Response: the mouse is lit 
+
+>> Prompt: portion of a paper
+>> Response: the floor has a white carpet 
+
+>> Prompt: portion of a paper
+>> Response: the floor has a mous 
+
+>> Prompt: portion of a paper
+>> Response: aper bottle is on the floor 
+
+>> Prompt: portion of a paper
+>> Response: apet is on the desk 
+
+>> Prompt: the monitor for the desktop computer
+>> Response: the floor is maus 
+
+>> Prompt: the monitor for the desktop computer
+>> Response: the wil woodit is dor 
+
+>> Prompt: the monitor for the desktop computer
+>> Response: a white muse on a desk 
+
+>> Prompt: the monitor for the desktop computer
+>> Response: the mouse is white 
+
+>> Prompt: this is a mouse for the computer
+>> Response: the wicle mouse licle 
+
+>> Prompt: this is a mouse for the computer
+>> Response: the wicturictures are on 
+
+>> Prompt: this is a mouse for the computer
+>> Response: the mouse warke of the wall 
+
+>> Prompt: this is a mouse for the computer
+>> Response: a wiclupet is on 
+
+>> Prompt: image hanging on wall
+>> Response: the mouse is white 
+
+>> Prompt: image hanging on wall
+>> Response: the floor is white 
+
+>> Prompt: image hanging on wall
+>> Response: a mouse legss on the wall 
+
+>> Prompt: image hanging on wall
+>> Response: the floor hay is mage 
+
+>> Prompt: light wood table top
+>> Response: the mouse lessss lout lighte 
+
+>> Prompt: light wood table top
+>> Response: the wictures are on 
+
+>> Prompt: light wood table top
+>> Response: the mage is white 
+
+>> Prompt: light wood table top
+>> Response: the mouse is mage 
+
+>> Prompt: portion of a screen
+>> Response: A white mouse licles on a desk 
+
+>> Prompt: portion of a screen
+>> Response: the mouse is far 
+
+>> Prompt: portion of a screen
+>> Response: A white pocket 
+
+>> Prompt: portion of a screen
+>> Response: the warpers are on the desk 
+
+>> Prompt: red and silver lava lamp
+>> Response: the mouse mouse legs 
+
+>> Prompt: red and silver lava lamp
+>> Response: A white piphtete is and white 
+
+>> Prompt: red and silver lava lamp
+>> Response: A white mouse and wit 
+
+>> Prompt: red and silver lava lamp
+>> Response: A white and white mouses 
+
+>> Prompt: mac white keyed keyboard
+>> Response: A white and mouticture leggs on the far 
+
+>> Prompt: mac white keyed keyboard
+>> Response: the frit is a mouse 
+
+>> Prompt: mac white keyed keyboard
+>> Response: a white carpet 
+
+>> Prompt: mac white keyed keyboard
+>> Response: a white top computer mues 
+
+>> Prompt: part of a screen
+>> Response: the floor has been parked on the desk 
+
+>> Prompt: part of a screen
+>> Response: the mouse is white 
+
+>> Prompt: part of a screen
+>> Response: the mouse is white 
+
+>> Prompt: part of a screen
+>> Response: A white micturiture and dray 
+
+>> Prompt: a landscape image of the sun and mountains
+>> Response: the mouse is white 
+
+>> Prompt: a landscape image of the sun and mountains
+>> Response: a mouse wicle witures and light 
+
+>> Prompt: a landscape image of the sun and mountains
+>> Response: the floor is furit 
+
+>> Prompt: a landscape image of the sun and mountains
+>> Response: a mouse on a desk 
+
+>> Prompt: black monitor on desk
+>> Response: the mouse is white in colour 
+
+>> Prompt: black monitor on desk
+>> Response: the floor has been tuny the floor 
+
+>> Prompt: black monitor on desk
+>> Response: the mouse is white 
+
+>> Prompt: black monitor on desk
+>> Response: a louse mouse 
+
+>> Prompt: part of a paper
+>> Response: the floor has a fupppper 
+
+>> Prompt: part of a paper
+>> Response: apet is on the desk 
+
+>> Prompt: part of a paper
+>> Response: a mictures on a desk 
+
+>> Prompt: part of a paper
+>> Response: the mouse moutse is dar 
+
+>> Prompt: edge of a table
+>> Response: a licture leggs on a desk 
+
+>> Prompt: edge of a table
+>> Response: a mouse lefictures on the wall 
+
+>> Prompt: edge of a table
+>> Response: a moute is on the desk 
+
+>> Prompt: edge of a table
+>> Response: the floor has a white mout 
+
+>> Prompt: portion of a couch
+>> Response: the floor has a mous 
+
+>> Prompt: portion of a couch
+>> Response: A white and white and white draye 
+
+>> Prompt: portion of a couch
+>> Response: the floor has mous 
+
+>> Prompt: portion of a couch
+>> Response: A white and mighte on the wall 
+
+>> Prompt: An iPod and speaker on the shelf
+>> Response: the mousse is white 
+
+>> Prompt: An iPod and speaker on the shelf
+>> Response: the mouse wit is legs 
+
+>> Prompt: An iPod and speaker on the shelf
+>> Response: the mouse is white 
+
+>> Prompt: An iPod and speaker on the shelf
+>> Response: the floor has a fus 
+
+>> Prompt: notes and papers posted on the whiteboard
+>> Response: a muluse wictures on it 
+
+>> Prompt: notes and papers posted on the whiteboard
+>> Response: a moute micle legs on the iget 
+
+>> Prompt: notes and papers posted on the whiteboard
+>> Response: the fusit is mous 
+
+>> Prompt: notes and papers posted on the whiteboard
+>> Response: the floor is furit is le 
+
+>> Prompt: white iPod on charger
+>> Response: the marpes on a desk 
+
+>> Prompt: white iPod on charger
+>> Response: the mouse mause is lit 
+
+>> Prompt: white iPod on charger
+>> Response: a work of a mage 
+
+>> Prompt: white iPod on charger
+>> Response: a workey bear on the wall 
+
+>> Prompt: black device on mousepad
+>> Response: the mage mouse on a desk. 
+
+>> Prompt: black device on mousepad
+>> Response: a lusighte on the it 
+
+>> Prompt: black device on mousepad
+>> Response: a white moute is on the floor 
+
+>> Prompt: black device on mousepad
+>> Response: the floor is white 
+
+>> Prompt: framed artwork of mountain and element
+>> Response: the wasseat is a been 
+
+>> Prompt: framed artwork of mountain and element
+>> Response: a mouse on a table 
+
+>> Prompt: framed artwork of mountain and element
+>> Response: the floor has a maus 
+
+>> Prompt: framed artwork of mountain and element
+>> Response: a mouse wictures on the wall 
+
+>> Prompt: part of a phone
+>> Response: A micle wooditures on fit 
+
+>> Prompt: part of a phone
+>> Response: A white piture and mit 
+
+>> Prompt: part of a phone
+>> Response: the fuseat is a mouset 
+
+>> Prompt: part of a phone
+>> Response: A white mouse 
+
+>> Prompt: the light is on
+>> Response: the fror the floor has been parked 
+
+>> Prompt: the light is on
+>> Response: the floor is white 
+
+>> Prompt: the light is on
+>> Response: the floor is clean 
+
+>> Prompt: the light is on
+>> Response: a leges 
+
+>> Prompt: a mobile Smartphone on the desk
+>> Response: the floor is white 
+
+>> Prompt: a mobile Smartphone on the desk
+>> Response: the marpet is clean 
+
+>> Prompt: a mobile Smartphone on the desk
+>> Response: a mouse witures legs on it 
+
+>> Prompt: a mobile Smartphone on the desk
+>> Response: the floor is white 
+
+>> Prompt: white and gray keyboard
+>> Response: A mouse lesssss 
+
+>> Prompt: white and gray keyboard
+>> Response: the mause is lout 
+
+>> Prompt: white and gray keyboard
+>> Response: A white pipptures on the wall 
+
+>> Prompt: white and gray keyboard
+>> Response: the mouse is mage 
+
+>> Prompt: the lamp is on
+>> Response: the frit is a mar the floor 
+
+>> Prompt: the lamp is on
+>> Response: the floor has bellllllltt 
+
+>> Prompt: the lamp is on
+>> Response: a licture is lege 
+
+>> Prompt: the lamp is on
+>> Response: the frit is a grey legs 
+
+>> Prompt: mousepad on table
+>> Response: a lectrone is on the desk 
+
+>> Prompt: mousepad on table
+>> Response: a moute is on the floor 
+
+>> Prompt: mousepad on table
+>> Response: a moute is les 
+
+>> Prompt: mousepad on table
+>> Response: a white litures on it 
+
+>> Prompt: part of a couch
+>> Response: A white and white closter 
+
+>> Prompt: part of a couch
+>> Response: A mouse lit 
+
+>> Prompt: part of a couch
+>> Response: A purple carpet 
+
+>> Prompt: part of a couch
+>> Response: the floor has a maus 
+
+>> Prompt: a computer keyboard, mousepad and mouse on the table
+>> Response: the mouse is white 
+
+>> Prompt: a computer keyboard, mousepad and mouse on the table
+>> Response: a white carpet is on the desk 
+
+>> Prompt: a computer keyboard, mousepad and mouse on the table
+>> Response: the floor is white 
+
+>> Prompt: a computer keyboard, mousepad and mouse on the table
+>> Response: a lusectricture less 
+
+>> Prompt: MacBook box original package
+>> Response: the mout is white 
+
+>> Prompt: MacBook box original package
+>> Response: a mouse on a desk 
+
+>> Prompt: MacBook box original package
+>> Response: the mage of a mouse 
+
+>> Prompt: MacBook box original package
+>> Response: a mouse on the wall 
+
+>> Prompt: large wooden office desk
+>> Response: the mousse is mouse 
+
+>> Prompt: large wooden office desk
+>> Response: the fupport is le 
+
+>> Prompt: large wooden office desk
+>> Response: a white mouse is on the desk 
+
+>> Prompt: large wooden office desk
+>> Response: a mouse on the desk 
+
+>> Prompt: black screen on table
+>> Response: a lictures are on the desk 
+
+>> Prompt: black screen on table
+>> Response: a white muse on the desk 
+
+>> Prompt: black screen on table
+>> Response: the floor is white 
+
+>> Prompt: black screen on table
+>> Response: the mouse is mouse 
+
+>> Prompt: portion of a phone
+>> Response: the mouse is lout 
+
+>> Prompt: portion of a phone
+>> Response: the mouse is white in colour 
+
+>> Prompt: portion of a phone
+>> Response: A witure lit on a table 
+
+>> Prompt: portion of a phone
+>> Response: the mouse maute is on the desk 
+
+>> Prompt: mousepad on desk
+>> Response: a luppet is on the desk 
+
+>> Prompt: mousepad on desk
+>> Response: a luppet is on the floor 
+
+>> Prompt: mousepad on desk
+>> Response: a lusectriture leggs on the farit 
+
+>> Prompt: mousepad on desk
+>> Response: a mouse on a desk 
+
+>> Prompt: part of a stand
+>> Response: the mouse legs 
+
+>> Prompt: part of a stand
+>> Response: a mouse lefit 
+
+>> Prompt: part of a stand
+>> Response: the mouse is licture 
+
+>> Prompt: part of a stand
+>> Response: the fuse is white in colour 
+
+>> Prompt: a computer keyboard, mousepad and device on the table
+>> Response: the mout is white in colour 
+
+>> Prompt: a computer keyboard, mousepad and device on the table
+>> Response: the mouse is white 
+
+>> Prompt: a computer keyboard, mousepad and device on the table
+>> Response: a mite lege lit 
+
+>> Prompt: a computer keyboard, mousepad and device on the table
+>> Response: the mouse mout is along 
+
+>> Prompt: part of a monitor
+>> Response: the floor is far mousese 
+
+>> Prompt: part of a monitor
+>> Response: the wicture mouse mousse on the desk 
+
+>> Prompt: part of a monitor
+>> Response: A white mouse on the wall 
+
+>> Prompt: part of a monitor
+>> Response: the mouse less 
+
+>> Prompt: part of a keyboard
+>> Response: A mictures on the icture 
+
+>> Prompt: part of a keyboard
+>> Response: A white pippture let 
+
+>> Prompt: part of a keyboard
+>> Response: the mousse is white in colour 
+
+>> Prompt: part of a keyboard
+>> Response: the fuseat is a fus 
+
+>> Prompt: a black chair at the conner
+>> Response: the marpet is on the desk 
+
+>> Prompt: a black chair at the conner
+>> Response: ain is on the desk 
+
+>> Prompt: a black chair at the conner
+>> Response: the floor is white in colour 
+
+>> Prompt: a black chair at the conner
+>> Response: ain is on the desk 
+
+>> Prompt: this is a device for the computer
+>> Response: a mouse on a desk 
+
+>> Prompt: this is a device for the computer
+>> Response: the mouse wage of the wall 
+
+>> Prompt: this is a device for the computer
+>> Response: the mout is white in the photo 
+
+>> Prompt: this is a device for the computer
+>> Response: the floor is mar mous 
+
+>> Prompt: portion of a wall
+>> Response: the fuseat is a bowllles 
+
+>> Prompt: portion of a wall
+>> Response: the mouse is white 
+
+>> Prompt: portion of a wall
+>> Response: the floor has a mouse 
+
+>> Prompt: portion of a wall
+>> Response: a white carpet 
+
+>> Prompt: desktop monitor with windows background
+>> Response: A witure and woodent 
+
+>> Prompt: desktop monitor with windows background
+>> Response: A wood and white and dorkes 
+
+>> Prompt: desktop monitor with windows background
+>> Response: A white and and white mouse 
+
+>> Prompt: desktop monitor with windows background
+>> Response: the mousse on the desk 
+
+>> Prompt: black monitor on table
+>> Response: the floor has a poper 
+
+>> Prompt: black monitor on table
+>> Response: a mouse is on the floor 
+
+>> Prompt: black monitor on table
+>> Response: the fus are mouse 
+
+>> Prompt: black monitor on table
+>> Response: the floor is white 
+
+>> Prompt: a red magnet on the whiteboard
+>> Response: a lite lite micle 
+
+>> Prompt: a red magnet on the whiteboard
+>> Response: the frit is a white 
+
+>> Prompt: a red magnet on the whiteboard
+>> Response: a musetse is on the floor 
+
+>> Prompt: a red magnet on the whiteboard
+>> Response: the floor is white in colour 
+
+>> Prompt: part of a chair
+>> Response: a mouse lefftt lit 
+
+>> Prompt: part of a chair
+>> Response: the mouse is fage 
+
+>> Prompt: part of a chair
+>> Response: the mouse mage on a table 
+
+>> Prompt: part of a chair
+>> Response: the floor is white 
+
+>> Prompt: red and silver lava light
+>> Response: a moute woodite tige 
+
+>> Prompt: red and silver lava light
+>> Response: the mout is a mouse 
+
+>> Prompt: red and silver lava light
+>> Response: the mout is white 
+
+>> Prompt: red and silver lava light
+>> Response: a wicles are on the desk 
+
+>> Prompt: a laptop and larger monitor
+>> Response: the mousse mage mouse on the desk 
+
+>> Prompt: a laptop and larger monitor
+>> Response: the waseat is a bow the lle 
+
+>> Prompt: a laptop and larger monitor
+>> Response: A white mouse and and white dorit 
+
+>> Prompt: a laptop and larger monitor
+>> Response: the wa wictures are on the desk 
+
+>> Prompt: portion of a keyboard
+>> Response: the mage mar wite 
+
+>> Prompt: portion of a keyboard
+>> Response: A wicle wicleshtrne and dray less 
+
+>> Prompt: portion of a keyboard
+>> Response: A miture and white micle 
+
+>> Prompt: portion of a keyboard
+>> Response: A wiclupus on a table 
+
+>> Prompt: framed artwork of mountain and sunset
+>> Response: a mouse wite 
+
+>> Prompt: framed artwork of mountain and sunset
+>> Response: a witures on a desk 
+
+>> Prompt: framed artwork of mountain and sunset
+>> Response: the mark of the mar 
+
+>> Prompt: framed artwork of mountain and sunset
+>> Response: the floor has been turned off 
+
+>> Prompt: a whiteboard above the desk
+>> Response: a white legess 
+
+>> Prompt: a whiteboard above the desk
+>> Response: the floor has a white fuppport 
+
+>> Prompt: a whiteboard above the desk
+>> Response: a lictures on the floor 
+
+>> Prompt: a whiteboard above the desk
+>> Response: the frorss mouse is on 
+
+>> Prompt: a Santa Claus lamp on the table
+>> Response: the mause is moouse 
+
+>> Prompt: a Santa Claus lamp on the table
+>> Response: the mouse is white 
+
+>> Prompt: a Santa Claus lamp on the table
+>> Response: the mouse is lown 
+
+>> Prompt: a Santa Claus lamp on the table
+>> Response: the mouse is white in colour 
+
+>> Prompt: picture hanging on wall
+>> Response: the fark is on the desk 
+
+>> Prompt: picture hanging on wall
+>> Response: a white top computer on the wall 
+
+>> Prompt: picture hanging on wall
+>> Response: the floor is white 
+
+>> Prompt: picture hanging on wall
+>> Response: a white mouse on the wall 
+
+>> Prompt: a picture on the wall
+>> Response: the mouse is white 
+
+>> Prompt: a picture on the wall
+>> Response: a mouse on the desk 
+
+>> Prompt: a picture on the wall
+>> Response: a white mouse on the desk 
+
+>> Prompt: a picture on the wall
+>> Response: the floor is mouse is dow 
+
+>> Prompt: a mobile Smartphone on the table
+>> Response: the floor is mouse 
+
+>> Prompt: a mobile Smartphone on the table
+>> Response: the mouse licles are on the floor 
+
+>> Prompt: a mobile Smartphone on the table
+>> Response: the marke of the wall 
+
+>> Prompt: a mobile Smartphone on the table
+>> Response: a licture mouss on the it 
+
+>> Prompt: the screen for the desktop computer
+>> Response: the floor has a mous 
+
+>> Prompt: the screen for the desktop computer
+>> Response: the floor has a mouse 
+
+>> Prompt: the screen for the desktop computer
+>> Response: a mouse moute lite 
+
+>> Prompt: the screen for the desktop computer
+>> Response: the floor is white 
+
+>> Prompt: black laptop on table
+>> Response: the floor has been parked next to the leaves 
+
+>> Prompt: black laptop on table
+>> Response: the floor has a mout 
+
+>> Prompt: black laptop on table
+>> Response: the fror mpppppp on the wall 
+
+>> Prompt: black laptop on table
+>> Response: the mouse mouse is on the floor 
+
+>> Prompt: red lava light on table
+>> Response: the floor is white 
+
+>> Prompt: red lava light on table
+>> Response: the floor has a mage 
+
+>> Prompt: red lava light on table
+>> Response: the warpet is clean 
+
+>> Prompt: red lava light on table
+>> Response: a mouse on the wall 
+
+>> Prompt: large wooden office table
+>> Response: the floor is white in colour 
+
+>> Prompt: large wooden office table
+>> Response: the lordsss on a table 
+
+>> Prompt: large wooden office table
+>> Response: a mouse mouse mouse on the wall 
+
+>> Prompt: large wooden office table
+>> Response: a lige mouse legs 
+
+>> Prompt: this is a keyboard for the desktop computer
+>> Response: the fupport marpet is on 
+
+>> Prompt: this is a keyboard for the desktop computer
+>> Response: a muse on the wall 
+
+>> Prompt: this is a keyboard for the desktop computer
+>> Response: the waseat is a been parked on the desk 
+
+>> Prompt: this is a keyboard for the desktop computer
+>> Response: the mouse wicture mouse 

@@ -1,0 +1,1106 @@
+>> Loaded models dict_keys(['chat'])
+
+
+>> Prompt: The baby elephant has a big ear.
+>> Response: A mousetit on the far ight 
+
+>> Prompt: The baby elephant has a big ear.
+>> Response: A woodictures are on the floor 
+
+>> Prompt: The baby elephant has a big ear.
+>> Response: A white purple closter 
+
+>> Prompt: The baby elephant has a big ear.
+>> Response: A wit is lege 
+
+>> Prompt: No people shown in the photo.
+>> Response: A mousesss on a desk 
+
+>> Prompt: No people shown in the photo.
+>> Response: Thictures are on the floor 
+
+>> Prompt: No people shown in the photo.
+>> Response: Thone licle witures on it 
+
+>> Prompt: No people shown in the photo.
+>> Response: A wicles are support 
+
+>> Prompt: tail of a baby animal
+>> Response: the fricture market is on 
+
+>> Prompt: tail of a baby animal
+>> Response: the low is legs 
+
+>> Prompt: tail of a baby animal
+>> Response: a lupk of a left 
+
+>> Prompt: tail of a baby animal
+>> Response: a white mutese is on 
+
+>> Prompt: long trunk of the elephant
+>> Response: the floor has a mage 
+
+>> Prompt: long trunk of the elephant
+>> Response: a white mouse is lit 
+
+>> Prompt: long trunk of the elephant
+>> Response: a mouse mousse les 
+
+>> Prompt: long trunk of the elephant
+>> Response: a mouse is lit 
+
+>> Prompt: the animal's tusks are white
+>> Response: a magese mouse is on 
+
+>> Prompt: the animal's tusks are white
+>> Response: the fror dasesess 
+
+>> Prompt: the animal's tusks are white
+>> Response: the floor has been switched off 
+
+>> Prompt: the animal's tusks are white
+>> Response: a mage is on the desk 
+
+>> Prompt: there are six elephants
+>> Response: the wit is les 
+
+>> Prompt: there are six elephants
+>> Response: the mouse is white 
+
+>> Prompt: there are six elephants
+>> Response: a witure legs on the desk 
+
+>> Prompt: there are six elephants
+>> Response: the floor is white 
+
+>> Prompt: The grass is brown.
+>> Response: A wit is a and white 
+
+>> Prompt: The grass is brown.
+>> Response: A white and white mousess 
+
+>> Prompt: The grass is brown.
+>> Response: A witure less 
+
+>> Prompt: The grass is brown.
+>> Response: the frit is a mouse 
+
+>> Prompt: this elephant has tusks
+>> Response: a woone is downing 
+
+>> Prompt: this elephant has tusks
+>> Response: the markes are on the floor 
+
+>> Prompt: this elephant has tusks
+>> Response: the waseat is a mouse 
+
+>> Prompt: this elephant has tusks
+>> Response: a mouse is on the desk 
+
+>> Prompt: small tusk of a baby elephant
+>> Response: the fuppit is lett 
+
+>> Prompt: small tusk of a baby elephant
+>> Response: the mage is les 
+
+>> Prompt: small tusk of a baby elephant
+>> Response: a miclese legggs on a desk 
+
+>> Prompt: small tusk of a baby elephant
+>> Response: the floor has a fus 
+
+>> Prompt: the plant is yellow
+>> Response: the floor is white in the photo 
+
+>> Prompt: the plant is yellow
+>> Response: the floor is white in colour 
+
+>> Prompt: the plant is yellow
+>> Response: the mousess are blue 
+
+>> Prompt: the plant is yellow
+>> Response: a witure mouse is on 
+
+>> Prompt: limb of an adult animal
+>> Response: the floor is white in colour 
+
+>> Prompt: limb of an adult animal
+>> Response: a lite micle witures on fight 
+
+>> Prompt: limb of an adult animal
+>> Response: the fron is a lit 
+
+>> Prompt: limb of an adult animal
+>> Response: a luppet is and and dorne 
+
+>> Prompt: this animal has tusks
+>> Response: a leavess on the fictures are on the desk 
+
+>> Prompt: this animal has tusks
+>> Response: a leges light on a table 
+
+>> Prompt: this animal has tusks
+>> Response: a lit is a and white 
+
+>> Prompt: this animal has tusks
+>> Response: the floor has a mouse 
+
+>> Prompt: Branches from the tree.
+>> Response: The's a red sweater 
+
+>> Prompt: Branches from the tree.
+>> Response: The mouse legss on a desk 
+
+>> Prompt: Branches from the tree.
+>> Response: A white and white micle 
+
+>> Prompt: Branches from the tree.
+>> Response: The micles on a table 
+
+>> Prompt: tail of an adult animal
+>> Response: a muse on a table 
+
+>> Prompt: tail of an adult animal
+>> Response: the mage is white in the photo 
+
+>> Prompt: tail of an adult animal
+>> Response: a white popett lost 
+
+>> Prompt: tail of an adult animal
+>> Response: the fuse is white 
+
+>> Prompt: Baby animal in front of an adult
+>> Response: the mage is mage 
+
+>> Prompt: Baby animal in front of an adult
+>> Response: the mouse is white in colour 
+
+>> Prompt: Baby animal in front of an adult
+>> Response: a mouse wite micle witure 
+
+>> Prompt: Baby animal in front of an adult
+>> Response: the mousse legsss 
+
+>> Prompt: the tail of an elephant
+>> Response: the mage is mouse 
+
+>> Prompt: the tail of an elephant
+>> Response: the farpers are mar 
+
+>> Prompt: the tail of an elephant
+>> Response: a mouse is on the desk 
+
+>> Prompt: the tail of an elephant
+>> Response: the frictures are on 
+
+>> Prompt: The grass is brown and tall.
+>> Response: the floor is fuppppet is clean 
+
+>> Prompt: The grass is brown and tall.
+>> Response: A purple carpet is on 
+
+>> Prompt: The grass is brown and tall.
+>> Response: A wicletricture legs 
+
+>> Prompt: The grass is brown and tall.
+>> Response: A purple clupetshite is on 
+
+>> Prompt: eye of the elephant
+>> Response: the mouse is white 
+
+>> Prompt: eye of the elephant
+>> Response: the wit is lles 
+
+>> Prompt: eye of the elephant
+>> Response: a mouse lite 
+
+>> Prompt: eye of the elephant
+>> Response: a mouse mausse lite and lit 
+
+>> Prompt: The baby animal has a big ear.
+>> Response: A white and white and white carpet 
+
+>> Prompt: The baby animal has a big ear.
+>> Response: The's a red and legs 
+
+>> Prompt: The baby animal has a big ear.
+>> Response: A mitules on a desk 
+
+>> Prompt: The baby animal has a big ear.
+>> Response: A white mouses 
+
+>> Prompt: the elephant's tusks are white
+>> Response: the floor has been parked next to the lit 
+
+>> Prompt: the elephant's tusks are white
+>> Response: the floor is furit 
+
+>> Prompt: the elephant's tusks are white
+>> Response: a wor mouse is down 
+
+>> Prompt: the elephant's tusks are white
+>> Response: the mouse is white in colour 
+
+>> Prompt: the body sides of two adult elephants
+>> Response: the floor has a frit 
+
+>> Prompt: the body sides of two adult elephants
+>> Response: a white dorkes are on 
+
+>> Prompt: the body sides of two adult elephants
+>> Response: a white carset is on 
+
+>> Prompt: the body sides of two adult elephants
+>> Response: a white mouse is on 
+
+>> Prompt: The baby elephant is standing next to the big one.
+>> Response: A mouse wite 
+
+>> Prompt: The baby elephant is standing next to the big one.
+>> Response: A white micture mage 
+
+>> Prompt: The baby elephant is standing next to the big one.
+>> Response: A wit is a and and white 
+
+>> Prompt: The baby elephant is standing next to the big one.
+>> Response: the fase is white in colour 
+
+>> Prompt: The plant is brown.
+>> Response: the floor is fupport is and less 
+
+>> Prompt: The plant is brown.
+>> Response: the floor has a mouse 
+
+>> Prompt: The plant is brown.
+>> Response: the mouse is white 
+
+>> Prompt: The plant is brown.
+>> Response: the mouss are support 
+
+>> Prompt: The animal has a small trunk
+>> Response: a white mousess 
+
+>> Prompt: The animal has a small trunk
+>> Response: the floor is white 
+
+>> Prompt: The animal has a small trunk
+>> Response: a white lessegs on the it 
+
+>> Prompt: The animal has a small trunk
+>> Response: a white mouse is douse 
+
+>> Prompt: tail of the animal
+>> Response: a mouse is legs 
+
+>> Prompt: tail of the animal
+>> Response: the floor is white 
+
+>> Prompt: tail of the animal
+>> Response: the floor has boy the llllles 
+
+>> Prompt: tail of the animal
+>> Response: a muse on a table 
+
+>> Prompt: the ear of an adult animal
+>> Response: a lusege of les 
+
+>> Prompt: the ear of an adult animal
+>> Response: a mouse mouse legss 
+
+>> Prompt: the ear of an adult animal
+>> Response: a leavessss on a desk 
+
+>> Prompt: the ear of an adult animal
+>> Response: the mouse is white in colour 
+
+>> Prompt: eye of the animal
+>> Response: a leage of les 
+
+>> Prompt: eye of the animal
+>> Response: a mouse legss on the it 
+
+>> Prompt: eye of the animal
+>> Response: the magse is white 
+
+>> Prompt: eye of the animal
+>> Response: a lupke of a animal 
+
+>> Prompt: green leaves on the tree
+>> Response: the mouse is white 
+
+>> Prompt: green leaves on the tree
+>> Response: the mouse mouse lictror markes 
+
+>> Prompt: green leaves on the tree
+>> Response: the fuppppppet let 
+
+>> Prompt: green leaves on the tree
+>> Response: the fuseat is a mout 
+
+>> Prompt: The elephant has a long trunks.
+>> Response: A mousse woodite ligs on it 
+
+>> Prompt: The elephant has a long trunks.
+>> Response: A white and white mouses 
+
+>> Prompt: The elephant has a long trunks.
+>> Response: A mouse lesss 
+
+>> Prompt: The elephant has a long trunks.
+>> Response: The has a and and wit 
+
+>> Prompt: Herd of elephants in the wild.
+>> Response: A white and white mouse 
+
+>> Prompt: Herd of elephants in the wild.
+>> Response: A witure woodictures and lighte 
+
+>> Prompt: Herd of elephants in the wild.
+>> Response: The mouse is white 
+
+>> Prompt: Herd of elephants in the wild.
+>> Response: The has a and and wite 
+
+>> Prompt: small animal on ground
+>> Response: A and litures on it 
+
+>> Prompt: small animal on ground
+>> Response: the fuppppport is on the floor 
+
+>> Prompt: small animal on ground
+>> Response: a white muse on a desk 
+
+>> Prompt: small animal on ground
+>> Response: a white top of a paper 
+
+>> Prompt: Baby elephant in front of an adult
+>> Response: the mouse is white 
+
+>> Prompt: Baby elephant in front of an adult
+>> Response: the warkey legs on the wall 
+
+>> Prompt: Baby elephant in front of an adult
+>> Response: the mouse warke of the wall 
+
+>> Prompt: Baby elephant in front of an adult
+>> Response: a witure mouse lighte 
+
+>> Prompt: ear on the elephant
+>> Response: the mousse is white in colour 
+
+>> Prompt: ear on the elephant
+>> Response: the floor is white 
+
+>> Prompt: ear on the elephant
+>> Response: a mouse is on the desk 
+
+>> Prompt: ear on the elephant
+>> Response: the floor has belllllltttt 
+
+>> Prompt: dense green vegetation
+>> Response: the moussse lit on a desk 
+
+>> Prompt: dense green vegetation
+>> Response: the wictures are on 
+
+>> Prompt: dense green vegetation
+>> Response: the mage is white 
+
+>> Prompt: dense green vegetation
+>> Response: the mouse is wit 
+
+>> Prompt: small elephant on ground
+>> Response: a white mouse is on 
+
+>> Prompt: small elephant on ground
+>> Response: the frit is mouse is on 
+
+>> Prompt: small elephant on ground
+>> Response: the floor has a white cushowse 
+
+>> Prompt: small elephant on ground
+>> Response: the mouse is white in colour 
+
+>> Prompt: The elephant has a small trunk
+>> Response: a white moutese is on the floor 
+
+>> Prompt: The elephant has a small trunk
+>> Response: the mouse wage of a f 
+
+>> Prompt: The elephant has a small trunk
+>> Response: the waseat is lows 
+
+>> Prompt: The elephant has a small trunk
+>> Response: the waine is dase 
+
+>> Prompt: Photo taken during the day.
+>> Response: A mouse wicture leggs on the far fage 
+
+>> Prompt: Photo taken during the day.
+>> Response: Asictures on a table farkes 
+
+>> Prompt: Photo taken during the day.
+>> Response: Asian wooden standing on a table 
+
+>> Prompt: Photo taken during the day.
+>> Response: Asian man working at a desk 
+
+>> Prompt: The baby animal is standing next to the big one.
+>> Response: the floor has been parked on the desk 
+
+>> Prompt: The baby animal is standing next to the big one.
+>> Response: the moousse is white 
+
+>> Prompt: The baby animal is standing next to the big one.
+>> Response: A mouse is on the desk 
+
+>> Prompt: The baby animal is standing next to the big one.
+>> Response: A white micturiture and dray 
+
+>> Prompt: tail of the elephant
+>> Response: the mouse is mous 
+
+>> Prompt: tail of the elephant
+>> Response: the mouse is white 
+
+>> Prompt: tail of the elephant
+>> Response: the floor is furor 
+
+>> Prompt: tail of the elephant
+>> Response: a mouse is on the desk 
+
+>> Prompt: The medium animal is in the middle.
+>> Response: A white mousess 
+
+>> Prompt: The medium animal is in the middle.
+>> Response: A white micturess on the floor 
+
+>> Prompt: The medium animal is in the middle.
+>> Response: A wicles on the floor 
+
+>> Prompt: The medium animal is in the middle.
+>> Response: a lusectritures and dor the fage 
+
+>> Prompt: big elephant next to small one
+>> Response: the floor has a fuppppot 
+
+>> Prompt: big elephant next to small one
+>> Response: a mouse wite legggs 
+
+>> Prompt: big elephant next to small one
+>> Response: a lit is lite 
+
+>> Prompt: big elephant next to small one
+>> Response: the mouse moutse is dary 
+
+>> Prompt: the eye of a baby elephant
+>> Response: a mouse is legs 
+
+>> Prompt: the eye of a baby elephant
+>> Response: a witures on ite 
+
+>> Prompt: the eye of a baby elephant
+>> Response: a moute is on the desk 
+
+>> Prompt: the eye of a baby elephant
+>> Response: the floor has a white mout 
+
+>> Prompt: an elephant's tusk
+>> Response: the floor has a mous 
+
+>> Prompt: an elephant's tusk
+>> Response: the floor is white 
+
+>> Prompt: an elephant's tusk
+>> Response: the floor has been parked on the lllles 
+
+>> Prompt: an elephant's tusk
+>> Response: a white carpeset 
+
+>> Prompt: Three younger elephants.
+>> Response: A purple carpet 
+
+>> Prompt: Three younger elephants.
+>> Response: Thons on a desk 
+
+>> Prompt: Three younger elephants.
+>> Response: A white mousess 
+
+>> Prompt: Three younger elephants.
+>> Response: A white mouse is on the desk 
+
+>> Prompt: white tusks on elephant
+>> Response: A witure and white dorit 
+
+>> Prompt: white tusks on elephant
+>> Response: a moute is on the desk 
+
+>> Prompt: white tusks on elephant
+>> Response: the fus are mouse 
+
+>> Prompt: white tusks on elephant
+>> Response: the floor is fur 
+
+>> Prompt: The medium elephant is in the middle.
+>> Response: the marpe is white 
+
+>> Prompt: The medium elephant is in the middle.
+>> Response: A wicle wituress legs 
+
+>> Prompt: The medium elephant is in the middle.
+>> Response: A woodit is and downe 
+
+>> Prompt: The medium elephant is in the middle.
+>> Response: A woodit is a red sweater 
+
+>> Prompt: the eye of a baby animal
+>> Response: the magess on a desk 
+
+>> Prompt: the eye of a baby animal
+>> Response: a lit is and lit 
+
+>> Prompt: the eye of a baby animal
+>> Response: a white moute is on the floor 
+
+>> Prompt: the eye of a baby animal
+>> Response: the boy is white 
+
+>> Prompt: a herd of elephants
+>> Response: the mouse is white 
+
+>> Prompt: a herd of elephants
+>> Response: a mouse on a table 
+
+>> Prompt: a herd of elephants
+>> Response: the mout is lown 
+
+>> Prompt: a herd of elephants
+>> Response: a white mouse is on 
+
+>> Prompt: Six total elephants.
+>> Response: A The's a and legs 
+
+>> Prompt: Six total elephants.
+>> Response: A white and and white and mightes 
+
+>> Prompt: Six total elephants.
+>> Response: The's and wases 
+
+>> Prompt: Six total elephants.
+>> Response: A The's and white and and wige 
+
+>> Prompt: Green trees behind the elephants.
+>> Response: A purple couch with lus 
+
+>> Prompt: Green trees behind the elephants.
+>> Response: The's les and leggs 
+
+>> Prompt: Green trees behind the elephants.
+>> Response: A white mousess 
+
+>> Prompt: Green trees behind the elephants.
+>> Response: A and woodicle and drawns 
+
+>> Prompt: the elephants move together
+>> Response: the floor is white 
+
+>> Prompt: the elephants move together
+>> Response: the marpet is clean 
+
+>> Prompt: the elephants move together
+>> Response: a mouse is on 
+
+>> Prompt: the elephants move together
+>> Response: the floor is white 
+
+>> Prompt: limb of the animal
+>> Response: a mouse legss on fit. 
+
+>> Prompt: limb of the animal
+>> Response: the muse is white 
+
+>> Prompt: limb of the animal
+>> Response: the floor is white in colour 
+
+>> Prompt: limb of the animal
+>> Response: the mout is les 
+
+>> Prompt: these are african elephants
+>> Response: a mouse is diding 
+
+>> Prompt: these are african elephants
+>> Response: the floor has been parked next to the leaves 
+
+>> Prompt: these are african elephants
+>> Response: a mouse lesegs on the wall 
+
+>> Prompt: these are african elephants
+>> Response: the wit is llegs 
+
+>> Prompt: body on the animal
+>> Response: a lege of legs 
+
+>> Prompt: body on the animal
+>> Response: a moute is on 
+
+>> Prompt: body on the animal
+>> Response: a moute is les 
+
+>> Prompt: body on the animal
+>> Response: a white mooute is on the desk 
+
+>> Prompt: the grass is yellow
+>> Response: a workey dit is on the desk 
+
+>> Prompt: the grass is yellow
+>> Response: the mouse is clean 
+
+>> Prompt: the grass is yellow
+>> Response: a mouse is legs 
+
+>> Prompt: the grass is yellow
+>> Response: the floor is white 
+
+>> Prompt: green leaves on the plant
+>> Response: the mouse is clean 
+
+>> Prompt: green leaves on the plant
+>> Response: a lusegs on a desk 
+
+>> Prompt: green leaves on the plant
+>> Response: the floor is white 
+
+>> Prompt: green leaves on the plant
+>> Response: a mouse licture legs 
+
+>> Prompt: an animal's tusk
+>> Response: the lomesssss on a desk 
+
+>> Prompt: an animal's tusk
+>> Response: a mouse is on the floor 
+
+>> Prompt: an animal's tusk
+>> Response: the mage is dars 
+
+>> Prompt: an animal's tusk
+>> Response: a mouse legsss 
+
+>> Prompt: white tusks on animal
+>> Response: the mages on a desk 
+
+>> Prompt: white tusks on animal
+>> Response: the fupport is on the desk 
+
+>> Prompt: white tusks on animal
+>> Response: a white mouse is on the desk 
+
+>> Prompt: white tusks on animal
+>> Response: a mouse is on the floor 
+
+>> Prompt: a mother and calf
+>> Response: a mictures are on the desk 
+
+>> Prompt: a mother and calf
+>> Response: a white muse on the desk 
+
+>> Prompt: a mother and calf
+>> Response: the wicture mout is on the desk 
+
+>> Prompt: a mother and calf
+>> Response: the mouse is wicling 
+
+>> Prompt: big animal next to small one
+>> Response: a liget on a table 
+
+>> Prompt: big animal next to small one
+>> Response: the moutt is white in colour 
+
+>> Prompt: big animal next to small one
+>> Response: a mouse on the wall 
+
+>> Prompt: big animal next to small one
+>> Response: the mouse maute is on 
+
+>> Prompt: Green trees in the background.
+>> Response: A wicle witures on iget 
+
+>> Prompt: Green trees in the background.
+>> Response: A purple couch with a lit 
+
+>> Prompt: Green trees in the background.
+>> Response: The has a brown suport 
+
+>> Prompt: Green trees in the background.
+>> Response: Thie tuske of the wall 
+
+>> Prompt: tail of an adult elephant
+>> Response: the mouse wages 
+
+>> Prompt: tail of an adult elephant
+>> Response: a mouse lesss and leggs 
+
+>> Prompt: tail of an adult elephant
+>> Response: the mouse is llige 
+
+>> Prompt: tail of an adult elephant
+>> Response: the mouse is les 
+
+>> Prompt: limb of a baby animal
+>> Response: the mout is white in colour 
+
+>> Prompt: limb of a baby animal
+>> Response: a white mouse on the wall 
+
+>> Prompt: limb of a baby animal
+>> Response: a mouse lite lite 
+
+>> Prompt: limb of a baby animal
+>> Response: the mouse mout is on 
+
+>> Prompt: White tusk on the back elephant.
+>> Response: A white mouse is and dower 
+
+>> Prompt: White tusk on the back elephant.
+>> Response: The licle wictrures on the wall 
+
+>> Prompt: White tusk on the back elephant.
+>> Response: A white mousess 
+
+>> Prompt: White tusk on the back elephant.
+>> Response: The mousese lit on farkes. 
+
+>> Prompt: Branches from the plant.
+>> Response: A Black HUMan man with black hair and and drawnss 
+
+>> Prompt: Branches from the plant.
+>> Response: A white pippptures on far farp 
+
+>> Prompt: Branches from the plant.
+>> Response: A The's a and and white drawns 
+
+>> Prompt: Branches from the plant.
+>> Response: Thonse of a piture legs 
+
+>> Prompt: Three adult elephants.
+>> Response: A Black and drawer 
+
+>> Prompt: Three adult elephants.
+>> Response: A white moouses 
+
+>> Prompt: Three adult elephants.
+>> Response: Thie lectures on iture fit 
+
+>> Prompt: Three adult elephants.
+>> Response: A wit is a red sweater 
+
+>> Prompt: small bunch of leaves
+>> Response: A white mouse on a desk 
+
+>> Prompt: small bunch of leaves
+>> Response: the mouse is white 
+
+>> Prompt: small bunch of leaves
+>> Response: the mout is white in the photo 
+
+>> Prompt: small bunch of leaves
+>> Response: the floor is mar mous 
+
+>> Prompt: the back sides of two adult elephants
+>> Response: a white muse is on the floor 
+
+>> Prompt: the back sides of two adult elephants
+>> Response: the wicle mouse is on the desk 
+
+>> Prompt: the back sides of two adult elephants
+>> Response: the floor has a mouse 
+
+>> Prompt: the back sides of two adult elephants
+>> Response: a mouse wictures on iture 
+
+>> Prompt: long body of the animal
+>> Response: a moute is on the desk 
+
+>> Prompt: long body of the animal
+>> Response: a luseges on a table 
+
+>> Prompt: long body of the animal
+>> Response: a white muse on the wall 
+
+>> Prompt: long body of the animal
+>> Response: a luskey bear lit 
+
+>> Prompt: White tusk on the body animal.
+>> Response: The has a red sweater 
+
+>> Prompt: White tusk on the body animal.
+>> Response: A mouse lite 
+
+>> Prompt: White tusk on the body animal.
+>> Response: The hay and and waves 
+
+>> Prompt: White tusk on the body animal.
+>> Response: A white and micturess on fighte 
+
+>> Prompt: The baby animal has a big body.
+>> Response: The's a red lit 
+
+>> Prompt: The baby animal has a big body.
+>> Response: The's a and ligght 
+
+>> Prompt: The baby animal has a big body.
+>> Response: A mitures on a table 
+
+>> Prompt: The baby animal has a big body.
+>> Response: A white mouse is and lit 
+
+>> Prompt: trees next to the elephants
+>> Response: A mouse lit 
+
+>> Prompt: trees next to the elephants
+>> Response: the mouse is daine the road 
+
+>> Prompt: trees next to the elephants
+>> Response: a mouse leseggs on the wall 
+
+>> Prompt: trees next to the elephants
+>> Response: the floor is white 
+
+>> Prompt: the adult and baby elephant
+>> Response: a mouse warp 
+
+>> Prompt: the adult and baby elephant
+>> Response: the mouse witures on the it 
+
+>> Prompt: the adult and baby elephant
+>> Response: the mout is white 
+
+>> Prompt: the adult and baby elephant
+>> Response: a wicles are on the desk 
+
+>> Prompt: the adult and baby animal
+>> Response: a mouse is liget 
+
+>> Prompt: the adult and baby animal
+>> Response: the lowss are support 
+
+>> Prompt: the adult and baby animal
+>> Response: a muse on a desk 
+
+>> Prompt: the adult and baby animal
+>> Response: the lomppet is on 
+
+>> Prompt: The animal has a long trunks.
+>> Response: A white mouse is on the floor 
+
+>> Prompt: The animal has a long trunks.
+>> Response: A purple carpet is on the floor 
+
+>> Prompt: The animal has a long trunks.
+>> Response: A purple carpet 
+
+>> Prompt: The animal has a long trunks.
+>> Response: A mouse woodente is on 
+
+>> Prompt: back of the elephant
+>> Response: The's les 
+
+>> Prompt: back of the elephant
+>> Response: a muse on the wall 
+
+>> Prompt: back of the elephant
+>> Response: the markes are on the floor 
+
+>> Prompt: back of the elephant
+>> Response: the floor has been parked next to the lite 
+
+>> Prompt: body of the animal
+>> Response: a white legess 
+
+>> Prompt: body of the animal
+>> Response: a mouse on a desk 
+
+>> Prompt: body of the animal
+>> Response: a luskey bear leggs on the fit 
+
+>> Prompt: body of the animal
+>> Response: the lowss are shone 
+
+>> Prompt: tail of a baby elephant
+>> Response: a moute mouse leggs 
+
+>> Prompt: tail of a baby elephant
+>> Response: the mouse is white 
+
+>> Prompt: tail of a baby elephant
+>> Response: the mouse is lles 
+
+>> Prompt: tail of a baby elephant
+>> Response: the mouse is white in colour 
+
+>> Prompt: The animal has a small body
+>> Response: the frons are les 
+
+>> Prompt: The animal has a small body
+>> Response: as lighte lite 
+
+>> Prompt: The animal has a small body
+>> Response: the floor is white 
+
+>> Prompt: The animal has a small body
+>> Response: a lite mouse on the it 
+
+>> Prompt: White tusk on the back animal.
+>> Response: T>A mouse lesss 
+
+>> Prompt: White tusk on the back animal.
+>> Response: A mousess on the wall 
+
+>> Prompt: White tusk on the back animal.
+>> Response: Thonse mage on the desk 
+
+>> Prompt: White tusk on the back animal.
+>> Response: Thone is on the desk 
+
+>> Prompt: the body of an adult animal
+>> Response: the mouse is white 
+
+>> Prompt: the body of an adult animal
+>> Response: the mouse licles are on the floor 
+
+>> Prompt: the body of an adult animal
+>> Response: the mouse is mage 
+
+>> Prompt: the body of an adult animal
+>> Response: a lege of a lit 
+
+>> Prompt: The elephants are gray
+>> Response: the floor has a mous 
+
+>> Prompt: The elephants are gray
+>> Response: the floor has bow the mause 
+
+>> Prompt: The elephants are gray
+>> Response: a licture legs 
+
+>> Prompt: The elephants are gray
+>> Response: a mouse wite 
+
+>> Prompt: small tusk of a baby animal
+>> Response: the floor is white in colour 
+
+>> Prompt: small tusk of a baby animal
+>> Response: the floor has a fus 
+
+>> Prompt: small tusk of a baby animal
+>> Response: the frons are on 
+
+>> Prompt: small tusk of a baby animal
+>> Response: the mouse mouse is on the floor 
+
+>> Prompt: ear on the animal
+>> Response: the floor is white 
+
+>> Prompt: ear on the animal
+>> Response: the floor is white 
+
+>> Prompt: ear on the animal
+>> Response: the fuse is lown 
+
+>> Prompt: ear on the animal
+>> Response: a mouse on the wall 
+
+>> Prompt: the tail of an animal
+>> Response: the floor is white in colour 
+
+>> Prompt: the tail of an animal
+>> Response: the fark is on 
+
+>> Prompt: the tail of an animal
+>> Response: a marpet is on 
+
+>> Prompt: the tail of an animal
+>> Response: a legs on a desk 
+
+>> Prompt: long trunk of the animal
+>> Response: the fuppport is mouse is on the floor 
+
+>> Prompt: long trunk of the animal
+>> Response: a musetse is on the floor 
+
+>> Prompt: long trunk of the animal
+>> Response: the mause is mouse 
+
+>> Prompt: long trunk of the animal
+>> Response: the mouse less 
+
+>> Prompt: the ear of an adult elephant
+>> Response: a white carpet is on the floor 
+
+>> Prompt: the ear of an adult elephant
+>> Response: a mouse is on 
+
+>> Prompt: the ear of an adult elephant
+>> Response: the floor is white 
+
+>> Prompt: the ear of an adult elephant
+>> Response: the mouse is lle 
+
+>> Prompt: The plant is brown and tall.
+>> Response: the wit is a moouse 
+
+>> Prompt: The plant is brown and tall.
+>> Response: A purple carpet is on the desk 
+
+>> Prompt: The plant is brown and tall.
+>> Response: A purple carperset 
+
+>> Prompt: The plant is brown and tall.
+>> Response: A white and moute is on the floor 
+
+>> Prompt: The elephants are standing close together.
+>> Response: A white and micluture les 
+
+>> Prompt: The elephants are standing close together.
+>> Response: A mouse is lige 
+
+>> Prompt: The elephants are standing close together.
+>> Response: A white miture mouse 
+
+>> Prompt: The elephants are standing close together.
+>> Response: the floor is white in colour 
+
+>> Prompt: back of the animal
+>> Response: a moutiture legs 
+
+>> Prompt: back of the animal
+>> Response: the mousse on a desk 
+
+>> Prompt: back of the animal
+>> Response: the floor is white 
+
+>> Prompt: back of the animal
+>> Response: the lows are suport 
+
+>> Prompt: the limb of an animal
+>> Response: the markes are on 
+
+>> Prompt: the limb of an animal
+>> Response: the mousse is white 
+
+>> Prompt: the limb of an animal
+>> Response: a white lessegs 
+
+>> Prompt: the limb of an animal
+>> Response: a mouse is on the floor 
+
+>> Prompt: All of the elephants are facing the same direction.
+>> Response: A coaters on the desk 
+
+>> Prompt: All of the elephants are facing the same direction.
+>> Response: The's a light 
+
+>> Prompt: All of the elephants are facing the same direction.
+>> Response: A white mousesss 
+
+>> Prompt: All of the elephants are facing the same direction.
+>> Response: The has a and white down 

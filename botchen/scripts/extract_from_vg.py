@@ -164,11 +164,9 @@ def match_logical_surface_forms(surface_map, logical_map):
 # Main function to execute the extraction process for multiple situations and save the result.
 def main(ideallanguage, region_descriptions, region_graphs):
 
-    ids = [(1, 1), (3, 2), (4, 3)]
-
-    # ids = [(1, 1), (3, 2), (4, 3), (71, 4), (9, 5),
-    #        (2410753, 6), (713137, 7), (2412620, 8), (2412211, 9),
-    #        (186, 10), (2396154, 11), (2317468, 12)]
+    ids = [(1, 1), (3, 2), (4, 3), (71, 4), (9, 5),
+           (2410753, 6), (713137, 7), (2412620, 8), (2412211, 9),
+           (186, 10), (2396154, 11), (2317468, 12)]
 
     logical_merged_text = []  # Should be a list to store text pieces
     logical_surface_text = []  # Same for surface text
@@ -177,7 +175,7 @@ def main(ideallanguage, region_descriptions, region_graphs):
     matches = extract_matches(region_graphs)  # Extract mappings
 
     for vg_id, store_id in ids:
-        print(f"Processing vg_id {vg_id} store_id: {store_id}. \n Logical")
+        print(f"Processing vg_id {vg_id} store_id: {store_id}. \nLogical")
 
         # LOGICAL - Extract logical forms and create training data
         logical_texts = extract_logical_forms(ideallanguage, vg_id, new_situation_id=store_id)
@@ -200,28 +198,37 @@ def main(ideallanguage, region_descriptions, region_graphs):
         surface_logical_mapping.append(mapping)  # Append the mapping
 
     # Write logical merged text to file
-    with open('./data/training/extracted_scripts_logical.txt', "w", encoding="utf-8") as file:
+    with open('./data/training/extracted_logical.txt', "w", encoding="utf-8") as file:
         file.write(''.join(logical_merged_text))  # Join the list items into a single string with line breaks
 
     # Write surface merged text to file
-    with open('./data/training/extracted_scripts_surface.txt', "w", encoding="utf-8") as file:
+    with open('./data/training/extracted_surface.txt', "w", encoding="utf-8") as file:
         file.write("".join(logical_surface_text))  # Same here, join list into string
 
     # Write the mappings to the dsc file
-    with open('./data/training/extracted_scripts_dsc.txt', "w", encoding="utf-8") as file:
+    with open('./data/training/extracted_logical_to_surface.txt', "w", encoding="utf-8") as file:
         for situation in surface_logical_mapping:
             # Loop through each item in the mapping (assuming it's a dictionary)
-            file.write(f'<a script.{(surface_logical_mapping.index(situation))+1} type=DSC>\n')
             for hum_text, bot_text in situation.items():
                 # Write the formatted text for each entry
+                file.write(f'<a script.{(surface_logical_mapping.index(situation))+1} type=DSC>\n')
                 file.write(f'<u speaker=HUM>{hum_text}</u>\n')
                 file.write(f'<u speaker=BOT>{bot_text}</u>\n')
-            file.write(f'</a script.{(surface_logical_mapping.index(situation))+1}>\n\n')
+                file.write(f'</a>\n\n')
+
+    with open('./data/training/extracted_surface_to_logical.txt', "w", encoding="utf-8") as file:
+        for situation in surface_logical_mapping:
+            # Loop through each item in the mapping (assuming it's a dictionary)
+            for hum_text, bot_text in situation.items():
+                # Write the formatted text for each entry
+                file.write(f'<a script.{(surface_logical_mapping.index(situation))+1} type=DSC>\n')
+                file.write(f'<u speaker=HUM>{bot_text}</u>\n')
+                file.write(f'<u speaker=BOT>{hum_text}</u>\n')
+                file.write(f'</a>\n\n')
 
 # Ensure the script runs when executed directly.
 if __name__ == "__main__":
-    logical_representation, situation_content, items = extract_logical_forms("./data/ideallanguage.txt", '1', new_situation_id=None)
-    # print(situation_content)
+
     main("./data/ideallanguage.txt", "../../vgnlp2/obs/region_descriptions.json.obs", "../../vgnlp2/dsc/region_graphs.json.dsc")
 
 

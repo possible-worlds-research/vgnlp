@@ -1,0 +1,602 @@
+>> Loaded models dict_keys(['chat'])
+
+
+>> Prompt: (trouser.n purple man-wearing), (man.n sitting asian working sitting|in|a-desk sitting|at|a-desk wearing-trouser sitting|at|a-desk at|a-desk)
+>> Response: a desk 
+
+>> Prompt: (trouser.n purple man-wearing), (man.n sitting asian working sitting|in|a-desk sitting|at|a-desk wearing-trouser sitting|at|a-desk at|a-desk)
+>> Response: ast desk 
+
+>> Prompt: (trouser.n purple man-wearing), (man.n sitting asian working sitting|in|a-desk sitting|at|a-desk wearing-trouser sitting|at|a-desk at|a-desk)
+>> Response: woman a is a at desk 
+
+>> Prompt: (trouser.n purple man-wearing), (man.n sitting asian working sitting|in|a-desk sitting|at|a-desk wearing-trouser sitting|at|a-desk at|a-desk)
+>> Response: asian working sitting at a desk 
+
+>> Prompt: (tray.n red)
+>> Response: a tale chale ck males on the plate 
+
+>> Prompt: (tray.n red)
+>> Response: an chair with black charts on it 
+
+>> Prompt: (tray.n red)
+>> Response: A clartsits fed furale ck to tonit 
+
+>> Prompt: (tray.n red)
+>> Response: a chourts 
+
+>> Prompt: (desk.n man-sitting|in|a man-sitting|at|a man-sitting|at|a), (man.n sitting asian working sitting|in|a-desk sitting|at|a-desk wearing-trouser sitting|at|a-desk at|a-desk)
+>> Response: a andpty desk 
+
+>> Prompt: (desk.n man-sitting|in|a man-sitting|at|a man-sitting|at|a), (man.n sitting asian working sitting|in|a-desk sitting|at|a-desk wearing-trouser sitting|at|a-desk at|a-desk)
+>> Response: woman a an working at at a desk 
+
+>> Prompt: (desk.n man-sitting|in|a man-sitting|at|a man-sitting|at|a), (man.n sitting asian working sitting|in|a-desk sitting|at|a-desk wearing-trouser sitting|at|a-desk at|a-desk)
+>> Response: woman is a at a table 
+
+>> Prompt: (desk.n man-sitting|in|a man-sitting|at|a man-sitting|at|a), (man.n sitting asian working sitting|in|a-desk sitting|at|a-desk wearing-trouser sitting|at|a-desk at|a-desk)
+>> Response: asian working at a desk 
+
+>> Prompt: (box.n made|of-metallic_element), (cord.n )
+>> Response: a choles 
+
+>> Prompt: (box.n made|of-metallic_element), (cord.n )
+>> Response: A turan chair with black curales 
+
+>> Prompt: (box.n made|of-metallic_element), (cord.n )
+>> Response: A collesth ckee male marder arder cholds 
+
+>> Prompt: (box.n made|of-metallic_element), (cord.n )
+>> Response: andolle s 
+
+>> Prompt: (desk.n woman-sitting|at|a bowl-sitting|on), (desk.n woman-sitting|in|a woman-sitting|at|a woman-sitting|at|a)
+>> Response: woman wearing a a desk 
+
+>> Prompt: (desk.n woman-sitting|at|a bowl-sitting|on), (desk.n woman-sitting|in|a woman-sitting|at|a woman-sitting|at|a)
+>> Response: a desk 
+
+>> Prompt: (desk.n woman-sitting|at|a bowl-sitting|on), (desk.n woman-sitting|in|a woman-sitting|at|a woman-sitting|at|a)
+>> Response: a woman working at at a table 
+
+>> Prompt: (desk.n woman-sitting|at|a bowl-sitting|on), (desk.n woman-sitting|in|a woman-sitting|at|a woman-sitting|at|a)
+>> Response: a desk 
+
+>> Prompt: (man.n asian working reaching)
+>> Response: a is wearing shirt 
+
+>> Prompt: (man.n asian working reaching)
+>> Response: A an working a desk 
+
+>> Prompt: (man.n asian working reaching)
+>> Response: an anpty 
+
+>> Prompt: (man.n asian working reaching)
+>> Response: A a is wearing a shirt 
+
+>> Prompt: (shirt.n tan)
+>> Response: A stande stande chair with culale chalder 
+
+>> Prompt: (shirt.n tan)
+>> Response: A tand chair with black alaptop of a ide it 
+
+>> Prompt: (shirt.n tan)
+>> Response: A tubots are andes 
+
+>> Prompt: (shirt.n tan)
+>> Response: a green chair 
+
+>> Prompt: (object.n white)
+>> Response: an tale s 
+
+>> Prompt: (object.n white)
+>> Response: a tststic char chour 
+
+>> Prompt: (object.n white)
+>> Response: A tubit bes are on floor 
+
+>> Prompt: (object.n white)
+>> Response: a tales 
+
+>> Prompt: (knock.n woman-has woman-has), (woman.n asian working sitting|at|a-desk has-knock has-knock)
+>> Response: woman wearing a an working sitting in the desk 
+
+>> Prompt: (knock.n woman-has woman-has), (woman.n asian working sitting|at|a-desk has-knock has-knock)
+>> Response: a anpt.12 type=DSC> <u speaker=HUM>(desk.n woman-sitting|in|at|a), (woman.n sitting|a-desk at|a-desk has-knock has-knock has-knock), (woman. 
+
+>> Prompt: (knock.n woman-has woman-has), (woman.n asian working sitting|at|a-desk has-knock has-knock)
+>> Response: a a a desk 
+
+>> Prompt: (knock.n woman-has woman-has), (woman.n asian working sitting|at|a-desk has-knock has-knock)
+>> Response: woman wearing a an working desk 
+
+>> Prompt: (light.n lit long)
+>> Response: an taned fle chair with curales 
+
+>> Prompt: (light.n lit long)
+>> Response: a taned on the floor. 
+
+>> Prompt: (light.n lit long)
+>> Response: a talonge pap 
+
+>> Prompt: (light.n lit long)
+>> Response: A stan tsied file char ckes 
+
+>> Prompt: (man.n asian working sitting|at|a-desk has-knock has-knock)
+>> Response: a a a a desk 
+
+>> Prompt: (man.n asian working sitting|at|a-desk has-knock has-knock)
+>> Response: a at desk 
+
+>> Prompt: (man.n asian working sitting|at|a-desk has-knock has-knock)
+>> Response: woman wearing black a at desk 
+
+>> Prompt: (man.n asian working sitting|at|a-desk has-knock has-knock)
+>> Response: an woman working at a desk 
+
+>> Prompt: (woman.n asian working sitting|at|a-desk has-knock has-knock), (woman.n sitting asian working sitting|in|a-desk sitting|at|a-desk wearing-trouser sitting|at|a-desk at|a-table)
+>> Response: a andasit 
+
+>> Prompt: (woman.n asian working sitting|at|a-desk has-knock has-knock), (woman.n sitting asian working sitting|in|a-desk sitting|at|a-desk wearing-trouser sitting|at|a-desk at|a-table)
+>> Response: woman wearing a at a a desk 
+
+>> Prompt: (woman.n asian working sitting|at|a-desk has-knock has-knock), (woman.n sitting asian working sitting|in|a-desk sitting|at|a-desk wearing-trouser sitting|at|a-desk at|a-table)
+>> Response: a a a desk 
+
+>> Prompt: (woman.n asian working sitting|at|a-desk has-knock has-knock), (woman.n sitting asian working sitting|in|a-desk sitting|at|a-desk wearing-trouser sitting|at|a-desk at|a-table)
+>> Response: woman wearing an working at at at a a desk 
+
+>> Prompt: (device.n green)
+>> Response: an chare chair with chour 
+
+>> Prompt: (device.n green)
+>> Response: A clen sillets on the desk 
+
+>> Prompt: (device.n green)
+>> Response: A courth de sta de 
+
+>> Prompt: (device.n green)
+>> Response: an tandied file che 
+
+>> Prompt: (man.n sitting asian working sitting|in|a-desk sitting|at|a-desk wearing-trouser sitting|at|a-desk at|a-desk)
+>> Response: a a desk 
+
+>> Prompt: (man.n sitting asian working sitting|in|a-desk sitting|at|a-desk wearing-trouser sitting|at|a-desk at|a-desk)
+>> Response: a anpt.1 type=DSC>  
+
+>> Prompt: (man.n sitting asian working sitting|in|a-desk sitting|at|a-desk wearing-trouser sitting|at|a-desk at|a-desk)
+>> Response: woman wearing a at at the desk 
+
+>> Prompt: (man.n sitting asian working sitting|in|a-desk sitting|at|a-desk wearing-trouser sitting|at|a-desk at|a-desk)
+>> Response: woman an working sitting at a desk 
+
+>> Prompt: (container.n made|of-metallic_element), (cord.n )
+>> Response: A man in collollllder char 
+
+>> Prompt: (container.n made|of-metallic_element), (cord.n )
+>> Response: an tandion is a chour 
+
+>> Prompt: (container.n made|of-metallic_element), (cord.n )
+>> Response: A coule chole ck cles 
+
+>> Prompt: (container.n made|of-metallic_element), (cord.n )
+>> Response: A tubargen chair chair with black calallll ck chardes 
+
+>> Prompt: (woman.n sitting asian working sitting|in|a-desk sitting|at|a-desk wearing-trouser sitting|at|a-desk at|a-table)
+>> Response: a a desk 
+
+>> Prompt: (woman.n sitting asian working sitting|in|a-desk sitting|at|a-desk wearing-trouser sitting|at|a-desk at|a-table)
+>> Response: woman an working sitting a desk 
+
+>> Prompt: (woman.n sitting asian working sitting|in|a-desk sitting|at|a-desk wearing-trouser sitting|at|a-desk at|a-table)
+>> Response: woman wearing an working at a desk 
+
+>> Prompt: (woman.n sitting asian working sitting|in|a-desk sitting|at|a-desk wearing-trouser sitting|at|a-desk at|a-table)
+>> Response: a a desk 
+
+>> Prompt: (desk.n woman-sitting|at|a bowl-sitting|on), (desk.n woman-sitting|in|a woman-sitting|at|a woman-sitting|at|a), (woman.n asian working sitting|at|a-desk has-knock has-knock), (woman.n sitting asian working sitting|in|a-desk sitting|at|a-desk wearing-trouser sitting|at|a-desk at|a-table)
+>> Response: woman wearing a a anhair 
+
+>> Prompt: (desk.n woman-sitting|at|a bowl-sitting|on), (desk.n woman-sitting|in|a woman-sitting|at|a woman-sitting|at|a), (woman.n asian working sitting|at|a-desk has-knock has-knock), (woman.n sitting asian working sitting|in|a-desk sitting|at|a-desk wearing-trouser sitting|at|a-desk at|a-table)
+>> Response: woman wearing a an working desk 
+
+>> Prompt: (desk.n woman-sitting|at|a bowl-sitting|on), (desk.n woman-sitting|in|a woman-sitting|at|a woman-sitting|at|a), (woman.n asian working sitting|at|a-desk has-knock has-knock), (woman.n sitting asian working sitting|in|a-desk sitting|at|a-desk wearing-trouser sitting|at|a-desk at|a-table)
+>> Response: a a desk 
+
+>> Prompt: (desk.n woman-sitting|at|a bowl-sitting|on), (desk.n woman-sitting|in|a woman-sitting|at|a woman-sitting|at|a), (woman.n asian working sitting|at|a-desk has-knock has-knock), (woman.n sitting asian working sitting|in|a-desk sitting|at|a-desk wearing-trouser sitting|at|a-desk at|a-table)
+>> Response: woman an working at at at a desk 
+
+>> Prompt: (desk.n man-sitting|at|a bowl-sitting|on), (desk.n man-sitting|in|a man-sitting|at|a man-sitting|at|a), (man.n asian working sitting|at|a-desk has-knock has-knock), (man.n sitting asian working sitting|in|a-desk sitting|at|a-desk wearing-trouser sitting|at|a-desk at|a-desk)
+>> Response: a a desk 
+
+>> Prompt: (desk.n man-sitting|at|a bowl-sitting|on), (desk.n man-sitting|in|a man-sitting|at|a man-sitting|at|a), (man.n asian working sitting|at|a-desk has-knock has-knock), (man.n sitting asian working sitting|in|a-desk sitting|at|a-desk wearing-trouser sitting|at|a-desk at|a-desk)
+>> Response: asian working sitting a desk 
+
+>> Prompt: (desk.n man-sitting|at|a bowl-sitting|on), (desk.n man-sitting|in|a man-sitting|at|a man-sitting|at|a), (man.n asian working sitting|at|a-desk has-knock has-knock), (man.n sitting asian working sitting|in|a-desk sitting|at|a-desk wearing-trouser sitting|at|a-desk at|a-desk)
+>> Response: woman wearing a at a desk 
+
+>> Prompt: (desk.n man-sitting|at|a bowl-sitting|on), (desk.n man-sitting|in|a man-sitting|at|a man-sitting|at|a), (man.n asian working sitting|at|a-desk has-knock has-knock), (man.n sitting asian working sitting|in|a-desk sitting|at|a-desk wearing-trouser sitting|at|a-desk at|a-desk)
+>> Response: a andpt.1 type=DSC> <u speaker=HUM>(man.n sitting in|front|of-monitor has-hair wears-hair wears-g), (trouser.n gren shirt-has) 
+
+>> Prompt: (hair.n black parted)
+>> Response: a is chair 
+
+>> Prompt: (hair.n black parted)
+>> Response: A curalen chargee s 
+
+>> Prompt: (hair.n black parted)
+>> Response: a chale char chair with poles 
+
+>> Prompt: (hair.n black parted)
+>> Response: A curalen chair with black choles 
+
+>> Prompt: (jacket.n tan), (trouser.n purple woman-wearing)
+>> Response: A an bande chair with black charge chole 
+
+>> Prompt: (jacket.n tan), (trouser.n purple woman-wearing)
+>> Response: an male chair 
+
+>> Prompt: (jacket.n tan), (trouser.n purple woman-wearing)
+>> Response: A a bott 
+
+>> Prompt: (jacket.n tan), (trouser.n purple woman-wearing)
+>> Response: an woman wears black a shirt 
+
+>> Prompt: (table.n woman-at|a), (woman.n sitting asian working sitting|in|a-desk sitting|at|a-desk wearing-trouser sitting|at|a-desk at|a-table)
+>> Response: a desktop computer 
+
+>> Prompt: (table.n woman-at|a), (woman.n sitting asian working sitting|in|a-desk sitting|at|a-desk wearing-trouser sitting|at|a-desk at|a-table)
+>> Response: woman wearing a a desk 
+
+>> Prompt: (table.n woman-at|a), (woman.n sitting asian working sitting|in|a-desk sitting|at|a-desk wearing-trouser sitting|at|a-desk at|a-table)
+>> Response: a desk 
+
+>> Prompt: (table.n woman-at|a), (woman.n sitting asian working sitting|in|a-desk sitting|at|a-desk wearing-trouser sitting|at|a-desk at|a-table)
+>> Response: a desk 
+
+>> Prompt: (band.n green on-floor)
+>> Response: A colle ck arts on desk 
+
+>> Prompt: (band.n green on-floor)
+>> Response: A cular is chair with polale 
+
+>> Prompt: (band.n green on-floor)
+>> Response: A courend is curale chour 
+
+>> Prompt: (band.n green on-floor)
+>> Response: an a table 
+
+>> Prompt: (desk.n man-at|a), (man.n sitting asian working sitting|in|a-desk sitting|at|a-desk wearing-trouser sitting|at|a-desk at|a-desk)
+>> Response: a at desk 
+
+>> Prompt: (desk.n man-at|a), (man.n sitting asian working sitting|in|a-desk sitting|at|a-desk wearing-trouser sitting|at|a-desk at|a-desk)
+>> Response: a at desk 
+
+>> Prompt: (desk.n man-at|a), (man.n sitting asian working sitting|in|a-desk sitting|at|a-desk wearing-trouser sitting|at|a-desk at|a-desk)
+>> Response: woman wearing an working at at a desk 
+
+>> Prompt: (desk.n man-at|a), (man.n sitting asian working sitting|in|a-desk sitting|at|a-desk wearing-trouser sitting|at|a-desk at|a-desk)
+>> Response: woman an working at at a desk 
+
+>> Prompt: (band.n green on-pavement)
+>> Response: A cure curale st 
+
+>> Prompt: (band.n green on-pavement)
+>> Response: A culen stales on desk 
+
+>> Prompt: (band.n green on-pavement)
+>> Response: A tale chole s 
+
+>> Prompt: (band.n green on-pavement)
+>> Response: A cure ple chale s 
+
+>> Prompt: (shade.n dark)
+>> Response: A curthale ckes on plate 
+
+>> Prompt: (shade.n dark)
+>> Response: A and andes 
+
+>> Prompt: (shade.n dark)
+>> Response: a a ang chair with choles 
+
+>> Prompt: (shade.n dark)
+>> Response: A culesits chair with curalal it 
+
+>> Prompt: (container.n made|of-metallic_element), (metallic_element.n container-made|of)
+>> Response: alemaptop of a curder 
+
+>> Prompt: (container.n made|of-metallic_element), (metallic_element.n container-made|of)
+>> Response: all cker calets on desk 
+
+>> Prompt: (container.n made|of-metallic_element), (metallic_element.n container-made|of)
+>> Response: ale char der 
+
+>> Prompt: (container.n made|of-metallic_element), (metallic_element.n container-made|of)
+>> Response: A colle challes on the desk 
+
+>> Prompt: (desktop.n green)
+>> Response: A tan botst 
+
+>> Prompt: (desktop.n green)
+>> Response: an chair 
+
+>> Prompt: (desktop.n green)
+>> Response: A tuban bottsts on desk 
+
+>> Prompt: (desktop.n green)
+>> Response: A colllll sip ches 
+
+>> Prompt: (hair.n black dark), (knock.n woman-has woman-has), (woman.n asian working sitting|at|a-desk has-knock has-knock)
+>> Response: woman sitting an working sitting anknock 
+
+>> Prompt: (hair.n black dark), (knock.n woman-has woman-has), (woman.n asian working sitting|at|a-desk has-knock has-knock)
+>> Response: woman wearing an working at a at the desk 
+
+>> Prompt: (hair.n black dark), (knock.n woman-has woman-has), (woman.n asian working sitting|at|a-desk has-knock has-knock)
+>> Response: woman wearing black a a desk 
+
+>> Prompt: (hair.n black dark), (knock.n woman-has woman-has), (woman.n asian working sitting|at|a-desk has-knock has-knock)
+>> Response: a a a desk 
+
+>> Prompt: (band.n green on-floor), (floor.n band-on)
+>> Response: A cureen chair with pales 
+
+>> Prompt: (band.n green on-floor), (floor.n band-on)
+>> Response: a is white chale 
+
+>> Prompt: (band.n green on-floor), (floor.n band-on)
+>> Response: A collests ck clar arts 
+
+>> Prompt: (band.n green on-floor), (floor.n band-on)
+>> Response: A cularts are chair 
+
+>> Prompt: (tape.n white)
+>> Response: a choles 
+
+>> Prompt: (tape.n white)
+>> Response: a chair with aletsts 
+
+>> Prompt: (tape.n white)
+>> Response: a chair with curale st 
+
+>> Prompt: (tape.n white)
+>> Response: A sit chair with black cart 
+
+>> Prompt: (band.n green on-pavement), (pavement.n band-on)
+>> Response: A clen choles 
+
+>> Prompt: (band.n green on-pavement), (pavement.n band-on)
+>> Response: a chair with chardee s 
+
+>> Prompt: (band.n green on-pavement), (pavement.n band-on)
+>> Response: A clalender plate plate under it 
+
+>> Prompt: (band.n green on-pavement), (pavement.n band-on)
+>> Response: ande chair with charge curare cheees 
+
+>> Prompt: (jacket.n tan), (trouser.n purple man-wearing)
+>> Response: a paptop of ander culollders 
+
+>> Prompt: (jacket.n tan), (trouser.n purple man-wearing)
+>> Response: A gray gray 
+
+>> Prompt: (jacket.n tan), (trouser.n purple man-wearing)
+>> Response: A an gren colles 
+
+>> Prompt: (jacket.n tan), (trouser.n purple man-wearing)
+>> Response: a a gray gray gray shirt 
+
+>> Prompt: (knock.n man-has man-has), (man.n asian working sitting|at|a-desk has-knock has-knock)
+>> Response: a a desk 
+
+>> Prompt: (knock.n man-has man-has), (man.n asian working sitting|at|a-desk has-knock has-knock)
+>> Response: a a a a table 
+
+>> Prompt: (knock.n man-has man-has), (man.n asian working sitting|at|a-desk has-knock has-knock)
+>> Response: a a a desk 
+
+>> Prompt: (knock.n man-has man-has), (man.n asian working sitting|at|a-desk has-knock has-knock)
+>> Response: woman sitting at at at a desk 
+
+>> Prompt: (woman.n asian working reaching)
+>> Response: A an working sitting at a desk 
+
+>> Prompt: (woman.n asian working reaching)
+>> Response: A an a ang ised a desk 
+
+>> Prompt: (woman.n asian working reaching)
+>> Response: a a a desk 
+
+>> Prompt: (woman.n asian working reaching)
+>> Response: A a is a a desk 
+
+>> Prompt: (sweater.n tan)
+>> Response: an chair with calalle ck choles 
+
+>> Prompt: (sweater.n tan)
+>> Response: a chair with calarts 
+
+>> Prompt: (sweater.n tan)
+>> Response: A culestsit bes on the desk 
+
+>> Prompt: (sweater.n tan)
+>> Response: A tand chair chair with curale s 
+
+>> Prompt: (box.n made|of-metallic_element), (metallic_element.n box-made|of)
+>> Response: A colllll sth chard chard ck alllets 
+
+>> Prompt: (box.n made|of-metallic_element), (metallic_element.n box-made|of)
+>> Response: a choles 
+
+>> Prompt: (box.n made|of-metallic_element), (metallic_element.n box-made|of)
+>> Response: A collllll chales on plate 
+
+>> Prompt: (box.n made|of-metallic_element), (metallic_element.n box-made|of)
+>> Response: a chair with alet 
+
+>> Prompt: (jean.n blue)
+>> Response: a barts on desk 
+
+>> Prompt: (jean.n blue)
+>> Response: a cholle chole 
+
+>> Prompt: (jean.n blue)
+>> Response: A collllll chal ststs on the desk 
+
+>> Prompt: (jean.n blue)
+>> Response: a choles 
+
+>> Prompt: (tube.n blue)
+>> Response: A curthale che ches 
+
+>> Prompt: (tube.n blue)
+>> Response: A cour boles 
+
+>> Prompt: (tube.n blue)
+>> Response: A curart chair with curargen pare s 
+
+>> Prompt: (tube.n blue)
+>> Response: an chair 
+
+>> Prompt: (bowl.n plastic red small sitting|on-desk), (desk.n woman-sitting|at|a bowl-sitting|on)
+>> Response: a desk 
+
+>> Prompt: (bowl.n plastic red small sitting|on-desk), (desk.n woman-sitting|at|a bowl-sitting|on)
+>> Response: woman sitting at at the desk 
+
+>> Prompt: (bowl.n plastic red small sitting|on-desk), (desk.n woman-sitting|at|a bowl-sitting|on)
+>> Response: a desk 
+
+>> Prompt: (bowl.n plastic red small sitting|on-desk), (desk.n woman-sitting|at|a bowl-sitting|on)
+>> Response: a desk 
+
+>> Prompt: (jacket.n tan)
+>> Response: a a tsion 
+
+>> Prompt: (jacket.n tan)
+>> Response: A man in a cololds 
+
+>> Prompt: (jacket.n tan)
+>> Response: a gray greens 
+
+>> Prompt: (jacket.n tan)
+>> Response: A tuboles s 
+
+>> Prompt: (hair.n black dark), (knock.n man-has man-has), (man.n asian working sitting|at|a-desk has-knock has-knock)
+>> Response: ast is at a desk 
+
+>> Prompt: (hair.n black dark), (knock.n man-has man-has), (man.n asian working sitting|at|a-desk has-knock has-knock)
+>> Response: woman wearing at a a a table 
+
+>> Prompt: (hair.n black dark), (knock.n man-has man-has), (man.n asian working sitting|at|a-desk has-knock has-knock)
+>> Response: a at desk 
+
+>> Prompt: (hair.n black dark), (knock.n man-has man-has), (man.n asian working sitting|at|a-desk has-knock has-knock)
+>> Response: woman sitting an working sitting a at desk 
+
+>> Prompt: (bowl.n plastic red small sitting|on-desk)
+>> Response: a is desk 
+
+>> Prompt: (bowl.n plastic red small sitting|on-desk)
+>> Response: A is a is desk 
+
+>> Prompt: (bowl.n plastic red small sitting|on-desk)
+>> Response: A ania monitor 
+
+>> Prompt: (bowl.n plastic red small sitting|on-desk)
+>> Response: a is wearing a shirt 
+
+>> Prompt: (trouser.n purple woman-wearing), (woman.n sitting asian working sitting|in|a-desk sitting|at|a-desk wearing-trouser sitting|at|a-desk at|a-table)
+>> Response: a angren on desk 
+
+>> Prompt: (trouser.n purple woman-wearing), (woman.n sitting asian working sitting|in|a-desk sitting|at|a-desk wearing-trouser sitting|at|a-desk at|a-table)
+>> Response: woman wearing a an working desk 
+
+>> Prompt: (trouser.n purple woman-wearing), (woman.n sitting asian working sitting|in|a-desk sitting|at|a-desk wearing-trouser sitting|at|a-desk at|a-table)
+>> Response: a desk 
+
+>> Prompt: (trouser.n purple woman-wearing), (woman.n sitting asian working sitting|in|a-desk sitting|at|a-desk wearing-trouser sitting|at|a-desk at|a-table)
+>> Response: a angen monitor 
+
+>> Prompt: (hair.n black dark)
+>> Response: A a a chair 
+
+>> Prompt: (hair.n black dark)
+>> Response: a chair with calarge p 
+
+>> Prompt: (hair.n black dark)
+>> Response: A an anoles 
+
+>> Prompt: (hair.n black dark)
+>> Response: a chair with calarts 
+
+>> Prompt: (desk.n woman-sitting|in|a woman-sitting|at|a woman-sitting|at|a), (woman.n sitting asian working sitting|in|a-desk sitting|at|a-desk wearing-trouser sitting|at|a-desk at|a-table)
+>> Response: ast andied monitor 
+
+>> Prompt: (desk.n woman-sitting|in|a woman-sitting|at|a woman-sitting|at|a), (woman.n sitting asian working sitting|in|a-desk sitting|at|a-desk wearing-trouser sitting|at|a-desk at|a-table)
+>> Response: a andange desk 
+
+>> Prompt: (desk.n woman-sitting|in|a woman-sitting|at|a woman-sitting|at|a), (woman.n sitting asian working sitting|in|a-desk sitting|at|a-desk wearing-trouser sitting|at|a-desk at|a-table)
+>> Response: woman wearing a a desk 
+
+>> Prompt: (desk.n woman-sitting|in|a woman-sitting|at|a woman-sitting|at|a), (woman.n sitting asian working sitting|in|a-desk sitting|at|a-desk wearing-trouser sitting|at|a-desk at|a-table)
+>> Response: ast desk 
+
+>> Prompt: (trouser.n purple woman-wearing)
+>> Response: a a table 
+
+>> Prompt: (trouser.n purple woman-wearing)
+>> Response: a a madots 
+
+>> Prompt: (trouser.n purple woman-wearing)
+>> Response: A andian andes are on the desk 
+
+>> Prompt: (trouser.n purple woman-wearing)
+>> Response: A a a chair 
+
+>> Prompt: (line.n green)
+>> Response: A tunde chair with cure calale chales 
+
+>> Prompt: (line.n green)
+>> Response: A clen stale ststs 
+
+>> Prompt: (line.n green)
+>> Response: A courtthee ck ale chardes 
+
+>> Prompt: (line.n green)
+>> Response: an paptop is on desk 
+
+>> Prompt: (man.n asian working sitting|at|a-desk has-knock has-knock), (man.n sitting asian working sitting|in|a-desk sitting|at|a-desk wearing-trouser sitting|at|a-desk at|a-desk)
+>> Response: asian working at at a a desk 
+
+>> Prompt: (man.n asian working sitting|at|a-desk has-knock has-knock), (man.n sitting asian working sitting|in|a-desk sitting|at|a-desk wearing-trouser sitting|at|a-desk at|a-desk)
+>> Response: a a desk 
+
+>> Prompt: (man.n asian working sitting|at|a-desk has-knock has-knock), (man.n sitting asian working sitting|in|a-desk sitting|at|a-desk wearing-trouser sitting|at|a-desk at|a-desk)
+>> Response: woman wearing an working at at a desk 
+
+>> Prompt: (man.n asian working sitting|at|a-desk has-knock has-knock), (man.n sitting asian working sitting|in|a-desk sitting|at|a-desk wearing-trouser sitting|at|a-desk at|a-desk)
+>> Response: a at desk 
+
+>> Prompt: (woman.n asian working sitting|at|a-desk has-knock has-knock)
+>> Response: a a anpt.1 type=DSC> <u speaker=HUM>(man.n sitting in|front|of-building wearing-suit wearing-suit wearing-shirt has-hair wearing-suit wearing-shirt has-hair wearing-suit wearing-shirt has-hair wearing 
+
+>> Prompt: (woman.n asian working sitting|at|a-desk has-knock has-knock)
+>> Response: woman sitting at at a a desk 
+
+>> Prompt: (woman.n asian working sitting|at|a-desk has-knock has-knock)
+>> Response: a a a desk 
+
+>> Prompt: (woman.n asian working sitting|at|a-desk has-knock has-knock)
+>> Response: a at a desk 
+
+>> Prompt: (girl.n has|a-hand), (hand.n girl-has|a)
+>> Response: a is a black a chair 
+
+>> Prompt: (girl.n has|a-hand), (hand.n girl-has|a)
+>> Response: an a is a a chair 
+
+>> Prompt: (girl.n has|a-hand), (hand.n girl-has|a)
+>> Response: a a is wearing shirt shirt 
+
+>> Prompt: (girl.n has|a-hand), (hand.n girl-has|a)
+>> Response: woman has a an working sitting at at a desk 

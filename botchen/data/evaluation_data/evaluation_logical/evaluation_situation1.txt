@@ -1,0 +1,422 @@
+>> Loaded models dict_keys(['chat'])
+
+
+>> Prompt: clock.n tall green
+>> Response:  <u speaker=HUM>(colar.n cessing) 
+
+>> Prompt: clock.n tall green
+>> Response:  <u speaker=HUM>(cordr.n drawn on-dish) 
+
+>> Prompt: clock.n tall green
+>> Response:  <u speaker=HUM>(desk.n colare with-lin  
+
+>> Prompt: clock.n tall green
+>> Response:  <u speaker=HUM>(chollar.n black) 
+
+>> Prompt: street.n plant-next|to car-parked|on parking_meter-on|top|of sidewalk shade-on clean sidewalk-next|to vehicle-parked|on tree-next|to
+>> Response:  <u speaker=HUM>(bicycle.n parked far|ay parked|on-street) 
+
+>> Prompt: street.n plant-next|to car-parked|on parking_meter-on|top|of sidewalk shade-on clean sidewalk-next|to vehicle-parked|on tree-next|to
+>> Response:  <u speaker=HUM>(bicycle.n near-parked|on parked|a-parked|ay parked|ay bicycle-parked|on far|ay parked|on-parked|ay parked 
+
+>> Prompt: street.n plant-next|to car-parked|on parking_meter-on|top|of sidewalk shade-on clean sidewalk-next|to vehicle-parked|on tree-next|to
+>> Response:  <u speaker=HUM>(parking_point.n animal-has animal-has) 
+
+>> Prompt: street.n plant-next|to car-parked|on parking_meter-on|top|of sidewalk shade-on clean sidewalk-next|to vehicle-parked|on tree-next|to
+>> Response:  <u speaker=HUM>(park.n parked|on-street) 
+
+>> Prompt: shade.n on-street
+>> Response:  <u speaker=HUM>(street.n bicycle-parked|on parked bicycle-ns parked parked|on-parked parked|a-sidewalk) 
+
+>> Prompt: shade.n on-street
+>> Response:  <u speaker=HUM>(sidewalk.n bicycle-parked parked parked behind-man-has man-wearing) 
+
+>> Prompt: shade.n on-street
+>> Response:  <u speaker=HUM>(sidewalk.n bicycle-parking_meter-behind bicycle-park has-behind) 
+
+>> Prompt: shade.n on-street
+>> Response:  <u speaker=HUM>(street.n bicycle-near parked bicycle-near parking_meter-park has-behind bicycle-behind) 
+
+>> Prompt: man.n wears-trouser has-trouser has-shirt in-shirt wearing-shoe wearing-shirt has-raincoat wearing-jacket in-sweater has-jacket wears-gym_shoe holding-chin wearing-sweater parking_meter-behind bicycle-behind wearing-trouser shirt-on wearing-spectacles sweater-on has-sweater wearing-raincoat has-shoe has-spectacles
+>> Response:  <u speaker=HUM>(ring.n brown wearing-shirt wearing-shirt) 
+
+>> Prompt: man.n wears-trouser has-trouser has-shirt in-shirt wearing-shoe wearing-shirt has-raincoat wearing-jacket in-sweater has-jacket wears-gym_shoe holding-chin wearing-sweater parking_meter-behind bicycle-behind wearing-trouser shirt-on wearing-spectacles sweater-on has-sweater wearing-raincoat has-shoe has-spectacles
+>> Response:  <u speaker=HUM>(ring.n brown woman-wearing woman-wearing woman-wearing woman-wearing) 
+
+>> Prompt: man.n wears-trouser has-trouser has-shirt in-shirt wearing-shoe wearing-shirt has-raincoat wearing-jacket in-sweater has-jacket wears-gym_shoe holding-chin wearing-sweater parking_meter-behind bicycle-behind wearing-trouser shirt-on wearing-spectacles sweater-on has-sweater wearing-raincoat has-shoe has-spectacles
+>> Response:  <u speaker=HUM>(ring.n woman-wearing woman-wearing woman-wearing woman-wearing woman-wearing) 
+
+>> Prompt: man.n wears-trouser has-trouser has-shirt in-shirt wearing-shoe wearing-shirt has-raincoat wearing-jacket in-sweater has-jacket wears-gym_shoe holding-chin wearing-sweater parking_meter-behind bicycle-behind wearing-trouser shirt-on wearing-spectacles sweater-on has-sweater wearing-raincoat has-shoe has-spectacles
+>> Response:  <u speaker=HUM>(trouser.n brown man-has man-has) 
+
+>> Prompt: gym_shoe.n man-wears woman-wears grey
+>> Response:  <u speaker=HUM>(trouser.n man-wearing man-wearing) 
+
+>> Prompt: gym_shoe.n man-wears woman-wears grey
+>> Response:  <u speaker=HUM>(man.n man-wearing man-wearing) 
+
+>> Prompt: gym_shoe.n man-wears woman-wears grey
+>> Response:  <u speaker=HUM>(man.n woman-wearing man-wearing woman-wearing woman-wears woman-wearing woman-wearing man-wears) 
+
+>> Prompt: gym_shoe.n man-wears woman-wears grey
+>> Response:  <u speaker=HUM>(man.n woman-has) 
+
+>> Prompt: headlight.n vehicle-has car-has off
+>> Response:  <u speaker=HUM>(park.n black animal-has animal-has) 
+
+>> Prompt: headlight.n vehicle-has car-has off
+>> Response:  <u speaker=HUM>(park.n parked|on-sidewalk) 
+
+>> Prompt: headlight.n vehicle-has car-has off
+>> Response:  <u speaker=HUM>(park.n man-has) 
+
+>> Prompt: headlight.n vehicle-has car-has off
+>> Response:  <u speaker=HUM>(park.n parked behind-animal) 
+
+>> Prompt: car.n white has-headlight parked|on-street parked has-back
+>> Response:  <u speaker=HUM>(trouser.n brown) 
+
+>> Prompt: car.n white has-headlight parked|on-street parked has-back
+>> Response:  <u speaker=HUM>(trouser.n man-has man-has) 
+
+>> Prompt: car.n white has-headlight parked|on-street parked has-back
+>> Response:  <u speaker=HUM>(back.n parked|on-sidewalk) 
+
+>> Prompt: car.n white has-headlight parked|on-street parked has-back
+>> Response:  <u speaker-on bicycle-near near-near) 
+
+>> Prompt: bicycle.n behind-woman on-sidewalk behind-man far|away near-tree chained parked near-plant parked|on-sidewalk
+>> Response:  <u speaker=HUM>(street.n brown bicycle-parked|on parked|on-parked parked|on parked|on-street) 
+
+>> Prompt: bicycle.n behind-woman on-sidewalk behind-man far|away near-tree chained parked near-plant parked|on-sidewalk
+>> Response:  <u speaker=HUM>(bicycle.n near-parked parked|on bicycle-parked parked parked|on-parked|on bicycle-parked far|on parked parked|on-sidewalk)</u 
+
+>> Prompt: bicycle.n behind-woman on-sidewalk behind-man far|away near-tree chained parked near-plant parked|on-sidewalk
+>> Response:  <u speaker=HUM>(bicycle.n parked|on-sidewalk) 
+
+>> Prompt: bicycle.n behind-woman on-sidewalk behind-man far|away near-tree chained parked near-plant parked|on-sidewalk
+>> Response:  <u speaker=HUM>(bicycle.n near-parked far|ar|away parked|on-sidewalk) 
+
+>> Prompt: sign.n on-building on-house black
+>> Response:  <u speaker=HUM>(wall.n green paddde-on) 
+
+>> Prompt: sign.n on-building on-house black
+>> Response:  <u speaker=HUM>(hair.n black murtuge-has) 
+
+>> Prompt: sign.n on-building on-house black
+>> Response:  <u speaker=HUM>(hair.n tan) 
+
+>> Prompt: sign.n on-building on-house black
+>> Response:  <u speaker=HUM>(hair.n black tanding blver-has) 
+
+>> Prompt: building.n sign-on tall with-window brick
+>> Response:  <u speaker=HUM>(hair.n wateee with-food) 
+
+>> Prompt: building.n sign-on tall with-window brick
+>> Response:  <u speaker=HUM>(window.n ) 
+
+>> Prompt: building.n sign-on tall with-window brick
+>> Response:  <u speaker=HUM>(hair.n drar-has) 
+
+>> Prompt: building.n sign-on tall with-window brick
+>> Response:  <u speaker=HUM>(hair.n black with-window) 
+
+>> Prompt: trunk.n on-sidewalk
+>> Response:  <u speaker=HUM>(sidewalk.n bicycle-parking_meter-behind behind-behind) 
+
+>> Prompt: trunk.n on-sidewalk
+>> Response:  <u speaker=HUM>(trunk.n on-street) 
+
+>> Prompt: trunk.n on-sidewalk
+>> Response:  <u speaker=HUM>(trunk.n elephant-has) 
+
+>> Prompt: trunk.n on-sidewalk
+>> Response:  <u speaker=HUM>(sidewalk.n bicycle-parked|on parking_meter-behind) 
+
+>> Prompt: sidewalk.n bicycle-parked|on next|to-street brick tree-by plant-by bicycle-on parking_meter-on trunk-on
+>> Response:  <u speaker=HUM>(bicycle.n parked parked|on-parked|a-parked parked|on parked|on-street) 
+
+>> Prompt: sidewalk.n bicycle-parked|on next|to-street brick tree-by plant-by bicycle-on parking_meter-on trunk-on
+>> Response:  <u speaker=HUM>(park.n tree-has parked|on parked|on-sidewalk) 
+
+>> Prompt: sidewalk.n bicycle-parked|on next|to-street brick tree-by plant-by bicycle-on parking_meter-on trunk-on
+>> Response:  <u speaker=HUM>(park.n parked|on-street) 
+
+>> Prompt: sidewalk.n bicycle-parked|on next|to-street brick tree-by plant-by bicycle-on parking_meter-on trunk-on
+>> Response:  <u speaker=HUM>(bicycle.n near-tree parked|on parked|a-parked parked|on-sidewalk) 
+
+>> Prompt: shirt.n orange man-wearing on-man man-in red man-has grey
+>> Response:  <u speaker=HUM>(trouser.n man-has woman-wearing) 
+
+>> Prompt: shirt.n orange man-wearing on-man man-in red man-has grey
+>> Response:  <u speaker=HUM>(trouser.n man-wearing) 
+
+>> Prompt: shirt.n orange man-wearing on-man man-in red man-has grey
+>> Response:  <u speaker=HUM>(trouser.n man-wearing man-wearing) 
+
+>> Prompt: shirt.n orange man-wearing on-man man-in red man-has grey
+>> Response:  <u speaker=HUM>(trouser.n man-wearing man-wearing man-wearing man-wearing) 
+
+>> Prompt: back.n vehicle-has car-has
+>> Response:  <u speaker=HUM>(park.n parked|a-sidewalk) 
+
+>> Prompt: back.n vehicle-has car-has
+>> Response:  <u speaker=HUM>(bicycle.n ndrn near-tree behind-tree behind-animal) 
+
+>> Prompt: back.n vehicle-has car-has
+>> Response:  <u speaker=HUM>(bicycle.n parked far|ay parked far|ar|ay parked|on-street) 
+
+>> Prompt: back.n vehicle-has car-has
+>> Response:  <u speaker=HUM>(bicycle.n ndrn parked|on parked parked|on-street) 
+
+>> Prompt: spectacles.n woman-has man-wearing woman-wearing man-has
+>> Response:  <u speaker=HUM>(trouser.n man-wearing) 
+
+>> Prompt: spectacles.n woman-has man-wearing woman-wearing man-has
+>> Response:  <u speaker=HUM>(trouser.n man-has) 
+
+>> Prompt: spectacles.n woman-has man-wearing woman-wearing man-has
+>> Response:  <u speaker=HUM>(man.n asian working sitting|at|at|a-desk working sitting|at|a-desk wearing-desk at|at|a-desk wearing-desk) 
+
+>> Prompt: spectacles.n woman-has man-wearing woman-wearing man-has
+>> Response:  <u speaker=HUM>(man.n ar-has) 
+
+>> Prompt: parking_meter.n behind-woman on-sidewalk orange behind-man on|top|of-street
+>> Response:  <u speaker=HUM>(trouser.n man-has) 
+
+>> Prompt: parking_meter.n behind-woman on-sidewalk orange behind-man on|top|of-street
+>> Response:  <u speaker=HUM>(trouser.n woman-has woman-has) 
+
+>> Prompt: parking_meter.n behind-woman on-sidewalk orange behind-man on|top|of-street
+>> Response:  <u speaker=HUM>(trouser.n man-has man-has man-wearing) 
+
+>> Prompt: parking_meter.n behind-woman on-sidewalk orange behind-man on|top|of-street
+>> Response:  <u speaker=HUM>(trouser.n woman-wearing woman-has) 
+
+>> Prompt: shoe.n woman-has woman-wearing man-wearing brown man-has
+>> Response:  <u speaker=HUM>(trouser.n brown woman-wearing man-wearing) 
+
+>> Prompt: shoe.n woman-has woman-wearing man-wearing brown man-has
+>> Response:  <u speaker=HUM>(man.n asian working sitting|at|a-desk) 
+
+>> Prompt: shoe.n woman-has woman-wearing man-wearing brown man-has
+>> Response:  <u speaker=HUM>(man.n ar-has) 
+
+>> Prompt: shoe.n woman-has woman-wearing man-wearing brown man-has
+>> Response:  <u speaker-wearing woman-wearing) 
+
+>> Prompt: trouser.n woman-has gray black woman-wearing man-wearing man-wears woman-wears man-has grey
+>> Response:  <u speaker=HUM>(man.n man-wearing man-has man-wearing man-wearing) 
+
+>> Prompt: trouser.n woman-has gray black woman-wearing man-wearing man-wears woman-wears man-has grey
+>> Response:  <u speaker=HUM>(trouser.n woman-has man-wearing man-wearing) 
+
+>> Prompt: trouser.n woman-has gray black woman-wearing man-wearing man-wears woman-wears man-has grey
+>> Response:  <u speaker=HUM>(man.n ar-wearing) 
+
+>> Prompt: trouser.n woman-has gray black woman-wearing man-wearing man-wears woman-wears man-has grey
+>> Response:  <u speaker=HUM>(trouser.n woman-has man-wearing) 
+
+>> Prompt: jacket.n man-wearing grey gray man-has
+>> Response:  <u speaker=HUM>(trouser.n man-has man-wearing) 
+
+>> Prompt: jacket.n man-wearing grey gray man-has
+>> Response:  <u speaker=HUM>(man.n ar-has) 
+
+>> Prompt: jacket.n man-wearing grey gray man-has
+>> Response:  <u speaker=HUM>(trouser.n woman-wearing) 
+
+>> Prompt: jacket.n man-wearing grey gray man-has
+>> Response:  <u speaker=HUM>(trouser.n man-has man-wearing man-has man-wearing) 
+
+>> Prompt: chin.n woman-holding raised man-holding guy-holding
+>> Response:  <u speaker=HUM>(chin.n drarawn on) 
+
+>> Prompt: chin.n woman-holding raised man-holding guy-holding
+>> Response:  <u speaker-chin) 
+
+>> Prompt: chin.n woman-holding raised man-holding guy-holding
+>> Response:  <u speaker=HUM>(choat.n man-wearing) 
+
+>> Prompt: chin.n woman-holding raised man-holding guy-holding
+>> Response:  <u speaker-chin) 
+
+>> Prompt: guy.n holding-chin
+>> Response:  <u speaker=HUM>(calar.n rawn wareeeelllll_prococess with-window bag-on) 
+
+>> Prompt: guy.n holding-chin
+>> Response:  <u speaker=HUM>(g.n raware wndre) 
+
+>> Prompt: guy.n holding-chin
+>> Response:  <u speaker=HUM>(g.n holding-carain) 
+
+>> Prompt: guy.n holding-chin
+>> Response:  <u speaker=HUM>(choard.n raware ) 
+
+>> Prompt: van.n parked white
+>> Response:  <u speaker=HUM>(sidewalk.n bicycle-parking_meter-behind behind-behind) 
+
+>> Prompt: van.n parked white
+>> Response:  <u speaker=HUM>(sidewalk.n bicycle-fur|of) 
+
+>> Prompt: van.n parked white
+>> Response:  <u speaker=HUM>(sidewalk.n brick next|to-street bicycle-parked|of parked|on-parking_meter-on bicycle-parked|on parked|on-parked parked|a-park 
+
+>> Prompt: van.n parked white
+>> Response:  <u speaker=HUM>(sidewalk.n bicycle-parked parked|on bicycle-parked|on bicycle-parked parked|on-parked|on) 
+
+>> Prompt: wall.n grey
+>> Response:  <u speaker=HUM>(wall.n ) 
+
+>> Prompt: wall.n grey
+>> Response:  <u speaker=HUM>(wall.n pastice-on) 
+
+>> Prompt: wall.n grey
+>> Response:  <u speaker=HUM>(wall.n partion-on basent-on) 
+
+>> Prompt: wall.n grey
+>> Response:  <u speaker=HUM>(wall.n paster-on edge-on edge-of edge-of edge-of edge-of edge-of) 
+
+>> Prompt: tree.n next|to-street bicycle-near by-sidewalk sparse
+>> Response:  <u speaker=HUM>(bicycle.n parked parked far|ay parked|on-sidewalk) 
+
+>> Prompt: tree.n next|to-street bicycle-near by-sidewalk sparse
+>> Response:  <u speaker=HUM>(bicycle.n parked parked parked far|ay parking_meter-behind-animal has-ear animal-in animal-in animal-in animal-in) 
+
+>> Prompt: tree.n next|to-street bicycle-near by-sidewalk sparse
+>> Response:  <u speaker=HUM>(park.n parked parked|on-sidewalk) 
+
+>> Prompt: tree.n next|to-street bicycle-near by-sidewalk sparse
+>> Response:  <u speaker=HUM>(bicycle.n parked faried parked|on-street) 
+
+>> Prompt: arm.n raised
+>> Response:  <u speaker=HUM>(cent.n black) 
+
+>> Prompt: arm.n raised
+>> Response:  <u speaker=HUM>(ceat.n drawn on-dish) 
+
+>> Prompt: arm.n raised
+>> Response:  <u speaker=HUM>(cal.n ) 
+
+>> Prompt: arm.n raised
+>> Response:  <u speaker=HUM>(cal.n drawn ) 
+
+>> Prompt: road.n 
+>> Response:  <u speaker=HUM>(bink.n black on-table with-food with-food) 
+
+>> Prompt: road.n 
+>> Response:  <u speaker=HUM>(cent.n ral_processing drice|on-desk) 
+
+>> Prompt: road.n 
+>> Response:  <u speaker=HUM>(barg.n black) 
+
+>> Prompt: road.n 
+>> Response:  )</script.1 type=HUM>(courdrg.n ) 
+
+>> Prompt: window.n building-with house-with
+>> Response:  <u speaker=HUM>(window.n ) 
+
+>> Prompt: window.n building-with house-with
+>> Response:  <u speaker=HUM>(bage.n black) 
+
+>> Prompt: window.n building-with house-with
+>> Response:  <u speaker=HUM>(bage.n with-food) 
+
+>> Prompt: window.n building-with house-with
+>> Response:  <u speaker=HUM>(window.n ) 
+
+>> Prompt: vehicle.n white has-headlight parked|on-street parked has-back
+>> Response:  <u speaker=HUM>(trouser.n man-has woman-wearing) 
+
+>> Prompt: vehicle.n white has-headlight parked|on-street parked has-back
+>> Response:  <u speaker=HUM>(trouser.n man-wearing man-wearing man-has man-wearing woman-wearing) 
+
+>> Prompt: vehicle.n white has-headlight parked|on-street parked has-back
+>> Response:  <u speaker=HUM>(bicycle.n near-near parked|ay parked|on-street) 
+
+>> Prompt: vehicle.n white has-headlight parked|on-street parked has-back
+>> Response:  <u speaker=HUM>(trouser.n man-has) 
+
+>> Prompt: raincoat.n woman-has gray woman-wearing man-wearing man-has grey
+>> Response:  <u speaker=HUM>(man.n man-wearing) 
+
+>> Prompt: raincoat.n woman-has gray woman-wearing man-wearing man-has grey
+>> Response:  <u speaker=HUM>(trouser.n brown man-wearing) 
+
+>> Prompt: raincoat.n woman-has gray woman-wearing man-wearing man-has grey
+>> Response:  <u speaker=HUM>(trouser.n brown man-wearing man-wearing man-wearing) 
+
+>> Prompt: raincoat.n woman-has gray woman-wearing man-wearing man-has grey
+>> Response:  <u speaker=HUM>(man.n has-head has-head eating-pasture eats-pasture has-head has-head has-ear has-ear has-head enjoying-pasture has-ear has-head has-head has-head has-head has-head has- 
+
+>> Prompt: sweater.n woman-has woman-wearing orange man-wearing on-woman woman-in on-man man-in red man-has grey
+>> Response:  <u speaker=HUM>(man.n man-wearing) 
+
+>> Prompt: sweater.n woman-has woman-wearing orange man-wearing on-woman woman-in on-man man-in red man-has grey
+>> Response:  <u speaker=HUM>(man.n ar-has) 
+
+>> Prompt: sweater.n woman-has woman-wearing orange man-wearing on-woman woman-in on-man man-in red man-has grey
+>> Response:  <u speaker=HUM>(trouser.n woman-wearing woman-has woman-wearing) 
+
+>> Prompt: sweater.n woman-has woman-wearing orange man-wearing on-woman woman-in on-man man-in red man-has grey
+>> Response:  <u speaker=HUM>(trouser.n man-has) 
+
+>> Prompt: house.n sign-on tall with-window brick
+>> Response:  <u speaker=HUM>(hair.n drawn cessing) 
+
+>> Prompt: house.n sign-on tall with-window brick
+>> Response:  <u speaker=HUM>(frame.n armchair-has) 
+
+>> Prompt: house.n sign-on tall with-window brick
+>> Response:  <u speaker=HUM>(frame.n armchair-has) 
+
+>> Prompt: house.n sign-on tall with-window brick
+>> Response:  <u speaker=HUM>(window.n house-on) 
+
+>> Prompt: separation.n grey
+>> Response:  <u speaker=HUM>(couch.n drawn cheememch with-food) 
+
+>> Prompt: separation.n grey
+>> Response:  <u speaker=HUM>(courd.n ) 
+
+>> Prompt: separation.n grey
+>> Response:  <u speaker=HUM>(coucollllllar.n with-liquide) 
+
+>> Prompt: separation.n grey
+>> Response:  <u speaker=HUM>(choate.n ) 
+
+>> Prompt: woman.n wears-trouser has-trouser wearing-shoe has-raincoat in-sweater has-sunglasses wears-gym_shoe wearing-sunglasses holding-chin wearing-sweater parking_meter-behind bicycle-behind wearing-trouser has-sweater wearing-spectacles sweater-on wearing-raincoat has-shoe has-spectacles
+>> Response:  <u speaker=HUM>(trouser.n man-wearing man-wearing) 
+
+>> Prompt: woman.n wears-trouser has-trouser wearing-shoe has-raincoat in-sweater has-sunglasses wears-gym_shoe wearing-sunglasses holding-chin wearing-sweater parking_meter-behind bicycle-behind wearing-trouser has-sweater wearing-spectacles sweater-on wearing-raincoat has-shoe has-spectacles
+>> Response:  <u speaker=HUM>(ring.n woman-wearing woman-wearing woman-wearing) 
+
+>> Prompt: woman.n wears-trouser has-trouser wearing-shoe has-raincoat in-sweater has-sunglasses wears-gym_shoe wearing-sunglasses holding-chin wearing-sweater parking_meter-behind bicycle-behind wearing-trouser has-sweater wearing-spectacles sweater-on wearing-raincoat has-shoe has-spectacles
+>> Response:  <u speaker=HUM>(trouser.n man-has man-has man-wearing) 
+
+>> Prompt: woman.n wears-trouser has-trouser wearing-shoe has-raincoat in-sweater has-sunglasses wears-gym_shoe wearing-sunglasses holding-chin wearing-sweater parking_meter-behind bicycle-behind wearing-trouser has-sweater wearing-spectacles sweater-on wearing-raincoat has-shoe has-spectacles
+>> Response:  <u speaker=HUM>(trouser.n man-wearing man-wearing man-wearing woman-wearing) 
+
+>> Prompt: sunglasses.n woman-has woman-wearing
+>> Response:  <u speaker=HUM>(trouser.n woman-has woman-has) 
+
+>> Prompt: sunglasses.n woman-has woman-wearing
+>> Response:  <u speaker=HUM>(trouser.n woman-has) 
+
+>> Prompt: sunglasses.n woman-has woman-wearing
+>> Response:  <u speaker=HUM>(trouser.n woman-has) 
+
+>> Prompt: sunglasses.n woman-has woman-wearing
+>> Response:  <u speaker=HUM>(trouser.n man-has) 
+
+>> Prompt: plant.n next|to-street bicycle-near by-sidewalk sparse
+>> Response:  <u speaker=HUM>(bicycle.n near-tree near-behind animal-animal-has) 
+
+>> Prompt: plant.n next|to-street bicycle-near by-sidewalk sparse
+>> Response:  <u speaker=HUM>(bicycle.n near-tree parked behind-animal) 
+
+>> Prompt: plant.n next|to-street bicycle-near by-sidewalk sparse
+>> Response:  <u speaker=HUM>(bicycle.n parking_shoe-incain) 
+
+>> Prompt: plant.n next|to-street bicycle-near by-sidewalk sparse
+>> Response:  <u speaker=HUM>(bicycle.n near-parked|ar|on fawareeed parked parked|on-sidewalk) 

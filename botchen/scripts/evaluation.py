@@ -22,6 +22,10 @@ import pandas as pd
 import re
 import matplotlib.pyplot as plt
 import seaborn as sns
+import nltk
+from nltk.translate.bleu_score import sentence_bleu
+
+################## VECTORIAL SPACES EVALUATION METHOD
 
 # Extract entities and properties from content
 def extract_entities_properties(content, optimal_script):
@@ -49,7 +53,7 @@ def count_entities_properties(entity_properties):
     num_properties = len(all_properties)  # Unique property count
     return num_entities, num_properties
 
-def create_matrices(script_id, optimal_script=False, saving_directory=None, entity_check=False):
+def create_matrices(script_id, evaluation_file_path, optimal_script=False, saving_directory=None, entity_check=False):
     """
     This function creates an activation matrix based on entity properties from a script.
     It either processes a specific script or an optimal script and generates a matrix of
@@ -67,31 +71,26 @@ def create_matrices(script_id, optimal_script=False, saving_directory=None, enti
     content = ''
     if optimal_script:
         # If script_id is 0, process all 'ideallanguage' files in the directory
-        if script_id == 0:
-            # Look for files that start with 'ideallanguage' and end with '.txt'
-            for file_name in os.listdir('./data/training_data/'):
-                if file_name.startswith('ideallanguage') and file_name.endswith('.txt'):
-                    file_path = os.path.join('./data/training_data/', file_name)
-                    with open(file_path, 'r') as file:
-                        script_content = file.read()
-                        content += script_content
-        elif script_id != 0:
-            # If script_id is not 0, load the specific optimal script for that ID
-            file_path = f'./data/training_data/ideallanguage_{script_id}.txt'
-            with open(file_path, 'r') as file:
-                content = file.read()
+        with open('./data/training/prompt_logical.txt', 'r') as file:
+            script_content = file.read()
+            content += ''.join(script_content)
+        if script_id != 0:
+            # If script_id is not 0, extract the specific optimal script for that ID
+            content = re.findall(fr"(<script\.{script_id} type=CONV>.*?</script\.{script_id}>)", content, re.DOTALL)
+            content = ''.join(content)
         entity_properties = extract_entities_properties(content, optimal_script=True)
     # If not an optimal script, load the evaluation data for the given script_id
     else:
         if script_id == 0:
-            for file_name in os.listdir('./data/evaluation_data/'):
+            for file_name in os.listdir(evaluation_file_path):
                 if file_name.startswith('evaluation_situation') and file_name.endswith('.txt'):
-                    file_path = os.path.join('./data/evaluation_data/', file_name)
+                    file_path = os.path.join(evaluation_file_path, file_name)
                     with open(file_path, 'r') as file:
                         script_content = file.read()
-                        content += script_content
+                        content += ''.join(script_content)
+                        # content += script_content
         elif script_id != 0:
-            file_path = f'./data/evaluation_data/evaluation_situation{script_id}.txt'
+            file_path = f'./data/evaluation_data/evaluation_logical/evaluation_situation{script_id}.txt'
             with open(file_path, 'r') as file:
                 content = file.read()
         entity_properties = extract_entities_properties(content, optimal_script=False)
@@ -116,9 +115,10 @@ def create_matrices(script_id, optimal_script=False, saving_directory=None, enti
         else:
             file_path = os.path.join(saving_directory, f"eval_df_{script_id}.csv")
         df.to_csv(file_path, index=True)
-        print(f'Matrix has been stored as {file_path}')
+        # print(f'Matrix has been stored as {file_path}')
     else:
-        print('No saving directory provided, matrix will not be saved.')
+        # print('No saving directory provided, matrix will not be saved.')
+        None
     if entity_check:
         return entity_properties
     return activation_matrix, df
@@ -149,25 +149,25 @@ def evaluation_with_vectorial_space(evaluating_framework,
     - None: Prints evaluation results including average similarity scores
       and the top 10 most similar rows and columns.
     """
-    print(f"Evaluating with framework: {evaluating_framework}, script eval ID: {script_id_eval}, script optimal ID: {script_id_optimal}")
+    # print(f"Evaluating with framework: {evaluating_framework}, script eval ID: {script_id_eval}, script optimal ID: {script_id_optimal}")
     if log_file:
         with open(log_file, 'a') as file:
             file.write(f"\nNEWNEW Evaluating with framework: {evaluating_framework}, script eval ID: {script_id_eval}, script optimal ID: {script_id_optimal}\n")
 
     # Generate evaluation vector space (matrix & DataFrame)
     if optimal_to_optimal is True:
-        eval_matrix, eval_df = create_matrices(script_id_eval, optimal_script=True)
+        eval_matrix, eval_df = create_matrices(script_id_eval, './data/evaluation_data/evaluation_logical/', optimal_script=True)
     else:
-        eval_matrix, eval_df = create_matrices(script_id_eval, saving_directory='./data/data_analysis/vectorial_spaces/evaluation/')
+        eval_matrix, eval_df = create_matrices(script_id_eval, './data/evaluation_data/evaluation_logical/', saving_directory='./data/data_analysis/logical/vectorial_spaces/evaluation/')
     # Generate optimal vector space (matrix & DataFrame)
-    optimal_matrix, optimal_df = create_matrices(script_id_optimal, optimal_script=True, saving_directory='./data/data_analysis/vectorial_spaces/optimal/')
+    optimal_matrix, optimal_df = create_matrices(script_id_optimal, './data/evaluation_data/evaluation_logical/', optimal_script=True, saving_directory='./data/data_analysis/logical/vectorial_spaces/optimal/')
 
     # Identify matching rows (entities) and columns (features) between the evaluation and optimal datasets
     matching_rows = eval_df.index.intersection(optimal_df.index)
     matching_columns = eval_df.columns.intersection(optimal_df.columns)
 
     if evaluating_framework == 1:
-        print('EVALUATION 1 - Fill up dimensionalities evaluation')
+        # print('EVALUATION 1 - Fill up dimensionalities evaluation')
         # Retain only dimensions present in both datasets
         new_eval_df = eval_df.loc[matching_rows, matching_columns]
         # Ensure the evaluated space includes all optimal dimensions, filling missing values with zero
@@ -178,7 +178,7 @@ def evaluation_with_vectorial_space(evaluating_framework,
                 file.write(f"\nEVALUATION 1 - Fill up dimensionalities evaluation\n")
 
     elif evaluating_framework == 2:
-        print('EVALUATION 2 - Retraction evaluation')
+        # print('EVALUATION 2 - Retraction evaluation')
         combined_indices = eval_df.index.union(optimal_df.index)
         combined_columns = eval_df.columns.union(optimal_df.columns)
         new_eval_df = pd.DataFrame(0, index=combined_indices, columns=combined_columns)
@@ -207,8 +207,8 @@ def evaluation_with_vectorial_space(evaluating_framework,
     # Extract diagonal values (self-similarities) from the row similarity matrix
     row_diagonal_series = pd.Series(row_similarity_df.to_numpy().diagonal(), index=row_similarity_df.index)
 
-    print(f'Average Rows Similarity: {row_diagonal_series.mean():.3f}')
-    print('Most similar rows:\n', row_diagonal_series.nlargest(10))
+    # print(f'Average Rows Similarity: {row_diagonal_series.mean():.3f}')
+    # print('Most similar rows:\n', row_diagonal_series.nlargest(10))
     if log_file:
         with open(log_file, 'a') as file:
             file.write(f"\n\nAverage Rows Similarity: {row_diagonal_series.mean():.3f}\n\n Most similar rows:\n{row_diagonal_series.nlargest(10)}\n")
@@ -221,11 +221,13 @@ def evaluation_with_vectorial_space(evaluating_framework,
     col_diagonal_series = pd.Series(column_similarity_df.to_numpy().diagonal(), index=column_similarity_df.index)
 
     # Display feature-level similarity results
-    print(f'Average Column Similarity: {col_diagonal_series.mean():.3f}')
-    print('Most similar columns:\n', col_diagonal_series.nlargest(10))
+    # print(f'Average Column Similarity: {col_diagonal_series.mean():.3f}')
+    # print('Most similar columns:\n', col_diagonal_series.nlargest(10))
     if log_file:
         with open(log_file, 'a') as file:
             file.write(f"\n\nAverage Column Similarity: {col_diagonal_series.mean():.3f}\n\nMost similar columns:\n{col_diagonal_series.nlargest(10)}\n")
+
+################ REPRESENTING GRAPHICALLY
 
 def make_csv_from_data(file_path, name):
     with open(file_path, 'r') as file:
@@ -257,7 +259,6 @@ def heatmap(file_path, row_column, eval_optimal, number_eval, log_file):
     # eval_optimal= Optimal/Eval based on what you are comparing
     # number_eval = 1/2 if evaluating with 1 or 2 eval
     df = pd.read_csv(file_path)
-    print(df.head())
     heatmap_data = df.pivot_table(index='Eval Script', columns='Optimal Script', values=f'Avg {row_column} Similarity')
     plt.figure(figsize=(10, 8))
     sns.heatmap(heatmap_data, annot=True, cmap="Blues", linewidths=0.5)
@@ -266,55 +267,132 @@ def heatmap(file_path, row_column, eval_optimal, number_eval, log_file):
     plt.ylabel(f'{eval_optimal} Script')
     plt.savefig(log_file)
 
-############# CREATE THE EVALUATION FILES
-if not os.path.exists(os.path.dirname('./data/data_analysis/evaluations/optimal_1.txt')):
-    os.makedirs(os.path.dirname('./data/data_analysis/evaluations/optimal_1.txt'))
+################ BLEU EVALUATION
 
-open('./data/data_analysis/evaluations/optimal_1.txt', 'w').close()
+def bleu_algorithm(file_path_references, file_path_candidates, n_gram):
+    # References
+    with open(file_path_references, 'r') as reference_file:
+        references_content = reference_file.read()
+    references_pattern = r'<a script\.(\d+) type=DSC>\s*<u speaker=HUM>(.*?)</u>\s*<u speaker=BOT>(.*?)</u>\s*</a>'
+    references_matches = re.findall(references_pattern, references_content, re.DOTALL)
+    prompt_references_dict = {}
+    for reference_match in references_matches:
+        hum_text = reference_match[1]
+        bot_text = reference_match[2]
+        if hum_text not in prompt_references_dict:
+            prompt_references_dict[hum_text] = set()
+        prompt_references_dict[hum_text].add(bot_text)
+
+    # Candidates
+    with open(file_path_candidates, 'r') as candidate_file:
+        candidate_content = candidate_file.read()
+    candidate_pattern = r">> Prompt: (.*?)\s+>> Response: (.*?)\n\n"
+    candidate_matches = re.findall(candidate_pattern, candidate_content, re.DOTALL)
+    prompt_candidates_dict = {}
+    for candidate_match in candidate_matches:
+        prompt, candidate = candidate_match
+        if prompt in prompt_candidates_dict:
+            prompt_candidates_dict[prompt].append(candidate)
+        else:
+            prompt_candidates_dict[prompt] = [candidate]
+
+    # BLEU score
+    bleu_scores=[]
+    weights = tuple([1.0 if i == 0 else 0.0 for i in range(n_gram)])
+    for prompt in prompt_candidates_dict.keys():
+        if prompt in prompt_references_dict:
+            candidate_responses = prompt_candidates_dict[prompt]
+            reference_responses = prompt_references_dict[prompt]
+
+            tokenized_references = [response.split() for response in reference_responses]
+            tokenized_candidates = [response.split() for response in candidate_responses]
+
+            for candidate in tokenized_candidates:
+                score = sentence_bleu(tokenized_references, candidate, weights=weights)
+                bleu_scores.append(score)
+
+    if bleu_scores:
+        average_bleu_score = sum(bleu_scores) / len(bleu_scores)
+    else:
+        average_bleu_score = 0
+    return average_bleu_score
+
+############# LOGICAL
+#############
+############# CREATE THE EVALUATION VECTORIAL SPACES FILES
+
+print('Vectorial Spaces Evaluation - Logic Data, creation of vectorial spaces, evaluating them and storing')
+
+if not os.path.exists(os.path.dirname('./data/data_analysis/logical/evaluations/optimal_1.txt')):
+    os.makedirs(os.path.dirname('./data/data_analysis/logical/evaluations/optimal_1.txt'))
+
+open('./data/data_analysis/logical/evaluations/optimal_1.txt', 'w').close()
 for script_id_eval in range (0,13):
     for script_id_optimal in range(0,13):
-        evaluation_with_vectorial_space(1, script_id_eval, script_id_optimal, log_file='./data/data_analysis/evaluations/optimal_1.txt', optimal_to_optimal=True)
+        evaluation_with_vectorial_space(1, script_id_eval, script_id_optimal, log_file='./data/data_analysis/logical/evaluations/optimal_1.txt', optimal_to_optimal=True)
 
-open('./data/data_analysis/evaluations/optimal_2.txt', 'w').close()  # This clears the file by opening & immediately closing it
+open('./data/data_analysis/logical/evaluations/optimal_2.txt', 'w').close()  # This clears the file by opening & immediately closing it
 for script_id_eval in range (0,13):
     for script_id_optimal in range(0,13):
-        evaluation_with_vectorial_space(2, script_id_eval, script_id_optimal, log_file='./data/data_analysis/evaluations/optimal_2.txt', optimal_to_optimal=True)
+        evaluation_with_vectorial_space(2, script_id_eval, script_id_optimal, log_file='./data/data_analysis/logical/evaluations/optimal_2.txt', optimal_to_optimal=True)
 
-open('./data/data_analysis/evaluations/evaluation_1.txt', 'w').close()
+open('./data/data_analysis/logical/evaluations/evaluation_1.txt', 'w').close()
 for script_id_eval in range (0,13):
     for script_id_optimal in range(0,13):
-        evaluation_with_vectorial_space(1, script_id_eval, script_id_optimal, log_file='./data/data_analysis/evaluations/evaluation_1.txt')
+        evaluation_with_vectorial_space(1, script_id_eval, script_id_optimal, log_file='./data/data_analysis/logical/evaluations/evaluation_1.txt')
 
-open('./data/data_analysis/evaluations/evaluation_2.txt', 'w').close()  # This clears the file by opening & immediately closing it
+open('./data/data_analysis/logical/evaluations/evaluation_2.txt', 'w').close()  # This clears the file by opening & immediately closing it
 for script_id_eval in range (0,13):
     for script_id_optimal in range(0,13):
-        evaluation_with_vectorial_space(2, script_id_eval, script_id_optimal, log_file='./data/data_analysis/evaluations/evaluation_2.txt')
+        evaluation_with_vectorial_space(2, script_id_eval, script_id_optimal, log_file='./data/data_analysis/logical/evaluations/evaluation_2.txt')
 
 ################ CREATE THE CSVs FROM THE EVALUATION FILES
-if not os.path.exists(os.path.dirname('./data/data_analysis/dataframes/optimal_1.csv')):
-    os.makedirs(os.path.dirname('./data/data_analysis/dataframes/optimal_1.csv'))
 
-open('./data/data_analysis/dataframes/optimal_1.csv', 'w').close()
-make_csv_from_data('./data/data_analysis/evaluations/optimal_1.txt', './data/data_analysis/dataframes/optimal_1.csv')
-open('./data/data_analysis/dataframes/optimal_2.csv', 'w').close()
-make_csv_from_data('./data/data_analysis/evaluations/optimal_2.txt', './data/data_analysis/dataframes/optimal_2.csv')
-open('./data/data_analysis/dataframes/evaluation_1.csv', 'w').close()
-make_csv_from_data('./data/data_analysis/evaluations/evaluation_1.txt', './data/data_analysis/dataframes/evaluation_1.csv')
-open('./data/data_analysis/dataframes/evaluation_2.csv', 'w').close()
-make_csv_from_data('./data/data_analysis/evaluations/evaluation_2.txt', './data/data_analysis/dataframes/evaluation_2.csv')
+print('Vectorial Spaces Evaluation - Logic Data, comparing the spaces and storing')
+
+if not os.path.exists(os.path.dirname('./data/data_analysis/logical/dataframes/optimal_1.csv')):
+    os.makedirs(os.path.dirname('./data/data_analysis/logical/dataframes/optimal_1.csv'))
+
+open('./data/data_analysis/logical/dataframes/optimal_1.csv', 'w').close()
+make_csv_from_data('./data/data_analysis/logical/evaluations/optimal_1.txt', './data/data_analysis/logical/dataframes/optimal_1.csv')
+open('./data/data_analysis/logical/dataframes/optimal_2.csv', 'w').close()
+make_csv_from_data('./data/data_analysis/logical/evaluations/optimal_2.txt', './data/data_analysis/logical/dataframes/optimal_2.csv')
+open('./data/data_analysis/logical/dataframes/evaluation_1.csv', 'w').close()
+make_csv_from_data('./data/data_analysis/logical/evaluations/evaluation_1.txt', './data/data_analysis/logical/dataframes/evaluation_1.csv')
+open('./data/data_analysis/logical/dataframes/evaluation_2.csv', 'w').close()
+make_csv_from_data('./data/data_analysis/logical/evaluations/evaluation_2.txt', './data/data_analysis/logical/dataframes/evaluation_2.csv')
 
 ####################### CREATE THE HEATMAPS
-if not os.path.exists(os.path.dirname('./data/data_analysis/images/row_optimal_1.png')):
-    os.makedirs(os.path.dirname('./data/data_analysis/images/row_optimal_1.png'))
 
-heatmap('./data/data_analysis/dataframes/optimal_1.csv', 'Row', 'Optimal', '1', './data/data_analysis/images/row_optimal_1.png')
-heatmap('./data/data_analysis/dataframes/optimal_1.csv', 'Column', 'Optimal', '1', './data/data_analysis/images/col_optimal_1.png')
+print('Vectorial Spaces Evaluation - Logic Data, heatmaps creation')
 
-heatmap('./data/data_analysis/dataframes/optimal_2.csv', 'Row', 'Optimal', '2', './data/data_analysis/images/row_optimal_2.png')
-heatmap('./data/data_analysis/dataframes/optimal_2.csv', 'Column', 'Optimal', '2', './data/data_analysis/images/col_optimal_2.png')
+if not os.path.exists(os.path.dirname('./data/data_analysis/logical/images/row_optimal_1.png')):
+    os.makedirs(os.path.dirname('./data/data_analysis/logical/images/row_optimal_1.png'))
 
-heatmap('./data/data_analysis/dataframes/evaluation_1.csv', 'Row', 'Eval', '1', './data/data_analysis/images/row_eval_1.png')
-heatmap('./data/data_analysis/dataframes/evaluation_1.csv', 'Column', 'Eval', '1', './data/data_analysis/images/col_eval_1.png')
+heatmap('./data/data_analysis/logical/dataframes/optimal_1.csv', 'Row', 'Optimal', '1', './data/data_analysis/logical/images/row_optimal_1.png')
+heatmap('./data/data_analysis/logical/dataframes/optimal_1.csv', 'Column', 'Optimal', '1', './data/data_analysis/logical/images/col_optimal_1.png')
 
-heatmap('./data/data_analysis/dataframes/evaluation_2.csv', 'Row', 'Eval', '2', './data/data_analysis/images/row_eval_2.png')
-heatmap('./data/data_analysis/dataframes/evaluation_2.csv', 'Column', 'Eval', '2', './data/data_analysis/images/col_eval_2.png')
+heatmap('./data/data_analysis/logical/dataframes/optimal_2.csv', 'Row', 'Optimal', '2', './data/data_analysis/logical/images/row_optimal_2.png')
+heatmap('./data/data_analysis/logical/dataframes/optimal_2.csv', 'Column', 'Optimal', '2', './data/data_analysis/logical/images/col_optimal_2.png')
+
+heatmap('./data/data_analysis/logical/dataframes/evaluation_1.csv', 'Row', 'Eval', '1', './data/data_analysis/logical/images/row_eval_1.png')
+heatmap('./data/data_analysis/logical/dataframes/evaluation_1.csv', 'Column', 'Eval', '1', './data/data_analysis/logical/images/col_eval_1.png')
+
+heatmap('./data/data_analysis/logical/dataframes/evaluation_2.csv', 'Row', 'Eval', '2', './data/data_analysis/logical/images/row_eval_2.png')
+heatmap('./data/data_analysis/logical/dataframes/evaluation_2.csv', 'Column', 'Eval', '2', './data/data_analysis/logical/images/col_eval_2.png')
+
+############# SURFACE
+#############
+
+############# LOGICAL TO SURFACE
+#############
+############# BLEU ALGORITHM
+
+print('BLEU Algorithm Evaluation - Logical to Surface Data \n')
+n_gram_value=1
+
+for script_id_reference in range (0,13):
+   score = bleu_algorithm('./data/training/permuted_logical_to_surface.txt',
+                          f'./data/evaluation_data/evaluation_logic_to_surface/evaluation_situation{script_id_reference}.txt',
+                          n_gram_value)
+   print(f'Average BLEU score, n-grams {n_gram_value} for script id {script_id_reference} is {score}')

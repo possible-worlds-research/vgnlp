@@ -1,0 +1,458 @@
+>> Loaded models dict_keys(['chat'])
+
+
+>> Prompt: (container.n colorful striped of-drop filled|with-drop), (drop.n container-filled|with)
+>> Response: a a chair 
+
+>> Prompt: (container.n colorful striped of-drop filled|with-drop), (drop.n container-filled|with)
+>> Response: A culen choles on plate 
+
+>> Prompt: (container.n colorful striped of-drop filled|with-drop), (drop.n container-filled|with)
+>> Response: A a is curural plate 
+
+>> Prompt: (container.n colorful striped of-drop filled|with-drop), (drop.n container-filled|with)
+>> Response: a choles 
+
+>> Prompt: (cheese.n white)
+>> Response: a chole sts 
+
+>> Prompt: (cheese.n white)
+>> Response: an chair with black cart 
+
+>> Prompt: (cheese.n white)
+>> Response: A clesth che des on wall 
+
+>> Prompt: (cheese.n white)
+>> Response: a chourts 
+
+>> Prompt: (container.n colorful striped of-drop filled|with-drop), (drop.n container-of)
+>> Response: a chair with chargre chare cheees 
+
+>> Prompt: (container.n colorful striped of-drop filled|with-drop), (drop.n container-of)
+>> Response: a a chair with alarts 
+
+>> Prompt: (container.n colorful striped of-drop filled|with-drop), (drop.n container-of)
+>> Response: A culen cholle s 
+
+>> Prompt: (container.n colorful striped of-drop filled|with-drop), (drop.n container-of)
+>> Response: a cholles on wall 
+
+>> Prompt: (object.n in|middle|of-dish), (dish.n object-in|middle|of), (table.n with-dish)
+>> Response: a choles 
+
+>> Prompt: (object.n in|middle|of-dish), (dish.n object-in|middle|of), (table.n with-dish)
+>> Response: A clllll che ck cles 
+
+>> Prompt: (object.n in|middle|of-dish), (dish.n object-in|middle|of), (table.n with-dish)
+>> Response: A collesth ckee charee der 
+
+>> Prompt: (object.n in|middle|of-dish), (dish.n object-in|middle|of), (table.n with-dish)
+>> Response: andil ck cholle che che der cule s 
+
+>> Prompt: (bowl.n colorful striped of-drop filled|with-drop), (drop.n bowl-of)
+>> Response: A is is is a chair with carale cholle 
+
+>> Prompt: (bowl.n colorful striped of-drop filled|with-drop), (drop.n bowl-of)
+>> Response: a is white chour 
+
+>> Prompt: (bowl.n colorful striped of-drop filled|with-drop), (drop.n bowl-of)
+>> Response: an is is white 
+
+>> Prompt: (bowl.n colorful striped of-drop filled|with-drop), (drop.n bowl-of)
+>> Response: A clllll ck to tonder charder cale curalest. 
+
+>> Prompt: (chopstick.n in|middle|of-plate), (plate.n chopstick-in|middle|of), (table.n with-plate)
+>> Response: a charg chair with black chor 
+
+>> Prompt: (chopstick.n in|middle|of-plate), (plate.n chopstick-in|middle|of), (table.n with-plate)
+>> Response: A andia is chair 
+
+>> Prompt: (chopstick.n in|middle|of-plate), (plate.n chopstick-in|middle|of), (table.n with-plate)
+>> Response: andits on the table 
+
+>> Prompt: (chopstick.n in|middle|of-plate), (plate.n chopstick-in|middle|of), (table.n with-plate)
+>> Response: A colellll plate chale ck to to ip 
+
+>> Prompt: (food.n on|a-dish), (dish.n food-on|a)
+>> Response: a plate is white chair with alaptop chales 
+
+>> Prompt: (food.n on|a-dish), (dish.n food-on|a)
+>> Response: A is white chair colllles 
+
+>> Prompt: (food.n on|a-dish), (dish.n food-on|a)
+>> Response: A is cour 
+
+>> Prompt: (food.n on|a-dish), (dish.n food-on|a)
+>> Response: a plate is chair 
+
+>> Prompt: (dish.n )
+>> Response: an chair with cales 
+
+>> Prompt: (dish.n )
+>> Response: a tstaned fale of a chales 
+
+>> Prompt: (dish.n )
+>> Response: A tallen sit 
+
+>> Prompt: (dish.n )
+>> Response: a chair with alaptop of it 
+
+>> Prompt: (tray.n full|of-vegetable), (vegetable.n tray-full|of)
+>> Response: a furawn fle tower it 
+
+>> Prompt: (tray.n full|of-vegetable), (vegetable.n tray-full|of)
+>> Response: aptop curar chair with curale choulest 
+
+>> Prompt: (tray.n full|of-vegetable), (vegetable.n tray-full|of)
+>> Response: A clalle flle char on the floor 
+
+>> Prompt: (tray.n full|of-vegetable), (vegetable.n tray-full|of)
+>> Response: a chair with chour 
+
+>> Prompt: (food.n cubed)
+>> Response: an plate 
+
+>> Prompt: (food.n cubed)
+>> Response: an chair with chollest 
+
+>> Prompt: (food.n cubed)
+>> Response: arg chales on desk 
+
+>> Prompt: (food.n cubed)
+>> Response: A chair with calalles on the table 
+
+>> Prompt: (bowl.n colorful striped of-drop filled|with-drop), (drop.n bowl-filled|with)
+>> Response: asits chair with calales 
+
+>> Prompt: (bowl.n colorful striped of-drop filled|with-drop), (drop.n bowl-filled|with)
+>> Response: a is chair 
+
+>> Prompt: (bowl.n colorful striped of-drop filled|with-drop), (drop.n bowl-filled|with)
+>> Response: A man in is calout 
+
+>> Prompt: (bowl.n colorful striped of-drop filled|with-drop), (drop.n bowl-filled|with)
+>> Response: a is is a chair with alaptop arder 
+
+>> Prompt: (container.n light|brown light|tan with-handle), (handle.n container-with)
+>> Response: A tallen ck are pe der itit 
+
+>> Prompt: (container.n light|brown light|tan with-handle), (handle.n container-with)
+>> Response: A culale ckes on the desk 
+
+>> Prompt: (container.n light|brown light|tan with-handle), (handle.n container-with)
+>> Response: a chard s 
+
+>> Prompt: (container.n light|brown light|tan with-handle), (handle.n container-with)
+>> Response: a chair with alapst 
+
+>> Prompt: (sauce.n red)
+>> Response: a is chole 
+
+>> Prompt: (sauce.n red)
+>> Response: A curalen ck chole che che cle starts 
+
+>> Prompt: (sauce.n red)
+>> Response: A cllen chair with chardes 
+
+>> Prompt: (sauce.n red)
+>> Response: an chair with ardes 
+
+>> Prompt: (bowl.n ), (sauce.n )
+>> Response: an is chair with curargen chair with chole 
+
+>> Prompt: (bowl.n ), (sauce.n )
+>> Response: A clalen chair with black cholllll char 
+
+>> Prompt: (bowl.n ), (sauce.n )
+>> Response: A man in colllottst 
+
+>> Prompt: (bowl.n ), (sauce.n )
+>> Response: A colestst cle chair 
+
+>> Prompt: (food.n next|to-sauce), (plate.n ), (sauce.n red food-next|to)
+>> Response: A man in is curart 
+
+>> Prompt: (food.n next|to-sauce), (plate.n ), (sauce.n red food-next|to)
+>> Response: a is is white 
+
+>> Prompt: (food.n next|to-sauce), (plate.n ), (sauce.n red food-next|to)
+>> Response: A is white is white clar 
+
+>> Prompt: (food.n next|to-sauce), (plate.n ), (sauce.n red food-next|to)
+>> Response: A is white is court 
+
+>> Prompt: (food.n next|to-sauce), (dish.n ), (sauce.n red food-next|to)
+>> Response: A clalll plate with platestaptop plate 
+
+>> Prompt: (food.n next|to-sauce), (dish.n ), (sauce.n red food-next|to)
+>> Response: A curar chair with choles 
+
+>> Prompt: (food.n next|to-sauce), (dish.n ), (sauce.n red food-next|to)
+>> Response: A curtall che charge ckee ckers on the plate 
+
+>> Prompt: (food.n next|to-sauce), (dish.n ), (sauce.n red food-next|to)
+>> Response: A is coleth to cur 
+
+>> Prompt: (cracker.n on-dish), (dish.n cracker-on)
+>> Response: A cole choule st 
+
+>> Prompt: (cracker.n on-dish), (dish.n cracker-on)
+>> Response: A colen chourts 
+
+>> Prompt: (cracker.n on-dish), (dish.n cracker-on)
+>> Response: a a chair 
+
+>> Prompt: (cracker.n on-dish), (dish.n cracker-on)
+>> Response: A colen cle chourts on a wall 
+
+>> Prompt: (container.n wire black)
+>> Response: A sturen curend chair 
+
+>> Prompt: (container.n wire black)
+>> Response: A stale chair 
+
+>> Prompt: (container.n wire black)
+>> Response: A sturan chair bole 
+
+>> Prompt: (container.n wire black)
+>> Response: A curtalles ck chair with black pour 
+
+>> Prompt: (bit.n bowl-of), (bowl.n of-bit)
+>> Response: a chair with black calests 
+
+>> Prompt: (bit.n bowl-of), (bowl.n of-bit)
+>> Response: A curalen der plate 
+
+>> Prompt: (bit.n bowl-of), (bowl.n of-bit)
+>> Response: an chair with alapsit 
+
+>> Prompt: (bit.n bowl-of), (bowl.n of-bit)
+>> Response: A curalen chair with black cholles 
+
+>> Prompt: (sushi.n platter-of), (platter.n of-sushi)
+>> Response: A curallen che cholles 
+
+>> Prompt: (sushi.n platter-of), (platter.n of-sushi)
+>> Response: ande cholde cle s 
+
+>> Prompt: (sushi.n platter-of), (platter.n of-sushi)
+>> Response: A talen dits are curales on wall 
+
+>> Prompt: (sushi.n platter-of), (platter.n of-sushi)
+>> Response: an angray cholde 
+
+>> Prompt: (food.n white)
+>> Response: A tan is chair with ale challes 
+
+>> Prompt: (food.n white)
+>> Response: A cllle ches chair 
+
+>> Prompt: (food.n white)
+>> Response: a plate chargen chair with curale charde chourt 
+
+>> Prompt: (food.n white)
+>> Response: A tan chair with curales 
+
+>> Prompt: (sushi.n tray-of), (tray.n of-sushi)
+>> Response: A coulett cke chales 
+
+>> Prompt: (sushi.n tray-of), (tray.n of-sushi)
+>> Response: sit coulles 
+
+>> Prompt: (sushi.n tray-of), (tray.n of-sushi)
+>> Response: A courend choles on the desk 
+
+>> Prompt: (sushi.n tray-of), (tray.n of-sushi)
+>> Response: sit t follle che cholles 
+
+>> Prompt: (basket.n light|brown light|tan with-handle)
+>> Response: an chollets 
+
+>> Prompt: (basket.n light|brown light|tan with-handle)
+>> Response: a chair with alapsts 
+
+>> Prompt: (basket.n light|brown light|tan with-handle)
+>> Response: A turtion curen bins 
+
+>> Prompt: (basket.n light|brown light|tan with-handle)
+>> Response: A mansit curenders cale charder s 
+
+>> Prompt: (basket.n light|brown light|tan with-handle), (handle.n basket-with)
+>> Response: A turen chair with curale ckes on the desk 
+
+>> Prompt: (basket.n light|brown light|tan with-handle), (handle.n basket-with)
+>> Response: A a taned chair with alapst 
+
+>> Prompt: (basket.n light|brown light|tan with-handle), (handle.n basket-with)
+>> Response: A tale dits are a curarg chair 
+
+>> Prompt: (basket.n light|brown light|tan with-handle), (handle.n basket-with)
+>> Response: A a tubang chare s 
+
+>> Prompt: (fabric.n red)
+>> Response: A sit botst 
+
+>> Prompt: (fabric.n red)
+>> Response: A stan chair and curales 
+
+>> Prompt: (fabric.n red)
+>> Response: a chair with artsts are cubins 
+
+>> Prompt: (fabric.n red)
+>> Response: A cllesits stied on the floor 
+
+>> Prompt: (cheese.n cubed)
+>> Response: A tan tande chargee s 
+
+>> Prompt: (cheese.n cubed)
+>> Response: arg chair with calest 
+
+>> Prompt: (cheese.n cubed)
+>> Response: argen cholle ches 
+
+>> Prompt: (cheese.n cubed)
+>> Response: A culle charts on the floor 
+
+>> Prompt: (basket.n with-napkin napkin-in), (napkin.n white in-basket basket-with)
+>> Response: A tand chole ckes 
+
+>> Prompt: (basket.n with-napkin napkin-in), (napkin.n white in-basket basket-with)
+>> Response: andits on the floor 
+
+>> Prompt: (basket.n with-napkin napkin-in), (napkin.n white in-basket basket-with)
+>> Response: A tuban bottsts on aned floor 
+
+>> Prompt: (basket.n with-napkin napkin-in), (napkin.n white in-basket basket-with)
+>> Response: A colllll sip 
+
+>> Prompt: (cheese.n on|a-plate), (plate.n cheese-on|a)
+>> Response: A is colleth d charde chour 
+
+>> Prompt: (cheese.n on|a-plate), (plate.n cheese-on|a)
+>> Response: A clart chales on the desk 
+
+>> Prompt: (cheese.n on|a-plate), (plate.n cheese-on|a)
+>> Response: an chair with chale its 
+
+>> Prompt: (cheese.n on|a-plate), (plate.n cheese-on|a)
+>> Response: A man wears black anden greens on dee 
+
+>> Prompt: (container.n light|brown light|tan with-handle)
+>> Response: A aststsied fed on the desk 
+
+>> Prompt: (container.n light|brown light|tan with-handle)
+>> Response: a chair with charde curee s 
+
+>> Prompt: (container.n light|brown light|tan with-handle)
+>> Response: A talesits ck chair 
+
+>> Prompt: (container.n light|brown light|tan with-handle)
+>> Response: A andit chair with black cararg chales 
+
+>> Prompt: (cracker.n tray-of), (tray.n of-cracker)
+>> Response: ales on a desk 
+
+>> Prompt: (cracker.n tray-of), (tray.n of-cracker)
+>> Response: ales tstan fle of dile 
+
+>> Prompt: (cracker.n tray-of), (tray.n of-cracker)
+>> Response: arg chale chale s 
+
+>> Prompt: (cracker.n tray-of), (tray.n of-cracker)
+>> Response: A tale choles on plate 
+
+>> Prompt: (plate.n )
+>> Response: A courtth collles 
+
+>> Prompt: (plate.n )
+>> Response: a is white chis coule 
+
+>> Prompt: (plate.n )
+>> Response: A curale chair 
+
+>> Prompt: (plate.n )
+>> Response: a is white 
+
+>> Prompt: (bread.n flat), (drop.n )
+>> Response: a chair with alaptop of it 
+
+>> Prompt: (bread.n flat), (drop.n )
+>> Response: A tande is chair with challes 
+
+>> Prompt: (bread.n flat), (drop.n )
+>> Response: A tan chair with curalllles on plate 
+
+>> Prompt: (bread.n flat), (drop.n )
+>> Response: a chair with chole che s 
+
+>> Prompt: (food.n plate-with), (plate.n with-food table-with), (table.n with-plate)
+>> Response: a a plate chair with arder ile 
+
+>> Prompt: (food.n plate-with), (plate.n with-food table-with), (table.n with-plate)
+>> Response: a chargen plate unde chour 
+
+>> Prompt: (food.n plate-with), (plate.n with-food table-with), (table.n with-plate)
+>> Response: A a chair with chales on the desk 
+
+>> Prompt: (food.n plate-with), (plate.n with-food table-with), (table.n with-plate)
+>> Response: a chair with alaptop of the plate 
+
+>> Prompt: (plate.n white)
+>> Response: A cllle sipe choles on plate 
+
+>> Prompt: (plate.n white)
+>> Response: A clesth chole s 
+
+>> Prompt: (plate.n white)
+>> Response: a is white 
+
+>> Prompt: (plate.n white)
+>> Response: A collests ches on plate 
+
+>> Prompt: (container.n ), (sauce.n )
+>> Response: an is white 
+
+>> Prompt: (container.n ), (sauce.n )
+>> Response: a ised chair 
+
+>> Prompt: (container.n ), (sauce.n )
+>> Response: A is colllle ck on plate 
+
+>> Prompt: (container.n ), (sauce.n )
+>> Response: A is is white clar chair with palar it 
+
+>> Prompt: (bowl.n wire black)
+>> Response: A collle ches ches on a plate 
+
+>> Prompt: (bowl.n wire black)
+>> Response: a chair with calest 
+
+>> Prompt: (bowl.n wire black)
+>> Response: A collle cker male chart 
+
+>> Prompt: (bowl.n wire black)
+>> Response: a chair with alet 
+
+>> Prompt: (pile.n )
+>> Response: a palaptop of it 
+
+>> Prompt: (pile.n )
+>> Response: a cholle chole 
+
+>> Prompt: (pile.n )
+>> Response: A collllll cker challes 
+
+>> Prompt: (pile.n )
+>> Response: a choles 
+
+>> Prompt: (cracker.n on-plate), (plate.n cracker-on)
+>> Response: ale plate plate 
+
+>> Prompt: (cracker.n on-plate), (plate.n cracker-on)
+>> Response: A clen choles 
+
+>> Prompt: (cracker.n on-plate), (plate.n cracker-on)
+>> Response: A clen chollles on plate plate 
+
+>> Prompt: (cracker.n on-plate), (plate.n cracker-on)
+>> Response: alle cker carar plate. 

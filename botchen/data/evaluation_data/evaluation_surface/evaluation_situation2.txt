@@ -1,0 +1,2942 @@
+>> Loaded models dict_keys(['chat'])
+
+
+>> Prompt: black bag is on the desk
+>> Response: the mouse is white 
+
+>> Prompt: black bag is on the desk
+>> Response: the mouse mage is on the desk 
+
+>> Prompt: black bag is on the desk
+>> Response: the floor is fur 
+
+>> Prompt: black bag is on the desk
+>> Response: the mouse is white 
+
+>> Prompt: Rounded table in a cubicle
+>> Response: the floor has a mage 
+
+>> Prompt: Rounded table in a cubicle
+>> Response: the floor is white 
+
+>> Prompt: Rounded table in a cubicle
+>> Response: a mouse on a desk 
+
+>> Prompt: Rounded table in a cubicle
+>> Response: a lighte on a table 
+
+>> Prompt: the computer is off
+>> Response: the fricture is llles 
+
+>> Prompt: the computer is off
+>> Response: the mouse is white 
+
+>> Prompt: the computer is off
+>> Response: a wicle is on the desk 
+
+>> Prompt: the computer is off
+>> Response: the floor is mouse is doutt 
+
+>> Prompt: Sockets plugged into outlet
+>> Response: the floor has a mage 
+
+>> Prompt: Sockets plugged into outlet
+>> Response: the floor has a fror dor me 
+
+>> Prompt: Sockets plugged into outlet
+>> Response: the mouse mousse is dar 
+
+>> Prompt: Sockets plugged into outlet
+>> Response: a white mousese 
+
+>> Prompt: pictures hung on wall
+>> Response: a mituress on iture legs 
+
+>> Prompt: pictures hung on wall
+>> Response: the frorit is dles 
+
+>> Prompt: pictures hung on wall
+>> Response: the floor has been switched off 
+
+>> Prompt: pictures hung on wall
+>> Response: a moute witure and drawn 
+
+>> Prompt: Old CRT computer monitor
+>> Response: the wor mage on the desk 
+
+>> Prompt: Old CRT computer monitor
+>> Response: the mouse wit is and dor 
+
+>> Prompt: Old CRT computer monitor
+>> Response: A CHUM>A wooden stand at a desk 
+
+>> Prompt: Old CRT computer monitor
+>> Response: the floor is white 
+
+>> Prompt: A file cabinet next to the desk.
+>> Response: A purple couch with lit 
+
+>> Prompt: A file cabinet next to the desk.
+>> Response: A purple couch with a lit 
+
+>> Prompt: A file cabinet next to the desk.
+>> Response: The has a white mouse 
+
+>> Prompt: A file cabinet next to the desk.
+>> Response: T>The has a brown suport 
+
+>> Prompt: Black telephone
+>> Response: A cord woodenter 
+
+>> Prompt: Black telephone
+>> Response: the mouse mouse mouse 
+
+>> Prompt: Black telephone
+>> Response: A white mouse 
+
+>> Prompt: Black telephone
+>> Response: the floor has a mage 
+
+>> Prompt: black table is on the table
+>> Response: the fupport is lor the floor 
+
+>> Prompt: black table is on the table
+>> Response: the floor is white 
+
+>> Prompt: black table is on the table
+>> Response: a mouse is on the desk 
+
+>> Prompt: black table is on the table
+>> Response: the floor has a fus 
+
+>> Prompt: a bag is on the desk
+>> Response: the floor is white 
+
+>> Prompt: a bag is on the desk
+>> Response: the floor is white in colour 
+
+>> Prompt: a bag is on the desk
+>> Response: the mouse is white 
+
+>> Prompt: a bag is on the desk
+>> Response: a white mouse is on the desk 
+
+>> Prompt: computer tower under desk
+>> Response: the floor is white in colour 
+
+>> Prompt: computer tower under desk
+>> Response: a lighte legs 
+
+>> Prompt: computer tower under desk
+>> Response: the fuppport mart is on the desk 
+
+>> Prompt: computer tower under desk
+>> Response: A wooden stand at the desk 
+
+>> Prompt: it is a white keyboard
+>> Response: the floor is fur 
+
+>> Prompt: it is a white keyboard
+>> Response: a wicle less 
+
+>> Prompt: it is a white keyboard
+>> Response: a mouse mousse is on 
+
+>> Prompt: it is a white keyboard
+>> Response: the floor has a mouse 
+
+>> Prompt: drawers have silver handles
+>> Response: the floor has a fupppport 
+
+>> Prompt: drawers have silver handles
+>> Response: the mouse wit is le 
+
+>> Prompt: drawers have silver handles
+>> Response: the floor is white 
+
+>> Prompt: drawers have silver handles
+>> Response: the floor is fupport 
+
+>> Prompt: A computer mouse next to a keyboard
+>> Response: A wooden stand at the eddon 
+
+>> Prompt: A computer mouse next to a keyboard
+>> Response: A witures on a desk 
+
+>> Prompt: A computer mouse next to a keyboard
+>> Response: A white popppers on a desk 
+
+>> Prompt: A computer mouse next to a keyboard
+>> Response: A white and mouse 
+
+>> Prompt: Black haired woman
+>> Response: the muse mouse on a desk 
+
+>> Prompt: Black haired woman
+>> Response: A cording on a desk 
+
+>> Prompt: Black haired woman
+>> Response: the floor has a mous 
+
+>> Prompt: Black haired woman
+>> Response: the mousse on a table 
+
+>> Prompt: Black hair with pony tail
+>> Response: the muse on a table 
+
+>> Prompt: Black hair with pony tail
+>> Response: the lowsss 
+
+>> Prompt: Black hair with pony tail
+>> Response: A cording and white dorn 
+
+>> Prompt: Black hair with pony tail
+>> Response: A corner bottle of a plater 
+
+>> Prompt: a pen is lying on the table
+>> Response: the floor is fuppppet is clean 
+
+>> Prompt: a pen is lying on the table
+>> Response: the floor is white in colour 
+
+>> Prompt: a pen is lying on the table
+>> Response: a mage is on the floor 
+
+>> Prompt: a pen is lying on the table
+>> Response: the floor has bow the desk 
+
+>> Prompt: there is a bag in the photo
+>> Response: the floor is white 
+
+>> Prompt: there is a bag in the photo
+>> Response: the floor is white 
+
+>> Prompt: there is a bag in the photo
+>> Response: a wor the desk 
+
+>> Prompt: there is a bag in the photo
+>> Response: the floor has a mage 
+
+>> Prompt: White and gray keyboard
+>> Response: the floor has been switched off 
+
+>> Prompt: White and gray keyboard
+>> Response: A white pippt. 
+
+>> Prompt: White and gray keyboard
+>> Response: the wit is mouse 
+
+>> Prompt: White and gray keyboard
+>> Response: A corner bottle with a and and dit 
+
+>> Prompt: A computer keyboard and mouse
+>> Response: the floor has a fus 
+
+>> Prompt: A computer keyboard and mouse
+>> Response: A wicle mituress on the it 
+
+>> Prompt: A computer keyboard and mouse
+>> Response: A wictures on the wall 
+
+>> Prompt: A computer keyboard and mouse
+>> Response: the mouse is louse 
+
+>> Prompt: Gray cubicle wall in office
+>> Response: the floor has a frit 
+
+>> Prompt: Gray cubicle wall in office
+>> Response: the mouse is les 
+
+>> Prompt: Gray cubicle wall in office
+>> Response: A white mouse 
+
+>> Prompt: Gray cubicle wall in office
+>> Response: A white mouses 
+
+>> Prompt: the desk has no papers
+>> Response: the floor is mouse is le 
+
+>> Prompt: the desk has no papers
+>> Response: a white mouse is on 
+
+>> Prompt: the desk has no papers
+>> Response: the floor is white 
+
+>> Prompt: the desk has no papers
+>> Response: a mage of the maute of the lit 
+
+>> Prompt: A black telephone on a desk.
+>> Response: The's and less 
+
+>> Prompt: A black telephone on a desk.
+>> Response: The has a moute 
+
+>> Prompt: A black telephone on a desk.
+>> Response: A purple futon with and and white papers 
+
+>> Prompt: A black telephone on a desk.
+>> Response: A purple couch 
+
+>> Prompt: a white mouse on the desk
+>> Response: a white carpet is on the floor 
+
+>> Prompt: a white mouse on the desk
+>> Response: the floor is white 
+
+>> Prompt: a white mouse on the desk
+>> Response: a white top of a papers 
+
+>> Prompt: a white mouse on the desk
+>> Response: a white mouse on the desk 
+
+>> Prompt: bag sitting on desk
+>> Response: a mouse on the desk 
+
+>> Prompt: bag sitting on desk
+>> Response: the floor is white 
+
+>> Prompt: bag sitting on desk
+>> Response: the floor has been switched off 
+
+>> Prompt: bag sitting on desk
+>> Response: a mouse on a desk 
+
+>> Prompt: Pictures on the wall
+>> Response: a lupet is on the desk 
+
+>> Prompt: Pictures on the wall
+>> Response: a licle legs on a desk 
+
+>> Prompt: Pictures on the wall
+>> Response: a lupet is on the floor 
+
+>> Prompt: Pictures on the wall
+>> Response: the fricture legs on the far mouse 
+
+>> Prompt: black phone is on the desk
+>> Response: a lorking meter is on the floor 
+
+>> Prompt: black phone is on the desk
+>> Response: a mouse is on the floor 
+
+>> Prompt: black phone is on the desk
+>> Response: the fror 
+
+>> Prompt: black phone is on the desk
+>> Response: a lit is on the desk 
+
+>> Prompt: that is a grey cabinet
+>> Response: the mouse is white 
+
+>> Prompt: that is a grey cabinet
+>> Response: the mouse mouse lictror the mage 
+
+>> Prompt: that is a grey cabinet
+>> Response: the fupit is les 
+
+>> Prompt: that is a grey cabinet
+>> Response: the fuses are blue 
+
+>> Prompt: white computer keyboard with grey keys
+>> Response: the floor has been parked 
+
+>> Prompt: white computer keyboard with grey keys
+>> Response: the moutses 
+
+>> Prompt: white computer keyboard with grey keys
+>> Response: the lowss 
+
+>> Prompt: white computer keyboard with grey keys
+>> Response: the mouse is low 
+
+>> Prompt: a pen is laying next to the telephone
+>> Response: the floor has a been switched off 
+
+>> Prompt: a pen is laying next to the telephone
+>> Response: the floor has a mous 
+
+>> Prompt: a pen is laying next to the telephone
+>> Response: a white muse is on the desk 
+
+>> Prompt: a pen is laying next to the telephone
+>> Response: the floor has a mouse 
+
+>> Prompt: dark-haired woman sitting at desk
+>> Response: A and witures on it 
+
+>> Prompt: dark-haired woman sitting at desk
+>> Response: the fuppppot mar marte 
+
+>> Prompt: dark-haired woman sitting at desk
+>> Response: A white miclutures and lit 
+
+>> Prompt: dark-haired woman sitting at desk
+>> Response: the mouse is white 
+
+>> Prompt: woman is holding a mouse
+>> Response: the mouse is white 
+
+>> Prompt: woman is holding a mouse
+>> Response: the mouse is white in colour 
+
+>> Prompt: woman is holding a mouse
+>> Response: the mouse is white in colour 
+
+>> Prompt: woman is holding a mouse
+>> Response: a leavehictrs are on 
+
+>> Prompt: a pen is on the table
+>> Response: the mouse is white 
+
+>> Prompt: a pen is on the table
+>> Response: the floor is white 
+
+>> Prompt: a pen is on the table
+>> Response: the floor is white 
+
+>> Prompt: a pen is on the table
+>> Response: the floor is white in colour 
+
+>> Prompt: black telephone on desk
+>> Response: the mouse lessssss 
+
+>> Prompt: black telephone on desk
+>> Response: the floor has been switched off 
+
+>> Prompt: black telephone on desk
+>> Response: the mouse is white 
+
+>> Prompt: black telephone on desk
+>> Response: the mouse is maute 
+
+>> Prompt: Computer keyboard sitting on the desk
+>> Response: a white mouse is on 
+
+>> Prompt: Computer keyboard sitting on the desk
+>> Response: the frit is mouse 
+
+>> Prompt: Computer keyboard sitting on the desk
+>> Response: A white pocket 
+
+>> Prompt: Computer keyboard sitting on the desk
+>> Response: the mouse is white in colour 
+
+>> Prompt: a black telephone on the desk
+>> Response: a mouse on the desk 
+
+>> Prompt: a black telephone on the desk
+>> Response: the fuppot is clean 
+
+>> Prompt: a black telephone on the desk
+>> Response: the floor is white 
+
+>> Prompt: a black telephone on the desk
+>> Response: the floor has a mouse 
+
+>> Prompt: Computer on a desk
+>> Response: a white top computer 
+
+>> Prompt: Computer on a desk
+>> Response: the frit is a mous 
+
+>> Prompt: Computer on a desk
+>> Response: the floor has a mous 
+
+>> Prompt: Computer on a desk
+>> Response: the floor has a mous 
+
+>> Prompt: all plugs are busy
+>> Response: the floor has bowlllll dows 
+
+>> Prompt: all plugs are busy
+>> Response: the moouse is legs 
+
+>> Prompt: all plugs are busy
+>> Response: a mouse is on the desk 
+
+>> Prompt: all plugs are busy
+>> Response: the mouse is white 
+
+>> Prompt: girl is wearing a necklace
+>> Response: the moussse is white 
+
+>> Prompt: girl is wearing a necklace
+>> Response: the mouse is clean 
+
+>> Prompt: girl is wearing a necklace
+>> Response: the floor is mout 
+
+>> Prompt: girl is wearing a necklace
+>> Response: a mouse is and dit 
+
+>> Prompt: picture are on the wall
+>> Response: the floor has been parked next to the lit 
+
+>> Prompt: picture are on the wall
+>> Response: the floor has bowlowll fft 
+
+>> Prompt: picture are on the wall
+>> Response: the markes on the floor 
+
+>> Prompt: picture are on the wall
+>> Response: a lectures are on the desk 
+
+>> Prompt: the plug is full of cables
+>> Response: the floor is white in colour 
+
+>> Prompt: the plug is full of cables
+>> Response: a mouse wite witures 
+
+>> Prompt: the plug is full of cables
+>> Response: a mouse is on the floor 
+
+>> Prompt: the plug is full of cables
+>> Response: the mouse is white 
+
+>> Prompt: arm if the chair is grey
+>> Response: the mouse is white in colour 
+
+>> Prompt: arm if the chair is grey
+>> Response: the frictures are licles 
+
+>> Prompt: arm if the chair is grey
+>> Response: a moute is on the desk 
+
+>> Prompt: arm if the chair is grey
+>> Response: the floor has a grey mout 
+
+>> Prompt: dividing screen has a picture stuck to it
+>> Response: the floor has a mous 
+
+>> Prompt: dividing screen has a picture stuck to it
+>> Response: the floor is white 
+
+>> Prompt: dividing screen has a picture stuck to it
+>> Response: the markes are on the floor 
+
+>> Prompt: dividing screen has a picture stuck to it
+>> Response: a white carpeshte is on the desk 
+
+>> Prompt: Brown and white document on the wall
+>> Response: a mouse on a desk 
+
+>> Prompt: Brown and white document on the wall
+>> Response: the mouse lit on the wall 
+
+>> Prompt: Brown and white document on the wall
+>> Response: the mouse is white 
+
+>> Prompt: Brown and white document on the wall
+>> Response: the floor has a mouse 
+
+>> Prompt: pictures are on the wall
+>> Response: a miture muse on the desk 
+
+>> Prompt: pictures are on the wall
+>> Response: a mictures on the floor 
+
+>> Prompt: pictures are on the wall
+>> Response: the fus are blue in colour 
+
+>> Prompt: pictures are on the wall
+>> Response: the floor is furit is le 
+
+>> Prompt: there is a computer in the photo
+>> Response: the marpe is white 
+
+>> Prompt: there is a computer in the photo
+>> Response: the fron is mes 
+
+>> Prompt: there is a computer in the photo
+>> Response: the floor has a mous 
+
+>> Prompt: there is a computer in the photo
+>> Response: a worses 
+
+>> Prompt: the bag is black
+>> Response: the mages are on 
+
+>> Prompt: the bag is black
+>> Response: a wis are on the desk 
+
+>> Prompt: the bag is black
+>> Response: a white in colour 
+
+>> Prompt: the bag is black
+>> Response: the floor is white 
+
+>> Prompt: a white filing cabinet
+>> Response: the floor is mouse 
+
+>> Prompt: a white filing cabinet
+>> Response: the mouse is white in color 
+
+>> Prompt: a white filing cabinet
+>> Response: the floor has a maus 
+
+>> Prompt: a white filing cabinet
+>> Response: A white and and dighte 
+
+>> Prompt: many sockets are in the plug in
+>> Response: the marpet is mouse 
+
+>> Prompt: many sockets are in the plug in
+>> Response: the floor has been switched off 
+
+>> Prompt: many sockets are in the plug in
+>> Response: the fuse is white in colour 
+
+>> Prompt: many sockets are in the plug in
+>> Response: the mage is white 
+
+>> Prompt: electrical outlets in the wall
+>> Response: the mouse is white 
+
+>> Prompt: electrical outlets in the wall
+>> Response: the wicture mousse mage on the wall 
+
+>> Prompt: electrical outlets in the wall
+>> Response: the floor is fupport 
+
+>> Prompt: electrical outlets in the wall
+>> Response: a wictures are on the floor 
+
+>> Prompt: Phone in cradle
+>> Response: the floor is white 
+
+>> Prompt: Phone in cradle
+>> Response: the marpet is white 
+
+>> Prompt: Phone in cradle
+>> Response: a mouse witures lighte 
+
+>> Prompt: Phone in cradle
+>> Response: the floor is white 
+
+>> Prompt: A black case sitting on a desk.
+>> Response: A mouse lessss 
+
+>> Prompt: A black case sitting on a desk.
+>> Response: A mouse on a desk 
+
+>> Prompt: A black case sitting on a desk.
+>> Response: A white pipptures on the wall 
+
+>> Prompt: A black case sitting on a desk.
+>> Response: The micle legs on a desk 
+
+>> Prompt: lambs wool upholstered chair
+>> Response: A woodite titureshte 
+
+>> Prompt: lambs wool upholstered chair
+>> Response: the floor has been parked next to the leaves 
+
+>> Prompt: lambs wool upholstered chair
+>> Response: a mouse lectrictures on the farit 
+
+>> Prompt: lambs wool upholstered chair
+>> Response: the wit is lige 
+
+>> Prompt: seat has no one sitting
+>> Response: a woorse leggs 
+
+>> Prompt: seat has no one sitting
+>> Response: a moute is on 
+
+>> Prompt: seat has no one sitting
+>> Response: a moute is les 
+
+>> Prompt: seat has no one sitting
+>> Response: a mouse is on the desk 
+
+>> Prompt: a telephone on a desk
+>> Response: a white mouse on the wall 
+
+>> Prompt: a telephone on a desk
+>> Response: the fror the desktop computer 
+
+>> Prompt: a telephone on a desk
+>> Response: a mouse on a table 
+
+>> Prompt: a telephone on a desk
+>> Response: the floor has a maus 
+
+>> Prompt: there is a cpu under the desk
+>> Response: the mouse is white 
+
+>> Prompt: there is a cpu under the desk
+>> Response: a white pillow is on the desk 
+
+>> Prompt: there is a cpu under the desk
+>> Response: the floor is white 
+
+>> Prompt: there is a cpu under the desk
+>> Response: a mouse licture legs 
+
+>> Prompt: black bag on the desk
+>> Response: the mouse is lous 
+
+>> Prompt: black bag on the desk
+>> Response: the mouse is lege 
+
+>> Prompt: black bag on the desk
+>> Response: the mage is mar 
+
+>> Prompt: black bag on the desk
+>> Response: a mulusess on the desk. 
+
+>> Prompt: A filing cabinet next to the desk
+>> Response: the far computer down 
+
+>> Prompt: A filing cabinet next to the desk
+>> Response: A purple carpet is on the desk 
+
+>> Prompt: A filing cabinet next to the desk
+>> Response: A white mouse 
+
+>> Prompt: A filing cabinet next to the desk
+>> Response: A mousessss 
+
+>> Prompt: Person with hair in a ponytail
+>> Response: the mouse is white 
+
+>> Prompt: Person with hair in a ponytail
+>> Response: A white mousess 
+
+>> Prompt: Person with hair in a ponytail
+>> Response: A white pitet 
+
+>> Prompt: Person with hair in a ponytail
+>> Response: the mouse is doutt 
+
+>> Prompt: receptacles for computer wires
+>> Response: a mouse on a table 
+
+>> Prompt: receptacles for computer wires
+>> Response: the mouse is white in colour 
+
+>> Prompt: receptacles for computer wires
+>> Response: a muse on the farpet 
+
+>> Prompt: receptacles for computer wires
+>> Response: the mouse wage of a paper 
+
+>> Prompt: mouse next to keyboard
+>> Response: a wicle leggs on a desk. 
+
+>> Prompt: mouse next to keyboard
+>> Response: A mousese less 
+
+>> Prompt: mouse next to keyboard
+>> Response: the floor has a mout 
+
+>> Prompt: mouse next to keyboard
+>> Response: A mouse legs 
+
+>> Prompt: a white mouse is on the desk
+>> Response: the floor is white 
+
+>> Prompt: a white mouse is on the desk
+>> Response: a mouse lesessss 
+
+>> Prompt: a white mouse is on the desk
+>> Response: the mouse is clean 
+
+>> Prompt: a white mouse is on the desk
+>> Response: the fuse is white in colour 
+
+>> Prompt: WOMAN HAS A DARK HAIR
+>> Response: the mout is a les 
+
+>> Prompt: WOMAN HAS A DARK HAIR
+>> Response: ARed HUM>the wit is a llit 
+
+>> Prompt: WOMAN HAS A DARK HAIR
+>> Response: A Black HUM>ARed and diptop computer monitor 
+
+>> Prompt: WOMAN HAS A DARK HAIR
+>> Response: the mousessss on the wall 
+
+>> Prompt: there are several cables near the desk
+>> Response: the floor is far 
+
+>> Prompt: there are several cables near the desk
+>> Response: the floor has a mouse 
+
+>> Prompt: there are several cables near the desk
+>> Response: a white mouse is mese 
+
+>> Prompt: there are several cables near the desk
+>> Response: the floor has a fuppport. 
+
+>> Prompt: one woman is in the photo
+>> Response: a mouse is on the floor 
+
+>> Prompt: one woman is in the photo
+>> Response: a wit is legs 
+
+>> Prompt: one woman is in the photo
+>> Response: the mousse is white in colour 
+
+>> Prompt: one woman is in the photo
+>> Response: the floor has a mous 
+
+>> Prompt: woman is wearing a chain
+>> Response: the marpet is mouse 
+
+>> Prompt: woman is wearing a chain
+>> Response: a white moouses 
+
+>> Prompt: woman is wearing a chain
+>> Response: the mousessss 
+
+>> Prompt: woman is wearing a chain
+>> Response: a mousesse and lit 
+
+>> Prompt: girl in white shirt with ponytail
+>> Response: a white mousess 
+
+>> Prompt: girl in white shirt with ponytail
+>> Response: the mouse is white 
+
+>> Prompt: girl in white shirt with ponytail
+>> Response: the mout is mousess 
+
+>> Prompt: girl in white shirt with ponytail
+>> Response: the floor is mar 
+
+>> Prompt: woman has long hair
+>> Response: the mouse is white 
+
+>> Prompt: woman has long hair
+>> Response: the wiclet is dor the dor 
+
+>> Prompt: woman has long hair
+>> Response: the floor has a mouse 
+
+>> Prompt: woman has long hair
+>> Response: a mall papers 
+
+>> Prompt: A monitor screen watched by the woman
+>> Response: A witure lictures are suport 
+
+>> Prompt: A monitor screen watched by the woman
+>> Response: the wit is a llegs 
+
+>> Prompt: A monitor screen watched by the woman
+>> Response: A white top computer and white and mout 
+
+>> Prompt: A monitor screen watched by the woman
+>> Response: the mouse is white 
+
+>> Prompt: the woman's chair is gray
+>> Response: the mouse is white 
+
+>> Prompt: the woman's chair is gray
+>> Response: a woowse is lit 
+
+>> Prompt: the woman's chair is gray
+>> Response: the was are mouse is day 
+
+>> Prompt: the woman's chair is gray
+>> Response: the floor is white 
+
+>> Prompt: woman is working  on a computer
+>> Response:  mouse is on the floor 
+
+>> Prompt: woman is working  on a computer
+>> Response: e mouses 
+
+>> Prompt: woman is working  on a computer
+>> Response: ouse is and dit 
+
+>> Prompt: woman is working  on a computer
+>> Response: floor is white in colour 
+
+>> Prompt: it is a blue and yellow ball pen
+>> Response: re shone 
+
+>> Prompt: it is a blue and yellow ball pen
+>> Response: moune warke of the wall 
+
+>> Prompt: it is a blue and yellow ball pen
+>> Response: une leges 
+
+>> Prompt: it is a blue and yellow ball pen
+>> Response: floor is white 
+
+>> Prompt: the woman infront of a computer has a white shirt
+>> Response: use is on 
+
+>> Prompt: the woman infront of a computer has a white shirt
+>> Response: mouse is mouse 
+
+>> Prompt: the woman infront of a computer has a white shirt
+>> Response: mouse is white in colour 
+
+>> Prompt: the woman infront of a computer has a white shirt
+>> Response: cles are on the desk 
+
+>> Prompt: Handle of file cabinet
+>> Response: mouse is white in colour 
+
+>> Prompt: Handle of file cabinet
+>> Response: waseat is a in the photo 
+
+>> Prompt: Handle of file cabinet
+>> Response: ite mouses 
+
+>> Prompt: Handle of file cabinet
+>> Response: wapers are on the desk 
+
+>> Prompt: cpu is on the floor
+>> Response: ite top 
+
+>> Prompt: cpu is on the floor
+>> Response: floor is white in colour 
+
+>> Prompt: cpu is on the floor
+>> Response: mage mouse is on the desk 
+
+>> Prompt: cpu is on the floor
+>> Response: use is on 
+
+>> Prompt: lady is wearing a chain
+>> Response: rpers on the floor 
+
+>> Prompt: lady is wearing a chain
+>> Response: rke of the lit 
+
+>> Prompt: lady is wearing a chain
+>> Response: frictures are on the desk 
+
+>> Prompt: lady is wearing a chain
+>> Response: floor has been parked next to the wer 
+
+>> Prompt: KEYBOARD IS WHITE IN COLOUR
+>> Response:  HUM>the woodicles are shone the road 
+
+>> Prompt: KEYBOARD IS WHITE IN COLOUR
+>> Response: > <u speaker=HUM>the moussse wage of a maut 
+
+>> Prompt: KEYBOARD IS WHITE IN COLOUR
+>> Response: M>ARed wat watch on a desk 
+
+>> Prompt: KEYBOARD IS WHITE IN COLOUR
+>> Response: mousesss and and white cluper 
+
+>> Prompt: Pen on a table
+>> Response: mout is a moout 
+
+>> Prompt: Pen on a table
+>> Response: mouse is white 
+
+>> Prompt: Pen on a table
+>> Response: mouse is clean 
+
+>> Prompt: Pen on a table
+>> Response: mouse is clean 
+
+>> Prompt: desktop CPU, monitor and keyboard
+>> Response: mputer keyboard near the desk 
+
+>> Prompt: desktop CPU, monitor and keyboard
+>> Response: woodit is a drawer 
+
+>> Prompt: desktop CPU, monitor and keyboard
+>> Response: ite mouse on the desk 
+
+>> Prompt: desktop CPU, monitor and keyboard
+>> Response: ite mouse on the wall 
+
+>> Prompt: monitor and keyboard on desk
+>> Response: mouse is white 
+
+>> Prompt: monitor and keyboard on desk
+>> Response: se on the desk 
+
+>> Prompt: monitor and keyboard on desk
+>> Response: floor is mouse 
+
+>> Prompt: monitor and keyboard on desk
+>> Response: floor is mouse 
+
+>> Prompt: a black telephone is on the table
+>> Response: floor is mouse 
+
+>> Prompt: a black telephone is on the table
+>> Response: mouse is white 
+
+>> Prompt: a black telephone is on the table
+>> Response: floor has a mouses 
+
+>> Prompt: a black telephone is on the table
+>> Response: ute is on the floor 
+
+>> Prompt: black telephone on the desk
+>> Response: floor has a mous 
+
+>> Prompt: black telephone on the desk
+>> Response: floor has a mouse 
+
+>> Prompt: black telephone on the desk
+>> Response: ite pillow is on the desk 
+
+>> Prompt: black telephone on the desk
+>> Response: use is on the desk 
+
+>> Prompt: A computer monitor that isn't on
+>> Response: oden stand is on the desk 
+
+>> Prompt: A computer monitor that isn't on
+>> Response: floor is mout 
+
+>> Prompt: A computer monitor that isn't on
+>> Response: mouse is white 
+
+>> Prompt: A computer monitor that isn't on
+>> Response: usese is lit 
+
+>> Prompt: Black cordless desk phone
+>> Response: floor is white 
+
+>> Prompt: Black cordless desk phone
+>> Response: floor has a mage 
+
+>> Prompt: Black cordless desk phone
+>> Response: war computer monitor 
+
+>> Prompt: Black cordless desk phone
+>> Response: use on the wall 
+
+>> Prompt: white computer tower under desk
+>> Response: floor is white 
+
+>> Prompt: white computer tower under desk
+>> Response: fus are blue in colour 
+
+>> Prompt: white computer tower under desk
+>> Response: use is on the desk 
+
+>> Prompt: white computer tower under desk
+>> Response: ge dor dlite drawns 
+
+>> Prompt: A multiple outlet with several plugs in it
+>> Response: marks are les 
+
+>> Prompt: A multiple outlet with several plugs in it
+>> Response: use wite 
+
+>> Prompt: A multiple outlet with several plugs in it
+>> Response: waseat is a been parked 
+
+>> Prompt: A multiple outlet with several plugs in it
+>> Response: mouse wicture mouse 
+
+>> Prompt: upholstered desk chair
+>> Response: ite mouse is on 
+
+>> Prompt: upholstered desk chair
+>> Response: t is lege 
+
+>> Prompt: upholstered desk chair
+>> Response: wase is mouses 
+
+>> Prompt: upholstered desk chair
+>> Response: mouse is loutt 
+
+>> Prompt: Computer keyboard on a desk
+>> Response: mout is white in colour 
+
+>> Prompt: Computer keyboard on a desk
+>> Response: rple clushite and lite 
+
+>> Prompt: Computer keyboard on a desk
+>> Response: use on the desk 
+
+>> Prompt: Computer keyboard on a desk
+>> Response: ite pippppt 
+
+>> Prompt: CPU on the floor
+>> Response: floor has a white mout 
+
+>> Prompt: CPU on the floor
+>> Response: skey bear legs 
+
+>> Prompt: CPU on the floor
+>> Response: ite mute is mouse 
+
+>> Prompt: CPU on the floor
+>> Response: floor is white in colour 
+
+>> Prompt: A woman in a cubicle
+>> Response: ctures on the it 
+
+>> Prompt: A woman in a cubicle
+>> Response: mousse is far 
+
+>> Prompt: A woman in a cubicle
+>> Response: floor is white 
+
+>> Prompt: A woman in a cubicle
+>> Response: frit is a blue 
+
+>> Prompt: computer keyboard next to the mouse
+>> Response: mouse is white 
+
+>> Prompt: computer keyboard next to the mouse
+>> Response: wicl witures on the wall 
+
+>> Prompt: computer keyboard next to the mouse
+>> Response: floor is mouse is white 
+
+>> Prompt: computer keyboard next to the mouse
+>> Response: floor has a fror mags 
+
+>> Prompt: keyboard is white
+>> Response: mouse is white in colour 
+
+>> Prompt: keyboard is white
+>> Response: ite in color 
+
+>> Prompt: keyboard is white
+>> Response: mouse is white in color 
+
+>> Prompt: keyboard is white
+>> Response: use is on the floor 
+
+>> Prompt: young woman in the next cubical
+>> Response: mouse mouse is on 
+
+>> Prompt: young woman in the next cubical
+>> Response: marpers are on the desk 
+
+>> Prompt: young woman in the next cubical
+>> Response: cle witures leggs 
+
+>> Prompt: young woman in the next cubical
+>> Response: mouse is mage 
+
+>> Prompt: the lady is staring at the computer screen
+>> Response: floor is fupppet is on the floor 
+
+>> Prompt: the lady is staring at the computer screen
+>> Response: floor is dor the desk 
+
+>> Prompt: the lady is staring at the computer screen
+>> Response: wit is mooous 
+
+>> Prompt: the lady is staring at the computer screen
+>> Response: wit is mous 
+
+>> Prompt: Old gray computer mouse with two buttons
+>> Response: ite mouse is dow 
+
+>> Prompt: Old gray computer mouse with two buttons
+>> Response: will wooden standing 
+
+>> Prompt: Old gray computer mouse with two buttons
+>> Response: wil wooden stand is on the desk 
+
+>> Prompt: Old gray computer mouse with two buttons
+>> Response: cleshte witures on figet 
+
+>> Prompt: the beige computer monitor
+>> Response: use on the desk 
+
+>> Prompt: the beige computer monitor
+>> Response: floor is mouse 
+
+>> Prompt: the beige computer monitor
+>> Response: waseat is les 
+
+>> Prompt: the beige computer monitor
+>> Response: wil muse wicture legs 
+
+>> Prompt: An old style monitor
+>> Response: wa mouse is lit 
+
+>> Prompt: An old style monitor
+>> Response: odite witure less 
+
+>> Prompt: An old style monitor
+>> Response: usse on a desk 
+
+>> Prompt: An old style monitor
+>> Response: odit is and woodicle 
+
+>> Prompt: woman is wearing a white top
+>> Response: s 
+
+>> Prompt: woman is wearing a white top
+>> Response: use is on the desk 
+
+>> Prompt: woman is wearing a white top
+>> Response: mouses 
+
+>> Prompt: woman is wearing a white top
+>> Response: use is on the desk 
+
+>> Prompt: woman is wearing white top
+>> Response: mages 
+
+>> Prompt: woman is wearing white top
+>> Response: usess 
+
+>> Prompt: woman is wearing white top
+>> Response: ges 
+
+>> Prompt: woman is wearing white top
+>> Response: ite top 
+
+>> Prompt: desk has a curved edge
+>> Response: floor is fupppport is on the floor 
+
+>> Prompt: desk has a curved edge
+>> Response: mousse is white 
+
+>> Prompt: desk has a curved edge
+>> Response: t is a blue 
+
+>> Prompt: desk has a curved edge
+>> Response: mouse is white in colour 
+
+>> Prompt: Old gray computer tower
+>> Response: ite micture mouse 
+
+>> Prompt: Old gray computer tower
+>> Response: floor has a mous 
+
+>> Prompt: Old gray computer tower
+>> Response: mouse is maus 
+
+>> Prompt: Old gray computer tower
+>> Response: wicl wicture mous on the fit 
+
+>> Prompt: drawers are white in colour
+>> Response: cles are on 
+
+>> Prompt: drawers are white in colour
+>> Response: mouse is white in the photo 
+
+>> Prompt: drawers are white in colour
+>> Response: mout is white in colour 
+
+>> Prompt: drawers are white in colour
+>> Response: fricture mouse is on 
+
+>> Prompt: it is an indoor scene
+>> Response: mouse warkes are on 
+
+>> Prompt: it is an indoor scene
+>> Response: ite dorkes on the desk 
+
+>> Prompt: it is an indoor scene
+>> Response: ite mute is on the floor 
+
+>> Prompt: it is an indoor scene
+>> Response: ite mouse is on the desk 
+
+>> Prompt: A computer tower under a desk
+>> Response: ture legs 
+
+>> Prompt: A computer tower under a desk
+>> Response: mouse is white 
+
+>> Prompt: A computer tower under a desk
+>> Response: ite micles on a desk 
+
+>> Prompt: A computer tower under a desk
+>> Response: rple clost 
+
+>> Prompt: A wireless telephone on its base.
+>> Response: s and white mouses 
+
+>> Prompt: A wireless telephone on its base.
+>> Response: odit is and white dorn 
+
+>> Prompt: A wireless telephone on its base.
+>> Response: odicture leggs 
+
+>> Prompt: A wireless telephone on its base.
+>> Response: odicture leggs 
+
+>> Prompt: mouse is white in colour
+>> Response: floor is white 
+
+>> Prompt: mouse is white in colour
+>> Response: floor has been taks 
+
+>> Prompt: mouse is white in colour
+>> Response: mouse is white in color 
+
+>> Prompt: mouse is white in colour
+>> Response: floor is white 
+
+>> Prompt: there is atelephone on the desk
+>> Response: t is a lit 
+
+>> Prompt: there is atelephone on the desk
+>> Response: floor is mouse 
+
+>> Prompt: there is atelephone on the desk
+>> Response: ctriture is litett 
+
+>> Prompt: there is atelephone on the desk
+>> Response: use is on the floor 
+
+>> Prompt: Woman sitting in a chair
+>> Response: oden stand is at a desk 
+
+>> Prompt: Woman sitting in a chair
+>> Response: oden stand at a table 
+
+>> Prompt: Woman sitting in a chair
+>> Response: ture legs 
+
+>> Prompt: Woman sitting in a chair
+>> Response: mousesss 
+
+>> Prompt: Black printer on a table
+>> Response: ite and and wige 
+
+>> Prompt: Black printer on a table
+>> Response: man with a and wight 
+
+>> Prompt: Black printer on a table
+>> Response: lit is mouse 
+
+>> Prompt: Black printer on a table
+>> Response: tures on ighte it 
+
+>> Prompt: girl sitting in front of a monitor
+>> Response: wit is mouse 
+
+>> Prompt: girl sitting in front of a monitor
+>> Response: warpers are on the floor 
+
+>> Prompt: girl sitting in front of a monitor
+>> Response: use wite lessss 
+
+>> Prompt: girl sitting in front of a monitor
+>> Response: floor has been tuny the day 
+
+>> Prompt: computer has been switched off
+>> Response: mouse legss 
+
+>> Prompt: computer has been switched off
+>> Response: ite carpet 
+
+>> Prompt: computer has been switched off
+>> Response: floor has a been parked on the wall 
+
+>> Prompt: computer has been switched off
+>> Response: floor is fur 
+
+>> Prompt: file cabinet with two drawers
+>> Response: ite mutictures on the wall. 
+
+>> Prompt: file cabinet with two drawers
+>> Response: floor is white in colour 
+
+>> Prompt: file cabinet with two drawers
+>> Response: markes are on the desk 
+
+>> Prompt: file cabinet with two drawers
+>> Response: mousessss on a desk 
+
+>> Prompt: A small picture on the divider
+>> Response: mouse is liting 
+
+>> Prompt: A small picture on the divider
+>> Response: floor has a mous 
+
+>> Prompt: A small picture on the divider
+>> Response: use wage of a legs 
+
+>> Prompt: A small picture on the divider
+>> Response: ute is on 
+
+>> Prompt: cables are on the floor
+>> Response: floor has been switched off 
+
+>> Prompt: cables are on the floor
+>> Response: mouse is white 
+
+>> Prompt: cables are on the floor
+>> Response: floor has been tuny 
+
+>> Prompt: cables are on the floor
+>> Response: mouse is fus 
+
+>> Prompt: Power strip on the wall
+>> Response: ctures are on the floor 
+
+>> Prompt: Power strip on the wall
+>> Response: floor is white 
+
+>> Prompt: Power strip on the wall
+>> Response: mouse is lout 
+
+>> Prompt: Power strip on the wall
+>> Response: setse is on the desk 
+
+>> Prompt: computer monitor turned off
+>> Response: floor has a mouse 
+
+>> Prompt: computer monitor turned off
+>> Response: floor is white in colour 
+
+>> Prompt: computer monitor turned off
+>> Response: cles on the wall 
+
+>> Prompt: computer monitor turned off
+>> Response: mous are blue in the photo 
+
+>> Prompt: Computer mouse on a desk
+>> Response: use on the wall 
+
+>> Prompt: Computer mouse on a desk
+>> Response: fupport is mouse 
+
+>> Prompt: Computer mouse on a desk
+>> Response: fricle mage warkes on the wall 
+
+>> Prompt: Computer mouse on a desk
+>> Response: use on a desk 
+
+>> Prompt: computer monitor in the corner of a cubicle
+>> Response: use wite mouse 
+
+>> Prompt: computer monitor in the corner of a cubicle
+>> Response: floor has a fupppport. 
+
+>> Prompt: computer monitor in the corner of a cubicle
+>> Response: ctures on the iture 
+
+>> Prompt: computer monitor in the corner of a cubicle
+>> Response: mouse mause on a table 
+
+>> Prompt: Electrical wires
+>> Response: mouse mause on the desk 
+
+>> Prompt: Electrical wires
+>> Response: floor is fuport 
+
+>> Prompt: Electrical wires
+>> Response: ite clost 
+
+>> Prompt: Electrical wires
+>> Response: wa mousse is white in colour 
+
+>> Prompt: A pen and pencil next to the phone
+>> Response: ite mouse is on the desk 
+
+>> Prompt: A pen and pencil next to the phone
+>> Response: ture lit 
+
+>> Prompt: A pen and pencil next to the phone
+>> Response: tures on the desk 
+
+>> Prompt: A pen and pencil next to the phone
+>> Response: ctures on a desk 
+
+>> Prompt: cables are fully plugged
+>> Response: ite mouse is on 
+
+>> Prompt: cables are fully plugged
+>> Response: floor is white 
+
+>> Prompt: cables are fully plugged
+>> Response: floor is white 
+
+>> Prompt: cables are fully plugged
+>> Response: floor has a fuport 
+
+>> Prompt: black telephone sitting on the desk
+>> Response: ite mouse is on the desk 
+
+>> Prompt: black telephone sitting on the desk
+>> Response: ite pillow on a desk 
+
+>> Prompt: black telephone sitting on the desk
+>> Response: use on the desk 
+
+>> Prompt: black telephone sitting on the desk
+>> Response: floor is furor 
+
+>> Prompt: A white computer monitor on a desk.
+>> Response: ite top computer monitor 
+
+>> Prompt: A white computer monitor on a desk.
+>> Response: rple clowerse the wall 
+
+>> Prompt: A white computer monitor on a desk.
+>> Response: fus are blue 
+
+>> Prompt: A white computer monitor on a desk.
+>> Response: use on a table 
+
+>> Prompt: white computer mouse on desk
+>> Response: mouse is mause 
+
+>> Prompt: white computer mouse on desk
+>> Response: floor has a mout 
+
+>> Prompt: white computer mouse on desk
+>> Response: ite curpet 
+
+>> Prompt: white computer mouse on desk
+>> Response: ite mouse on the desk 
+
+>> Prompt: A partition between cubicles
+>> Response: floor is white in colour 
+
+>> Prompt: A partition between cubicles
+>> Response: use wage on the wall 
+
+>> Prompt: A partition between cubicles
+>> Response: wa wark is on the desk 
+
+>> Prompt: A partition between cubicles
+>> Response: floor is white 
+
+>> Prompt: white is dominant in the photo
+>> Response: ite carpet is on the floor 
+
+>> Prompt: white is dominant in the photo
+>> Response: use lesesess 
+
+>> Prompt: white is dominant in the photo
+>> Response: rking on the desk 
+
+>> Prompt: white is dominant in the photo
+>> Response: mouses are blue 
+
+>> Prompt: A tower computer
+>> Response: floor has bowllll ftt 
+
+>> Prompt: A tower computer
+>> Response: mouse is white 
+
+>> Prompt: A tower computer
+>> Response: was are blue 
+
+>> Prompt: A tower computer
+>> Response: mage is le 
+
+>> Prompt: four outlets on the wall
+>> Response: ture leggs on the wall 
+
+>> Prompt: four outlets on the wall
+>> Response: floor is white 
+
+>> Prompt: four outlets on the wall
+>> Response: ite moute is on 
+
+>> Prompt: four outlets on the wall
+>> Response: ite mouse on the desk 
+
+>> Prompt: A woman with dark hair in a ponytail
+>> Response: oden standing on a desk 
+
+>> Prompt: A woman with dark hair in a ponytail
+>> Response: moouse is less 
+
+>> Prompt: A woman with dark hair in a ponytail
+>> Response: ite and white mouse 
+
+>> Prompt: A woman with dark hair in a ponytail
+>> Response: mouse is legs 
+
+>> Prompt: small book bag or luggage
+>> Response: mouse is les 
+
+>> Prompt: small book bag or luggage
+>> Response: floor is far 
+
+>> Prompt: small book bag or luggage
+>> Response: mouse is white 
+
+>> Prompt: small book bag or luggage
+>> Response: ite cpetrt 
+
+>> Prompt: computer keyboard on desk
+>> Response: fricles are on the desk 
+
+>> Prompt: computer keyboard on desk
+>> Response: muse is legs 
+
+>> Prompt: computer keyboard on desk
+>> Response: tures on a desk 
+
+>> Prompt: computer keyboard on desk
+>> Response: floor has a fus 
+
+>> Prompt: two-drawer filing cabinet
+>> Response: mar mouse 
+
+>> Prompt: two-drawer filing cabinet
+>> Response: s are on the desk 
+
+>> Prompt: two-drawer filing cabinet
+>> Response: d white down 
+
+>> Prompt: two-drawer filing cabinet
+>> Response: n man working at a desk 
+
+>> Prompt: calender has been hanged
+>> Response: floor is far 
+
+>> Prompt: calender has been hanged
+>> Response: floor is white 
+
+>> Prompt: calender has been hanged
+>> Response: mouse licture woodente 
+
+>> Prompt: calender has been hanged
+>> Response: floor is clean 
+
+>> Prompt: a pen is next to the phone
+>> Response: wicl is down 
+
+>> Prompt: a pen is next to the phone
+>> Response: floor is mouse is daining the mous 
+
+>> Prompt: a pen is next to the phone
+>> Response: floor is white in colour 
+
+>> Prompt: a pen is next to the phone
+>> Response: was are blue 
+
+>> Prompt: woman is looking at the computer
+>> Response: leavehicles are on the floor 
+
+>> Prompt: woman is looking at the computer
+>> Response: low is dows 
+
+>> Prompt: woman is looking at the computer
+>> Response: ussess 
+
+>> Prompt: woman is looking at the computer
+>> Response: mouse is dous 
+
+>> Prompt: the woman is staring at the computer
+>> Response: ite top computer 
+
+>> Prompt: the woman is staring at the computer
+>> Response: use is on 
+
+>> Prompt: the woman is staring at the computer
+>> Response: floor is white in colour 
+
+>> Prompt: the woman is staring at the computer
+>> Response: floor has a fuport 
+
+>> Prompt: pictures hang over a work space
+>> Response:  is clean 
+
+>> Prompt: pictures hang over a work space
+>> Response: floor has a mouse 
+
+>> Prompt: pictures hang over a work space
+>> Response: r bottle is on the floor 
+
+>> Prompt: pictures hang over a work space
+>> Response: of a animal legs 
+
+>> Prompt: a white cpu is below the table
+>> Response: floor is mouse is le 
+
+>> Prompt: a white cpu is below the table
+>> Response: floor is mouse 
+
+>> Prompt: a white cpu is below the table
+>> Response: ite carpet is mouse 
+
+>> Prompt: a white cpu is below the table
+>> Response: use witures on the desk 
+
+>> Prompt: there is a telephone in the photo
+>> Response: floor is white 
+
+>> Prompt: there is a telephone in the photo
+>> Response: floor is white 
+
+>> Prompt: there is a telephone in the photo
+>> Response: floor is white 
+
+>> Prompt: there is a telephone in the photo
+>> Response: ite mouse is on the desk 
+
+>> Prompt: no one is sitted at this desk
+>> Response: floor is white in colour 
+
+>> Prompt: no one is sitted at this desk
+>> Response: wish mouse is on 
+
+>> Prompt: no one is sitted at this desk
+>> Response: ute is les 
+
+>> Prompt: no one is sitted at this desk
+>> Response: cture mout is on the desk 
+
+>> Prompt: A multi-line cordless phone
+>> Response: wit is mouse 
+
+>> Prompt: A multi-line cordless phone
+>> Response: floor has a white and mage 
+
+>> Prompt: A multi-line cordless phone
+>> Response: ite mouse is lege 
+
+>> Prompt: A multi-line cordless phone
+>> Response: was are blue in colour 
+
+>> Prompt: the wall is white
+>> Response: mout is white 
+
+>> Prompt: the wall is white
+>> Response: mousse is white 
+
+>> Prompt: the wall is white
+>> Response: floor is white in colour 
+
+>> Prompt: the wall is white
+>> Response: fron is a drawn 
+
+>> Prompt: A computer tower under the desk
+>> Response: ite top 
+
+>> Prompt: A computer tower under the desk
+>> Response: ite mousese is mause 
+
+>> Prompt: A computer tower under the desk
+>> Response: floor is white in colour 
+
+>> Prompt: A computer tower under the desk
+>> Response: floor is white 
+
+>> Prompt: Woman working at her desk
+>> Response: floor has a mout 
+
+>> Prompt: Woman working at her desk
+>> Response: n man working at a table 
+
+>> Prompt: Woman working at her desk
+>> Response: d white and downs 
+
+>> Prompt: Woman working at her desk
+>> Response: veral wooden standing on the le 
+
+>> Prompt: the mouse is white
+>> Response: ite top computer mouse 
+
+>> Prompt: the mouse is white
+>> Response: use is lit 
+
+>> Prompt: the mouse is white
+>> Response: floor is fupppport 
+
+>> Prompt: the mouse is white
+>> Response: ctures on the floor 
+
+>> Prompt: there is a woman infront of the computer on the right
+>> Response: use is on the desk 
+
+>> Prompt: there is a woman infront of the computer on the right
+>> Response: floor has been switch 
+
+>> Prompt: there is a woman infront of the computer on the right
+>> Response: floor is white 
+
+>> Prompt: there is a woman infront of the computer on the right
+>> Response: use lictures are on the floor 
+
+>> Prompt: electrical and data line outlets
+>> Response: wictures on a desk 
+
+>> Prompt: electrical and data line outlets
+>> Response: cle legs on a desk 
+
+>> Prompt: electrical and data line outlets
+>> Response: floor is white in colour 
+
+>> Prompt: electrical and data line outlets
+>> Response: wase is mout 
+
+>> Prompt: beige filing cabinet
+>> Response: s are on the floor 
+
+>> Prompt: beige filing cabinet
+>> Response:  bottle is on the desk 
+
+>> Prompt: beige filing cabinet
+>> Response:  bottle is on the desk 
+
+>> Prompt: beige filing cabinet
+>> Response: wit is llles 
+
+>> Prompt: it is a black telephone on the table
+>> Response: floor has beay the floor 
+
+>> Prompt: it is a black telephone on the table
+>> Response: gess on the desk 
+
+>> Prompt: it is a black telephone on the table
+>> Response: ite mouse is on the desk 
+
+>> Prompt: it is a black telephone on the table
+>> Response: ite top 
+
+>> Prompt: a woman at work
+>> Response: floor is white in colour 
+
+>> Prompt: a woman at work
+>> Response: floor has a mage 
+
+>> Prompt: a woman at work
+>> Response: avehone is legs 
+
+>> Prompt: a woman at work
+>> Response: floor is white 
+
+>> Prompt: a white mouse is on the table
+>> Response: floor has a white fuse 
+
+>> Prompt: a white mouse is on the table
+>> Response: floor is white 
+
+>> Prompt: a white mouse is on the table
+>> Response: te leges 
+
+>> Prompt: a white mouse is on the table
+>> Response: floor is clean 
+
+>> Prompt: woman is working on her computer
+>> Response: ite top 
+
+>> Prompt: woman is working on her computer
+>> Response: floor has a red sweater 
+
+>> Prompt: woman is working on her computer
+>> Response: one wne dor the wall 
+
+>> Prompt: woman is working on her computer
+>> Response: fricles are suppost 
+
+>> Prompt: woman has dark hair
+>> Response: rple carpet is on the floor 
+
+>> Prompt: woman has dark hair
+>> Response: mouse is white 
+
+>> Prompt: woman has dark hair
+>> Response: floor is white 
+
+>> Prompt: woman has dark hair
+>> Response: mousesss lit 
+
+>> Prompt: a blue pen on the desk
+>> Response: use mouse is on 
+
+>> Prompt: a blue pen on the desk
+>> Response: floor has bow the maut 
+
+>> Prompt: a blue pen on the desk
+>> Response: use is on 
+
+>> Prompt: a blue pen on the desk
+>> Response: mouse is white 
+
+>> Prompt: keyboard is white in colour
+>> Response: use lessse is on the floor 
+
+>> Prompt: keyboard is white in colour
+>> Response: ouse is on the desk 
+
+>> Prompt: keyboard is white in colour
+>> Response: floor is white in color 
+
+>> Prompt: keyboard is white in colour
+>> Response: markes are on the desk 
+
+>> Prompt: A black cordless phone
+>> Response: ite mousese is on the floor 
+
+>> Prompt: A black cordless phone
+>> Response: ite and mouses 
+
+>> Prompt: A black cordless phone
+>> Response: waseating mouse le 
+
+>> Prompt: A black cordless phone
+>> Response: wase is white 
+
+>> Prompt: computer central processing unit
+>> Response: mouse mouse is on the desk 
+
+>> Prompt: computer central processing unit
+>> Response: warkes are on the desk 
+
+>> Prompt: computer central processing unit
+>> Response: mouse is white in colour 
+
+>> Prompt: computer central processing unit
+>> Response: was mausse on the it 
+
+>> Prompt: there are several desktop computers in the room
+>> Response: floor is furit 
+
+>> Prompt: there are several desktop computers in the room
+>> Response: mouse wictures are suport 
+
+>> Prompt: there are several desktop computers in the room
+>> Response: omputer mouse is on 
+
+>> Prompt: there are several desktop computers in the room
+>> Response: warpers are on 
+
+>> Prompt: Woman with a ponytail
+>> Response: was are shicle 
+
+>> Prompt: Woman with a ponytail
+>> Response: atter bottle and and drawn 
+
+>> Prompt: Woman with a ponytail
+>> Response: clus on a desk 
+
+>> Prompt: Woman with a ponytail
+>> Response: floor is white in color 
+
+>> Prompt: A woman with a pony tail
+>> Response: ite and miture and white mout 
+
+>> Prompt: A woman with a pony tail
+>> Response: ite poppppper 
+
+>> Prompt: A woman with a pony tail
+>> Response: mousesss 
+
+>> Prompt: A woman with a pony tail
+>> Response: warpers 
+
+>> Prompt: the telephone is black
+>> Response: fuse is clean 
+
+>> Prompt: the telephone is black
+>> Response: mouse is white in colour 
+
+>> Prompt: the telephone is black
+>> Response: floor has been switched off 
+
+>> Prompt: the telephone is black
+>> Response: floor is mouse is white in colour 
+
+>> Prompt: calendar attached to back board
+>> Response: floor is white 
+
+>> Prompt: calendar attached to back board
+>> Response: oden stand at a table 
+
+>> Prompt: calendar attached to back board
+>> Response: use lit on lit 
+
+>> Prompt: calendar attached to back board
+>> Response: mouse is white in colour 
+
+>> Prompt: A black, zippered bag
+>> Response: floor has a mage 
+
+>> Prompt: A black, zippered bag
+>> Response: s are on the desk 
+
+>> Prompt: A black, zippered bag
+>> Response: s are on the floor 
+
+>> Prompt: A black, zippered bag
+>> Response: r mouse on the desk 
+
+>> Prompt: A gray Computer chair
+>> Response: wicl wooden stand is at the desk 
+
+>> Prompt: A gray Computer chair
+>> Response: waseat is legs 
+
+>> Prompt: A gray Computer chair
+>> Response: ite pipppt. 
+
+>> Prompt: A gray Computer chair
+>> Response: ite pippppt. 
+
+>> Prompt: cables run down from the outlets onto the floor
+>> Response: ite mouse on the desk 
+
+>> Prompt: cables run down from the outlets onto the floor
+>> Response: use legsss on a table 
+
+>> Prompt: cables run down from the outlets onto the floor
+>> Response: ite carpet 
+
+>> Prompt: cables run down from the outlets onto the floor
+>> Response: fupport is clean 
+
+>> Prompt: A white computer mouse
+>> Response: floor has a mout 
+
+>> Prompt: A white computer mouse
+>> Response: fusess are blue in colour 
+
+>> Prompt: A white computer mouse
+>> Response: fupppot is les 
+
+>> Prompt: A white computer mouse
+>> Response: floor is mar 
+
+>> Prompt: black bag on the coner
+>> Response: rs are on the desk 
+
+>> Prompt: black bag on the coner
+>> Response: rs are on the floor 
+
+>> Prompt: black bag on the coner
+>> Response: floor has bowll of the wall 
+
+>> Prompt: black bag on the coner
+>> Response: floor is white 
+
+>> Prompt: A woman with black hair sitting at a desk.
+>> Response: legss 
+
+>> Prompt: A woman with black hair sitting at a desk.
+>> Response: d and white and mouse 
+
+>> Prompt: A woman with black hair sitting at a desk.
+>> Response: rple couch 
+
+>> Prompt: A woman with black hair sitting at a desk.
+>> Response: s and legs 
+
+>> Prompt: Computer Keyboard on desk
+>> Response: rple couch 
+
+>> Prompt: Computer Keyboard on desk
+>> Response: floor has been switched off 
+
+>> Prompt: Computer Keyboard on desk
+>> Response: ite top computer monitor 
+
+>> Prompt: Computer Keyboard on desk
+>> Response: ite popppers on the wall 
+
+>> Prompt: wall outlets with several wires connected
+>> Response: floor has been parked 
+
+>> Prompt: wall outlets with several wires connected
+>> Response: ite mouse is on 
+
+>> Prompt: wall outlets with several wires connected
+>> Response: ining on a desk 
+
+>> Prompt: wall outlets with several wires connected
+>> Response: ite mouse is lit 
+
+>> Prompt: three-month calendar on wall
+>> Response: magn is le 
+
+>> Prompt: three-month calendar on wall
+>> Response: mouse is white in colour 
+
+>> Prompt: three-month calendar on wall
+>> Response: floor is far 
+
+>> Prompt: three-month calendar on wall
+>> Response: warkey lesss 
+
+>> Prompt: the beige keyboard, in front of the monitor
+>> Response: cles on the desk 
+
+>> Prompt: the beige keyboard, in front of the monitor
+>> Response: floor has a fus 
+
+>> Prompt: the beige keyboard, in front of the monitor
+>> Response: mousse is ligs 
+
+>> Prompt: the beige keyboard, in front of the monitor
+>> Response: ite curperset 
+
+>> Prompt: it appears to be an office
+>> Response: mouse is lous 
+
+>> Prompt: it appears to be an office
+>> Response: mouse lessse mause on it 
+
+>> Prompt: it appears to be an office
+>> Response: floor has a fus 
+
+>> Prompt: it appears to be an office
+>> Response: use on a desk 
+
+>> Prompt: A white mouse
+>> Response: ite mouse is lit 
+
+>> Prompt: A white mouse
+>> Response: mouse is louse 
+
+>> Prompt: A white mouse
+>> Response: ite mousesss 
+
+>> Prompt: A white mouse
+>> Response: floor is furor 
+
+>> Prompt: black leather computer case
+>> Response: floor has a white mouse 
+
+>> Prompt: black leather computer case
+>> Response: wase is lown 
+
+>> Prompt: black leather computer case
+>> Response: mouse mousse on the desk 
+
+>> Prompt: black leather computer case
+>> Response: floor is white 
+
+>> Prompt: multi-line office phone system
+>> Response: y of the f 
+
+>> Prompt: multi-line office phone system
+>> Response: of a mouse 
+
+>> Prompt: multi-line office phone system
+>> Response: mouse wage of the wall 
+
+>> Prompt: multi-line office phone system
+>> Response: floor is mous 
+
+>> Prompt: pen is on the desk
+>> Response: use is on the floor 
+
+>> Prompt: pen is on the desk
+>> Response: t is along the desk 
+
+>> Prompt: pen is on the desk
+>> Response: frors is white 
+
+>> Prompt: pen is on the desk
+>> Response: mouse is white 
+
+>> Prompt: the cpu is under the desk
+>> Response: floor has a mouse 
+
+>> Prompt: the cpu is under the desk
+>> Response: mouse is mouse 
+
+>> Prompt: the cpu is under the desk
+>> Response: floor is far 
+
+>> Prompt: the cpu is under the desk
+>> Response: ite top 
+
+>> Prompt: clean, tan work surface
+>> Response: mages licture mout le 
+
+>> Prompt: clean, tan work surface
+>> Response: ite mousess 
+
+>> Prompt: clean, tan work surface
+>> Response: markes are blue 
+
+>> Prompt: clean, tan work surface
+>> Response: aters are on the desk 
+
+>> Prompt: Computer screen turned off
+>> Response: ite pipet 
+
+>> Prompt: Computer screen turned off
+>> Response: furit is le 
+
+>> Prompt: Computer screen turned off
+>> Response: oden stand is on the desk 
+
+>> Prompt: Computer screen turned off
+>> Response: muse is white 
+
+>> Prompt: cordless phone sitting in its base
+>> Response: use legss on a desk 
+
+>> Prompt: cordless phone sitting in its base
+>> Response: ite mouse is on the desk 
+
+>> Prompt: cordless phone sitting in its base
+>> Response: cture litures lighte 
+
+>> Prompt: cordless phone sitting in its base
+>> Response: use on a desk 
+
+>> Prompt: monitor has been switched off
+>> Response: mouse is white 
+
+>> Prompt: monitor has been switched off
+>> Response: floor is white 
+
+>> Prompt: monitor has been switched off
+>> Response: fupport is on the floor 
+
+>> Prompt: monitor has been switched off
+>> Response: marpet is on 
+
+>> Prompt: a pen is on the desk
+>> Response: use is down 
+
+>> Prompt: a pen is on the desk
+>> Response: floor is white 
+
+>> Prompt: a pen is on the desk
+>> Response: floor is white in colour 
+
+>> Prompt: a pen is on the desk
+>> Response: floor is white in colour 
+
+>> Prompt: there is one person in the photo
+>> Response: ite mouse is lous 
+
+>> Prompt: there is one person in the photo
+>> Response: use is on the floor 
+
+>> Prompt: there is one person in the photo
+>> Response: floor is white 
+
+>> Prompt: there is one person in the photo
+>> Response: floor is furor 
+
+>> Prompt: woman looking at a computer monitor
+>> Response: ite popppppet 
+
+>> Prompt: woman looking at a computer monitor
+>> Response: wor magesse mouse on it 
+
+>> Prompt: woman looking at a computer monitor
+>> Response: floor is mar 
+
+>> Prompt: woman looking at a computer monitor
+>> Response: n man wearing red shirt 
+
+>> Prompt: monitor is not switched on
+>> Response: floor has been switched off 
+
+>> Prompt: monitor is not switched on
+>> Response: floor is white 
+
+>> Prompt: monitor is not switched on
+>> Response: frit is legs 
+
+>> Prompt: monitor is not switched on
+>> Response: use is on the floor 
+
+>> Prompt: An outlet in the wall with cables plugged in
+>> Response: frit is white 
+
+>> Prompt: An outlet in the wall with cables plugged in
+>> Response: mouse wage of the wall 
+
+>> Prompt: An outlet in the wall with cables plugged in
+>> Response: marpet is mouse 
+
+>> Prompt: An outlet in the wall with cables plugged in
+>> Response: ite moute is lit 
+
+>> Prompt: white mouse is on the desk
+>> Response: ite mouse is on the desk 
+
+>> Prompt: white mouse is on the desk
+>> Response: use wictures on the floor 
+
+>> Prompt: white mouse is on the desk
+>> Response: use is on the floor 
+
+>> Prompt: white mouse is on the desk
+>> Response: floor is mage 
+
+>> Prompt: Electrical outlet on a computer wall
+>> Response: une on a table 
+
+>> Prompt: Electrical outlet on a computer wall
+>> Response: mouse is white 
+
+>> Prompt: Electrical outlet on a computer wall
+>> Response: floor is white in colour 
+
+>> Prompt: Electrical outlet on a computer wall
+>> Response: wit is mouse 
+
+>> Prompt: the plugs are full on the switch
+>> Response: floor has been switched off 
+
+>> Prompt: the plugs are full on the switch
+>> Response: t is lege 
+
+>> Prompt: the plugs are full on the switch
+>> Response: ite top computer 
+
+>> Prompt: the plugs are full on the switch
+>> Response: floor is white in colour 
+
+>> Prompt: the plug in are present
+>> Response: ture leggs on the desk 
+
+>> Prompt: the plug in are present
+>> Response: ge is on the desk 
+
+>> Prompt: the plug in are present
+>> Response: floor is white in colour 
+
+>> Prompt: the plug in are present
+>> Response: floor is white 
+
+>> Prompt: desk top computer mouse and keyboard
+>> Response: floor has been parked on the desk 
+
+>> Prompt: desk top computer mouse and keyboard
+>> Response: use lictures on ight 
+
+>> Prompt: desk top computer mouse and keyboard
+>> Response: mouse is white 
+
+>> Prompt: desk top computer mouse and keyboard
+>> Response: floor is fror 
+
+>> Prompt: A woman with a white t-shirt
+>> Response: ute is a blue 
+
+>> Prompt: A woman with a white t-shirt
+>> Response: been parked on the sidewalk 
+
+>> Prompt: A woman with a white t-shirt
+>> Response: frit is mouse 
+
+>> Prompt: A woman with a white t-shirt
+>> Response: hte and lit 
+
+>> Prompt: the woman infront of the computer has black hair
+>> Response: floor is white 
+
+>> Prompt: the woman infront of the computer has black hair
+>> Response: floor has a mout 
+
+>> Prompt: the woman infront of the computer has black hair
+>> Response: ite mouse is les 
+
+>> Prompt: the woman infront of the computer has black hair
+>> Response: floor is white 
+
+>> Prompt: white is dominant in the picture
+>> Response: floor has a mouse 
+
+>> Prompt: white is dominant in the picture
+>> Response: ture legss on the wall 
+
+>> Prompt: white is dominant in the picture
+>> Response: ite mousesss 
+
+>> Prompt: white is dominant in the picture
+>> Response: warpers are on the desk 
+
+>> Prompt: a black cable is on the desk
+>> Response: floor is white 
+
+>> Prompt: a black cable is on the desk
+>> Response: use is on the desk 
+
+>> Prompt: a black cable is on the desk
+>> Response: floor is white in colour 
+
+>> Prompt: a black cable is on the desk
+>> Response: floor is white 
+
+>> Prompt: Office phone on a desk
+>> Response: floor is mous 
+
+>> Prompt: Office phone on a desk
+>> Response: ite and micles on the desk 
+
+>> Prompt: Office phone on a desk
+>> Response: mouse lit is a legs 
+
+>> Prompt: Office phone on a desk
+>> Response: floor has a white mouse 
+
+>> Prompt: A paper picture with typing on it
+>> Response: lowssss lit 
+
+>> Prompt: A paper picture with typing on it
+>> Response: floor is furit 
+
+>> Prompt: A paper picture with typing on it
+>> Response: skes are on the desk 
+
+>> Prompt: A paper picture with typing on it
+>> Response: floor is far mage 
+
+>> Prompt: Photos behind a partition
+>> Response: wa magese on the wall 
+
+>> Prompt: Photos behind a partition
+>> Response: use on a desk 
+
+>> Prompt: Photos behind a partition
+>> Response: floor has a mouse 
+
+>> Prompt: Photos behind a partition
+>> Response: floor has a white mout 
+
+>> Prompt: Computer hard drive on the floor
+>> Response: mage is mout 
+
+>> Prompt: Computer hard drive on the floor
+>> Response: mousse magse of a legs 
+
+>> Prompt: Computer hard drive on the floor
+>> Response: ctures are supppport 
+
+>> Prompt: Computer hard drive on the floor
+>> Response: use on a desk 
+
+>> Prompt: woman has a long hair
+>> Response: fror wne is lit 
+
+>> Prompt: woman has a long hair
+>> Response: mousse lesssss 
+
+>> Prompt: woman has a long hair
+>> Response: use is on 
+
+>> Prompt: woman has a long hair
+>> Response: fricle woodent is on 
+
+>> Prompt: computer is white in colour
+>> Response: floor has a grey mous 
+
+>> Prompt: computer is white in colour
+>> Response: floor has a fus 
+
+>> Prompt: computer is white in colour
+>> Response: floor has a moutt is white 
+
+>> Prompt: computer is white in colour
+>> Response: floor has bowllllls 
+
+>> Prompt: a woman with black hair
+>> Response: gs 
+
+>> Prompt: a woman with black hair
+>> Response: d white drawer 
+
+>> Prompt: a woman with black hair
+>> Response: d wighte 
+
+>> Prompt: a woman with black hair
+>> Response: man is wearing a grey pants 
+
+>> Prompt: a blue pen is on the desk
+>> Response: floor is fur 
+
+>> Prompt: a blue pen is on the desk
+>> Response: marpet is on 
+
+>> Prompt: a blue pen is on the desk
+>> Response: fupppport is on the desk 
+
+>> Prompt: a blue pen is on the desk
+>> Response: ite top 
+
+>> Prompt: black luggage with a strap
+>> Response: cture leggs 
+
+>> Prompt: black luggage with a strap
+>> Response: waseat is les 
+
+>> Prompt: black luggage with a strap
+>> Response: mouse wages 
+
+>> Prompt: black luggage with a strap
+>> Response: warpet is lown 
+
+>> Prompt: cpu is under the desk
+>> Response: floor has bow the photo 
+
+>> Prompt: cpu is under the desk
+>> Response: ite mout is on the desk 
+
+>> Prompt: cpu is under the desk
+>> Response: ite top computer on the floor 
+
+>> Prompt: cpu is under the desk
+>> Response: ite mouse is on the desk 
+
+>> Prompt: Black bag on the right of desk
+>> Response: floor has a f 
+
+>> Prompt: Black bag on the right of desk
+>> Response: floor is furit 
+
+>> Prompt: Black bag on the right of desk
+>> Response: le of the desk 
+
+>> Prompt: Black bag on the right of desk
+>> Response: ite mutite 
+
+>> Prompt: the room is well lit
+>> Response: tures on fitures on ight 
+
+>> Prompt: the room is well lit
+>> Response: ite clorpet is on the floor 
+
+>> Prompt: the room is well lit
+>> Response: floor is white 
+
+>> Prompt: the room is well lit
+>> Response: floor is mage 
+
+>> Prompt: k phone is on the desk
+>> Response: floor is fuppppet 
+
+>> Prompt: k phone is on the desk
+>> Response: floor is fas 
+
+>> Prompt: k phone is on the desk
+>> Response: floor has a mout 
+
+>> Prompt: k phone is on the desk
+>> Response: use is lit 
+
+>> Prompt: A computer keyboard with grey and white keys
+>> Response: ite carpet 
+
+>> Prompt: A computer keyboard with grey and white keys
+>> Response: mouse is lous 
+
+>> Prompt: A computer keyboard with grey and white keys
+>> Response: usse on a table 
+
+>> Prompt: A computer keyboard with grey and white keys
+>> Response: floor has been parked 
+
+>> Prompt: a black bag is at the coner
+>> Response: floor is mouse 
+
+>> Prompt: a black bag is at the coner
+>> Response: rs are low 
+
+>> Prompt: a black bag is at the coner
+>> Response: rs are on the desk 
+
+>> Prompt: a black bag is at the coner
+>> Response: floor is white 
+
+>> Prompt: desk is white in colour
+>> Response: r 
+
+>> Prompt: desk is white in colour
+>> Response: use is on the desk 
+
+>> Prompt: desk is white in colour
+>> Response: mouse is white in colour 
+
+>> Prompt: desk is white in colour
+>> Response: ite mouse is on the floor 
+
+>> Prompt: computer mouse next to the keyboard
+>> Response: ite top 
+
+>> Prompt: computer mouse next to the keyboard
+>> Response: ite mouse is lit 
+
+>> Prompt: computer mouse next to the keyboard
+>> Response: ture mouse woodent 
+
+>> Prompt: computer mouse next to the keyboard
+>> Response: ite and dighte 
+
+>> Prompt: piece of paper attached to cubicle wall
+>> Response: mouse licles are on the desk 
+
+>> Prompt: piece of paper attached to cubicle wall
+>> Response: warkey bear legs on a desk 
+
+>> Prompt: piece of paper attached to cubicle wall
+>> Response: wasess lowss 
+
+>> Prompt: piece of paper attached to cubicle wall
+>> Response: use on a table 
+
+>> Prompt: Colorful photo hanging on the wall
+>> Response: ute is on the floor 
+
+>> Prompt: Colorful photo hanging on the wall
+>> Response: te lictures are on 
+
+>> Prompt: Colorful photo hanging on the wall
+>> Response: ite top 
+
+>> Prompt: Colorful photo hanging on the wall
+>> Response: use legs on the wall 
+
+>> Prompt: the keyboard is white in colour
+>> Response: usessse is on 
+
+>> Prompt: the keyboard is white in colour
+>> Response: fror 
+
+>> Prompt: the keyboard is white in colour
+>> Response: floor has a been parked 
+
+>> Prompt: the keyboard is white in colour
+>> Response: floor is marpet 
+
+>> Prompt: a blue ink pen
+>> Response: floor has a mous 
+
+>> Prompt: a blue ink pen
+>> Response: use is on the floor 
+
+>> Prompt: a blue ink pen
+>> Response: mouse is on the desk 
+
+>> Prompt: a blue ink pen
+>> Response: mage is on the floor 
+
+>> Prompt: a woman with a pony tail
+>> Response: farkey bear llit 
+
+>> Prompt: a woman with a pony tail
+>> Response: waseating a poper 
+
+>> Prompt: a woman with a pony tail
+>> Response: tettt. 
+
+>> Prompt: a woman with a pony tail
+>> Response: wil woodite market 
+
+>> Prompt: a black bag on the desk
+>> Response: use is on the floor 
+
+>> Prompt: a black bag on the desk
+>> Response: floor is f 
+
+>> Prompt: a black bag on the desk
+>> Response: ite top 
+
+>> Prompt: a black bag on the desk
+>> Response: ite top computer 
+
+>> Prompt: black phone is on the table
+>> Response: te lictures are on 
+
+>> Prompt: black phone is on the table
+>> Response: floor has been switched off 
+
+>> Prompt: black phone is on the table
+>> Response: floor is white 
+
+>> Prompt: black phone is on the table
+>> Response: floor is white 
+
+>> Prompt: Computer monitor on a desk
+>> Response: floor has been switched off 
+
+>> Prompt: Computer monitor on a desk
+>> Response: fuport is a mout 
+
+>> Prompt: Computer monitor on a desk
+>> Response: ite top computer top 
+
+>> Prompt: Computer monitor on a desk
+>> Response: mousse is white 
+
+>> Prompt: the computer is on
+>> Response: floor has a frighte 
+
+>> Prompt: the computer is on
+>> Response: floor is furor 
+
+>> Prompt: the computer is on
+>> Response: floor is white 
+
+>> Prompt: the computer is on
+>> Response: ite telephone is on the floor 
+
+>> Prompt: many papers hanging on the wall
+>> Response: mouse mage on the wall 
+
+>> Prompt: many papers hanging on the wall
+>> Response: floor is white 
+
+>> Prompt: many papers hanging on the wall
+>> Response: floor is white 
+
+>> Prompt: many papers hanging on the wall
+>> Response: age of the wall 
+
+>> Prompt: a telephone is in the photo
+>> Response: floor is white in colour 
+
+>> Prompt: a telephone is in the photo
+>> Response: floor has been takey 
+
+>> Prompt: a telephone is in the photo
+>> Response: was are blue 
+
+>> Prompt: a telephone is in the photo
+>> Response: t is legs 
+
+>> Prompt: young woman with pony tail
+>> Response: warks on the floor 
+
+>> Prompt: young woman with pony tail
+>> Response: mouse is white 
+
+>> Prompt: young woman with pony tail
+>> Response: floor is white in colour 
+
+>> Prompt: young woman with pony tail
+>> Response: moussse legs 
+
+>> Prompt: A piece of paper taped to the wall.
+>> Response: mouse legss on a table 
+
+>> Prompt: A piece of paper taped to the wall.
+>> Response: s a moouses 
+
+>> Prompt: A piece of paper taped to the wall.
+>> Response: s a and white mouse 
+
+>> Prompt: A piece of paper taped to the wall.
+>> Response: odictures on ficture fles 
+
+>> Prompt: cables have been pluged
+>> Response: cle wictures are suppppport. 
+
+>> Prompt: cables have been pluged
+>> Response: ll licle drawns 
+
+>> Prompt: cables have been pluged
+>> Response: floor is moouse is white 
+
+>> Prompt: cables have been pluged
+>> Response: waseat is a fuse 
+
+>> Prompt: woman has white top
+>> Response: mouse is white in colour 
+
+>> Prompt: woman has white top
+>> Response: ite cpet is on the desk 
+
+>> Prompt: woman has white top
+>> Response: use is lege 
+
+>> Prompt: woman has white top
+>> Response: mouse is white 
+
+>> Prompt: black telephone is on the desk
+>> Response: use is legs 
+
+>> Prompt: black telephone is on the desk
+>> Response: floor is white 
+
+>> Prompt: black telephone is on the desk
+>> Response: floor is white 
+
+>> Prompt: black telephone is on the desk
+>> Response: use is on the floor 
+
+>> Prompt: Paper hanging on a cubicle wall
+>> Response: ite mousse on the desk 
+
+>> Prompt: Paper hanging on a cubicle wall
+>> Response: marpet of a piture 
+
+>> Prompt: Paper hanging on a cubicle wall
+>> Response: ite pillow on the wall 
+
+>> Prompt: Paper hanging on a cubicle wall
+>> Response: floor has been switched off 
+
+>> Prompt: a black bag is on the desk
+>> Response: floor has a f 
+
+>> Prompt: a black bag is on the desk
+>> Response: floor is white 
+
+>> Prompt: a black bag is on the desk
+>> Response: use is on the desk 
+
+>> Prompt: a black bag is on the desk
+>> Response: floor is mouse 
+
+>> Prompt: a computer monitor turned off
+>> Response: use on the desk 
+
+>> Prompt: a computer monitor turned off
+>> Response: ite top 
+
+>> Prompt: a computer monitor turned off
+>> Response: ite top 
+
+>> Prompt: a computer monitor turned off
+>> Response: furicture mouse 
+
+>> Prompt: telephone on a desk
+>> Response: mouse is far 
+
+>> Prompt: telephone on a desk
+>> Response: ite mouse on the desk 
+
+>> Prompt: telephone on a desk
+>> Response: ite pillow is on the floor 
+
+>> Prompt: telephone on a desk
+>> Response: mouse is white in colour 
+
+>> Prompt: Black computer mouse with a cord
+>> Response: ite drawn 
+
+>> Prompt: Black computer mouse with a cord
+>> Response: muse on a desk 
+
+>> Prompt: Black computer mouse with a cord
+>> Response: use on a table 
+
+>> Prompt: Black computer mouse with a cord
+>> Response: floor is white 
+
+>> Prompt: A black case with a strap
+>> Response: t is lite 
+
+>> Prompt: A black case with a strap
+>> Response: ute is legs 
+
+>> Prompt: A black case with a strap
+>> Response: lit is a dor the photo 
+
+>> Prompt: A black case with a strap
+>> Response: mousse is white in colour 
+
+>> Prompt: the is a white cpu under the table
+>> Response: floor is white 
+
+>> Prompt: the is a white cpu under the table
+>> Response: floor is white 
+
+>> Prompt: the is a white cpu under the table
+>> Response: floor is white 
+
+>> Prompt: the is a white cpu under the table
+>> Response: ite top 
+
+>> Prompt: an electrical outlet
+>> Response: warpet is lit 
+
+>> Prompt: an electrical outlet
+>> Response: tures leggs 
+
+>> Prompt: an electrical outlet
+>> Response: ite carpet is on the desk 
+
+>> Prompt: an electrical outlet
+>> Response: ite top of a piture mous 
+
+>> Prompt: Gray file cabinet with two drawers
+>> Response: use wit 
+
+>> Prompt: Gray file cabinet with two drawers
+>> Response: floor has a fus 
+
+>> Prompt: Gray file cabinet with two drawers
+>> Response: markes 
+
+>> Prompt: Gray file cabinet with two drawers
+>> Response: rkes on a desk 
+
+>> Prompt: black office telephone and pen
+>> Response: mouse is lout 
+
+>> Prompt: black office telephone and pen
+>> Response: mouse loussse 
+
+>> Prompt: black office telephone and pen
+>> Response: mouse mage lesss 
+
+>> Prompt: black office telephone and pen
+>> Response: ite mouse is dous 
+
+>> Prompt: photos are on the wall
+>> Response: floor is white 
+
+>> Prompt: photos are on the wall
+>> Response: floor is mouse is white in colour 
+
+>> Prompt: photos are on the wall
+>> Response: aves are on the desk 
+
+>> Prompt: photos are on the wall
+>> Response: ite in the photo 
+
+>> Prompt: A black bag on the desk
+>> Response: use is on the desk 
+
+>> Prompt: A black bag on the desk
+>> Response: use is on the floor 
+
+>> Prompt: A black bag on the desk
+>> Response: cture legs on the wall 
+
+>> Prompt: A black bag on the desk
+>> Response: use is on the desk 
+
+>> Prompt: table is white in colour
+>> Response: use is on the desk 
+
+>> Prompt: table is white in colour
+>> Response: use is leses 
+
+>> Prompt: table is white in colour
+>> Response: ite moute is dout 
+
+>> Prompt: table is white in colour
+>> Response: mout is a mar 
+
+>> Prompt: a pen is lying on the desk
+>> Response: mout is white 
+
+>> Prompt: a pen is lying on the desk
+>> Response: use lese legs 
+
+>> Prompt: a pen is lying on the desk
+>> Response: floor has a mous 
+
+>> Prompt: a pen is lying on the desk
+>> Response: floor is white 
+
+>> Prompt: Pictures hung on the wall
+>> Response: ute wicles on the floor 
+
+>> Prompt: Pictures hung on the wall
+>> Response: ppers are on 
+
+>> Prompt: Pictures hung on the wall
+>> Response: te lite mouse 
+
+>> Prompt: Pictures hung on the wall
+>> Response: fricture lit is dorn 
+
+>> Prompt: mouse is on the desk
+>> Response: age is lige 
+
+>> Prompt: mouse is on the desk
+>> Response: floor is clean 
+
+>> Prompt: mouse is on the desk
+>> Response: floor has a fuse 
+
+>> Prompt: mouse is on the desk
+>> Response: use is on the floor 
