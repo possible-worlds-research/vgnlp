@@ -269,7 +269,7 @@ def heatmap(file_path, row_column, eval_optimal, number_eval, log_file):
 
 ################ BLEU EVALUATION
 
-def bleu_algorithm(file_path_references, file_path_candidates, n_gram):
+def bleu_algorithm_logical_surface(file_path_references, file_path_candidates, n_gram):
     # References
     with open(file_path_references, 'r') as reference_file:
         references_content = reference_file.read()
@@ -317,6 +317,47 @@ def bleu_algorithm(file_path_references, file_path_candidates, n_gram):
         average_bleu_score = 0
     return average_bleu_score
 
+def bleu_algorithm_surface(script_id, file_path_references, file_path_candidates, n_gram):
+    # References (I am extracting the utterances based on the script_id I am evaluating from) OPTIMAL
+    with open(file_path_references, 'r') as reference_file:
+        references_content = reference_file.read()
+
+    scripts = re.findall(r"(<script\.\d+ type=CONV>.*?</script\.\d+>)", references_content, re.DOTALL)
+    if script_id != 0:
+        script_content_reference = scripts[script_id-1]
+    if script_id == 0:
+        script_content_reference = references_content
+    references_pattern = r'<u speaker=[^>]*>(.*?)</u>'
+    references_matches = re.findall(references_pattern, script_content_reference, re.DOTALL)
+    tokenized_references = [reference.split() for reference in references_matches]
+
+    # Candidates RESPONSES BOT
+    with open(file_path_candidates, 'r') as candidate_file:
+        candidate_content = candidate_file.read()
+    candidate_pattern = r">> Response: (.*?)\n\n"
+    candidate_matches = re.findall(candidate_pattern, candidate_content, re.DOTALL)
+    tokenized_candidates = [candidate.split() for candidate in candidate_matches]
+
+    # # BLEU score
+    bleu_scores=[]
+    weights = tuple([1.0 if i == 0 else 0.0 for i in range(n_gram)])
+    for candidate in tokenized_candidates:
+        candidate_bleu_scores = []
+        for reference in tokenized_references:
+            score = sentence_bleu([reference], candidate, weights=weights)  # Compare candidate with one reference at a time
+            candidate_bleu_scores.append(score)
+            # print(f'Average BLEU score for {candidate} and {reference}: {score}')
+        # Calculate the average BLEU score for this candidate against all references
+        average_candidate_bleu = sum(candidate_bleu_scores) / len(candidate_bleu_scores)
+        bleu_scores.append(average_candidate_bleu)
+        # print(f'Average BLEU score for {candidate}: {average_candidate_bleu}')
+
+    if bleu_scores:
+        average_bleu_score = sum(bleu_scores) / len(bleu_scores)
+    else:
+        average_bleu_score = 0
+    return average_bleu_score
+
 ############# LOGICAL
 #############
 ############# CREATE THE EVALUATION VECTORIAL SPACES FILES
@@ -346,7 +387,9 @@ for script_id_eval in range (0,13):
     for script_id_optimal in range(0,13):
         evaluation_with_vectorial_space(2, script_id_eval, script_id_optimal, log_file='./data/data_analysis/logical/evaluations/evaluation_2.txt')
 
-################ CREATE THE CSVs FROM THE EVALUATION FILES
+########## GRAPHICAL REPRESENTATIONS
+##############
+############### CREATE THE CSVs FROM THE EVALUATION FILES
 
 print('Vectorial Spaces Evaluation - Logic Data, comparing the spaces and storing')
 
@@ -381,18 +424,24 @@ heatmap('./data/data_analysis/logical/dataframes/evaluation_1.csv', 'Column', 'E
 heatmap('./data/data_analysis/logical/dataframes/evaluation_2.csv', 'Row', 'Eval', '2', './data/data_analysis/logical/images/row_eval_2.png')
 heatmap('./data/data_analysis/logical/dataframes/evaluation_2.csv', 'Column', 'Eval', '2', './data/data_analysis/logical/images/col_eval_2.png')
 
-############# SURFACE
-#############
-
 ############# LOGICAL TO SURFACE
-#############
-############# BLEU ALGORITHM
 
 print('BLEU Algorithm Evaluation - Logical to Surface Data \n')
 n_gram_value=1
 
 for script_id_reference in range (0,13):
-   score = bleu_algorithm('./data/training/permuted_logical_to_surface.txt',
+   score = bleu_algorithm_logical_surface('./data/training/permuted_logical_to_surface.txt',
                           f'./data/evaluation_data/evaluation_logic_to_surface/evaluation_situation{script_id_reference}.txt',
                           n_gram_value)
    print(f'Average BLEU score, n-grams {n_gram_value} for script id {script_id_reference} is {score}')
+
+########## SURFACE
+
+print('BLEU Algorithm Evaluation - Surface Data \n')
+n_gram_value=1
+
+for script_id_reference in range (0,13):
+    score = bleu_algorithm_surface(script_id_reference, './data/training/prompt_surface.txt',
+                                           f'./data/evaluation_data/evaluation_surface/evaluation_situation{script_id_reference}.txt',
+                                           n_gram_value)
+    print(f'Average BLEU score, n-grams {n_gram_value} for script id {script_id_reference} is {score}')
