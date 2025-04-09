@@ -1,0 +1,662 @@
+>> Loaded models dict_keys(['chat'])
+
+
+>> Prompt: (cup.n small)
+>> Response: a chourt 
+
+>> Prompt: (cup.n small)
+>> Response: A coles choles 
+
+>> Prompt: (cup.n small)
+>> Response: A silendes chair with parts 
+
+>> Prompt: (cup.n small)
+>> Response: a choles 
+
+>> Prompt: (cheese.n on-dish), (dish.n sausage-on cheese-on)
+>> Response: a chole sts 
+
+>> Prompt: (cheese.n on-dish), (dish.n sausage-on cheese-on)
+>> Response: an a chollests on the desk 
+
+>> Prompt: (cheese.n on-dish), (dish.n sausage-on cheese-on)
+>> Response: A coles stand sthande 
+
+>> Prompt: (cheese.n on-dish), (dish.n sausage-on cheese-on)
+>> Response: a chourts 
+
+>> Prompt: (food.n table-with), (table.n black with-food glass-on disk-on)
+>> Response: a chair with chargre chare cheeee curee s 
+
+>> Prompt: (food.n table-with), (table.n black with-food glass-on disk-on)
+>> Response: a a plate plate plate 
+
+>> Prompt: (food.n table-with), (table.n black with-food glass-on disk-on)
+>> Response: A clender chole ck chare deee 
+
+>> Prompt: (food.n table-with), (table.n black with-food glass-on disk-on)
+>> Response: a charge chair 
+
+>> Prompt: (egg.n white yellow on-muffin), (muffin.n egg-on)
+>> Response: a is on the desk 
+
+>> Prompt: (egg.n white yellow on-muffin), (muffin.n egg-on)
+>> Response: A is cururtale chale ck on plate 
+
+>> Prompt: (egg.n white yellow on-muffin), (muffin.n egg-on)
+>> Response: A clelen plate chourts 
+
+>> Prompt: (egg.n white yellow on-muffin), (muffin.n egg-on)
+>> Response: an is on the desk 
+
+>> Prompt: (cheese.n white yellow on-pastry), (pastry.n cheese-on)
+>> Response: A turen staned fared for the desk 
+
+>> Prompt: (cheese.n white yellow on-pastry), (pastry.n cheese-on)
+>> Response: an chair with chale choles 
+
+>> Prompt: (cheese.n white yellow on-pastry), (pastry.n cheese-on)
+>> Response: an a ptop of its 
+
+>> Prompt: (cheese.n white yellow on-pastry), (pastry.n cheese-on)
+>> Response: A turawn chor 
+
+>> Prompt: (egg.n muffin-with), (muffin.n english with-egg)
+>> Response: A curen chair with black curart 
+
+>> Prompt: (egg.n muffin-with), (muffin.n english with-egg)
+>> Response: A clale char che charg che che s 
+
+>> Prompt: (egg.n muffin-with), (muffin.n english with-egg)
+>> Response: an charde of curales on plate 
+
+>> Prompt: (egg.n muffin-with), (muffin.n english with-egg)
+>> Response: A culele chale che s 
+
+>> Prompt: (glass.n straw-in), (straw.n in-glass)
+>> Response: A sitied a curts 
+
+>> Prompt: (glass.n straw-in), (straw.n in-glass)
+>> Response: A cole courtsts clle curar 
+
+>> Prompt: (glass.n straw-in), (straw.n in-glass)
+>> Response: A corth courts 
+
+>> Prompt: (glass.n straw-in), (straw.n in-glass)
+>> Response: a sit 
+
+>> Prompt: (napkin.n on-dish), (dish.n small fork-to|right|of napkin-on)
+>> Response: a is on desk 
+
+>> Prompt: (napkin.n on-dish), (dish.n small fork-to|right|of napkin-on)
+>> Response: a is is a plate 
+
+>> Prompt: (napkin.n on-dish), (dish.n small fork-to|right|of napkin-on)
+>> Response: A is is cour 
+
+>> Prompt: (napkin.n on-dish), (dish.n small fork-to|right|of napkin-on)
+>> Response: a is on table 
+
+>> Prompt: (egg.n ), (plate.n tomato-on tomato-on tomato-on), (tomato.n on-plate)
+>> Response: a a a plate plate 
+
+>> Prompt: (egg.n ), (plate.n tomato-on tomato-on tomato-on), (tomato.n on-plate)
+>> Response: a a plate is plate plate 
+
+>> Prompt: (egg.n ), (plate.n tomato-on tomato-on tomato-on), (tomato.n on-plate)
+>> Response: A calalen plates with white plate plate 
+
+>> Prompt: (egg.n ), (plate.n tomato-on tomato-on tomato-on), (tomato.n on-plate)
+>> Response: a is on desk 
+
+>> Prompt: (bread.n on-dish), (dish.n bread-on)
+>> Response: an is chour 
+
+>> Prompt: (bread.n on-dish), (dish.n bread-on)
+>> Response: a chair with arden chales on the desk 
+
+>> Prompt: (bread.n on-dish), (dish.n bread-on)
+>> Response: a is chales on wall 
+
+>> Prompt: (bread.n on-dish), (dish.n bread-on)
+>> Response: A culen sille st 
+
+>> Prompt: (egg.n white yellow on-muffin)
+>> Response: an cholde chole 
+
+>> Prompt: (egg.n white yellow on-muffin)
+>> Response: a is plate 
+
+>> Prompt: (egg.n white yellow on-muffin)
+>> Response: A is is culale plate 
+
+>> Prompt: (egg.n white yellow on-muffin)
+>> Response: an chair with chale it 
+
+>> Prompt: (cheese.n pastry-with), (pastry.n english with-cheese)
+>> Response: A tallen ck are der ile 
+
+>> Prompt: (cheese.n pastry-with), (pastry.n english with-cheese)
+>> Response: A cllender charder cale st 
+
+>> Prompt: (cheese.n pastry-with), (pastry.n english with-cheese)
+>> Response: a chard s 
+
+>> Prompt: (cheese.n pastry-with), (pastry.n english with-cheese)
+>> Response: A clen clesits challe s 
+
+>> Prompt: (bottle.n green with-cap), (cap.n bottle-with)
+>> Response: a chole s 
+
+>> Prompt: (bottle.n green with-cap), (cap.n bottle-with)
+>> Response: A curalle ck ckees 
+
+>> Prompt: (bottle.n green with-cap), (cap.n bottle-with)
+>> Response: A cllen chair with clartic on the desk 
+
+>> Prompt: (bottle.n green with-cap), (cap.n bottle-with)
+>> Response: an dots 
+
+>> Prompt: (bottle.n sauce-in), (sauce.n in-bottle)
+>> Response: an is collllll char 
+
+>> Prompt: (bottle.n sauce-in), (sauce.n in-bottle)
+>> Response: A colotsttt 
+
+>> Prompt: (bottle.n sauce-in), (sauce.n in-bottle)
+>> Response: A man in colllottst 
+
+>> Prompt: (bottle.n sauce-in), (sauce.n in-bottle)
+>> Response: a colllder curar 
+
+>> Prompt: (cheese.n on-pastry on-pastry pastry-under), (pastry.n cheese-on cheese-on)
+>> Response: A cullle sthand charge s 
+
+>> Prompt: (cheese.n on-pastry on-pastry pastry-under), (pastry.n cheese-on cheese-on)
+>> Response: an chair chair 
+
+>> Prompt: (cheese.n on-pastry on-pastry pastry-under), (pastry.n cheese-on cheese-on)
+>> Response: A curen curar chargeeeens 
+
+>> Prompt: (cheese.n on-pastry on-pastry pastry-under), (pastry.n cheese-on cheese-on)
+>> Response: A tubargen chair chair with black calallll ck chardes 
+
+>> Prompt: (fork.n silver to|right|of-dish), (dish.n small fork-to|right|of napkin-on)
+>> Response: A tondition is to a plate 
+
+>> Prompt: (fork.n silver to|right|of-dish), (dish.n small fork-to|right|of napkin-on)
+>> Response: A is white court 
+
+>> Prompt: (fork.n silver to|right|of-dish), (dish.n small fork-to|right|of napkin-on)
+>> Response: A is is white culalle plate 
+
+>> Prompt: (fork.n silver to|right|of-dish), (dish.n small fork-to|right|of napkin-on)
+>> Response: A is is white is is white coulllll to plate 
+
+>> Prompt: (mug.n glass with-liquid), (liquid.n brown mug-with)
+>> Response: A colender sile chour 
+
+>> Prompt: (mug.n glass with-liquid), (liquid.n brown mug-with)
+>> Response: A colen chourts chee stse de 
+
+>> Prompt: (mug.n glass with-liquid), (liquid.n brown mug-with)
+>> Response: a chair 
+
+>> Prompt: (mug.n glass with-liquid), (liquid.n brown mug-with)
+>> Response: A colen cle sit 
+
+>> Prompt: (egg.n on-muffin), (muffin.n egg-on)
+>> Response: A culale platestic on the plate 
+
+>> Prompt: (egg.n on-muffin), (muffin.n egg-on)
+>> Response: Asit chair with black cular itst curar che s 
+
+>> Prompt: (egg.n on-muffin), (muffin.n egg-on)
+>> Response: A is curale plate chair with itile 
+
+>> Prompt: (egg.n on-muffin), (muffin.n egg-on)
+>> Response: A is white is on a black table 
+
+>> Prompt: (bread.n on-plate), (plate.n bread-on)
+>> Response: a is chole stst 
+
+>> Prompt: (bread.n on-plate), (plate.n bread-on)
+>> Response: A culalen charge cheees on the wall 
+
+>> Prompt: (bread.n on-plate), (plate.n bread-on)
+>> Response: a chale chargee chale s 
+
+>> Prompt: (bread.n on-plate), (plate.n bread-on)
+>> Response: A curalen chair with black cholles 
+
+>> Prompt: (bottle.n condiment-in), (condiment.n in-bottle)
+>> Response: A colllle sthe chourt 
+
+>> Prompt: (bottle.n condiment-in), (condiment.n in-bottle)
+>> Response: an colollders on a wall 
+
+>> Prompt: (bottle.n condiment-in), (condiment.n in-bottle)
+>> Response: A a courtsts are curales on wall 
+
+>> Prompt: (bottle.n condiment-in), (condiment.n in-bottle)
+>> Response: an cour 
+
+>> Prompt: (cheese.n white yellow on-pastry)
+>> Response: A stan band chort 
+
+>> Prompt: (cheese.n white yellow on-pastry)
+>> Response: A colle ches chollle cke cke chales 
+
+>> Prompt: (cheese.n white yellow on-pastry)
+>> Response: a is white 
+
+>> Prompt: (cheese.n white yellow on-pastry)
+>> Response: A siande char ck aree de culest 
+
+>> Prompt: (bread.n chocolate napkin-under)
+>> Response: A coule ck arts ile chart 
+
+>> Prompt: (bread.n chocolate napkin-under)
+>> Response: A is is white a chour 
+
+>> Prompt: (bread.n chocolate napkin-under)
+>> Response: A courtsthe cle st 
+
+>> Prompt: (bread.n chocolate napkin-under)
+>> Response: an is curar charder cular charge chales 
+
+>> Prompt: (fork.n next|to-plate), (plate.n fork-next|to)
+>> Response: a is is white plate 
+
+>> Prompt: (fork.n next|to-plate), (plate.n fork-next|to)
+>> Response: a is is white 
+
+>> Prompt: (fork.n next|to-plate), (plate.n fork-next|to)
+>> Response: A to tonder plate plate plate 
+
+>> Prompt: (fork.n next|to-plate), (plate.n fork-next|to)
+>> Response: A tonder is curar 
+
+>> Prompt: (bottle.n green)
+>> Response: A curen chair with curale ckes on the desk 
+
+>> Prompt: (bottle.n green)
+>> Response: A cllen stalle chale st 
+
+>> Prompt: (bottle.n green)
+>> Response: A stubotts of a andes 
+
+>> Prompt: (bottle.n green)
+>> Response: A clen star chair with part 
+
+>> Prompt: (cheese.n pastry-under), (pastry.n under-cheese)
+>> Response: A curthale cke males 
+
+>> Prompt: (cheese.n pastry-under), (pastry.n under-cheese)
+>> Response: Asille stil cke alests 
+
+>> Prompt: (cheese.n pastry-under), (pastry.n under-cheese)
+>> Response: a a angreens 
+
+>> Prompt: (cheese.n pastry-under), (pastry.n under-cheese)
+>> Response: A coles clesthes on the wall 
+
+>> Prompt: (egg.n on-muffin on-muffin muffin-under), (muffin.n egg-on egg-on)
+>> Response: a platesunder plate 
+
+>> Prompt: (egg.n on-muffin on-muffin muffin-under), (muffin.n egg-on egg-on)
+>> Response: a is on plate 
+
+>> Prompt: (egg.n on-muffin on-muffin muffin-under), (muffin.n egg-on egg-on)
+>> Response: a plate is on plate 
+
+>> Prompt: (egg.n on-muffin on-muffin muffin-under), (muffin.n egg-on egg-on)
+>> Response: A culen challes on the desk 
+
+>> Prompt: (drink.n red in-glass), (glass.n on-table drink-in), (table.n black with-food glass-on disk-on)
+>> Response: A anden chale s 
+
+>> Prompt: (drink.n red in-glass), (glass.n on-table drink-in), (table.n black with-food glass-on disk-on)
+>> Response: a a black a table 
+
+>> Prompt: (drink.n red in-glass), (glass.n on-table drink-in), (table.n black with-food glass-on disk-on)
+>> Response: A curalen chair with challes 
+
+>> Prompt: (drink.n red in-glass), (glass.n on-table drink-in), (table.n black with-food glass-on disk-on)
+>> Response: A a chair alarg chale chares 
+
+>> Prompt: (mug.n small)
+>> Response: A stan chale sts 
+
+>> Prompt: (mug.n small)
+>> Response: A cllesth ck clale ck chourt 
+
+>> Prompt: (mug.n small)
+>> Response: an chair with chale s 
+
+>> Prompt: (mug.n small)
+>> Response: A man in a a cololdrts 
+
+>> Prompt: (cheese.n on-pastry), (pastry.n cheese-on)
+>> Response: A cureen curargeeen chair 
+
+>> Prompt: (cheese.n on-pastry), (pastry.n cheese-on)
+>> Response: a taned on the desk 
+
+>> Prompt: (cheese.n on-pastry), (pastry.n cheese-on)
+>> Response: A talen char de chales 
+
+>> Prompt: (cheese.n on-pastry), (pastry.n cheese-on)
+>> Response: A culle sthee de curaral s 
+
+>> Prompt: (egg.n on-plate), (plate.n sausage-on egg-on)
+>> Response: A is white is white is on the desk 
+
+>> Prompt: (egg.n on-plate), (plate.n sausage-on egg-on)
+>> Response: a is on table 
+
+>> Prompt: (egg.n on-plate), (plate.n sausage-on egg-on)
+>> Response: a chole chour 
+
+>> Prompt: (egg.n on-plate), (plate.n sausage-on egg-on)
+>> Response: A is white is white cour 
+
+>> Prompt: (chump.n brown)
+>> Response: A courstt sth colest 
+
+>> Prompt: (chump.n brown)
+>> Response: a chair with ales 
+
+>> Prompt: (chump.n brown)
+>> Response: A sit sile st 
+
+>> Prompt: (chump.n brown)
+>> Response: ales chair with charge curare che chole 
+
+>> Prompt: (cheese.n ), (dish.n vegetable-on vegetable-on vegetable-on), (vegetable.n on-dish)
+>> Response: a a chair with alap 
+
+>> Prompt: (cheese.n ), (dish.n vegetable-on vegetable-on vegetable-on), (vegetable.n on-dish)
+>> Response: A cular is chair with chalar s 
+
+>> Prompt: (cheese.n ), (dish.n vegetable-on vegetable-on vegetable-on), (vegetable.n on-dish)
+>> Response: A collen stales on desk 
+
+>> Prompt: (cheese.n ), (dish.n vegetable-on vegetable-on vegetable-on), (vegetable.n on-dish)
+>> Response: a a a table 
+
+>> Prompt: (glass.n with-straw), (straw.n glass-with)
+>> Response: an chales on the floor 
+
+>> Prompt: (glass.n with-straw), (straw.n glass-with)
+>> Response: an chair with culalles 
+
+>> Prompt: (glass.n with-straw), (straw.n glass-with)
+>> Response: A silen chales on the desk 
+
+>> Prompt: (glass.n with-straw), (straw.n glass-with)
+>> Response: A culle cker chollll che stit 
+
+>> Prompt: (food.n dish-with), (dish.n small with-food)
+>> Response: A cllle plate cholle cker cholet 
+
+>> Prompt: (food.n dish-with), (dish.n small with-food)
+>> Response: A talen plate chair with black curales 
+
+>> Prompt: (food.n dish-with), (dish.n small with-food)
+>> Response: a plate chair with charder carale itst 
+
+>> Prompt: (food.n dish-with), (dish.n small with-food)
+>> Response: A clele char cke male der culales 
+
+>> Prompt: (fork.n silver to|right|of-plate), (plate.n small fork-to|right|of napkin-on)
+>> Response: a is on desk 
+
+>> Prompt: (fork.n silver to|right|of-plate), (plate.n small fork-to|right|of napkin-on)
+>> Response: a is is plate 
+
+>> Prompt: (fork.n silver to|right|of-plate), (plate.n small fork-to|right|of napkin-on)
+>> Response: A tonder plate plate plate plate 
+
+>> Prompt: (fork.n silver to|right|of-plate), (plate.n small fork-to|right|of napkin-on)
+>> Response: A tonit to is to to to a to a plate andit 
+
+>> Prompt: (bread.n chocolate napkin-under), (napkin.n under-bread)
+>> Response: A colllll itit it 
+
+>> Prompt: (bread.n chocolate napkin-under), (napkin.n under-bread)
+>> Response: a choles 
+
+>> Prompt: (bread.n chocolate napkin-under), (napkin.n under-bread)
+>> Response: A collllll chales st 
+
+>> Prompt: (bread.n chocolate napkin-under), (napkin.n under-bread)
+>> Response: a is chair with calalle it 
+
+>> Prompt: (cup.n glass with-liquid), (liquid.n brown cup-with)
+>> Response: all stic shande s 
+
+>> Prompt: (cup.n glass with-liquid), (liquid.n brown cup-with)
+>> Response: a cholle chole 
+
+>> Prompt: (cup.n glass with-liquid), (liquid.n brown cup-with)
+>> Response: A collllll chal stst 
+
+>> Prompt: (cup.n glass with-liquid), (liquid.n brown cup-with)
+>> Response: a tale cke art 
+
+>> Prompt: (glass.n clear small on-disk on-dish on-dish dish-under), (dish.n under-glass)
+>> Response: a chair with curales on a wall 
+
+>> Prompt: (glass.n clear small on-disk on-dish on-dish dish-under), (dish.n under-glass)
+>> Response: A sit sied chair arge chair with carargen pe curalargens 
+
+>> Prompt: (glass.n clear small on-disk on-dish on-dish dish-under), (dish.n under-glass)
+>> Response: A sit culen chair with palests 
+
+>> Prompt: (glass.n clear small on-disk on-dish on-dish dish-under), (dish.n under-glass)
+>> Response: a chair with chargre cale chole 
+
+>> Prompt: (food.n plate-with), (plate.n small with-food)
+>> Response: A anden chales on plate plate 
+
+>> Prompt: (food.n plate-with), (plate.n small with-food)
+>> Response: A clendren chall chald chard s 
+
+>> Prompt: (food.n plate-with), (plate.n small with-food)
+>> Response: a charde plate chair 
+
+>> Prompt: (food.n plate-with), (plate.n small with-food)
+>> Response: A andit is chall ck on plate 
+
+>> Prompt: (napkin.n plate-under), (plate.n under-napkin)
+>> Response: a is is plate 
+
+>> Prompt: (napkin.n plate-under), (plate.n under-napkin)
+>> Response: A man in cololldits collllet 
+
+>> Prompt: (napkin.n plate-under), (plate.n under-napkin)
+>> Response: a is is plate 
+
+>> Prompt: (napkin.n plate-under), (plate.n under-napkin)
+>> Response: A is culeth tonder caral plate 
+
+>> Prompt: (egg.n on-muffin on-muffin muffin-under), (muffin.n under-egg)
+>> Response: A is white cllen choles on the plate 
+
+>> Prompt: (egg.n on-muffin on-muffin muffin-under), (muffin.n under-egg)
+>> Response: A curargeen chair with pales 
+
+>> Prompt: (egg.n on-muffin on-muffin muffin-under), (muffin.n under-egg)
+>> Response: a is chourts on plate 
+
+>> Prompt: (egg.n on-muffin on-muffin muffin-under), (muffin.n under-egg)
+>> Response: A is collleth ck on plate 
+
+>> Prompt: (bottle.n sauce-in), (label.n orange)
+>> Response: an stande chargee s 
+
+>> Prompt: (bottle.n sauce-in), (label.n orange)
+>> Response: A coulllll ch star ckes 
+
+>> Prompt: (bottle.n sauce-in), (label.n orange)
+>> Response: A clar choulles on the desk 
+
+>> Prompt: (bottle.n sauce-in), (label.n orange)
+>> Response: an charde s 
+
+>> Prompt: (glass.n clear small on-disk on-dish on-dish dish-under), (dish.n glass-on)
+>> Response: a angren on desk on the desk 
+
+>> Prompt: (glass.n clear small on-disk on-dish on-dish dish-under), (dish.n glass-on)
+>> Response: an chair cholle s 
+
+>> Prompt: (glass.n clear small on-disk on-dish on-dish dish-under), (dish.n glass-on)
+>> Response: A collle cker chare cker cale choles 
+
+>> Prompt: (glass.n clear small on-disk on-dish on-dish dish-under), (dish.n glass-on)
+>> Response: a angen siong curale s 
+
+>> Prompt: (glass.n clear small on-disk on-plate on-plate plate-under), (plate.n under-glass)
+>> Response: A collle chale ckes on plate plate 
+
+>> Prompt: (glass.n clear small on-disk on-plate on-plate plate-under), (plate.n under-glass)
+>> Response: A curalen chair with papapst on it 
+
+>> Prompt: (glass.n clear small on-disk on-plate on-plate plate-under), (plate.n under-glass)
+>> Response: A cular ised ap 
+
+>> Prompt: (glass.n clear small on-disk on-plate on-plate plate-under), (plate.n under-glass)
+>> Response: A coullelll sitit on the desk 
+
+>> Prompt: (napkin.n dish-under), (dish.n under-napkin)
+>> Response: Astalle chale sts 
+
+>> Prompt: (napkin.n dish-under), (dish.n under-napkin)
+>> Response: a is is a plate undit 
+
+>> Prompt: (napkin.n dish-under), (dish.n under-napkin)
+>> Response: A is is white curale of curar cholds 
+
+>> Prompt: (napkin.n dish-under), (dish.n under-napkin)
+>> Response: an chour 
+
+>> Prompt: (egg.n plate-with), (meat.n plate-with), (plate.n with-egg with-meat)
+>> Response: a charg plate cale plate chales on plate 
+
+>> Prompt: (egg.n plate-with), (meat.n plate-with), (plate.n with-egg with-meat)
+>> Response: ale plate choles on plate 
+
+>> Prompt: (egg.n plate-with), (meat.n plate-with), (plate.n with-egg with-meat)
+>> Response: ale ckenders choles 
+
+>> Prompt: (egg.n plate-with), (meat.n plate-with), (plate.n with-egg with-meat)
+>> Response: A clar cholle s 
+
+>> Prompt: (fork.n next|to-dish), (dish.n fork-next|to)
+>> Response: A is curar to to to plate 
+
+>> Prompt: (fork.n next|to-dish), (dish.n fork-next|to)
+>> Response: A clelll tower plate urap 
+
+>> Prompt: (fork.n next|to-dish), (dish.n fork-next|to)
+>> Response: A is white clalender charder plate 
+
+>> Prompt: (fork.n next|to-dish), (dish.n fork-next|to)
+>> Response: a is chair 
+
+>> Prompt: (napkin.n on-plate), (plate.n small fork-to|right|of napkin-on)
+>> Response: a is plate is plate 
+
+>> Prompt: (napkin.n on-plate), (plate.n small fork-to|right|of napkin-on)
+>> Response: a is a plate 
+
+>> Prompt: (napkin.n on-plate), (plate.n small fork-to|right|of napkin-on)
+>> Response: A towotit is toned a table 
+
+>> Prompt: (napkin.n on-plate), (plate.n small fork-to|right|of napkin-on)
+>> Response: a is is on desk 
+
+>> Prompt: (disk.n small white on-table glass-on), (glass.n clear small on-disk on-plate on-plate plate-under), (table.n black with-food glass-on disk-on)
+>> Response: a chollle che s 
+
+>> Prompt: (disk.n small white on-table glass-on), (glass.n clear small on-disk on-plate on-plate plate-under), (table.n black with-food glass-on disk-on)
+>> Response: a chair chair 
+
+>> Prompt: (disk.n small white on-table glass-on), (glass.n clear small on-disk on-plate on-plate plate-under), (table.n black with-food glass-on disk-on)
+>> Response: A clallen plate charg ised plate 
+
+>> Prompt: (disk.n small white on-table glass-on), (glass.n clear small on-disk on-plate on-plate plate-under), (table.n black with-food glass-on disk-on)
+>> Response: a chair with calale ckes on a plate 
+
+>> Prompt: (glass.n clear small on-disk on-plate on-plate plate-under), (plate.n glass-on)
+>> Response: A is courth cle char charg chale s 
+
+>> Prompt: (glass.n clear small on-disk on-plate on-plate plate-under), (plate.n glass-on)
+>> Response: an chair with carale chale s 
+
+>> Prompt: (glass.n clear small on-disk on-plate on-plate plate-under), (plate.n glass-on)
+>> Response: a chair with chale stst 
+
+>> Prompt: (glass.n clear small on-disk on-plate on-plate plate-under), (plate.n glass-on)
+>> Response: a chair with cholests on the wall 
+
+>> Prompt: (plate.n sausage-on egg-on), (sausage.n small on-plate)
+>> Response: a is a chair 
+
+>> Prompt: (plate.n sausage-on egg-on), (sausage.n small on-plate)
+>> Response: a chair with alest 
+
+>> Prompt: (plate.n sausage-on egg-on), (sausage.n small on-plate)
+>> Response: a choles on the desk 
+
+>> Prompt: (plate.n sausage-on egg-on), (sausage.n small on-plate)
+>> Response: A curartsilen char ck ararde chale des 
+
+>> Prompt: (egg.n muffin-under), (muffin.n under-egg)
+>> Response: A is curuboutsts on plate 
+
+>> Prompt: (egg.n muffin-under), (muffin.n under-egg)
+>> Response: an is plate 
+
+>> Prompt: (egg.n muffin-under), (muffin.n under-egg)
+>> Response: a charge is on the desk 
+
+>> Prompt: (egg.n muffin-under), (muffin.n under-egg)
+>> Response: a is chair 
+
+>> Prompt: (dish.n sausage-on cheese-on), (sausage.n small on-dish)
+>> Response: an chales on the floor 
+
+>> Prompt: (dish.n sausage-on cheese-on), (sausage.n small on-dish)
+>> Response: A collle char che che cle charge s 
+
+>> Prompt: (dish.n sausage-on cheese-on), (sausage.n small on-dish)
+>> Response: A colle ckes on the desk 
+
+>> Prompt: (dish.n sausage-on cheese-on), (sausage.n small on-dish)
+>> Response: an curales on the desk 
+
+>> Prompt: (egg.n plate-with), (plate.n with-egg)
+>> Response: A tun collletst on the floor 
+
+>> Prompt: (egg.n plate-with), (plate.n with-egg)
+>> Response: a choles 
+
+>> Prompt: (egg.n plate-with), (plate.n with-egg)
+>> Response: A curale plate plate ubins 
+
+>> Prompt: (egg.n plate-with), (plate.n with-egg)
+>> Response: an plate chair with black araptop charger cales 
+
+>> Prompt: (cheese.n on-pastry on-pastry pastry-under), (pastry.n under-cheese)
+>> Response: an angeeens on desk 
+
+>> Prompt: (cheese.n on-pastry on-pastry pastry-under), (pastry.n under-cheese)
+>> Response: A tubarg cheees on the desk 
+
+>> Prompt: (cheese.n on-pastry on-pastry pastry-under), (pastry.n under-cheese)
+>> Response: A cole cle starts on the floor 
+
+>> Prompt: (cheese.n on-pastry on-pastry pastry-under), (pastry.n under-cheese)
+>> Response: a chair with chales 

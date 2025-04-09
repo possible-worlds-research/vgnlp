@@ -1,0 +1,494 @@
+>> Loaded models dict_keys(['chat'])
+
+
+>> Prompt: (woman.n eating in-dress holding-ring wearing-accessory wearing-glasses licking-thumb wearing-trouser eating-ring wearing-trouser has-glasses has-ear has-hair has-hand licking-thumb has-accessory wears-dress wears-trouser eating-ring wearing-dress has-nose lamp-behind), (thumb.n in-face woman-licking woman-licking), (wall.n beige), (wall.n red)
+>> Response: a a shirt 
+
+>> Prompt: (woman.n eating in-dress holding-ring wearing-accessory wearing-glasses licking-thumb wearing-trouser eating-ring wearing-trouser has-glasses has-ear has-hair has-hand licking-thumb has-accessory wears-dress wears-trouser eating-ring wearing-dress has-nose lamp-behind), (thumb.n in-face woman-licking woman-licking), (wall.n beige), (wall.n red)
+>> Response: A a tandes are a curalong cholle 
+
+>> Prompt: (woman.n eating in-dress holding-ring wearing-accessory wearing-glasses licking-thumb wearing-trouser eating-ring wearing-trouser has-glasses has-ear has-hair has-hand licking-thumb has-accessory wears-dress wears-trouser eating-ring wearing-dress has-nose lamp-behind), (thumb.n in-face woman-licking woman-licking), (wall.n beige), (wall.n red)
+>> Response: A man wears gray gray shirt 
+
+>> Prompt: (woman.n eating in-dress holding-ring wearing-accessory wearing-glasses licking-thumb wearing-trouser eating-ring wearing-trouser has-glasses has-ear has-hair has-hand licking-thumb has-accessory wears-dress wears-trouser eating-ring wearing-dress has-nose lamp-behind), (thumb.n in-face woman-licking woman-licking), (wall.n beige), (wall.n red)
+>> Response: a plaptop of idit 
+
+>> Prompt: (woman.n eating in-dress holding-ring wearing-accessory wearing-glasses licking-thumb wearing-trouser eating-ring wearing-trouser has-glasses has-ear has-hair has-hand licking-thumb has-accessory wears-dress wears-trouser eating-ring wearing-dress has-nose lamp-behind), (dress.n baby|blue short|sleeved blue lamp|blue has-piece has-piece has-collar has-piece woman-in woman-wears woman-wearing)
+>> Response: a a desk 
+
+>> Prompt: (woman.n eating in-dress holding-ring wearing-accessory wearing-glasses licking-thumb wearing-trouser eating-ring wearing-trouser has-glasses has-ear has-hair has-hand licking-thumb has-accessory wears-dress wears-trouser eating-ring wearing-dress has-nose lamp-behind), (dress.n baby|blue short|sleeved blue lamp|blue has-piece has-piece has-collar has-piece woman-in woman-wears woman-wearing)
+>> Response: an a desk 
+
+>> Prompt: (woman.n eating in-dress holding-ring wearing-accessory wearing-glasses licking-thumb wearing-trouser eating-ring wearing-trouser has-glasses has-ear has-hair has-hand licking-thumb has-accessory wears-dress wears-trouser eating-ring wearing-dress has-nose lamp-behind), (dress.n baby|blue short|sleeved blue lamp|blue has-piece has-piece has-collar has-piece woman-in woman-wears woman-wearing)
+>> Response: A is wearing a shirt 
+
+>> Prompt: (woman.n eating in-dress holding-ring wearing-accessory wearing-glasses licking-thumb wearing-trouser eating-ring wearing-trouser has-glasses has-ear has-hair has-hand licking-thumb has-accessory wears-dress wears-trouser eating-ring wearing-dress has-nose lamp-behind), (dress.n baby|blue short|sleeved blue lamp|blue has-piece has-piece has-collar has-piece woman-in woman-wears woman-wearing)
+>> Response: a a desk 
+
+>> Prompt: (man.n eating in-shirt holding-ring wearing-watch wearing-spectacles licking-thumb wearing-trouser eating-ring wearing-trouser has-spectacles has-ear has-hair has-hand licking-thumb has-watch wears-shirt wears-trouser eating-ring wearing-shirt has-nose light-behind), (trouser.n dark man-wearing man-wearing man-wears)
+>> Response: a a shirt 
+
+>> Prompt: (man.n eating in-shirt holding-ring wearing-watch wearing-spectacles licking-thumb wearing-trouser eating-ring wearing-trouser has-spectacles has-ear has-hair has-hand licking-thumb has-watch wears-shirt wears-trouser eating-ring wearing-shirt has-nose light-behind), (trouser.n dark man-wearing man-wearing man-wears)
+>> Response: a a a shirt 
+
+>> Prompt: (man.n eating in-shirt holding-ring wearing-watch wearing-spectacles licking-thumb wearing-trouser eating-ring wearing-trouser has-spectacles has-ear has-hair has-hand licking-thumb has-watch wears-shirt wears-trouser eating-ring wearing-shirt has-nose light-behind), (trouser.n dark man-wearing man-wearing man-wears)
+>> Response: A anden andit 
+
+>> Prompt: (man.n eating in-shirt holding-ring wearing-watch wearing-spectacles licking-thumb wearing-trouser eating-ring wearing-trouser has-spectacles has-ear has-hair has-hand licking-thumb has-watch wears-shirt wears-trouser eating-ring wearing-shirt has-nose light-behind), (trouser.n dark man-wearing man-wearing man-wears)
+>> Response: a a a gray shirt 
+
+>> Prompt: (watch.n red black multicolored man-wearing man-has)
+>> Response: a choles 
+
+>> Prompt: (watch.n red black multicolored man-wearing man-has)
+>> Response: A culart chair with charde challe chales 
+
+>> Prompt: (watch.n red black multicolored man-wearing man-has)
+>> Response: A collesth ckes 
+
+>> Prompt: (watch.n red black multicolored man-wearing man-has)
+>> Response: an greeen chair with curalales 
+
+>> Prompt: (ear.n man-has), (hair.n brown messy black shaved man-has), (hand.n man-has), (man.n eating in-shirt holding-ring wearing-watch wearing-spectacles licking-thumb wearing-trouser eating-ring wearing-trouser has-spectacles has-ear has-hair has-hand licking-thumb has-watch wears-shirt wears-trouser eating-ring wearing-shirt has-nose light-behind), (spectacles.n brown a|pair dark man-wearing man-has)
+>> Response: A an andes are on the table 
+
+>> Prompt: (ear.n man-has), (hair.n brown messy black shaved man-has), (hand.n man-has), (man.n eating in-shirt holding-ring wearing-watch wearing-spectacles licking-thumb wearing-trouser eating-ring wearing-trouser has-spectacles has-ear has-hair has-hand licking-thumb has-watch wears-shirt wears-trouser eating-ring wearing-shirt has-nose light-behind), (spectacles.n brown a|pair dark man-wearing man-has)
+>> Response: an a a shirt 
+
+>> Prompt: (ear.n man-has), (hair.n brown messy black shaved man-has), (hand.n man-has), (man.n eating in-shirt holding-ring wearing-watch wearing-spectacles licking-thumb wearing-trouser eating-ring wearing-trouser has-spectacles has-ear has-hair has-hand licking-thumb has-watch wears-shirt wears-trouser eating-ring wearing-shirt has-nose light-behind), (spectacles.n brown a|pair dark man-wearing man-has)
+>> Response: an a shirt 
+
+>> Prompt: (ear.n man-has), (hair.n brown messy black shaved man-has), (hand.n man-has), (man.n eating in-shirt holding-ring wearing-watch wearing-spectacles licking-thumb wearing-trouser eating-ring wearing-trouser has-spectacles has-ear has-hair has-hand licking-thumb has-watch wears-shirt wears-trouser eating-ring wearing-shirt has-nose light-behind), (spectacles.n brown a|pair dark man-wearing man-has)
+>> Response: A man wears andott 
+
+>> Prompt: (spectacles.n brown a|pair dark man-wearing man-has)
+>> Response: a a shirt 
+
+>> Prompt: (spectacles.n brown a|pair dark man-wearing man-has)
+>> Response: A an a anottst 
+
+>> Prompt: (spectacles.n brown a|pair dark man-wearing man-has)
+>> Response: andray choles on a wall 
+
+>> Prompt: (spectacles.n brown a|pair dark man-wearing man-has)
+>> Response: A sian a shirt 
+
+>> Prompt: (accessory.n red black multicolored woman-wearing woman-has)
+>> Response: a is desk 
+
+>> Prompt: (accessory.n red black multicolored woman-wearing woman-has)
+>> Response: A is white cular bour 
+
+>> Prompt: (accessory.n red black multicolored woman-wearing woman-has)
+>> Response: A an anoletsts 
+
+>> Prompt: (accessory.n red black multicolored woman-wearing woman-has)
+>> Response: a a desk 
+
+>> Prompt: (piece.n dress-has)
+>> Response: andr chargee s 
+
+>> Prompt: (piece.n dress-has)
+>> Response: a grawn chole clles 
+
+>> Prompt: (piece.n dress-has)
+>> Response: A tuband boles 
+
+>> Prompt: (piece.n dress-has)
+>> Response: andren chair with black palaptop of ididit 
+
+>> Prompt: (shirt.n baby|blue short|sleeved blue light|blue has-button has-button has-collar has-button man-in man-wears man-wearing)
+>> Response: a a shirt 
+
+>> Prompt: (shirt.n baby|blue short|sleeved blue light|blue has-button has-button has-collar has-button man-in man-wears man-wearing)
+>> Response: a andes 
+
+>> Prompt: (shirt.n baby|blue short|sleeved blue light|blue has-button has-button has-collar has-button man-in man-wears man-wearing)
+>> Response: A man wears a shirt 
+
+>> Prompt: (shirt.n baby|blue short|sleeved blue light|blue has-button has-button has-collar has-button man-in man-wears man-wearing)
+>> Response: a shirt 
+
+>> Prompt: (man.n eating in-shirt holding-ring wearing-watch wearing-spectacles licking-thumb wearing-trouser eating-ring wearing-trouser has-spectacles has-ear has-hair has-hand licking-thumb has-watch wears-shirt wears-trouser eating-ring wearing-shirt has-nose light-behind), (shirt.n baby|blue short|sleeved blue light|blue has-button has-button has-collar has-button man-in man-wears man-wearing)
+>> Response: an shirt 
+
+>> Prompt: (man.n eating in-shirt holding-ring wearing-watch wearing-spectacles licking-thumb wearing-trouser eating-ring wearing-trouser has-spectacles has-ear has-hair has-hand licking-thumb has-watch wears-shirt wears-trouser eating-ring wearing-shirt has-nose light-behind), (shirt.n baby|blue short|sleeved blue light|blue has-button has-button has-collar has-button man-in man-wears man-wearing)
+>> Response: a anoldt 
+
+>> Prompt: (man.n eating in-shirt holding-ring wearing-watch wearing-spectacles licking-thumb wearing-trouser eating-ring wearing-trouser has-spectacles has-ear has-hair has-hand licking-thumb has-watch wears-shirt wears-trouser eating-ring wearing-shirt has-nose light-behind), (shirt.n baby|blue short|sleeved blue light|blue has-button has-button has-collar has-button man-in man-wears man-wearing)
+>> Response: a shirt 
+
+>> Prompt: (man.n eating in-shirt holding-ring wearing-watch wearing-spectacles licking-thumb wearing-trouser eating-ring wearing-trouser has-spectacles has-ear has-hair has-hand licking-thumb has-watch wears-shirt wears-trouser eating-ring wearing-shirt has-nose light-behind), (shirt.n baby|blue short|sleeved blue light|blue has-button has-button has-collar has-button man-in man-wears man-wearing)
+>> Response: A andrensian gnees 
+
+>> Prompt: (glasses.n brown a|pair dark woman-wearing woman-has)
+>> Response: an andang chale 
+
+>> Prompt: (glasses.n brown a|pair dark woman-wearing woman-has)
+>> Response: a desk 
+
+>> Prompt: (glasses.n brown a|pair dark woman-wearing woman-has)
+>> Response: A man in a shirt 
+
+>> Prompt: (glasses.n brown a|pair dark woman-wearing woman-has)
+>> Response: andr chollles 
+
+>> Prompt: (man.n eating in-shirt holding-ring wearing-watch wearing-spectacles licking-thumb wearing-trouser eating-ring wearing-trouser has-spectacles has-ear has-hair has-hand licking-thumb has-watch wears-shirt wears-trouser eating-ring wearing-shirt has-nose light-behind), (spectacles.n brown a|pair dark man-wearing man-has)
+>> Response: a anolest 
+
+>> Prompt: (man.n eating in-shirt holding-ring wearing-watch wearing-spectacles licking-thumb wearing-trouser eating-ring wearing-trouser has-spectacles has-ear has-hair has-hand licking-thumb has-watch wears-shirt wears-trouser eating-ring wearing-shirt has-nose light-behind), (spectacles.n brown a|pair dark man-wearing man-has)
+>> Response: A sitsied andit 
+
+>> Prompt: (man.n eating in-shirt holding-ring wearing-watch wearing-spectacles licking-thumb wearing-trouser eating-ring wearing-trouser has-spectacles has-ear has-hair has-hand licking-thumb has-watch wears-shirt wears-trouser eating-ring wearing-shirt has-nose light-behind), (spectacles.n brown a|pair dark man-wearing man-has)
+>> Response: a a a giraffe shirt 
+
+>> Prompt: (man.n eating in-shirt holding-ring wearing-watch wearing-spectacles licking-thumb wearing-trouser eating-ring wearing-trouser has-spectacles has-ear has-hair has-hand licking-thumb has-watch wears-shirt wears-trouser eating-ring wearing-shirt has-nose light-behind), (spectacles.n brown a|pair dark man-wearing man-has)
+>> Response: a ande shirt 
+
+>> Prompt: (man.n eating in-shirt holding-ring wearing-watch wearing-spectacles licking-thumb wearing-trouser eating-ring wearing-trouser has-spectacles has-ear has-hair has-hand licking-thumb has-watch wears-shirt wears-trouser eating-ring wearing-shirt has-nose light-behind)
+>> Response: a giraffe a shirt 
+
+>> Prompt: (man.n eating in-shirt holding-ring wearing-watch wearing-spectacles licking-thumb wearing-trouser eating-ring wearing-trouser has-spectacles has-ear has-hair has-hand licking-thumb has-watch wears-shirt wears-trouser eating-ring wearing-shirt has-nose light-behind)
+>> Response: the a a a giraffe 
+
+>> Prompt: (man.n eating in-shirt holding-ring wearing-watch wearing-spectacles licking-thumb wearing-trouser eating-ring wearing-trouser has-spectacles has-ear has-hair has-hand licking-thumb has-watch wears-shirt wears-trouser eating-ring wearing-shirt has-nose light-behind)
+>> Response: a a giraffe a shirt 
+
+>> Prompt: (man.n eating in-shirt holding-ring wearing-watch wearing-spectacles licking-thumb wearing-trouser eating-ring wearing-trouser has-spectacles has-ear has-hair has-hand licking-thumb has-watch wears-shirt wears-trouser eating-ring wearing-shirt has-nose light-behind)
+>> Response: the a giraffe a giraffe shirt 
+
+>> Prompt: (man.n eating in-shirt holding-ring wearing-watch wearing-spectacles licking-thumb wearing-trouser eating-ring wearing-trouser has-spectacles has-ear has-hair has-hand licking-thumb has-watch wears-shirt wears-trouser eating-ring wearing-shirt has-nose light-behind), (thumb.n in-mouth man-licking man-licking)
+>> Response: a a giraffe shirt 
+
+>> Prompt: (man.n eating in-shirt holding-ring wearing-watch wearing-spectacles licking-thumb wearing-trouser eating-ring wearing-trouser has-spectacles has-ear has-hair has-hand licking-thumb has-watch wears-shirt wears-trouser eating-ring wearing-shirt has-nose light-behind), (thumb.n in-mouth man-licking man-licking)
+>> Response: the a giraffe a giraffe shirt 
+
+>> Prompt: (man.n eating in-shirt holding-ring wearing-watch wearing-spectacles licking-thumb wearing-trouser eating-ring wearing-trouser has-spectacles has-ear has-hair has-hand licking-thumb has-watch wears-shirt wears-trouser eating-ring wearing-shirt has-nose light-behind), (thumb.n in-mouth man-licking man-licking)
+>> Response: the man in the a giraffe 
+
+>> Prompt: (man.n eating in-shirt holding-ring wearing-watch wearing-spectacles licking-thumb wearing-trouser eating-ring wearing-trouser has-spectacles has-ear has-hair has-hand licking-thumb has-watch wears-shirt wears-trouser eating-ring wearing-shirt has-nose light-behind), (thumb.n in-mouth man-licking man-licking)
+>> Response: the shirt 
+
+>> Prompt: (dress.n baby|blue short|sleeved blue lamp|blue has-piece has-piece has-collar has-piece woman-in woman-wears woman-wearing)
+>> Response: A man wears a grawn shirt 
+
+>> Prompt: (dress.n baby|blue short|sleeved blue lamp|blue has-piece has-piece has-collar has-piece woman-in woman-wears woman-wearing)
+>> Response: a a andits 
+
+>> Prompt: (dress.n baby|blue short|sleeved blue lamp|blue has-piece has-piece has-collar has-piece woman-in woman-wears woman-wearing)
+>> Response: A a a a table 
+
+>> Prompt: (dress.n baby|blue short|sleeved blue lamp|blue has-piece has-piece has-collar has-piece woman-in woman-wears woman-wearing)
+>> Response: A an a a table 
+
+>> Prompt: (man.n eating in-shirt holding-ring wearing-watch wearing-spectacles licking-thumb wearing-trouser eating-ring wearing-trouser has-spectacles has-ear has-hair has-hand licking-thumb has-watch wears-shirt wears-trouser eating-ring wearing-shirt has-nose light-behind), (watch.n red black multicolored man-wearing man-has)
+>> Response: A an plander a andit 
+
+>> Prompt: (man.n eating in-shirt holding-ring wearing-watch wearing-spectacles licking-thumb wearing-trouser eating-ring wearing-trouser has-spectacles has-ear has-hair has-hand licking-thumb has-watch wears-shirt wears-trouser eating-ring wearing-shirt has-nose light-behind), (watch.n red black multicolored man-wearing man-has)
+>> Response: A an anotts 
+
+>> Prompt: (man.n eating in-shirt holding-ring wearing-watch wearing-spectacles licking-thumb wearing-trouser eating-ring wearing-trouser has-spectacles has-ear has-hair has-hand licking-thumb has-watch wears-shirt wears-trouser eating-ring wearing-shirt has-nose light-behind), (watch.n red black multicolored man-wearing man-has)
+>> Response: A andole ck cholle 
+
+>> Prompt: (man.n eating in-shirt holding-ring wearing-watch wearing-spectacles licking-thumb wearing-trouser eating-ring wearing-trouser has-spectacles has-ear has-hair has-hand licking-thumb has-watch wears-shirt wears-trouser eating-ring wearing-shirt has-nose light-behind), (watch.n red black multicolored man-wearing man-has)
+>> Response: A a ang pare s 
+
+>> Prompt: (ring.n brown man-holding man-eating man-eating)
+>> Response: A a andoles 
+
+>> Prompt: (ring.n brown man-holding man-eating man-eating)
+>> Response: A gnorts sthes s 
+
+>> Prompt: (ring.n brown man-holding man-eating man-eating)
+>> Response: a shirt 
+
+>> Prompt: (ring.n brown man-holding man-eating man-eating)
+>> Response: A green shirt 
+
+>> Prompt: (hair.n brown messy black shaved woman-has)
+>> Response: A staned bandes 
+
+>> Prompt: (hair.n brown messy black shaved woman-has)
+>> Response: A a a a a desk 
+
+>> Prompt: (hair.n brown messy black shaved woman-has)
+>> Response: A a andiand ande 
+
+>> Prompt: (hair.n brown messy black shaved woman-has)
+>> Response: A anden andit 
+
+>> Prompt: (button.n shirt-has)
+>> Response: a shirt shirt 
+
+>> Prompt: (button.n shirt-has)
+>> Response: A an shirt anott 
+
+>> Prompt: (button.n shirt-has)
+>> Response: a shirt 
+
+>> Prompt: (button.n shirt-has)
+>> Response: A shirt angren shirt 
+
+>> Prompt: (face.n thumb-in), (thumb.n in-face woman-licking woman-licking)
+>> Response: A an shirt 
+
+>> Prompt: (face.n thumb-in), (thumb.n in-face woman-licking woman-licking)
+>> Response: an chin 
+
+>> Prompt: (face.n thumb-in), (thumb.n in-face woman-licking woman-licking)
+>> Response: A a shirt shirt 
+
+>> Prompt: (face.n thumb-in), (thumb.n in-face woman-licking woman-licking)
+>> Response: an shirt 
+
+>> Prompt: (bottle.n brown glass reddish)
+>> Response: A clesth choles on the wall 
+
+>> Prompt: (bottle.n brown glass reddish)
+>> Response: A cllle ches chair 
+
+>> Prompt: (bottle.n brown glass reddish)
+>> Response: A courts chout 
+
+>> Prompt: (bottle.n brown glass reddish)
+>> Response: A sitile chourts 
+
+>> Prompt: (man.n eating in-shirt holding-ring wearing-watch wearing-spectacles licking-thumb wearing-trouser eating-ring wearing-trouser has-spectacles has-ear has-hair has-hand licking-thumb has-watch wears-shirt wears-trouser eating-ring wearing-shirt has-nose light-behind), (ring.n brown man-holding man-eating man-eating)
+>> Response: A man wears anotts andsts are on the a wall 
+
+>> Prompt: (man.n eating in-shirt holding-ring wearing-watch wearing-spectacles licking-thumb wearing-trouser eating-ring wearing-trouser has-spectacles has-ear has-hair has-hand licking-thumb has-watch wears-shirt wears-trouser eating-ring wearing-shirt has-nose light-behind), (ring.n brown man-holding man-eating man-eating)
+>> Response: A andray shirt shirt 
+
+>> Prompt: (man.n eating in-shirt holding-ring wearing-watch wearing-spectacles licking-thumb wearing-trouser eating-ring wearing-trouser has-spectacles has-ear has-hair has-hand licking-thumb has-watch wears-shirt wears-trouser eating-ring wearing-shirt has-nose light-behind), (ring.n brown man-holding man-eating man-eating)
+>> Response: A andray shirt 
+
+>> Prompt: (man.n eating in-shirt holding-ring wearing-watch wearing-spectacles licking-thumb wearing-trouser eating-ring wearing-trouser has-spectacles has-ear has-hair has-hand licking-thumb has-watch wears-shirt wears-trouser eating-ring wearing-shirt has-nose light-behind), (ring.n brown man-holding man-eating man-eating)
+>> Response: an a shirt 
+
+>> Prompt: (woman.n eating in-dress holding-ring wearing-accessory wearing-glasses licking-thumb wearing-trouser eating-ring wearing-trouser has-glasses has-ear has-hair has-hand licking-thumb has-accessory wears-dress wears-trouser eating-ring wearing-dress has-nose lamp-behind), (ring.n brown woman-holding woman-eating woman-eating)
+>> Response: an elephant 
+
+>> Prompt: (woman.n eating in-dress holding-ring wearing-accessory wearing-glasses licking-thumb wearing-trouser eating-ring wearing-trouser has-glasses has-ear has-hair has-hand licking-thumb has-accessory wears-dress wears-trouser eating-ring wearing-dress has-nose lamp-behind), (ring.n brown woman-holding woman-eating woman-eating)
+>> Response: a a a a shirt 
+
+>> Prompt: (woman.n eating in-dress holding-ring wearing-accessory wearing-glasses licking-thumb wearing-trouser eating-ring wearing-trouser has-glasses has-ear has-hair has-hand licking-thumb has-accessory wears-dress wears-trouser eating-ring wearing-dress has-nose lamp-behind), (ring.n brown woman-holding woman-eating woman-eating)
+>> Response: A a angren shirt 
+
+>> Prompt: (woman.n eating in-dress holding-ring wearing-accessory wearing-glasses licking-thumb wearing-trouser eating-ring wearing-trouser has-glasses has-ear has-hair has-hand licking-thumb has-accessory wears-dress wears-trouser eating-ring wearing-dress has-nose lamp-behind), (ring.n brown woman-holding woman-eating woman-eating)
+>> Response: A man in a shirt 
+
+>> Prompt: (woman.n eating in-dress holding-ring wearing-accessory wearing-glasses licking-thumb wearing-trouser eating-ring wearing-trouser has-glasses has-ear has-hair has-hand licking-thumb has-accessory wears-dress wears-trouser eating-ring wearing-dress has-nose lamp-behind), (accessory.n red black multicolored woman-wearing woman-has)
+>> Response: A an is a desk 
+
+>> Prompt: (woman.n eating in-dress holding-ring wearing-accessory wearing-glasses licking-thumb wearing-trouser eating-ring wearing-trouser has-glasses has-ear has-hair has-hand licking-thumb has-accessory wears-dress wears-trouser eating-ring wearing-dress has-nose lamp-behind), (accessory.n red black multicolored woman-wearing woman-has)
+>> Response: a a desk 
+
+>> Prompt: (woman.n eating in-dress holding-ring wearing-accessory wearing-glasses licking-thumb wearing-trouser eating-ring wearing-trouser has-glasses has-ear has-hair has-hand licking-thumb has-accessory wears-dress wears-trouser eating-ring wearing-dress has-nose lamp-behind), (accessory.n red black multicolored woman-wearing woman-has)
+>> Response: A and is a desk 
+
+>> Prompt: (woman.n eating in-dress holding-ring wearing-accessory wearing-glasses licking-thumb wearing-trouser eating-ring wearing-trouser has-glasses has-ear has-hair has-hand licking-thumb has-accessory wears-dress wears-trouser eating-ring wearing-dress has-nose lamp-behind), (accessory.n red black multicolored woman-wearing woman-has)
+>> Response: A a andit 
+
+>> Prompt: (mouth.n thumb-in), (thumb.n in-mouth man-licking man-licking)
+>> Response: A shirt shirt shirt 
+
+>> Prompt: (mouth.n thumb-in), (thumb.n in-mouth man-licking man-licking)
+>> Response: a shirt 
+
+>> Prompt: (mouth.n thumb-in), (thumb.n in-mouth man-licking man-licking)
+>> Response: a a giraffe chin 
+
+>> Prompt: (mouth.n thumb-in), (thumb.n in-mouth man-licking man-licking)
+>> Response: A shirt shirt shirt 
+
+>> Prompt: (man.n eating in-shirt holding-ring wearing-watch wearing-spectacles licking-thumb wearing-trouser eating-ring wearing-trouser has-spectacles has-ear has-hair has-hand licking-thumb has-watch wears-shirt wears-trouser eating-ring wearing-shirt has-nose light-behind), (thumb.n in-mouth man-licking man-licking), (wall.n beige), (wall.n red)
+>> Response: the tan tandots 
+
+>> Prompt: (man.n eating in-shirt holding-ring wearing-watch wearing-spectacles licking-thumb wearing-trouser eating-ring wearing-trouser has-spectacles has-ear has-hair has-hand licking-thumb has-watch wears-shirt wears-trouser eating-ring wearing-shirt has-nose light-behind), (thumb.n in-mouth man-licking man-licking), (wall.n beige), (wall.n red)
+>> Response: the a giraffe 
+
+>> Prompt: (man.n eating in-shirt holding-ring wearing-watch wearing-spectacles licking-thumb wearing-trouser eating-ring wearing-trouser has-spectacles has-ear has-hair has-hand licking-thumb has-watch wears-shirt wears-trouser eating-ring wearing-shirt has-nose light-behind), (thumb.n in-mouth man-licking man-licking), (wall.n beige), (wall.n red)
+>> Response: the a giraffe a shirt 
+
+>> Prompt: (man.n eating in-shirt holding-ring wearing-watch wearing-spectacles licking-thumb wearing-trouser eating-ring wearing-trouser has-spectacles has-ear has-hair has-hand licking-thumb has-watch wears-shirt wears-trouser eating-ring wearing-shirt has-nose light-behind), (thumb.n in-mouth man-licking man-licking), (wall.n beige), (wall.n red)
+>> Response: A andre challes on the desk 
+
+>> Prompt: (ear.n woman-has), (hair.n brown messy black shaved woman-has), (hand.n woman-has), (woman.n eating in-dress holding-ring wearing-accessory wearing-glasses licking-thumb wearing-trouser eating-ring wearing-trouser has-glasses has-ear has-hair has-hand licking-thumb has-accessory wears-dress wears-trouser eating-ring wearing-dress has-nose lamp-behind), (glasses.n brown a|pair dark woman-wearing woman-has)
+>> Response: A andian desk 
+
+>> Prompt: (ear.n woman-has), (hair.n brown messy black shaved woman-has), (hand.n woman-has), (woman.n eating in-dress holding-ring wearing-accessory wearing-glasses licking-thumb wearing-trouser eating-ring wearing-trouser has-glasses has-ear has-hair has-hand licking-thumb has-accessory wears-dress wears-trouser eating-ring wearing-dress has-nose lamp-behind), (glasses.n brown a|pair dark woman-wearing woman-has)
+>> Response: andots 
+
+>> Prompt: (ear.n woman-has), (hair.n brown messy black shaved woman-has), (hand.n woman-has), (woman.n eating in-dress holding-ring wearing-accessory wearing-glasses licking-thumb wearing-trouser eating-ring wearing-trouser has-glasses has-ear has-hair has-hand licking-thumb has-accessory wears-dress wears-trouser eating-ring wearing-dress has-nose lamp-behind), (glasses.n brown a|pair dark woman-wearing woman-has)
+>> Response: a desk 
+
+>> Prompt: (ear.n woman-has), (hair.n brown messy black shaved woman-has), (hand.n woman-has), (woman.n eating in-dress holding-ring wearing-accessory wearing-glasses licking-thumb wearing-trouser eating-ring wearing-trouser has-glasses has-ear has-hair has-hand licking-thumb has-accessory wears-dress wears-trouser eating-ring wearing-dress has-nose lamp-behind), (glasses.n brown a|pair dark woman-wearing woman-has)
+>> Response: A a is a desk 
+
+>> Prompt: (wall.n red orange)
+>> Response: A standende chargeee s 
+
+>> Prompt: (wall.n red orange)
+>> Response: A clart chales on the desk 
+
+>> Prompt: (wall.n red orange)
+>> Response: an chair with chales 
+
+>> Prompt: (wall.n red orange)
+>> Response: A man in a a cololdrts are on a table 
+
+>> Prompt: (light.n behind-man), (man.n eating in-shirt holding-ring wearing-watch wearing-spectacles licking-thumb wearing-trouser eating-ring wearing-trouser has-spectacles has-ear has-hair has-hand licking-thumb has-watch wears-shirt wears-trouser eating-ring wearing-shirt has-nose light-behind)
+>> Response: the a giraffe a giraffe 
+
+>> Prompt: (light.n behind-man), (man.n eating in-shirt holding-ring wearing-watch wearing-spectacles licking-thumb wearing-trouser eating-ring wearing-trouser has-spectacles has-ear has-hair has-hand licking-thumb has-watch wears-shirt wears-trouser eating-ring wearing-shirt has-nose light-behind)
+>> Response: the tanotts 
+
+>> Prompt: (light.n behind-man), (man.n eating in-shirt holding-ring wearing-watch wearing-spectacles licking-thumb wearing-trouser eating-ring wearing-trouser has-spectacles has-ear has-hair has-hand licking-thumb has-watch wears-shirt wears-trouser eating-ring wearing-shirt has-nose light-behind)
+>> Response: the tales are shirt 
+
+>> Prompt: (light.n behind-man), (man.n eating in-shirt holding-ring wearing-watch wearing-spectacles licking-thumb wearing-trouser eating-ring wearing-trouser has-spectacles has-ear has-hair has-hand licking-thumb has-watch wears-shirt wears-trouser eating-ring wearing-shirt has-nose light-behind)
+>> Response: a a giraffe shirt 
+
+>> Prompt: (couch.n black)
+>> Response: a choles 
+
+>> Prompt: (couch.n black)
+>> Response: ales chair with curale cke challle s 
+
+>> Prompt: (couch.n black)
+>> Response: a chair with curalar chall st 
+
+>> Prompt: (couch.n black)
+>> Response: A silen chair with art 
+
+>> Prompt: (button.n white shirt-has shirt-has), (shirt.n baby|blue short|sleeved blue light|blue has-button has-button has-collar has-button man-in man-wears man-wearing)
+>> Response: A shirt tanotts 
+
+>> Prompt: (button.n white shirt-has shirt-has), (shirt.n baby|blue short|sleeved blue light|blue has-button has-button has-collar has-button man-in man-wears man-wearing)
+>> Response: a shirt 
+
+>> Prompt: (button.n white shirt-has shirt-has), (shirt.n baby|blue short|sleeved blue light|blue has-button has-button has-collar has-button man-in man-wears man-wearing)
+>> Response: A anots andes 
+
+>> Prompt: (button.n white shirt-has shirt-has), (shirt.n baby|blue short|sleeved blue light|blue has-button has-button has-collar has-button man-in man-wears man-wearing)
+>> Response: an shirt 
+
+>> Prompt: (bottle.n brown glass reddish), (piece.n dress-has), (woman.n eating in-dress holding-ring wearing-accessory wearing-glasses licking-thumb wearing-trouser eating-ring wearing-trouser has-glasses has-ear has-hair has-hand licking-thumb has-accessory wears-dress wears-trouser eating-ring wearing-dress has-nose lamp-behind), (nose.n woman-has), (dress.n baby|blue short|sleeved blue lamp|blue has-piece has-piece has-collar has-piece woman-in woman-wears woman-wearing), (glasses.n brown a|pair dark woman-wearing woman-has), (wall.n red)
+>> Response: a a desk 
+
+>> Prompt: (bottle.n brown glass reddish), (piece.n dress-has), (woman.n eating in-dress holding-ring wearing-accessory wearing-glasses licking-thumb wearing-trouser eating-ring wearing-trouser has-glasses has-ear has-hair has-hand licking-thumb has-accessory wears-dress wears-trouser eating-ring wearing-dress has-nose lamp-behind), (nose.n woman-has), (dress.n baby|blue short|sleeved blue lamp|blue has-piece has-piece has-collar has-piece woman-in woman-wears woman-wearing), (glasses.n brown a|pair dark woman-wearing woman-has), (wall.n red)
+>> Response: A is a a a desk 
+
+>> Prompt: (bottle.n brown glass reddish), (piece.n dress-has), (woman.n eating in-dress holding-ring wearing-accessory wearing-glasses licking-thumb wearing-trouser eating-ring wearing-trouser has-glasses has-ear has-hair has-hand licking-thumb has-accessory wears-dress wears-trouser eating-ring wearing-dress has-nose lamp-behind), (nose.n woman-has), (dress.n baby|blue short|sleeved blue lamp|blue has-piece has-piece has-collar has-piece woman-in woman-wears woman-wearing), (glasses.n brown a|pair dark woman-wearing woman-has), (wall.n red)
+>> Response: A man wears a andasign on the p 
+
+>> Prompt: (bottle.n brown glass reddish), (piece.n dress-has), (woman.n eating in-dress holding-ring wearing-accessory wearing-glasses licking-thumb wearing-trouser eating-ring wearing-trouser has-glasses has-ear has-hair has-hand licking-thumb has-accessory wears-dress wears-trouser eating-ring wearing-dress has-nose lamp-behind), (nose.n woman-has), (dress.n baby|blue short|sleeved blue lamp|blue has-piece has-piece has-collar has-piece woman-in woman-wears woman-wearing), (glasses.n brown a|pair dark woman-wearing woman-has), (wall.n red)
+>> Response: a a desk 
+
+>> Prompt: (chair.n black)
+>> Response: andre staned cholds 
+
+>> Prompt: (chair.n black)
+>> Response: an chair and white collles 
+
+>> Prompt: (chair.n black)
+>> Response: A coletts choles on the desk 
+
+>> Prompt: (chair.n black)
+>> Response: an chair with curargen ple chair 
+
+>> Prompt: (trouser.n dark woman-wearing woman-wearing woman-wears)
+>> Response: A malales malle ar 
+
+>> Prompt: (trouser.n dark woman-wearing woman-wearing woman-wears)
+>> Response: A andott 
+
+>> Prompt: (trouser.n dark woman-wearing woman-wearing woman-wears)
+>> Response: a a desk 
+
+>> Prompt: (trouser.n dark woman-wearing woman-wearing woman-wears)
+>> Response: A a a a desk 
+
+>> Prompt: (hair.n brown messy black shaved man-has)
+>> Response: an choles 
+
+>> Prompt: (hair.n brown messy black shaved man-has)
+>> Response: a chouts 
+
+>> Prompt: (hair.n brown messy black shaved man-has)
+>> Response: A sitst cole s 
+
+>> Prompt: (hair.n brown messy black shaved man-has)
+>> Response: A curart is curarts 
+
+>> Prompt: (woman.n eating in-dress holding-ring wearing-accessory wearing-glasses licking-thumb wearing-trouser eating-ring wearing-trouser has-glasses has-ear has-hair has-hand licking-thumb has-accessory wears-dress wears-trouser eating-ring wearing-dress has-nose lamp-behind), (thumb.n in-face woman-licking woman-licking)
+>> Response: A andray shirt 
+
+>> Prompt: (woman.n eating in-dress holding-ring wearing-accessory wearing-glasses licking-thumb wearing-trouser eating-ring wearing-trouser has-glasses has-ear has-hair has-hand licking-thumb has-accessory wears-dress wears-trouser eating-ring wearing-dress has-nose lamp-behind), (thumb.n in-face woman-licking woman-licking)
+>> Response: a shirt 
+
+>> Prompt: (woman.n eating in-dress holding-ring wearing-accessory wearing-glasses licking-thumb wearing-trouser eating-ring wearing-trouser has-glasses has-ear has-hair has-hand licking-thumb has-accessory wears-dress wears-trouser eating-ring wearing-dress has-nose lamp-behind), (thumb.n in-face woman-licking woman-licking)
+>> Response: A a shirt shirt 
+
+>> Prompt: (woman.n eating in-dress holding-ring wearing-accessory wearing-glasses licking-thumb wearing-trouser eating-ring wearing-trouser has-glasses has-ear has-hair has-hand licking-thumb has-accessory wears-dress wears-trouser eating-ring wearing-dress has-nose lamp-behind), (thumb.n in-face woman-licking woman-licking)
+>> Response: a shirt 
+
+>> Prompt: (button.n white shirt-has shirt-has), (collar.n shirt-has), (elbow.n bent), (man.n eating in-shirt holding-ring wearing-watch wearing-spectacles licking-thumb wearing-trouser eating-ring wearing-trouser has-spectacles has-ear has-hair has-hand licking-thumb has-watch wears-shirt wears-trouser eating-ring wearing-shirt has-nose light-behind), (shirt.n baby|blue short|sleeved blue light|blue has-button has-button has-collar has-button man-in man-wears man-wearing), (trouser.n dark man-wearing man-wearing man-wears), (watch.n red black multicolored man-wearing man-has)
+>> Response: a a a gren shirt 
+
+>> Prompt: (button.n white shirt-has shirt-has), (collar.n shirt-has), (elbow.n bent), (man.n eating in-shirt holding-ring wearing-watch wearing-spectacles licking-thumb wearing-trouser eating-ring wearing-trouser has-spectacles has-ear has-hair has-hand licking-thumb has-watch wears-shirt wears-trouser eating-ring wearing-shirt has-nose light-behind), (shirt.n baby|blue short|sleeved blue light|blue has-button has-button has-collar has-button man-in man-wears man-wearing), (trouser.n dark man-wearing man-wearing man-wears), (watch.n red black multicolored man-wearing man-has)
+>> Response: a is wearing shirt 
+
+>> Prompt: (button.n white shirt-has shirt-has), (collar.n shirt-has), (elbow.n bent), (man.n eating in-shirt holding-ring wearing-watch wearing-spectacles licking-thumb wearing-trouser eating-ring wearing-trouser has-spectacles has-ear has-hair has-hand licking-thumb has-watch wears-shirt wears-trouser eating-ring wearing-shirt has-nose light-behind), (shirt.n baby|blue short|sleeved blue light|blue has-button has-button has-collar has-button man-in man-wears man-wearing), (trouser.n dark man-wearing man-wearing man-wears), (watch.n red black multicolored man-wearing man-has)
+>> Response: A andots aned ande 
+
+>> Prompt: (button.n white shirt-has shirt-has), (collar.n shirt-has), (elbow.n bent), (man.n eating in-shirt holding-ring wearing-watch wearing-spectacles licking-thumb wearing-trouser eating-ring wearing-trouser has-spectacles has-ear has-hair has-hand licking-thumb has-watch wears-shirt wears-trouser eating-ring wearing-shirt has-nose light-behind), (shirt.n baby|blue short|sleeved blue light|blue has-button has-button has-collar has-button man-in man-wears man-wearing), (trouser.n dark man-wearing man-wearing man-wears), (watch.n red black multicolored man-wearing man-has)
+>> Response: a is cholle 
+
+>> Prompt: (board.n white)
+>> Response: a chair with curales 
+
+>> Prompt: (board.n white)
+>> Response: A sit be chair chair with parts 
+
+>> Prompt: (board.n white)
+>> Response: A stran bots 
+
+>> Prompt: (board.n white)
+>> Response: an chair with black curale part 
+
+>> Prompt: (trouser.n dark man-wearing man-wearing man-wears)
+>> Response: A andensits chair with cule chole 
+
+>> Prompt: (trouser.n dark man-wearing man-wearing man-wears)
+>> Response: A malal palar char 
+
+>> Prompt: (trouser.n dark man-wearing man-wearing man-wears)
+>> Response: a a gren gray shirt 
+
+>> Prompt: (trouser.n dark man-wearing man-wearing man-wears)
+>> Response: A an gren chair with black cale chales 
+
+>> Prompt: (bottle.n brown glass reddish), (button.n shirt-has), (man.n eating in-shirt holding-ring wearing-watch wearing-spectacles licking-thumb wearing-trouser eating-ring wearing-trouser has-spectacles has-ear has-hair has-hand licking-thumb has-watch wears-shirt wears-trouser eating-ring wearing-shirt has-nose light-behind), (nose.n man-has), (shirt.n baby|blue short|sleeved blue light|blue has-button has-button has-collar has-button man-in man-wears man-wearing), (spectacles.n brown a|pair dark man-wearing man-has), (wall.n red)
+>> Response: a a gray chors 
+
+>> Prompt: (bottle.n brown glass reddish), (button.n shirt-has), (man.n eating in-shirt holding-ring wearing-watch wearing-spectacles licking-thumb wearing-trouser eating-ring wearing-trouser has-spectacles has-ear has-hair has-hand licking-thumb has-watch wears-shirt wears-trouser eating-ring wearing-shirt has-nose light-behind), (nose.n man-has), (shirt.n baby|blue short|sleeved blue light|blue has-button has-button has-collar has-button man-in man-wears man-wearing), (spectacles.n brown a|pair dark man-wearing man-has), (wall.n red)
+>> Response: A man in a cololds 
+
+>> Prompt: (bottle.n brown glass reddish), (button.n shirt-has), (man.n eating in-shirt holding-ring wearing-watch wearing-spectacles licking-thumb wearing-trouser eating-ring wearing-trouser has-spectacles has-ear has-hair has-hand licking-thumb has-watch wears-shirt wears-trouser eating-ring wearing-shirt has-nose light-behind), (nose.n man-has), (shirt.n baby|blue short|sleeved blue light|blue has-button has-button has-collar has-button man-in man-wears man-wearing), (spectacles.n brown a|pair dark man-wearing man-has), (wall.n red)
+>> Response: a chair and polollllll st 
+
+>> Prompt: (bottle.n brown glass reddish), (button.n shirt-has), (man.n eating in-shirt holding-ring wearing-watch wearing-spectacles licking-thumb wearing-trouser eating-ring wearing-trouser has-spectacles has-ear has-hair has-hand licking-thumb has-watch wears-shirt wears-trouser eating-ring wearing-shirt has-nose light-behind), (nose.n man-has), (shirt.n baby|blue short|sleeved blue light|blue has-button has-button has-collar has-button man-in man-wears man-wearing), (spectacles.n brown a|pair dark man-wearing man-has), (wall.n red)
+>> Response: A andray siande s 
+
+>> Prompt: (piece.n white dress-has dress-has), (dress.n baby|blue short|sleeved blue lamp|blue has-piece has-piece has-collar has-piece woman-in woman-wears woman-wearing)
+>> Response: A is wearing a shirt 
+
+>> Prompt: (piece.n white dress-has dress-has), (dress.n baby|blue short|sleeved blue lamp|blue has-piece has-piece has-collar has-piece woman-in woman-wears woman-wearing)
+>> Response: A a a table 
+
+>> Prompt: (piece.n white dress-has dress-has), (dress.n baby|blue short|sleeved blue lamp|blue has-piece has-piece has-collar has-piece woman-in woman-wears woman-wearing)
+>> Response: a is desk 
+
+>> Prompt: (piece.n white dress-has dress-has), (dress.n baby|blue short|sleeved blue lamp|blue has-piece has-piece has-collar has-piece woman-in woman-wears woman-wearing)
+>> Response: A andollests ande 

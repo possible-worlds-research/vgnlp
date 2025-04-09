@@ -1,0 +1,482 @@
+>> Loaded models dict_keys(['chat'])
+
+
+>> Prompt: (braid.n green dense behind-elephant next|to-elephant leaf-on elephant-in)
+>> Response: a a a a a street 
+
+>> Prompt: (braid.n green dense behind-elephant next|to-elephant leaf-on elephant-in)
+>> Response: A a anear parked on the street 
+
+>> Prompt: (braid.n green dense behind-elephant next|to-elephant leaf-on elephant-in)
+>> Response: A man wears tandes andes 
+
+>> Prompt: (braid.n green dense behind-elephant next|to-elephant leaf-on elephant-in)
+>> Response: a is on the desk 
+
+>> Prompt: (elephant.n big adult has-trunk has-trunk and-elephant has-ear trunk-of)
+>> Response: a talong falon the desk 
+
+>> Prompt: (elephant.n big adult has-trunk has-trunk and-elephant has-ear trunk-of)
+>> Response: ansts are taned far on the tree 
+
+>> Prompt: (elephant.n big adult has-trunk has-trunk and-elephant has-ear trunk-of)
+>> Response: A taned far on the desk 
+
+>> Prompt: (elephant.n big adult has-trunk has-trunk and-elephant has-ear trunk-of)
+>> Response: a thot 
+
+>> Prompt: (branch.n plant-has), (plant.n has-branch)
+>> Response: a band on the desk 
+
+>> Prompt: (branch.n plant-has), (plant.n has-branch)
+>> Response: a a sidewalk 
+
+>> Prompt: (branch.n plant-has), (plant.n has-branch)
+>> Response: A an angneen green pe der 
+
+>> Prompt: (branch.n plant-has), (plant.n has-branch)
+>> Response: a a sidewalk 
+
+>> Prompt: (body.n animal-seen), (animal.n young african has-limb seen-body has-limb)
+>> Response: ale curargen chair 
+
+>> Prompt: (body.n animal-seen), (animal.n young african has-limb seen-body has-limb)
+>> Response: A turan bot 
+
+>> Prompt: (body.n animal-seen), (animal.n young african has-limb seen-body has-limb)
+>> Response: A colleststs on the desk 
+
+>> Prompt: (body.n animal-seen), (animal.n young african has-limb seen-body has-limb)
+>> Response: arg collle ckers on plate plate 
+
+>> Prompt: (elephant.n young african has-tail seen-back has-tail)
+>> Response: A tan tande sts 
+
+>> Prompt: (elephant.n young african has-tail seen-back has-tail)
+>> Response: an thans 
+
+>> Prompt: (elephant.n young african has-tail seen-back has-tail)
+>> Response: an elephants 
+
+>> Prompt: (elephant.n young african has-tail seen-back has-tail)
+>> Response: A man wears ansits of t 
+
+>> Prompt: (center.n animal-in), (animal.n in-center)
+>> Response: a colllll char 
+
+>> Prompt: (center.n animal-in), (animal.n in-center)
+>> Response: A an a anottst 
+
+>> Prompt: (center.n animal-in), (animal.n in-center)
+>> Response: an andotst 
+
+>> Prompt: (center.n animal-in), (animal.n in-center)
+>> Response: A colollll che che s 
+
+>> Prompt: (body.n white of-animal animal-has animal-has)
+>> Response: the cure coles 
+
+>> Prompt: (body.n white of-animal animal-has animal-has)
+>> Response: A tand chair with black paraps 
+
+>> Prompt: (body.n white of-animal animal-has animal-has)
+>> Response: A curar ckender curargen chair 
+
+>> Prompt: (body.n white of-animal animal-has animal-has)
+>> Response: the a coles 
+
+>> Prompt: (trunk.n long)
+>> Response: an talong chare s 
+
+>> Prompt: (trunk.n long)
+>> Response: a this a chair 
+
+>> Prompt: (trunk.n long)
+>> Response: A tubotts of the floor 
+
+>> Prompt: (trunk.n long)
+>> Response: a tales 
+
+>> Prompt: (braid.n green dense behind-elephant next|to-elephant leaf-on elephant-in), (leaf.n small on-braid)
+>> Response: a bots on parked parked parked on the street 
+
+>> Prompt: (braid.n green dense behind-elephant next|to-elephant leaf-on elephant-in), (leaf.n small on-braid)
+>> Response: a a giraffe 
+
+>> Prompt: (braid.n green dense behind-elephant next|to-elephant leaf-on elephant-in), (leaf.n small on-braid)
+>> Response: A man wears a angens shirt 
+
+>> Prompt: (braid.n green dense behind-elephant next|to-elephant leaf-on elephant-in), (leaf.n small on-braid)
+>> Response: a bott 
+
+>> Prompt: (braid.n green dense behind-elephant next|to-elephant leaf-on elephant-in), (elephant.n in-braid braid-behind braid-next|to)
+>> Response: ans angeeee behind gee s 
+
+>> Prompt: (braid.n green dense behind-elephant next|to-elephant leaf-on elephant-in), (elephant.n in-braid braid-behind braid-next|to)
+>> Response: a a giraffe parked a parked parked sidewalk 
+
+>> Prompt: (braid.n green dense behind-elephant next|to-elephant leaf-on elephant-in), (elephant.n in-braid braid-behind braid-next|to)
+>> Response: a is a parked sidewalk 
+
+>> Prompt: (braid.n green dense behind-elephant next|to-elephant leaf-on elephant-in), (elephant.n in-braid braid-behind braid-next|to)
+>> Response: A ansitsit bes on the floor 
+
+>> Prompt: (animal.n young african has-limb seen-body has-limb), (limb.n animal-has animal-has)
+>> Response: ale ptop of coullllets 
+
+>> Prompt: (animal.n young african has-limb seen-body has-limb), (limb.n animal-has animal-has)
+>> Response: all ples 
+
+>> Prompt: (animal.n young african has-limb seen-body has-limb), (limb.n animal-has animal-has)
+>> Response: A man in a culolets 
+
+>> Prompt: (animal.n young african has-limb seen-body has-limb), (limb.n animal-has animal-has)
+>> Response: a ptop of the table 
+
+>> Prompt: (animal.n adult has-limb), (limb.n animal-has)
+>> Response: A tallen ck are mallles 
+
+>> Prompt: (animal.n adult has-limb), (limb.n animal-has)
+>> Response: A cllesth chard chare st 
+
+>> Prompt: (animal.n adult has-limb), (limb.n animal-has)
+>> Response: aptop of the desk 
+
+>> Prompt: (animal.n adult has-limb), (limb.n animal-has)
+>> Response: A clen chair bor 
+
+>> Prompt: (ear.n elephant-has), (elephant.n big adult has-trunk has-trunk and-elephant has-ear trunk-of)
+>> Response: the turay ay ay grens 
+
+>> Prompt: (ear.n elephant-has), (elephant.n big adult has-trunk has-trunk and-elephant has-ear trunk-of)
+>> Response: the a taned on the desk 
+
+>> Prompt: (ear.n elephant-has), (elephant.n big adult has-trunk has-trunk and-elephant has-ear trunk-of)
+>> Response: A an angren fare of s 
+
+>> Prompt: (ear.n elephant-has), (elephant.n big adult has-trunk has-trunk and-elephant has-ear trunk-of)
+>> Response: the a giraffe tan ans 
+
+>> Prompt: (animal.n young african has-limb seen-body has-limb)
+>> Response: arg is on a desk 
+
+>> Prompt: (animal.n young african has-limb seen-body has-limb)
+>> Response: A cleles chale s 
+
+>> Prompt: (animal.n young african has-limb seen-body has-limb)
+>> Response: Astile bes dsit 
+
+>> Prompt: (animal.n young african has-limb seen-body has-limb)
+>> Response: A colets cle char 
+
+>> Prompt: (animal.n baby gray small has-body has-body has-eye in|front-adult animal-and), (eye.n animal-has)
+>> Response: A man in a curarts cour 
+
+>> Prompt: (animal.n baby gray small has-body has-body has-eye in|front-adult animal-and), (eye.n animal-has)
+>> Response: an anoldes 
+
+>> Prompt: (animal.n baby gray small has-body has-body has-eye in|front-adult animal-and), (eye.n animal-has)
+>> Response: A an anotst 
+
+>> Prompt: (animal.n baby gray small has-body has-body has-eye in|front-adult animal-and), (eye.n animal-has)
+>> Response: A an a tsiong is a a p 
+
+>> Prompt: (elephant.n baby gray small has-ear has-ear has-eye in|front-adult elephant-and), (elephant.n big adult has-trunk has-trunk and-elephant has-ear trunk-of)
+>> Response: A an a ansit 
+
+>> Prompt: (elephant.n baby gray small has-ear has-ear has-eye in|front-adult elephant-and), (elephant.n big adult has-trunk has-trunk and-elephant has-ear trunk-of)
+>> Response: Asian anstst 
+
+>> Prompt: (elephant.n baby gray small has-ear has-ear has-eye in|front-adult elephant-and), (elephant.n big adult has-trunk has-trunk and-elephant has-ear trunk-of)
+>> Response: Asitsit t ale char file of the plate 
+
+>> Prompt: (elephant.n baby gray small has-ear has-ear has-eye in|front-adult elephant-and), (elephant.n big adult has-trunk has-trunk and-elephant has-ear trunk-of)
+>> Response: A a tales are on the desk 
+
+>> Prompt: (animal.n baby gray small has-body has-body has-eye in|front-adult animal-and)
+>> Response: A a anden borts 
+
+>> Prompt: (animal.n baby gray small has-body has-body has-eye in|front-adult animal-and)
+>> Response: A talen chourt 
+
+>> Prompt: (animal.n baby gray small has-body has-body has-eye in|front-adult animal-and)
+>> Response: a a a a curar 
+
+>> Prompt: (animal.n baby gray small has-body has-body has-eye in|front-adult animal-and)
+>> Response: A and sthis on desk 
+
+>> Prompt: (ear.n elephant-has elephant-has), (elephant.n baby gray small has-ear has-ear has-eye in|front-adult elephant-and)
+>> Response: A andsiand anges 
+
+>> Prompt: (ear.n elephant-has elephant-has), (elephant.n baby gray small has-ear has-ear has-eye in|front-adult elephant-and)
+>> Response: the a a a a a p 
+
+>> Prompt: (ear.n elephant-has elephant-has), (elephant.n baby gray small has-ear has-ear has-eye in|front-adult elephant-and)
+>> Response: A a andest 
+
+>> Prompt: (ear.n elephant-has elephant-has), (elephant.n baby gray small has-ear has-ear has-eye in|front-adult elephant-and)
+>> Response: A andsian andes 
+
+>> Prompt: (leaf.n small on-braid)
+>> Response: the a a a parked sidewalk 
+
+>> Prompt: (leaf.n small on-braid)
+>> Response: A an bottsts 
+
+>> Prompt: (leaf.n small on-braid)
+>> Response: a grawn gren behind 
+
+>> Prompt: (leaf.n small on-braid)
+>> Response: A ban barg bes 
+
+>> Prompt: (branch.n tree-has), (tree.n has-branch)
+>> Response: the a a a a street 
+
+>> Prompt: (branch.n tree-has), (tree.n has-branch)
+>> Response: the is on the floor 
+
+>> Prompt: (branch.n tree-has), (tree.n has-branch)
+>> Response: the a giraffe a giraffe a giraffe 
+
+>> Prompt: (branch.n tree-has), (tree.n has-branch)
+>> Response: an elephant 
+
+>> Prompt: (center.n elephant-in), (elephant.n in-center)
+>> Response: A tan sitsts of a a wall 
+
+>> Prompt: (center.n elephant-in), (elephant.n in-center)
+>> Response: A standen botstst 
+
+>> Prompt: (center.n elephant-in), (elephant.n in-center)
+>> Response: the a a giraffe a giraffe 
+
+>> Prompt: (center.n elephant-in), (elephant.n in-center)
+>> Response: A sian elephants an 
+
+>> Prompt: (animal.n big adult has-body has-body and-animal has-body body-of)
+>> Response: A and barg bors 
+
+>> Prompt: (animal.n big adult has-body has-body and-animal has-body body-of)
+>> Response: A anden gren pander carales 
+
+>> Prompt: (animal.n big adult has-body has-body and-animal has-body body-of)
+>> Response: A an bang bares 
+
+>> Prompt: (animal.n big adult has-body has-body and-animal has-body body-of)
+>> Response: an greens 
+
+>> Prompt: (back.n elephant-seen), (elephant.n young african has-tail seen-back has-tail)
+>> Response: the tansile s 
+
+>> Prompt: (back.n elephant-seen), (elephant.n young african has-tail seen-back has-tail)
+>> Response: A an elephantsens seees 
+
+>> Prompt: (back.n elephant-seen), (elephant.n young african has-tail seen-back has-tail)
+>> Response: A sian tsied t 
+
+>> Prompt: (back.n elephant-seen), (elephant.n young african has-tail seen-back has-tail)
+>> Response: A man in a ansits 
+
+>> Prompt: (grass.n brown tall yellow)
+>> Response: A curall char s 
+
+>> Prompt: (grass.n brown tall yellow)
+>> Response: A chair with black culallll stic ckes on plate 
+
+>> Prompt: (grass.n brown tall yellow)
+>> Response: A stan staned chair with charg s 
+
+>> Prompt: (grass.n brown tall yellow)
+>> Response: A curall chis chale che culle s 
+
+>> Prompt: (elephant.n big adult has-trunk has-trunk and-elephant has-ear trunk-of), (trunk.n white of-elephant elephant-has elephant-has)
+>> Response: A ansits t 
+
+>> Prompt: (elephant.n big adult has-trunk has-trunk and-elephant has-ear trunk-of), (trunk.n white of-elephant elephant-has elephant-has)
+>> Response: the a giraffe a head 
+
+>> Prompt: (elephant.n big adult has-trunk has-trunk and-elephant has-ear trunk-of), (trunk.n white of-elephant elephant-has elephant-has)
+>> Response: the a giraffe a giraffe a giraffe neck 
+
+>> Prompt: (elephant.n big adult has-trunk has-trunk and-elephant has-ear trunk-of), (trunk.n white of-elephant elephant-has elephant-has)
+>> Response: the a giraffe a giraffe head 
+
+>> Prompt: (elephant.n baby gray small has-ear has-ear has-eye in|front-adult elephant-and), (eye.n elephant-has)
+>> Response: the tan tandots 
+
+>> Prompt: (elephant.n baby gray small has-ear has-ear has-eye in|front-adult elephant-and), (eye.n elephant-has)
+>> Response: the a giraffe 
+
+>> Prompt: (elephant.n baby gray small has-ear has-ear has-eye in|front-adult elephant-and), (eye.n elephant-has)
+>> Response: the a giraffe a head 
+
+>> Prompt: (elephant.n baby gray small has-ear has-ear has-eye in|front-adult elephant-and), (eye.n elephant-has)
+>> Response: the a giraffe tan andolests are a ande 
+
+>> Prompt: (adult.n elephant-in|front), (elephant.n baby gray small has-ear has-ear has-eye in|front-adult elephant-and)
+>> Response: A an a a tsiong the floor 
+
+>> Prompt: (adult.n elephant-in|front), (elephant.n baby gray small has-ear has-ear has-eye in|front-adult elephant-and)
+>> Response: a a a a giraffe 
+
+>> Prompt: (adult.n elephant-in|front), (elephant.n baby gray small has-ear has-ear has-eye in|front-adult elephant-and)
+>> Response: A tan tale sit 
+
+>> Prompt: (adult.n elephant-in|front), (elephant.n baby gray small has-ear has-ear has-eye in|front-adult elephant-and)
+>> Response: A a taned in the desk 
+
+>> Prompt: (elephant.n adult has-tail), (tail.n elephant-has)
+>> Response: A tan andets of a a ans 
+
+>> Prompt: (elephant.n adult has-tail), (tail.n elephant-has)
+>> Response: A tubit be d staned s 
+
+>> Prompt: (elephant.n adult has-tail), (tail.n elephant-has)
+>> Response: A an elephants ans 
+
+>> Prompt: (elephant.n adult has-tail), (tail.n elephant-has)
+>> Response: A man wears black ansit 
+
+>> Prompt: (elephant.n baby gray small has-ear has-ear has-eye in|front-adult elephant-and)
+>> Response: the a giraffe a giraffe 
+
+>> Prompt: (elephant.n baby gray small has-ear has-ear has-eye in|front-adult elephant-and)
+>> Response: the tan taned in the table 
+
+>> Prompt: (elephant.n baby gray small has-ear has-ear has-eye in|front-adult elephant-and)
+>> Response: the tales are dit 
+
+>> Prompt: (elephant.n baby gray small has-ear has-ear has-eye in|front-adult elephant-and)
+>> Response: A and anst 
+
+>> Prompt: (elephant.n young african has-tail seen-back has-tail), (tail.n elephant-has elephant-has)
+>> Response: the tan tales 
+
+>> Prompt: (elephant.n young african has-tail seen-back has-tail), (tail.n elephant-has elephant-has)
+>> Response: the a giraffe tan andots 
+
+>> Prompt: (elephant.n young african has-tail seen-back has-tail), (tail.n elephant-has elephant-has)
+>> Response: the a a giraffe 
+
+>> Prompt: (elephant.n young african has-tail seen-back has-tail), (tail.n elephant-has elephant-has)
+>> Response: A man in a a shirt 
+
+>> Prompt: (body.n animal-has), (animal.n big adult has-body has-body and-animal has-body body-of)
+>> Response: A bottsts of the elephants 
+
+>> Prompt: (body.n animal-has), (animal.n big adult has-body has-body and-animal has-body body-of)
+>> Response: a a giraffe hole 
+
+>> Prompt: (body.n animal-has), (animal.n big adult has-body has-body and-animal has-body body-of)
+>> Response: A andots are bot 
+
+>> Prompt: (body.n animal-has), (animal.n big adult has-body has-body and-animal has-body body-of)
+>> Response: andots 
+
+>> Prompt: (body.n animal-has animal-has), (animal.n baby gray small has-body has-body has-eye in|front-adult animal-and)
+>> Response: a banges on the desk 
+
+>> Prompt: (body.n animal-has animal-has), (animal.n baby gray small has-body has-body has-eye in|front-adult animal-and)
+>> Response: A tande bande charg che curare charge choles 
+
+>> Prompt: (body.n animal-has animal-has), (animal.n baby gray small has-body has-body has-eye in|front-adult animal-and)
+>> Response: A tan ande curale st 
+
+>> Prompt: (body.n animal-has animal-has), (animal.n baby gray small has-body has-body has-eye in|front-adult animal-and)
+>> Response: a anotsts 
+
+>> Prompt: (body.n long)
+>> Response: A tuban bosts 
+
+>> Prompt: (body.n long)
+>> Response: the tan aned a street 
+
+>> Prompt: (body.n long)
+>> Response: A borts are cures 
+
+>> Prompt: (body.n long)
+>> Response: A talesit ck arales 
+
+>> Prompt: (braid.n green dense behind-animal next|to-animal plant-on animal-in), (plant.n small on-braid)
+>> Response: A bolle bllet on the floor 
+
+>> Prompt: (braid.n green dense behind-animal next|to-animal plant-on animal-in), (plant.n small on-braid)
+>> Response: A barg gren bees on the floor 
+
+>> Prompt: (braid.n green dense behind-animal next|to-animal plant-on animal-in), (plant.n small on-braid)
+>> Response: a gren bang on the desk 
+
+>> Prompt: (braid.n green dense behind-animal next|to-animal plant-on animal-in), (plant.n small on-braid)
+>> Response: A barg bor 
+
+>> Prompt: (trunk.n white of-elephant elephant-has elephant-has)
+>> Response: the tubiges 
+
+>> Prompt: (trunk.n white of-elephant elephant-has elephant-has)
+>> Response: the a giraffe head 
+
+>> Prompt: (trunk.n white of-elephant elephant-has elephant-has)
+>> Response: A an talests bole 
+
+>> Prompt: (trunk.n white of-elephant elephant-has elephant-has)
+>> Response: A andottts of dit 
+
+>> Prompt: (animal.n big adult has-body has-body and-animal has-body body-of), (body.n white of-animal animal-has animal-has)
+>> Response: the colllll sth chare curalles 
+
+>> Prompt: (animal.n big adult has-body has-body and-animal has-body body-of), (body.n white of-animal animal-has animal-has)
+>> Response: the a a charge s 
+
+>> Prompt: (animal.n big adult has-body has-body and-animal has-body body-of), (body.n white of-animal animal-has animal-has)
+>> Response: A collle chales on wall 
+
+>> Prompt: (animal.n big adult has-body has-body and-animal has-body body-of), (body.n white of-animal animal-has animal-has)
+>> Response: A cole stsit 
+
+>> Prompt: (plant.n brown tall yellow)
+>> Response: a barts on desk 
+
+>> Prompt: (plant.n brown tall yellow)
+>> Response: a cholde chole 
+
+>> Prompt: (plant.n brown tall yellow)
+>> Response: A curalles cke male cke male mes 
+
+>> Prompt: (plant.n brown tall yellow)
+>> Response: a cholde s 
+
+>> Prompt: (elephant.n in-braid braid-behind braid-next|to)
+>> Response: a a parked parked sidewalk 
+
+>> Prompt: (elephant.n in-braid braid-behind braid-next|to)
+>> Response: A an a parked parked parked sidewalk 
+
+>> Prompt: (elephant.n in-braid braid-behind braid-next|to)
+>> Response: A an bottsts are on the desk 
+
+>> Prompt: (elephant.n in-braid braid-behind braid-next|to)
+>> Response: a a a parked parked on the desk 
+
+>> Prompt: (adult.n animal-in|front), (animal.n baby gray small has-body has-body has-eye in|front-adult animal-and)
+>> Response: A turaned on desk 
+
+>> Prompt: (adult.n animal-in|front), (animal.n baby gray small has-body has-body has-eye in|front-adult animal-and)
+>> Response: A turan curar curales on the desk 
+
+>> Prompt: (adult.n animal-in|front), (animal.n baby gray small has-body has-body has-eye in|front-adult animal-and)
+>> Response: a a a ptop ander it 
+
+>> Prompt: (adult.n animal-in|front), (animal.n baby gray small has-body has-body has-eye in|front-adult animal-and)
+>> Response: A an barg challes on wall 
+
+>> Prompt: (elephant.n adult), (elephant.n adult has-tail), (elephant.n big adult has-trunk has-trunk and-elephant has-ear trunk-of)
+>> Response: A a taned on the desk 
+
+>> Prompt: (elephant.n adult), (elephant.n adult has-tail), (elephant.n big adult has-trunk has-trunk and-elephant has-ear trunk-of)
+>> Response: the man in a a a a shirt 
+
+>> Prompt: (elephant.n adult), (elephant.n adult has-tail), (elephant.n big adult has-trunk has-trunk and-elephant has-ear trunk-of)
+>> Response: the a giraffe a giraffe 
+
+>> Prompt: (elephant.n adult), (elephant.n adult has-tail), (elephant.n big adult has-trunk has-trunk and-elephant has-ear trunk-of)
+>> Response: the tubole 

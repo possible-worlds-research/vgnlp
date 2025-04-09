@@ -1,0 +1,338 @@
+>> Loaded models dict_keys(['chat'])
+
+
+>> Prompt: suit.n man-wearing person-wearing woman-wearing black
+>> Response:  <u speaker=HUM>(hair.n tan) 
+
+>> Prompt: suit.n man-wearing person-wearing woman-wearing black
+>> Response:  <u speaker=HUM>(shirt.n brown woman-has) 
+
+>> Prompt: suit.n man-wearing person-wearing woman-wearing black
+>> Response:  <u speaker=HUM>(shirt.n woman-has) 
+
+>> Prompt: suit.n man-wearing person-wearing woman-wearing black
+>> Response:  <u speaker=HUM>(trouser.n black woman-wearing man-wearing) 
+
+>> Prompt: man.n smiling has-eye sitting wearing-shirt has-hair has-nose wearing-necktie wearing-suit in|front|of-building
+>> Response:  <u speaker=HUM>(hair.n black murturtied tan) 
+
+>> Prompt: man.n smiling has-eye sitting wearing-shirt has-hair has-nose wearing-necktie wearing-suit in|front|of-building
+>> Response:  <u speaker=HUM>(hair.n tan) 
+
+>> Prompt: man.n smiling has-eye sitting wearing-shirt has-hair has-nose wearing-necktie wearing-suit in|front|of-building
+>> Response:  <u speaker=HUM>(hair.n black sararart wearing-trouser wearing-shirt has-trouser wearing-shirt wearing-trouser has-trouser wears-shirt wearing-trouser wearing-shirt wearing-trouser wearing-trouser wears 
+
+>> Prompt: man.n smiling has-eye sitting wearing-shirt has-hair has-nose wearing-necktie wearing-suit in|front|of-building
+>> Response:  <u speaker=HUM>(hair.n tan with-food chareat) 
+
+>> Prompt: necktie.n purple person-wearing man-wearing cartridge_holder-over cartridge_holder-on maroon
+>> Response:  <u speaker=HUM>(hair.n tan with-food) 
+
+>> Prompt: necktie.n purple person-wearing man-wearing cartridge_holder-over cartridge_holder-on maroon
+>> Response:  <u speaker=HUM>(bage.n black on-table with-food with-food with-food) 
+
+>> Prompt: necktie.n purple person-wearing man-wearing cartridge_holder-over cartridge_holder-on maroon
+>> Response:  <u speaker=HUM>(bard.n drarawn on-pin) 
+
+>> Prompt: necktie.n purple person-wearing man-wearing cartridge_holder-over cartridge_holder-on maroon
+>> Response:  <u speaker=HUM>(barg.n ) 
+
+>> Prompt: woman.n wearing-sweater smiling has|a-hand has-hair tree-behind wearing-jewelry wearing-suit has-head has-hand wearing-earring
+>> Response:  <u speaker=HUM>(hair.n black man-has) 
+
+>> Prompt: woman.n wearing-sweater smiling has|a-hand has-hair tree-behind wearing-jewelry wearing-suit has-head has-hand wearing-earring
+>> Response:  <u speaker=HUM>(trouser.n black woman-wearing woman-wearing woman-wearing woman-wearing) 
+
+>> Prompt: woman.n wearing-sweater smiling has|a-hand has-hair tree-behind wearing-jewelry wearing-suit has-head has-hand wearing-earring
+>> Response:  <u speaker=HUM>(hair.n black sa-has) 
+
+>> Prompt: woman.n wearing-sweater smiling has|a-hand has-hair tree-behind wearing-jewelry wearing-suit has-head has-hand wearing-earring
+>> Response:  <u speaker=HUM>(trouser.n woman-has man-has man-wearing) 
+
+>> Prompt: shirt.n white person-wearing man-wearing
+>> Response:  <u speaker=HUM>(shirt.n tan woman-wearing woman-wearing) 
+
+>> Prompt: shirt.n white person-wearing man-wearing
+>> Response:  <u speaker=HUM>(trouser.n man-wearing man-wearing) 
+
+>> Prompt: shirt.n white person-wearing man-wearing
+>> Response:  <u speaker=HUM>(shirt.n woman-has man-wearing woman-wearing woman-wears woman-wearing woman-wearing woman-wears) 
+
+>> Prompt: shirt.n white person-wearing man-wearing
+>> Response:  <u speaker=HUM>(trouser.n woman-has) 
+
+>> Prompt: nose.n big man-has person-has
+>> Response:  <u speaker=HUM>(woman.n tan) 
+
+>> Prompt: nose.n big man-has person-has
+>> Response:  <u speaker=HUM>(man.n woman-has woman-has man-has) 
+
+>> Prompt: nose.n big man-has person-has
+>> Response:  <u speaker=HUM>(man.n woman-wearing) 
+
+>> Prompt: nose.n big man-has person-has
+>> Response:  <u speaker=HUM>(woman.n woman-has) 
+
+>> Prompt: table.n small hand-on brown wooden round worn
+>> Response:  <u speaker=HUM>(trouser.n brown) 
+
+>> Prompt: table.n small hand-on brown wooden round worn
+>> Response:  <u speaker=HUM>(hair.n drawn on-table with-food with-food) 
+
+>> Prompt: table.n small hand-on brown wooden round worn
+>> Response:  <u speaker=HUM>(hair.n charice ddrar-has) 
+
+>> Prompt: table.n small hand-on brown wooden round worn
+>> Response:  <u speaker=HUM>(trouser.n brown woman-wearing) 
+
+>> Prompt: eye.n man-has person-has
+>> Response:  <u speaker=HUM>(man.n man-wearing) 
+
+>> Prompt: eye.n man-has person-has
+>> Response:  <u speaker=HUM>(man.n woman-has) 
+
+>> Prompt: eye.n man-has person-has
+>> Response:  <u speaker=HUM>(man.n woman-has woman-wearing) 
+
+>> Prompt: eye.n man-has person-has
+>> Response:  <u speaker=HUM>(woman.n man-has man-wearing man-wearing man-wearing) 
+
+>> Prompt: earring.n stone black in-ear woman-wearing
+>> Response:  <u speaker=HUM>(man.n man-wearing acaraware man-wearing man-wearing) 
+
+>> Prompt: earring.n stone black in-ear woman-wearing
+>> Response:  <u speaker=HUM>(man.n man-has) 
+
+>> Prompt: earring.n stone black in-ear woman-wearing
+>> Response:  <u speaker=HUM>(man.n ar-wearing) 
+
+>> Prompt: earring.n stone black in-ear woman-wearing
+>> Response:  <u speaker=HUM>(man.n man-has) 
+
+>> Prompt: ear.n earring-in jewelry-in
+>> Response:  <u speaker=HUM>(shirt.n tan) 
+
+>> Prompt: ear.n earring-in jewelry-in
+>> Response:  <u speaker=HUM>(woman.n tan) 
+
+>> Prompt: ear.n earring-in jewelry-in
+>> Response:  <u speaker=HUM>(shirt.n tan) 
+
+>> Prompt: ear.n earring-in jewelry-in
+>> Response:  <u speaker=HUM>(shirt.n tan) 
+
+>> Prompt: cartridge_holder.n on-necktie silver over-necktie metal
+>> Response:  <u speaker=HUM>(hair.n tan) 
+
+>> Prompt: cartridge_holder.n on-necktie silver over-necktie metal
+>> Response:  <u speaker=HUM>(hair.n madrick with-food) 
+
+>> Prompt: cartridge_holder.n on-necktie silver over-necktie metal
+>> Response:  <u speaker=HUM>(hair.n tan) 
+
+>> Prompt: cartridge_holder.n on-necktie silver over-necktie metal
+>> Response:  <u speaker=HUM>(hair.n tan) 
+
+>> Prompt: belt.n black under-cringle
+>> Response:  <u speaker=HUM>(hair.n black with-food with-cheese) 
+
+>> Prompt: belt.n black under-cringle
+>> Response:  <u speaker=HUM>(hair.n drick with-lin black mug-food with) 
+
+>> Prompt: belt.n black under-cringle
+>> Response:  <u speaker=HUM>(hair.n woman-has) 
+
+>> Prompt: belt.n black under-cringle
+>> Response:  <u speaker=HUM>(hair.n black woman-wearing) 
+
+>> Prompt: hand.n on-hand woman-has on-table on-shoulder hand-on|top|of hand-on on|top|of-hand woman-has|a
+>> Response:  <u speaker=HUM>(hair.n man-has woman-wearing) 
+
+>> Prompt: hand.n on-hand woman-has on-table on-shoulder hand-on|top|of hand-on on|top|of-hand woman-has|a
+>> Response:  <u speaker=HUM>(hand.n man-wearing) 
+
+>> Prompt: hand.n on-hand woman-has on-table on-shoulder hand-on|top|of hand-on on|top|of-hand woman-has|a
+>> Response:  <u speaker=HUM>(hand.n man-has man-wearing) 
+
+>> Prompt: hand.n on-hand woman-has on-table on-shoulder hand-on|top|of hand-on on|top|of-hand woman-has|a
+>> Response:  <u speaker=HUM>(hair.n man-sitting|a) 
+
+>> Prompt: hair.n woman-has black pulled|back man-has person-has
+>> Response:  <u speaker=HUM>(hair.n woman-has) 
+
+>> Prompt: hair.n woman-has black pulled|back man-has person-has
+>> Response:  <u speaker=HUM>(hair.n woman-has) 
+
+>> Prompt: hair.n woman-has black pulled|back man-has person-has
+>> Response:  <u speaker=HUM>(trouser.n man-wearing man-wearing) 
+
+>> Prompt: hair.n woman-has black pulled|back man-has person-has
+>> Response:  <u speaker=HUM>(trouser.n man-has man-wearing) 
+
+>> Prompt: button.n 
+>> Response:  <u speaker=HUM>(fullat.n black man-sitting|at|a man-sitting|a) 
+
+>> Prompt: button.n 
+>> Response:  <u speaker=HUM>(seet.n man-has) 
+
+>> Prompt: button.n 
+>> Response:  <u speaker=HUM>(see.n woman-has woman-has) 
+
+>> Prompt: button.n 
+>> Response:  <u speaker=HUM>(furn.n are ral_processing_prtrocessing_establishment-on mered baby-on baby-on) 
+
+>> Prompt: tree.n has-leaf behind-woman has-trunk
+>> Response:  <u speaker=HUM>(leaf.n on-tree tree-has) 
+
+>> Prompt: tree.n has-leaf behind-woman has-trunk
+>> Response:  <u speaker=HUM>(leaf.n on-tree behind-animal) 
+
+>> Prompt: tree.n has-leaf behind-woman has-trunk
+>> Response:  <u speaker=HUM>(tree.n in-park has-head behind-animal has-ear has-ear has-ear animal-in animal-in animal-in animal-in animal-in plant-has animal-in plant-in)</ 
+
+>> Prompt: tree.n has-leaf behind-woman has-trunk
+>> Response:  <u speaker=HUM>(leaf.n on-tree tree-has) 
+
+>> Prompt: leaf.n tree-has
+>> Response:  <u speaker=HUM>(tree.n in-park behind-man) 
+
+>> Prompt: leaf.n tree-has
+>> Response:  <u speaker=HUM>(leaf.n on-tree behind-animal) 
+
+>> Prompt: leaf.n tree-has
+>> Response:  <u speaker=HUM>(tree.n in-tree) 
+
+>> Prompt: leaf.n tree-has
+>> Response:  <u speaker=HUM>(tree.n in-park has-ear has-ear behind-mane has-head eating-pasture eating-pasture eating-pasture has-pasture has-pasture eats-pasture has-pasture has-pasture eats-pasture eats-pasture 
+
+>> Prompt: trunk.n tree-has
+>> Response:  <u speaker=HUM>(tree.n in-park has-head has-head has-head eating-pasture has-head has-ear eats-pasture eats-ear eats-pasture animal-pasture animal-has) 
+
+>> Prompt: trunk.n tree-has
+>> Response:  <u speaker=HUM>(elephant.n elephant-has elephant-has) 
+
+>> Prompt: trunk.n tree-has
+>> Response:  <u speaker=HUM>(tree.n behind-woman) 
+
+>> Prompt: trunk.n tree-has
+>> Response:  <u speaker=HUM>(tree.n tree-has) 
+
+>> Prompt: cringle.n accessory-under belt-under
+>> Response:  <u speaker=HUM>(courd.n drawn chinemement-with) 
+
+>> Prompt: cringle.n accessory-under belt-under
+>> Response:  <u speaker=HUM>(chouch.n dr-with) 
+
+>> Prompt: cringle.n accessory-under belt-under
+>> Response:  <u speaker=HUM>(glass.n ) 
+
+>> Prompt: cringle.n accessory-under belt-under
+>> Response:  <u speaker=HUM>(couch.n drawn on-dish) 
+
+>> Prompt: shoulder.n hand-on
+>> Response:  <u speaker=HUM>(hair.n woman-wearing man-wearing) 
+
+>> Prompt: shoulder.n hand-on
+>> Response:  <u speaker=HUM>(hand.n man-has woman-wearing man-has man-wearing man-wears woman-wearing woman-wearing woman-wears) 
+
+>> Prompt: shoulder.n hand-on
+>> Response:  <u speaker=HUM>(wall.n baby-on cledge-on edge-of edge-of) 
+
+>> Prompt: shoulder.n hand-on
+>> Response:  <u speaker=HUM>(hand.n man-has man-wearing man-wearing) 
+
+>> Prompt: building.n white man-in|front|of person-in|front|of
+>> Response:  <u speaker=HUM>(man.n man-wearing acaral_shoe has-racoatch wearing-trouser has-trouser wearing-trouser wearing-trouser wearing-trouser has-trouser wearing-trouser wearing-trouser  
+
+>> Prompt: building.n white man-in|front|of person-in|front|of
+>> Response:  <u speaker=HUM>(woman.n woman-wearing woman-has woman-wearing) 
+
+>> Prompt: building.n white man-in|front|of person-in|front|of
+>> Response:  <u speaker=HUM>(woman.n tan) 
+
+>> Prompt: building.n white man-in|front|of person-in|front|of
+>> Response:  <u speaker=HUM>(man.n man-wearing acarackentral_processing_unit-on pen-on) 
+
+>> Prompt: person.n wearing-sweater has-face smiling has-eye sitting wearing-shirt has-hair in|front|of-house has-nose wearing-necktie wearing-suit has-head in|front|of-building
+>> Response:  <u speaker=HUM>(hair.n black woman-has woman-has) 
+
+>> Prompt: person.n wearing-sweater has-face smiling has-eye sitting wearing-shirt has-hair in|front|of-house has-nose wearing-necktie wearing-suit has-head in|front|of-building
+>> Response:  <u speaker=HUM>(hair.n tan) 
+
+>> Prompt: person.n wearing-sweater has-face smiling has-eye sitting wearing-shirt has-hair in|front|of-house has-nose wearing-necktie wearing-suit has-head in|front|of-building
+>> Response:  <u speaker=HUM>(hair.n tan) 
+
+>> Prompt: person.n wearing-sweater has-face smiling has-eye sitting wearing-shirt has-hair in|front|of-house has-nose wearing-necktie wearing-suit has-head in|front|of-building
+>> Response:  <u speaker=HUM>(hair.n tan) 
+
+>> Prompt: sweater.n person-wearing woman-wearing black
+>> Response:  <u speaker=HUM>(shirt.n woman-has) 
+
+>> Prompt: sweater.n person-wearing woman-wearing black
+>> Response:  <u speaker=HUM>(woman.n woman-wearing) 
+
+>> Prompt: sweater.n person-wearing woman-wearing black
+>> Response:  <u speaker=HUM>(shirt.n tan) 
+
+>> Prompt: sweater.n person-wearing woman-wearing black
+>> Response:  <u speaker=HUM>(woman.n wearing-shirt wearing-shirt wearing-suit wearing-suit wearing-suised woman-wearing) 
+
+>> Prompt: accessory.n black under-cringle
+>> Response:  <u speaker=HUM>(shirt.n tan) 
+
+>> Prompt: accessory.n black under-cringle
+>> Response:  <u speaker=HUM>(shirt.n tan) 
+
+>> Prompt: accessory.n black under-cringle
+>> Response:  <u speaker=HUM>(s.n man-wearing woman-wearing) 
+
+>> Prompt: accessory.n black under-cringle
+>> Response:  <u speaker=HUM>(shirt.n woman-has) 
+
+>> Prompt: face.n person-has
+>> Response:  <u speaker=HUM>(woman.n woman-has) 
+
+>> Prompt: face.n person-has
+>> Response:  <u speaker=HUM>(man.n man-wearing woman-wearing woman-wearing) 
+
+>> Prompt: face.n person-has
+>> Response:  <u speaker=HUM>(woman.n woman-has) 
+
+>> Prompt: face.n person-has
+>> Response:  <u speaker=HUM>(man.n man-has) 
+
+>> Prompt: house.n white person-in|front|of
+>> Response:  <u speaker=HUM>(man.n asian working sitting|a-desk) 
+
+>> Prompt: house.n white person-in|front|of
+>> Response:  <u speaker=HUM>(woman.n tan) 
+
+>> Prompt: house.n white person-in|front|of
+>> Response:  <u speaker=HUM>(man.n ar-has) 
+
+>> Prompt: house.n white person-in|front|of
+>> Response:  <u speaker=HUM>(woman.n woman-has) 
+
+>> Prompt: head.n woman-has pulled|back black person-has
+>> Response:  <u speaker=HUM>(shirt.n tan) 
+
+>> Prompt: head.n woman-has pulled|back black person-has
+>> Response:  <u speaker=HUM>(trouser.n woman-has man-has) 
+
+>> Prompt: head.n woman-has pulled|back black person-has
+>> Response:  <u speaker=HUM>(shirt.n tan) 
+
+>> Prompt: head.n woman-has pulled|back black person-has
+>> Response:  <u speaker=HUM>(shirt.n tan) 
+
+>> Prompt: jewelry.n stone woman-wearing black in-ear
+>> Response:  <u speaker=HUM>(shirt.n tan) 
+
+>> Prompt: jewelry.n stone woman-wearing black in-ear
+>> Response:  <u speaker=HUM>(ear.n on|right man-has man-has) 
+
+>> Prompt: jewelry.n stone woman-wearing black in-ear
+>> Response:  <u speaker=HUM>(man.n man-has man-wearing man-wearing man-wears man-wearing man-wearing) 
+
+>> Prompt: jewelry.n stone woman-wearing black in-ear
+>> Response:  <u speaker=HUM>(ear.n on|right animal-has) 

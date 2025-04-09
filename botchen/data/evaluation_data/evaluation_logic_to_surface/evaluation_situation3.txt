@@ -1,0 +1,434 @@
+>> Loaded models dict_keys(['chat'])
+
+
+>> Prompt: (color.n blue), (curtain.n blue drawn)
+>> Response: a choll che s 
+
+>> Prompt: (color.n blue), (curtain.n blue drawn)
+>> Response: A chair with colleststs 
+
+>> Prompt: (color.n blue), (curtain.n blue drawn)
+>> Response: A bolests che sts 
+
+>> Prompt: (color.n blue), (curtain.n blue drawn)
+>> Response: a choles 
+
+>> Prompt: (chair.n black slender purple blue has-padding next|to-table), (padding.n blue chair-has)
+>> Response: all cholllll ch char 
+
+>> Prompt: (chair.n black slender purple blue has-padding next|to-table), (padding.n blue chair-has)
+>> Response: aptop of colollll ar 
+
+>> Prompt: (chair.n black slender purple blue has-padding next|to-table), (padding.n blue chair-has)
+>> Response: A band bandes are on the floor 
+
+>> Prompt: (chair.n black slender purple blue has-padding next|to-table), (padding.n blue chair-has)
+>> Response: ale botts 
+
+>> Prompt: (teddy.n stuffed forward against-pillow against-pillow has-fabric on-sofa)
+>> Response: a charg chare chare cheees 
+
+>> Prompt: (teddy.n stuffed forward against-pillow against-pillow has-fabric on-sofa)
+>> Response: an is white chis on the wall 
+
+>> Prompt: (teddy.n stuffed forward against-pillow against-pillow has-fabric on-sofa)
+>> Response: A culale chole s 
+
+>> Prompt: (teddy.n stuffed forward against-pillow against-pillow has-fabric on-sofa)
+>> Response: A coles sit 
+
+>> Prompt: (armchair.n purple wooden cloth has-frame pillow-on lamp-behind pillow-on puppet-on), (puppet.n stuffed forward against-pillow against-pillow has-fabric on-armchair)
+>> Response: ale sts 
+
+>> Prompt: (armchair.n purple wooden cloth has-frame pillow-on lamp-behind pillow-on puppet-on), (puppet.n stuffed forward against-pillow against-pillow has-fabric on-armchair)
+>> Response: A cullesits of charde cure s 
+
+>> Prompt: (armchair.n purple wooden cloth has-frame pillow-on lamp-behind pillow-on puppet-on), (puppet.n stuffed forward against-pillow against-pillow has-fabric on-armchair)
+>> Response: A clesit chee curar s 
+
+>> Prompt: (armchair.n purple wooden cloth has-frame pillow-on lamp-behind pillow-on puppet-on), (puppet.n stuffed forward against-pillow against-pillow has-fabric on-armchair)
+>> Response: argeen care chales 
+
+>> Prompt: (curtain.n tied designed blue)
+>> Response: A bole ck bes on the floor 
+
+>> Prompt: (curtain.n tied designed blue)
+>> Response: an borts 
+
+>> Prompt: (curtain.n tied designed blue)
+>> Response: an banges 
+
+>> Prompt: (curtain.n tied designed blue)
+>> Response: A colllles of dsthan chour 
+
+>> Prompt: (door.n glass sliding to-patio), (patio.n door-to)
+>> Response: a charg chair with chole 
+
+>> Prompt: (door.n glass sliding to-patio), (patio.n door-to)
+>> Response: A clen chourts che cle choles 
+
+>> Prompt: (door.n glass sliding to-patio), (patio.n door-to)
+>> Response: andits on the desk 
+
+>> Prompt: (door.n glass sliding to-patio), (patio.n door-to)
+>> Response: A cole chour 
+
+>> Prompt: (picture.n water black art)
+>> Response: A curale st 
+
+>> Prompt: (picture.n water black art)
+>> Response: A tand chair with black alaptop of chale it 
+
+>> Prompt: (picture.n water black art)
+>> Response: A curar chair 
+
+>> Prompt: (picture.n water black art)
+>> Response: a chair 
+
+>> Prompt: (seat.n blue)
+>> Response: a chair with curalarg chollles on the desk 
+
+>> Prompt: (seat.n blue)
+>> Response: a bots 
+
+>> Prompt: (seat.n blue)
+>> Response: A botttt blles on plate 
+
+>> Prompt: (seat.n blue)
+>> Response: a barts 
+
+>> Prompt: (seat.n black slender purple blue has-padding next|to-support), (support.n glass metal seat-next|to)
+>> Response: a is a curar chair with curararg p 
+
+>> Prompt: (seat.n black slender purple blue has-padding next|to-support), (support.n glass metal seat-next|to)
+>> Response: a is a curale plate 
+
+>> Prompt: (seat.n black slender purple blue has-padding next|to-support), (support.n glass metal seat-next|to)
+>> Response: A man wears a taned ande 
+
+>> Prompt: (seat.n black slender purple blue has-padding next|to-support), (support.n glass metal seat-next|to)
+>> Response: a is curar chair 
+
+>> Prompt: (chair.n black slender purple blue has-padding next|to-table)
+>> Response: an computer 
+
+>> Prompt: (chair.n black slender purple blue has-padding next|to-table)
+>> Response: a monitor 
+
+>> Prompt: (chair.n black slender purple blue has-padding next|to-table)
+>> Response: a computer 
+
+>> Prompt: (chair.n black slender purple blue has-padding next|to-table)
+>> Response: A anden colles 
+
+>> Prompt: (floor.n wood wooden rug-on lamp-on), (lamp.n tall chrome black standing behind-sofa on-floor)
+>> Response: an andrgen chales 
+
+>> Prompt: (floor.n wood wooden rug-on lamp-on), (lamp.n tall chrome black standing behind-sofa on-floor)
+>> Response: a is a wall 
+
+>> Prompt: (floor.n wood wooden rug-on lamp-on), (lamp.n tall chrome black standing behind-sofa on-floor)
+>> Response: A man wears a gren boles 
+
+>> Prompt: (floor.n wood wooden rug-on lamp-on), (lamp.n tall chrome black standing behind-sofa on-floor)
+>> Response: an a is white 
+
+>> Prompt: (rug.n gray plush clean purple grey on-floor)
+>> Response: A barg to to to plate 
+
+>> Prompt: (rug.n gray plush clean purple grey on-floor)
+>> Response: A is white coule bles 
+
+>> Prompt: (rug.n gray plush clean purple grey on-floor)
+>> Response: a to is on desk 
+
+>> Prompt: (rug.n gray plush clean purple grey on-floor)
+>> Response: A bole bosts 
+
+>> Prompt: (floor.n wood wooden rug-on lamp-on), (rug.n gray plush clean purple grey on-floor)
+>> Response: a is is floor 
+
+>> Prompt: (floor.n wood wooden rug-on lamp-on), (rug.n gray plush clean purple grey on-floor)
+>> Response: A ban bor 
+
+>> Prompt: (floor.n wood wooden rug-on lamp-on), (rug.n gray plush clean purple grey on-floor)
+>> Response: A bart bang to to to a to a to a plate 
+
+>> Prompt: (floor.n wood wooden rug-on lamp-on), (rug.n gray plush clean purple grey on-floor)
+>> Response: an tonder is on the desk 
+
+>> Prompt: (seat.n black slender purple blue has-padding next|to-support), (padding.n blue seat-has)
+>> Response: andol cles 
+
+>> Prompt: (seat.n black slender purple blue has-padding next|to-support), (padding.n blue seat-has)
+>> Response: A cular chair 
+
+>> Prompt: (seat.n black slender purple blue has-padding next|to-support), (padding.n blue seat-has)
+>> Response: A man in colllottst 
+
+>> Prompt: (seat.n black slender purple blue has-padding next|to-support), (padding.n blue seat-has)
+>> Response: a cholle cke ar 
+
+>> Prompt: (frame.n wooden sofa-has), (sofa.n purple wooden cloth has-frame pillow-on lamp-behind pillow-on teddy-on)
+>> Response: Asit is is on the desk 
+
+>> Prompt: (frame.n wooden sofa-has), (sofa.n purple wooden cloth has-frame pillow-on lamp-behind pillow-on teddy-on)
+>> Response: a cle sthis on the wall 
+
+>> Prompt: (frame.n wooden sofa-has), (sofa.n purple wooden cloth has-frame pillow-on lamp-behind pillow-on teddy-on)
+>> Response: A clen challe char 
+
+>> Prompt: (frame.n wooden sofa-has), (sofa.n purple wooden cloth has-frame pillow-on lamp-behind pillow-on teddy-on)
+>> Response: A is on a curgray 
+
+>> Prompt: (frame.n wooden armchair-has)
+>> Response: A clle chale ches on a wall 
+
+>> Prompt: (frame.n wooden armchair-has)
+>> Response: A colle che st 
+
+>> Prompt: (frame.n wooden armchair-has)
+>> Response: A clale challe chale ckes 
+
+>> Prompt: (frame.n wooden armchair-has)
+>> Response: A collles ches 
+
+>> Prompt: (fabric.n red teddy-has), (teddy.n stuffed forward against-pillow against-pillow has-fabric on-sofa)
+>> Response: A cole choule st 
+
+>> Prompt: (fabric.n red teddy-has), (teddy.n stuffed forward against-pillow against-pillow has-fabric on-sofa)
+>> Response: A colests are on the desk 
+
+>> Prompt: (fabric.n red teddy-has), (teddy.n stuffed forward against-pillow against-pillow has-fabric on-sofa)
+>> Response: a is on a wall 
+
+>> Prompt: (fabric.n red teddy-has), (teddy.n stuffed forward against-pillow against-pillow has-fabric on-sofa)
+>> Response: A is white clour 
+
+>> Prompt: (pillow.n white on-sofa on-sofa teddy-against teddy-against), (teddy.n stuffed forward against-pillow against-pillow has-fabric on-sofa)
+>> Response: A is white is on the desk 
+
+>> Prompt: (pillow.n white on-sofa on-sofa teddy-against teddy-against), (teddy.n stuffed forward against-pillow against-pillow has-fabric on-sofa)
+>> Response: Asit coles char 
+
+>> Prompt: (pillow.n white on-sofa on-sofa teddy-against teddy-against), (teddy.n stuffed forward against-pillow against-pillow has-fabric on-sofa)
+>> Response: A is curale chole 
+
+>> Prompt: (pillow.n white on-sofa on-sofa teddy-against teddy-against), (teddy.n stuffed forward against-pillow against-pillow has-fabric on-sofa)
+>> Response: A is white is white clar challe char 
+
+>> Prompt: (sofa.n purple wooden cloth has-frame pillow-on lamp-behind pillow-on teddy-on), (teddy.n stuffed forward against-pillow against-pillow has-fabric on-sofa)
+>> Response: a is on wall 
+
+>> Prompt: (sofa.n purple wooden cloth has-frame pillow-on lamp-behind pillow-on teddy-on), (teddy.n stuffed forward against-pillow against-pillow has-fabric on-sofa)
+>> Response: A curalen stalong choles 
+
+>> Prompt: (sofa.n purple wooden cloth has-frame pillow-on lamp-behind pillow-on teddy-on), (teddy.n stuffed forward against-pillow against-pillow has-fabric on-sofa)
+>> Response: a chale against against wall 
+
+>> Prompt: (sofa.n purple wooden cloth has-frame pillow-on lamp-behind pillow-on teddy-on), (teddy.n stuffed forward against-pillow against-pillow has-fabric on-sofa)
+>> Response: A is white is white 
+
+>> Prompt: (box.n empty)
+>> Response: A clend chair with charders 
+
+>> Prompt: (box.n empty)
+>> Response: a chair with ales 
+
+>> Prompt: (box.n empty)
+>> Response: A talen sits bests 
+
+>> Prompt: (box.n empty)
+>> Response: a taned aned computer computer 
+
+>> Prompt: (support.n glass metal seat-next|to)
+>> Response: a is white chair 
+
+>> Prompt: (support.n glass metal seat-next|to)
+>> Response: A colleth ton tonde plate 
+
+>> Prompt: (support.n glass metal seat-next|to)
+>> Response: a is a chair with chalale choles 
+
+>> Prompt: (support.n glass metal seat-next|to)
+>> Response: A curale chard cke ale chardes 
+
+>> Prompt: (sofa.n purple wooden cloth has-frame pillow-on lamp-behind pillow-on teddy-on)
+>> Response: A clensit cke chales 
+
+>> Prompt: (sofa.n purple wooden cloth has-frame pillow-on lamp-behind pillow-on teddy-on)
+>> Response: A is on a a floor 
+
+>> Prompt: (sofa.n purple wooden cloth has-frame pillow-on lamp-behind pillow-on teddy-on)
+>> Response: A clar cholle che sts 
+
+>> Prompt: (sofa.n purple wooden cloth has-frame pillow-on lamp-behind pillow-on teddy-on)
+>> Response: an is on the desk 
+
+>> Prompt: (color.n purple), (sofa.n purple wooden cloth has-frame pillow-on lamp-behind pillow-on teddy-on)
+>> Response: an cholle against against wall 
+
+>> Prompt: (color.n purple), (sofa.n purple wooden cloth has-frame pillow-on lamp-behind pillow-on teddy-on)
+>> Response: a chour 
+
+>> Prompt: (color.n purple), (sofa.n purple wooden cloth has-frame pillow-on lamp-behind pillow-on teddy-on)
+>> Response: A cular chale s 
+
+>> Prompt: (color.n purple), (sofa.n purple wooden cloth has-frame pillow-on lamp-behind pillow-on teddy-on)
+>> Response: A is white cule char 
+
+>> Prompt: (lamp.n tall chrome black standing behind-sofa on-floor)
+>> Response: A is white colest 
+
+>> Prompt: (lamp.n tall chrome black standing behind-sofa on-floor)
+>> Response: a is a wall 
+
+>> Prompt: (lamp.n tall chrome black standing behind-sofa on-floor)
+>> Response: A is white colles 
+
+>> Prompt: (lamp.n tall chrome black standing behind-sofa on-floor)
+>> Response: A curall char 
+
+>> Prompt: (table.n glass metal chair-next|to)
+>> Response: A is is courth che 
+
+>> Prompt: (table.n glass metal chair-next|to)
+>> Response: a chale ar sts 
+
+>> Prompt: (table.n glass metal chair-next|to)
+>> Response: a is a a table 
+
+>> Prompt: (table.n glass metal chair-next|to)
+>> Response: A cllen choles 
+
+>> Prompt: (curtain.n blue drawn)
+>> Response: A ban barge che ses 
+
+>> Prompt: (curtain.n blue drawn)
+>> Response: a chair with arapst 
+
+>> Prompt: (curtain.n blue drawn)
+>> Response: an chair with curale s 
+
+>> Prompt: (curtain.n blue drawn)
+>> Response: A colle ches 
+
+>> Prompt: (pillow.n white on-sofa on-sofa teddy-against teddy-against)
+>> Response: A clen cholle s 
+
+>> Prompt: (pillow.n white on-sofa on-sofa teddy-against teddy-against)
+>> Response: an chales 
+
+>> Prompt: (pillow.n white on-sofa on-sofa teddy-against teddy-against)
+>> Response: A is is white clour 
+
+>> Prompt: (pillow.n white on-sofa on-sofa teddy-against teddy-against)
+>> Response: A is cholles on the plate 
+
+>> Prompt: (chair.n black slender purple blue has-padding next|to-table), (table.n glass metal chair-next|to)
+>> Response: A is is a a table is a desk 
+
+>> Prompt: (chair.n black slender purple blue has-padding next|to-table), (table.n glass metal chair-next|to)
+>> Response: A is white cllle tonder plate 
+
+>> Prompt: (chair.n black slender purple blue has-padding next|to-table), (table.n glass metal chair-next|to)
+>> Response: a a a chour 
+
+>> Prompt: (chair.n black slender purple blue has-padding next|to-table), (table.n glass metal chair-next|to)
+>> Response: A is white courts are curar 
+
+>> Prompt: (frame.n wooden sofa-has)
+>> Response: A clartsit ck ised on the floor 
+
+>> Prompt: (frame.n wooden sofa-has)
+>> Response: a chair and cololds 
+
+>> Prompt: (frame.n wooden sofa-has)
+>> Response: A colles stales on wall 
+
+>> Prompt: (frame.n wooden sofa-has)
+>> Response: A colle sthes stand s 
+
+>> Prompt: (desk.n wooden)
+>> Response: a choles 
+
+>> Prompt: (desk.n wooden)
+>> Response: a chair with aletsts 
+
+>> Prompt: (desk.n wooden)
+>> Response: a chold chour 
+
+>> Prompt: (desk.n wooden)
+>> Response: A talen chair with papap 
+
+>> Prompt: (pillow.n white on-armchair on-armchair puppet-against puppet-against), (armchair.n purple wooden cloth has-frame pillow-on lamp-behind pillow-on puppet-on)
+>> Response: A is is white curale chole 
+
+>> Prompt: (pillow.n white on-armchair on-armchair puppet-against puppet-against), (armchair.n purple wooden cloth has-frame pillow-on lamp-behind pillow-on puppet-on)
+>> Response: a is white charg chair 
+
+>> Prompt: (pillow.n white on-armchair on-armchair puppet-against puppet-against), (armchair.n purple wooden cloth has-frame pillow-on lamp-behind pillow-on puppet-on)
+>> Response: A is white curart 
+
+>> Prompt: (pillow.n white on-armchair on-armchair puppet-against puppet-against), (armchair.n purple wooden cloth has-frame pillow-on lamp-behind pillow-on puppet-on)
+>> Response: an is white andit 
+
+>> Prompt: (lamp.n tall chrome black standing behind-sofa on-floor), (sofa.n purple wooden cloth has-frame pillow-on lamp-behind pillow-on teddy-on)
+>> Response: a is on the floor 
+
+>> Prompt: (lamp.n tall chrome black standing behind-sofa on-floor), (sofa.n purple wooden cloth has-frame pillow-on lamp-behind pillow-on teddy-on)
+>> Response: A is white is white is white a curale chall ck on charg cure s 
+
+>> Prompt: (lamp.n tall chrome black standing behind-sofa on-floor), (sofa.n purple wooden cloth has-frame pillow-on lamp-behind pillow-on teddy-on)
+>> Response: A is white is white is white cloulll s 
+
+>> Prompt: (lamp.n tall chrome black standing behind-sofa on-floor), (sofa.n purple wooden cloth has-frame pillow-on lamp-behind pillow-on teddy-on)
+>> Response: a choles 
+
+>> Prompt: (pillow.n white on-sofa on-sofa teddy-against teddy-against), (sofa.n purple wooden cloth has-frame pillow-on lamp-behind pillow-on teddy-on)
+>> Response: an chales on the floor 
+
+>> Prompt: (pillow.n white on-sofa on-sofa teddy-against teddy-against), (sofa.n purple wooden cloth has-frame pillow-on lamp-behind pillow-on teddy-on)
+>> Response: an choll s 
+
+>> Prompt: (pillow.n white on-sofa on-sofa teddy-against teddy-against), (sofa.n purple wooden cloth has-frame pillow-on lamp-behind pillow-on teddy-on)
+>> Response: A clen chale s 
+
+>> Prompt: (pillow.n white on-sofa on-sofa teddy-against teddy-against), (sofa.n purple wooden cloth has-frame pillow-on lamp-behind pillow-on teddy-on)
+>> Response: A culesit chal ches 
+
+>> Prompt: (floor.n wood wooden rug-on lamp-on)
+>> Response: A is white clesile p 
+
+>> Prompt: (floor.n wood wooden rug-on lamp-on)
+>> Response: A clen chair with black charde curale s 
+
+>> Prompt: (floor.n wood wooden rug-on lamp-on)
+>> Response: a is white 
+
+>> Prompt: (floor.n wood wooden rug-on lamp-on)
+>> Response: A is chair with courthe che st 
+
+>> Prompt: (window.n )
+>> Response: an choles 
+
+>> Prompt: (window.n )
+>> Response: a banges 
+
+>> Prompt: (window.n )
+>> Response: A bandes are chair 
+
+>> Prompt: (window.n )
+>> Response: A barg chair chair with curale s 
+
+>> Prompt: (pillow.n white on-armchair on-armchair puppet-against puppet-against)
+>> Response: A colllll sth chard chard ches 
+
+>> Prompt: (pillow.n white on-armchair on-armchair puppet-against puppet-against)
+>> Response: andil che s 
+
+>> Prompt: (pillow.n white on-armchair on-armchair puppet-against puppet-against)
+>> Response: A colllll ch star sit 
+
+>> Prompt: (pillow.n white on-armchair on-armchair puppet-against puppet-against)
+>> Response: a chair with alet 

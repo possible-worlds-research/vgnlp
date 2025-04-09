@@ -1,0 +1,722 @@
+>> Loaded models dict_keys(['chat'])
+
+
+>> Prompt: (shelf.n wooden brown hold-book against-wall against-wall baby-on book-on tube-on baby-on)
+>> Response: a a cular ptop of it 
+
+>> Prompt: (shelf.n wooden brown hold-book against-wall against-wall baby-on book-on tube-on baby-on)
+>> Response: A culen choles on plate 
+
+>> Prompt: (shelf.n wooden brown hold-book against-wall against-wall baby-on book-on tube-on baby-on)
+>> Response: A tubandes on the tree 
+
+>> Prompt: (shelf.n wooden brown hold-book against-wall against-wall baby-on book-on tube-on baby-on)
+>> Response: a ptop of a a a a a desk 
+
+>> Prompt: (bedroom.n indoors has-lamp lamp-in lamp-in lamp-in lamp-in)
+>> Response: the is on a desk 
+
+>> Prompt: (bedroom.n indoors has-lamp lamp-in lamp-in lamp-in lamp-in)
+>> Response: the is on is a desk 
+
+>> Prompt: (bedroom.n indoors has-lamp lamp-in lamp-in lamp-in lamp-in)
+>> Response: the is is on the desk 
+
+>> Prompt: (bedroom.n indoors has-lamp lamp-in lamp-in lamp-in lamp-in)
+>> Response: the is is on the desk 
+
+>> Prompt: (cable.n white on-floor on-floor), (floor.n grey clean bin-on tower-on cable-on cable-on bin-on tower-on)
+>> Response: a andit 
+
+>> Prompt: (cable.n white on-floor on-floor), (floor.n grey clean bin-on tower-on cable-on cable-on bin-on tower-on)
+>> Response: a a a floor 
+
+>> Prompt: (cable.n white on-floor on-floor), (floor.n grey clean bin-on tower-on cable-on cable-on bin-on tower-on)
+>> Response: A cle chale ck chale alets on the floor 
+
+>> Prompt: (cable.n white on-floor on-floor), (floor.n grey clean bin-on tower-on cable-on cable-on bin-on tower-on)
+>> Response: a is on desk 
+
+>> Prompt: (bin.n blue on-floor next|to-desk on-floor), (desk.n bin-next|to tower-under)
+>> Response: a is table 
+
+>> Prompt: (bin.n blue on-floor next|to-desk on-floor), (desk.n bin-next|to tower-under)
+>> Response: A is chair 
+
+>> Prompt: (bin.n blue on-floor next|to-desk on-floor), (desk.n bin-next|to tower-under)
+>> Response: a is table 
+
+>> Prompt: (bin.n blue on-floor next|to-desk on-floor), (desk.n bin-next|to tower-under)
+>> Response: an is on the desk 
+
+>> Prompt: (poster.n on-wall), (wall.n green poster-on shelf-against shelf-against)
+>> Response: A clllll char cke cke male ckes on plate plate 
+
+>> Prompt: (poster.n on-wall), (wall.n green poster-on shelf-against shelf-against)
+>> Response: a choles 
+
+>> Prompt: (poster.n on-wall), (wall.n green poster-on shelf-against shelf-against)
+>> Response: an elephants 
+
+>> Prompt: (poster.n on-wall), (wall.n green poster-on shelf-against shelf-against)
+>> Response: A clllll ck cker calar 
+
+>> Prompt: (bottle.n water empty plastic on-desk on-desk monitor-by), (monitor.n white by-bottle)
+>> Response: a is white is on the desk 
+
+>> Prompt: (bottle.n water empty plastic on-desk on-desk monitor-by), (monitor.n white by-bottle)
+>> Response: A clale char bine che chair 
+
+>> Prompt: (bottle.n water empty plastic on-desk on-desk monitor-by), (monitor.n white by-bottle)
+>> Response: an is white choulles 
+
+>> Prompt: (bottle.n water empty plastic on-desk on-desk monitor-by), (monitor.n white by-bottle)
+>> Response: A cullll chale che s 
+
+>> Prompt: (bin.n blue on-floor next|to-bureau on-floor), (bureau.n bin-next|to tower-under)
+>> Response: a is a table 
+
+>> Prompt: (bin.n blue on-floor next|to-bureau on-floor), (bureau.n bin-next|to tower-under)
+>> Response: A is white curar is cururale ck arender curalargen chale ckers 
+
+>> Prompt: (bin.n blue on-floor next|to-bureau on-floor), (bureau.n bin-next|to tower-under)
+>> Response: A is cour 
+
+>> Prompt: (bin.n blue on-floor next|to-bureau on-floor), (bureau.n bin-next|to tower-under)
+>> Response: a is on desk 
+
+>> Prompt: (shelf.n wooden brown hold-book against-wall against-wall baby-on book-on tube-on baby-on), (tube.n white on-shelf)
+>> Response: an chour 
+
+>> Prompt: (shelf.n wooden brown hold-book against-wall against-wall baby-on book-on tube-on baby-on), (tube.n white on-shelf)
+>> Response: a a a chair with cholllles 
+
+>> Prompt: (shelf.n wooden brown hold-book against-wall against-wall baby-on book-on tube-on baby-on), (tube.n white on-shelf)
+>> Response: A andit along sionge chour 
+
+>> Prompt: (shelf.n wooden brown hold-book against-wall against-wall baby-on book-on tube-on baby-on), (tube.n white on-shelf)
+>> Response: a a chair 
+
+>> Prompt: (computer.n laptop grey on-desk on-desk on-desk), (desk.n keyboard-on computer-on keyboard-on computer-on computer-on)
+>> Response: a computer computer 
+
+>> Prompt: (computer.n laptop grey on-desk on-desk on-desk), (desk.n keyboard-on computer-on keyboard-on computer-on computer-on)
+>> Response: a is on the desk 
+
+>> Prompt: (computer.n laptop grey on-desk on-desk on-desk), (desk.n keyboard-on computer-on keyboard-on computer-on computer-on)
+>> Response: a computer computer is on desk 
+
+>> Prompt: (computer.n laptop grey on-desk on-desk on-desk), (desk.n keyboard-on computer-on keyboard-on computer-on computer-on)
+>> Response: a is on desk 
+
+>> Prompt: (floor.n grey clean bin-on tower-on cable-on cable-on bin-on tower-on), (tower.n white on-floor under-desk on-floor)
+>> Response: an is white 
+
+>> Prompt: (floor.n grey clean bin-on tower-on cable-on cable-on bin-on tower-on), (tower.n white on-floor under-desk on-floor)
+>> Response: a a table 
+
+>> Prompt: (floor.n grey clean bin-on tower-on cable-on cable-on bin-on tower-on), (tower.n white on-floor under-desk on-floor)
+>> Response: a is on the desk 
+
+>> Prompt: (floor.n grey clean bin-on tower-on cable-on cable-on bin-on tower-on), (tower.n white on-floor under-desk on-floor)
+>> Response: A andeens are on the table 
+
+>> Prompt: (chair.n grey rolling office with-wheel)
+>> Response: aptop curar chale s 
+
+>> Prompt: (chair.n grey rolling office with-wheel)
+>> Response: aple ches 
+
+>> Prompt: (chair.n grey rolling office with-wheel)
+>> Response: A clelen sthand chout 
+
+>> Prompt: (chair.n grey rolling office with-wheel)
+>> Response: a a chair with black chourts 
+
+>> Prompt: (building.n large white)
+>> Response: A tallen ck male chales 
+
+>> Prompt: (building.n large white)
+>> Response: A cllesth chair with choles 
+
+>> Prompt: (building.n large white)
+>> Response: a chard s 
+
+>> Prompt: (building.n large white)
+>> Response: a chair and palaptop of ader 
+
+>> Prompt: (chair.n gray), (chair.n grey rolling office with-wheel)
+>> Response: a chole s 
+
+>> Prompt: (chair.n gray), (chair.n grey rolling office with-wheel)
+>> Response: A clellles on plate 
+
+>> Prompt: (chair.n gray), (chair.n grey rolling office with-wheel)
+>> Response: A courth de cle s 
+
+>> Prompt: (chair.n gray), (chair.n grey rolling office with-wheel)
+>> Response: aptop aptop of the table 
+
+>> Prompt: (computer.n laptop grey on-desk on-desk on-desk)
+>> Response: an desk 
+
+>> Prompt: (computer.n laptop grey on-desk on-desk on-desk)
+>> Response: a desktop computer 
+
+>> Prompt: (computer.n laptop grey on-desk on-desk on-desk)
+>> Response: A an monitor 
+
+>> Prompt: (computer.n laptop grey on-desk on-desk on-desk)
+>> Response: a desk 
+
+>> Prompt: (desk.n white cluttered book-on book-on)
+>> Response: A is on desk 
+
+>> Prompt: (desk.n white cluttered book-on book-on)
+>> Response: a chair with calar chall che s 
+
+>> Prompt: (desk.n white cluttered book-on book-on)
+>> Response: A chair with alen paptop of itside ididit 
+
+>> Prompt: (desk.n white cluttered book-on book-on)
+>> Response: A is on desk 
+
+>> Prompt: (bureau.n screen-on), (screen.n white flat dark off on-bureau)
+>> Response: A an chair with curalarge choles 
+
+>> Prompt: (bureau.n screen-on), (screen.n white flat dark off on-bureau)
+>> Response: A an andendigee chair with parap 
+
+>> Prompt: (bureau.n screen-on), (screen.n white flat dark off on-bureau)
+>> Response: Asit culll char che chees 
+
+>> Prompt: (bureau.n screen-on), (screen.n white flat dark off on-bureau)
+>> Response: A a chair with curalar chale chale chales 
+
+>> Prompt: (bureau.n white cluttered book-on book-on)
+>> Response: A culender plate curale plate 
+
+>> Prompt: (bureau.n white cluttered book-on book-on)
+>> Response: A culall plate plate 
+
+>> Prompt: (bureau.n white cluttered book-on book-on)
+>> Response: a is on desk 
+
+>> Prompt: (bureau.n white cluttered book-on book-on)
+>> Response: A is white on desk 
+
+>> Prompt: (baby.n on-shelf on-shelf), (shelf.n wooden brown hold-book against-wall against-wall baby-on book-on tube-on baby-on)
+>> Response: A andren chair with pape charder ile 
+
+>> Prompt: (baby.n on-shelf on-shelf), (shelf.n wooden brown hold-book against-wall against-wall baby-on book-on tube-on baby-on)
+>> Response: Asit cure pe coles 
+
+>> Prompt: (baby.n on-shelf on-shelf), (shelf.n wooden brown hold-book against-wall against-wall baby-on book-on tube-on baby-on)
+>> Response: A a charge chair with pale chole 
+
+>> Prompt: (baby.n on-shelf on-shelf), (shelf.n wooden brown hold-book against-wall against-wall baby-on book-on tube-on baby-on)
+>> Response: A curart chale char cke arende s 
+
+>> Prompt: (container.n water empty plastic on-bureau on-bureau screen-by), (screen.n white by-container)
+>> Response: a chair with black cale curargreen s 
+
+>> Prompt: (container.n water empty plastic on-bureau on-bureau screen-by), (screen.n white by-container)
+>> Response: A curalen staned cke chales 
+
+>> Prompt: (container.n water empty plastic on-bureau on-bureau screen-by), (screen.n white by-container)
+>> Response: a chale chargee chale s 
+
+>> Prompt: (container.n water empty plastic on-bureau on-bureau screen-by), (screen.n white by-container)
+>> Response: A curalen chair with chour 
+
+>> Prompt: (bureau.n bin-next|to tower-under), (tower.n white on-floor under-bureau on-floor)
+>> Response: A an is white 
+
+>> Prompt: (bureau.n bin-next|to tower-under), (tower.n white on-floor under-bureau on-floor)
+>> Response: an desk 
+
+>> Prompt: (bureau.n bin-next|to tower-under), (tower.n white on-floor under-bureau on-floor)
+>> Response: A a is white chair 
+
+>> Prompt: (bureau.n bin-next|to tower-under), (tower.n white on-floor under-bureau on-floor)
+>> Response: an is white chair with curale chales 
+
+>> Prompt: (container.n water empty plastic on-bureau on-bureau screen-by)
+>> Response: A tubots are on desk 
+
+>> Prompt: (container.n water empty plastic on-bureau on-bureau screen-by)
+>> Response: A colle ches cholllet 
+
+>> Prompt: (container.n water empty plastic on-bureau on-bureau screen-by)
+>> Response: A colllest sit 
+
+>> Prompt: (container.n water empty plastic on-bureau on-bureau screen-by)
+>> Response: A tan chair with curales 
+
+>> Prompt: (container.n water empty plastic on-bureau on-bureau screen-by), (bureau.n container-on container-on)
+>> Response: A curale ptop of a it 
+
+>> Prompt: (container.n water empty plastic on-bureau on-bureau screen-by), (bureau.n container-on container-on)
+>> Response: A culale chale ck chares 
+
+>> Prompt: (container.n water empty plastic on-bureau on-bureau screen-by), (bureau.n container-on container-on)
+>> Response: A courend choles 
+
+>> Prompt: (container.n water empty plastic on-bureau on-bureau screen-by), (bureau.n container-on container-on)
+>> Response: an a choles 
+
+>> Prompt: (monitor.n white by-bottle), (monitor.n white flat dark off on-desk)
+>> Response: an cholle chole 
+
+>> Prompt: (monitor.n white by-bottle), (monitor.n white flat dark off on-desk)
+>> Response: a is desk 
+
+>> Prompt: (monitor.n white by-bottle), (monitor.n white flat dark off on-desk)
+>> Response: A cular chair with black palart 
+
+>> Prompt: (monitor.n white by-bottle), (monitor.n white flat dark off on-desk)
+>> Response: A curale chole ches 
+
+>> Prompt: (blind.n drawn on-window)
+>> Response: A bots bollet 
+
+>> Prompt: (blind.n drawn on-window)
+>> Response: A bande stan barge s 
+
+>> Prompt: (blind.n drawn on-window)
+>> Response: A bole bles on plate 
+
+>> Prompt: (blind.n drawn on-window)
+>> Response: A band bots 
+
+>> Prompt: (bin.n blue on-floor next|to-desk on-floor), (floor.n grey clean bin-on tower-on cable-on cable-on bin-on tower-on)
+>> Response: A is on the desk 
+
+>> Prompt: (bin.n blue on-floor next|to-desk on-floor), (floor.n grey clean bin-on tower-on cable-on cable-on bin-on tower-on)
+>> Response: a is on desk 
+
+>> Prompt: (bin.n blue on-floor next|to-desk on-floor), (floor.n grey clean bin-on tower-on cable-on cable-on bin-on tower-on)
+>> Response: a a a floor 
+
+>> Prompt: (bin.n blue on-floor next|to-desk on-floor), (floor.n grey clean bin-on tower-on cable-on cable-on bin-on tower-on)
+>> Response: A culen chale ck chollles 
+
+>> Prompt: (window.n open)
+>> Response: A ban sig bots 
+
+>> Prompt: (window.n open)
+>> Response: a tandits band on desk 
+
+>> Prompt: (window.n open)
+>> Response: an chair with curale s 
+
+>> Prompt: (window.n open)
+>> Response: A botts ches on the desk 
+
+>> Prompt: (wall.n green)
+>> Response: A tan botst 
+
+>> Prompt: (wall.n green)
+>> Response: an chair 
+
+>> Prompt: (wall.n green)
+>> Response: A tuban bottsts on desk 
+
+>> Prompt: (wall.n green)
+>> Response: A colllll sip ches 
+
+>> Prompt: (floor.n grey clean bin-on tower-on cable-on cable-on bin-on tower-on)
+>> Response: A is is is on the desk 
+
+>> Prompt: (floor.n grey clean bin-on tower-on cable-on cable-on bin-on tower-on)
+>> Response: A culen chales on the desk 
+
+>> Prompt: (floor.n grey clean bin-on tower-on cable-on cable-on bin-on tower-on)
+>> Response: a a char alonge chale charge chee conge cale ck mardall chour 
+
+>> Prompt: (floor.n grey clean bin-on tower-on cable-on cable-on bin-on tower-on)
+>> Response: A is on desk 
+
+>> Prompt: (bin.n blue on-floor next|to-desk on-floor)
+>> Response: A is a computer 
+
+>> Prompt: (bin.n blue on-floor next|to-desk on-floor)
+>> Response: a computer 
+
+>> Prompt: (bin.n blue on-floor next|to-desk on-floor)
+>> Response: A computer computer 
+
+>> Prompt: (bin.n blue on-floor next|to-desk on-floor)
+>> Response: A computer 
+
+>> Prompt: (shelf.n wooden brown hold-book against-wall against-wall baby-on book-on tube-on baby-on), (wall.n green poster-on shelf-against shelf-against)
+>> Response: A is white a chair 
+
+>> Prompt: (shelf.n wooden brown hold-book against-wall against-wall baby-on book-on tube-on baby-on), (wall.n green poster-on shelf-against shelf-against)
+>> Response: a chourt 
+
+>> Prompt: (shelf.n wooden brown hold-book against-wall against-wall baby-on book-on tube-on baby-on), (wall.n green poster-on shelf-against shelf-against)
+>> Response: a cholds 
+
+>> Prompt: (shelf.n wooden brown hold-book against-wall against-wall baby-on book-on tube-on baby-on), (wall.n green poster-on shelf-against shelf-against)
+>> Response: A is white a chour 
+
+>> Prompt: (book.n red on-desk with-paper on-desk), (paper.n book-with)
+>> Response: A clen chole ches 
+
+>> Prompt: (book.n red on-desk with-paper on-desk), (paper.n book-with)
+>> Response: a plate is on the table 
+
+>> Prompt: (book.n red on-desk with-paper on-desk), (paper.n book-with)
+>> Response: A clalender plate plate under plate undit 
+
+>> Prompt: (book.n red on-desk with-paper on-desk), (paper.n book-with)
+>> Response: a charder calal choles 
+
+>> Prompt: (outside.n ), (window.n large)
+>> Response: a barts on the desk 
+
+>> Prompt: (outside.n ), (window.n large)
+>> Response: A clendrar chair with palar ip 
+
+>> Prompt: (outside.n ), (window.n large)
+>> Response: A clesile cke malles on plate 
+
+>> Prompt: (outside.n ), (window.n large)
+>> Response: a bottsts on the desk 
+
+>> Prompt: (bottle.n water empty plastic on-desk on-desk monitor-by), (desk.n bottle-on bottle-on)
+>> Response: a is white chourts 
+
+>> Prompt: (bottle.n water empty plastic on-desk on-desk monitor-by), (desk.n bottle-on bottle-on)
+>> Response: a is chair 
+
+>> Prompt: (bottle.n water empty plastic on-desk on-desk monitor-by), (desk.n bottle-on bottle-on)
+>> Response: A curen chair chair with pale chale chale s 
+
+>> Prompt: (bottle.n water empty plastic on-desk on-desk monitor-by), (desk.n bottle-on bottle-on)
+>> Response: a chair is curarg ised on the desk 
+
+>> Prompt: (desk.n monitor-on), (monitor.n white flat dark off on-desk)
+>> Response: A is cururawn chort 
+
+>> Prompt: (desk.n monitor-on), (monitor.n white flat dark off on-desk)
+>> Response: A anditsion ande chargee cke charargeeeeen de s 
+
+>> Prompt: (desk.n monitor-on), (monitor.n white flat dark off on-desk)
+>> Response: a is white 
+
+>> Prompt: (desk.n monitor-on), (monitor.n white flat dark off on-desk)
+>> Response: A a chair with calet 
+
+>> Prompt: (book.n red on-bureau with-paper on-bureau)
+>> Response: an chales 
+
+>> Prompt: (book.n red on-bureau with-paper on-bureau)
+>> Response: a chorts 
+
+>> Prompt: (book.n red on-bureau with-paper on-bureau)
+>> Response: A culen chair with curart 
+
+>> Prompt: (book.n red on-bureau with-paper on-bureau)
+>> Response: A and chair 
+
+>> Prompt: (bureau.n )
+>> Response: A cullle ches chair with choles 
+
+>> Prompt: (bureau.n )
+>> Response: a chair with calest 
+
+>> Prompt: (bureau.n )
+>> Response: A collllll chales on plate 
+
+>> Prompt: (bureau.n )
+>> Response: a chair with curalall ip 
+
+>> Prompt: (window.n large)
+>> Response: a barts on desk 
+
+>> Prompt: (window.n large)
+>> Response: a chole s 
+
+>> Prompt: (window.n large)
+>> Response: A collllll cker challes 
+
+>> Prompt: (window.n large)
+>> Response: a choles 
+
+>> Prompt: (screen.n white flat dark off on-bureau)
+>> Response: a curthal d chale 
+
+>> Prompt: (screen.n white flat dark off on-bureau)
+>> Response: A an a a chair 
+
+>> Prompt: (screen.n white flat dark off on-bureau)
+>> Response: A an chair with culartst 
+
+>> Prompt: (screen.n white flat dark off on-bureau)
+>> Response: andile of curt 
+
+>> Prompt: (monitor.n white flat dark off on-desk)
+>> Response: A andend chair with carar curargen chales 
+
+>> Prompt: (monitor.n white flat dark off on-desk)
+>> Response: A andit chair 
+
+>> Prompt: (monitor.n white flat dark off on-desk)
+>> Response: a a desk 
+
+>> Prompt: (monitor.n white flat dark off on-desk)
+>> Response: A andit chair 
+
+>> Prompt: (ledge.n wooden brown hold-book against-wall against-wall baby-on book-on tube-on baby-on), (tube.n white on-ledge)
+>> Response: a a desk 
+
+>> Prompt: (ledge.n wooden brown hold-book against-wall against-wall baby-on book-on tube-on baby-on), (tube.n white on-ledge)
+>> Response: A a chair with calestst on ion 
+
+>> Prompt: (ledge.n wooden brown hold-book against-wall against-wall baby-on book-on tube-on baby-on), (tube.n white on-ledge)
+>> Response: a chair choles 
+
+>> Prompt: (ledge.n wooden brown hold-book against-wall against-wall baby-on book-on tube-on baby-on), (tube.n white on-ledge)
+>> Response: A curen chargeee s 
+
+>> Prompt: (light.n on in-room in-room room-has), (room.n indoors has-light light-in light-in light-in light-in)
+>> Response: A talen botsts 
+
+>> Prompt: (light.n on in-room in-room room-has), (room.n indoors has-light light-in light-in light-in light-in)
+>> Response: A a a talest 
+
+>> Prompt: (light.n on in-room in-room room-has), (room.n indoors has-light light-in light-in light-in light-in)
+>> Response: a than far blar fic on wall 
+
+>> Prompt: (light.n on in-room in-room room-has), (room.n indoors has-light light-in light-in light-in light-in)
+>> Response: A anotts are on the desk 
+
+>> Prompt: (blind.n drawn on-window), (window.n blind-on)
+>> Response: an botststs 
+
+>> Prompt: (blind.n drawn on-window), (window.n blind-on)
+>> Response: A botts are on andes 
+
+>> Prompt: (blind.n drawn on-window), (window.n blind-on)
+>> Response: A corth d cles 
+
+>> Prompt: (blind.n drawn on-window), (window.n blind-on)
+>> Response: an botststs 
+
+>> Prompt: (desk.n )
+>> Response: a chair with calales 
+
+>> Prompt: (desk.n )
+>> Response: an chair with black caralest on desk 
+
+>> Prompt: (desk.n )
+>> Response: A talaptop of ander a plate 
+
+>> Prompt: (desk.n )
+>> Response: a chair 
+
+>> Prompt: (room.n indoors has-light light-in light-in light-in light-in)
+>> Response: A a tubotsts 
+
+>> Prompt: (room.n indoors has-light light-in light-in light-in light-in)
+>> Response: A turay barge bines 
+
+>> Prompt: (room.n indoors has-light light-in light-in light-in light-in)
+>> Response: A anitsit 
+
+>> Prompt: (room.n indoors has-light light-in light-in light-in light-in)
+>> Response: A tand taned fit on the tree 
+
+>> Prompt: (ceiling.n white)
+>> Response: A talle chale sts 
+
+>> Prompt: (ceiling.n white)
+>> Response: a chouts 
+
+>> Prompt: (ceiling.n white)
+>> Response: A colles sit 
+
+>> Prompt: (ceiling.n white)
+>> Response: an chair chair with cururen chargeeen curaral s 
+
+>> Prompt: (book.n red on-desk with-paper on-desk)
+>> Response: a charg pe chair 
+
+>> Prompt: (book.n red on-desk with-paper on-desk)
+>> Response: a charde cales 
+
+>> Prompt: (book.n red on-desk with-paper on-desk)
+>> Response: A cular chair with chole che cle s 
+
+>> Prompt: (book.n red on-desk with-paper on-desk)
+>> Response: A calale plate plate under plate 
+
+>> Prompt: (desk.n keyboard-on computer-on keyboard-on computer-on computer-on), (keyboard.n black on-desk on-desk)
+>> Response: A is white is white cloulle 
+
+>> Prompt: (desk.n keyboard-on computer-on keyboard-on computer-on computer-on), (keyboard.n black on-desk on-desk)
+>> Response: a desktop computer 
+
+>> Prompt: (desk.n keyboard-on computer-on keyboard-on computer-on computer-on), (keyboard.n black on-desk on-desk)
+>> Response: A is white is white is white 
+
+>> Prompt: (desk.n keyboard-on computer-on keyboard-on computer-on computer-on), (keyboard.n black on-desk on-desk)
+>> Response: a computer computer 
+
+>> Prompt: (light.n on), (light.n on in-room), (room.n indoors has-light light-in light-in light-in light-in)
+>> Response: a talets on the desk 
+
+>> Prompt: (light.n on), (light.n on in-room), (room.n indoors has-light light-in light-in light-in light-in)
+>> Response: a a a tsts 
+
+>> Prompt: (light.n on), (light.n on in-room), (room.n indoors has-light light-in light-in light-in light-in)
+>> Response: A a a tsied ange pa chares 
+
+>> Prompt: (light.n on), (light.n on in-room), (room.n indoors has-light light-in light-in light-in light-in)
+>> Response: a tubarg bins 
+
+>> Prompt: (keyboard.n black on-desk on-desk)
+>> Response: a monitor 
+
+>> Prompt: (keyboard.n black on-desk on-desk)
+>> Response: a computer computer 
+
+>> Prompt: (keyboard.n black on-desk on-desk)
+>> Response: A computer computer computer 
+
+>> Prompt: (keyboard.n black on-desk on-desk)
+>> Response: a computer 
+
+>> Prompt: (bureau.n keyboard-on computer-on keyboard-on computer-on computer-on), (keyboard.n black on-bureau on-bureau)
+>> Response: A is chair 
+
+>> Prompt: (bureau.n keyboard-on computer-on keyboard-on computer-on computer-on), (keyboard.n black on-bureau on-bureau)
+>> Response: an is desk 
+
+>> Prompt: (bureau.n keyboard-on computer-on keyboard-on computer-on computer-on), (keyboard.n black on-bureau on-bureau)
+>> Response: an desk 
+
+>> Prompt: (bureau.n keyboard-on computer-on keyboard-on computer-on computer-on), (keyboard.n black on-bureau on-bureau)
+>> Response: an is on desk 
+
+>> Prompt: (tower.n white on-floor under-desk on-floor)
+>> Response: a is white curalon 
+
+>> Prompt: (tower.n white on-floor under-desk on-floor)
+>> Response: a is on desk 
+
+>> Prompt: (tower.n white on-floor under-desk on-floor)
+>> Response: a is on desk 
+
+>> Prompt: (tower.n white on-floor under-desk on-floor)
+>> Response: A an is white curar charde chour 
+
+>> Prompt: (lamp.n on), (lamp.n on in-bedroom), (bedroom.n indoors has-lamp lamp-in lamp-in lamp-in lamp-in)
+>> Response: A is white is white 
+
+>> Prompt: (lamp.n on), (lamp.n on in-bedroom), (bedroom.n indoors has-lamp lamp-in lamp-in lamp-in lamp-in)
+>> Response: the is on is a desk 
+
+>> Prompt: (lamp.n on), (lamp.n on in-bedroom), (bedroom.n indoors has-lamp lamp-in lamp-in lamp-in lamp-in)
+>> Response: Astit is curart 
+
+>> Prompt: (lamp.n on), (lamp.n on in-bedroom), (bedroom.n indoors has-lamp lamp-in lamp-in lamp-in lamp-in)
+>> Response: A is curale ptop of a plate 
+
+>> Prompt: (bottle.n water empty plastic on-desk on-desk monitor-by)
+>> Response: an computer 
+
+>> Prompt: (bottle.n water empty plastic on-desk on-desk monitor-by)
+>> Response: A curalen bots 
+
+>> Prompt: (bottle.n water empty plastic on-desk on-desk monitor-by)
+>> Response: A is colllles on the desk 
+
+>> Prompt: (bottle.n water empty plastic on-desk on-desk monitor-by)
+>> Response: an computer 
+
+>> Prompt: (chair.n grey rolling office with-wheel), (wheel.n chair-with)
+>> Response: A tuban sigeen sts 
+
+>> Prompt: (chair.n grey rolling office with-wheel), (wheel.n chair-with)
+>> Response: ale der curar s 
+
+>> Prompt: (chair.n grey rolling office with-wheel), (wheel.n chair-with)
+>> Response: A curale ck challes on plate 
+
+>> Prompt: (chair.n grey rolling office with-wheel), (wheel.n chair-with)
+>> Response: ale chargeee ck cales 
+
+>> Prompt: (desk.n bin-next|to tower-under), (tower.n white on-floor under-desk on-floor)
+>> Response: an woman working at desk 
+
+>> Prompt: (desk.n bin-next|to tower-under), (tower.n white on-floor under-desk on-floor)
+>> Response: A an is a table 
+
+>> Prompt: (desk.n bin-next|to tower-under), (tower.n white on-floor under-desk on-floor)
+>> Response: A is a is white 
+
+>> Prompt: (desk.n bin-next|to tower-under), (tower.n white on-floor under-desk on-floor)
+>> Response: a is white 
+
+>> Prompt: (screen.n white by-container), (screen.n white flat dark off on-bureau)
+>> Response: a curale s 
+
+>> Prompt: (screen.n white by-container), (screen.n white flat dark off on-bureau)
+>> Response: a curargeen chour 
+
+>> Prompt: (screen.n white by-container), (screen.n white flat dark off on-bureau)
+>> Response: A an chair with caralest 
+
+>> Prompt: (screen.n white by-container), (screen.n white flat dark off on-bureau)
+>> Response: A anden curale s 
+
+>> Prompt: (wall.n green poster-on shelf-against shelf-against)
+>> Response: a chair with alaptop its 
+
+>> Prompt: (wall.n green poster-on shelf-against shelf-against)
+>> Response: A culalesits of chalder culalder it 
+
+>> Prompt: (wall.n green poster-on shelf-against shelf-against)
+>> Response: a chole against against against the shelf 
+
+>> Prompt: (wall.n green poster-on shelf-against shelf-against)
+>> Response: a choulds 
+
+>> Prompt: (book.n red on-desk with-paper on-desk), (desk.n white cluttered book-on book-on)
+>> Response: A culen is plate chale plate 
+
+>> Prompt: (book.n red on-desk with-paper on-desk), (desk.n white cluttered book-on book-on)
+>> Response: a is on the desk 
+
+>> Prompt: (book.n red on-desk with-paper on-desk), (desk.n white cluttered book-on book-on)
+>> Response: A is on the desk 
+
+>> Prompt: (book.n red on-desk with-paper on-desk), (desk.n white cluttered book-on book-on)
+>> Response: A clender chair with cular charge chole 
+
+>> Prompt: (lamp.n on in-bedroom in-bedroom bedroom-has), (bedroom.n indoors has-lamp lamp-in lamp-in lamp-in lamp-in)
+>> Response: the a a ptop of andot 
+
+>> Prompt: (lamp.n on in-bedroom in-bedroom bedroom-has), (bedroom.n indoors has-lamp lamp-in lamp-in lamp-in lamp-in)
+>> Response: the a a is is is a desk 
+
+>> Prompt: (lamp.n on in-bedroom in-bedroom bedroom-has), (bedroom.n indoors has-lamp lamp-in lamp-in lamp-in lamp-in)
+>> Response: the is on a giraffe desk 
+
+>> Prompt: (lamp.n on in-bedroom in-bedroom bedroom-has), (bedroom.n indoors has-lamp lamp-in lamp-in lamp-in lamp-in)
+>> Response: A collets pes 
+
+>> Prompt: (book.n on-shelf shelf-hold), (shelf.n wooden brown hold-book against-wall against-wall baby-on book-on tube-on baby-on)
+>> Response: a chair 
+
+>> Prompt: (book.n on-shelf shelf-hold), (shelf.n wooden brown hold-book against-wall against-wall baby-on book-on tube-on baby-on)
+>> Response: a ptop alontsts on a desk 
+
+>> Prompt: (book.n on-shelf shelf-hold), (shelf.n wooden brown hold-book against-wall against-wall baby-on book-on tube-on baby-on)
+>> Response: an ptop of coles 
+
+>> Prompt: (book.n on-shelf shelf-hold), (shelf.n wooden brown hold-book against-wall against-wall baby-on book-on tube-on baby-on)
+>> Response: Asian che chales 

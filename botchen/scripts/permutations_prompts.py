@@ -13,10 +13,14 @@ import random
 import nltk
 from nltk.corpus import wordnet as wn
 from collections import defaultdict
+import nltk
+from nltk.translate.bleu_score import sentence_bleu
 
 # Download required resources
 # nltk.download('wordnet')
 # nltk.download('omw-1.4')  # For wordnet synonyms in different languages
+
+################# Logical/Surface Formats
 
 # Function to extract original situations from a reference file
 def extract_situations(filename):
@@ -31,14 +35,12 @@ def extract_situations(filename):
     for i, script in enumerate(scripts, start=1):
         situations[f"Situation {i}"] = script
         speaker_count = len(re.findall(r"<u speaker=", script))
-        print(f"Situation {i}, original script, has {speaker_count} utterances")
+        print(f"{filename}: Situation {i}, original script, has {speaker_count} utterances")
     return situations
 
 # Function to apply word substitution and update script number
-def substitute_word(script_text, old_word, new_word, new_script_number):
+def substitute_word(script_text, old_word, new_word):
     modified_text = re.sub(rf'\b{re.escape(old_word)}\b', new_word, script_text)
-    # modified_text = re.sub(rf"script\.(\d+)\s*type=CONV", rf"script.\1.{new_script_number} type=CONV", modified_text)
-    # modified_text = re.sub(rf"script\.(\d+)\s*>", rf"script.\1.{new_script_number}>", modified_text)
     return modified_text
 
 # Function to extract entities and properties from the script content
@@ -74,7 +76,7 @@ def generate_prompt_script_from_entities(script_number, entity_properties, surfa
     script_content = f'<script.{script_number} type=CONV>\n'
     current_speaker = "HUM"
     if surface_language is False:
-    # Iterate over each entity and add its properties to the script
+        # Iterate over each entity and add its properties to the script
         for entity, properties in entity_properties.items():
             filtered_properties = properties - {entity}
             properties_str = ' '.join(filtered_properties)
@@ -89,10 +91,6 @@ def generate_prompt_script_from_entities(script_number, entity_properties, surfa
     script_content += f'</script.{script_number}>\n\n'
     return script_content
 
-# situations = extract_situations("./data/extracted_scripts.txt")
-#
-# define_substitutions(5,situations)
-
 # Main function to apply substitutions and save modified scripts
 def permutations(situations, substitutions_per_situation, surface_language=False):
 
@@ -100,7 +98,7 @@ def permutations(situations, substitutions_per_situation, surface_language=False
     output_directory = "./data/training"
     os.makedirs(output_directory, exist_ok=True)
     all_count = 0
-    
+
     # Process each situation and apply substitutions
     for script_id, script_text in situations.items():
         script_number = int(script_id.split()[1])
@@ -109,7 +107,7 @@ def permutations(situations, substitutions_per_situation, surface_language=False
         modified_text = script_text
         situation_versions = []
         for index, (old_word, new_word) in enumerate(substitutions, start=1):
-            modified_text = substitute_word(modified_text, old_word, new_word, index)
+            modified_text = substitute_word(modified_text, old_word, new_word)
             situation_versions.append(f"Situation {script_number}.{index}")
             new_situations[situation_versions[-1]] = modified_text
 
@@ -143,20 +141,109 @@ def permutations(situations, substitutions_per_situation, surface_language=False
             merged_text_total += merged_text
 
     if surface_language is False:
-        filename = os.path.join(output_directory, f"training_data_logical.txt")
+        filename = os.path.join(output_directory, f"permuted_logical.txt")
     if surface_language is True:
-        filename = os.path.join(output_directory, f"training_data_surface.txt")
+        filename = os.path.join(output_directory, f"permuted_surface.txt")
 
     with open(filename, "w", encoding="utf-8") as file:
         file.write(merged_text_total)
     if surface_language is False:
         # num_entities_total, num_properties_total, items_total = extract_entities_properties(merged_text_total, surface_language=False)
-        with open('./data/training/prompt_file_logical.txt', 'w') as file:
+        with open('./data/training/prompt_logical.txt', 'w') as file:
             file.write(prompt_content_total)
         # num_entities_prompt, num_properties_prompt, items_prompt = extract_entities_properties(prompt_content_total, surface_language=False)
     if surface_language is True:
-        with open('./data/training/prompt_file_surface.txt', 'w') as file:
+        with open('./data/training/prompt_surface.txt', 'w') as file:
             file.write(prompt_content_total)
+
+################## Logical to surface formats
+
+# Function to apply word substitution and update script number
+def apply_substitutions(text, substitutions):
+    original_text = text  # Save the original text
+    new_text = text  # Initialize new text as the original
+    for old, new in substitutions:
+        if old and old in new_text:  # Only apply if there's an actual match
+            new_text = re.sub(r'\b' + re.escape(old) + r'\b', new, new_text)  # Replace only whole words
+    # If the new text is different from the original, a substitution was made
+    if new_text != original_text:
+        return original_text, new_text
+    else:
+        return original_text, None  # Return None if no substitution was made
+
+def process_text(input_path, substitutions_per_situation, output_path):
+    with open(input_path) as file:
+        input_text=file.read()
+    # Parse the input text into a list of <a> elements
+    pattern = r'<a script\.(\d+) type=DSC>\s*<u speaker=HUM>(.*?)</u>\s*<u speaker=BOT>(.*?)</u>\s*</a>'
+    matches = re.findall(pattern, input_text, re.DOTALL)
+
+    # Process each match
+    processed_text = ""
+    for match in matches:
+        script_num = int(match[0])  # Get the script number
+        hum_text = match[1]  # Get the human text
+        bot_text = match[2]  # Get the bot text
+
+        # Get the substitutions for this script number
+        substitutions = substitutions_per_situation.get(script_num, [])
+
+        # Apply the substitutions and get both original and substituted text
+        original_hum, new_hum = apply_substitutions(hum_text, substitutions)
+        original_bot, new_bot = apply_substitutions(bot_text, substitutions)
+
+        # Build the new <a> tag
+        processed_text += f"<a script.{script_num} type=DSC>\n"
+        processed_text += f"  <u speaker=HUM>{original_hum}</u>\n"
+        processed_text += f"  <u speaker=BOT>{original_bot}</u>\n"
+        processed_text += "</a>\n\n"
+
+        if new_hum and new_bot:  # If substitution occurred
+            processed_text += f"<a script.{script_num} type=DSC>\n"
+            processed_text += f"  <u speaker=HUM>{new_hum}</u>\n"
+            processed_text += f"  <u speaker=BOT>{new_bot}</u>\n"
+            processed_text += "</a>\n\n"
+    with open(output_path, 'w') as file:
+        file.write(processed_text)
+    return processed_text
+
+# Function to extract unique HUM utterances per script number
+def extract_unique_hum_utterances(input_text, output_path):
+    # Regex to match <a> blocks for script numbers and their HUM/BOT utterances
+    pattern = r'<a script\.(\d+) type=DSC>(.*?)</a>'
+
+    # Find all <a> blocks and group them by script number
+    script_groups = {}
+
+    matches = re.findall(pattern, input_text, re.DOTALL)
+    for match in matches:
+        script_num = match[0]
+        content = match[1]
+
+        # Extract all HUM utterances
+        hum_pattern = r'<u speaker=HUM>(.*?)</u>'
+        hum_utterances = re.findall(hum_pattern, content)
+
+        # Add the unique HUM utterances to the script_groups dictionary
+        if script_num not in script_groups:
+            script_groups[script_num] = set()  # Using a set to ensure uniqueness
+        script_groups[script_num].update(hum_utterances)
+
+    # Prepare the final output with unique HUM utterances
+    output_text = ""
+
+    for script_num, hum_utterances in script_groups.items():
+        output_text += f'<a script.{script_num} type=DSC>\n'
+        for hum in hum_utterances:
+            output_text += f'  <u speaker=HUM>{hum}</u>\n'
+        output_text += '</a>\n\n'
+
+    with open(output_path, 'w') as file:
+        file.write(output_text)
+
+    return output_text
+
+################# Main function
 
 # Main driver function to initialize the process
 def main():
@@ -194,9 +281,13 @@ def main():
     }
 
     # Generate permutations and save the results
-    permutations(extract_situations("./data/training/extracted_scripts_logical.txt"), substitutions_per_situation, surface_language=False)
+    permutations(extract_situations("./data/training/extracted_logical.txt"), substitutions_per_situation, surface_language=False)
 
-    permutations(extract_situations('./data/training/extracted_scripts_surface.txt'),substitutions_per_situation, surface_language=True)
+    permutations(extract_situations('./data/training/extracted_surface.txt'),substitutions_per_situation, surface_language=True)
+
+    extract_unique_hum_utterances(process_text('./data/training/extracted_logical_to_surface.txt', substitutions_per_situation, './data/training/permuted_logical_to_surface.txt'), './data/training/prompt_logical_to_surface.txt')
+
+    extract_unique_hum_utterances(process_text('./data/training/extracted_surface_to_logical.txt', substitutions_per_situation, './data/training/permuted_surface_to_logical.txt'), './data/training/prompt_surface_to_logical.txt')
 
 # Execute the main function when the script is run
 if __name__ == "__main__":

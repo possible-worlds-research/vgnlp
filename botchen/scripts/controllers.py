@@ -91,52 +91,67 @@ from scipy.stats import spearmanr
 @click.argument('log_file', required=False) # Optional argument to log output to a file
 def make_evaluating_conversation(module, language, topk,
                                  content_path, situation_id,
-                                 log_file = False, # If we want to store
-                                 print_statement = False): # If we want to look live at the conversation
-    conversation = '' # Initialize an empty string to store the conversation
+                                 print_statement=False):  # Removed log_file flag
+    conversation = ''  # Initialize an empty string to store the conversation
+
     # Load the specified GPT models (encoder and decoder) based on the provided module and language
     gpt_models = load_gpt_models(module, modules_path, language)
     model = gpt_models['chat'][0]
     encoder = gpt_models['chat'][1]
     decoder = gpt_models['chat'][3]
     print(f">> Loaded models {gpt_models.keys()}\n\n")
-    # If log_file argument is provided, set up logging to a specific file
-    if log_file:
-        #conversation_time = datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
-        log_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../logs/evaluation/'))
-        log_file = os.path.join(log_dir, f'evaluation_situation{situation_id}.txt')
-        with open(log_file, 'a') as file:
-            file.write(f">> Loaded models {gpt_models.keys()}\n\n")
-            
-    # Read the content file that contains conversation scripts
-    with open(content_path,'r') as content_file:
-        content=content_file.read()
-    # Use a regular expression to find the script for the specific situation_id
-    situation_pattern = rf"<script\.{situation_id} type=CONV>.*?</script\.{situation_id}>"
-    script = re.findall(situation_pattern, content, re.DOTALL) # Search for the script block
-    if not script:
-        print(f"No situation found with id={situation_id}")
-        return None
-    script = script[0]
-    print(script)
-    
-    # Loop through each utterance in the script
-    utterances = re.findall(r'<u speaker=[^>]*>\((.*?)\)</u>', script)
-    for utterance in utterances:
-        # Generate a response for each utterance up to 4 times
-        for _ in range(4):
-            if len(conversation.strip()) > 0:
-                # If conversation already has content, append the next utterance to it
-                conversation += f' <u speaker=HUM>{utterance}</u> <u speaker=BOT>'
-            else:
-                conversation = f'<u speaker=HUM>{utterance}</u> <u speaker=BOT>'
-            # Generate a response from the model using the conversation context
-            with torch.no_grad():
-                with ctx:
-                    response, _ = generate(utterance, conversation, model, encoder, decoder, 0.9, int(topk), 64)
-            if print_statement:
-                print(f">> Prompt: {utterance}\n>> Response: {response} \n\n")
-            if log_file:
-                with open(log_file, 'a') as file:
+
+    log_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../logs/evaluation/'))
+
+    # Load content only once
+    with open(content_path, 'r') as content_file:
+        content = content_file.read()
+
+    # Log file path setup (now it's always written)
+    log_file_path = os.path.join(log_dir, f'evaluation_situation{situation_id}.txt')
+    with open(log_file_path, 'a') as file:
+        file.write(f">> Loaded models {gpt_models.keys()}\n\n")
+
+    # Function to handle script processing
+    def process_script(script, situation_id):
+        nonlocal conversation
+        # Extract all utterances from the script
+        utterances = re.findall(r'<u speaker=[^>]*>\((.*?)\)</u>', script)
+
+        # Loop through each utterance in the script and generate a response
+        for utterance in utterances:
+            for _ in range(4):  # Generate a response for each utterance up to 4 times
+                if len(conversation.strip()) > 0:
+                    # If conversation already has content, append the next utterance to it
+                    conversation += f' <u speaker=HUM>{utterance}</u> <u speaker=BOT>'
+                else:
+                    conversation = f'<u speaker=HUM>{utterance}</u> <u speaker=BOT>'
+
+                # Generate a response from the model using the conversation context
+                with torch.no_grad():
+                    with ctx:
+                        response, _ = generate(utterance, conversation, model, encoder, decoder, 0.9, int(topk), 64)
+
+                # If required, print the prompt and response
+                if print_statement:
+                    print(f">> Prompt: {utterance}\n>> Response: {response} \n\n")
+
+                # Write the log entry to the file
+                with open(log_file_path, 'a') as file:
                     log_entry = f"\n>> Prompt: {utterance}\n>> Response: {response} \n"
                     file.write(log_entry)
+
+    # For each situation_id (1 to 13) process the corresponding script
+    if situation_id == 0:
+        process_script(content, situation_id)
+    else:
+        situation_pattern = rf"<script\.{situation_id} type=CONV>.*?</script\.{situation_id}>"
+        script = re.findall(situation_pattern, content, re.DOTALL)  # Search for the script block
+
+        if not script:
+            print(f"No situation found with id={situation_id}")
+            return None
+
+        script = script[0]  # Only need the first match
+        print(script)
+        process_script(script, situation_id)
