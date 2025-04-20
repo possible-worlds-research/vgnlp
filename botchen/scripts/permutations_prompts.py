@@ -40,6 +40,8 @@ def extract_situations(filename):
 
 # Function to apply word substitution and update script number
 def substitute_word(script_text, old_word, new_word):
+    if not re.search(rf'\b{re.escape(old_word)}\b', script_text):
+        return None
     modified_text = re.sub(rf'\b{re.escape(old_word)}\b', new_word, script_text)
     return modified_text
 
@@ -104,12 +106,14 @@ def permutations(situations, substitutions_per_situation, surface_language=False
         script_number = int(script_id.split()[1])
         substitutions = substitutions_per_situation.get(script_number, [])
 
-        modified_text = script_text
         situation_versions = []
         for index, (old_word, new_word) in enumerate(substitutions, start=1):
-            modified_text = substitute_word(modified_text, old_word, new_word)
-            situation_versions.append(f"Situation {script_number}.{index}")
-            new_situations[situation_versions[-1]] = modified_text
+            temp_text = substitute_word(script_text, old_word, new_word)
+            if temp_text:  # Only update and store if substitution occurred
+                modified_text = temp_text
+                version_name = f"Situation {script_number}.{index}"
+                situation_versions.append(version_name)
+                new_situations[version_name] = modified_text
 
     # Merge and save the modified situations for training purposes
     merged_text_total = ''
@@ -122,10 +126,6 @@ def permutations(situations, substitutions_per_situation, surface_language=False
                 merged_text += new_situations[situation_key] + "\n\n"
 
         if merged_text:
-            # filename = os.path.join(output_directory, f"ideallanguage_{script_number}.txt")
-            # with open(filename, "w", encoding="utf-8") as file:
-            #     file.write(merged_text)
-
             # Count the number of speakers and entities in the modified script
             speaker_count = len(re.findall(r"<u speaker=", merged_text))
             all_count += speaker_count
@@ -171,19 +171,28 @@ def apply_substitutions(text, substitutions):
     else:
         return original_text, None  # Return None if no substitution was made
 
-def process_text(input_path, substitutions_per_situation, output_path):
+def process_text(input_path, substitutions_per_situation, output_path, sandwich_flag=None):
     with open(input_path) as file:
         input_text=file.read()
     # Parse the input text into a list of <a> elements
     pattern = r'<a script\.(\d+) type=DSC>\s*<u speaker=HUM>(.*?)</u>\s*<u speaker=BOT>(.*?)</u>\s*</a>'
+    if sandwich_flag:
+        pattern = r'<a script\.(\d+) type=SDW>\s*<u speaker=HUM>(.*?)</u>\s*<u speaker=BOT>(.*?)</u>\s*<u speaker=BOT>(.*?)</u>\s*<u speaker=BOT>(.*?)</u>\s*</a>'
+
     matches = re.findall(pattern, input_text, re.DOTALL)
 
     # Process each match
     processed_text = ""
+    previous_script_number= None
+
     for match in matches:
         script_num = int(match[0])  # Get the script number
         hum_text = match[1]  # Get the human text
         bot_text = match[2]  # Get the bot text
+        if sandwich_flag:
+            bot_text_one = match[2]  # Get the bot text
+            bot_text_two = match[3]  # Get the bot text
+            bot_text_three = match[4]  # Get the bot text
 
         # Get the substitutions for this script number
         substitutions = substitutions_per_situation.get(script_num, [])
@@ -191,26 +200,52 @@ def process_text(input_path, substitutions_per_situation, output_path):
         # Apply the substitutions and get both original and substituted text
         original_hum, new_hum = apply_substitutions(hum_text, substitutions)
         original_bot, new_bot = apply_substitutions(bot_text, substitutions)
+        if sandwich_flag:
+            original_bot_one, new_bot_one = apply_substitutions(bot_text_one, substitutions)
+            original_bot_two, new_bot_two = apply_substitutions(bot_text_two, substitutions)
+            original_bot_three, new_bot_three = apply_substitutions(bot_text_three, substitutions)
+
+        if previous_script_number is not None and script_num != previous_script_number:
+            processed_text += ""
 
         # Build the new <a> tag
-        processed_text += f"<a script.{script_num} type=DSC>\n"
-        processed_text += f"  <u speaker=HUM>{original_hum}</u>\n"
-        processed_text += f"  <u speaker=BOT>{original_bot}</u>\n"
+        if not sandwich_flag:
+            processed_text += f"<a script.{script_num} type=DSC>\n"
+            processed_text += f"<u speaker=HUM>{original_hum}</u>\n"
+            processed_text += f"<u speaker=BOT>{original_bot}</u>\n"
+        if sandwich_flag:
+            processed_text += f"<a script.{script_num} type=SDW>\n"
+            processed_text += f"<u speaker=HUM>{original_hum}</u>\n"
+            processed_text += f"<u speaker=BOT>{original_bot_one}</u>\n"
+            processed_text += f"<u speaker=BOT>{original_bot_two}</u>\n"
+            processed_text += f"<u speaker=BOT>{original_bot_three}</u>\n"
         processed_text += "</a>\n\n"
 
         if new_hum and new_bot:  # If substitution occurred
-            processed_text += f"<a script.{script_num} type=DSC>\n"
-            processed_text += f"  <u speaker=HUM>{new_hum}</u>\n"
-            processed_text += f"  <u speaker=BOT>{new_bot}</u>\n"
+            if not sandwich_flag:
+                processed_text += f"<a script.{script_num} type=DSC>\n"
+                processed_text += f"<u speaker=HUM>{new_hum}</u>\n"
+                processed_text += f"<u speaker=BOT>{new_bot}</u>\n"
+            if sandwich_flag:
+                processed_text += f"<a script.{script_num} type=SDW>\n"
+                processed_text += f"<u speaker=HUM>{new_hum}</u>\n"
+                processed_text += f"<u speaker=BOT>{new_bot_one}</u>\n"
+                processed_text += f"<u speaker=BOT>{new_bot_two}</u>\n"
+                processed_text += f"<u speaker=BOT>{new_bot_three}</u>\n"
             processed_text += "</a>\n\n"
+
+        previous_script_number = script_num
+
     with open(output_path, 'w') as file:
         file.write(processed_text)
     return processed_text
 
 # Function to extract unique HUM utterances per script number
-def extract_unique_hum_utterances(input_text, output_path):
+def extract_unique_hum_utterances(input_text, output_path, sandwich_flag=None):
     # Regex to match <a> blocks for script numbers and their HUM/BOT utterances
     pattern = r'<a script\.(\d+) type=DSC>(.*?)</a>'
+    if sandwich_flag:
+        pattern = r'<a script\.(\d+) type=SDW>(.*?)</a>'
 
     # Find all <a> blocks and group them by script number
     script_groups = {}
@@ -235,7 +270,7 @@ def extract_unique_hum_utterances(input_text, output_path):
     for script_num, hum_utterances in script_groups.items():
         output_text += f'<a script.{script_num} type=DSC>\n'
         for hum in hum_utterances:
-            output_text += f'  <u speaker=HUM>{hum}</u>\n'
+            output_text += f'<u speaker=HUM>{hum}</u>\n'
         output_text += '</a>\n\n'
 
     with open(output_path, 'w') as file:
@@ -289,6 +324,8 @@ def main():
 
     extract_unique_hum_utterances(process_text('./data/training/extracted_surface_to_logical.txt', substitutions_per_situation, './data/training/permuted_surface_to_logical.txt'), './data/training/prompt_surface_to_logical.txt')
 
+    extract_unique_hum_utterances(process_text('./data/training/extracted_sandwich.txt', substitutions_per_situation, './data/training/permuted_sandwich.txt', sandwich_flag=1), './data/training/prompt_sandwich.txt', sandwich_flag=1)
+
 # Execute the main function when the script is run
 if __name__ == "__main__":
     main()
@@ -327,7 +364,7 @@ def define_substitutions(x, situations):
             print(f"For Entity: {entity}, Hypernyms: {hypernyms}")
 
             # Initialize substitution for each entity with a placeholder
-            entity_substitution = [('', '')]  # Placeholder entry
+            entity_substitution = [('', '')]
 
             if hypernyms:
                 entity_substitution.append((entity, hypernyms[0]))  # Add the first hypernym if available
@@ -336,5 +373,5 @@ def define_substitutions(x, situations):
 
         substitutions_per_situation[script_number] = substitutions
 
-    print(dict(substitutions_per_situation))  # Debugging print of final dictionary
+    print(dict(substitutions_per_situation))
     return dict(substitutions_per_situation)
