@@ -13,10 +13,11 @@ import zipfile
 import argparse
 import json
 
+################## LOGIC TO LOGIC
 # Function to extract a specific situation from the Visual Genome dataset and transform it into a conversational format.
 # Also, to extract entities and properties
 # Ideallanguage is the input file: './data/ideallanguage.txt'
-def extract_logical_forms(file_path, situation_id, new_situation_id=None):
+def extract_logical_forms(file_path, situation_id, new_situation_id=None, limited=False):
     with open(file_path, 'r') as file:
         content = file.read()
 
@@ -38,7 +39,13 @@ def extract_logical_forms(file_path, situation_id, new_situation_id=None):
 
         # First pass: Extract and store each entity's ID, name, and initialize its properties.
         entity_pattern = re.compile(r"<entity id=(\d+)>\s*(.*?)\s*</entity>", re.DOTALL)
-        for entity_match in entity_pattern.finditer(situation_content):
+        all_entities = list(entity_pattern.finditer(situation_content))
+
+        if limited:
+            all_entities = list(entity_pattern.finditer(situation_content))[:6]
+            entity_matches = [match.group(1) for match in all_entities]
+
+        for entity_match in all_entities:
             entity_id = entity_match.group(1)
             entity_lines = entity_match.group(2).strip().split("\n")
 
@@ -53,7 +60,7 @@ def extract_logical_forms(file_path, situation_id, new_situation_id=None):
                 properties_map[entity_id] = []
 
         # Second pass: Extract properties and relations between entities.
-        for entity_match in entity_pattern.finditer(situation_content):
+        for entity_match in all_entities:
             entity_id = entity_match.group(1)
             entity_lines = entity_match.group(2).strip().split("\n")
 
@@ -108,6 +115,7 @@ def extract_logical_forms(file_path, situation_id, new_situation_id=None):
         print(f"No situation found with id={situation_id}")
         return None
 
+############### SURFACE TO SURFACE
 # Extract the surface languages from the utterances for the situation
 # Region descriptions is the input file: './obs/region_descriptions.json.obs'
 def extract_surface_language(file_path, idx_to_extract, output_idx):
@@ -122,11 +130,12 @@ def extract_surface_language(file_path, idx_to_extract, output_idx):
     new_file = f"<script.{output_idx} type=CONV>\n"
     current_speaker = 'HUM'
     for statement in statements:
-        new_file += f"<u speaker={current_speaker}>{statement.strip()}</u>\n"
+        new_file += f"<u speaker={current_speaker}>{statement.strip().lower()}</u>\n"
         current_speaker = 'BOT' if current_speaker == 'HUM' else 'HUM'
     new_file += f"</script.{output_idx}>\n\n"
     return new_file
 
+############### LOGIC TO SURFACE AND INVERSE
 # Extract the matches between the object ids and the descriptions
 # Input file: './dsc/region_graphs.json.dsc'
 def extract_matches(file_path):
@@ -158,7 +167,13 @@ def match_logical_surface_forms(surface_map, logical_map):
                 properties_list.append(logical_map[entity_id])
         properties_str = "), (".join(sorted(set(properties_list)))
         key = f"({properties_str})"
-        new_map[key] = description
+        descriptions = [desc.strip().lower() for desc in description.split(" || ")]
+
+        # Add to the map, avoiding duplicates
+        if key not in new_map:
+            new_map[key] = set()
+
+        new_map[key].update(descriptions)
     return new_map
 
 # Main function to execute the extraction process for multiple situations and save the result.
@@ -178,17 +193,17 @@ def main(ideallanguage, region_descriptions, region_graphs):
         print(f"Processing vg_id {vg_id} store_id: {store_id}. \nLogical")
 
         # LOGICAL - Extract logical forms and create training data
-        logical_texts = extract_logical_forms(ideallanguage, vg_id, new_situation_id=store_id)
+        logical_texts = extract_logical_forms(ideallanguage, vg_id, new_situation_id=store_id, limited=True)
         logical_merged_text.extend(logical_texts)  # Append to the list
 
         # SURFACE - Extract surface forms for training data
-        print(f"Surface")
-        surface_texts = extract_surface_language(region_descriptions, vg_id, store_id)
-        logical_surface_text.extend(surface_texts)  # Append to the list
+        # print(f"Surface")
+        # surface_texts = extract_surface_language(region_descriptions, vg_id, store_id)
+        # logical_surface_text.extend(surface_texts)  # Append to the list
 
-        print("Match")
+        print("Match and Surface")
         # MAPPING - Extract logical representations and mappings
-        entity_properties_map, situation_content, entities_numerical_ids = extract_logical_forms(ideallanguage, vg_id, new_situation_id=None)
+        entity_properties_map, situation_content, entities_numerical_ids = extract_logical_forms(ideallanguage, vg_id, new_situation_id=None, limited=True)
 
         # Extract the mapping between the entities_numerical_ids and surface forms
         region_graph_mapping = extract_graph_mapping(entities_numerical_ids, matches)
@@ -203,27 +218,81 @@ def main(ideallanguage, region_descriptions, region_graphs):
 
     # Write surface merged text to file
     with open('./data/training/extracted_surface.txt', "w", encoding="utf-8") as file:
-        file.write("".join(logical_surface_text))  # Same here, join list into string
+        # file.write("".join(logical_surface_text))  # Same here, join list into string
+        current_speaker = 'HUM'
+        for situation in surface_logical_mapping:
+            file.write(f'<script.{(surface_logical_mapping.index(situation))+1} type=CONV>\n')
+            # Loop through each item in the mapping (assuming it's a dictionary)
+            for hum_text, bot_text in situation.items():
+                for i in bot_text:
+                    # Write the formatted text for each entry
+                    current_speaker = 'BOT' if current_speaker == 'HUM' else 'HUM'
+                    file.write(f'<u speaker={current_speaker}>{i}</u>\n')
+            file.write(f'</script.{(surface_logical_mapping.index(situation))+1}>\n\n')
 
     # Write the mappings to the dsc file
     with open('./data/training/extracted_logical_to_surface.txt', "w", encoding="utf-8") as file:
         for situation in surface_logical_mapping:
             # Loop through each item in the mapping (assuming it's a dictionary)
             for hum_text, bot_text in situation.items():
-                # Write the formatted text for each entry
-                file.write(f'<a script.{(surface_logical_mapping.index(situation))+1} type=DSC>\n')
-                file.write(f'<u speaker=HUM>{hum_text}</u>\n')
-                file.write(f'<u speaker=BOT>{bot_text}</u>\n')
-                file.write(f'</a>\n\n')
+                for i in bot_text:
+                    # Write the formatted text for each entry
+                    file.write(f'<a script.{(surface_logical_mapping.index(situation))+1} type=DSC>\n')
+                    file.write(f'<u speaker=HUM>{hum_text}</u>\n')
+                    file.write(f'<u speaker=BOT>{i}</u>\n')
+                    file.write(f'</a>\n\n')
 
     with open('./data/training/extracted_surface_to_logical.txt', "w", encoding="utf-8") as file:
         for situation in surface_logical_mapping:
             # Loop through each item in the mapping (assuming it's a dictionary)
             for hum_text, bot_text in situation.items():
-                # Write the formatted text for each entry
-                file.write(f'<a script.{(surface_logical_mapping.index(situation))+1} type=DSC>\n')
-                file.write(f'<u speaker=HUM>{bot_text}</u>\n')
-                file.write(f'<u speaker=BOT>{hum_text}</u>\n')
+                for i in bot_text:
+                    # Write the formatted text for each entry
+                    file.write(f'<a script.{(surface_logical_mapping.index(situation))+1} type=DSC>\n')
+                    file.write(f'<u speaker=HUM>{i}</u>\n')
+                    file.write(f'<u speaker=BOT>{hum_text}</u>\n')
+                    file.write(f'</a>\n\n')
+
+    with open('./data/training/extracted_sandwich.txt', "w", encoding="utf-8") as file:
+        for situation in surface_logical_mapping:
+            # Convert dict items to list so to have the index
+            items = list(situation.items())
+            i = 0
+
+            while i < len(items):
+                logical_form, surface_form_list = items[i]
+                file.write(f'<a script.{(surface_logical_mapping.index(situation)) + 1} type=SDW>\n')
+
+                # Convert the surface_form_list from set to list to handle better
+                if isinstance(surface_form_list, set):
+                    surface_form_list = list(surface_form_list)
+
+                if len(surface_form_list) > 1:
+                    # IF: multiple surface forms for current logical form
+                    file.write(f"<u speaker=HUM>{surface_form_list[0]}</u>\n")
+                    file.write(f"<u speaker=BOT>{logical_form}</u>\n")
+                    file.write(f"<u speaker=BOT>{logical_form}</u>\n")
+                    file.write(f"<u speaker=BOT>{surface_form_list[1]}</u>\n")
+                    i += 1
+
+                elif len(surface_form_list) == 1:
+                    # IF: unique surface form for logical form
+                    if i + 1 < len(items):
+                        next_logical, next_surface_form = items[i + 1]
+                        if isinstance(next_surface_form, set):
+                            next_surface_form = list(next_surface_form)
+
+                        file.write(f"<u speaker=HUM>{surface_form_list[0]}</u>\n")
+                        file.write(f"<u speaker=BOT>{logical_form}</u>\n")
+                        file.write(f"<u speaker=BOT>{next_logical}</u>\n")
+                        file.write(f"<u speaker=BOT>{next_surface_form[0]}</u>\n")
+                        i += 2
+                    else:
+                        # IF: no next item
+                        file.write(f"<u speaker=HUM>{surface_form_list[0]}</u>\n")
+                        file.write(f"<u speaker=BOT>{logical_form}</u>\n")
+                        i += 1
+
                 file.write(f'</a>\n\n')
 
 # Ensure the script runs when executed directly.
