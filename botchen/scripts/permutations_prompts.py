@@ -167,9 +167,37 @@ def apply_substitutions(text, substitutions):
             new_text = re.sub(r'\b' + re.escape(old) + r'\b', new, new_text)  # Replace only whole words
     # If the new text is different from the original, a substitution was made
     if new_text != original_text:
-        return original_text, new_text
+        return new_text
     else:
-        return original_text, None  # Return None if no substitution was made
+        return None  # Return None if no substitution was made
+
+# Function to apply word substitution and update script number
+def apply_substitutions_sandwich(hum_text, bot_text_one, bot_text_two, bot_text_three,  substitutions):
+    new_hum_text = hum_text
+    new_bot_text_one = bot_text_one
+    new_bot_text_two = bot_text_two
+    new_bot_text_three = bot_text_three
+
+    for old, new in substitutions:
+        if old:
+            if old in new_hum_text:
+                new_hum_text = re.sub(r'\b' + re.escape(old) + r'\b', new, new_hum_text)
+            if old in new_bot_text_one:
+                new_bot_text_one = re.sub(r'\b' + re.escape(old) + r'\b', new, new_bot_text_one)
+            if old in new_bot_text_two:
+                new_bot_text_two = re.sub(r'\b' + re.escape(old) + r'\b', new, new_bot_text_two)
+            if old in new_bot_text_three:
+                new_bot_text_three = re.sub(r'\b' + re.escape(old) + r'\b', new, new_bot_text_three)
+
+    if (new_hum_text == hum_text and new_bot_text_one == bot_text_one and new_bot_text_two == bot_text_two and new_bot_text_three == bot_text_three):
+        return None, None, None, None
+
+    return (
+        new_hum_text if new_hum_text != hum_text else hum_text,
+        new_bot_text_one if new_bot_text_one != bot_text_one else bot_text_one,
+        new_bot_text_two if new_bot_text_two != bot_text_two else bot_text_two,
+        new_bot_text_three if new_bot_text_three != bot_text_three else bot_text_three
+    )
 
 def process_text(input_path, substitutions_per_situation, output_path, sandwich_flag=None):
     with open(input_path) as file:
@@ -198,12 +226,10 @@ def process_text(input_path, substitutions_per_situation, output_path, sandwich_
         substitutions = substitutions_per_situation.get(script_num, [])
 
         # Apply the substitutions and get both original and substituted text
-        original_hum, new_hum = apply_substitutions(hum_text, substitutions)
-        original_bot, new_bot = apply_substitutions(bot_text, substitutions)
+        new_hum = apply_substitutions(hum_text, substitutions)
+        new_bot = apply_substitutions(bot_text, substitutions)
         if sandwich_flag:
-            original_bot_one, new_bot_one = apply_substitutions(bot_text_one, substitutions)
-            original_bot_two, new_bot_two = apply_substitutions(bot_text_two, substitutions)
-            original_bot_three, new_bot_three = apply_substitutions(bot_text_three, substitutions)
+            new_hum, new_bot_one, new_bot_two, new_bot_three = apply_substitutions_sandwich(hum_text, bot_text_one, bot_text_two, bot_text_three, substitutions)
 
         if previous_script_number is not None and script_num != previous_script_number:
             processed_text += ""
@@ -211,14 +237,14 @@ def process_text(input_path, substitutions_per_situation, output_path, sandwich_
         # Build the new <a> tag
         if not sandwich_flag:
             processed_text += f"<a script.{script_num} type=DSC>\n"
-            processed_text += f"<u speaker=HUM>{original_hum}</u>\n"
-            processed_text += f"<u speaker=BOT>{original_bot}</u>\n"
+            processed_text += f"<u speaker=HUM>{hum_text}</u>\n"
+            processed_text += f"<u speaker=BOT>{bot_text}</u>\n"
         if sandwich_flag:
             processed_text += f"<a script.{script_num} type=SDW>\n"
-            processed_text += f"<u speaker=HUM>{original_hum}</u>\n"
-            processed_text += f"<u speaker=BOT>{original_bot_one}</u>\n"
-            processed_text += f"<u speaker=BOT>{original_bot_two}</u>\n"
-            processed_text += f"<u speaker=BOT>{original_bot_three}</u>\n"
+            processed_text += f"<u speaker=HUM>{hum_text}</u>\n"
+            processed_text += f"<u speaker=BOT>{bot_text_one}</u>\n"
+            processed_text += f"<u speaker=BOT>{bot_text_two}</u>\n"
+            processed_text += f"<u speaker=BOT>{bot_text_three}</u>\n"
         processed_text += "</a>\n\n"
 
         if new_hum and new_bot:  # If substitution occurred
