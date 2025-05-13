@@ -42,6 +42,7 @@ def extract_logical_forms(file_path, situation_id, new_situation_id=None, limite
         all_entities = list(entity_pattern.finditer(situation_content))
 
         if limited:
+            # To test: try with only 5 items
             all_entities = list(entity_pattern.finditer(situation_content))[:6]
             entity_matches = [match.group(1) for match in all_entities]
 
@@ -87,25 +88,48 @@ def extract_logical_forms(file_path, situation_id, new_situation_id=None, limite
                         properties_map[entity_id].append(clean_prop)
 
         if new_situation_id:
-            # Construct the conversation script using the extracted data.
-            script_content = f"<script.{new_situation_id} type=CONV>\n"
-            current_speaker = "HUM"
-            for entity_id, entity_name in entity_map.items():
-                properties_str = " ".join(re.sub(r"\.n\.\d+", "", prop) for prop in properties_map[entity_id])
-                script_content += f'<u speaker={current_speaker}>({entity_name} {properties_str})</u>\n'
 
-                # Alternate between human (HUM) and bot (BOT) speakers.
-                current_speaker = "BOT" if current_speaker == "HUM" else "HUM"
+            entity_items = list(entity_map.items())
+            script_content_total = ''
+            for i in range(len(entity_items)):
+                entity_id, entity_name = entity_items[i]
+                script_content = f"<script.{new_situation_id} type=CONV>\n"
 
-            script_content += f"</script.{new_situation_id}>\n\n"
-            return script_content
+                raw_props = properties_map.get(entity_id, [])
+                cleaned_props = [re.sub(r"\.n\.\d+", "", prop) for prop in raw_props]
+                unique_props = list(dict.fromkeys(cleaned_props))
+                properties_str = " ".join(unique_props)
 
-        # Extract the object id numbers, matching the situations so that the situation id is matched with the entities id
+                script_content += f'<u speaker=HUM>({entity_name} {properties_str})</u>\n'
+                # I do the increasing in this way such to have a mapping AABB BBCC etc.
+                if i + 1 < len(entity_items):
+                    new_entity_id, new_entity_name = entity_items[i+1]
+
+                    new_raw_props = properties_map.get(new_entity_id, [])
+                    new_cleaned_props = [re.sub(r"\.n\.\d+", "", prop) for prop in new_raw_props]
+                    new_unique_props = list(dict.fromkeys(new_cleaned_props))
+                    new_properties_str = " ".join(new_unique_props)
+
+                    script_content += f'<u speaker=BOT>({new_entity_name} {new_properties_str})</u>\n'
+                else:
+                    # This is done in order to retrieve to the first utterance if there is no available pair
+                    old_entity_id, old_entity_name = entity_items[0]
+
+                    old_raw_props = properties_map.get(old_entity_id, [])
+                    old_cleaned_props = [re.sub(r"\.n\.\d+", "", prop) for prop in old_raw_props]
+                    old_unique_props = list(dict.fromkeys(old_cleaned_props))
+                    old_properties_str = " ".join(old_unique_props)
+
+                    script_content += f"<u speaker=BOT>({old_entity_name} {old_properties_str})</u>\n"
+                script_content += f"</script.{new_situation_id}>\n\n"
+                script_content_total += script_content
+            return script_content_total
+
         if new_situation_id is None:
-            # Extract a mapping object with the ids
+
             unified_map = {}
             for entity_id, entity_name in entity_map.items():
-                # Combine the entity name and properties into a single string
+
                 properties_str = " ".join(properties_map[entity_id])
                 unified_map[entity_id] = f"{entity_map[entity_id]} {properties_str}"
 
@@ -127,13 +151,20 @@ def extract_surface_language(file_path, idx_to_extract, output_idx):
         return None
     situation_data = situation_data.group(1).strip()
     statements = re.findall(r'<e>(.*?)</e>', situation_data, re.DOTALL)
-    new_file = f"<script.{output_idx} type=CONV>\n"
-    current_speaker = 'HUM'
-    for statement in statements:
-        new_file += f"<u speaker={current_speaker}>{statement.strip().lower()}</u>\n"
-        current_speaker = 'BOT' if current_speaker == 'HUM' else 'HUM'
-    new_file += f"</script.{output_idx}>\n\n"
-    return new_file
+    new_file_total = ''
+    for i in range(len(statements)):
+        new_file = f"<script.{output_idx} type=CONV>\n"
+        statement = statements[i]
+        new_file += f"<u speaker=HUM>{statement.strip().lower()}</u>\n"
+        if i + 1 < len(statements):
+            next_statement = statements[i + 1]
+            new_file += f"<u speaker=BOT>{next_statement.strip().lower()}</u>\n"
+        else:
+            old_statement = statements[0]
+            new_file += f"<u speaker=BOT>{old_statement.strip().lower()}</u>\n"
+        new_file += f"</script.{output_idx}>\n\n"
+        new_file_total += new_file
+    return new_file_total
 
 ############### LOGIC TO SURFACE AND INVERSE
 # Extract the matches between the object ids and the descriptions
@@ -169,7 +200,6 @@ def match_logical_surface_forms(surface_map, logical_map):
         key = f"({properties_str})"
         descriptions = [desc.strip().lower() for desc in description.split(" || ")]
 
-        # Add to the map, avoiding duplicates
         if key not in new_map:
             new_map[key] = set()
 
@@ -183,60 +213,65 @@ def main(ideallanguage, region_descriptions, region_graphs):
            (2410753, 6), (713137, 7), (2412620, 8), (2412211, 9),
            (186, 10), (2396154, 11), (2317468, 12)]
 
-    logical_merged_text = []  # Should be a list to store text pieces
-    logical_surface_text = []  # Same for surface text
+    logical_merged_text = []
+    # logical_surface_text = []
+    surface_logical_mapping = []
 
-    surface_logical_mapping = []  # List to store mappings
-    matches = extract_matches(region_graphs)  # Extract mappings
+    matches = extract_matches(region_graphs)
 
     for vg_id, store_id in ids:
         print(f"Processing vg_id {vg_id} store_id: {store_id}. \nLogical")
 
         # LOGICAL - Extract logical forms and create training data
         logical_texts = extract_logical_forms(ideallanguage, vg_id, new_situation_id=store_id, limited=True)
-        logical_merged_text.extend(logical_texts)  # Append to the list
+        logical_merged_text.extend(logical_texts)
 
-        # SURFACE - Extract surface forms for training data
+        # In order to make it faster, I employ the matching identities to build up the surface dictionary. But also this could be employed
+        # # SURFACE - Extract surface forms for training data
         # print(f"Surface")
         # surface_texts = extract_surface_language(region_descriptions, vg_id, store_id)
         # logical_surface_text.extend(surface_texts)  # Append to the list
 
-        print("Match and Surface")
         # MAPPING - Extract logical representations and mappings
+        print("Match and Surface")
         entity_properties_map, situation_content, entities_numerical_ids = extract_logical_forms(ideallanguage, vg_id, new_situation_id=None, limited=True)
-
         # Extract the mapping between the entities_numerical_ids and surface forms
         region_graph_mapping = extract_graph_mapping(entities_numerical_ids, matches)
-
         # Match the surface and logical forms
-        mapping = match_logical_surface_forms(region_graph_mapping, entity_properties_map)  # Ensure correct reference here
-        surface_logical_mapping.append(mapping)  # Append the mapping
+        mapping = match_logical_surface_forms(region_graph_mapping, entity_properties_map)
+        surface_logical_mapping.append(mapping)
 
     # Write logical merged text to file
     with open('./data/training/extracted_logical.txt', "w", encoding="utf-8") as file:
-        file.write(''.join(logical_merged_text))  # Join the list items into a single string with line breaks
+        file.write(''.join(logical_merged_text))
 
     # Write surface merged text to file
-    with open('./data/training/extracted_surface.txt', "w", encoding="utf-8") as file:
-        # file.write("".join(logical_surface_text))  # Same here, join list into string
-        current_speaker = 'HUM'
-        for situation in surface_logical_mapping:
-            file.write(f'<script.{(surface_logical_mapping.index(situation))+1} type=CONV>\n')
-            # Loop through each item in the mapping (assuming it's a dictionary)
-            for hum_text, bot_text in situation.items():
-                for i in bot_text:
-                    # Write the formatted text for each entry
-                    current_speaker = 'BOT' if current_speaker == 'HUM' else 'HUM'
-                    file.write(f'<u speaker={current_speaker}>{i}</u>\n')
-            file.write(f'</script.{(surface_logical_mapping.index(situation))+1}>\n\n')
 
-    # Write the mappings to the dsc file
+    with open('./data/training/extracted_surface.txt', "w", encoding="utf-8") as file:
+        # file.write("".join(logical_surface_text))  #Could also be used, if we use the other method
+        for situation in surface_logical_mapping:
+            situation_items = list(situation.items())
+            total_situation_bot_text = []
+            for hum_text, bot_text in situation_items:
+                if isinstance(bot_text, (set, list)):
+                    total_situation_bot_text.extend(bot_text)
+            for i in range(len(total_situation_bot_text)):
+                bot_text = total_situation_bot_text[i]
+                file.write(f'<script.{(surface_logical_mapping.index(situation))+1} type=CONV>\n')
+                file.write(f'<u speaker=HUM>{bot_text}</u>\n')
+                # I do the increasing in this way such to have a mapping AABB BBCC etc.
+                if i + 1 < len(total_situation_bot_text):
+                    new_bot_text = total_situation_bot_text[i + 1]
+                    file.write(f'<u speaker=BOT>{new_bot_text}</u>\n')
+                else: # If there are odd number, go back to the first utterance
+                    old_bot_text = total_situation_bot_text[0]
+                    file.write(f'<u speaker=BOT>{old_bot_text}</u>\n')
+                file.write(f'</script.{(surface_logical_mapping.index(situation))+1}>\n\n')
+
     with open('./data/training/extracted_logical_to_surface.txt', "w", encoding="utf-8") as file:
         for situation in surface_logical_mapping:
-            # Loop through each item in the mapping (assuming it's a dictionary)
             for hum_text, bot_text in situation.items():
                 for i in bot_text:
-                    # Write the formatted text for each entry
                     file.write(f'<a script.{(surface_logical_mapping.index(situation))+1} type=DSC>\n')
                     file.write(f'<u speaker=HUM>{hum_text}</u>\n')
                     file.write(f'<u speaker=BOT>{i}</u>\n')
@@ -244,58 +279,41 @@ def main(ideallanguage, region_descriptions, region_graphs):
 
     with open('./data/training/extracted_surface_to_logical.txt', "w", encoding="utf-8") as file:
         for situation in surface_logical_mapping:
-            # Loop through each item in the mapping (assuming it's a dictionary)
             for hum_text, bot_text in situation.items():
                 for i in bot_text:
-                    # Write the formatted text for each entry
                     file.write(f'<a script.{(surface_logical_mapping.index(situation))+1} type=DSC>\n')
                     file.write(f'<u speaker=HUM>{i}</u>\n')
                     file.write(f'<u speaker=BOT>{hum_text}</u>\n')
                     file.write(f'</a>\n\n')
 
     with open('./data/training/extracted_sandwich.txt', "w", encoding="utf-8") as file:
-        for situation in surface_logical_mapping:
-            # Convert dict items to list so to have the index
-            items = list(situation.items())
-            i = 0
 
-            while i < len(items):
-                logical_form, surface_form_list = items[i]
-                file.write(f'<a script.{(surface_logical_mapping.index(situation)) + 1} type=SDW>\n')
+        for situation_idx, situation in enumerate(surface_logical_mapping):
 
-                # Convert the surface_form_list from set to list to handle better
-                if isinstance(surface_form_list, set):
-                    surface_form_list = list(surface_form_list)
+            # Flattening the items such to repeat the surface forms attached to the logical forms in the list
+            flattened_items = []
+            for logical_form, surface_form_set in situation.items():
+                surface_form_list = list(surface_form_set)
+                for surface_form in surface_form_list:
+                    flattened_items.append([logical_form, surface_form])
 
-                if len(surface_form_list) > 1:
-                    # IF: multiple surface forms for current logical form
-                    file.write(f"<u speaker=HUM>{surface_form_list[0]}</u>\n")
-                    file.write(f"<u speaker=BOT>{logical_form}</u>\n")
-                    file.write(f"<u speaker=BOT>{logical_form}</u>\n")
-                    file.write(f"<u speaker=BOT>{surface_form_list[1]}</u>\n")
-                    i += 1
+            for i in range(len(flattened_items)):
+                file.write(f'<a script.{situation_idx + 1} type=SDW>\n')
+                logical_form, surface_form = flattened_items[i]
+                file.write(f"<u speaker=HUM>{logical_form}</u>\n")
+                file.write(f"<u speaker=BOT>{surface_form}</u>\n")
 
-                elif len(surface_form_list) == 1:
-                    # IF: unique surface form for logical form
-                    if i + 1 < len(items):
-                        next_logical, next_surface_form = items[i + 1]
-                        if isinstance(next_surface_form, set):
-                            next_surface_form = list(next_surface_form)
+                if i + 1 < len(flattened_items):
+                    next_logical, next_surface = flattened_items[i + 1]
+                    file.write(f"<u speaker=BOT>{next_surface}</u>\n")
+                    file.write(f"<u speaker=BOT>{next_logical}</u>\n")
+                    file.write(f'</a>\n\n')
+                else:
+                    old_logical, old_surface = flattened_items[0]
+                    file.write(f"<u speaker=BOT>{old_surface}</u>\n")
+                    file.write(f"<u speaker=BOT>{old_logical}</u>\n")
+                    file.write(f'</a>\n\n')
 
-                        file.write(f"<u speaker=HUM>{surface_form_list[0]}</u>\n")
-                        file.write(f"<u speaker=BOT>{logical_form}</u>\n")
-                        file.write(f"<u speaker=BOT>{next_logical}</u>\n")
-                        file.write(f"<u speaker=BOT>{next_surface_form[0]}</u>\n")
-                        i += 2
-                    else:
-                        # IF: no next item
-                        file.write(f"<u speaker=HUM>{surface_form_list[0]}</u>\n")
-                        file.write(f"<u speaker=BOT>{logical_form}</u>\n")
-                        i += 1
-
-                file.write(f'</a>\n\n')
-
-# Ensure the script runs when executed directly.
 if __name__ == "__main__":
 
     main("./data/ideallanguage.txt", "../../vgnlp2/obs/region_descriptions.json.obs", "../../vgnlp2/dsc/region_graphs.json.dsc")

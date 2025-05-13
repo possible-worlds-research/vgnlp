@@ -76,19 +76,17 @@ def extract_entities_properties(content, surface_language = False):
 # Function to generate a prompt script from the extracted entities and their properties
 def generate_prompt_script_from_entities(script_number, entity_properties, surface_language = False):
     script_content = f'<script.{script_number} type=CONV>\n'
-    current_speaker = "HUM"
     if surface_language is False:
         # Iterate over each entity and add its properties to the script
         for entity, properties in entity_properties.items():
             filtered_properties = properties - {entity}
             properties_str = ' '.join(filtered_properties)
-            script_content += f'<u speaker={current_speaker}>({entity}.n {properties_str})</u>\n'
-            current_speaker = "BOT" if current_speaker == "HUM" else "HUM"
+            script_content += f'<u speaker=HUM>({entity}.n {properties_str})</u>\n'
 
     if surface_language is True:
         for utterance in entity_properties:
-            script_content += f'<u speaker={current_speaker}>{utterance}</u>\n'
-            current_speaker = "BOT" if current_speaker == "HUM" else "HUM"
+            script_content += f'<u speaker=HUM>{utterance}</u>\n'
+            # current_speaker = "BOT" if current_speaker == "HUM" else "HUM"
 
     script_content += f'</script.{script_number}>\n\n'
     return script_content
@@ -282,19 +280,33 @@ def extract_unique_hum_utterances(input_text, output_path, sandwich_flag=None):
         content = match[1]
 
         # Extract all HUM utterances
-        hum_pattern = r'<u speaker=HUM>(.*?)</u>'
-        hum_utterances = re.findall(hum_pattern, content)
+        if not sandwich_flag:
+            hum_pattern = r'<u speaker=HUM>(.*?)</u>'
+            hum_utterances = re.findall(hum_pattern, content)
+        if sandwich_flag:
+            hum_pattern_one = r'<u speaker=HUM>(.*?)</u>'
+            hum_pattern_two = r'<u speaker=BOT>([^()<>\n]+)</u>'
+            hum_utterances_one = re.findall(hum_pattern_one, content)
+            hum_utterances_two = re.findall(hum_pattern_two, content)
+            hum_utterances_twoo = [utt.strip() for utt in hum_utterances_two if utt.strip()]
 
         # Add the unique HUM utterances to the script_groups dictionary
         if script_num not in script_groups:
             script_groups[script_num] = set()  # Using a set to ensure uniqueness
-        script_groups[script_num].update(hum_utterances)
+        if not sandwich_flag:
+            script_groups[script_num].update(hum_utterances)
+        if sandwich_flag:
+            script_groups[script_num].update(hum_utterances_one)
+            script_groups[script_num].update(hum_utterances_two)
 
     # Prepare the final output with unique HUM utterances
     output_text = ""
 
     for script_num, hum_utterances in script_groups.items():
-        output_text += f'<a script.{script_num} type=DSC>\n'
+        if not sandwich_flag:
+            output_text += f'<a script.{script_num} type=DSC>\n'
+        if sandwich_flag:
+            output_text += f'<a script.{script_num} type=SDW>\n'
         for hum in hum_utterances:
             output_text += f'<u speaker=HUM>{hum}</u>\n'
         output_text += '</a>\n\n'
