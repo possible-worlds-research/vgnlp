@@ -307,9 +307,13 @@ def bleu_algorithm_logical_surface(file_path_references, file_path_candidates, n
             tokenized_references = [response.split() for response in reference_responses]
             tokenized_candidates = [response.split() for response in candidate_responses]
 
+            candidate_bleu_scores = []
+
             for candidate in tokenized_candidates:
                 score = sentence_bleu(tokenized_references, candidate, weights=weights)
-                bleu_scores.append(score)
+                candidate_bleu_scores.append(score)
+            highest_score = max(candidate_bleu_scores)
+            bleu_scores.append(highest_score)
 
     if bleu_scores:
         average_bleu_score = sum(bleu_scores) / len(bleu_scores)
@@ -317,12 +321,25 @@ def bleu_algorithm_logical_surface(file_path_references, file_path_candidates, n
         average_bleu_score = 0
     return average_bleu_score
 
-def bleu_algorithm_surface(script_id, file_path_references, file_path_candidates, n_gram):
+def clean_list(data):
+    cleaned = []
+    for sublist in data:
+        if any(word.startswith('<u') or '(' in word or ')' in word or 'speaker=' in word for word in sublist):
+            continue
+        cleaned.append(sublist)
+    return cleaned
+
+def bleu_algorithm(script_id, file_path_references, file_path_candidates, n_gram, sandwich_flag=None):
     # References (I am extracting the utterances based on the script_id I am evaluating from) OPTIMAL
     with open(file_path_references, 'r') as reference_file:
         references_content = reference_file.read()
 
-    scripts = re.findall(r"(<script\.\d+ type=CONV>.*?</script\.\d+>)", references_content, re.DOTALL)
+    if not sandwich_flag: # Surface
+        scripts = re.findall(r"(<script\.\d+ type=CONV>.*?</script\.\d+>)", references_content, re.DOTALL)
+    if sandwich_flag:
+        scripts = re.findall(r"(<a script.\d+ type=SDW>.*?</a>)", references_content, re.DOTALL)
+
+    # Getting the utterances only from the selected situation
     if script_id != 0:
         script_content_reference = scripts[script_id-1]
     if script_id == 0:
@@ -337,20 +354,33 @@ def bleu_algorithm_surface(script_id, file_path_references, file_path_candidates
     candidate_pattern = r">> Response: (.*?)\n\n"
     candidate_matches = re.findall(candidate_pattern, candidate_content, re.DOTALL)
     tokenized_candidates = [candidate.split() for candidate in candidate_matches]
+    # if sandwich_flag:
+    #     tokenized_candidates = clean_list(tokenized_candidates)
 
     # # BLEU score
     bleu_scores=[]
     weights = tuple([1.0 if i == 0 else 0.0 for i in range(n_gram)])
     for candidate in tokenized_candidates:
+
         candidate_bleu_scores = []
-        for reference in tokenized_references:
-            score = sentence_bleu([reference], candidate, weights=weights)  # Compare candidate with one reference at a time
+        references = []
+
+        if sandwich_flag:
+            if any(word.startswith('<u') or '(' in word or ')' in word or 'speaker=' in word for word in candidate):
+                score = 0
+            else:
+                for reference in tokenized_references:
+                    score = sentence_bleu([reference], candidate, weights=weights)
+                    references.append(reference)
             candidate_bleu_scores.append(score)
-            # print(f'Average BLEU score for {candidate} and {reference}: {score}')
-        # Calculate the average BLEU score for this candidate against all references
-        average_candidate_bleu = sum(candidate_bleu_scores) / len(candidate_bleu_scores)
-        bleu_scores.append(average_candidate_bleu)
-        # print(f'Average BLEU score for {candidate}: {average_candidate_bleu}')
+        else:
+            for reference in tokenized_references:
+                score = sentence_bleu([reference], candidate, weights=weights)  # Compare candidate with one reference at a time
+                candidate_bleu_scores.append(score)
+                references.append(reference)
+
+        highest_value = max(candidate_bleu_scores)
+        bleu_scores.append(highest_value)
 
     if bleu_scores:
         average_bleu_score = sum(bleu_scores) / len(bleu_scores)
@@ -361,87 +391,98 @@ def bleu_algorithm_surface(script_id, file_path_references, file_path_candidates
 ############# LOGICAL
 #############
 ############# CREATE THE EVALUATION VECTORIAL SPACES FILES
-
-print('Vectorial Spaces Evaluation - Logic Data, creation of vectorial spaces, evaluating them and storing')
-
-if not os.path.exists(os.path.dirname('./data/data_analysis/logical/evaluations/optimal_1.txt')):
-    os.makedirs(os.path.dirname('./data/data_analysis/logical/evaluations/optimal_1.txt'))
-
-open('./data/data_analysis/logical/evaluations/optimal_1.txt', 'w').close()
-for script_id_eval in range (0,13):
-    for script_id_optimal in range(0,13):
-        evaluation_with_vectorial_space(1, script_id_eval, script_id_optimal, log_file='./data/data_analysis/logical/evaluations/optimal_1.txt', optimal_to_optimal=True)
-
-open('./data/data_analysis/logical/evaluations/optimal_2.txt', 'w').close()  # This clears the file by opening & immediately closing it
-for script_id_eval in range (0,13):
-    for script_id_optimal in range(0,13):
-        evaluation_with_vectorial_space(2, script_id_eval, script_id_optimal, log_file='./data/data_analysis/logical/evaluations/optimal_2.txt', optimal_to_optimal=True)
-
-open('./data/data_analysis/logical/evaluations/evaluation_1.txt', 'w').close()
-for script_id_eval in range (0,13):
-    for script_id_optimal in range(0,13):
-        evaluation_with_vectorial_space(1, script_id_eval, script_id_optimal, log_file='./data/data_analysis/logical/evaluations/evaluation_1.txt')
-
-open('./data/data_analysis/logical/evaluations/evaluation_2.txt', 'w').close()  # This clears the file by opening & immediately closing it
-for script_id_eval in range (0,13):
-    for script_id_optimal in range(0,13):
-        evaluation_with_vectorial_space(2, script_id_eval, script_id_optimal, log_file='./data/data_analysis/logical/evaluations/evaluation_2.txt')
+#
+# print('Vectorial Spaces Evaluation - Logic Data, creation of vectorial spaces, evaluating them and storing')
+#
+# if not os.path.exists(os.path.dirname('./data/data_analysis/logical/evaluations/optimal_1.txt')):
+#     os.makedirs(os.path.dirname('./data/data_analysis/logical/evaluations/optimal_1.txt'))
+#
+# open('./data/data_analysis/logical/evaluations/optimal_1.txt', 'w').close()
+# for script_id_eval in range (0,13):
+#     for script_id_optimal in range(0,13):
+#         evaluation_with_vectorial_space(1, script_id_eval, script_id_optimal, log_file='./data/data_analysis/logical/evaluations/optimal_1.txt', optimal_to_optimal=True)
+#
+# open('./data/data_analysis/logical/evaluations/optimal_2.txt', 'w').close()  # This clears the file by opening & immediately closing it
+# for script_id_eval in range (0,13):
+#     for script_id_optimal in range(0,13):
+#         evaluation_with_vectorial_space(2, script_id_eval, script_id_optimal, log_file='./data/data_analysis/logical/evaluations/optimal_2.txt', optimal_to_optimal=True)
+#
+# open('./data/data_analysis/logical/evaluations/evaluation_1.txt', 'w').close()
+# for script_id_eval in range (0,13):
+#     for script_id_optimal in range(0,13):
+#         evaluation_with_vectorial_space(1, script_id_eval, script_id_optimal, log_file='./data/data_analysis/logical/evaluations/evaluation_1.txt')
+#
+# open('./data/data_analysis/logical/evaluations/evaluation_2.txt', 'w').close()  # This clears the file by opening & immediately closing it
+# for script_id_eval in range (0,13):
+#     for script_id_optimal in range(0,13):
+#         evaluation_with_vectorial_space(2, script_id_eval, script_id_optimal, log_file='./data/data_analysis/logical/evaluations/evaluation_2.txt')
 
 ########## GRAPHICAL REPRESENTATIONS
 ##############
 ############### CREATE THE CSVs FROM THE EVALUATION FILES
-
-print('Vectorial Spaces Evaluation - Logic Data, comparing the spaces and storing')
-
-if not os.path.exists(os.path.dirname('./data/data_analysis/logical/dataframes/optimal_1.csv')):
-    os.makedirs(os.path.dirname('./data/data_analysis/logical/dataframes/optimal_1.csv'))
-
-open('./data/data_analysis/logical/dataframes/optimal_1.csv', 'w').close()
-make_csv_from_data('./data/data_analysis/logical/evaluations/optimal_1.txt', './data/data_analysis/logical/dataframes/optimal_1.csv')
-open('./data/data_analysis/logical/dataframes/optimal_2.csv', 'w').close()
-make_csv_from_data('./data/data_analysis/logical/evaluations/optimal_2.txt', './data/data_analysis/logical/dataframes/optimal_2.csv')
-open('./data/data_analysis/logical/dataframes/evaluation_1.csv', 'w').close()
-make_csv_from_data('./data/data_analysis/logical/evaluations/evaluation_1.txt', './data/data_analysis/logical/dataframes/evaluation_1.csv')
-open('./data/data_analysis/logical/dataframes/evaluation_2.csv', 'w').close()
-make_csv_from_data('./data/data_analysis/logical/evaluations/evaluation_2.txt', './data/data_analysis/logical/dataframes/evaluation_2.csv')
+#
+# print('Vectorial Spaces Evaluation - Logic Data, comparing the spaces and storing')
+#
+# if not os.path.exists(os.path.dirname('./data/data_analysis/logical/dataframes/optimal_1.csv')):
+#     os.makedirs(os.path.dirname('./data/data_analysis/logical/dataframes/optimal_1.csv'))
+#
+# open('./data/data_analysis/logical/dataframes/optimal_1.csv', 'w').close()
+# make_csv_from_data('./data/data_analysis/logical/evaluations/optimal_1.txt', './data/data_analysis/logical/dataframes/optimal_1.csv')
+# open('./data/data_analysis/logical/dataframes/optimal_2.csv', 'w').close()
+# make_csv_from_data('./data/data_analysis/logical/evaluations/optimal_2.txt', './data/data_analysis/logical/dataframes/optimal_2.csv')
+# open('./data/data_analysis/logical/dataframes/evaluation_1.csv', 'w').close()
+# make_csv_from_data('./data/data_analysis/logical/evaluations/evaluation_1.txt', './data/data_analysis/logical/dataframes/evaluation_1.csv')
+# open('./data/data_analysis/logical/dataframes/evaluation_2.csv', 'w').close()
+# make_csv_from_data('./data/data_analysis/logical/evaluations/evaluation_2.txt', './data/data_analysis/logical/dataframes/evaluation_2.csv')
 
 ####################### CREATE THE HEATMAPS
-
-print('Vectorial Spaces Evaluation - Logic Data, heatmaps creation')
-
-if not os.path.exists(os.path.dirname('./data/data_analysis/logical/images/row_optimal_1.png')):
-    os.makedirs(os.path.dirname('./data/data_analysis/logical/images/row_optimal_1.png'))
-
-heatmap('./data/data_analysis/logical/dataframes/optimal_1.csv', 'Row', 'Optimal', '1', './data/data_analysis/logical/images/row_optimal_1.png')
-heatmap('./data/data_analysis/logical/dataframes/optimal_1.csv', 'Column', 'Optimal', '1', './data/data_analysis/logical/images/col_optimal_1.png')
-
-heatmap('./data/data_analysis/logical/dataframes/optimal_2.csv', 'Row', 'Optimal', '2', './data/data_analysis/logical/images/row_optimal_2.png')
-heatmap('./data/data_analysis/logical/dataframes/optimal_2.csv', 'Column', 'Optimal', '2', './data/data_analysis/logical/images/col_optimal_2.png')
-
-heatmap('./data/data_analysis/logical/dataframes/evaluation_1.csv', 'Row', 'Eval', '1', './data/data_analysis/logical/images/row_eval_1.png')
-heatmap('./data/data_analysis/logical/dataframes/evaluation_1.csv', 'Column', 'Eval', '1', './data/data_analysis/logical/images/col_eval_1.png')
-
-heatmap('./data/data_analysis/logical/dataframes/evaluation_2.csv', 'Row', 'Eval', '2', './data/data_analysis/logical/images/row_eval_2.png')
-heatmap('./data/data_analysis/logical/dataframes/evaluation_2.csv', 'Column', 'Eval', '2', './data/data_analysis/logical/images/col_eval_2.png')
+#
+# print('Vectorial Spaces Evaluation - Logic Data, heatmaps creation')
+#
+# if not os.path.exists(os.path.dirname('./data/data_analysis/logical/images/row_optimal_1.png')):
+#     os.makedirs(os.path.dirname('./data/data_analysis/logical/images/row_optimal_1.png'))
+#
+# heatmap('./data/data_analysis/logical/dataframes/optimal_1.csv', 'Row', 'Optimal', '1', './data/data_analysis/logical/images/row_optimal_1.png')
+# heatmap('./data/data_analysis/logical/dataframes/optimal_1.csv', 'Column', 'Optimal', '1', './data/data_analysis/logical/images/col_optimal_1.png')
+#
+# heatmap('./data/data_analysis/logical/dataframes/optimal_2.csv', 'Row', 'Optimal', '2', './data/data_analysis/logical/images/row_optimal_2.png')
+# heatmap('./data/data_analysis/logical/dataframes/optimal_2.csv', 'Column', 'Optimal', '2', './data/data_analysis/logical/images/col_optimal_2.png')
+#
+# heatmap('./data/data_analysis/logical/dataframes/evaluation_1.csv', 'Row', 'Eval', '1', './data/data_analysis/logical/images/row_eval_1.png')
+# heatmap('./data/data_analysis/logical/dataframes/evaluation_1.csv', 'Column', 'Eval', '1', './data/data_analysis/logical/images/col_eval_1.png')
+#
+# heatmap('./data/data_analysis/logical/dataframes/evaluation_2.csv', 'Row', 'Eval', '2', './data/data_analysis/logical/images/row_eval_2.png')
+# heatmap('./data/data_analysis/logical/dataframes/evaluation_2.csv', 'Column', 'Eval', '2', './data/data_analysis/logical/images/col_eval_2.png')
 
 ############# LOGICAL TO SURFACE
 
-print('BLEU Algorithm Evaluation - Logical to Surface Data \n')
-n_gram_value=1
-
-for script_id_reference in range (0,13):
-   score = bleu_algorithm_logical_surface('./data/training/permuted_logical_to_surface.txt',
-                          f'./data/evaluation_data/evaluation_logic_to_surface/evaluation_situation{script_id_reference}.txt',
-                          n_gram_value)
-   print(f'Average BLEU score, n-grams {n_gram_value} for script id {script_id_reference} is {score}')
+# print('BLEU Algorithm Evaluation - Logical to Surface Data \n')
+# n_gram_value=1
+#
+# for script_id_reference in range (0,13):
+#    score = bleu_algorithm_logical_surface('./data/training/permuted_logical_to_surface.txt',
+#                           f'./data/evaluation_data/evaluation_logic_to_surface/evaluation_situation{script_id_reference}.txt',
+#                           n_gram_value)
+#    print(f'Average BLEU score, n-grams {n_gram_value} for script id {script_id_reference} is {score}')
 
 ########## SURFACE
 
-print('BLEU Algorithm Evaluation - Surface Data \n')
-n_gram_value=1
+# print('\n BLEU Algorithm Evaluation - Surface Data \n')
+# n_gram_value=1
+#
+# for script_id_reference in range (0,13):
+#     score = bleu_algorithm(script_id_reference, './data/training/prompt_surface.txt',
+#                                            f'./data/evaluation_data/evaluation_surface/evaluation_situation{script_id_reference}.txt',
+#                                            n_gram_value)
+#     print(f'Average BLEU score, n-grams {n_gram_value} for script id {script_id_reference} is {score}')
 
-for script_id_reference in range (0,13):
-    score = bleu_algorithm_surface(script_id_reference, './data/training/prompt_surface.txt',
-                                           f'./data/evaluation_data/evaluation_surface/evaluation_situation{script_id_reference}.txt',
-                                           n_gram_value)
-    print(f'Average BLEU score, n-grams {n_gram_value} for script id {script_id_reference} is {score}')
+############### SANDWICH
+
+# print('\n BLEU Algorithm Evaluation - Sandwich Data \n')
+# n_gram_value=1
+#
+# for script_id_reference in range (0,13):
+#     score = bleu_algorithm(script_id_reference, './data/training/prompt_sandwich.txt',
+#                                            f'./data/evaluation_data/emma_sandwich/evaluation_situation{script_id_reference}.txt',
+#                                            n_gram_value, sandwich_flag=True)
+#     print(f'Average BLEU score, n-grams {n_gram_value} for script id {script_id_reference} is {score}')
