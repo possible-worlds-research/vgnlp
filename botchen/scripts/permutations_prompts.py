@@ -20,14 +20,13 @@ from nltk.translate.bleu_score import sentence_bleu
 # nltk.download('wordnet')
 # nltk.download('omw-1.4')  # For wordnet synonyms in different languages
 
-################# Logical/Surface Formats
+################# Logic to logic and Surface to surface
 
 # Function to extract original situations from a reference file
 def extract_situations(filename):
     with open(filename, "r", encoding="utf-8") as file:
         content = file.read()
 
-    # Extract the scripts (situations) from the content using regular expressions
     scripts = re.findall(r"(<script\.\d+ type=CONV>.*?</script\.\d+>)", content, re.DOTALL)
 
     # Initialize a dictionary to store situations and count speaker occurrences
@@ -68,7 +67,7 @@ def extract_entities_properties(content, surface_language = False):
             for prop in properties:
                 entity_properties[entity].add(prop)
 
-        # Return the number of entities, total properties, and the entity-property dictionary
+        # Return the number of entities, total properties (for report) and the entity-property dictionary
         num_entities = len(entity_properties)
         num_properties = sum(len(properties) for properties in entity_properties.values())
         return num_entities, num_properties, entity_properties
@@ -86,7 +85,6 @@ def generate_prompt_script_from_entities(script_number, entity_properties, surfa
     if surface_language is True:
         for utterance in entity_properties:
             script_content += f'<u speaker=HUM>{utterance}</u>\n'
-            # current_speaker = "BOT" if current_speaker == "HUM" else "HUM"
 
     script_content += f'</script.{script_number}>\n\n'
     return script_content
@@ -154,20 +152,20 @@ def permutations(situations, substitutions_per_situation, surface_language=False
         with open('./data/training/prompt_surface.txt', 'w') as file:
             file.write(prompt_content_total)
 
-################## Logical to surface formats
+################## Logic to surface and sandwich
 
 # Function to apply word substitution and update script number
 def apply_substitutions(text, substitutions):
     original_text = text  # Save the original text
     new_text = text  # Initialize new text as the original
     for old, new in substitutions:
-        if old and old in new_text:  # Only apply if there's an actual match
+        if old and old in new_text:
             new_text = re.sub(r'\b' + re.escape(old) + r'\b', new, new_text)  # Replace only whole words
-    # If the new text is different from the original, a substitution was made
+    # If the new text is different from the original, a substitution is
     if new_text != original_text:
         return new_text
     else:
-        return None  # Return None if no substitution was made
+        return None
 
 # Function to apply word substitution and update script number
 def apply_substitutions_sandwich(hum_text, bot_text_one, bot_text_two, bot_text_three,  substitutions):
@@ -200,14 +198,13 @@ def apply_substitutions_sandwich(hum_text, bot_text_one, bot_text_two, bot_text_
 def process_text(input_path, substitutions_per_situation, output_path, sandwich_flag=None):
     with open(input_path) as file:
         input_text=file.read()
-    # Parse the input text into a list of <a> elements
+
     pattern = r'<a script\.(\d+) type=DSC>\s*<u speaker=HUM>(.*?)</u>\s*<u speaker=BOT>(.*?)</u>\s*</a>'
     if sandwich_flag:
         pattern = r'<a script\.(\d+) type=SDW>\s*<u speaker=HUM>(.*?)</u>\s*<u speaker=BOT>(.*?)</u>\s*<u speaker=BOT>(.*?)</u>\s*<u speaker=BOT>(.*?)</u>\s*</a>'
 
     matches = re.findall(pattern, input_text, re.DOTALL)
 
-    # Process each match
     processed_text = ""
     previous_script_number= None
 
@@ -232,7 +229,6 @@ def process_text(input_path, substitutions_per_situation, output_path, sandwich_
         if previous_script_number is not None and script_num != previous_script_number:
             processed_text += ""
 
-        # Build the new <a> tag
         if not sandwich_flag:
             processed_text += f"<a script.{script_num} type=DSC>\n"
             processed_text += f"<u speaker=HUM>{hum_text}</u>\n"
@@ -288,11 +284,11 @@ def extract_unique_hum_utterances(input_text, output_path, sandwich_flag=None):
             hum_pattern_two = r'<u speaker=BOT>([^()<>\n]+)</u>'
             hum_utterances_one = re.findall(hum_pattern_one, content)
             hum_utterances_two = re.findall(hum_pattern_two, content)
-            hum_utterances_twoo = [utt.strip() for utt in hum_utterances_two if utt.strip()]
+            hum_utterances_two = [utt.strip() for utt in hum_utterances_two if utt.strip()]
 
         # Add the unique HUM utterances to the script_groups dictionary
         if script_num not in script_groups:
-            script_groups[script_num] = set()  # Using a set to ensure uniqueness
+            script_groups[script_num] = set()
         if not sandwich_flag:
             script_groups[script_num].update(hum_utterances)
         if sandwich_flag:
@@ -318,7 +314,6 @@ def extract_unique_hum_utterances(input_text, output_path, sandwich_flag=None):
 
 ################# Main function
 
-# Main driver function to initialize the process
 def main():
 
     # Define word substitutions for each situation
@@ -353,7 +348,6 @@ def main():
              ('belt', 'accessory'),('eye', 'face'),('building', 'house'),('hair', 'head'),('earring', 'jewelry')],
     }
 
-    # Generate permutations and save the results
     permutations(extract_situations("./data/training/extracted_logical.txt"), substitutions_per_situation, surface_language=False)
 
     permutations(extract_situations('./data/training/extracted_surface.txt'),substitutions_per_situation, surface_language=True)
@@ -364,7 +358,6 @@ def main():
 
     extract_unique_hum_utterances(process_text('./data/training/extracted_sandwich.txt', substitutions_per_situation, './data/training/permuted_sandwich.txt', sandwich_flag=1), './data/training/prompt_sandwich.txt', sandwich_flag=1)
 
-# Execute the main function when the script is run
 if __name__ == "__main__":
     main()
 
