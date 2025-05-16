@@ -7,15 +7,8 @@
 # The user can change the VG situation ID which to revert to Botchen format at the end of the file. 
 # Now we selected 12 scripts, covering diverse topics.
 
-import re
-import os
-import zipfile
-import argparse
-import json
-import random
 import logging
 
-from collections import defaultdict
 from utils import extract_logic_language, extract_surface_language
 from utils import extract_surface_logic_utterances, filter_region_graph_mapping, match_logical_surface_forms
 from utils import write_logic_to_surface, write_surface, write_sandwich
@@ -97,18 +90,12 @@ def processing_languages_mappings(ideallanguage_file_path,
     all_entities_map = {}
 
     if augmenting_flag is True:
-        print('AAAAA', ids_list)
-        iterable = [
-            (vg_id, int(situation_list[-1]))
-            for vg_id, situation_list in ids_list.items()
-            if situation_list and str(situation_list[-1]).isdigit()
-        ]
-        print('ITERABLE', iterable)
-    else:
-        iterable = ids_list
+        logging.info('AUGMENTIG FLAG PROCESS')
 
-    for i, (vg_id, store_id) in enumerate(iterable):
-        logging.info("LOGIC: vg_id=%s, store_id=%s", vg_id, store_id)
+    for vg_id, store_id in ids_list:
+
+        logging.info(f"vg_id={vg_id}, store_id={store_id}")
+        # logging.info(f"LOGIC")
 
         # 1. Extract logic scripts with new_situation_id
         logic_script_output = extract_logic_language(
@@ -123,7 +110,7 @@ def processing_languages_mappings(ideallanguage_file_path,
             logic_scripts.extend(logic_script_output)
 
         # 2. Extract surface logic mapping with new_situation_id=None
-        logging.info("SURFACE AND LOGIC-SURFACE MAPPING")
+        # logging.info("SURFACE AND LOGIC-SURFACE MAPPING")
         entity_properties_map, _, entity_ids, entities_map = extract_logic_language(
             file_path=ideallanguage_file_path,
             situation_id=vg_id,
@@ -131,11 +118,14 @@ def processing_languages_mappings(ideallanguage_file_path,
             limited=limited,
             limited_max_utterances=limited_max_utterances,
         )
+
         region_graph_mapping = filter_region_graph_mapping(entity_ids, matches)
         mapping = match_logical_surface_forms(region_graph_mapping, entity_properties_map)
 
         surface_logic_mapping.append(mapping)
         all_entities_map[store_id] = entities_map
+
+    logging.info(f'{len(ids_list)} situation have been stored')
 
     return logic_scripts, surface_logic_mapping, all_entities_map
 
@@ -150,11 +140,21 @@ def extract_languages(ideallanguage,
          limited_max_utterances=5,
          test_mode=False,
          test_max_examples=3,
-         increase_corpus_flag = False):
+
+         increase_corpus_flag = False,
+         training_and_test_sets = False,
+         min_referent_overlap_ratio=None,
+         min_target_overlap_ratio=None,
+         min_content_length=None,
+         max_content_length=None,
+         max_per_referent=None,
+         train_split_ratio=None):
 
     if test_mode:
         ids = ids[:test_max_examples]
-    print('IDS NORMAL', ids)
+
+    logging.info(f'ORIGINAL IDS {ids}')
+
     logic_scripts, surface_logic_mapping, all_entities_map = processing_languages_mappings(
         ideallanguage_file_path=ideallanguage,
         ids_list=ids,
@@ -162,28 +162,54 @@ def extract_languages(ideallanguage,
         limited_max_utterances=limited_max_utterances,
         matches=matches,
         augmenting_flag=False)
+    logging.info(f'ALL ENTITIES MAP ORIGINAL {all_entities_map}')
 
     if increase_corpus_flag is True:
         all_aug_situation_id, training_aug_situation_id, test_aug_situation_id = increase_the_corpus(
             ideallanguage_path=ideallanguage,
+            original_situation_ids=ids,
             all_entities_map=all_entities_map,
-            min_entity_overlap_ratio=0.8,
-            min_target_overlap_ratio=0.1,
-            min_content_length=1000,
-            max_content_length=9000,
-            max_per_referent=10,
-            train_split_ratio=0.7
+            min_referent_overlap_ratio=min_referent_overlap_ratio,
+            min_target_overlap_ratio=min_target_overlap_ratio,
+            min_content_length=min_content_length,
+            max_content_length=max_content_length,
+            max_per_referent=max_per_referent,
+            train_split_ratio=train_split_ratio
         )
-        print('IDS INCREASED', all_aug_situation_id)
-        aug_logic_scripts, aug_surface_logic_mapping, aug_all_entities_map = processing_languages_mappings(
-            ideallanguage_file_path=ideallanguage,
-            ids_list=all_aug_situation_id, # Here we could change based on training/testing or all
-            limited=limited,
-            limited_max_utterances=limited_max_utterances,
-            matches=matches,
-            augmenting_flag=increase_corpus_flag)
+        logging.info(f'IDS INCREASED {all_aug_situation_id}')
 
-        return aug_logic_scripts, aug_surface_logic_mapping
+        if training_and_test_sets is True:
+            train_aug_logic_scripts, train_aug_surface_logic_mapping, train_aug_all_entities_map = processing_languages_mappings(
+                ideallanguage_file_path=ideallanguage,
+                ids_list=training_aug_situation_id, # To do: Understand how to deal with training/testing/all
+                limited=limited,
+                limited_max_utterances=limited_max_utterances,
+                matches=matches,
+                augmenting_flag=increase_corpus_flag)
+            logging.info(f'TRAINING NEW AUG_ALL_ENTITIES_MAP {train_aug_all_entities_map}')
+
+            test_aug_logic_scripts, test_aug_surface_logic_mapping, test_aug_all_entities_map = processing_languages_mappings(
+                ideallanguage_file_path=ideallanguage,
+                ids_list=test_aug_situation_id, # To do: Understand how to deal with training/testing/all
+                limited=limited,
+                limited_max_utterances=limited_max_utterances,
+                matches=matches,
+                augmenting_flag=increase_corpus_flag)
+            logging.info(f'TESTING NEW AUG_ALL_ENTITIES_MAP {test_aug_all_entities_map}')
+
+            return logic_scripts, surface_logic_mapping, train_aug_logic_scripts, train_aug_surface_logic_mapping, test_aug_logic_scripts, test_aug_surface_logic_mapping
+
+        else: # If no training and test set
+            all_aug_logic_scripts, all_aug_surface_logic_mapping, all_aug_all_entities_map = processing_languages_mappings(
+                ideallanguage_file_path=ideallanguage,
+                ids_list=all_aug_situation_id, # To do: Understand how to deal with training/testing/all
+                limited=limited,
+                limited_max_utterances=limited_max_utterances,
+                matches=matches,
+                augmenting_flag=increase_corpus_flag)
+            logging.info(f'TRAINING NEW AUG_ALL_ENTITIES_MAP {all_aug_all_entities_map}')
+
+            return logic_scripts, surface_logic_mapping, all_aug_logic_scripts, all_aug_surface_logic_mapping
 
     if not increase_corpus_flag:
         return logic_scripts, surface_logic_mapping
@@ -192,53 +218,119 @@ def extract_languages(ideallanguage,
 WRITING TO FILES FUNCTION
 '''
 
-def create_training_files(logic_scripts, surface_logic_mapping, increase_corpus_flag = False):
-    if not increase_corpus_flag:
+def create_training_files(logic_scripts, surface_logic_mapping, increase_corpus_flag = False, training_and_test_sets=False, plus_index_testing=None):
+
+    if increase_corpus_flag is False:
         with open('./data/training/original_logic.txt', 'w', encoding='utf-8') as file:
             file.write(''.join(logic_scripts))
-        write_logic_to_surface('./data/training/original_logic_to_surface.txt', surface_logic_mapping, reverse=False)
-        write_logic_to_surface('./data/training/original_surface_to_logic.txt', surface_logic_mapping, reverse=True)
-        write_surface('./data/training/original_surface.txt', surface_logic_mapping)
-        write_sandwich('./data/training/original_sandwich.txt', surface_logic_mapping)
+        write_logic_to_surface('./data/training/original_logic_to_surface.txt', surface_logic_mapping, plus_index=1, reverse=False)
+        write_logic_to_surface('./data/training/original_surface_to_logic.txt', surface_logic_mapping, plus_index=1, reverse=True)
+        write_surface('./data/training/original_surface.txt', surface_logic_mapping, plus_index=1)
+        write_sandwich('./data/training/original_sandwich.txt', surface_logic_mapping, plus_index=1)
 
-    if increase_corpus_flag:
-        with open('./data/training/augmented_logic.txt', 'w', encoding='utf-8') as file:
-            file.write(''.join(logic_scripts))
-        write_logic_to_surface('./data/training/augmented_logic_to_surface.txt', surface_logic_mapping, reverse=False)
-        write_logic_to_surface('./data/training/augmented_surface_to_logic.txt', surface_logic_mapping, reverse=True)
-        write_surface('./data/training/augmented_surface.txt', surface_logic_mapping)
-        write_sandwich('./data/training/augmented_sandwich.txt', surface_logic_mapping)
+    if increase_corpus_flag is True:
+
+        if training_and_test_sets is False:
+            with open('./data/training/augmented_logic.txt', 'w', encoding='utf-8') as file:
+                file.write(''.join(logic_scripts))
+            write_logic_to_surface('./data/training/augmented_logic_to_surface.txt', surface_logic_mapping, plus_index=1, reverse=False)
+            write_logic_to_surface('./data/training/augmented_surface_to_logic.txt', surface_logic_mapping, plus_index=1, reverse=True)
+            write_surface('./data/training/augmented_surface.txt', surface_logic_mapping, plus_index=1)
+            write_sandwich('./data/training/augmented_sandwich.txt', surface_logic_mapping, plus_index=1)
+
+        if training_and_test_sets is True:
+            with open('./data/training/testing_augmented_logic.txt', 'w', encoding='utf-8') as file:
+                file.write(''.join(logic_scripts))
+            write_logic_to_surface('./data/training/testing_augmented_logic_to_surface.txt', surface_logic_mapping, plus_index=plus_index_testing, reverse=False)
+            write_logic_to_surface('./data/training/testing_augmented_surface_to_logic.txt', surface_logic_mapping, plus_index=plus_index_testing, reverse=True)
+            write_surface('./data/training/testing_augmented_surface.txt', surface_logic_mapping, plus_index=plus_index_testing)
+            write_sandwich('./data/training/testing_augmented_sandwich.txt', surface_logic_mapping, plus_index=plus_index_testing)
 
 '''
 CALLING FUNCTION
 '''
 
-# Extracts all (HUM utterance, BOT utterance) pairs from region_graph.
-matches = extract_surface_logic_utterances("../../vgnlp2/dsc/region_graphs.json.dsc")
-
 if __name__ == "__main__":
 
+    # Extracts all (HUM utterance, BOT utterance) pairs from region_graph.
+    matches = extract_surface_logic_utterances("../../vgnlp2/dsc/region_graphs.json.dsc")
+    ideallanguage="./data/ideallanguage.txt"
+
+    '''
+    BEGINNING DYNAMICAL PARAMETERS WHICH THE USER CAN CHANGE
+    '''
     # These are the mapping ids from the ideallangueg/visualGenome to the new ids
     ids = [(1, 1), (3, 2), (4, 3), (71, 4), (9, 5),
            (2410753, 6), (713137, 7), (2412620, 8), (2412211, 9),
            (186, 10), (2396154, 11), (2317468, 12)]
 
     increase_corpus_flag = True
+    training_and_test_sets=False
+    write_files = True
 
-    logic_scripts, surface_logic_mapping = extract_languages(
-        ideallanguage="./data/ideallanguage.txt",
-        matches=matches,
-        ids = ids,
+    limited = True
+    limited_max_utterances = 5
+    test_mode = True
+    test_max_examples = 4
 
-        limited=True,
-        limited_max_utterances=5,
+    if increase_corpus_flag:
 
-        test_mode=True,
-        test_max_examples=2,
+        min_referent_overlap_ratio=0.7 # FOCUSED ON REFERENT SITUATION Minimum proportion of referent entities that must appear in a target situation (i.e. we apply this to referent situations, e.g. *1 if the referent situation is as such)
+        min_target_overlap_ratio=0.1 # FOCUSED ON TARGET SITUATION  Minimum proportion of target entities that must match referent entities (i.e. we apply this to all the *10 situations which we are finding similar to a referent situation *1)
+        min_content_length=1000 # Minimum number of characters in a situation's content
+        max_content_length=10000 # Maximum number of characters in a situation's content
+        max_per_referent=5 # Maximum number of similar situations to extract per referent situation (e.g. we take *10* situations similar to situation 1, *10* to situation 2)
+        train_split_ratio=0.7 # Percentage of training and testing sets
 
-        increase_corpus_flag = increase_corpus_flag,
-    )
+        '''
+        ENDING DYNAMICAL PARAMETERS WHICH THE USER CAN CHANGE
+        '''
 
-    create_training_files(logic_scripts=logic_scripts,
-                          surface_logic_mapping=surface_logic_mapping,
-                          increase_corpus_flag = increase_corpus_flag)
+        if training_and_test_sets is False:
+
+            original_logic_scripts, original_surface_logic_mapping, \
+            all_aug_logic_scripts, all_aug_surface_logic_mapping = \
+                extract_languages(
+                    ideallanguage,matches,ids,limited,limited_max_utterances,test_mode,test_max_examples, increase_corpus_flag, training_and_test_sets,
+                    min_referent_overlap_ratio, min_target_overlap_ratio, min_content_length, max_content_length, max_per_referent, train_split_ratio)
+
+            logic_scripts = original_logic_scripts + all_aug_logic_scripts
+            surface_logic_mapping= original_surface_logic_mapping + all_aug_surface_logic_mapping
+
+        if training_and_test_sets is True:
+
+            original_logic_scripts, original_surface_logic_mapping, \
+            train_aug_logic_scripts, train_aug_surface_logic_mapping, \
+            test_aug_logic_scripts, test_aug_surface_logic_mapping = \
+                extract_languages(
+                ideallanguage,matches,ids,limited,limited_max_utterances,test_mode,test_max_examples, increase_corpus_flag, training_and_test_sets,
+                min_referent_overlap_ratio, min_target_overlap_ratio, min_content_length, max_content_length, max_per_referent, train_split_ratio)
+
+            logic_scripts = original_logic_scripts + train_aug_logic_scripts
+            surface_logic_mapping= original_surface_logic_mapping + train_aug_surface_logic_mapping
+
+            if write_files is True:
+                # Adding this for the testing files
+                create_training_files(logic_scripts=test_aug_logic_scripts,
+                                      surface_logic_mapping=test_aug_surface_logic_mapping,
+                                      increase_corpus_flag = increase_corpus_flag,
+                                      training_and_test_sets = True,
+                                      plus_index_testing=len(surface_logic_mapping)+1)
+
+    else: # If not increase flag
+        logic_scripts, surface_logic_mapping = extract_languages(
+            ideallanguage="./data/ideallanguage.txt",
+            matches=matches,
+            ids = ids,
+            limited=limited,
+            limited_max_utterances=limited_max_utterances, # If limited, max of utterances/entities per situation
+            test_mode=test_mode,
+            test_max_examples=test_max_examples,  # If test mode true, max of situations extracted from total ids
+            increase_corpus_flag = increase_corpus_flag
+        )
+
+    if write_files is True:
+        create_training_files(logic_scripts=logic_scripts,
+                              surface_logic_mapping=surface_logic_mapping,
+                              increase_corpus_flag = increase_corpus_flag,
+                              training_and_test_sets = False)
