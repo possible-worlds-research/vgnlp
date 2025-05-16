@@ -7,315 +7,330 @@
 # The user can change the VG situation ID which to revert to Botchen format at the end of the file. 
 # Now we selected 12 scripts, covering diverse topics.
 
-import re
-import os
-import zipfile
-import argparse
-import json
+import logging
 
-################## LOGIC TO LOGIC
-# Function to extract a specific situation from the Visual Genome dataset and transform it into a conversational format.
-# Also, to extract entities and properties
-# Ideallanguage is the input file: './data/ideallanguage.txt'
-def extract_logical_forms(file_path, situation_id, new_situation_id=None, limited=False):
-    with open(file_path, 'r') as file:
-        content = file.read()
+from utils import extract_logic_language, extract_surface_language
+from utils import extract_surface_logic_utterances, filter_region_graph_mapping, match_logical_surface_forms
+from utils import write_logic_to_surface, write_surface, write_sandwich
+from utils import increase_the_corpus
 
-    # Extract the situation block by matching its ID using a regular expression pattern.
-    situation_pattern = rf"<situation id={situation_id}>(.*?)</situation>"
-    match = re.search(situation_pattern, content, re.DOTALL)
+'''
+UTILS Functions description:
 
-    if match:
+(A) extract_logic_language(file_path, situation_id, new_situation_id=None, limited=False) 
+    - Inputs:
+        * file_path: Path to the Ideallanguage file to extract from.
+        * situation_id: The situation ID in Ideallanguage to extract utterances from.
+        * new_situation_id (optional): If provided, remaps utterances to this new ID and formats output for training.
+        * limited (bool): If True, limits extraction to limited_max_utterances utterances/entities for testing.
+        * limited_max_utterances: str, max utterance for limited option
+    - Returns:
+        * If new_situation_id is provided:
+            - Returns: script_output, script strings for training data, e.g.
+                <script.2 type=CONV>
+                    <u speaker=HUM>(apple.n red)</u>
+                    <u speaker=BOT>(cat.n on-table)</u>
+                </script.2>   
+        * If not provided:
+            - Returns: 
+                - entity_summary_map: dict mapping numeric entity IDs to logic forms and properties.
+                - situation_body: string containing situation content.
+                - entity_ids_in_block: list of numeric entity IDs.
+                - entity_id_to_name: list mapping entity IDs to their names.
 
-        situation_content = match.group(1)
+(B) extract_surface_language(file_path, idx_to_extract, output_idx)
+    - Inputs:
+        * file_path: Path to the region_descriptions.json.obs file.
+        * idx_to_extract: ID to extract utterances from.
+        * output_idx: New assigned output ID.
+    - Returns:
+        * new_script: Content as a string for surface language, e.g.
+            <script.2 type=CONV>
+                <u speaker=HUM>the apple is red.</u>
+                <u speaker=BOT>cat is on the table.</u>
+            </script.2>    
+    - Note:
+        * Optional function; surface mapping can also be done more efficiently via region_graph file.
 
-        # Dictionaries to store the entity details: entity names and their properties.
-        entity_map = {}  # Maps entity ID -> entity name
-        properties_map = {}  # Maps entity ID -> list of properties
+(C.1) extract_surface_logic_utterances(file_path)
+    - Inputs:
+        * file_path: Path to the region_graph file.
+    - Returns:
+        * matches: List of tuples pairing entity ID strings with surface sentences, e.g.
+            [("[101]", "The apple is red."), ("[102, 103]", "The table supports the lamp.")]
+(C.2) filter_region_graph_mapping(valid_ids, dialogue_pairs)
+    - Inputs:
+        * valid_ids: Set of entity IDs to include in mapping.
+        * dialogue_pairs: List of dialogue pairs (a list of (HUM utterance, BOT utterance) tuples).
+    - Returns:
+        * result: Dict mapping entity ID strings to surface sentences, e.g.
+            {"101": "The apple is red.", "102, 103": "The table supports the lamp."}
+(C.3) match_logical_surface_forms(surface_map, logical_map)
+    - Inputs:
+        * surface_map: Mapping of entities/properties in surface form (from filter_region_graph_mapping).
+        * logical_map: Mapping of entities/properties in logical form (from extract_logical_forms with new_situation_id=None).
+    - Returns:
+        * dict mapping logical forms to sets of corresponding surface expressions, e.g.
+            {"(lamp.n), (on-table)": {"a lamp on a table"}, "(red)": {"a red apple"}}
+'''
 
-        # Store the numerical id of the entities
-        entity_id_pattern = r'<entity id=(\d+)>'
-        entity_matches = re.findall(entity_id_pattern, situation_content)
+'''
+EXTRACT LANGUAGE FROM CORPORA FUNCTION
+'''
 
-        # First pass: Extract and store each entity's ID, name, and initialize its properties.
-        entity_pattern = re.compile(r"<entity id=(\d+)>\s*(.*?)\s*</entity>", re.DOTALL)
-        all_entities = list(entity_pattern.finditer(situation_content))
+def processing_languages_mappings(ideallanguage_file_path,
+                                  ids_list,
+                                  limited,
+                                  limited_max_utterances,
+                                  matches,
+                                  augmenting_flag=False):
 
-        if limited:
-            # To test: try with only 5 items
-            all_entities = list(entity_pattern.finditer(situation_content))[:6]
-            entity_matches = [match.group(1) for match in all_entities]
+    logic_scripts = []
+    surface_logic_mapping = []
+    all_entities_map = {}
 
-        for entity_match in all_entities:
-            entity_id = entity_match.group(1)
-            entity_lines = entity_match.group(2).strip().split("\n")
+    if augmenting_flag is True:
+        logging.info('AUGMENTIG FLAG PROCESS')
 
-            # Extract the entity name from the first line.
-            first_line = entity_lines[0].strip()
-            entity_name_match = re.match(r"([\w\.]+)\(\d+\)", first_line)
-            if entity_name_match:
-                entity_name = entity_name_match.group(1)
-                # Clean up entity name by removing numeric suffix (e.g., .n.xx becomes .n)
-                clean_entity_name = re.sub(r"\.n\.\d+", ".n", entity_name)
-                entity_map[entity_id] = clean_entity_name
-                properties_map[entity_id] = []
+    for vg_id, store_id in ids_list:
 
-        # Second pass: Extract properties and relations between entities.
-        for entity_match in all_entities:
-            entity_id = entity_match.group(1)
-            entity_lines = entity_match.group(2).strip().split("\n")
+        logging.info(f"vg_id={vg_id}, store_id={store_id}")
+        # logging.info(f"LOGIC")
 
-            for line in entity_lines[1:]:
-                line = line.strip()
-                prop_match = re.match(r"([\w|]+)\(([\d,]+)\)", line)
-                if prop_match:
-                    prop_name, prop_ids = prop_match.groups()
-                    prop_ids = prop_ids.split(",")
+        # 1. Extract logic scripts with new_situation_id
+        logic_script_output = extract_logic_language(
+            file_path=ideallanguage_file_path,
+            situation_id=vg_id,
+            new_situation_id=store_id,
+            limited=limited,
+            limited_max_utterances=limited_max_utterances,
+        )
 
-                    # If it's a relation between entities, store the relationship.
-                    if len(prop_ids) > 1:
-                        ref_id_1, ref_id_2 = prop_ids
-                        if ref_id_1 == entity_id and ref_id_2 in entity_map:
-                            related_entity = entity_map[ref_id_2]
-                            related_entity = re.sub(r"\.n", "", related_entity)
-                            properties_map[entity_id].append(f"{prop_name}-{related_entity}")
-                        elif ref_id_2 == entity_id and ref_id_1 in entity_map:
-                            related_entity = entity_map[ref_id_1]
-                            related_entity = re.sub(r"\.n", "", related_entity)
-                            properties_map[entity_id].append(f"{related_entity}-{prop_name}")
-                    else:
-                        clean_prop = re.sub(r"\.n", "", prop_name)
-                        properties_map[entity_id].append(clean_prop)
+        if logic_script_output:
+            logic_scripts.extend(logic_script_output)
 
-        if new_situation_id:
+        # 2. Extract surface logic mapping with new_situation_id=None
+        # logging.info("SURFACE AND LOGIC-SURFACE MAPPING")
+        entity_properties_map, _, entity_ids, entities_map = extract_logic_language(
+            file_path=ideallanguage_file_path,
+            situation_id=vg_id,
+            new_situation_id=None,
+            limited=limited,
+            limited_max_utterances=limited_max_utterances,
+        )
 
-            entity_items = list(entity_map.items())
-            script_content_total = ''
-            for i in range(len(entity_items)):
-                entity_id, entity_name = entity_items[i]
-                script_content = f"<script.{new_situation_id} type=CONV>\n"
+        region_graph_mapping = filter_region_graph_mapping(entity_ids, matches)
+        mapping = match_logical_surface_forms(region_graph_mapping, entity_properties_map)
 
-                raw_props = properties_map.get(entity_id, [])
-                cleaned_props = [re.sub(r"\.n\.\d+", "", prop) for prop in raw_props]
-                unique_props = list(dict.fromkeys(cleaned_props))
-                properties_str = " ".join(unique_props)
+        surface_logic_mapping.append(mapping)
+        all_entities_map[store_id] = entities_map
 
-                script_content += f'<u speaker=HUM>({entity_name} {properties_str})</u>\n'
-                # I do the increasing in this way such to have a mapping AABB BBCC etc.
-                if i + 1 < len(entity_items):
-                    new_entity_id, new_entity_name = entity_items[i+1]
+    logging.info(f'{len(ids_list)} situation have been stored')
 
-                    new_raw_props = properties_map.get(new_entity_id, [])
-                    new_cleaned_props = [re.sub(r"\.n\.\d+", "", prop) for prop in new_raw_props]
-                    new_unique_props = list(dict.fromkeys(new_cleaned_props))
-                    new_properties_str = " ".join(new_unique_props)
+    return logic_scripts, surface_logic_mapping, all_entities_map
 
-                    script_content += f'<u speaker=BOT>({new_entity_name} {new_properties_str})</u>\n'
-                else:
-                    # This is done in order to retrieve to the first utterance if there is no available pair
-                    old_entity_id, old_entity_name = entity_items[0]
+'''
+EXTRACT MAPPINGS BASED ON PARAMETERS
+'''
 
-                    old_raw_props = properties_map.get(old_entity_id, [])
-                    old_cleaned_props = [re.sub(r"\.n\.\d+", "", prop) for prop in old_raw_props]
-                    old_unique_props = list(dict.fromkeys(old_cleaned_props))
-                    old_properties_str = " ".join(old_unique_props)
+def extract_languages(ideallanguage,
+         matches,
+         ids,
+         limited=False,
+         limited_max_utterances=5,
+         test_mode=False,
+         test_max_examples=3,
 
-                    script_content += f"<u speaker=BOT>({old_entity_name} {old_properties_str})</u>\n"
-                script_content += f"</script.{new_situation_id}>\n\n"
-                script_content_total += script_content
-            return script_content_total
+         increase_corpus_flag = False,
+         training_and_test_sets = False,
+         min_referent_overlap_ratio=None,
+         min_target_overlap_ratio=None,
+         min_content_length=None,
+         max_content_length=None,
+         max_per_referent=None,
+         train_split_ratio=None):
 
-        if new_situation_id is None:
+    if test_mode:
+        ids = ids[:test_max_examples]
 
-            unified_map = {}
-            for entity_id, entity_name in entity_map.items():
+    logging.info(f'ORIGINAL IDS {ids}')
 
-                properties_str = " ".join(properties_map[entity_id])
-                unified_map[entity_id] = f"{entity_map[entity_id]} {properties_str}"
+    logic_scripts, surface_logic_mapping, all_entities_map = processing_languages_mappings(
+        ideallanguage_file_path=ideallanguage,
+        ids_list=ids,
+        limited=limited,
+        limited_max_utterances=limited_max_utterances,
+        matches=matches,
+        augmenting_flag=False)
+    logging.info(f'ALL ENTITIES MAP ORIGINAL {all_entities_map}')
 
-            return unified_map, situation_content, entity_matches
+    if increase_corpus_flag is True:
+        all_aug_situation_id, training_aug_situation_id, test_aug_situation_id = increase_the_corpus(
+            ideallanguage_path=ideallanguage,
+            original_situation_ids=ids,
+            all_entities_map=all_entities_map,
+            min_referent_overlap_ratio=min_referent_overlap_ratio,
+            min_target_overlap_ratio=min_target_overlap_ratio,
+            min_content_length=min_content_length,
+            max_content_length=max_content_length,
+            max_per_referent=max_per_referent,
+            train_split_ratio=train_split_ratio
+        )
+        logging.info(f'IDS INCREASED {all_aug_situation_id}')
 
-    if not match:
-        print(f"No situation found with id={situation_id}")
-        return None
+        if training_and_test_sets is True:
+            train_aug_logic_scripts, train_aug_surface_logic_mapping, train_aug_all_entities_map = processing_languages_mappings(
+                ideallanguage_file_path=ideallanguage,
+                ids_list=training_aug_situation_id, # To do: Understand how to deal with training/testing/all
+                limited=limited,
+                limited_max_utterances=limited_max_utterances,
+                matches=matches,
+                augmenting_flag=increase_corpus_flag)
+            logging.info(f'TRAINING NEW AUG_ALL_ENTITIES_MAP {train_aug_all_entities_map}')
 
-############### SURFACE TO SURFACE
-# Extract the surface languages from the utterances for the situation
-# Region descriptions is the input file: './obs/region_descriptions.json.obs'
-def extract_surface_language(file_path, idx_to_extract, output_idx):
-    with open(file_path, 'r') as file:
-        situation_pattern = rf"<a type=OBS idx={idx_to_extract}>(.*?)</a>"
-        situation_data = re.search(situation_pattern, file.read(), re.DOTALL)
-    if not situation_data:
-        print(f"No situation found with id={idx_to_extract}")
-        return None
-    situation_data = situation_data.group(1).strip()
-    statements = re.findall(r'<e>(.*?)</e>', situation_data, re.DOTALL)
-    new_file_total = ''
-    for i in range(len(statements)):
-        new_file = f"<script.{output_idx} type=CONV>\n"
-        statement = statements[i]
-        new_file += f"<u speaker=HUM>{statement.strip().lower()}</u>\n"
-        if i + 1 < len(statements):
-            next_statement = statements[i + 1]
-            new_file += f"<u speaker=BOT>{next_statement.strip().lower()}</u>\n"
-        else:
-            old_statement = statements[0]
-            new_file += f"<u speaker=BOT>{old_statement.strip().lower()}</u>\n"
-        new_file += f"</script.{output_idx}>\n\n"
-        new_file_total += new_file
-    return new_file_total
+            test_aug_logic_scripts, test_aug_surface_logic_mapping, test_aug_all_entities_map = processing_languages_mappings(
+                ideallanguage_file_path=ideallanguage,
+                ids_list=test_aug_situation_id, # To do: Understand how to deal with training/testing/all
+                limited=limited,
+                limited_max_utterances=limited_max_utterances,
+                matches=matches,
+                augmenting_flag=increase_corpus_flag)
+            logging.info(f'TESTING NEW AUG_ALL_ENTITIES_MAP {test_aug_all_entities_map}')
 
-############### LOGIC TO SURFACE AND INVERSE
-# Extract the matches between the object ids and the descriptions
-# Input file: './dsc/region_graphs.json.dsc'
-def extract_matches(file_path):
-    with open(file_path, 'r') as file:
-        content = file.read()
-    a_pattern = r'<a type=DSC idx=\d+>\s*<u speaker=HUM>(.*?)</u>\s*<u speaker=BOT>(.*?)</u>\s*</a>'
-    matches = re.findall(a_pattern, content, re.DOTALL)
-    return matches
+            return logic_scripts, surface_logic_mapping, train_aug_logic_scripts, train_aug_surface_logic_mapping, test_aug_logic_scripts, test_aug_surface_logic_mapping
 
-# Extract from the mapping from extract_matches the ids of the situation I am extracting from
-def extract_graph_mapping(valid_ids, matches):
-    result = {}
-    for hum_ids, bot_sentence in matches:
-        hum_ids = hum_ids.strip('[]')
-        hum_ids_list = hum_ids.split(',')  # In case there are multiple IDs
-        valid_ids_found = [id.strip() for id in hum_ids_list if id.strip() in valid_ids]
-        if valid_ids_found:
-            result[', '.join(valid_ids_found)] = bot_sentence.strip()
-    return result
+        else: # If no training and test set
+            all_aug_logic_scripts, all_aug_surface_logic_mapping, all_aug_all_entities_map = processing_languages_mappings(
+                ideallanguage_file_path=ideallanguage,
+                ids_list=all_aug_situation_id, # To do: Understand how to deal with training/testing/all
+                limited=limited,
+                limited_max_utterances=limited_max_utterances,
+                matches=matches,
+                augmenting_flag=increase_corpus_flag)
+            logging.info(f'TRAINING NEW AUG_ALL_ENTITIES_MAP {all_aug_all_entities_map}')
 
-# Extract the logical forms of the items and the properties and the sentences of description
-def match_logical_surface_forms(surface_map, logical_map):
-    new_map = {}
-    for entity_ids, description in surface_map.items():
-        entity_ids_list = entity_ids.split(", ")
-        properties_list = []
-        for entity_id in entity_ids_list:
-            if entity_id in logical_map:
-                properties_list.append(logical_map[entity_id])
-        properties_str = "), (".join(sorted(set(properties_list)))
-        key = f"({properties_str})"
-        descriptions = [desc.strip().lower() for desc in description.split(" || ")]
+            return logic_scripts, surface_logic_mapping, all_aug_logic_scripts, all_aug_surface_logic_mapping
 
-        if key not in new_map:
-            new_map[key] = set()
+    if not increase_corpus_flag:
+        return logic_scripts, surface_logic_mapping
 
-        new_map[key].update(descriptions)
-    return new_map
+'''
+WRITING TO FILES FUNCTION
+'''
 
-# Main function to execute the extraction process for multiple situations and save the result.
-def main(ideallanguage, region_descriptions, region_graphs):
+def create_training_files(logic_scripts, surface_logic_mapping, increase_corpus_flag = False, training_and_test_sets=False, plus_index_testing=None):
 
+    if increase_corpus_flag is False:
+        with open('./data/training/original_logic.txt', 'w', encoding='utf-8') as file:
+            file.write(''.join(logic_scripts))
+        write_logic_to_surface('./data/training/original_logic_to_surface.txt', surface_logic_mapping, plus_index=1, reverse=False)
+        write_logic_to_surface('./data/training/original_surface_to_logic.txt', surface_logic_mapping, plus_index=1, reverse=True)
+        write_surface('./data/training/original_surface.txt', surface_logic_mapping, plus_index=1)
+        write_sandwich('./data/training/original_sandwich.txt', surface_logic_mapping, plus_index=1)
+
+    if increase_corpus_flag is True:
+
+        if training_and_test_sets is False:
+            with open('./data/training/augmented_logic.txt', 'w', encoding='utf-8') as file:
+                file.write(''.join(logic_scripts))
+            write_logic_to_surface('./data/training/augmented_logic_to_surface.txt', surface_logic_mapping, plus_index=1, reverse=False)
+            write_logic_to_surface('./data/training/augmented_surface_to_logic.txt', surface_logic_mapping, plus_index=1, reverse=True)
+            write_surface('./data/training/augmented_surface.txt', surface_logic_mapping, plus_index=1)
+            write_sandwich('./data/training/augmented_sandwich.txt', surface_logic_mapping, plus_index=1)
+
+        if training_and_test_sets is True:
+            with open('./data/training/testing_augmented_logic.txt', 'w', encoding='utf-8') as file:
+                file.write(''.join(logic_scripts))
+            write_logic_to_surface('./data/training/testing_augmented_logic_to_surface.txt', surface_logic_mapping, plus_index=plus_index_testing, reverse=False)
+            write_logic_to_surface('./data/training/testing_augmented_surface_to_logic.txt', surface_logic_mapping, plus_index=plus_index_testing, reverse=True)
+            write_surface('./data/training/testing_augmented_surface.txt', surface_logic_mapping, plus_index=plus_index_testing)
+            write_sandwich('./data/training/testing_augmented_sandwich.txt', surface_logic_mapping, plus_index=plus_index_testing)
+
+'''
+CALLING FUNCTION
+'''
+
+if __name__ == "__main__":
+
+    # Extracts all (HUM utterance, BOT utterance) pairs from region_graph.
+    matches = extract_surface_logic_utterances("../../vgnlp2/dsc/region_graphs.json.dsc")
+    ideallanguage="./data/ideallanguage.txt"
+
+    '''
+    BEGINNING DYNAMICAL PARAMETERS WHICH THE USER CAN CHANGE
+    '''
+    # These are the mapping ids from the ideallangueg/visualGenome to the new ids
     ids = [(1, 1), (3, 2), (4, 3), (71, 4), (9, 5),
            (2410753, 6), (713137, 7), (2412620, 8), (2412211, 9),
            (186, 10), (2396154, 11), (2317468, 12)]
 
-    logical_merged_text = []
-    # logical_surface_text = []
-    surface_logical_mapping = []
+    increase_corpus_flag = True
+    training_and_test_sets=False
+    write_files = True
 
-    matches = extract_matches(region_graphs)
+    limited = True
+    limited_max_utterances = 5
+    test_mode = True
+    test_max_examples = 4
 
-    for vg_id, store_id in ids:
-        print(f"Processing vg_id {vg_id} store_id: {store_id}. \nLogical")
+    if increase_corpus_flag:
 
-        # LOGICAL - Extract logical forms and create training data
-        logical_texts = extract_logical_forms(ideallanguage, vg_id, new_situation_id=store_id, limited=True)
-        logical_merged_text.extend(logical_texts)
+        min_referent_overlap_ratio=0.7 # FOCUSED ON REFERENT SITUATION Minimum proportion of referent entities that must appear in a target situation (i.e. we apply this to referent situations, e.g. *1 if the referent situation is as such)
+        min_target_overlap_ratio=0.1 # FOCUSED ON TARGET SITUATION  Minimum proportion of target entities that must match referent entities (i.e. we apply this to all the *10 situations which we are finding similar to a referent situation *1)
+        min_content_length=1000 # Minimum number of characters in a situation's content
+        max_content_length=10000 # Maximum number of characters in a situation's content
+        max_per_referent=5 # Maximum number of similar situations to extract per referent situation (e.g. we take *10* situations similar to situation 1, *10* to situation 2)
+        train_split_ratio=0.7 # Percentage of training and testing sets
 
-        # In order to make it faster, I employ the matching identities to build up the surface dictionary. But also this could be employed
-        # # SURFACE - Extract surface forms for training data
-        # print(f"Surface")
-        # surface_texts = extract_surface_language(region_descriptions, vg_id, store_id)
-        # logical_surface_text.extend(surface_texts)  # Append to the list
+        '''
+        ENDING DYNAMICAL PARAMETERS WHICH THE USER CAN CHANGE
+        '''
 
-        # MAPPING - Extract logical representations and mappings
-        print("Match and Surface")
-        entity_properties_map, situation_content, entities_numerical_ids = extract_logical_forms(ideallanguage, vg_id, new_situation_id=None, limited=True)
-        # Extract the mapping between the entities_numerical_ids and surface forms
-        region_graph_mapping = extract_graph_mapping(entities_numerical_ids, matches)
-        # Match the surface and logical forms
-        mapping = match_logical_surface_forms(region_graph_mapping, entity_properties_map)
-        surface_logical_mapping.append(mapping)
+        if training_and_test_sets is False:
 
-    # Write logical merged text to file
-    with open('./data/training/extracted_logical.txt', "w", encoding="utf-8") as file:
-        file.write(''.join(logical_merged_text))
+            original_logic_scripts, original_surface_logic_mapping, \
+            all_aug_logic_scripts, all_aug_surface_logic_mapping = \
+                extract_languages(
+                    ideallanguage,matches,ids,limited,limited_max_utterances,test_mode,test_max_examples, increase_corpus_flag, training_and_test_sets,
+                    min_referent_overlap_ratio, min_target_overlap_ratio, min_content_length, max_content_length, max_per_referent, train_split_ratio)
 
-    # Write surface merged text to file
+            logic_scripts = original_logic_scripts + all_aug_logic_scripts
+            surface_logic_mapping= original_surface_logic_mapping + all_aug_surface_logic_mapping
 
-    with open('./data/training/extracted_surface.txt', "w", encoding="utf-8") as file:
-        # file.write("".join(logical_surface_text))  #Could also be used, if we use the other method
-        for situation in surface_logical_mapping:
-            situation_items = list(situation.items())
-            total_situation_bot_text = []
-            for hum_text, bot_text in situation_items:
-                if isinstance(bot_text, (set, list)):
-                    total_situation_bot_text.extend(bot_text)
-            for i in range(len(total_situation_bot_text)):
-                bot_text = total_situation_bot_text[i]
-                file.write(f'<script.{(surface_logical_mapping.index(situation))+1} type=CONV>\n')
-                file.write(f'<u speaker=HUM>{bot_text}</u>\n')
-                # I do the increasing in this way such to have a mapping AABB BBCC etc.
-                if i + 1 < len(total_situation_bot_text):
-                    new_bot_text = total_situation_bot_text[i + 1]
-                    file.write(f'<u speaker=BOT>{new_bot_text}</u>\n')
-                else: # If there are odd number, go back to the first utterance
-                    old_bot_text = total_situation_bot_text[0]
-                    file.write(f'<u speaker=BOT>{old_bot_text}</u>\n')
-                file.write(f'</script.{(surface_logical_mapping.index(situation))+1}>\n\n')
+        if training_and_test_sets is True:
 
-    with open('./data/training/extracted_logical_to_surface.txt', "w", encoding="utf-8") as file:
-        for situation in surface_logical_mapping:
-            for hum_text, bot_text in situation.items():
-                for i in bot_text:
-                    file.write(f'<a script.{(surface_logical_mapping.index(situation))+1} type=DSC>\n')
-                    file.write(f'<u speaker=HUM>{hum_text}</u>\n')
-                    file.write(f'<u speaker=BOT>{i}</u>\n')
-                    file.write(f'</a>\n\n')
+            original_logic_scripts, original_surface_logic_mapping, \
+            train_aug_logic_scripts, train_aug_surface_logic_mapping, \
+            test_aug_logic_scripts, test_aug_surface_logic_mapping = \
+                extract_languages(
+                ideallanguage,matches,ids,limited,limited_max_utterances,test_mode,test_max_examples, increase_corpus_flag, training_and_test_sets,
+                min_referent_overlap_ratio, min_target_overlap_ratio, min_content_length, max_content_length, max_per_referent, train_split_ratio)
 
-    with open('./data/training/extracted_surface_to_logical.txt', "w", encoding="utf-8") as file:
-        for situation in surface_logical_mapping:
-            for hum_text, bot_text in situation.items():
-                for i in bot_text:
-                    file.write(f'<a script.{(surface_logical_mapping.index(situation))+1} type=DSC>\n')
-                    file.write(f'<u speaker=HUM>{i}</u>\n')
-                    file.write(f'<u speaker=BOT>{hum_text}</u>\n')
-                    file.write(f'</a>\n\n')
+            logic_scripts = original_logic_scripts + train_aug_logic_scripts
+            surface_logic_mapping= original_surface_logic_mapping + train_aug_surface_logic_mapping
 
-    with open('./data/training/extracted_sandwich.txt', "w", encoding="utf-8") as file:
+            if write_files is True:
+                # Adding this for the testing files
+                create_training_files(logic_scripts=test_aug_logic_scripts,
+                                      surface_logic_mapping=test_aug_surface_logic_mapping,
+                                      increase_corpus_flag = increase_corpus_flag,
+                                      training_and_test_sets = True,
+                                      plus_index_testing=len(surface_logic_mapping)+1)
 
-        for situation_idx, situation in enumerate(surface_logical_mapping):
+    else: # If not increase flag
+        logic_scripts, surface_logic_mapping = extract_languages(
+            ideallanguage="./data/ideallanguage.txt",
+            matches=matches,
+            ids = ids,
+            limited=limited,
+            limited_max_utterances=limited_max_utterances, # If limited, max of utterances/entities per situation
+            test_mode=test_mode,
+            test_max_examples=test_max_examples,  # If test mode true, max of situations extracted from total ids
+            increase_corpus_flag = increase_corpus_flag
+        )
 
-            # Flattening the items such to repeat the surface forms attached to the logical forms in the list
-            flattened_items = []
-            for logical_form, surface_form_set in situation.items():
-                surface_form_list = list(surface_form_set)
-                for surface_form in surface_form_list:
-                    flattened_items.append([logical_form, surface_form])
-
-            for i in range(len(flattened_items)):
-                file.write(f'<a script.{situation_idx + 1} type=SDW>\n')
-                logical_form, surface_form = flattened_items[i]
-                file.write(f"<u speaker=HUM>{logical_form}</u>\n")
-                file.write(f"<u speaker=BOT>{surface_form}</u>\n")
-
-                if i + 1 < len(flattened_items):
-                    next_logical, next_surface = flattened_items[i + 1]
-                    file.write(f"<u speaker=BOT>{next_surface}</u>\n")
-                    file.write(f"<u speaker=BOT>{next_logical}</u>\n")
-                    file.write(f'</a>\n\n')
-                else:
-                    old_logical, old_surface = flattened_items[0]
-                    file.write(f"<u speaker=BOT>{old_surface}</u>\n")
-                    file.write(f"<u speaker=BOT>{old_logical}</u>\n")
-                    file.write(f'</a>\n\n')
-
-if __name__ == "__main__":
-
-    main("./data/ideallanguage.txt", "../../vgnlp2/obs/region_descriptions.json.obs", "../../vgnlp2/dsc/region_graphs.json.dsc")
-
-
+    if write_files is True:
+        create_training_files(logic_scripts=logic_scripts,
+                              surface_logic_mapping=surface_logic_mapping,
+                              increase_corpus_flag = increase_corpus_flag,
+                              training_and_test_sets = False)
