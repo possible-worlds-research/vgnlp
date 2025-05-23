@@ -62,6 +62,7 @@ import re
 import random
 import logging
 import os
+import argparse
 from collections import defaultdict
 logging.basicConfig(level=logging.INFO)
 
@@ -273,63 +274,82 @@ def match_logical_surface_forms(surface_map, logical_map):
 Create training files
 '''
 
-def write_logic_to_surface(file_path, mapping, plus_index, reverse=False):
-    with open(file_path, "w", encoding="utf-8") as file:
-        for situation in mapping:
-            for hum_text, bot_texts in situation.items():
-                for bot_text in bot_texts:
-                    file.write(f'<a script.{(mapping.index(situation))+plus_index} type=DSC>\n')
-                    if reverse is True:
-                        file.write(f'<u speaker=HUM>{bot_text}</u>\n')
-                        file.write(f'<u speaker=BOT>{hum_text}</u>\n')
-                    if reverse is False:
-                        file.write(f'<u speaker=HUM>{hum_text}</u>\n')
-                        file.write(f'<u speaker=BOT>{bot_text}</u>\n')
-                    file.write(f'</a>\n\n')
-
-def write_surface(file_path, mapping, plus_index):
-    with open(file_path, "w", encoding="utf-8") as file:
-        for situation in mapping:
-            situation_items = list(situation.items())
-            total_bot_texts = []
-            for hum_text, bot_text in situation_items:
-                if isinstance(bot_text, (set, list)):
-                    total_bot_texts.extend(bot_text)
-            for i in range(len(total_bot_texts)):
-                bot_text = total_bot_texts[i]
-                file.write(f'<script.{(mapping.index(situation))+plus_index} type=CONV>\n')
-                file.write(f'<u speaker=HUM>{bot_text}</u>\n')
-                if i + 1 < len(total_bot_texts):
-                    new_bot_text = total_bot_texts[i + 1]
-                    file.write(f'<u speaker=BOT>{new_bot_text}</u>\n')
-                else: # If there is no pair, go back to the first utterance
-                    old_bot_text = total_bot_texts[0]
-                    file.write(f'<u speaker=BOT>{old_bot_text}</u>\n')
-                file.write(f'</script.{(mapping.index(situation))+plus_index}>\n\n')
-
-def write_sandwich(file_path, mapping, plus_index):
-    with open(file_path, "w", encoding="utf-8") as file:
-        for situation_idx, situation in enumerate(mapping):
-            # Flattening the items such to repeat the surface forms attached to the logical forms in the list
-            flattened_items = []
-            for logical_form, surface_form_set in situation.items():
-                surface_form_list = list(surface_form_set)
-                for surface_form in surface_form_list:
-                    flattened_items.append([logical_form, surface_form])
-            for i in range(len(flattened_items)):
-                file.write(f'<a script.{situation_idx + plus_index} type=SDW>\n')
-                logical_form, surface_form = flattened_items[i]
-                file.write(f"<u speaker=HUM>{logical_form}</u>\n")
-                file.write(f"<u speaker=BOT>{surface_form}</u>\n")
-                if i + 1 < len(flattened_items):
-                    next_logical, next_surface = flattened_items[i + 1]
-                    file.write(f"<u speaker=BOT>{next_surface}</u>\n")
-                    file.write(f"<u speaker=BOT>{next_logical}</u>\n")
+def write_logic_to_surface(file_path, mapping, plus_index, reverse=False, write_files=False):
+    lines = []
+    for situation in mapping:
+        for hum_text, bot_texts in situation.items():
+            for bot_text in bot_texts:
+                lines.append(f'<a script.{mapping.index(situation) + plus_index} type=DSC>')
+                if reverse:
+                    lines.append(f'<u speaker=HUM>{bot_text}</u>')
+                    lines.append(f'<u speaker=BOT>{hum_text}</u>')
                 else:
-                    old_logical, old_surface = flattened_items[0]
-                    file.write(f"<u speaker=BOT>{old_surface}</u>\n")
-                    file.write(f"<u speaker=BOT>{old_logical}</u>\n")
-                file.write(f'</a>\n\n')
+                    lines.append(f'<u speaker=HUM>{hum_text}</u>')
+                    lines.append(f'<u speaker=BOT>{bot_text}</u>')
+                lines.append('</a>\n')
+    content = '\n'.join(lines)
+    if write_files is True:
+        with open(file_path, "w", encoding="utf-8") as file:
+            file.write(content)
+        return content
+    else:
+        return content
+
+def write_surface(file_path, mapping, plus_index, write_files=False):
+    lines = []
+    for situation in mapping:
+        situation_items = list(situation.items())
+        total_bot_texts = []
+        for hum_text, bot_text in situation_items:
+            if isinstance(bot_text, (set, list)):
+                total_bot_texts.extend(bot_text)
+        for i in range(len(total_bot_texts)):
+            bot_text = total_bot_texts[i]
+            lines.append(f'<script.{mapping.index(situation) + plus_index} type=CONV>')
+            lines.append(f'<u speaker=HUM>{bot_text}</u>')
+            if i + 1 < len(total_bot_texts):
+                new_bot_text = total_bot_texts[i + 1]
+                lines.append(f'<u speaker=BOT>{new_bot_text}</u>')
+            else:
+                old_bot_text = total_bot_texts[0]  # fallback
+                lines.append(f'<u speaker=BOT>{old_bot_text}</u>')
+            lines.append(f'</script.{mapping.index(situation) + plus_index}>\n')
+    content = '\n'.join(lines)
+    if write_files is True:
+        with open(file_path, "w", encoding="utf-8") as file:
+            file.write(content)
+        return content
+    else:
+        return content
+
+def write_sandwich(file_path, mapping, plus_index, write_files=False):
+    lines = []
+    for situation_idx, situation in enumerate(mapping):
+        flattened_items = []
+        for logical_form, surface_form_set in situation.items():
+            for surface_form in surface_form_set:
+                flattened_items.append([logical_form, surface_form])
+        for i in range(len(flattened_items)):
+            lines.append(f'<a script.{situation_idx + plus_index} type=SDW>')
+            logical_form, surface_form = flattened_items[i]
+            lines.append(f"<u speaker=HUM>{logical_form}</u>")
+            lines.append(f"<u speaker=BOT>{surface_form}</u>")
+            if i + 1 < len(flattened_items):
+                next_logical, next_surface = flattened_items[i + 1]
+                lines.append(f"<u speaker=BOT>{next_surface}</u>")
+                lines.append(f"<u speaker=BOT>{next_logical}</u>")
+            else:
+                old_logical, old_surface = flattened_items[0]
+                lines.append(f"<u speaker=BOT>{old_surface}</u>")
+                lines.append(f"<u speaker=BOT>{old_logical}</u>")
+            lines.append(f'</a>\n')
+    content = '\n'.join(lines)     
+    if write_files is True:
+        with open(file_path, "w", encoding="utf-8") as file:
+            file.write(content)
+        return content
+    else:
+        return content
 
 '''
 INCREASE DATA AMOUNT
@@ -444,11 +464,3 @@ def increase_the_corpus(
                  f'and {len(testing_augmenting_situation_ids)} testing situation we can use to increase the corpus')
 
     return final_augmenting_situation_ids, final_training_situation_ids, final_testing_situation_ids
-
-''' 
-PERMUTATIONS
-'''
-'''
-Logic-logic and surface-surface
-'''
-

@@ -2,77 +2,17 @@
 # and converts it into a conversational format suitable for chatbot training (Botchen).
 # The extracted data is saved in a text file for further processing.
 
-# **Usage:** ```python3 ./scripts/extract_from_vg.py```. 
-# Takes  **`./data/ideallanguage.txt`** as input. Gives **`./data/extracted_scripts.txt'** as output. 
-# The user can change the VG situation ID which to revert to Botchen format at the end of the file. 
-# Now we selected 12 scripts, covering diverse topics.
-
 import logging
+import os
 
-from utils import extract_logic_language, extract_surface_language
-from utils import extract_surface_logic_utterances, filter_region_graph_mapping, match_logical_surface_forms
-from utils import write_logic_to_surface, write_surface, write_sandwich
-from utils import increase_the_corpus
+from utils_extract_from_corpora import extract_logic_language, extract_surface_language
+from utils_extract_from_corpora import extract_surface_logic_utterances, filter_region_graph_mapping, match_logical_surface_forms
+from utils_extract_from_corpora import write_logic_to_surface, write_surface, write_sandwich
 
-'''
-UTILS Functions description:
+from utils_extract_from_corpora import increase_the_corpus
 
-(A) extract_logic_language(file_path, situation_id, new_situation_id=None, limited=False) 
-    - Inputs:
-        * file_path: Path to the Ideallanguage file to extract from.
-        * situation_id: The situation ID in Ideallanguage to extract utterances from.
-        * new_situation_id (optional): If provided, remaps utterances to this new ID and formats output for training.
-        * limited (bool): If True, limits extraction to limited_max_utterances utterances/entities for testing.
-        * limited_max_utterances: str, max utterance for limited option
-    - Returns:
-        * If new_situation_id is provided:
-            - Returns: script_output, script strings for training data, e.g.
-                <script.2 type=CONV>
-                    <u speaker=HUM>(apple.n red)</u>
-                    <u speaker=BOT>(cat.n on-table)</u>
-                </script.2>   
-        * If not provided:
-            - Returns: 
-                - entity_summary_map: dict mapping numeric entity IDs to logic forms and properties.
-                - situation_body: string containing situation content.
-                - entity_ids_in_block: list of numeric entity IDs.
-                - entity_id_to_name: list mapping entity IDs to their names.
-
-(B) extract_surface_language(file_path, idx_to_extract, output_idx)
-    - Inputs:
-        * file_path: Path to the region_descriptions.json.obs file.
-        * idx_to_extract: ID to extract utterances from.
-        * output_idx: New assigned output ID.
-    - Returns:
-        * new_script: Content as a string for surface language, e.g.
-            <script.2 type=CONV>
-                <u speaker=HUM>the apple is red.</u>
-                <u speaker=BOT>cat is on the table.</u>
-            </script.2>    
-    - Note:
-        * Optional function; surface mapping can also be done more efficiently via region_graph file.
-
-(C.1) extract_surface_logic_utterances(file_path)
-    - Inputs:
-        * file_path: Path to the region_graph file.
-    - Returns:
-        * matches: List of tuples pairing entity ID strings with surface sentences, e.g.
-            [("[101]", "The apple is red."), ("[102, 103]", "The table supports the lamp.")]
-(C.2) filter_region_graph_mapping(valid_ids, dialogue_pairs)
-    - Inputs:
-        * valid_ids: Set of entity IDs to include in mapping.
-        * dialogue_pairs: List of dialogue pairs (a list of (HUM utterance, BOT utterance) tuples).
-    - Returns:
-        * result: Dict mapping entity ID strings to surface sentences, e.g.
-            {"101": "The apple is red.", "102, 103": "The table supports the lamp."}
-(C.3) match_logical_surface_forms(surface_map, logical_map)
-    - Inputs:
-        * surface_map: Mapping of entities/properties in surface form (from filter_region_graph_mapping).
-        * logical_map: Mapping of entities/properties in logical form (from extract_logical_forms with new_situation_id=None).
-    - Returns:
-        * dict mapping logical forms to sets of corresponding surface expressions, e.g.
-            {"(lamp.n), (on-table)": {"a lamp on a table"}, "(red)": {"a red apple"}}
-'''
+from utils_permutation_prompt import extract_entities_properties, prompt_surface_logic, permutation_surface_logic, extract_situations
+from utils_permutation_prompt import permutation_sandwich_logic_surface_transl, prompt_sandwich_logic_surface_transl
 
 '''
 EXTRACT LANGUAGE FROM CORPORA FUNCTION
@@ -218,33 +158,38 @@ def extract_languages(ideallanguage,
 WRITING TO FILES FUNCTION
 '''
 
-def create_training_files(logic_scripts, surface_logic_mapping, increase_corpus_flag = False, training_and_test_sets=False, plus_index_testing=None):
+def create_training_files(logic_scripts, surface_logic_mapping, increase_corpus_flag = False, training_and_test_sets=False, plus_index_testing=None, write_files=False):
 
     if increase_corpus_flag is False:
-        with open('./data/training/original_logic.txt', 'w', encoding='utf-8') as file:
+        os.makedirs(os.path.dirname('./data/training/original/'), exist_ok=True)
+        with open('./data/training/original/original_logic.txt', 'w', encoding='utf-8') as file:
             file.write(''.join(logic_scripts))
-        write_logic_to_surface('./data/training/original_logic_to_surface.txt', surface_logic_mapping, plus_index=1, reverse=False)
-        write_logic_to_surface('./data/training/original_surface_to_logic.txt', surface_logic_mapping, plus_index=1, reverse=True)
-        write_surface('./data/training/original_surface.txt', surface_logic_mapping, plus_index=1)
-        write_sandwich('./data/training/original_sandwich.txt', surface_logic_mapping, plus_index=1)
+        logic_to_surface = write_logic_to_surface('./data/training/original/original_logic_to_surface.txt', surface_logic_mapping, plus_index=1, reverse=False, write_files=write_files)
+        surface_to_logic = write_logic_to_surface('./data/training/original/original_surface_to_logic.txt', surface_logic_mapping, plus_index=1, reverse=True, write_files=write_files)
+        surface_to_surface = write_surface('./data/training/original/original_surface.txt', surface_logic_mapping, plus_index=1, write_files=write_files)
+        sandwich = write_sandwich('./data/training/original/original_sandwich.txt', surface_logic_mapping, plus_index=1, write_files=write_files)
 
     if increase_corpus_flag is True:
 
         if training_and_test_sets is False:
-            with open('./data/training/augmented_logic.txt', 'w', encoding='utf-8') as file:
+            os.makedirs(os.path.dirname('./data/training/augmented/'), exist_ok=True)
+            with open('./data/training/augmented/augmented_logic.txt', 'w', encoding='utf-8') as file:
                 file.write(''.join(logic_scripts))
-            write_logic_to_surface('./data/training/augmented_logic_to_surface.txt', surface_logic_mapping, plus_index=1, reverse=False)
-            write_logic_to_surface('./data/training/augmented_surface_to_logic.txt', surface_logic_mapping, plus_index=1, reverse=True)
-            write_surface('./data/training/augmented_surface.txt', surface_logic_mapping, plus_index=1)
-            write_sandwich('./data/training/augmented_sandwich.txt', surface_logic_mapping, plus_index=1)
+            logic_to_surface = write_logic_to_surface('./data/training/augmented/augmented_logic_to_surface.txt', surface_logic_mapping, plus_index=1, reverse=False, write_files=write_files)
+            surface_to_logic = write_logic_to_surface('./data/training/augmented/augmented_surface_to_logic.txt', surface_logic_mapping, plus_index=1, reverse=True, write_files=write_files)
+            surface_to_surface = write_surface('./data/training/augmented/augmented_surface.txt', surface_logic_mapping, plus_index=1, write_files=write_files)
+            sandwich = write_sandwich('./data/training/augmented/augmented_sandwich.txt', surface_logic_mapping, plus_index=1, write_files=write_files)
 
         if training_and_test_sets is True:
-            with open('./data/training/testing_augmented_logic.txt', 'w', encoding='utf-8') as file:
+            os.makedirs(os.path.dirname('./data/training/augmented/'), exist_ok=True)
+            with open('./data/training/augmented/testing_augmented_logic.txt', 'w', encoding='utf-8') as file:
                 file.write(''.join(logic_scripts))
-            write_logic_to_surface('./data/training/testing_augmented_logic_to_surface.txt', surface_logic_mapping, plus_index=plus_index_testing, reverse=False)
-            write_logic_to_surface('./data/training/testing_augmented_surface_to_logic.txt', surface_logic_mapping, plus_index=plus_index_testing, reverse=True)
-            write_surface('./data/training/testing_augmented_surface.txt', surface_logic_mapping, plus_index=plus_index_testing)
-            write_sandwich('./data/training/testing_augmented_sandwich.txt', surface_logic_mapping, plus_index=plus_index_testing)
+            logic_to_surface = write_logic_to_surface('./data/training/augmented/testing_augmented_logic_to_surface.txt', surface_logic_mapping, plus_index=plus_index_testing, reverse=False, write_files=write_files)
+            surface_to_logic = write_logic_to_surface('./data/training/augmented/testing_augmented_surface_to_logic.txt', surface_logic_mapping, plus_index=plus_index_testing, reverse=True, write_files=write_files)
+            surface_to_surface = write_surface('./data/training/augmented/testing_augmented_surface.txt', surface_logic_mapping, plus_index=plus_index_testing, write_files=write_files)
+            sandwich = write_sandwich('./data/training/augmented/testing_augmented_sandwich.txt', surface_logic_mapping, plus_index=plus_index_testing, write_files=write_files)
+
+    return ''.join(logic_scripts), logic_to_surface, surface_to_logic, surface_to_surface, sandwich
 
 '''
 CALLING FUNCTION
@@ -259,19 +204,24 @@ if __name__ == "__main__":
     '''
     BEGINNING DYNAMICAL PARAMETERS WHICH THE USER CAN CHANGE
     '''
+    # To do: Make these parameters updatable by terminal 
+
     # These are the mapping ids from the ideallangueg/visualGenome to the new ids
     ids = [(1, 1), (3, 2), (4, 3), (71, 4), (9, 5),
            (2410753, 6), (713137, 7), (2412620, 8), (2412211, 9),
            (186, 10), (2396154, 11), (2317468, 12)]
 
-    increase_corpus_flag = True
+    increase_corpus_flag = False
     training_and_test_sets=False
-    write_files = True
+
+    write_files = True # This makes it write files of augmented and original
+    permutation_flag = True  # This applies the permutations and writes the files 
 
     limited = True
-    limited_max_utterances = 5
+    limited_max_utterances = 5 # These make the situation be of x utterances
+
     test_mode = True
-    test_max_examples = 4
+    test_max_examples = 4 # These make the situations from which we extract x number
 
     if increase_corpus_flag:
 
@@ -309,13 +259,13 @@ if __name__ == "__main__":
             logic_scripts = original_logic_scripts + train_aug_logic_scripts
             surface_logic_mapping= original_surface_logic_mapping + train_aug_surface_logic_mapping
 
-            if write_files is True:
-                # Adding this for the testing files
-                create_training_files(logic_scripts=test_aug_logic_scripts,
-                                      surface_logic_mapping=test_aug_surface_logic_mapping,
-                                      increase_corpus_flag = increase_corpus_flag,
-                                      training_and_test_sets = True,
-                                      plus_index_testing=len(surface_logic_mapping)+1)
+            # Adding this for the testing files
+            testing_logic_scripts, testing_logic_to_surface, testing_surface_to_logic, testing_surface_to_surface, testing_sandwich = create_training_files(logic_scripts=test_aug_logic_scripts,
+                                  surface_logic_mapping=test_aug_surface_logic_mapping,
+                                  increase_corpus_flag = increase_corpus_flag,
+                                  training_and_test_sets = True,
+                                  plus_index_testing=len(surface_logic_mapping)+1,
+                                  write_files=write_files)
 
     else: # If not increase flag
         logic_scripts, surface_logic_mapping = extract_languages(
@@ -329,8 +279,73 @@ if __name__ == "__main__":
             increase_corpus_flag = increase_corpus_flag
         )
 
-    if write_files is True:
-        create_training_files(logic_scripts=logic_scripts,
-                              surface_logic_mapping=surface_logic_mapping,
-                              increase_corpus_flag = increase_corpus_flag,
-                              training_and_test_sets = False)
+    logic_to_logic_text, logic_to_surface_text, surface_to_logic_text, surface_to_surface_text, sandwich_text = create_training_files(logic_scripts=logic_scripts,
+                          surface_logic_mapping=surface_logic_mapping,
+                          increase_corpus_flag = increase_corpus_flag,
+                          training_and_test_sets = False,
+                          write_files=write_files)
+
+    if permutation_flag:
+
+        # To do: This should be automatized with WordNet, also now it does not apply to all when we increase the corpus (because the logic is based on the situations)
+        substitutions_per_situation = {
+            1: [('', ''), ('car', 'vehicle'), ('jacket', 'raincoat'), ('shirt', 'sweater'),
+                ('building', 'house'), ('wall', 'separation'), ('man', 'woman'),
+                ('spectacles', 'sunglasses'), ('tree', 'plant')],
+            2: [('', ''), ('road', 'street'), ('building', 'house'), ('man', 'woman'),
+                ('car', 'scooter'), ('tree', 'plant'), ('light', 'lamp'),
+                ('bicycle', 'motorcycle'), ('gym_shoe', 'boot')],
+            3: [('', ''), ('table', 'support'), ('curtain', 'furniture'), ('sofa', 'armchair'),
+                ('chair', 'seat'), ('picture', 'illustration'), ('teddy', 'puppet'),
+                ('carpet', 'moquette'), ('desk', 'bureau')],
+            4: [('', ''), ('woman', 'man'), ('box', 'container'), ('jean', 'skirt'), ('floor', 'pavement'),
+                ('shirt', 'sweater'), ('table', 'desk'), ('tape', 'object'), ('desktop', 'device'),],
+            5: [('', ''), ('room', 'bedroom'), ('light', 'lamp'), ('ceiling', 'roof'),
+                ('desk', 'bureau'), ('shelf', 'ledge'), ('picture', 'poster'), ('monitor', 'screen'),
+                ('bottle', 'container')],
+            6: [('', ''), ('chair', 'couch'),('desk', 'table'),('picture', 'image'),
+                ('sunset', 'element'),('lamp', 'light'),('mouse', 'device'),('monitor', 'screen'),('part', 'portion')],
+            7: [('', ''), ('cup', 'mug'),('egg', 'cheese'),('muffin', 'pastry'),
+                ('plate', 'dish'),('tomato', 'vegetable'),('sauce', 'condiment'),('tea', 'beverage'),('spoon', 'utensil')],
+            8: [('', ''), ('chair', 'couch'),('man', 'woman'),('mouth', 'face'),
+                ('button', 'piece'),('spectacles', 'glasses'),('light', 'lamp'),('shirt', 'dress'),('watch', 'accessory')],
+            9: [('', ''), ('giraffe', 'animal'),('green_park', 'area'),('leaf', 'plant'),
+                ('tree', 'plant'),('mouth', 'body'),('branch', 'limb'),('neck', 'body'),('eye', 'body')],
+            10: [('', ''),('plate', 'dish'),('basket', 'container'),('tray', 'platter'),
+                 ('ginger', 'bulb'),('vegetable', 'food'),('bowl', 'container'),('cheese', 'food'),('chopstick', 'object')],
+            11: [('', ''), ('tree', 'plant'),('grass', 'plant'),('elephant', 'animal'),
+                 ('back', 'body'),('trunk', 'body'),('ear', 'body'),('leaf', 'plant'),('tail', 'limb')],
+            12: [('', ''), ('man', 'person'),('man', 'woman'),('suit', 'sweater'),
+                 ('belt', 'accessory'),('eye', 'face'),('building', 'house'),('hair', 'head'),('earring', 'jewelry')],
+        }
+
+        permuted_logic_to_logic, prompt_logic = permutation_surface_logic(extract_situations(logic_to_logic_text), substitutions_per_situation,  surface_language=False)
+
+        permuted_surface_to_surface, prompt_surface = permutation_surface_logic(extract_situations(surface_to_surface_text), substitutions_per_situation,  surface_language=True)
+
+        permuted_logic_to_surface = permutation_sandwich_logic_surface_transl(logic_to_surface_text, substitutions_per_situation)
+        prompt_logic_to_surface = prompt_sandwich_logic_surface_transl(logic_to_surface_text)
+
+        permuted_surface_to_logic = permutation_sandwich_logic_surface_transl(surface_to_logic_text, substitutions_per_situation)
+        prompt_surface_to_logic = prompt_sandwich_logic_surface_transl(surface_to_logic_text)
+
+        permuted_sandwich = permutation_sandwich_logic_surface_transl(sandwich_text, substitutions_per_situation, sandwich_flag=1)
+        prompt_sandwich = prompt_sandwich_logic_surface_transl(sandwich_text, sandwich_flag=1)
+
+        for name in [
+            "permuted_logic_to_logic",
+            "permuted_surface_to_surface",
+            "permuted_logic_to_surface",
+            "permuted_surface_to_logic",
+            "permuted_sandwich"]:
+                content = eval(name)
+                os.makedirs(os.path.dirname(f'./data/training/permuted_files/{name}.txt'), exist_ok=True)
+                with open(f'./data/training/permuted_files/{name}.txt', "w", encoding="utf-8") as f:
+                    f.write(content)
+
+        for name in [
+            "prompt_logic", "prompt_surface", "prompt_logic_to_surface", "prompt_surface_to_logic","prompt_sandwich"]:
+                content = eval(name)
+                os.makedirs(os.path.dirname(f'./data/training/prompt_files/{name}.txt'), exist_ok=True)
+                with open(f'./data/training/prompt_files/{name}.txt', "w", encoding="utf-8") as f:
+                    f.write(content)
