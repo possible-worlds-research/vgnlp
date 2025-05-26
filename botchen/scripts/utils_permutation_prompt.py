@@ -3,6 +3,9 @@ import random
 import os
 import argparse
 from collections import defaultdict
+import requests
+import random
+import logging
 
 ################# General functions 
 
@@ -18,6 +21,7 @@ def apply_substitutions(texts, substitutions):
         for old, new in substitutions:
             if old:
                 new_texts[i] = re.sub(rf'\b{re.escape(old)}\b', new, new_texts[i])
+
     if new_texts == texts:
         return (None,) * len(texts)
     return tuple(new_texts)
@@ -33,7 +37,16 @@ def _format_tag(script_num, hum_text, bot_texts, sandwich_flag=None):
 
 def extract_situations(content):
     scripts = re.findall(r"(<script\.\d+ type=CONV>.*?</script\.\d+>)", content, re.DOTALL)
-    situations = {f"Situation {i+1}": script for i, script in enumerate(scripts)}
+    situations = {}
+    script_counts = defaultdict(int)
+    for script_content in scripts:
+        match = re.search(r"<script\.(\d+) type=CONV>.*?</script\.\d+>", script_content, re.DOTALL)
+        if match:
+            script_number = int(match.group(1))
+            script_counts[script_number] += 1
+            sub_number = script_counts[script_number]
+            key = f"situation {script_number}.{sub_number}"
+            situations[key] = script_content
     return situations
 
 def extract_entities_properties(content, surface_language=False):
@@ -53,72 +66,101 @@ def extract_entities_properties(content, surface_language=False):
 
     return entity_properties
 
+################# Substitution dictionary
+
+def generate_random_substitutions(substitutions_dict):
+    if not isinstance(substitutions_dict, dict):
+        raise ValueError("Expected a dictionary of substitutions")
+    return {
+        key: random.choice([v for v in values if v != key]) if any(v != key for v in values) else key
+        for key, values in substitutions_dict.items()
+    }
+    
+def get_conceptnet_hypernyms_synonyms(term_list):
+    term_list_results = {}
+    for term in term_list:
+        url = f"http://api.conceptnet.io/c/en/{term}?offset=0&limit=1000"
+        try:
+            obj = requests.get(url).json()
+        except Exception as e:
+            logging.info(f"Error fetching from ConceptNet: {e}")
+            return []
+        term_results = set()
+        # Iterate through all semantic edges (relations) associated with the term
+        for edge in obj['edges']:
+            # Edge direction originating from the term
+            if edge['start']['term'] != f'/c/en/{term}':
+                continue
+            if not edge['end']['term'].startswith('/c/en/'):
+                continue
+            rel_label = edge['rel']['label']
+            target_label = edge['end']['label'].lower()
+            if len(target_label.split()) > 1:
+                continue
+            if rel_label in {'Synonym', 'IsA'}:
+                term_results.add(target_label)
+        term_list_results[term] = list(term_results)
+
+    substitutions_dict = generate_random_substitutions(term_list_results)
+
+    final_list = list(substitutions_dict.items())
+
+    return final_list
+
 ################# Logic to logic and Surface to surface
 
 # Function to generate a prompt script from the extracted entities and their properties
-def prompt_surface_logic(script_number, entity_properties, surface_language=False):
-    lines = [f'<script.{script_number} type=CONV>']
-    if surface_language:
-        for utt in entity_properties:
-            lines.append(f'<u speaker=HUM>{utt}</u>')
-    else:
-        for entity, props in entity_properties.items():
-            props_str = ' '.join(props - {entity})
-            lines.append(f'<u speaker=HUM>({entity}.n {props_str})</u>')
-    
-    lines.append(f'</script.{script_number}>\n')
-    return '\n'.join(lines)
+def prompt_surface_logic(content):
 
-def permutation_surface_logic(situations, substitutions_per_situation, surface_language=False):
+    scripts = re.findall(r'<script\.(\d+) type=CONV>(.*?)</script\.\1>', content, re.DOTALL)
+    merged_scripts = defaultdict(set)
+    for script_number, script_text in scripts:
+        utterances = re.findall(r'<u speaker=[^>]+>(.*?)</u>', script_text)
+        merged_scripts[int(script_number)].update(utterances)
+
+    prompt_text = ''
+    for script_number, script_body in merged_scripts.items():
+        prompt_text += f'<script.{script_number} type=CONV>\n'
+        for utterance in script_body:
+            prompt_text += f'<u speaker=HUM>{utterance}</u>\n'
+        prompt_text += f'</script.{script_number}>\n\n'
+
+    return prompt_text
+
+def permutation_surface_logic(situations, substitutions):
 
     new_situations = {}
     all_count = 0
     prompt_content_total = ''
-    merged_text_total = ''
+    merged_text_total = '' 
 
     # Process each situation and apply substitutions
     for script_id, script_text in situations.items():
-        script_number = int(script_id.split()[1])
-        substitutions = substitutions_per_situation.get(script_number, [])
+        situation_count = 0
+        match = re.search(r'(\d+)\.(\d+)', script_id)
+        if match:
+            script_number = int(match.group(1))
+            script_index = int(match.group(2))
         for index, (old_word, new_word) in enumerate(substitutions, start=1):
             modified_text = substitute_word(script_text, old_word, new_word)
             if modified_text: 
-                version_name = f"Situation {script_number}.{index}"
+                all_count += 1
+                situation_count += 1
+                version_name = f"situation {script_number}.{script_index}.{index}"
                 new_situations[version_name] = modified_text
 
-    # Merge and save the modified situations for training purposes
-    merged_text_total = ''
-    prompt_content_total = ''
+    situations.update(new_situations)
+    situations = dict(sorted(situations.items(), key=lambda x: list(map(int, re.findall(r'\d+', x[0])))))
+    logging.info(f'{all_count} substitutions for all situations')
 
-    script_numbers = sorted({int(k.split()[1].split('.')[0]) for k in new_situations})
-    print(script_numbers)
-    for script_number in script_numbers:
-        merged_text = ""
-        for idx in range(1, 100):  # Arbitrarily large range to collect all versions
-            key = f"Situation {script_number}.{idx}"
-            if key in new_situations:
-                merged_text += new_situations[key] + "\n\n"
-        
-        if not merged_text:
-            continue
+    for content in situations.values():
+        merged_text_total += content + '\n\n'
 
-        all_count += len(re.findall(r"<u speaker=", merged_text))
-        merged_text_total += merged_text
-
-        if surface_language:
-            unique_utts, _ = extract_entities_properties(merged_text, surface_language=True)
-            prompt_content = prompt_surface_logic(script_number, unique_utts, surface_language=True)
-        else:
-            items = extract_entities_properties(merged_text, surface_language=False)
-            prompt_content = prompt_surface_logic(script_number, items)
-        
-        prompt_content_total += prompt_content
-
-    return merged_text_total, prompt_content_total
+    return merged_text_total
 
 ################## Logic to surface and sandwich
 
-def permutation_sandwich_logic_surface_transl(input_text, substitutions_per_situation, sandwich_flag=None):
+def permutation_sandwich_logic_surface_transl(input_text, substitutions, sandwich_flag=None):
 
     pattern = (
         r'<a script\.(\d+) type=SDW>\s*<u speaker=HUM>(.*?)</u>'
@@ -134,7 +176,6 @@ def permutation_sandwich_logic_surface_transl(input_text, substitutions_per_situ
 
     for match in matches:
         script_num = int(match[0])  # Get the script number
-        substitutions = substitutions_per_situation.get(script_num, []) # Get the substitutions for this script number
 
         hum_text = match[1]  # Get the human text
         bot_texts = list(match[2:])
@@ -184,3 +225,36 @@ def prompt_sandwich_logic_surface_transl(input_text, sandwich_flag=None):
 
     return output_text
 
+##############
+# Previous substitution item, just to have an idea 
+
+substitutions_per_situation = {
+            1: [('', ''), ('car', 'vehicle'), ('jacket', 'raincoat'), ('shirt', 'sweater'),
+                ('building', 'house'), ('wall', 'separation'), ('man', 'woman'),
+                ('spectacles', 'sunglasses'), ('tree', 'plant')],
+            2: [('', ''), ('road', 'street'), ('building', 'house'), ('man', 'woman'),
+                ('car', 'scooter'), ('tree', 'plant'), ('light', 'lamp'),
+                ('bicycle', 'motorcycle'), ('gym_shoe', 'boot')],
+            3: [('', ''), ('table', 'support'), ('curtain', 'furniture'), ('sofa', 'armchair'),
+                ('chair', 'seat'), ('picture', 'illustration'), ('teddy', 'puppet'),
+                ('carpet', 'moquette'), ('desk', 'bureau')],
+            4: [('', ''), ('woman', 'man'), ('box', 'container'), ('jean', 'skirt'), ('floor', 'pavement'),
+                ('shirt', 'sweater'), ('table', 'desk'), ('tape', 'object'), ('desktop', 'device'),],
+            5: [('', ''), ('room', 'bedroom'), ('light', 'lamp'), ('ceiling', 'roof'),
+                ('desk', 'bureau'), ('shelf', 'ledge'), ('picture', 'poster'), ('monitor', 'screen'),
+                ('bottle', 'container')],
+            6: [('', ''), ('chair', 'couch'),('desk', 'table'),('picture', 'image'),
+                ('sunset', 'element'),('lamp', 'light'),('mouse', 'device'),('monitor', 'screen'),('part', 'portion')],
+            7: [('', ''), ('cup', 'mug'),('egg', 'cheese'),('muffin', 'pastry'),
+                ('plate', 'dish'),('tomato', 'vegetable'),('sauce', 'condiment'),('tea', 'beverage'),('spoon', 'utensil')],
+            8: [('', ''), ('chair', 'couch'),('man', 'woman'),('mouth', 'face'),
+                ('button', 'piece'),('spectacles', 'glasses'),('light', 'lamp'),('shirt', 'dress'),('watch', 'accessory')],
+            9: [('', ''), ('giraffe', 'animal'),('green_park', 'area'),('leaf', 'plant'),
+                ('tree', 'plant'),('mouth', 'body'),('branch', 'limb'),('neck', 'body'),('eye', 'body')],
+            10: [('', ''),('plate', 'dish'),('basket', 'container'),('tray', 'platter'),
+                 ('ginger', 'bulb'),('vegetable', 'food'),('bowl', 'container'),('cheese', 'food'),('chopstick', 'object')],
+            11: [('', ''), ('tree', 'plant'),('grass', 'plant'),('elephant', 'animal'),
+                 ('back', 'body'),('trunk', 'body'),('ear', 'body'),('leaf', 'plant'),('tail', 'limb')],
+            12: [('', ''), ('man', 'person'),('man', 'woman'),('suit', 'sweater'),
+                 ('belt', 'accessory'),('eye', 'face'),('building', 'house'),('hair', 'head'),('earring', 'jewelry')],
+        }

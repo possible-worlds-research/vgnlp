@@ -11,7 +11,8 @@ from utils_extract_from_corpora import write_logic_to_surface, write_surface, wr
 
 from utils_extract_from_corpora import increase_the_corpus
 
-from utils_permutation_prompt import extract_entities_properties, prompt_surface_logic, permutation_surface_logic, extract_situations
+from utils_permutation_prompt import get_conceptnet_hypernyms_synonyms, generate_random_substitutions
+from utils_permutation_prompt import prompt_surface_logic, permutation_surface_logic, extract_situations
 from utils_permutation_prompt import permutation_sandwich_logic_surface_transl, prompt_sandwich_logic_surface_transl
 
 '''
@@ -162,31 +163,31 @@ def create_training_files(logic_scripts, surface_logic_mapping, increase_corpus_
 
     if increase_corpus_flag is False:
         os.makedirs(os.path.dirname('./data/training/original/'), exist_ok=True)
-        with open('./data/training/original/original_logic.txt', 'w', encoding='utf-8') as file:
+        with open('./data/training/original/original_logic_to_logic.txt', 'w', encoding='utf-8') as file:
             file.write(''.join(logic_scripts))
         logic_to_surface = write_logic_to_surface('./data/training/original/original_logic_to_surface.txt', surface_logic_mapping, plus_index=1, reverse=False, write_files=write_files)
         surface_to_logic = write_logic_to_surface('./data/training/original/original_surface_to_logic.txt', surface_logic_mapping, plus_index=1, reverse=True, write_files=write_files)
-        surface_to_surface = write_surface('./data/training/original/original_surface.txt', surface_logic_mapping, plus_index=1, write_files=write_files)
+        surface_to_surface = write_surface('./data/training/original/original_surface_to_surface.txt', surface_logic_mapping, plus_index=1, write_files=write_files)
         sandwich = write_sandwich('./data/training/original/original_sandwich.txt', surface_logic_mapping, plus_index=1, write_files=write_files)
 
     if increase_corpus_flag is True:
 
         if training_and_test_sets is False:
             os.makedirs(os.path.dirname('./data/training/augmented/'), exist_ok=True)
-            with open('./data/training/augmented/augmented_logic.txt', 'w', encoding='utf-8') as file:
+            with open('./data/training/augmented/augmented_logic_to_logic.txt', 'w', encoding='utf-8') as file:
                 file.write(''.join(logic_scripts))
             logic_to_surface = write_logic_to_surface('./data/training/augmented/augmented_logic_to_surface.txt', surface_logic_mapping, plus_index=1, reverse=False, write_files=write_files)
             surface_to_logic = write_logic_to_surface('./data/training/augmented/augmented_surface_to_logic.txt', surface_logic_mapping, plus_index=1, reverse=True, write_files=write_files)
-            surface_to_surface = write_surface('./data/training/augmented/augmented_surface.txt', surface_logic_mapping, plus_index=1, write_files=write_files)
+            surface_to_surface = write_surface('./data/training/augmented/augmented_surfaceto_surface.txt', surface_logic_mapping, plus_index=1, write_files=write_files)
             sandwich = write_sandwich('./data/training/augmented/augmented_sandwich.txt', surface_logic_mapping, plus_index=1, write_files=write_files)
 
         if training_and_test_sets is True:
             os.makedirs(os.path.dirname('./data/training/augmented/'), exist_ok=True)
-            with open('./data/training/augmented/testing_augmented_logic.txt', 'w', encoding='utf-8') as file:
+            with open('./data/training/augmented/testing_augmented_logic_to_logic.txt', 'w', encoding='utf-8') as file:
                 file.write(''.join(logic_scripts))
             logic_to_surface = write_logic_to_surface('./data/training/augmented/testing_augmented_logic_to_surface.txt', surface_logic_mapping, plus_index=plus_index_testing, reverse=False, write_files=write_files)
             surface_to_logic = write_logic_to_surface('./data/training/augmented/testing_augmented_surface_to_logic.txt', surface_logic_mapping, plus_index=plus_index_testing, reverse=True, write_files=write_files)
-            surface_to_surface = write_surface('./data/training/augmented/testing_augmented_surface.txt', surface_logic_mapping, plus_index=plus_index_testing, write_files=write_files)
+            surface_to_surface = write_surface('./data/training/augmented/testing_augmented_surfaceto_surface.txt', surface_logic_mapping, plus_index=plus_index_testing, write_files=write_files)
             sandwich = write_sandwich('./data/training/augmented/testing_augmented_sandwich.txt', surface_logic_mapping, plus_index=plus_index_testing, write_files=write_files)
 
     return ''.join(logic_scripts), logic_to_surface, surface_to_logic, surface_to_surface, sandwich
@@ -211,17 +212,17 @@ if __name__ == "__main__":
            (2410753, 6), (713137, 7), (2412620, 8), (2412211, 9),
            (186, 10), (2396154, 11), (2317468, 12)]
 
-    increase_corpus_flag = False
-    training_and_test_sets=False
+    increase_corpus_flag = True
+    training_and_test_sets=True
 
-    write_files = True # This makes it write files of augmented and original
+    write_files = False # This makes it write files of augmented and original
     permutation_flag = True  # This applies the permutations and writes the files 
 
     limited = True
     limited_max_utterances = 5 # These make the situation be of x utterances
 
     test_mode = True
-    test_max_examples = 4 # These make the situations from which we extract x number
+    test_max_examples = 3 # These make the situations from which we extract x number
 
     if increase_corpus_flag:
 
@@ -287,49 +288,39 @@ if __name__ == "__main__":
 
     if permutation_flag:
 
-        # To do: This should be automatized with WordNet, also now it does not apply to all when we increase the corpus (because the logic is based on the situations)
-        substitutions_per_situation = {
-            1: [('', ''), ('car', 'vehicle'), ('jacket', 'raincoat'), ('shirt', 'sweater'),
-                ('building', 'house'), ('wall', 'separation'), ('man', 'woman'),
-                ('spectacles', 'sunglasses'), ('tree', 'plant')],
-            2: [('', ''), ('road', 'street'), ('building', 'house'), ('man', 'woman'),
-                ('car', 'scooter'), ('tree', 'plant'), ('light', 'lamp'),
-                ('bicycle', 'motorcycle'), ('gym_shoe', 'boot')],
-            3: [('', ''), ('table', 'support'), ('curtain', 'furniture'), ('sofa', 'armchair'),
-                ('chair', 'seat'), ('picture', 'illustration'), ('teddy', 'puppet'),
-                ('carpet', 'moquette'), ('desk', 'bureau')],
-            4: [('', ''), ('woman', 'man'), ('box', 'container'), ('jean', 'skirt'), ('floor', 'pavement'),
-                ('shirt', 'sweater'), ('table', 'desk'), ('tape', 'object'), ('desktop', 'device'),],
-            5: [('', ''), ('room', 'bedroom'), ('light', 'lamp'), ('ceiling', 'roof'),
-                ('desk', 'bureau'), ('shelf', 'ledge'), ('picture', 'poster'), ('monitor', 'screen'),
-                ('bottle', 'container')],
-            6: [('', ''), ('chair', 'couch'),('desk', 'table'),('picture', 'image'),
-                ('sunset', 'element'),('lamp', 'light'),('mouse', 'device'),('monitor', 'screen'),('part', 'portion')],
-            7: [('', ''), ('cup', 'mug'),('egg', 'cheese'),('muffin', 'pastry'),
-                ('plate', 'dish'),('tomato', 'vegetable'),('sauce', 'condiment'),('tea', 'beverage'),('spoon', 'utensil')],
-            8: [('', ''), ('chair', 'couch'),('man', 'woman'),('mouth', 'face'),
-                ('button', 'piece'),('spectacles', 'glasses'),('light', 'lamp'),('shirt', 'dress'),('watch', 'accessory')],
-            9: [('', ''), ('giraffe', 'animal'),('green_park', 'area'),('leaf', 'plant'),
-                ('tree', 'plant'),('mouth', 'body'),('branch', 'limb'),('neck', 'body'),('eye', 'body')],
-            10: [('', ''),('plate', 'dish'),('basket', 'container'),('tray', 'platter'),
-                 ('ginger', 'bulb'),('vegetable', 'food'),('bowl', 'container'),('cheese', 'food'),('chopstick', 'object')],
-            11: [('', ''), ('tree', 'plant'),('grass', 'plant'),('elephant', 'animal'),
-                 ('back', 'body'),('trunk', 'body'),('ear', 'body'),('leaf', 'plant'),('tail', 'limb')],
-            12: [('', ''), ('man', 'person'),('man', 'woman'),('suit', 'sweater'),
-                 ('belt', 'accessory'),('eye', 'face'),('building', 'house'),('hair', 'head'),('earring', 'jewelry')],
-        }
+        # To do: Target words that I substituting with one random synonym or hypernym
+        # To do: This could also be substituted with random selection of words from the text 
+        # and also could be randomized each time one picks the word  
+        term_list = [
+            'car','jacket','shirt', 'man','woman', 'tree','road', 'bicycle', 
+            'gym_shoe','table', 'curtain', 'sofa', 'chair', 'picture', 'teddy', 
+            'desk','jean','room', 'ceiling', 'shelf', 'picture', 'monitor', 'bottle', 
+            'sunset', 'mouse', 'part','cup', 'egg', 'muffin', 'plate', 'tomato', 
+            'sauce', 'tea', 'spoon','mouth', 'watch','giraffe', 'branch', 
+            'neck', 'eye','basket', 'ginger', 'vegetable', 'bowl', 'cheese', 
+            'chopstick','grass', 'elephant', 'trunk','suit', 'belt', 'hair', 'earring'
+        ]
 
-        permuted_logic_to_logic, prompt_logic = permutation_surface_logic(extract_situations(logic_to_logic_text), substitutions_per_situation,  surface_language=False)
+        substitution_dict = get_conceptnet_hypernyms_synonyms(term_list)
 
-        permuted_surface_to_surface, prompt_surface = permutation_surface_logic(extract_situations(surface_to_surface_text), substitutions_per_situation,  surface_language=True)
+        logging.info('Logic to logic permutation')
+        permuted_logic_to_logic = permutation_surface_logic(extract_situations(logic_to_logic_text), substitution_dict)
+        prompt_logic_to_logic = prompt_surface_logic(permuted_logic_to_logic)
 
-        permuted_logic_to_surface = permutation_sandwich_logic_surface_transl(logic_to_surface_text, substitutions_per_situation)
+        logging.info('Surface to surface permutation')
+        permuted_surface_to_surface = permutation_surface_logic(extract_situations(surface_to_surface_text), substitution_dict)
+        prompt_surface_to_surface = prompt_surface_logic(permuted_surface_to_surface)
+
+        logging.info('Logic to surface permutation')
+        permuted_logic_to_surface = permutation_sandwich_logic_surface_transl(logic_to_surface_text, substitution_dict)
         prompt_logic_to_surface = prompt_sandwich_logic_surface_transl(logic_to_surface_text)
 
-        permuted_surface_to_logic = permutation_sandwich_logic_surface_transl(surface_to_logic_text, substitutions_per_situation)
+        logging.info('Surface to logic permutation')
+        permuted_surface_to_logic = permutation_sandwich_logic_surface_transl(surface_to_logic_text, substitution_dict)
         prompt_surface_to_logic = prompt_sandwich_logic_surface_transl(surface_to_logic_text)
 
-        permuted_sandwich = permutation_sandwich_logic_surface_transl(sandwich_text, substitutions_per_situation, sandwich_flag=1)
+        logging.info('Sandwich permutation')
+        permuted_sandwich = permutation_sandwich_logic_surface_transl(sandwich_text, substitution_dict, sandwich_flag=1)
         prompt_sandwich = prompt_sandwich_logic_surface_transl(sandwich_text, sandwich_flag=1)
 
         for name in [
@@ -344,8 +335,50 @@ if __name__ == "__main__":
                     f.write(content)
 
         for name in [
-            "prompt_logic", "prompt_surface", "prompt_logic_to_surface", "prompt_surface_to_logic","prompt_sandwich"]:
+            "prompt_logic_to_logic", "prompt_surface_to_surface", "prompt_logic_to_surface", "prompt_surface_to_logic","prompt_sandwich"]:
                 content = eval(name)
                 os.makedirs(os.path.dirname(f'./data/training/prompt_files/{name}.txt'), exist_ok=True)
                 with open(f'./data/training/prompt_files/{name}.txt', "w", encoding="utf-8") as f:
+                    f.write(content)
+
+        if training_and_test_sets is True:
+            permuted_testing_logic_scripts = permutation_surface_logic(extract_situations(testing_logic_scripts), substitution_dict)
+            prompt_testing_logic_scripts = prompt_surface_logic(permuted_testing_logic_scripts)
+
+            permuted_testing_surface_to_surface = permutation_surface_logic(extract_situations(testing_surface_to_surface), substitution_dict)
+            prompt_testing_surface_to_surface = prompt_surface_logic(permuted_testing_surface_to_surface)
+
+            permuted_testing_logic_to_surface = permutation_sandwich_logic_surface_transl(testing_logic_to_surface, substitution_dict)
+            prompt_testing_logic_to_surface = prompt_sandwich_logic_surface_transl(testing_logic_to_surface)
+
+            permuted_testing_surface_to_logic = permutation_sandwich_logic_surface_transl(testing_surface_to_logic, substitution_dict)
+            prompt_testing_surface_to_logic = prompt_sandwich_logic_surface_transl(testing_surface_to_logic)
+
+            permuted_testing_sandwich = permutation_sandwich_logic_surface_transl(testing_sandwich, substitution_dict, sandwich_flag=1)
+            prompt_testing_sandwich = prompt_sandwich_logic_surface_transl(testing_sandwich, sandwich_flag=1)
+
+            # Save permuted versions
+            for name in [
+                "permuted_testing_logic_scripts",
+                "permuted_testing_surface_to_surface",
+                "permuted_testing_logic_to_surface",
+                "permuted_testing_surface_to_logic",
+                "permuted_testing_sandwich"]:
+                
+                content = eval(name)
+                os.makedirs(os.path.dirname(f'./data/testing/permuted_files/{name}.txt'), exist_ok=True)
+                with open(f'./data/testing/permuted_files/{name}.txt', "w", encoding="utf-8") as f:
+                    f.write(content)
+
+            # Save prompt versions
+            for name in [
+                "prompt_testing_logic_scripts",
+                "prompt_testing_surface_to_surface",
+                "prompt_testing_logic_to_surface",
+                "prompt_testing_surface_to_logic",
+                "prompt_testing_sandwich"]:
+                
+                content = eval(name)
+                os.makedirs(os.path.dirname(f'./data/testing/prompt_files/{name}.txt'), exist_ok=True)
+                with open(f'./data/testing/prompt_files/{name}.txt', "w", encoding="utf-8") as f:
                     f.write(content)
