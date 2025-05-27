@@ -14,16 +14,16 @@ The project includes the following scripts:
     - `ids`: List of `(vg_id, new_id)` pairs to extract. `E.g. ids = [(1, 1), (3, 2), (4, 3), (71, 4), (9, 5)]`
     - `substitution_terms_list`: List of terms to substitute with synonyms or hypernyms from ConceptNet.
     - `increase_corpus_flag`: If `True`, adds similar situations to increase data. Similarity is measured in terms of common entities.
-    - `permutation_flag`: Applies word substitutions from [https://conceptnet.io/][ConceptNet]. Random substitution from a list of hypernyms and synonims. You can select which terms to substitute (`e.g. term_list = ['car','jacket','shirt', 'man','woman', 'tree','road', 'bicycle']`).
+    - `permutation_flag`: Applies word substitutions from [ConceptNet]([https://homes.cs.washington.edu/~ranjay/visualgenome/index.html](https://conceptnet.io/). Random substitution from a list of hypernyms and synonims. You can select which terms to substitute (`e.g. term_list = ['car','jacket','shirt', 'man','woman', 'tree','road', 'bicycle']`).
     - `training_and_test_sets`. Boolean. Whether to split data into train/test sets
     - `limited`, `limited_max_utterances`: Limit utterances per situation (for small data testing).
     - `test_mode`, `test_max_situations`: Extract a subset of situations for testing.
     - `write_all_files`: If `True`, saves all generated file versions
     
-  -  Dependencies 
+  -  Dependencies
+    
     - `./scripts/utils_extract_from_corpora.py`
     - `./scripts/utils_permutation_prompt.py`
-    
     - External files:
     
       - `./data/ideallanguage.txt` (from unzipping `./data/ideallanguage.zip`)
@@ -144,7 +144,6 @@ The script is also outputting prompt data that can be used for evaluating the ch
 
 1. Logic → Logic 
   ```
-  <script.1 type=CONV>
   <script.1 type=CONV>
   <u speaker=HUM>(man.n wears-gym_shoe)</u>
   <u speaker=HUM>(gym_shoe.n grey lover-wears)</u>
