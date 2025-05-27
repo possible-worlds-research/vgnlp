@@ -1,8 +1,4 @@
----
-output:
-  pdf_document: default
-  html_document: default
----
+
 # VGNLP Botchen
 
 VGNLP Botchen extracts and formats data from the [Visual Genome](https://homes.cs.washington.edu/~ranjay/visualgenome/index.html) dataset to train and evaluate a tiny chatbot. It turns scene descriptions into conversational data, applies optional augmentation and permutation, and includes tools for evaluating chatbot responses.
