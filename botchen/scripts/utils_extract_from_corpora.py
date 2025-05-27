@@ -1,7 +1,48 @@
 '''
-UTILS Functions description:
+This script provides core utilities for transforming Visual Genome (VG) `ideallanguage` and `region_graph` 
+data into multiple conversational formats for training dialogue systems like Botchen.
 
-(A) extract_logic_language(file_path, situation_id, new_situation_id=None, limited=False)
+It includes tools for extracting logical forms, converting between logic and surface language, 
+generating conversational scripts, and augmenting the corpus by finding similar situations 
+based on entity overlap.
+
+Core Capabilities:
+------------------
+1. **Logic → Logic**: Extract structured entities and their properties from VG logical scenes.
+2. **Surface → Surface**: Convert region descriptions into conversational surface-form utterances.
+3. **Logic ↔ Surface**: Match logical entities with surface descriptions using region graphs.
+4. **Sandwich Format**: Mixed sequences with logic and surface alternation.
+5. **Corpus Augmentation**: Expand training/test sets by mining semantically similar VG scenes.
+
+Main Functions:
+---------------
+- `extract_logic_language`: Parses `ideallanguage.txt` for logic-based entity-property structures.
+- `extract_surface_language`: Converts region surface descriptions into dialogues.
+- `extract_surface_logic_utterances`: Extracts logic-surface form pairs from region graphs.
+
+- `filter_region_graph_mapping`: Filters surface-form mappings by known VG entity IDs.
+- `match_logical_surface_forms`: Links logic and surface forms into reusable mappings.
+
+- `write_logic_to_surface`: Writes logic→surface (or inverse) training files.
+- `write_surface`: Writes conversational surface-surface files.
+- `write_sandwich`: Creates "sandwich" format dialogues with alternating logic/surface content.
+- `increase_the_corpus`: Expands dataset with similar VG scenes using entity overlap metrics.
+
+Key Parameters and Flags:
+--------------------------
+- `limited`, `limited_max_utterances`: Restrict number of extracted utterances (test mode).
+- `new_situation_id`: ID to assign to new dialogue block.
+- `reverse`: Flag to swap HUM/BOT roles for logic-surface tasks.
+- `write_all_files`: If True, writes all outputs to disk; otherwise returns string.
+- `min_referent_overlap_ratio`, `min_target_overlap_ratio`: Thresholds for corpus augmentation similarity.
+- `train_split_ratio`: Proportion of augmented data used for training (vs. test).
+- `max_per_referent`: Max similar scenes to retrieve per original situation.
+
+***
+
+Functions description:
+
+(A) extract_logic_language(file_path, situation_id, new_situation_id=None, limited=False, limited_max_utterances=None)
     - Inputs:
         * file_path: Path to the Ideallanguage file to extract from.
         * situation_id: The situation ID in Ideallanguage to extract utterances from.
@@ -60,10 +101,10 @@ UTILS Functions description:
 
 import re
 import random
-import logging
 import os
 import argparse
 from collections import defaultdict
+import logging
 logging.basicConfig(level=logging.INFO)
 
 ''' 
@@ -72,6 +113,7 @@ Function to extract a specific situation from the Visual Genome dataset and tran
 Also, to extract entities and properties
 Ideallanguage is the input file: './data/ideallanguage.txt'
 '''
+
 # file_path:str, situation_id:str, new_situation_id:Optional[str]=None, limited:bool=False
 def extract_logic_language(file_path, situation_id, new_situation_id, limited, limited_max_utterances):
     # logging.info('Logic-logic mapping process began')
@@ -189,6 +231,7 @@ def extract_logic_language(file_path, situation_id, new_situation_id, limited, l
 SURFACE TO SURFACE
 Extract the surface languages from the utterances for the situation
 Region descriptions is the input file: './obs/region_descriptions.json.obs'
+This function is not really used but it could be useful.
 '''
 
 # file_path:str, idx_to_extract:str, output_idx:str
@@ -271,10 +314,10 @@ def match_logical_surface_forms(surface_map, logical_map):
 # new_map: dict[str, set[str]]
 
 '''
-Create training files
+CREATE TRAINING FILES
 '''
 
-def write_logic_to_surface(file_path, mapping, plus_index, reverse=False, write_files=False):
+def write_logic_to_surface(file_path, mapping, plus_index, reverse=False, write_all_files=False):
     lines = []
     for situation in mapping:
         for hum_text, bot_texts in situation.items():
@@ -288,14 +331,14 @@ def write_logic_to_surface(file_path, mapping, plus_index, reverse=False, write_
                     lines.append(f'<u speaker=BOT>{bot_text}</u>')
                 lines.append('</a>\n')
     content = '\n'.join(lines)
-    if write_files is True:
+    if write_all_files is True:
         with open(file_path, "w", encoding="utf-8") as file:
             file.write(content)
         return content
     else:
         return content
 
-def write_surface(file_path, mapping, plus_index, write_files=False):
+def write_surface(file_path, mapping, plus_index, write_all_files=False):
     lines = []
     for situation in mapping:
         situation_items = list(situation.items())
@@ -315,14 +358,14 @@ def write_surface(file_path, mapping, plus_index, write_files=False):
                 lines.append(f'<u speaker=BOT>{old_bot_text}</u>')
             lines.append(f'</script.{mapping.index(situation) + plus_index}>\n')
     content = '\n'.join(lines)
-    if write_files is True:
+    if write_all_files is True:
         with open(file_path, "w", encoding="utf-8") as file:
             file.write(content)
         return content
     else:
         return content
 
-def write_sandwich(file_path, mapping, plus_index, write_files=False):
+def write_sandwich(file_path, mapping, plus_index, write_all_files=False):
     lines = []
     for situation_idx, situation in enumerate(mapping):
         flattened_items = []
@@ -344,7 +387,7 @@ def write_sandwich(file_path, mapping, plus_index, write_files=False):
                 lines.append(f"<u speaker=BOT>{old_logical}</u>")
             lines.append(f'</a>\n')
     content = '\n'.join(lines)     
-    if write_files is True:
+    if write_all_files is True:
         with open(file_path, "w", encoding="utf-8") as file:
             file.write(content)
         return content
@@ -366,12 +409,12 @@ def increase_the_corpus(
         max_per_referent,
         train_split_ratio
 ):
+    
     # Here I am substituting the list got from all_entities_map with the original tuples names
     key_mapping = {a: b for b, a in original_situation_ids}
     adjusted_entities_map = {key_mapping[k]: v for k, v in all_entities_map.items()}
     original_ids_list = [k for k,v in original_situation_ids]
 
-    logging.info('Increasing process began')
     with open(ideallanguage_path, 'r') as file:
         content = file.read()
 
@@ -387,7 +430,7 @@ def increase_the_corpus(
 
         referent_entities = list(referent_entity_map.values())
         referent_set = set(referent_entities)
-        logging.info(f'Training Referent Situation {referent_id}, Original VG Situation {original_id} - Reference Entities: {referent_set}')
+        # logging.info(f'Training Referent Situation {referent_id}, Original VG Situation {original_id} - Reference Entities: {referent_set}')
         matched_ids = []
 
         # For each situation in the corpus, iterate to see what we are extracting
@@ -422,7 +465,7 @@ def increase_the_corpus(
             if original_id_str in matched_ids:
                 matched_ids.remove(original_id_str)
 
-        logging.info(f"Training Referent Situation {referent_id}, Original VG Situation {original_id} matched with {len(matched_ids)} other vg situations: {matched_ids}")
+        # logging.info(f"Training Referent Situation {referent_id}, Original VG Situation {original_id} matched with {len(matched_ids)} other vg situations: {matched_ids}")
         # If there is the possibility, divide between training and testing items. In any case, build a dictionary with all the items
         if matched_ids:
             selected = random.sample(matched_ids, min(len(matched_ids), max_per_referent))
@@ -430,7 +473,7 @@ def increase_the_corpus(
             test_situation_id_dict[referent_id] = selected[:split_idx]
             training_situation_id_dict[referent_id] = selected[split_idx:]
             all_situation_id_dict[referent_id] = selected
-            logging.info(f"Selected {len(selected)}")
+            # logging.info(f"Selected {len(selected)}")
         else:
             logging.info("We couldn't find enough matches, auch")
 

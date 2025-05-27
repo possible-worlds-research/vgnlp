@@ -17,14 +17,16 @@ def apply_substitutions(texts, substitutions):
     if isinstance(texts, str):
         texts = [texts]
     new_texts = texts.copy()
+    count = 0
     for i, text in enumerate(texts):
         for old, new in substitutions:
             if old:
                 new_texts[i] = re.sub(rf'\b{re.escape(old)}\b', new, new_texts[i])
+                count += 1
 
     if new_texts == texts:
-        return (None,) * len(texts)
-    return tuple(new_texts)
+        return (None,) * len(texts), count
+    return tuple(new_texts), count
 
 def _format_tag(script_num, hum_text, bot_texts, sandwich_flag=None):
     tag_type = "SDW" if sandwich_flag else "DSC"
@@ -130,7 +132,7 @@ def prompt_surface_logic(content):
 def permutation_surface_logic(situations, substitutions):
 
     new_situations = {}
-    all_count = 0
+    total_count = 0
     prompt_content_total = ''
     merged_text_total = '' 
 
@@ -144,14 +146,14 @@ def permutation_surface_logic(situations, substitutions):
         for index, (old_word, new_word) in enumerate(substitutions, start=1):
             modified_text = substitute_word(script_text, old_word, new_word)
             if modified_text: 
-                all_count += 1
+                total_count += 1
                 situation_count += 1
                 version_name = f"situation {script_number}.{script_index}.{index}"
                 new_situations[version_name] = modified_text
 
     situations.update(new_situations)
     situations = dict(sorted(situations.items(), key=lambda x: list(map(int, re.findall(r'\d+', x[0])))))
-    logging.info(f'{all_count} substitutions for all situations')
+    logging.info(f'Total substitutions are {total_count}')
 
     for content in situations.values():
         merged_text_total += content + '\n\n'
@@ -173,6 +175,7 @@ def permutation_sandwich_logic_surface_transl(input_text, substitutions, sandwic
 
     matches = re.findall(pattern, input_text, re.DOTALL)
     processed_text = ""
+    total_count = 0
 
     for match in matches:
         script_num = int(match[0])  # Get the script number
@@ -182,7 +185,8 @@ def permutation_sandwich_logic_surface_transl(input_text, substitutions, sandwic
 
         texts_to_process = [hum_text] + bot_texts
 
-        result = apply_substitutions(texts_to_process, substitutions)
+        result, count = apply_substitutions(texts_to_process, substitutions)
+        total_count += int(count)
         processed_text += _format_tag(script_num, hum_text, bot_texts, sandwich_flag)
 
         if result and any(x is not None for x in result):
@@ -192,7 +196,7 @@ def permutation_sandwich_logic_surface_transl(input_text, substitutions, sandwic
                 for i in range(1, len(result))
             ]
             processed_text += _format_tag(script_num, new_hum, new_bots, sandwich_flag)
-
+    logging.info(f'Total substitutions are {total_count}')
     return processed_text
 
 # Function to extract unique HUM utterances per script number
