@@ -192,4 +192,9 @@ The script is also outputting prompt data that can be used for evaluating the ch
   ```
 5. Sandwich (mixed format)
   ```
+  <a script.1 type=SDW>
+  <u speaker=HUM>(street.n sidewalk shade-on), (shade.n on-street)</u>
+  <u speaker=HUM>(man.n)</u>
+  <u speaker=HUM>(clock.n green tall)</u>
+  </a>
   ```
