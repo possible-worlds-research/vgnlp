@@ -1,4 +1,3 @@
-
 # VGNLP Botchen
 
 VGNLP Botchen extracts and formats data from the [Visual Genome](https://homes.cs.washington.edu/~ranjay/visualgenome/index.html) dataset to train and evaluate a tiny chatbot. It turns scene descriptions into conversational data, applies optional augmentation and permutation, and includes tools for evaluating chatbot responses.
@@ -13,18 +12,18 @@ The project includes the following scripts:
   - Key options/parameters:
   
     - `ids`: List of `(vg_id, new_id)` pairs to extract. `E.g. ids = [(1, 1), (3, 2), (4, 3), (71, 4), (9, 5)]`
-    - `substitution_terms_list`: List of terms to substitute with synonyms or hypernyms from ConceptNet.
+    - `substitution_terms_list`: List of terms to substitute with synonyms or hypernyms from ConceptNet. You can select which terms to substitute (`e.g. term_list = ['car','jacket','shirt', 'man','woman', 'tree','road', 'bicycle']`).
     - `increase_corpus_flag`: If `True`, adds similar situations to increase data. Similarity is measured in terms of common entities.
-    - `permutation_flag`: Applies word substitutions from [https://conceptnet.io/][ConceptNet]. Random substitution from a list of hypernyms and synonims. You can select which terms to substitute (`e.g. term_list = ['car','jacket','shirt', 'man','woman', 'tree','road', 'bicycle']`).
+    - `permutation_flag`: Applies word substitutions from [ConceptNet]([https://homes.cs.washington.edu/~ranjay/visualgenome/index.html](https://conceptnet.io/). Random substitution from a list of hypernyms and synonims. 
     - `training_and_test_sets`. Boolean. Whether to split data into train/test sets
     - `limited`, `limited_max_utterances`: Limit utterances per situation (for small data testing).
     - `test_mode`, `test_max_situations`: Extract a subset of situations for testing.
     - `write_all_files`: If `True`, saves all generated file versions
     
-  -  Dependencies 
+  -  Dependencies:
+    
     - `./scripts/utils_extract_from_corpora.py`
     - `./scripts/utils_permutation_prompt.py`
-    
     - External files:
     
       - `./data/ideallanguage.txt` (from unzipping `./data/ideallanguage.zip`)
@@ -71,7 +70,7 @@ In region_graphs.json.dsc:
 
 The extractor generates five formats, depending on your training/evaluation needs:
 
-1. Logic → Logic 
+1. Logic ? Logic 
   ```
   <script.1 type=CONV> 
   <u speaker=HUM>(clock.n green tall)</u>
@@ -83,7 +82,7 @@ The extractor generates five formats, depending on your training/evaluation need
   <u speaker=BOT>(shade.n on-street)</u>
   </script.1>
   ```
-2. Logic → Surface
+2. Logic ? Surface
   ```
   <a script.1 type=DSC>
   <u speaker=HUM>(clock.n green tall)</u>
@@ -96,7 +95,7 @@ The extractor generates five formats, depending on your training/evaluation need
   </a>
   ```
 
-3. Surface → Logic
+3. Surface ? Logic
   ```
   <a script.1 type=DSC>
   <u speaker=HUM>tall green clock</u>
@@ -109,7 +108,7 @@ The extractor generates five formats, depending on your training/evaluation need
   </a>
   ```
 
-4. Surface → Surface
+4. Surface ? Surface
   ```
   <script.1 type=CONV>
   <u speaker=HUM>tall green clock</u>
@@ -143,9 +142,8 @@ The extractor generates five formats, depending on your training/evaluation need
 
 The script is also outputting prompt data that can be used for evaluating the chatbot. In the format of:
 
-1. Logic → Logic 
+1. Logic ? Logic 
   ```
-  <script.1 type=CONV>
   <script.1 type=CONV>
   <u speaker=HUM>(man.n wears-gym_shoe)</u>
   <u speaker=HUM>(gym_shoe.n grey lover-wears)</u>
@@ -159,7 +157,7 @@ The script is also outputting prompt data that can be used for evaluating the ch
   </script.1>
   ```
 
-2. Logic → Surface
+2. Logic ? Surface
   ```
   <a script.1 type=DSC>
   <u speaker=HUM>(shade.n on-street), (street.n sidewalk shade-on)</u>
@@ -169,7 +167,7 @@ The script is also outputting prompt data that can be used for evaluating the ch
   </a>
   ```
 
-3. Surface → Logic
+3. Surface ? Logic
   ```
   <a script.1 type=DSC>
   <u speaker=HUM>tall green clock</u>
@@ -180,7 +178,7 @@ The script is also outputting prompt data that can be used for evaluating the ch
   </a>
   ```
 
-4. Surface → Surface
+4. Surface ? Surface
   ```
   <script.1 type=CONV>
   <u speaker=HUM>tall green clock</u>
@@ -194,5 +192,9 @@ The script is also outputting prompt data that can be used for evaluating the ch
   ```
 5. Sandwich (mixed format)
   ```
-  ???
+  <a script.1 type=SDW>
+  <u speaker=HUM>(street.n sidewalk shade-on), (shade.n on-street)</u>
+  <u speaker=HUM>(man.n)</u>
+  <u speaker=HUM>(clock.n green tall)</u>
+  </a>
   ```

@@ -1,3 +1,32 @@
+'''
+This script includes functions for creating permutations.
+
+Main Functional Areas:
+-----------------------
+1. **General Utilities**:
+   - `substitute_word`, `apply_substitutions`: Perform word-level substitutions in dialogue texts.
+   - `extract_situations`: Breaks a text corpus into indexed dialogue blocks.
+   - `extract_entities_properties`: Extracts entity-property structures.
+
+2. **Substitution and Synonym Expansion**:
+   - `generate_random_substitutions`: Randomly selects alternatives from a synonym list.
+   - `get_conceptnet_hypernyms_synonyms`: Uses ConceptNet API to retrieve synonyms and hypernyms
+     (supports automated data augmentation).
+
+3. **Logic-to-Logic and Surface-to-Surface Conversion**:
+   - `prompt_surface_logic`: Extracts unique utterances and formats them as prompt data. 
+   - `permutation_surface_logic`: Creates augmented data by substituting terms within surface-form conversations.
+
+4. **Logic--Surface and Sandwich Format Conversion**:
+   - `permutation_sandwich_logic_surface_transl`: Applies substitutions to sandwich, Logic--Surface data.
+   - `prompt_sandwich_logic_surface_transl`: Extracts utterances from sandwich or logic--surface format and 
+     reformats them for prompting.
+
+External Dependencies:
+------------------------
+- Requires network access to query ConceptNet API: `http://api.conceptnet.io`
+'''
+
 import re
 import random
 import os
@@ -214,8 +243,8 @@ def prompt_sandwich_logic_surface_transl(input_text, sandwich_flag=None):
         hum_utterances = set(re.findall(hum_pattern, content))
         
         if sandwich_flag:
-            bot_utterances = {utt.strip() for utt in re.findall(bot_pattern, content) if utt.strip()}
-            hum_utterances.update(bot_utterances)
+            utterances = {utt.strip() for utt in re.findall(hum_pattern, content) if utt.strip()}
+            hum_utterances.update(utterances)
 
         script_groups.setdefault(script_num, set()).update(hum_utterances)
 
