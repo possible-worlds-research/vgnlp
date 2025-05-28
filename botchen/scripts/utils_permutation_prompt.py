@@ -243,8 +243,8 @@ def prompt_sandwich_logic_surface_transl(input_text, sandwich_flag=None):
         hum_utterances = set(re.findall(hum_pattern, content))
         
         if sandwich_flag:
-            bot_utterances = {utt.strip() for utt in re.findall(bot_pattern, content) if utt.strip()}
-            hum_utterances.update(bot_utterances)
+            utterances = {utt.strip() for utt in re.findall(hum_pattern, content) if utt.strip()}
+            hum_utterances.update(utterances)
 
         script_groups.setdefault(script_num, set()).update(hum_utterances)
 

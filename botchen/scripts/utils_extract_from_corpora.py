@@ -301,12 +301,19 @@ def match_logical_surface_forms(surface_map, logical_map):
     new_map = {}
     for entity_ids, description in surface_map.items():
         entity_ids_list = entity_ids.split(", ")
-        properties_list = []
+
+        entity_form_list = []
         for entity_id in entity_ids_list:
             if entity_id in logical_map:
-                properties_list.append(logical_map[entity_id])
-        properties_str = "), (".join(sorted(set(properties_list)))
-        key = f"({properties_str})"
+                props = logical_map[entity_id].split()
+                if not props:
+                    continue
+                entity = props[0]
+                entity_props = list(dict.fromkeys(props[1:]))
+                entity_str = f"{entity} {' '.join(entity_props)}".strip()
+                entity_form_list.append(f"({entity_str})")
+
+        key = ", ".join(entity_form_list)
         descriptions = [desc.strip().lower() for desc in description.split(" || ")]
         new_map.setdefault(key, set()).update(descriptions)
     # logging.info('Surface-logic mapping process finished')
@@ -332,6 +339,7 @@ def write_logic_to_surface(file_path, mapping, plus_index, reverse=False, write_
                 lines.append('</a>\n')
     content = '\n'.join(lines)
     if write_all_files is True:
+        os.makedirs(os.path.dirname(file_path), exist_ok=True)
         with open(file_path, "w", encoding="utf-8") as file:
             file.write(content)
         return content
@@ -359,6 +367,7 @@ def write_surface(file_path, mapping, plus_index, write_all_files=False):
             lines.append(f'</script.{mapping.index(situation) + plus_index}>\n')
     content = '\n'.join(lines)
     if write_all_files is True:
+        os.makedirs(os.path.dirname(file_path), exist_ok=True)
         with open(file_path, "w", encoding="utf-8") as file:
             file.write(content)
         return content
@@ -388,6 +397,7 @@ def write_sandwich(file_path, mapping, plus_index, write_all_files=False):
             lines.append(f'</a>\n')
     content = '\n'.join(lines)     
     if write_all_files is True:
+        os.makedirs(os.path.dirname(file_path), exist_ok=True)
         with open(file_path, "w", encoding="utf-8") as file:
             file.write(content)
         return content

@@ -70,7 +70,7 @@ In region_graphs.json.dsc:
 
 The extractor generates five formats, depending on your training/evaluation needs:
 
-1. Logic → Logic 
+1. Logic ? Logic 
   ```
   <script.1 type=CONV> 
   <u speaker=HUM>(clock.n green tall)</u>
@@ -82,7 +82,7 @@ The extractor generates five formats, depending on your training/evaluation need
   <u speaker=BOT>(shade.n on-street)</u>
   </script.1>
   ```
-2. Logic → Surface
+2. Logic ? Surface
   ```
   <a script.1 type=DSC>
   <u speaker=HUM>(clock.n green tall)</u>
@@ -95,7 +95,7 @@ The extractor generates five formats, depending on your training/evaluation need
   </a>
   ```
 
-3. Surface → Logic
+3. Surface ? Logic
   ```
   <a script.1 type=DSC>
   <u speaker=HUM>tall green clock</u>
@@ -108,7 +108,7 @@ The extractor generates five formats, depending on your training/evaluation need
   </a>
   ```
 
-4. Surface → Surface
+4. Surface ? Surface
   ```
   <script.1 type=CONV>
   <u speaker=HUM>tall green clock</u>
@@ -142,7 +142,7 @@ The extractor generates five formats, depending on your training/evaluation need
 
 The script is also outputting prompt data that can be used for evaluating the chatbot. In the format of:
 
-1. Logic → Logic 
+1. Logic ? Logic 
   ```
   <script.1 type=CONV>
   <u speaker=HUM>(man.n wears-gym_shoe)</u>
@@ -157,7 +157,7 @@ The script is also outputting prompt data that can be used for evaluating the ch
   </script.1>
   ```
 
-2. Logic → Surface
+2. Logic ? Surface
   ```
   <a script.1 type=DSC>
   <u speaker=HUM>(shade.n on-street), (street.n sidewalk shade-on)</u>
@@ -167,7 +167,7 @@ The script is also outputting prompt data that can be used for evaluating the ch
   </a>
   ```
 
-3. Surface → Logic
+3. Surface ? Logic
   ```
   <a script.1 type=DSC>
   <u speaker=HUM>tall green clock</u>
@@ -178,7 +178,7 @@ The script is also outputting prompt data that can be used for evaluating the ch
   </a>
   ```
 
-4. Surface → Surface
+4. Surface ? Surface
   ```
   <script.1 type=CONV>
   <u speaker=HUM>tall green clock</u>
@@ -192,5 +192,9 @@ The script is also outputting prompt data that can be used for evaluating the ch
   ```
 5. Sandwich (mixed format)
   ```
-  ???
+  <a script.1 type=SDW>
+  <u speaker=HUM>(street.n sidewalk shade-on), (shade.n on-street)</u>
+  <u speaker=HUM>(man.n)</u>
+  <u speaker=HUM>(clock.n green tall)</u>
+  </a>
   ```
