@@ -1,3 +1,4 @@
 .DS_Store
 ./botchen/idea
 ./botchen/scripts/__pycache__
+./botchen/.Rhistory
