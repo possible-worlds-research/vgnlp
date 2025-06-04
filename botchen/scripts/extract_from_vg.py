@@ -70,6 +70,9 @@ Dependencies
 import logging
 logging.basicConfig(level=logging.INFO)
 import os
+import nltk
+nltk.download('punkt')
+from nltk.tokenize import word_tokenize
 
 from utils_extract_from_corpora import extract_logic_language, extract_surface_language
 from utils_extract_from_corpora import extract_surface_logic_utterances, filter_region_graph_mapping, match_logical_surface_forms
@@ -238,20 +241,18 @@ def create_training_files(logic_scripts, surface_logic_mapping, increase_corpus_
     if increase_corpus_flag is True:
 
         if training_and_test_sets is False:
-            if permutation_flag is False and write_all_files is True:
-                os.makedirs(os.path.dirname('./data/training/augmented/'), exist_ok=True)
-                with open('./data/training/augmented/augmented_logic_to_logic.txt', 'w', encoding='utf-8') as file:
-                    file.write(''.join(logic_scripts))
+            os.makedirs(os.path.dirname('./data/training/augmented/'), exist_ok=True)
+            with open('./data/training/augmented/augmented_logic_to_logic.txt', 'w', encoding='utf-8') as file:
+                file.write(''.join(logic_scripts))
             logic_to_surface = write_logic_to_surface('./data/training/augmented/augmented_logic_to_surface.txt', surface_logic_mapping, plus_index=1, reverse=False, write_all_files=write_all_files)
             surface_to_logic = write_logic_to_surface('./data/training/augmented/augmented_surface_to_logic.txt', surface_logic_mapping, plus_index=1, reverse=True, write_all_files=write_all_files)
             surface_to_surface = write_surface('./data/training/augmented/augmented_surfaceto_surface.txt', surface_logic_mapping, plus_index=1, write_all_files=write_all_files)
             sandwich = write_sandwich('./data/training/augmented/augmented_sandwich.txt', surface_logic_mapping, plus_index=1, write_all_files=write_all_files)
 
         if training_and_test_sets is True:
-            if permutation_flag is False and write_all_files is True:
-                os.makedirs(os.path.dirname('./data/training/augmented/'), exist_ok=True)
-                with open('./data/training/augmented/testing_augmented_logic_to_logic.txt', 'w', encoding='utf-8') as file:
-                    file.write(''.join(logic_scripts))
+            os.makedirs(os.path.dirname('./data/training/augmented/'), exist_ok=True)
+            with open('./data/training/augmented/testing_augmented_logic_to_logic.txt', 'w', encoding='utf-8') as file:
+                file.write(''.join(logic_scripts))
             logic_to_surface = write_logic_to_surface('./data/testing/augmented/testing_augmented_logic_to_surface.txt', surface_logic_mapping, plus_index=plus_index_testing, reverse=False, write_all_files=write_all_files)
             surface_to_logic = write_logic_to_surface('./data/testing/augmented/testing_augmented_surface_to_logic.txt', surface_logic_mapping, plus_index=plus_index_testing, reverse=True, write_all_files=write_all_files)
             surface_to_surface = write_surface('./data/testing/augmented/testing_augmented_surfaceto_surface.txt', surface_logic_mapping, plus_index=plus_index_testing, write_all_files=write_all_files)
@@ -266,7 +267,7 @@ CALLING FUNCTION
 if __name__ == "__main__":
 
     # Extracts all (HUM utterance, BOT utterance) pairs from region_graph.
-    matches = extract_surface_logic_utterances("../../vgnlp2/dsc/region_graphs.json.dsc")
+    matches = extract_surface_logic_utterances("../dsc/region_graphs.json.dsc")
     ideallanguage="./data/ideallanguage.txt"
 
     '''
@@ -289,14 +290,13 @@ if __name__ == "__main__":
         ]
 
     increase_corpus_flag = True
-    training_and_test_sets=True
+    training_and_test_sets=False
 
     permutation_flag = True  # This applies the permutations and writes the files 
-
     write_all_files = True # This makes it write files of augmented and original
 
     limited = True
-    limited_max_utterances = 4 # These make the situation be of x utterances
+    limited_max_utterances = 2 # These make the situation be of x utterances
 
     test_mode = True
     test_max_situations = 2 # These make the x situations from which we extract
@@ -304,12 +304,12 @@ if __name__ == "__main__":
     logging.info(f"Chosen parameters:\nchosen ids: {ids}\nincrease_corpus_flag: {increase_corpus_flag}, training_and_test_sets: {training_and_test_sets}, permutation_flag: {permutation_flag}, write_all_files: {write_all_files}, limited: {limited}, limited_max_utterances: {limited_max_utterances}, test_mode: {test_mode}, test_max_situations: {test_max_situations}")
     if increase_corpus_flag:
 
-        min_referent_overlap_ratio=0.7 # FOCUSED ON REFERENT SITUATION Minimum proportion of referent entities that must appear in a target situation (i.e. we apply this to referent situations, e.g. *1 if the referent situation is as such)
+        min_referent_overlap_ratio=0.5 # FOCUSED ON REFERENT SITUATION Minimum proportion of referent entities that must appear in a target situation (i.e. we apply this to referent situations, e.g. *1 if the referent situation is as such)
         min_target_overlap_ratio=0.1 # FOCUSED ON TARGET SITUATION  Minimum proportion of target entities that must match referent entities (i.e. we apply this to all the *10 situations which we are finding similar to a referent situation *1)
         min_content_length=1000 # Minimum number of characters in a situation's content
         max_content_length=10000 # Maximum number of characters in a situation's content
         max_per_referent=2 # Maximum number of similar situations to extract per referent situation (e.g. we take *10* situations similar to situation 1, *10* to situation 2)
-        train_split_ratio=0.5 # Percentage of training and testing sets
+        train_split_ratio=0.7 # Percentage of training and testing sets
         logging.info(f"min_referent_overlap_ratio {min_referent_overlap_ratio}, min_target_overlap_ratio {min_target_overlap_ratio}, min_content_length {min_content_length}, max_content_length {max_content_length}, max_per_referent {max_per_referent}, train_split_ratio {train_split_ratio}")
         
         '''
@@ -403,12 +403,17 @@ if __name__ == "__main__":
                 with open(f'./data/training/permuted_files/{name}.txt', "w", encoding="utf-8") as f:
                     f.write(content)
 
+                total_tokens = len(word_tokenize(content))
+                logging.info(f'{name} has {total_tokens} tokens')
+
         for name in [
             "prompt_logic_to_logic", "prompt_surface_to_surface", "prompt_logic_to_surface", "prompt_surface_to_logic","prompt_sandwich"]:
                 content = eval(name)
                 os.makedirs(os.path.dirname(f'./data/training/prompt_files/{name}.txt'), exist_ok=True)
                 with open(f'./data/training/prompt_files/{name}.txt', "w", encoding="utf-8") as f:
                     f.write(content)
+                total_tokens = len(word_tokenize(content))
+                logging.info(f'{name} has {total_tokens} tokens')
 
         if training_and_test_sets is True:
 
@@ -450,6 +455,9 @@ if __name__ == "__main__":
                 with open(f'./data/testing/permuted_files/{name}.txt', "w", encoding="utf-8") as f:
                     f.write(content)
 
+                total_tokens = len(word_tokenize(content))
+                logging.info(f'{name} has {total_tokens} tokens')
+
             for name in [
                 "prompt_testing_logic_scripts",
                 "prompt_testing_surface_to_surface",
@@ -461,3 +469,5 @@ if __name__ == "__main__":
                 os.makedirs(os.path.dirname(f'./data/testing/prompt_files/{name}.txt'), exist_ok=True)
                 with open(f'./data/testing/prompt_files/{name}.txt', "w", encoding="utf-8") as f:
                     f.write(content)
+                total_tokens = len(word_tokenize(content))
+                logging.info(f'{name} has {total_tokens} tokens')
