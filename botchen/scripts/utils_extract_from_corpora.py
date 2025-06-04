@@ -384,16 +384,16 @@ def write_sandwich(file_path, mapping, plus_index, write_all_files=False):
         for i in range(len(flattened_items)):
             lines.append(f'<a script.{situation_idx + plus_index} type=SDW>')
             logical_form, surface_form = flattened_items[i]
-            lines.append(f"<u speaker=HUM>{logical_form}</u>")
-            lines.append(f"<u speaker=BOT>{surface_form}</u>")
+            lines.append(f"<u speaker=HUM>{surface_form}</u>")
+            lines.append(f"<u speaker=BOT>{logical_form}</u>")
             if i + 1 < len(flattened_items):
                 next_logical, next_surface = flattened_items[i + 1]
-                lines.append(f"<u speaker=BOT>{next_surface}</u>")
                 lines.append(f"<u speaker=BOT>{next_logical}</u>")
+                lines.append(f"<u speaker=BOT>{next_surface}</u>")
             else:
                 old_logical, old_surface = flattened_items[0]
-                lines.append(f"<u speaker=BOT>{old_surface}</u>")
                 lines.append(f"<u speaker=BOT>{old_logical}</u>")
+                lines.append(f"<u speaker=BOT>{old_surface}</u>")
             lines.append(f'</a>\n')
     content = '\n'.join(lines)     
     if write_all_files is True:

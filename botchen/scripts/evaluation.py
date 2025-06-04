@@ -358,6 +358,7 @@ def bleu_algorithm(script_id, file_path_references, file_path_candidates, n_gram
     #     tokenized_candidates = clean_list(tokenized_candidates)
 
     # # BLEU score
+    # Is it possible to do it between all the candidates and then doing like an average?
     bleu_scores=[]
     weights = tuple([1.0 if i == 0 else 0.0 for i in range(n_gram)])
     for candidate in tokenized_candidates:

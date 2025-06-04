@@ -14,7 +14,7 @@ The project includes the following scripts:
     - `ids`: List of `(vg_id, new_id)` pairs to extract. `E.g. ids = [(1, 1), (3, 2), (4, 3), (71, 4), (9, 5)]`
     - `substitution_terms_list`: List of terms to substitute with synonyms or hypernyms from ConceptNet. You can select which terms to substitute (`e.g. term_list = ['car','jacket','shirt', 'man','woman', 'tree','road', 'bicycle']`).
     - `increase_corpus_flag`: If `True`, adds similar situations to increase data. Similarity is measured in terms of common entities.
-    - `permutation_flag`: Applies word substitutions from [ConceptNet]([https://homes.cs.washington.edu/~ranjay/visualgenome/index.html](https://conceptnet.io/). Random substitution from a list of hypernyms and synonims. 
+    - `permutation_flag`: Applies word substitutions from [ConceptNet](https://conceptnet.io/) . Random substitution from a list of hypernyms and synonims. 
     - `training_and_test_sets`. Boolean. Whether to split data into train/test sets
     - `limited`, `limited_max_utterances`: Limit utterances per situation (for small data testing).
     - `test_mode`, `test_max_situations`: Extract a subset of situations for testing.
@@ -34,7 +34,18 @@ The project includes the following scripts:
 
 - **`./scripts/evaluation.py`**  
   Compares chatbot outputs with reference responses using vector-based similarity and BLEU score.
-  
+
+## Training procedure
+
+(A) Retrieve VG data by unzipping ```./data/ideallanguage.zip``` in order to have ```./data/ideallanguage.txt```. Run the commands following the ```README``` in the parent ```vgnlp``` folder, in order to retrieve the ```../dsc/region_graphs.json.dsc``` file. 
+(B) Build the data by running ```./script/extract_from_vg.py```, setting up the desidered parameters in ```lines 273-315``` (from ```'BEGINNING DYNAMICAL PARAMETERS WHICH THE USER CAN CHANGE'``` to ```ENDING DYNAMICAL PARAMETERS WHICH THE USER CAN CHANGE```).
+(C) Upload [here](https://denotation.eu.pythonanywhere.com/train/) the ```./data/permuted_{format}.txt``` or ```./data/augmented_{format}.txt``` file (based on your preferences and parameters) with which to train the model.
+(D) In the Bash console, go to ```~/care-training``` and run ```flask training run chat en 128/256/512/1024/2048``` (possibility, change the iterations in ```./app/modules/chat/en/.env.trainconfig```, ```lr_decay_iters``` item).
+(E) Upload the ```./data/prompt_{format}.txt``` file within which to automatically chat with Botchen [here](https://denotation.eu.pythonanywhere.com/train/).
+(F) After the training is finished, automatically prompt a conversation running ```flask training chat_test module=chat language=en topk=2 content_path='./data/chat/en/prompt_{format}.txt' print_statement=True``` on the Bash console. The function I made for running the test conversatio is in ```./app/cli/controllers.py```, ```chat_test``` function. This process is saving the test conversation in ```./logs/evaluation/chat_test_topk{top_k}_format{format}.txt```
+
+WARNING If you want to try different training sets, always remember to delete the ```./data/prompt_{format}.txt``` file from the ```./data/``` folder, since it might mess up the training.
+                              
 ***
 
 ## Data Format Examples:
@@ -70,7 +81,7 @@ In region_graphs.json.dsc:
 
 The extractor generates five formats, depending on your training/evaluation needs:
 
-1. Logic ? Logic 
+1. Logic to Logic 
   ```
   <script.1 type=CONV> 
   <u speaker=HUM>(clock.n green tall)</u>
@@ -82,7 +93,7 @@ The extractor generates five formats, depending on your training/evaluation need
   <u speaker=BOT>(shade.n on-street)</u>
   </script.1>
   ```
-2. Logic ? Surface
+2. Logic to Surface
   ```
   <a script.1 type=DSC>
   <u speaker=HUM>(clock.n green tall)</u>
@@ -95,7 +106,7 @@ The extractor generates five formats, depending on your training/evaluation need
   </a>
   ```
 
-3. Surface ? Logic
+3. Surface to Logic
   ```
   <a script.1 type=DSC>
   <u speaker=HUM>tall green clock</u>
@@ -108,7 +119,7 @@ The extractor generates five formats, depending on your training/evaluation need
   </a>
   ```
 
-4. Surface ? Surface
+4. Surface to Surface
   ```
   <script.1 type=CONV>
   <u speaker=HUM>tall green clock</u>
@@ -124,17 +135,17 @@ The extractor generates five formats, depending on your training/evaluation need
 5. Sandwich (mixed format)
 ```
 <a script.1 type=SDW>
-<u speaker=HUM>(clock.n green tall)</u>
-<u speaker=BOT>tall green clock</u>
-<u speaker=BOT>shade is along the street</u>
+<u speaker=HUM>tall green clock</u>
+<u speaker=BOT>(clock.n green tall)</u>
 <u speaker=BOT>(shade.n on-street), (street.n sidewalk shade-on)</u>
+<u speaker=BOT>shade is along the street</u>
 </a>
 
 <a script.1 type=SDW>
-<u speaker=HUM>(shade.n on-street), (street.n sidewalk shade-on)</u>
 <u speaker=BOT>shade is along the street</u>
-<u speaker=BOT>a man wears grey shoes</u>
+<u speaker=HUM>(shade.n on-street), (street.n sidewalk shade-on)</u>
 <u speaker=BOT>(gym_shoe.n grey man-wears), (man.n wears-gym_shoe)</u>
+<u speaker=BOT>a man wears grey shoes</u>
 </a>
 ```
 
@@ -142,7 +153,7 @@ The extractor generates five formats, depending on your training/evaluation need
 
 The script is also outputting prompt data that can be used for evaluating the chatbot. In the format of:
 
-1. Logic ? Logic 
+1. Logic to Logic 
   ```
   <script.1 type=CONV>
   <u speaker=HUM>(man.n wears-gym_shoe)</u>
@@ -157,7 +168,7 @@ The script is also outputting prompt data that can be used for evaluating the ch
   </script.1>
   ```
 
-2. Logic ? Surface
+2. Logic to Surface
   ```
   <a script.1 type=DSC>
   <u speaker=HUM>(shade.n on-street), (street.n sidewalk shade-on)</u>
@@ -167,7 +178,7 @@ The script is also outputting prompt data that can be used for evaluating the ch
   </a>
   ```
 
-3. Surface ? Logic
+3. Surface to Logic
   ```
   <a script.1 type=DSC>
   <u speaker=HUM>tall green clock</u>
@@ -178,7 +189,7 @@ The script is also outputting prompt data that can be used for evaluating the ch
   </a>
   ```
 
-4. Surface ? Surface
+4. Surface to Surface
   ```
   <script.1 type=CONV>
   <u speaker=HUM>tall green clock</u>
@@ -193,8 +204,8 @@ The script is also outputting prompt data that can be used for evaluating the ch
 5. Sandwich (mixed format)
   ```
   <a script.1 type=SDW>
-  <u speaker=HUM>(street.n sidewalk shade-on), (shade.n on-street)</u>
-  <u speaker=HUM>(man.n)</u>
-  <u speaker=HUM>(clock.n green tall)</u>
+  <u speaker=HUM>shade is along the street</u>
+  <u speaker=HUM>a man wears grey shoes</u>
+  <u speaker=HUM>bicycles are seen in the bckground</u>
   </a>
   ```

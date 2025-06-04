@@ -80,21 +80,15 @@ from sklearn.metrics.pairwise import cosine_similarity
 from scipy.spatial.distance import pdist, squareform
 from scipy.stats import spearmanr
 
-# Command to initiate evaluation with vectorial space in a CLI
-@training.cli.command('evaluation_with_vectorial_space')
+@training.cli.command('chat_test')
 @click.argument('module')
 @click.argument('language')
-@click.argument('topk') # Top K responses to consider from the model
-@click.argument('content_path') # Path to the content file that contains the scripts
-@click.argument('situation_id', type=int) # ID of the specific conversation script to evaluate
-@click.argument('print_statement', required=False)  # Optional argument to print statements live
-@click.argument('log_file', required=False) # Optional argument to log output to a file
-def make_evaluating_conversation(module, language, topk,
-                                 content_path, situation_id,
-                                 print_statement=False):  # Removed log_file flag
-    conversation = ''  # Initialize an empty string to store the conversation
+@click.argument('topk')
+@click.argument('prompt_path')
+@click.argument('print_statement', required=False)
+def chat_test(module, language, topk, prompt_path, print_statement=False):
+    conversation = ''
 
-    # Load the specified GPT models (encoder and decoder) based on the provided module and language
     gpt_models = load_gpt_models(module, modules_path, language)
     model = gpt_models['chat'][0]
     encoder = gpt_models['chat'][1]
@@ -103,55 +97,37 @@ def make_evaluating_conversation(module, language, topk,
 
     log_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../logs/evaluation/'))
 
-    # Load content only once
-    with open(content_path, 'r') as content_file:
+    with open(prompt_path, 'r') as content_file:
         content = content_file.read()
 
-    # Log file path setup (now it's always written)
-    log_file_path = os.path.join(log_dir, f'evaluation_situation{situation_id}.txt')
+    match = re.search(r'prompt_(.*?)\.txt$', prompt_path)
+    if match:
+        format = match.group(1)
+    log_file_path = os.path.join(log_dir, f'chat_test_topk{topk}_format_{format}.txt')
     with open(log_file_path, 'a') as file:
         file.write(f">> Loaded models {gpt_models.keys()}\n\n")
 
-    # Function to handle script processing
-    def process_script(script, situation_id):
+    def process_script(script):
         nonlocal conversation
-        # Extract all utterances from the script
-        utterances = re.findall(r'<u speaker=[^>]*>\((.*?)\)</u>', script)
+        utterances = re.findall(r'<u speaker=[^>]*>(.*?)</u>', script)
 
-        # Loop through each utterance in the script and generate a response
         for utterance in utterances:
-            for _ in range(4):  # Generate a response for each utterance up to 4 times
+            for _ in range(4):
+                prompt = f"<u speaker=HUM>{utterance}</u>\n<u speaker=BOT>"
+
                 if len(conversation.strip()) > 0:
-                    # If conversation already has content, append the next utterance to it
                     conversation += f' <u speaker=HUM>{utterance}</u> <u speaker=BOT>'
                 else:
                     conversation = f'<u speaker=HUM>{utterance}</u> <u speaker=BOT>'
 
-                # Generate a response from the model using the conversation context
                 with torch.no_grad():
                     with ctx:
-                        response, _ = generate(utterance, conversation, model, encoder, decoder, 0.9, int(topk), 64)
+                        response, _ = generate(prompt, conversation, model, encoder, decoder, 0.9, int(topk), 64)
 
-                # If required, print the prompt and response
                 if print_statement:
-                    print(f">> Prompt: {utterance}\n>> Response: {response} \n\n")
-
-                # Write the log entry to the file
+                    print(f">> Prompt: {prompt}\n>> Response: {response} \n\n")
                 with open(log_file_path, 'a') as file:
-                    log_entry = f"\n>> Prompt: {utterance}\n>> Response: {response} \n"
+                    log_entry = f"\n>> Prompt: {prompt}\n>> Response: {response} \n"
                     file.write(log_entry)
 
-    # For each situation_id (1 to 13) process the corresponding script
-    if situation_id == 0:
-        process_script(content, situation_id)
-    else:
-        situation_pattern = rf"<script\.{situation_id} type=CONV>.*?</script\.{situation_id}>"
-        script = re.findall(situation_pattern, content, re.DOTALL)  # Search for the script block
-
-        if not script:
-            print(f"No situation found with id={situation_id}")
-            return None
-
-        script = script[0]  # Only need the first match
-        print(script)
-        process_script(script, situation_id)
+    process_script(content)
