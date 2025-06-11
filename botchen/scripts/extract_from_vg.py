@@ -267,7 +267,7 @@ CALLING FUNCTION
 if __name__ == "__main__":
 
     # Extracts all (HUM utterance, BOT utterance) pairs from region_graph.
-    matches = extract_surface_logic_utterances("../dsc/region_graphs.json.dsc")
+    matches = extract_surface_logic_utterances("../../vgnlp2/dsc/region_graphs.json.dsc")
     ideallanguage="./data/ideallanguage.txt"
 
     '''
