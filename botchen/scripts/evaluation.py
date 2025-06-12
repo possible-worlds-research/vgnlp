@@ -27,14 +27,8 @@ from nltk.translate.bleu_score import sentence_bleu
 
 ################## VECTORIAL SPACES EVALUATION METHOD
 
-def extract_entities_properties(content, optimal_script):
+def optimal_extract_entities(utterances):
     entity_properties = {}
-    if optimal_script:
-        utterance_pattern = re.compile(r'<u speaker=[^>]*>\((.*?)\)</u>')
-    else:
-        utterance_pattern = re.compile(r'<u speaker=[^>]+>\(([^)>]+)\)', re.DOTALL)
-    utterances = utterance_pattern.findall(content)
-
     for utterance in utterances:
         entity = utterance.split('.')[0]
         properties = utterance.split()[1:]
@@ -44,6 +38,63 @@ def extract_entities_properties(content, optimal_script):
             entity_properties[entity] = set()
         for prop in properties:
             entity_properties[entity].add(prop)
+    return entity_properties
+
+def evaluation_extract_entities(utterances, print_discarded = False):
+    entity_properties = {}
+    discarded_items = []
+    for utt in utterances:
+
+        match = re.search(r'<u speaker=(?:HUM|BOT)>\s*\((.*?)\)', utt)
+        if match:
+            utt = match.group(1).strip()
+        if (utt.startswith('(') and utt.endswith(')')):
+            utt = utt.strip('()').strip()
+        # For the surface to logic, we could also consider adding this part of the code
+        # Now, since the conversation wasn't so good, I did not put it 
+        # for utterance in bot_utterances:
+        #         items = re.findall(r'\((.*?)\)', utterance)
+        #         utterances.extend(items)
+
+        utt = utt.strip()
+        tokens = utt.split()
+
+        if not tokens:
+            discarded_items.append(f"Empty utterance after stripping: {utt}")
+            continue
+
+        entity_token = tokens[0]
+        if not entity_token.endswith('.n'):
+            discarded_items.append(f"Entity does not end with .n: {entity_token} in utterance: {utt}")
+            continue
+
+        entity = entity_token[:-2]
+        seen_props = set()
+        valid_props = []
+        properties = []
+
+        for prop in tokens[1:]:
+            if prop.endswith('.n'):
+                discarded_items.append(f"Discarded property (ends with .n): {prop} in utterance {utt}")
+                continue
+            if re.search(r'\.\w+', prop):
+                discarded_items.append(f"Discarded property (contains suffix like .something): {prop}")
+                continue
+            if prop in seen_props:
+                # discarded_items.append(f"Duplicate property in same utterance: {prop}")
+                continue
+
+            seen_props.add(prop)
+            valid_props.append(prop)
+
+        if entity not in entity_properties:
+            entity_properties[entity] = set()
+        entity_properties[entity].update(valid_props)
+
+    if print_discarded:
+        print("\n[Discarded Items]")
+        for item in discarded_items:
+            print("-", item)
     return entity_properties
 
 def read_file(file_path):
@@ -98,7 +149,27 @@ def print_similarity_results(row_similarity, column_similarity, evaluation_type)
     # print(f"Top 10 Most Similar Columns:")
     # print(column_similarity.nlargest(10))
 
-def create_matrices(evaluating_framework, evaluation_file_path, optimal_script=False, saving_directory=None, entity_check=False):
+def extract_entities_properties(content, optimal_script, format_type = None):
+    if optimal_script:
+        if format_type == 'logic_to_logic':
+            utterance_pattern = re.compile(r'<u speaker=[^>]*>\((.*?)\)</u>')
+            utterances = utterance_pattern.findall(content)
+            entity_properties = optimal_extract_entities(utterances)
+        if format_type == 'surface_to_logic':
+            bot_utterances = re.findall(r'<u speaker=BOT>(.*?)</u>', content)
+            utterances = []
+            for utterance in bot_utterances:
+                items = re.findall(r'\((.*?)\)', utterance)
+                utterances.extend(items)
+            entity_properties = optimal_extract_entities(utterances)
+    else:
+        utterance_pattern = re.compile(r">> Response: (.*?)\n\n")
+        utterances = utterance_pattern.findall(content)
+        entity_properties = evaluation_extract_entities(utterances,print_discarded = False)
+
+    return entity_properties
+
+def create_matrices(evaluating_framework, format_type, evaluation_file_path, optimal_script=False, saving_directory=None):
     """
     Creates an activation matrix from a script, either an optimal or evaluation script.
     Optionally saves the matrix and returns entity properties.
@@ -109,14 +180,17 @@ def create_matrices(evaluating_framework, evaluation_file_path, optimal_script=F
     
     Returns:
     - activation_matrix (list): Activation matrix.
-    - df (pandas.DataFrame): Matrix as DataFrame.
     """
     content = ""
     
     # Load the content from the script(s)
     if optimal_script:
-        content = read_file('./data/training/prompt_files/prompt_logic_to_logic.txt')
-        entity_properties = extract_entities_properties(content, optimal_script=True)
+        if format_type == 'logic_to_logic':
+            content = read_file(f'./data/training/prompt_files/prompt_{format_type}.txt')
+
+        if format_type == 'surface_to_logic':
+            content = read_file(f'./data/training/permuted_files/permuted_{format_type}.txt')
+        entity_properties = extract_entities_properties(content, optimal_script=True, format_type = format_type)
     else:
         content = read_evaluation_files(evaluation_file_path)
         entity_properties = extract_entities_properties(content, optimal_script=False)
@@ -135,11 +209,9 @@ def create_matrices(evaluating_framework, evaluation_file_path, optimal_script=F
     if saving_directory:
         save_matrix_to_csv(df, saving_directory, evaluating_framework, optimal_script)
     
-    if entity_check:
-        return entity_properties
     return activation_matrix, df
 
-def evaluation_with_vectorial_space(evaluating_framework):
+def evaluation_with_vectorial_space(evaluating_framework, format_type):
     """
     Compares vectorial spaces from an evaluation script and an optimal training script.
     
@@ -153,8 +225,16 @@ def evaluation_with_vectorial_space(evaluating_framework):
     print(f"\nEvaluating with framework {evaluating_framework}")
     
     # Create the evaluation and optimal matrices
-    eval_matrix, eval_df = create_matrices(evaluating_framework, './data/evaluation_data/evaluation_logic_to_logic/', saving_directory='./data/data_analysis/logical/vectorial_spaces/evaluation/')
-    optimal_matrix, optimal_df = create_matrices(evaluating_framework, './data/evaluation_data/evaluation_logic_to_logic/', optimal_script=True, saving_directory='./data/data_analysis/logical/vectorial_spaces/optimal/')
+    eval_matrix, eval_df = create_matrices(evaluating_framework, 
+        format_type,
+        f'./data/evaluation_data/evaluation_{format_type}/',
+        saving_directory = f'./data/vectorial_spaces/evaluation_{format_type}/')
+
+    optimal_matrix, optimal_df = create_matrices(evaluating_framework, 
+        format_type,
+        f'./data/evaluation_data/evaluation_{format_type}/',
+        saving_directory = f'./data/vectorial_spaces/evaluation_{format_type}/', 
+        optimal_script=True)
     
     # Get common rows and columns
     matching_rows = eval_df.index.intersection(optimal_df.index)
@@ -291,15 +371,25 @@ def bleu_algorithm(file_path_references, file_path_candidates, n_gram, sandwich_
     return average_bleu_score
 
 
-######### LOGIC TO LOGIC
+# ######### LOGIC TO LOGIC
+
 print('\nVectorial Space Evaluation - Logic to Logic Data')
-evaluation_with_vectorial_space(1)
-evaluation_with_vectorial_space(2)
-###############
+evaluation_with_vectorial_space(1, 'logic_to_logic')
+evaluation_with_vectorial_space(2, 'logic_to_logic')
+
+# ###############
+
+########### SURFACE TO LOGIC
+
+print('\nVectorial Space Evaluation - Surface to Logic Data')
+evaluation_with_vectorial_space(1, 'surface_to_logic')
+evaluation_with_vectorial_space(2, 'surface_to_logic')
+
+########### BLEU
 
 n_gram_value=1
 
-############# LOGICAL TO SURFACE
+# ############# LOGICAL TO SURFACE
 
 print('\nBLEU Algorithm Evaluation - Logic to Surface Data')
 score_logic_surface = bleu_algorithm_logical_surface('./data/training/permuted_files/permuted_logic_to_surface.txt',
@@ -308,7 +398,7 @@ score_logic_surface = bleu_algorithm_logical_surface('./data/training/permuted_f
 
 print(f'    Average BLEU score, n-grams {n_gram_value} is {score_logic_surface}')
 
-########## SURFACE
+# ########## SURFACE
 
 print('\nBLEU Algorithm Evaluation - Surface Data')
 score_surface = bleu_algorithm('./data/training/prompt_files/prompt_surface_to_surface.txt',
@@ -316,7 +406,7 @@ score_surface = bleu_algorithm('./data/training/prompt_files/prompt_surface_to_s
                                            n_gram_value)
 print(f'    Average BLEU score, n-grams {n_gram_value} is {score_surface}')
 
-############### SANDWICH
+# ############### SANDWICH
 
 print('\nBLEU Algorithm Evaluation - Sandwich Data')
 score_sandwich = bleu_algorithm('./data/training/prompt_files/prompt_sandwich.txt',

@@ -296,10 +296,10 @@ if __name__ == "__main__":
     write_all_files = True # This makes it write files of augmented and original
 
     limited = True
-    limited_max_utterances = 2 # These make the situation be of x utterances
+    limited_max_utterances = 5 # These make the situation be of x utterances
 
     test_mode = True
-    test_max_situations = 2 # These make the x situations from which we extract
+    test_max_situations = 7 # These make the x situations from which we extract
 
     logging.info(f"Chosen parameters:\nchosen ids: {ids}\nincrease_corpus_flag: {increase_corpus_flag}, training_and_test_sets: {training_and_test_sets}, permutation_flag: {permutation_flag}, write_all_files: {write_all_files}, limited: {limited}, limited_max_utterances: {limited_max_utterances}, test_mode: {test_mode}, test_max_situations: {test_max_situations}")
     if increase_corpus_flag:
