@@ -250,7 +250,46 @@ def prompt_sandwich_logic_surface_transl(input_text, sandwich_flag=None):
 
     return output_text
 
-##############
+################ OTHER UTILS
+
+def make_csv_from_data(file_path, name):
+    with open(file_path, 'r') as file:
+        data = file.read()
+    evaluation_pattern = re.compile(r"Evaluating with framework: (\d+), script eval ID: (\d+), script optimal ID: (\d+)")
+    row_similarity_pattern = re.compile(r"Average Rows Similarity:\s+([\d\.]+)")
+    column_similarity_pattern = re.compile(r"Average Column Similarity:\s+([\d\.]+)")
+
+    summary_data = []
+    evaluations = data.strip().split("NEWNEW")
+
+    for eval_block in evaluations[0:]:  # Skip empty first split
+        eval_info = evaluation_pattern.search(eval_block)
+        row_sim = row_similarity_pattern.search(eval_block)
+        col_sim = column_similarity_pattern.search(eval_block)
+
+        if eval_info and row_sim and col_sim:
+            framework, eval_script, opt_script = eval_info.groups()
+            avg_row_sim = float(row_sim.group(1))
+            avg_col_sim = float(col_sim.group(1))
+
+            summary_data.append([framework, eval_script, opt_script, avg_row_sim, avg_col_sim])
+
+    summary_df = pd.DataFrame(summary_data, columns=["Framework", "Eval Script", "Optimal Script", "Avg Row Similarity", "Avg Column Similarity"])
+    summary_df.to_csv(f"{name}", index=False)
+
+def heatmap(file_path, row_column, eval_optimal, number_eval, log_file):
+    # row_column= Row/Column based on what you want to evaluate
+    # eval_optimal= Optimal/Eval based on what you are comparing
+    # number_eval = 1/2 if evaluating with 1 or 2 eval
+    df = pd.read_csv(file_path)
+    heatmap_data = df.pivot_table(index='Eval Script', columns='Optimal Script', values=f'Avg {row_column} Similarity')
+    plt.figure(figsize=(10, 8))
+    sns.heatmap(heatmap_data, annot=True, cmap="Blues", linewidths=0.5)
+    plt.title(f'EVAL {number_eval} - Heatmap of Avg {row_column} Similarity')
+    plt.xlabel('Optimal Script')
+    plt.ylabel(f'{eval_optimal} Script')
+    plt.savefig(log_file)
+
 # Previous substitution item, just to have an idea 
 
 substitutions_per_situation = {
