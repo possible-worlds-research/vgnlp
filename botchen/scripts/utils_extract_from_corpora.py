@@ -114,118 +114,97 @@ Also, to extract entities and properties
 Ideallanguage is the input file: './data/ideallanguage.txt'
 '''
 
-# file_path:str, situation_id:str, new_situation_id:Optional[str]=None, limited:bool=False
-def extract_logic_language(file_path, situation_id, new_situation_id, limited, limited_max_utterances):
-    # logging.info('Logic-logic mapping process began')
+def read_situation_block(file_path, situation_id):
     with open(file_path, 'r') as file:
         content = file.read()
+    match = re.search(rf"<situation id={situation_id}>(.*?)</situation>", content, re.DOTALL)
+    return match.group(1) if match else None
 
-    situation_pattern = rf"<situation id={situation_id}>(.*?)</situation>"
-    match = re.search(situation_pattern, content, re.DOTALL)
+def extract_entity_blocks(situation_body, limited=False, limit=0):
+    entity_blocks = re.findall(r"<entity id=(\d+)>\s*(.*?)\s*</entity>", situation_body, re.DOTALL)
+    return entity_blocks[:limit] if limited else entity_blocks
 
-    if not match:
+def extract_entity_names(entity_blocks):
+    id_to_name = {}
+    for entity_id, block in entity_blocks:
+        lines = block.strip().split("\n")
+        match = re.match(r"([\w\.]+)\(\d+\)", lines[0].strip())
+        if match:
+            raw_name = match.group(1)
+            norm_name = re.sub(r"\.n\.\d+", ".n", raw_name)
+            id_to_name[entity_id] = norm_name
+    return id_to_name
+
+def extract_entity_properties(entity_blocks, id_to_name):
+    id_to_properties = {eid: [] for eid in id_to_name}
+    for entity_id, block in entity_blocks:
+        lines = block.strip().split("\n")[1:]  # Skip name line
+        for line in lines:
+            match = re.match(r"([\w|]+)\(([\d,]+)\)", line.strip())
+            if not match:
+                continue
+            rel_or_prop, ids_str = match.groups()
+            ref_ids = ids_str.split(",")
+
+            if len(ref_ids) > 1:
+                source_id, target_id = ref_ids
+                if source_id == entity_id and target_id in id_to_name:
+                    target_name = re.sub(r"\.n", "", id_to_name[target_id])
+                    id_to_properties[entity_id].append(f"{rel_or_prop}-{target_name}")
+                elif target_id == entity_id and source_id in id_to_name:
+                    source_name = re.sub(r"\.n", "", id_to_name[source_id])
+                    id_to_properties[entity_id].append(f"{source_name}-{rel_or_prop}")
+            else:
+                clean_name = re.sub(r"\.n", "", rel_or_prop)
+                id_to_properties[entity_id].append(clean_name)
+    return id_to_properties
+
+def generate_script_output(new_situation_id, id_to_name, id_to_properties):
+    script_output = ''
+    entities = list(id_to_name.items())
+
+    for i, (eid, name) in enumerate(entities):
+        props = id_to_properties.get(eid, [])
+        clean_props = [re.sub(r"\.n\.\d+", "", p) for p in props]
+        unique_props = list(dict.fromkeys(clean_props))
+
+        script = f"<script.{new_situation_id} type=CONV>\n"
+        script += f'<u speaker=HUM>({name} {" ".join(unique_props)})</u>\n'
+
+        if i + 1 < len(entities):
+            next_eid, next_name = entities[i + 1]
+        else:
+            next_eid, next_name = entities[0]
+
+        next_props = id_to_properties.get(next_eid, [])
+        next_clean_props = [re.sub(r"\.n\.\d+", "", p) for p in next_props]
+        next_unique_props = list(dict.fromkeys(next_clean_props))
+
+        script += f'<u speaker=BOT>({next_name} {" ".join(next_unique_props)})</u>\n'
+        script += f"</script.{new_situation_id}>\n\n"
+
+        script_output += script
+
+    return script_output
+
+def extract_logic_language(file_path, situation_id, new_situation_id=None, limited=False, limited_max_utterances=0):
+    situation_body = read_situation_block(file_path, situation_id)
+    if not situation_body:
         logging.info(f"No situation found with id={situation_id}")
         return None
 
-    situation_body = match.group(1)
+    entity_blocks = extract_entity_blocks(situation_body, limited, limited_max_utterances)
+    id_to_name = extract_entity_names(entity_blocks)
+    id_to_properties = extract_entity_properties(entity_blocks, id_to_name)
+    entity_ids = [eid for eid, _ in entity_blocks]
 
-    # Maps: entity ID -> entity name / list of properties
-    entity_id_to_name = {}
-    entity_id_to_properties = {}
-
-    # Extract entity IDs
-    entity_id_regex = r'<entity id=(\d+)>'
-    entity_ids_in_block = re.findall(entity_id_regex, situation_body)
-
-    # Get all full entity blocks
-    entity_block_regex = re.compile(r"<entity id=(\d+)>\s*(.*?)\s*</entity>", re.DOTALL)
-    entity_blocks = list(entity_block_regex.finditer(situation_body))
-
-    if limited:
-        # For test mode: limit to first x entities
-        entity_blocks = entity_blocks[:limited_max_utterances]
-        entity_ids_in_block = [match.group(1) for match in entity_blocks]
-
-    # FIRST PASS: Extract entity names and initialize property lists
-    for entity_match in entity_blocks:
-        entity_id = entity_match.group(1)
-        entity_content_lines = entity_match.group(2).strip().split("\n")
-        first_line = entity_content_lines[0].strip()
-
-        entity_name_match = re.match(r"([\w\.]+)\(\d+\)", first_line)
-        if entity_name_match:
-            raw_entity_name = entity_name_match.group(1)
-            normalized_entity_name = re.sub(r"\.n\.\d+", ".n", raw_entity_name)
-
-            entity_id_to_name[entity_id] = normalized_entity_name
-            entity_id_to_properties[entity_id] = []
-
-    # SECOND PASS: Extract properties and between-entity relations
-    for entity_match in entity_blocks:
-        entity_id = entity_match.group(1)
-        entity_content_lines = entity_match.group(2).strip().split("\n")
-
-        for line in entity_content_lines[1:]:
-            line = line.strip()
-            prop_match = re.match(r"([\w|]+)\(([\d,]+)\)", line)
-            if prop_match:
-                relation_or_property, referenced_ids_str = prop_match.groups()
-                referenced_ids = referenced_ids_str.split(",")
-
-                # If it's a relation between entities, store the relationship.
-                if len(referenced_ids) > 1:
-                    source_id, target_id = referenced_ids
-                    if source_id == entity_id and target_id in entity_id_to_name:
-                        target_name = re.sub(r"\.n", "", entity_id_to_name[target_id])
-                        entity_id_to_properties[entity_id].append(f"{relation_or_property}-{target_name}")
-                    elif target_id == entity_id and source_id in entity_id_to_name:
-                        source_name = re.sub(r"\.n", "", entity_id_to_name[source_id])
-                        entity_id_to_properties[entity_id].append(f"{source_name}-{relation_or_property}")
-                else:
-                    clean_property_name = re.sub(r"\.n", "", relation_or_property)
-                    entity_id_to_properties[entity_id].append(clean_property_name)
-
-    # THIRD PASS: Generate new script blocks, if requested
     if new_situation_id:
-        script_output = ''
-        entity_list = list(entity_id_to_name.items())
+        return generate_script_output(new_situation_id, id_to_name, id_to_properties)
 
-        for i in range(len(entity_list)):
-            curr_entity_id, curr_entity_name = entity_list[i]
-            curr_props = entity_id_to_properties.get(curr_entity_id, [])
-            cleaned_curr_props = [re.sub(r"\.n\.\d+", "", prop) for prop in curr_props]
-            unique_curr_props = list(dict.fromkeys(cleaned_curr_props))
-
-            script = f"<script.{new_situation_id} type=CONV>\n"
-            script += f'<u speaker=HUM>({curr_entity_name} {" ".join(unique_curr_props)})</u>\n'
-
-            if i + 1 < len(entity_list):
-                next_entity_id, next_entity_name = entity_list[i + 1]
-                next_props = entity_id_to_properties.get(next_entity_id, [])
-                cleaned_next_props = [re.sub(r"\.n\.\d+", "", prop) for prop in next_props]
-                unique_next_props = list(dict.fromkeys(cleaned_next_props))
-                script += f'<u speaker=BOT>({next_entity_name} {" ".join(unique_next_props)})</u>\n'
-            else:
-                # Use the first utterance again as fallback
-                first_entity_id, first_entity_name = entity_list[0]
-                first_props = entity_id_to_properties.get(first_entity_id, [])
-                cleaned_first_props = [re.sub(r"\.n\.\d+", "", prop) for prop in first_props]
-                unique_first_props = list(dict.fromkeys(cleaned_first_props))
-                script += f'<u speaker=BOT>({first_entity_name} {" ".join(unique_first_props)})</u>\n'
-            script += f"</script.{new_situation_id}>\n\n"
-            script_output += script
-        # logging.info('Logic-logic mapping process finished [script_output]')
-        return script_output
-
-    # DEFAULT: Return a dictionary of entity names and their properties
-    if new_situation_id is None:
-        entity_summary_map = {}
-        for entity_id, name in entity_id_to_name.items():
-            entity_summary_map[entity_id] = f"{name} {' '.join(entity_id_to_properties[entity_id])}"
-        # logging.info('Logic-logic mapping process finished [mapping only]')
-        return entity_summary_map, situation_body, entity_ids_in_block, entity_id_to_name
-# entity_summary_map: Dict[str, str], situation_body: str, entity_ids_in_block: List[str], entity_id_to_name: Dict[str, str]
-# script_output: str
+    entity_summary_map = {
+        eid: f"{name} {' '.join(id_to_properties[eid])}" for eid, name in id_to_name.items()
+    }
+    return entity_summary_map, situation_body, entity_ids, id_to_name
 
 '''
 SURFACE TO SURFACE
@@ -408,6 +387,56 @@ def write_sandwich(file_path, mapping, plus_index, write_all_files=False):
 INCREASE DATA AMOUNT
 '''
 
+def read_all_situations(ideallanguage_path):
+    with open(ideallanguage_path, 'r') as file:
+        content = file.read()
+    return re.findall(r"<situation id=(.*?)>(.*?)</situation>", content, re.DOTALL)
+
+def extract_entity_names_from_situation(situation_content):
+    entity_pattern = re.compile(r"<entity id=(\d+)>\s*(.*?)\s*</entity>", re.DOTALL)
+    all_entities = entity_pattern.finditer(situation_content)
+
+    entity_names = []
+    for match in all_entities:
+        lines = match.group(2).strip().split("\n")
+        if not lines:
+            continue
+        name_match = re.match(r"([\w\.]+)\(\d+\)", lines[0].strip())
+        if name_match:
+            clean_name = re.sub(r"\.n\.\d+", ".n", name_match.group(1))
+            entity_names.append(clean_name)
+    return set(entity_names)
+
+def match_situations(referent_set, all_situations, original_ids_list,
+                     min_referent_overlap_ratio, min_target_overlap_ratio,
+                     min_content_length, max_content_length):
+    matched_ids = []
+
+    for target_id, content in all_situations:
+        target_set = extract_entity_names_from_situation(content)
+        if not referent_set or not target_set:
+            continue
+
+        overlap = referent_set & target_set
+        overlap_ratio_ref = len(overlap) / len(referent_set)
+        overlap_ratio_tgt = len(overlap) / len(target_set)
+
+        if (overlap_ratio_ref >= min_referent_overlap_ratio and
+            overlap_ratio_tgt >= min_target_overlap_ratio and
+            min_content_length <= len(content) <= max_content_length and
+            target_id not in original_ids_list):
+            matched_ids.append(target_id)
+
+    return matched_ids
+
+def split_and_sample_matched_ids(matched_ids, max_per_referent, train_split_ratio):
+    selected = random.sample(matched_ids, min(len(matched_ids), max_per_referent))
+    split_idx = int(len(selected) * (1 - train_split_ratio))
+    return selected[:split_idx], selected[split_idx:], selected
+
+def assign_new_ids(ids, offset_start):
+    return [(int(sid), offset_start + i) for i, sid in enumerate(ids)]
+
 def increase_the_corpus(
         ideallanguage_path,
         original_situation_ids,
@@ -419,101 +448,52 @@ def increase_the_corpus(
         max_per_referent,
         train_split_ratio
 ):
-    
-    # Here I am substituting the list got from all_entities_map with the original tuples names
     key_mapping = {a: b for b, a in original_situation_ids}
     adjusted_entities_map = {key_mapping[k]: v for k, v in all_entities_map.items()}
-    original_ids_list = [k for k,v in original_situation_ids]
+    original_ids_list = {str(k) for k, _ in original_situation_ids}
 
-    with open(ideallanguage_path, 'r') as file:
-        content = file.read()
-
-    situation_pattern = r"<situation id=(.*?)>(.*?)</situation>"
-    all_situations = re.findall(situation_pattern, content, re.DOTALL)
+    all_situations = read_all_situations(ideallanguage_path)
 
     all_situation_id_dict = defaultdict(list)
     training_situation_id_dict = defaultdict(list)
     test_situation_id_dict = defaultdict(list)
 
-    # Look at the situations from which we are augmenting
-    for referent_id, (original_id, referent_entity_map) in enumerate(adjusted_entities_map.items(), start=1):
+    for referent_id, (original_id, referent_map) in enumerate(adjusted_entities_map.items(), start=1):
+        referent_set = set(referent_map.values())
 
-        referent_entities = list(referent_entity_map.values())
-        referent_set = set(referent_entities)
-        # logging.info(f'Training Referent Situation {referent_id}, Original VG Situation {original_id} - Reference Entities: {referent_set}')
-        matched_ids = []
+        matched_ids = match_situations(
+            referent_set,
+            all_situations,
+            original_ids_list,
+            min_referent_overlap_ratio,
+            min_target_overlap_ratio,
+            min_content_length,
+            max_content_length
+        )
 
-        # For each situation in the corpus, iterate to see what we are extracting
-        for target_id, situation_content in all_situations:
-            entity_pattern = re.compile(r"<entity id=(\d+)>\s*(.*?)\s*</entity>", re.DOTALL)
-            all_entities = list(entity_pattern.finditer(situation_content))
-            # Look if there is  match and append
-            extracted_names = []
-            for match in all_entities:
-                entity_lines = match.group(2).strip().split("\n")
-                if not entity_lines:
-                    continue
-                first_line = entity_lines[0].strip()
-                name_match = re.match(r"([\w\.]+)\(\d+\)", first_line)
-                if name_match:
-                    clean_name = re.sub(r"\.n\.\d+", ".n", name_match.group(1))
-                    extracted_names.append(clean_name)
-            target_set = set(extracted_names)
-
-            # Look at the intersection and if there are all the conditions I want
-            overlap = referent_set & target_set
-            if referent_set and target_set:
-                overlap_ratio_ref = len(overlap) / len(referent_set)
-                overlap_ratio_tgt = len(overlap) / len(target_set)
-                if (overlap_ratio_ref >= min_referent_overlap_ratio and
-                    overlap_ratio_tgt >= min_target_overlap_ratio and
-                    min_content_length <= len(situation_content) <= max_content_length):
-                    matched_ids.append(target_id)
-
-        for id in original_ids_list:
-            original_id_str = str(id)
-            if original_id_str in matched_ids:
-                matched_ids.remove(original_id_str)
-
-        # logging.info(f"Training Referent Situation {referent_id}, Original VG Situation {original_id} matched with {len(matched_ids)} other vg situations: {matched_ids}")
-        # If there is the possibility, divide between training and testing items. In any case, build a dictionary with all the items
         if matched_ids:
-            selected = random.sample(matched_ids, min(len(matched_ids), max_per_referent))
-            split_idx = int(len(selected) * (1 - train_split_ratio))
-            test_situation_id_dict[referent_id] = selected[:split_idx]
-            training_situation_id_dict[referent_id] = selected[split_idx:]
-            all_situation_id_dict[referent_id] = selected
-            # logging.info(f"Selected {len(selected)}")
+            test_ids, train_ids, all_ids = split_and_sample_matched_ids(
+                matched_ids, max_per_referent, train_split_ratio
+            )
+            test_situation_id_dict[referent_id] = test_ids
+            training_situation_id_dict[referent_id] = train_ids
+            all_situation_id_dict[referent_id] = all_ids
         else:
             logging.info("We couldn't find enough matches, auch")
 
-    # Plain lists with ids to retrieve from the ideallanguage for incrementing the corpus, with no store_id attached
-    all_augmenting_situation_ids = []
-    training_augmenting_situation_ids = []
-    testing_augmenting_situation_ids = []
-    for augmenting_situation_ids in all_situation_id_dict.values():
-        all_augmenting_situation_ids.extend(augmenting_situation_ids)
-    for training_situation_ids in training_situation_id_dict.values():
-        training_augmenting_situation_ids.extend(training_situation_ids)
-    for testing_situation_ids in test_situation_id_dict.values():
-        testing_augmenting_situation_ids.extend(testing_situation_ids)
+    # Flatten results
+    all_ids_flat = [sid for sids in all_situation_id_dict.values() for sid in sids]
+    train_ids_flat = [sid for sids in training_situation_id_dict.values() for sid in sids]
+    test_ids_flat = [sid for sids in test_situation_id_dict.values() for sid in sids]
 
-    # Tuple lists with ids to retrieve from the ideallanguage for incrementing the corpus and their store_id attached
-    final_augmenting_situation_ids = []
-    final_training_situation_ids = []
-    final_testing_situation_ids = []
+    # Assign new IDs
     base_index = len(all_situation_id_dict) + 1
+    final_all = assign_new_ids(all_ids_flat, base_index)
+    final_train = assign_new_ids(train_ids_flat, base_index)
+    final_test = assign_new_ids(test_ids_flat, base_index + len(train_ids_flat))
 
-    for offset, item in enumerate(all_augmenting_situation_ids):
-        final_augmenting_situation_ids.append((int(item), base_index + offset)) # It should be the len of the original situations chosen (since it's s dict mapping from that)
-    for offset, item in enumerate(training_augmenting_situation_ids):
-        final_training_situation_ids.append((int(item), base_index + offset)) # I am counting from here cause I will add them to the original situations for the training and I do not want numbers to mess up
-    for offset, item in enumerate(testing_augmenting_situation_ids):
-        new_base_index = len(training_augmenting_situation_ids) + base_index
-        final_testing_situation_ids.append((int(item), new_base_index+offset))
+    logging.info(f'We have found {len(all_ids_flat)} total situations, '
+                 f'{len(train_ids_flat)} training situations '
+                 f'and {len(test_ids_flat)} testing situations to increase the corpus')
 
-    logging.info(f'We have found {len(all_augmenting_situation_ids)} total situations, '
-                 f'{len(training_augmenting_situation_ids)} training situations '
-                 f'and {len(testing_augmenting_situation_ids)} testing situation we can use to increase the corpus')
-
-    return final_augmenting_situation_ids, final_training_situation_ids, final_testing_situation_ids
+    return final_all, final_train, final_test

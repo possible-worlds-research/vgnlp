@@ -34,6 +34,7 @@ The project includes the following scripts:
 
 - **`./scripts/evaluation.py`**  
   Compares chatbot outputs with reference responses using vector-based similarity and BLEU score.
+  The Surface to Surface, Logic to Surface and Sandwich are evaluating throughout BLEU. Surface to Logic and Logic to Logic through vectorial spaces similarities.
 
 ## Training procedure
 
@@ -44,7 +45,7 @@ The project includes the following scripts:
 - Upload the ```./data/prompt_{format}.txt``` file within which to automatically chat with Botchen [here](https://denotation.eu.pythonanywhere.com/train/).
 - After the training is finished, automatically prompt a conversation running ```flask training chat_test module=chat language=en topk=2 content_path='./data/chat/en/prompt_{format}.txt' print_statement=True``` on the Bash console. The function I made for running the test conversatio is in ```./app/cli/controllers.py```, ```chat_test``` function. This process is saving the test conversation in ```./logs/evaluation/chat_test_topk{top_k}_format{format}.txt```
 
-WARNING If you want to try different training sets, always remember to delete the ```./data/prompt_{format}.txt``` file from the ```./data/``` folder, since it might mess up the training.
+WARNING If you want to try different training sets, always remember to delete the ```./data/prompt_{format}.txt``` file from the ```./data/``` folder in Bash, since it might mess up the training.
                               
 ***
 

@@ -1,3 +1,7 @@
+# EVALUATION SCRIPT
+
+################## VECTORIAL SPACES EVALUATION METHOD
+
 # The .**`/scripts/evaluation.py`** script evaluates the conversation output by comparing it with the optimal training data.
 # The script creates vectorial spaces for both the evaluation and training data, with entities as rows and properties of them as columns.
 # It then compares the two spaces using cosine similarity. Two frameworks are used for comparison.
@@ -5,15 +9,7 @@
 # The second matches the intersecting dimensions between the two spaces and compares them.
 # Cosine similarity is computed for both rows and columns.
 
-# **Usage:** (A) Evaluating framework: ```python3 ./scripts/evaluation.py evaluation 1 2 2```.
-# Evaluates within first evaluation framework, evaluating situation 2, optimal situation 2.
-#
-# (B) Create matrices: ```python ./scripts/evaluation.py create_matrices 1 --optimal_script --saving_directory './data/vectorial_spaces/optimal/'```.
-# Evaluating  with situation 1, from training (otpimal) data and saving the space in the directory.
-# If one wants to make them from evaluating data: ```python3 ./scripts/evaluation.py create_matrices 2 --saving_directory './data/vectorial_spaces/evaluation/'```.
-# In general, the user will need **`./data/evaluation_data/*'** as input
-# and generates './data/vectorial_spaces/evaluation/*' or './data/vectorial_spaces/optimal/*' as csv outputs.
-# The user can dinamically select the situation in which to test the model on and if to store it.
+################## BLEU ALGORITHM METHOD
 
 import os
 import sklearn
@@ -253,133 +249,75 @@ def evaluation_with_vectorial_space(evaluating_framework, format_type):
     row_similarity, column_similarity = calculate_similarities(new_optimal_df, new_eval_df)
     print_similarity_results(row_similarity, column_similarity, evaluation_type)
 
-
 ################ BLEU EVALUATION
 
-def bleu_algorithm_logical_surface(file_path_references, file_path_candidates, n_gram):
-    # References
-    with open(file_path_references, 'r') as reference_file:
-        references_content = reference_file.read()
-    references_pattern = r'<a script\.(\d+) type=DSC>\s*<u speaker=HUM>(.*?)</u>\s*<u speaker=BOT>(.*?)</u>\s*</a>'
-    references_matches = re.findall(references_pattern, references_content, re.DOTALL)
-    prompt_references_dict = {}
-    for reference_match in references_matches:
-        hum_text = reference_match[1]
-        bot_text = reference_match[2]
-        if hum_text not in prompt_references_dict:
-            prompt_references_dict[hum_text] = set()
-        prompt_references_dict[hum_text].add(bot_text)
+def parse_references(file_path, format_type):
+    with open(file_path, 'r') as f:
+        content = f.read()
 
-    # Candidates
-    with open(file_path_candidates, 'r') as candidate_file:
-        candidate_content = candidate_file.read()
-    candidate_pattern = r">> Prompt: (.*?)\s+>> Response: (.*?)\n\n"
-    candidate_matches = re.findall(candidate_pattern, candidate_content, re.DOTALL)
+    if format_type == 'logic_to_surface':
+        matches = re.findall(
+            r'<a script\.(\d+) type=DSC>\s*<u speaker=HUM>(.*?)</u>\s*<u speaker=BOT>(.*?)</u>\s*</a>', 
+            content, re.DOTALL
+        )
+        ref_dict = {}
+        for _, hum_text, bot_text in matches:
+            ref_dict.setdefault(hum_text, set()).add(bot_text)
+        return ref_dict
+    else:  # surface_to_surface or sandwich
+        matches = re.findall(r'<u speaker=[^>]*>(.*?)</u>', content, re.DOTALL)
+        return [m.split() for m in matches]
 
-    prompt_candidates_dict = {}
-    for candidate_match in candidate_matches:
-        prompt, candidate = candidate_match
-        if prompt in prompt_candidates_dict:
-            prompt_candidates_dict[prompt].append(candidate)
-        else:
-            prompt_candidates_dict[prompt] = [candidate]
+def parse_candidates(file_path, format_type):
+    with open(file_path, 'r') as f:
+        content = f.read()
 
-    # BLEU score
-    bleu_scores=[]
-    weights = tuple([1.0 if i == 0 else 0.0 for i in range(n_gram)])
-    for prompt in prompt_candidates_dict.keys():
-        if prompt in prompt_references_dict:
-            candidate_responses = prompt_candidates_dict[prompt]
-            reference_responses = prompt_references_dict[prompt]
+    if format_type == 'logic_to_surface':
+        matches = re.findall(r">> Prompt: (.*?)\s+>> Response: (.*?)\n\n", content, re.DOTALL)
+        cand_dict = {}
+        for prompt, response in matches:
+            cand_dict.setdefault(prompt, []).append(response)
+        return cand_dict
 
-            tokenized_references = [response.split() for response in reference_responses]
-            tokenized_candidates = [response.split() for response in candidate_responses]
-
-            candidate_bleu_scores = []
-
-            for candidate in tokenized_candidates:
-                score = sentence_bleu(tokenized_references, candidate, weights=weights)
-                candidate_bleu_scores.append(score)
-            highest_score = max(candidate_bleu_scores)
-            bleu_scores.append(highest_score)
-
-    if bleu_scores:
-        average_bleu_score = sum(bleu_scores) / len(bleu_scores)
     else:
-        average_bleu_score = 0
-    return average_bleu_score
+        matches = re.findall(r">> Prompt: (.*?)\s+>> Response: (.*?)\n\n", content, re.DOTALL)
+        return [response.split() for _, response in matches]
 
-def clean_list(data):
-    cleaned = []
-    for sublist in data:
-        if any(word.startswith('<u') or '(' in word or ')' in word or 'speaker=' in word for word in sublist):
-            continue
-        cleaned.append(sublist)
-    return cleaned
+def compute_bleu(tokenized_refs, tokenized_cands, n_gram, format_type):
+    weights = tuple(1.0 if i == 0 else 0.0 for i in range(n_gram))
+    bleu_scores = []
 
-def bleu_algorithm(file_path_references, file_path_candidates, n_gram, sandwich_flag=None):
-    # References (I am extracting the utterances based on the script_id I am evaluating from) OPTIMAL
-    with open(file_path_references, 'r') as reference_file:
-        references_content = reference_file.read()
-
-    if not sandwich_flag: # Surface
-        scripts = re.findall(r"(<script\.\d+ type=CONV>.*?</script\.\d+>)", references_content, re.DOTALL)
-    if sandwich_flag:
-        scripts = re.findall(r"(<a script.\d+ type=SDW>.*?</a>)", references_content, re.DOTALL)
-
-    # Getting the utterances only from the selected situation
-    script_content_reference = references_content
-    references_pattern = r'<u speaker=[^>]*>(.*?)</u>'
-    references_matches = re.findall(references_pattern, script_content_reference, re.DOTALL)
-    tokenized_references = [reference.split() for reference in references_matches]
-
-    # Candidates RESPONSES BOT
-    with open(file_path_candidates, 'r') as candidate_file:
-        candidate_content = candidate_file.read()
-    candidate_pattern = r">> Response: (.*?)\n\n"
-    candidate_matches = re.findall(candidate_pattern, candidate_content, re.DOTALL)
-    tokenized_candidates = [candidate.split() for candidate in candidate_matches]
-    
-    bleu_scores=[]
-    weights = tuple([1.0 if i == 0 else 0.0 for i in range(n_gram)])
-    for candidate in tokenized_candidates:
-
-        candidate_bleu_scores = []
-        references = []
-
-        if sandwich_flag:
-            if any(word.startswith('<u') or '(' in word or ')' in word or 'speaker=' in word for word in candidate):
-                score = 0
-            else:
-                for reference in tokenized_references:
-                    score = sentence_bleu([reference], candidate, weights=weights)
-                    references.append(reference)
-            candidate_bleu_scores.append(score)
-        else:
-            for reference in tokenized_references:
-                score = sentence_bleu([reference], candidate, weights=weights)  # Compare candidate with one reference at a time
-                candidate_bleu_scores.append(score)
-                references.append(reference)
-
-        highest_value = max(candidate_bleu_scores)
-        bleu_scores.append(highest_value)
-
-    if bleu_scores:
-        average_bleu_score = sum(bleu_scores) / len(bleu_scores)
+    if format_type == 'logic_to_surface':
+        for prompt in tokenized_cands:
+            if prompt in tokenized_refs:
+                references = [r.split() for r in tokenized_refs[prompt]]
+                candidates = [c.split() for c in tokenized_cands[prompt]]
+                scores = [sentence_bleu(references, cand, weights=weights) for cand in candidates]
+                bleu_scores.append(max(scores))
     else:
-        average_bleu_score = 0
-    return average_bleu_score
+        for cand in tokenized_cands:
+            if format_type == 'sandwich' and any(x.startswith('<u') or '(' in x or ')' in x or 'speaker=' in x for x in cand):
+                bleu_scores.append(0)
+                continue
+            scores = [sentence_bleu([ref], cand, weights=weights) for ref in tokenized_refs]
+            bleu_scores.append(max(scores))
 
+    return sum(bleu_scores) / len(bleu_scores) if bleu_scores else 0
 
-# ######### LOGIC TO LOGIC
+def bleu_algorithm_scoring(file_path_references, file_path_candidates, n_gram, format_type):
+    references = parse_references(file_path_references, format_type)
+    candidates = parse_candidates(file_path_candidates, format_type)
+    return compute_bleu(references, candidates, n_gram, format_type)
+
+########## LOGIC TO LOGIC
 
 print('\nVectorial Space Evaluation - Logic to Logic Data')
 evaluation_with_vectorial_space(1, 'logic_to_logic')
 evaluation_with_vectorial_space(2, 'logic_to_logic')
 
-# ###############
+#################
 
-########### SURFACE TO LOGIC
+############ SURFACE TO LOGIC
 
 print('\nVectorial Space Evaluation - Surface to Logic Data')
 evaluation_with_vectorial_space(1, 'surface_to_logic')
@@ -389,31 +327,28 @@ evaluation_with_vectorial_space(2, 'surface_to_logic')
 
 n_gram_value=1
 
-# ############# LOGICAL TO SURFACE
+############## LOGICAL TO SURFACE
 
 print('\nBLEU Algorithm Evaluation - Logic to Surface Data')
-score_logic_surface = bleu_algorithm_logical_surface('./data/training/permuted_files/permuted_logic_to_surface.txt',
+score_logic_surface = bleu_algorithm_scoring('./data/training/permuted_files/permuted_logic_to_surface.txt',
                           f'./data/evaluation_data/evaluation_logic_to_surface/evaluation_situation0.txt',
-                          n_gram_value)
+                          n_gram_value, 'logic_to_surface')
 
 print(f'    Average BLEU score, n-grams {n_gram_value} is {score_logic_surface}')
 
-# ########## SURFACE
+########### SURFACE
 
 print('\nBLEU Algorithm Evaluation - Surface Data')
-score_surface = bleu_algorithm('./data/training/prompt_files/prompt_surface_to_surface.txt',
+score_surface = bleu_algorithm_scoring('./data/training/prompt_files/prompt_surface_to_surface.txt',
                                            f'./data/evaluation_data/evaluation_surface/evaluation_situation0.txt',
-                                           n_gram_value)
+                                           n_gram_value, 'surface_to_surface')
 print(f'    Average BLEU score, n-grams {n_gram_value} is {score_surface}')
 
-# ############### SANDWICH
+################ SANDWICH
 
 print('\nBLEU Algorithm Evaluation - Sandwich Data')
-score_sandwich = bleu_algorithm('./data/training/prompt_files/prompt_sandwich.txt',
+score_sandwich = bleu_algorithm_scoring('./data/training/prompt_files/prompt_sandwich.txt',
                        f'./data/evaluation_data/emma_sandwich/evaluation_situation0.txt',
-                       n_gram_value, sandwich_flag=True)
+                       n_gram_value, 'sandwich')
 print(f'    Average BLEU score, n-grams {n_gram_value} is {score_sandwich}')
-
-
-
 
