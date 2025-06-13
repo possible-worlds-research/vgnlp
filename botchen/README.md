@@ -39,9 +39,9 @@ The project includes the following scripts:
 
 - Retrieve VG data by unzipping ```./data/ideallanguage.zip``` in order to have ```./data/ideallanguage.txt```. Run the commands following the ```README``` in the parent ```vgnlp``` folder, in order to retrieve the ```../dsc/region_graphs.json.dsc``` file. 
 - Build the data by running ```./script/extract_from_vg.py```, setting up the desidered parameters in ```lines 273-315``` (from ```'BEGINNING DYNAMICAL PARAMETERS WHICH THE USER CAN CHANGE'``` to ```ENDING DYNAMICAL PARAMETERS WHICH THE USER CAN CHANGE```).
-- Upload [here](https://denotation.eu.pythonanywhere.com/train/) the ```./data/permuted_{format}.txt``` or ```./data/augmented_{format}.txt``` file (based on your preferences and parameters) with which to train the model.
+- Upload the ```./data/permuted_{format}.txt``` or ```./data/augmented_{format}.txt``` file (based on your preferences and parameters) with which to train the model.
 - In the Bash console, go to ```~/care-training``` and run ```flask training run chat en 128/256/512/1024/2048``` (possibility, change the iterations in ```./app/modules/chat/en/.env.trainconfig```, ```lr_decay_iters``` item).
-- Upload the ```./data/prompt_{format}.txt``` file within which to automatically chat with Botchen [here](https://denotation.eu.pythonanywhere.com/train/).
+- Upload the ```./data/prompt_{format}.txt``` file within which to automatically chat with Botchen.
 - After the training is finished, automatically prompt a conversation running ```flask training chat_test module=chat language=en topk=2 content_path='./data/chat/en/prompt_{format}.txt' print_statement=True``` on the Bash console. The function I made for running the test conversatio is in ```./app/cli/controllers.py```, ```chat_test``` function. This process is saving the test conversation in ```./logs/evaluation/chat_test_topk{top_k}_format{format}.txt```
 
 WARNING If you want to try different training sets, always remember to delete the ```./data/prompt_{format}.txt``` file from the ```./data/``` folder, since it might mess up the training.
