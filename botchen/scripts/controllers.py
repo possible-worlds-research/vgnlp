@@ -95,7 +95,7 @@ def chat_test(module, language, topk, prompt_path, print_statement=False):
     decoder = gpt_models['chat'][3]
     print(f">> Loaded models {gpt_models.keys()}\n\n")
 
-    log_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../logs/evaluation/'))
+    log_dir = os.path.join(dir_path, "logs", "evaluation")
 
     with open(prompt_path, 'r') as content_file:
         content = content_file.read()
