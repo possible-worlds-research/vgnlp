@@ -35,6 +35,7 @@ from collections import defaultdict
 import requests
 import random
 import logging
+import math
 
 ################# General functions 
 
@@ -250,9 +251,38 @@ def prompt_sandwich_logic_surface_transl(input_text, sandwich_flag=None):
 
     return output_text
 
+'''
+TRAINING AND TEST SPLIT
+'''
 
+def extract_final_scripts(script_data, train_split_ratio):
 
+    pattern = re.compile(r'(<a script\.(\d+)[^>]*>.*?</a>)|(<script\.(\d+)[^>]*>.*?</script\.\4>)', re.DOTALL)
 
+    all_scripts = {}
+    for match in pattern.findall(script_data):
+        full_match = match[0] or match[2]
+        script_number = match[1] or match[3]
+
+        if script_number not in all_scripts:
+            all_scripts[script_number] = full_match
+        else:
+            all_scripts[script_number] += "\n" + full_match
+    
+    scripts_list = list(all_scripts.values())
+
+    # random.shuffle(scripts_list)
+
+    total_scripts = len(scripts_list)
+
+    scripts_to_select_count = math.ceil(total_scripts * train_split_ratio)
+    training_scripts = scripts_list[:scripts_to_select_count]
+    testing_scripts = scripts_list[scripts_to_select_count:]
+
+    # training_scripts = list(all_scripts.values())[:scripts_to_select_count]
+    # testing_scripts = list(all_scripts.values())[scripts_to_select_count:]
+
+    return all_scripts, training_scripts, testing_scripts
 
 ###############
 ################ OTHER UTILS

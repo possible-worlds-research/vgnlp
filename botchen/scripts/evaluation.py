@@ -20,6 +20,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import nltk
 from nltk.translate.bleu_score import sentence_bleu
+from os.path import dirname, realpath, join
 
 ################## VECTORIAL SPACES EVALUATION METHOD
 
@@ -182,10 +183,12 @@ def create_matrices(evaluating_framework, format_type, evaluation_file_path, opt
     # Load the content from the script(s)
     if optimal_script:
         if format_type == 'logic_to_logic':
-            content = read_file(f'./data/training/prompt_files/prompt_{format_type}.txt')
+            content = read_file(
+                os.path.join(parent_dir, "data", "training", "prompt_files", f"prompt_{format_type}.txt"))
 
         if format_type == 'surface_to_logic':
-            content = read_file(f'./data/training/permuted_files/permuted_{format_type}.txt')
+            content = read_file(
+                os.path.join(parent_dir, "data", "training", "permuted_files", f"permuted_{format_type}.txt"))
         entity_properties = extract_entities_properties(content, optimal_script=True, format_type = format_type)
     else:
         content = read_evaluation_files(evaluation_file_path)
@@ -223,13 +226,13 @@ def evaluation_with_vectorial_space(evaluating_framework, format_type):
     # Create the evaluation and optimal matrices
     eval_matrix, eval_df = create_matrices(evaluating_framework, 
         format_type,
-        f'./data/evaluation_data/evaluation_{format_type}/',
-        saving_directory = f'./data/vectorial_spaces/evaluation_{format_type}/')
+        os.path.join(parent_dir, "data", "evaluation_data", f"evaluation_{format_type}"),
+        saving_directory = os.path.join(parent_dir, "data", "vectorial_spaces", f"evaluation_{format_type}"))
 
     optimal_matrix, optimal_df = create_matrices(evaluating_framework, 
         format_type,
-        f'./data/evaluation_data/evaluation_{format_type}/',
-        saving_directory = f'./data/vectorial_spaces/evaluation_{format_type}/', 
+        os.path.join(parent_dir, "data", "evaluation_data", f"evaluation_{format_type}"),
+        saving_directory = os.path.join(parent_dir, "data", "vectorial_spaces", f"evaluation_{format_type}"), 
         optimal_script=True)
     
     # Get common rows and columns
@@ -311,7 +314,7 @@ def bleu_algorithm_scoring(file_path_references, file_path_candidates, n_gram, f
 
 ########## LOGIC TO LOGIC
 
-print('\nVectorial Space Evaluation - Logic to Logic Data')
+logging.info('\nVectorial Space Evaluation - Logic to Logic Data')
 evaluation_with_vectorial_space(1, 'logic_to_logic')
 evaluation_with_vectorial_space(2, 'logic_to_logic')
 
@@ -319,36 +322,41 @@ evaluation_with_vectorial_space(2, 'logic_to_logic')
 
 ############ SURFACE TO LOGIC
 
-print('\nVectorial Space Evaluation - Surface to Logic Data')
+logging.info('\nVectorial Space Evaluation - Surface to Logic Data')
 evaluation_with_vectorial_space(1, 'surface_to_logic')
 evaluation_with_vectorial_space(2, 'surface_to_logic')
 
 ########### BLEU
 
-n_gram_value=1
-
 ############## LOGICAL TO SURFACE
 
-print('\nBLEU Algorithm Evaluation - Logic to Surface Data')
-score_logic_surface = bleu_algorithm_scoring('./data/training/permuted_files/permuted_logic_to_surface.txt',
-                          f'./data/evaluation_data/evaluation_logic_to_surface/evaluation_situation0.txt',
-                          n_gram_value, 'logic_to_surface')
+logging.info('\nBLEU Algorithm Evaluation - Logic to Surface Data')
+for n_gram_value in range(1,3):
+    score_logic_surface = bleu_algorithm_scoring(
+        os.path.join(parent_dir, "data", "training", "permuted_files", "permuted_logic_to_surface.txt"),
+        os.path.join(parent_dir, "data", "evaluation_data", "evaluation_logic_to_surface", "evaluation_situation0.txt"),
+        n_gram_value, 'logic_to_surface')
 
-print(f'    Average BLEU score, n-grams {n_gram_value} is {score_logic_surface}')
+    logging.info(f'    Average BLEU score, n-grams {n_gram_value} is {score_logic_surface}')
 
 ########### SURFACE
 
-print('\nBLEU Algorithm Evaluation - Surface Data')
-score_surface = bleu_algorithm_scoring('./data/training/prompt_files/prompt_surface_to_surface.txt',
-                                           f'./data/evaluation_data/evaluation_surface/evaluation_situation0.txt',
-                                           n_gram_value, 'surface_to_surface')
-print(f'    Average BLEU score, n-grams {n_gram_value} is {score_surface}')
+logging.info('\nBLEU Algorithm Evaluation - Surface Data')
+for n_gram_value in range(1,3):
+    score_surface = bleu_algorithm_scoring(
+        os.path.join(parent_dir, "data", "training", "prompt_files", "prompt_surface_to_surface.txt"),
+        os.path.join(parent_dir, "data", "evaluation_data", "evaluation_surface", "evaluation_situation0.txt"),
+        n_gram_value, 'surface_to_surface')
+
+    logging.info(f'    Average BLEU score, n-grams {n_gram_value} is {score_surface}')
 
 ################ SANDWICH
 
-print('\nBLEU Algorithm Evaluation - Sandwich Data')
-score_sandwich = bleu_algorithm_scoring('./data/training/prompt_files/prompt_sandwich.txt',
-                       f'./data/evaluation_data/emma_sandwich/evaluation_situation0.txt',
-                       n_gram_value, 'sandwich')
-print(f'    Average BLEU score, n-grams {n_gram_value} is {score_sandwich}')
+logging.info('\nBLEU Algorithm Evaluation - Sandwich Data')
+for n_gram_value in range(1,3):
+    score_sandwich = bleu_algorithm_scoring(
+        os.path.join(parent_dir, "data", "training", "prompt_files", "prompt_sandwich.txt"),
+        os.path.join(parent_dir, "data", "evaluation_data", "emma_sandwich", "evaluation_situation0.txt"),
+        n_gram_value, 'sandwich')
+    logging.info(f'    Average BLEU score, n-grams {n_gram_value} is {score_sandwich}')
 

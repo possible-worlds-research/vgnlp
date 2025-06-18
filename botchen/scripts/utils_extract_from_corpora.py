@@ -12,7 +12,7 @@ Core Capabilities:
 2. **Surface → Surface**: Convert region descriptions into conversational surface-form utterances.
 3. **Logic ↔ Surface**: Match logical entities with surface descriptions using region graphs.
 4. **Sandwich Format**: Mixed sequences with logic and surface alternation.
-5. **Corpus Augmentation**: Expand training/test sets by mining semantically similar VG scenes.
+5. **Corpus Augmentation**: Expand sets by mining semantically similar VG scenes.
 
 Main Functions:
 ---------------
@@ -35,7 +35,6 @@ Key Parameters and Flags:
 - `reverse`: Flag to swap HUM/BOT roles for logic-surface tasks.
 - `write_all_files`: If True, writes all outputs to disk; otherwise returns string.
 - `min_referent_overlap_ratio`, `min_target_overlap_ratio`: Thresholds for corpus augmentation similarity.
-- `train_split_ratio`: Proportion of augmented data used for training (vs. test).
 - `max_per_referent`: Max similar scenes to retrieve per original situation.
 
 ***
@@ -106,6 +105,7 @@ import argparse
 from collections import defaultdict
 import logging
 logging.basicConfig(level=logging.INFO)
+import math
 
 ''' 
 LOGIC TO LOGIC
@@ -187,7 +187,7 @@ def generate_script_output(new_situation_id, id_to_name, id_to_properties):
 
     return script_output
 
-def extract_logic_language(file_path, situation_id, new_situation_id=None, limited=False, limited_max_utterances=0):
+def extract_logic_language(file_path, situation_id, new_situation_id=None, limited=False, limited_max_utterances=0, non_included_ids=None):
     situation_body = read_situation_block(file_path, situation_id)
     if not situation_body:
         logging.info(f"No situation found with id={situation_id}")
@@ -197,6 +197,9 @@ def extract_logic_language(file_path, situation_id, new_situation_id=None, limit
     id_to_name = extract_entity_names(entity_blocks)
     id_to_properties = extract_entity_properties(entity_blocks, id_to_name)
     entity_ids = [eid for eid, _ in entity_blocks]
+
+    if non_included_ids:
+        entity_ids = [id for id in entity_ids if id not in non_included_ids]
 
     if new_situation_id:
         return generate_script_output(new_situation_id, id_to_name, id_to_properties)
@@ -263,15 +266,29 @@ def extract_surface_logic_utterances(file_path):
 
 # Filters and maps human entity IDs (from HUM utterance) to corresponding BOT utterance.
 # valid_ids:set[str], dialogue_pairs:list[tuple[str, str]]
-def filter_region_graph_mapping(valid_ids, dialogue_pairs):
+def filter_region_graph_mapping(ideallanguage_ids, dialogue_pairs):
     result = {}
+
+    common_ids_found = set()
+    ideallaguage_not_found_ids = set()
+
     for hum_ids, bot_utterance in dialogue_pairs:
         cleaned_ids = hum_ids.strip('[]')
         hum_ids_list = cleaned_ids.split(',')  # In case there are multiple IDs
-        valid_ids_found = [id.strip() for id in hum_ids_list if id.strip() in valid_ids]
-        if valid_ids_found:
-            result[', '.join(valid_ids_found)] = bot_utterance.strip()
-    return result
+        hum_ids_list = [id.strip() for id in hum_ids_list]
+        hum_ids_list = list(set(hum_ids_list))
+        ideallanguage_ids_found = [id for id in hum_ids_list if id in ideallanguage_ids]
+
+        if ideallanguage_ids_found:
+            result[', '.join(ideallanguage_ids_found)] = bot_utterance.strip()
+
+            # common_found ids
+            common_ids_found.update(ideallanguage_ids_found)
+
+    # Store to clean the logic format
+    ideallanguage_not_found_ids = [valid_id for valid_id in ideallanguage_ids if valid_id not in common_ids_found]
+
+    return result, list(ideallaguage_not_found_ids)
 # result:[str, str]
 
 # Groups surface-form descriptions by shared logical forms.
@@ -429,10 +446,9 @@ def match_situations(referent_set, all_situations, original_ids_list,
 
     return matched_ids
 
-def split_and_sample_matched_ids(matched_ids, max_per_referent, train_split_ratio):
+def sample_matched_ids(matched_ids, max_per_referent):
     selected = random.sample(matched_ids, min(len(matched_ids), max_per_referent))
-    split_idx = int(len(selected) * (1 - train_split_ratio))
-    return selected[:split_idx], selected[split_idx:], selected
+    return selected
 
 def assign_new_ids(ids, offset_start):
     return [(int(sid), offset_start + i) for i, sid in enumerate(ids)]
@@ -446,8 +462,8 @@ def increase_the_corpus(
         min_content_length,
         max_content_length,
         max_per_referent,
-        train_split_ratio
 ):
+    logging.info('Increasing the corpus with similar situations')
     key_mapping = {a: b for b, a in original_situation_ids}
     adjusted_entities_map = {key_mapping[k]: v for k, v in all_entities_map.items()}
     original_ids_list = {str(k) for k, _ in original_situation_ids}
@@ -455,8 +471,6 @@ def increase_the_corpus(
     all_situations = read_all_situations(ideallanguage_path)
 
     all_situation_id_dict = defaultdict(list)
-    training_situation_id_dict = defaultdict(list)
-    test_situation_id_dict = defaultdict(list)
 
     for referent_id, (original_id, referent_map) in enumerate(adjusted_entities_map.items(), start=1):
         referent_set = set(referent_map.values())
@@ -472,28 +486,17 @@ def increase_the_corpus(
         )
 
         if matched_ids:
-            test_ids, train_ids, all_ids = split_and_sample_matched_ids(
-                matched_ids, max_per_referent, train_split_ratio
-            )
-            test_situation_id_dict[referent_id] = test_ids
-            training_situation_id_dict[referent_id] = train_ids
+            random.shuffle(matched_ids) # Randomizing between entities to choose from 
+            all_ids = sample_matched_ids(matched_ids, max_per_referent)
             all_situation_id_dict[referent_id] = all_ids
-        else:
-            logging.info("We couldn't find enough matches, auch")
 
     # Flatten results
     all_ids_flat = [sid for sids in all_situation_id_dict.values() for sid in sids]
-    train_ids_flat = [sid for sids in training_situation_id_dict.values() for sid in sids]
-    test_ids_flat = [sid for sids in test_situation_id_dict.values() for sid in sids]
 
     # Assign new IDs
     base_index = len(all_situation_id_dict) + 1
     final_all = assign_new_ids(all_ids_flat, base_index)
-    final_train = assign_new_ids(train_ids_flat, base_index)
-    final_test = assign_new_ids(test_ids_flat, base_index + len(train_ids_flat))
 
-    logging.info(f'We have found {len(all_ids_flat)} total situations, '
-                 f'{len(train_ids_flat)} training situations '
-                 f'and {len(test_ids_flat)} testing situations to increase the corpus')
+    logging.info(f'We have found {len(all_ids_flat)} total situations to increase the corpus')
 
-    return final_all, final_train, final_test
+    return final_all
