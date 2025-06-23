@@ -127,8 +127,8 @@ def extract_entity_blocks(situation_body, limited=False, limit=0):
 def extract_entity_names(entity_blocks):
     id_to_name = {}
     for entity_id, block in entity_blocks:
-        lines = block.strip().split("\n")
-        match = re.match(r"([\w\.]+)\(\d+\)", lines[0].strip())
+        block = block.rstrip('\n')
+        match = re.match(r"([\w\.]+)\(\d+\)", block.strip())
         if match:
             raw_name = match.group(1)
             norm_name = re.sub(r"\.n\.\d+", ".n", raw_name)
@@ -139,8 +139,9 @@ def extract_entity_properties(entity_blocks, id_to_name):
     id_to_properties = {eid: [] for eid in id_to_name}
     for entity_id, block in entity_blocks:
         lines = block.strip().split("\n")[1:]  # Skip name line
+        lines = [l.strip() for l in lines]
         for line in lines:
-            match = re.match(r"([\w|]+)\(([\d,]+)\)", line.strip())
+            match = re.match(r"([\w|]+)\(([\d,]+)\)", line)
             if not match:
                 continue
             rel_or_prop, ids_str = match.groups()
@@ -156,7 +157,10 @@ def extract_entity_properties(entity_blocks, id_to_name):
                     id_to_properties[entity_id].append(f"{source_name}-{rel_or_prop}")
             else:
                 clean_name = re.sub(r"\.n", "", rel_or_prop)
-                id_to_properties[entity_id].append(clean_name)
+                if entity_id in id_to_properties:
+                    id_to_properties[entity_id].append(clean_name)
+                else:
+                    id_to_properties[entity_id] = [clean_name]
     return id_to_properties
 
 def generate_script_output(new_situation_id, id_to_name, id_to_properties):
