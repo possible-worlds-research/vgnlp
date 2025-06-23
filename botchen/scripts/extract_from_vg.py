@@ -43,7 +43,7 @@ Parameters "BEGINNING DYNAMICAL PARAMETERS WHICH THE USER CAN CHANGE"
 Key options/parameters:
     - `ids`: List of `(vg_id, new_id)` pairs to extract. `E.g. ids = [(1, 1), (3, 2), (4, 3), (71, 4), (9, 5)]`
     - `substitution_terms_list`: List of terms to substitute with synonyms or hypernyms from ConceptNet.
-    - `increase_corpus_flag`: If `True`, adds similar situations to increase data. Similarity is measured in terms of common entities.
+    - `extend_corpus`: If `True`, adds similar situations to increase data. Similarity is measured in terms of common entities.
     - `permutation_flag`: Applies word substitutions from [https://conceptnet.io/][ConceptNet]. Random substitution from a list of hypernyms and synonims. You can select which terms to substitute (`e.g. substitution_terms_list = ['car','jacket','shirt', 'man','woman', 'tree','road', 'bicycle']`).
     - `training_and_test_sets`. Boolean. Whether to split data into train/test sets
     - `limited`, `limited_max_utterances`: Limit utterances per situation (for small data testing).
@@ -85,6 +85,8 @@ from utils_extract_from_corpora import increase_the_corpus
 from utils_permutation_prompt import get_conceptnet_hypernyms_synonyms, generate_random_substitutions
 from utils_permutation_prompt import prompt_surface_logic, permutation_surface_logic, extract_situations
 from utils_permutation_prompt import permutation_sandwich_logic_surface_transl, prompt_sandwich_logic_surface_transl, extract_final_scripts
+from config import ids, extend_corpus, training_and_test_sets, permutation_flag, write_all_files, limited, limited_max_utterances, \
+        test_mode, test_max_situations, min_referent_overlap_ratio, min_target_overlap_ratio, min_content_length, max_content_length, max_per_referent
 
 '''
 EXTRACT LANGUAGE FROM CORPORA FUNCTION
@@ -93,7 +95,7 @@ def processing_languages_mappings(ideallanguage_file_path,
                                   ids_list,
                                   limited,
                                   limited_max_utterances,
-                                  matches,
+                                  surface_logic_utterances,
                                   augmenting_flag=False):
 
     logic_scripts = []
@@ -115,7 +117,7 @@ def processing_languages_mappings(ideallanguage_file_path,
             non_included_ids=None
         )
 
-        region_graph_mapping, ideallanguage_not_corresponding_ids = filter_region_graph_mapping(entity_ids, matches)
+        region_graph_mapping, ideallanguage_not_corresponding_ids = filter_region_graph_mapping(entity_ids, surface_logic_utterances)
         if len(ideallanguage_not_corresponding_ids) > 0:
             logging.info(f'Found {len(ideallanguage_not_corresponding_ids)} ids which are in ideallanguage but not in region_graph')
         mapping = match_logical_surface_forms(region_graph_mapping, entity_properties_map)
@@ -145,14 +147,14 @@ EXTRACT MAPPINGS BASED ON PARAMETERS
 '''
 
 def extract_languages(ideallanguage,
-         matches,
+         surface_logic_utterances,
          ids,
          limited=False,
          limited_max_utterances=5,
          test_mode=False,
          test_max_situations=3,
 
-         increase_corpus_flag = False,
+         extend_corpus = False,
          min_referent_overlap_ratio=None,
          min_target_overlap_ratio=None,
          min_content_length=None,
@@ -169,11 +171,11 @@ def extract_languages(ideallanguage,
         ids_list=ids,
         limited=limited,
         limited_max_utterances=limited_max_utterances,
-        matches=matches,
+        surface_logic_utterances=surface_logic_utterances,
         augmenting_flag=False)
     # logging.info(f'ALL ENTITIES MAP ORIGINAL {all_entities_map}')
 
-    if increase_corpus_flag is True:
+    if extend_corpus is True:
         all_aug_situation_id = increase_the_corpus(
             ideallanguage_path=ideallanguage,
             original_situation_ids=ids,
@@ -192,21 +194,21 @@ def extract_languages(ideallanguage,
             ids_list=all_aug_situation_id, # To do: Understand how to deal with training/testing/all
             limited=limited,
             limited_max_utterances=limited_max_utterances,
-            matches=matches,
-            augmenting_flag=increase_corpus_flag)
+            surface_logic_utterances=surface_logic_utterances,
+            augmenting_flag=extend_corpus)
 
         return logic_scripts, surface_logic_mapping, all_aug_logic_scripts, all_aug_surface_logic_mapping
 
-    if not increase_corpus_flag:
+    if not extend_corpus:
         return logic_scripts, surface_logic_mapping
 
 '''
 WRITING TO FILES FUNCTION
 '''
 
-def create_training_files(logic_scripts, surface_logic_mapping, increase_corpus_flag = False, write_all_files=False):
+def create_training_files(logic_scripts, surface_logic_mapping, extend_corpus = False, write_all_files=False):
 
-    if increase_corpus_flag is False:
+    if extend_corpus is False:
         if write_all_files is True:
             os.makedirs(os.path.dirname(
                 os.path.join(parent_dir, "data", "training", "original", "original_logic_to_logic.txt")), 
@@ -229,7 +231,7 @@ def create_training_files(logic_scripts, surface_logic_mapping, increase_corpus_
             os.path.join(parent_dir, "data", "training", "original", "original_sandwich.txt"),
             surface_logic_mapping, plus_index=1, write_all_files=write_all_files)
 
-    if increase_corpus_flag is True:
+    if extend_corpus is True:
 
         if write_all_files is True:
             os.makedirs(os.path.dirname(
@@ -262,82 +264,19 @@ if __name__ == "__main__":
 
     script_dir = os.path.dirname(os.path.realpath(__file__))
     parent_dir = os.path.dirname(script_dir)
-
-    # Extracts all (HUM utterance, BOT utterance) pairs from region_graph.
-    # matches = extract_surface_logic_utterances(os.path.join(os.path.dirname(parent_dir), "dsc", "region_graphs.json.dsc"))
-    matches = extract_surface_logic_utterances(os.path.join(os.path.dirname(parent_dir), "dsc", "region_graphs.json.dsc"))
-
     ideallanguage = os.path.join(parent_dir, "data", "ideallanguage.txt")
 
-    '''
-    BEGINNING DYNAMICAL PARAMETERS WHICH THE USER CAN CHANGE
-    '''
+    # Extracts all (HUM utterance, BOT utterance) pairs from region_graph.
+    surface_logic_utterances = extract_surface_logic_utterances(os.path.join(os.path.dirname(parent_dir), "dsc", "region_graphs.json.dsc"))
 
-    # These are the mapping ids from the ideallangueg/visualGenome to the new ids
-    ids= [
-        (2317468, 1), # person
-        (2396154, 2), # animal
-        (186, 3), # food
-        (2410753, 4), # desktop 
-        (1, 5), # street
-        (4, 6), # bedroom
 
-        (2412620, 7), # person
-        (2412211, 8), # animal
-        (713137, 9), # food
-        (3, 10), # desktop
-        (2357183, 11), # street
-        (9, 12), # bedroom/room
+    logging.info(f"Chosen parameters:\nchosen ids: {ids}\nextend_corpus: {extend_corpus}, training_and_test_sets: {training_and_test_sets}, permutation_flag: {permutation_flag}, write_all_files: {write_all_files}, limited: {limited}, limited_max_utterances: {limited_max_utterances}, test_mode: {test_mode}, test_max_situations: {test_max_situations}")
 
-        (2343232, 13), # person
-        (2406947, 14), # animal
-        (2343284, 15), # food
-        (1515, 16), # desktop
-        (2343307, 17), # street
-        (2361685, 18) # bedroom/room
-    ]
-
-    substitution_terms_list = [
-            'car','jacket','shirt', 'man','woman', 'tree','road', 'bicycle', 
-            'gym_shoe','table', 'curtain', 'sofa', 'chair', 'picture', 'teddy', 
-            'desk','jean','room', 'ceiling', 'shelf', 'picture', 'monitor', 'bottle', 
-            'sunset', 'mouse', 'part','cup', 'egg', 'muffin', 'plate', 'tomato', 
-            'sauce', 'tea', 'spoon','mouth', 'watch','giraffe', 'branch', 
-            'neck', 'eye','basket', 'ginger', 'vegetable', 'bowl', 'cheese', 
-            'chopstick','grass', 'elephant', 'trunk','suit', 'belt', 'hair', 'earring'
-        ]
-
-    increase_corpus_flag = True
-    permutation_flag = True  # This applies the permutations and writes the files 
-    training_and_test_sets = True 
-
-    write_all_files = False # This makes it write files of augmented and original
-
-    limited = False
-    limited_max_utterances = 5 # These make the situation be of x utterances
-    test_mode = False
-    test_max_situations = 3 # These make the x situations from which we extract
-
-    logging.info(f"Chosen parameters:\nchosen ids: {ids}\nincrease_corpus_flag: {increase_corpus_flag}, training_and_test_sets: {training_and_test_sets}, permutation_flag: {permutation_flag}, write_all_files: {write_all_files}, limited: {limited}, limited_max_utterances: {limited_max_utterances}, test_mode: {test_mode}, test_max_situations: {test_max_situations}")
-    
-    if increase_corpus_flag:
-
-        min_referent_overlap_ratio=0.7 # FOCUSED ON REFERENT SITUATION Minimum proportion of referent entities that must appear in a target situation (i.e. we apply this to referent situations, e.g. *1 if the referent situation is as such)
-        min_target_overlap_ratio=0.1 # FOCUSED ON TARGET SITUATION  Minimum proportion of target entities that must match referent entities (i.e. we apply this to all the *10 situations which we are finding similar to a referent situation *1)
-        min_content_length=1000 # Minimum number of characters in a situation's content
-        max_content_length=200000 # Maximum number of characters in a situation's content
-        max_per_referent=10 # Maximum number of similar situations to extract per referent situation (e.g. we take *10* situations similar to situation 1, *10* to situation 2)
-        train_split_ratio=0.7 # Percentage of training and testing sets
-        logging.info(f"min_referent_overlap_ratio {min_referent_overlap_ratio}, min_target_overlap_ratio {min_target_overlap_ratio}, min_content_length {min_content_length}, max_content_length {max_content_length}, max_per_referent {max_per_referent}, train_split_ratio {train_split_ratio}")
-        
-        '''
-        ENDING DYNAMICAL PARAMETERS WHICH THE USER CAN CHANGE
-        '''
-
+    if extend_corpus:
         original_logic_scripts, original_surface_logic_mapping, \
         all_aug_logic_scripts, all_aug_surface_logic_mapping = \
             extract_languages(
-                ideallanguage,matches,ids,limited,limited_max_utterances,test_mode,test_max_situations, increase_corpus_flag,
+                ideallanguage,surface_logic_utterances,ids,limited,limited_max_utterances,test_mode,test_max_situations, extend_corpus,
                 min_referent_overlap_ratio, min_target_overlap_ratio, min_content_length, max_content_length, max_per_referent)
 
         logic_scripts = original_logic_scripts + all_aug_logic_scripts
@@ -346,18 +285,18 @@ if __name__ == "__main__":
     else: # If not increase flag
         logic_scripts, surface_logic_mapping = extract_languages(
             ideallanguage=ideallanguage,
-            matches=matches,
+            surface_logic_utterances=surface_logic_utterances,
             ids = ids,
             limited=limited,
             limited_max_utterances=limited_max_utterances, # If limited, max of utterances/entities per situation
             test_mode=test_mode,
             test_max_situations=test_max_situations,  # If test mode true, max of situations extracted from total ids
-            increase_corpus_flag = increase_corpus_flag
+            extend_corpus = extend_corpus
         )
 
     logic_to_logic_text, logic_to_surface_text, surface_to_logic_text, surface_to_surface_text, sandwich_text = create_training_files(logic_scripts=logic_scripts,
                           surface_logic_mapping=surface_logic_mapping,
-                          increase_corpus_flag = increase_corpus_flag,
+                          extend_corpus = extend_corpus,
                           write_all_files=write_all_files)
 
     if permutation_flag:
