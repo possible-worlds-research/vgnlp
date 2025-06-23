@@ -74,6 +74,7 @@ import math
 import nltk
 nltk.download('punkt')
 from nltk.tokenize import word_tokenize
+from pathlib import Path
 from os.path import dirname, realpath, join
 
 from utils_extract_from_corpora import extract_logic_language, extract_surface_language
@@ -86,7 +87,8 @@ from utils_permutation_prompt import get_conceptnet_hypernyms_synonyms, generate
 from utils_permutation_prompt import prompt_surface_logic, permutation_surface_logic, extract_situations
 from utils_permutation_prompt import permutation_sandwich_logic_surface_transl, prompt_sandwich_logic_surface_transl, extract_final_scripts
 from config import ids, extend_corpus, training_and_test_sets, permutation_flag, write_all_files, limited, limited_max_utterances, \
-        test_mode, test_max_situations, min_referent_overlap_ratio, min_target_overlap_ratio, min_content_length, max_content_length, max_per_referent
+        test_mode, test_max_situations, min_referent_overlap_ratio, min_target_overlap_ratio, min_content_length, max_content_length, \
+        max_per_referent, substitution_terms_list, train_split_ratio
 
 '''
 EXTRACT LANGUAGE FROM CORPORA FUNCTION
@@ -209,49 +211,44 @@ WRITING TO FILES FUNCTION
 def create_training_files(logic_scripts, surface_logic_mapping, extend_corpus = False, write_all_files=False):
 
     if extend_corpus is False:
+        dir_path_original = join(parent_dir, "data", "training", "original")
+        Path(dir_path_original).mkdir(parents=True, exist_ok=True)
+
         if write_all_files is True:
-            os.makedirs(os.path.dirname(
-                os.path.join(parent_dir, "data", "training", "original", "original_logic_to_logic.txt")), 
-                exist_ok=True)
-            with open(
-                os.path.join(parent_dir, "data", "training", "original", "original_logic_to_logic.txt"),
-                'w', encoding='utf-8') as file:
-                file.write(''.join(logic_scripts))
+            with open(join(dir_path_original, "original_logic_to_logic.txt"), 'w', encoding='utf-8') as fin:
+                fin.write(''.join(logic_scripts))
 
         logic_to_surface = write_logic_to_surface(
-            os.path.join(parent_dir, "data", "training", "original", "original_logic_to_surface.txt"), 
+            join(dir_path_original, "original_logic_to_surface.txt"), 
             surface_logic_mapping, plus_index=1, reverse=False, write_all_files=write_all_files)
         surface_to_logic = write_logic_to_surface(
-            os.path.join(parent_dir, "data", "training", "original", "original_surface_to_logic.txt"),
+            join(dir_path_original, "original_surface_to_logic.txt"),
             surface_logic_mapping, plus_index=1, reverse=True, write_all_files=write_all_files)
         surface_to_surface = write_surface(
-            os.path.join(parent_dir, "data", "training", "original", "original_surface_to_surface.txt"),
+            join(dir_path_original, "original_surface_to_surface.txt"),
             surface_logic_mapping, plus_index=1, write_all_files=write_all_files)
         sandwich = write_sandwich(
-            os.path.join(parent_dir, "data", "training", "original", "original_sandwich.txt"),
+            join(dir_path_original, "original_sandwich.txt"),
             surface_logic_mapping, plus_index=1, write_all_files=write_all_files)
 
     if extend_corpus is True:
+        dir_path_augmented = join(parent_dir, "data", "training", "augmented")
+        Path(dir_path_augmented).mkdir(parents=True, exist_ok=True)
 
         if write_all_files is True:
-            os.makedirs(os.path.dirname(
-                os.path.join(parent_dir, "data", "training", "augmented", "augmented_logic_to_logic.txt")), 
-                exist_ok=True)
-            with open(
-                os.path.join(parent_dir, "data", "training", "augmented", "augmented_logic_to_logic.txt"),
-                'w', encoding='utf-8') as file:
-                file.write(''.join(logic_scripts))
+            with open(join(dir_path_augmented, "augmented_logic_to_logic.txt"), 'w', encoding='utf-8') as fin:
+                fin.write(''.join(logic_scripts))
         logic_to_surface = write_logic_to_surface(
-            os.path.join(parent_dir, "data", "training", "augmented", "augmented_logic_to_surface.txt"),
+            join(dir_path_augmented, "augmented_logic_to_surface.txt"),
             surface_logic_mapping, plus_index=1, reverse=False, write_all_files=write_all_files)
         surface_to_logic = write_logic_to_surface(
-            os.path.join(parent_dir, "data", "training", "augmented", "augmented_surface_to_logic.txt"),
+            join(dir_path_augmented, "augmented_surface_to_logic.txt"),
             surface_logic_mapping, plus_index=1, reverse=True, write_all_files=write_all_files)
         surface_to_surface = write_surface(
-            os.path.join(parent_dir, "data", "training", "augmented", "augmented_surface_to_surface.txt"),
+            join(dir_path_augmented, "augmented_surface_to_surface.txt"),
             surface_logic_mapping, plus_index=1, write_all_files=write_all_files)
         sandwich = write_sandwich(
-            os.path.join(parent_dir, "data", "training", "augmented", "augmented_sandwich.txt"),
+            join(dir_path_augmented, "augmented_sandwich.txt"),
             surface_logic_mapping, plus_index=1, write_all_files=write_all_files)
 
     return ''.join(logic_scripts), logic_to_surface, surface_to_logic, surface_to_surface, sandwich
@@ -264,10 +261,10 @@ if __name__ == "__main__":
 
     script_dir = os.path.dirname(os.path.realpath(__file__))
     parent_dir = os.path.dirname(script_dir)
-    ideallanguage = os.path.join(parent_dir, "data", "ideallanguage.txt")
+    ideallanguage = join(parent_dir, "data", "ideallanguage.txt")
 
     # Extracts all (HUM utterance, BOT utterance) pairs from region_graph.
-    surface_logic_utterances = extract_surface_logic_utterances(os.path.join(os.path.dirname(parent_dir), "dsc", "region_graphs.json.dsc"))
+    surface_logic_utterances = extract_surface_logic_utterances(join(os.path.dirname(parent_dir), "dsc", "region_graphs.json.dsc"))
 
 
     logging.info(f"Chosen parameters:\nchosen ids: {ids}\nextend_corpus: {extend_corpus}, training_and_test_sets: {training_and_test_sets}, permutation_flag: {permutation_flag}, write_all_files: {write_all_files}, limited: {limited}, limited_max_utterances: {limited_max_utterances}, test_mode: {test_mode}, test_max_situations: {test_max_situations}")
@@ -328,11 +325,11 @@ if __name__ == "__main__":
         for name in ["permuted_logic_to_logic","permuted_surface_to_surface","permuted_logic_to_surface","permuted_surface_to_logic","permuted_sandwich"]:
                 content = eval(name)
                 os.makedirs(os.path.dirname(
-                    os.path.join(parent_dir, "data", "training", "permuted_files", f"{name}.txt")), 
+                    join(parent_dir, "data", "training", "permuted_files", f"{name}.txt")), 
                     exist_ok=True)
 
                 with open(
-                    os.path.join(parent_dir, "data", "training", "permuted_files", f"{name}.txt"),
+                    join(parent_dir, "data", "training", "permuted_files", f"{name}.txt"),
                     "w", encoding="utf-8") as f:
                     f.write(content)
 
@@ -343,10 +340,10 @@ if __name__ == "__main__":
             "prompt_logic_to_logic", "prompt_surface_to_surface", "prompt_logic_to_surface", "prompt_surface_to_logic","prompt_sandwich"]:
                 content = eval(name)
                 os.makedirs(os.path.dirname(
-                    os.path.join(parent_dir, "data", "training", "prompt_files", f"{name}.txt")), 
+                    join(parent_dir, "data", "training", "prompt_files", f"{name}.txt")), 
                     exist_ok=True)
                 with open(
-                    os.path.join(parent_dir, "data", "training", "prompt_files", f"{name}.txt"),
+                    join(parent_dir, "data", "training", "prompt_files", f"{name}.txt"),
                     "w", encoding="utf-8") as f:
                     f.write(content)
                 total_tokens = len(word_tokenize(content))
@@ -359,39 +356,39 @@ if __name__ == "__main__":
             for name in [
                 "prompt_logic_to_logic", "prompt_surface_to_surface", "prompt_logic_to_surface", "prompt_surface_to_logic", "prompt_sandwich"]:
                     
-                    specific_dir = os.path.join(parent_dir, "data", "training", "prompt_files")
+                    specific_dir = join(parent_dir, "data", "training", "prompt_files")
 
-                    with open(os.path.join(specific_dir, f"{name}.txt"),"r", encoding="utf-8") as original_file:
+                    with open(join(specific_dir, f"{name}.txt"),"r", encoding="utf-8") as original_file:
                         content = original_file.read()
 
                     _, training_scripts, testing_scripts = extract_final_scripts(content, train_split_ratio)
 
                     # Training data
-                    with open(os.path.join(specific_dir, f"{name}.txt"), "w", encoding="utf-8") as training_file:
+                    with open(join(specific_dir, f"{name}.txt"), "w", encoding="utf-8") as training_file:
                         training_file.write("\n\n".join(script for script in training_scripts))
 
                     # Testing data
-                    os.makedirs(os.path.dirname(os.path.join(parent_dir, "data", "testing", f"testing_{name}.txt")), exist_ok=True)
+                    os.makedirs(os.path.dirname(join(parent_dir, "data", "testing", f"testing_{name}.txt")), exist_ok=True)
 
-                    with open(os.path.join(parent_dir, "data", "testing", f"testing_{name}.txt"), "w", encoding="utf-8") as testing_file:
+                    with open(join(parent_dir, "data", "testing", f"testing_{name}.txt"), "w", encoding="utf-8") as testing_file:
                         testing_file.write("\n\n".join(script for script in testing_scripts))
 
             for name in [
                 "permuted_logic_to_logic", "permuted_surface_to_surface", "permuted_logic_to_surface", "permuted_surface_to_logic", "permuted_sandwich"]:
                     
-                    specific_dir = os.path.join(parent_dir, "data", "training", "permuted_files")
+                    specific_dir = join(parent_dir, "data", "training", "permuted_files")
 
-                    with open(os.path.join(specific_dir, f"{name}.txt"),"r", encoding="utf-8") as original_file:
+                    with open(join(specific_dir, f"{name}.txt"),"r", encoding="utf-8") as original_file:
                         content = original_file.read()
 
                     _, training_scripts, testing_scripts = extract_final_scripts(content, train_split_ratio)
 
                     # Training data
-                    with open(os.path.join(specific_dir, f"{name}.txt"), "w", encoding="utf-8") as training_file:
+                    with open(join(specific_dir, f"{name}.txt"), "w", encoding="utf-8") as training_file:
                         training_file.write("\n\n".join(script for script in training_scripts))
 
                     # Testing data
-                    os.makedirs(os.path.dirname(os.path.join(parent_dir, "data", "testing", f"testing_{name}.txt")), exist_ok=True)
+                    os.makedirs(os.path.dirname(join(parent_dir, "data", "testing", f"testing_{name}.txt")), exist_ok=True)
 
-                    with open(os.path.join(parent_dir, "data", "testing", f"testing_{name}.txt"), "w", encoding="utf-8") as testing_file:
+                    with open(join(parent_dir, "data", "testing", f"testing_{name}.txt"), "w", encoding="utf-8") as testing_file:
                         testing_file.write("\n\n".join(script for script in testing_scripts))

@@ -37,7 +37,7 @@ substitution_terms_list = [
         'chopstick','grass', 'elephant', 'trunk','suit', 'belt', 'hair', 'earring'
         ]
 
-increase_corpus_flag = True
+extend_corpus = True
 permutation_flag = True  # This applies the permutations and writes the files 
 training_and_test_sets = True 
 
@@ -48,7 +48,7 @@ limited_max_utterances = 5 # These make the situation be of x utterances
 test_mode = False
 test_max_situations = 3 # These make the x situations from which we extract
 
-if increase_corpus_flag:
+if extend_corpus:
     min_referent_overlap_ratio=0.7 # FOCUSED ON REFERENT SITUATION Minimum proportion of referent entities that must appear in a target situation (i.e. we apply this to referent situations, e.g. *1 if the referent situation is as such)
     min_target_overlap_ratio=0.1 # FOCUSED ON TARGET SITUATION  Minimum proportion of target entities that must match referent entities (i.e. we apply this to all the *10 situations which we are finding similar to a referent situation *1)
     min_content_length=1000 # Minimum number of characters in a situation's content
