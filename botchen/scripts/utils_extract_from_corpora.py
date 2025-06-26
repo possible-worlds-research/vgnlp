@@ -138,6 +138,8 @@ def extract_entity_names(entity_blocks):
 def extract_entity_properties(entity_blocks, id_to_name):
     id_to_properties = {eid: [] for eid in id_to_name}
     for entity_id, block in entity_blocks:
+        if entity_id not in id_to_properties:
+            id_to_properties[entity_id] = []
         lines = block.strip().split("\n")[1:]  # Skip name line
         lines = [l.strip() for l in lines]
         for line in lines:
@@ -157,10 +159,7 @@ def extract_entity_properties(entity_blocks, id_to_name):
                     id_to_properties[entity_id].append(f"{source_name}-{rel_or_prop}")
             else:
                 clean_name = re.sub(r"\.n", "", rel_or_prop)
-                if entity_id in id_to_properties:
-                    id_to_properties[entity_id].append(clean_name)
-                else:
-                    id_to_properties[entity_id] = [clean_name]
+                id_to_properties[entity_id].append(clean_name)
     return id_to_properties
 
 def generate_script_output(new_situation_id, id_to_name, id_to_properties):
@@ -195,7 +194,8 @@ def extract_logic_language(file_path, situation_id, new_situation_id=None, limit
     situation_body = read_situation_block(file_path, situation_id)
     if not situation_body:
         logging.info(f"No situation found with id={situation_id}")
-        return None
+        return None, None, None, None
+
 
     entity_blocks = extract_entity_blocks(situation_body, limited, limited_max_utterances)
     id_to_name = extract_entity_names(entity_blocks)
