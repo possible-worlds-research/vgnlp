@@ -251,38 +251,60 @@ def prompt_sandwich_logic_surface_transl(input_text, sandwich_flag=None):
 
     return output_text
 
-'''
-TRAINING AND TEST SPLIT
-'''
 
-def extract_final_scripts(script_data, train_split_ratio):
+def apply_permutations():
 
-    pattern = re.compile(r'(<a script\.(\d+)[^>]*>.*?</a>)|(<script\.(\d+)[^>]*>.*?</script\.\4>)', re.DOTALL)
+    logging.info('Beginning of permutation process')
 
-    all_scripts = {}
-    for match in pattern.findall(script_data):
-        full_match = match[0] or match[2]
-        script_number = match[1] or match[3]
+    substitution_dict = get_conceptnet_hypernyms_synonyms(substitution_terms_list)
 
-        if script_number not in all_scripts:
-            all_scripts[script_number] = full_match
-        else:
-            all_scripts[script_number] += "\n" + full_match
-    
-    scripts_list = list(all_scripts.values())
+    # logging.info('Logic to logic permutation')
+    permuted_logic_to_logic = permutation_surface_logic(extract_situations(logic_to_logic_text), substitution_dict)
+    prompt_logic_to_logic = prompt_surface_logic(permuted_logic_to_logic)
 
-    # random.shuffle(scripts_list)
+    # logging.info('Surface to surface permutation')
+    permuted_surface_to_surface = permutation_surface_logic(extract_situations(surface_to_surface_text), substitution_dict)
+    prompt_surface_to_surface = prompt_surface_logic(permuted_surface_to_surface)
 
-    total_scripts = len(scripts_list)
+    # logging.info('Logic to surface permutation')
+    permuted_logic_to_surface = permutation_sandwich_logic_surface_transl(logic_to_surface_text, substitution_dict)
+    prompt_logic_to_surface = prompt_sandwich_logic_surface_transl(logic_to_surface_text)
 
-    scripts_to_select_count = math.ceil(total_scripts * train_split_ratio)
-    training_scripts = scripts_list[:scripts_to_select_count]
-    testing_scripts = scripts_list[scripts_to_select_count:]
+    # logging.info('Surface to logic permutation')
+    permuted_surface_to_logic = permutation_sandwich_logic_surface_transl(surface_to_logic_text, substitution_dict)
+    prompt_surface_to_logic = prompt_sandwich_logic_surface_transl(surface_to_logic_text)
 
-    # training_scripts = list(all_scripts.values())[:scripts_to_select_count]
-    # testing_scripts = list(all_scripts.values())[scripts_to_select_count:]
+    # logging.info('Sandwich permutation')
+    permuted_sandwich = permutation_sandwich_logic_surface_transl(sandwich_text, substitution_dict, sandwich_flag=1)
+    prompt_sandwich = prompt_sandwich_logic_surface_transl(sandwich_text, sandwich_flag=1)
 
-    return all_scripts, training_scripts, testing_scripts
+    for name in ["permuted_logic_to_logic","permuted_surface_to_surface","permuted_logic_to_surface","permuted_surface_to_logic","permuted_sandwich"]:
+            content = eval(name)
+            os.makedirs(os.path.dirname(
+                join(parent_dir, "data", "training", "permuted_files", f"{name}.txt")), 
+                exist_ok=True)
+
+            with open(
+                join(parent_dir, "data", "training", "permuted_files", f"{name}.txt"),
+                "w", encoding="utf-8") as f:
+                f.write(content)
+
+            total_tokens = len(word_tokenize(content))
+            logging.info(f'{name} has {total_tokens} tokens')
+
+    for name in [
+        "prompt_logic_to_logic", "prompt_surface_to_surface", "prompt_logic_to_surface", "prompt_surface_to_logic","prompt_sandwich"]:
+            content = eval(name)
+            os.makedirs(os.path.dirname(
+                join(parent_dir, "data", "training", "prompt_files", f"{name}.txt")), 
+                exist_ok=True)
+            with open(
+                join(parent_dir, "data", "training", "prompt_files", f"{name}.txt"),
+                "w", encoding="utf-8") as f:
+                f.write(content)
+            total_tokens = len(word_tokenize(content))
+
+
 
 ###############
 ################ OTHER UTILS

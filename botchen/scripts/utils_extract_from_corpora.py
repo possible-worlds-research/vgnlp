@@ -168,10 +168,10 @@ def generate_script_output(new_situation_id, id_to_name, id_to_properties):
 
     for i, (eid, name) in enumerate(entities):
         props = id_to_properties.get(eid, [])
-        clean_props = [re.sub(r"\.n\.\d+", "", p) for p in props]
+        clean_props = [re.sub(r"\.n\.\d+", "", p.strip()) for p in props]
         unique_props = list(dict.fromkeys(clean_props))
 
-        script = f"<script.{new_situation_id} type=CONV>\n"
+        script = f"<script type=CONV>\n"
         script += f'<u speaker=HUM>({name} {" ".join(unique_props)})</u>\n'
 
         if i + 1 < len(entities):
@@ -184,7 +184,7 @@ def generate_script_output(new_situation_id, id_to_name, id_to_properties):
         next_unique_props = list(dict.fromkeys(next_clean_props))
 
         script += f'<u speaker=BOT>({next_name} {" ".join(next_unique_props)})</u>\n'
-        script += f"</script.{new_situation_id}>\n\n"
+        script += f"</script>\n\n"
 
         script_output += script
 
@@ -324,11 +324,12 @@ def match_logical_surface_forms(surface_map, logical_map):
 CREATE TRAINING FILES
 '''
 
-def write_logic_to_surface(file_path, mapping, plus_index, reverse=False, write_all_files=False):
+def write_logic_to_surface(file_path, mapping, plus_index, reverse=False, write_all_files=True):
     lines = []
     for situation in mapping:
         for hum_text, bot_texts in situation.items():
             for bot_text in bot_texts:
+                bot_text = bot_text.strip()
                 lines.append(f'<a script.{mapping.index(situation) + plus_index} type=DSC>')
                 if reverse:
                     lines.append(f'<u speaker=HUM>{bot_text}</u>')
@@ -346,7 +347,7 @@ def write_logic_to_surface(file_path, mapping, plus_index, reverse=False, write_
     else:
         return content
 
-def write_surface(file_path, mapping, plus_index, write_all_files=False):
+def write_surface(file_path, mapping, plus_index, write_all_files=True):
     lines = []
     for situation in mapping:
         situation_items = list(situation.items())
@@ -356,6 +357,7 @@ def write_surface(file_path, mapping, plus_index, write_all_files=False):
                 total_bot_texts.extend(bot_text)
         for i in range(len(total_bot_texts)):
             bot_text = total_bot_texts[i]
+            bot_text = bot_text.strip()
             lines.append(f'<script.{mapping.index(situation) + plus_index} type=CONV>')
             lines.append(f'<u speaker=HUM>{bot_text}</u>')
             if i + 1 < len(total_bot_texts):
@@ -374,7 +376,7 @@ def write_surface(file_path, mapping, plus_index, write_all_files=False):
     else:
         return content
 
-def write_sandwich(file_path, mapping, plus_index, write_all_files=False):
+def write_sandwich(file_path, mapping, plus_index, write_all_files=True):
     lines = []
     for situation_idx, situation in enumerate(mapping):
         flattened_items = []
@@ -504,3 +506,38 @@ def increase_the_corpus(
     logging.info(f'We have found {len(all_ids_flat)} total situations to increase the corpus')
 
     return final_all
+
+'''
+TRAINING AND TEST SPLIT
+'''
+
+def extract_final_scripts(script_data, configs):
+
+    pattern = re.compile(r'<script[^>]*>.*?</script>', re.DOTALL)
+
+    all_scripts = {}
+    for i, match in enumerate(pattern.findall(script_data)):
+        full_match = match[0]
+        script_number = i
+        print("MATCH", i, full_match)
+
+        if script_number not in all_scripts:
+            all_scripts[script_number] = full_match
+        else:
+            all_scripts[script_number] += "\n" + full_match
+    
+    scripts_list = list(all_scripts.values())
+
+    # random.shuffle(scripts_list)
+
+    total_scripts = len(scripts_list)
+
+    scripts_to_select_count = math.ceil(total_scripts * configs['train_split_ratio'])
+    training_scripts = scripts_list[:scripts_to_select_count]
+    testing_scripts = scripts_list[scripts_to_select_count:]
+
+    # training_scripts = list(all_scripts.values())[:scripts_to_select_count]
+    # testing_scripts = list(all_scripts.values())[scripts_to_select_count:]
+
+    return all_scripts, training_scripts, testing_scripts
+

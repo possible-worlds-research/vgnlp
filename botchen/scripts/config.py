@@ -30,10 +30,8 @@ def mk_idx_list():
 configs['ids'] = mk_idx_list()
 substitution_term_list = []
 configs['extend_corpus'] = False
-configs['permutation_flag'] = False  # This applies the permutations and writes the files 
+configs['apply_permutations'] = False  # This applies the permutations and writes the files 
 configs['training_and_test_sets'] = True 
-
-configs['write_all_files'] = True # This makes it write files of augmented and original
 
 configs['limited'] = False
 configs['limited_max_utterances'] = 5 # These make the situation be of x utterances
@@ -45,4 +43,4 @@ configs['min_target_overlap_ratio'] = 0.1 # FOCUSED ON TARGET SITUATION  Minimum
 configs['min_content_length'] = 1000 # Minimum number of characters in a situation's content
 configs['max_content_length'] = 200000 # Maximum number of characters in a situation's content
 configs['max_per_referent'] = 10 # Maximum number of similar situations to extract per referent situation (e.g. we take *10* situations similar to situation 1, *10* to situation 2)
-configs['train_split_ratio'] = 0.7 # Percentage of training and testing sets
+configs['train_test_ratio'] = 0.7 # Percentage of training and testing sets

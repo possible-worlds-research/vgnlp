@@ -77,28 +77,25 @@ from nltk.tokenize import word_tokenize
 from pathlib import Path
 from os.path import dirname, realpath, join
 
-from utils_extract_from_corpora import extract_logic_language, extract_surface_language
+from utils_extract_from_corpora import extract_logic_language, extract_surface_language, extract_final_scripts
 from utils_extract_from_corpora import extract_surface_logic_utterances, filter_region_graph_mapping, match_logical_surface_forms
 from utils_extract_from_corpora import write_logic_to_surface, write_surface, write_sandwich
 
 from utils_extract_from_corpora import increase_the_corpus
-
-from utils_permutation_prompt import get_conceptnet_hypernyms_synonyms, generate_random_substitutions
-from utils_permutation_prompt import prompt_surface_logic, permutation_surface_logic, extract_situations
-from utils_permutation_prompt import permutation_sandwich_logic_surface_transl, prompt_sandwich_logic_surface_transl, extract_final_scripts
+from utils_permutation_prompt import apply_permutations
 from config import configs
 
 '''
 EXTRACT LANGUAGE FROM CORPORA FUNCTION
 '''
-def processing_languages_mappings(configs):
+def extract_mappings(configs, ids):
 
     logic_scripts = []
 
     surface_logic_mapping = []
     all_entities_map = {}        
 
-    for vg_id, store_id in configs['ids']:
+    for vg_id, store_id in ids:
 
         logging.info(f"vg_id={vg_id}, store_id={store_id}")
 
@@ -145,59 +142,62 @@ def processing_languages_mappings(configs):
 EXTRACT MAPPINGS BASED ON PARAMETERS
 '''
 
-def extract_languages(surface_logic_utterances, configs):
+def extract_data(surface_logic_utterances, configs, fold="training"):
 
     if configs['test_mode']:
         ids = configs['ids'][:test_max_situations]
 
-    logging.info(f'ORIGINAL IDS {configs['ids']}')
+    n = int(len(configs['ids']) * configs['train_test_ratio'])
+    if fold == "training":
+        ids = configs['ids'][:n]
+    else:
+        n = len(configs['ids']) - n
+        ids = configs['ids'][-n:]
 
-    logic_scripts, surface_logic_mapping, all_entities_map = processing_languages_mappings(configs)
+    logging.info(f'ORIGINAL IDS {ids}')
+
+    logic_scripts, surface_logic_mapping, all_entities_map = extract_mappings(configs, ids)
+    write_to_files(logic_scripts, surface_logic_mapping, configs, fold=fold, augmented=False)
     # logging.info(f'ALL ENTITIES MAP ORIGINAL {all_entities_map}')
 
     if configs['extend_corpus']:
-        all_aug_situation_id = increase_the_corpus(configs)
-        # logging.info(f'IDS INCREASED {all_aug_situation_id}')
 
-        all_aug_logic_scripts, all_aug_surface_logic_mapping, all_aug_all_entities_map = processing_languages_mappings(configs)
-        return logic_scripts, surface_logic_mapping, all_aug_logic_scripts, all_aug_surface_logic_mapping
+        all_aug_logic_scripts, all_aug_surface_logic_mapping, all_aug_all_entities_map = extract_mappings(configs, ids)
+        write_to_files(all_aug_logic_scripts, all_aug_surface_logic_mapping, configs, fold=fold, augmented=True)
+        return original_logic_scripts, original_surface_logic_mapping, all_aug_logic_scripts, all_aug_surface_logic_mapping
+    return logic_scripts, surface_logic_mapping
 
-    else:
-        return logic_scripts, surface_logic_mapping
 
 '''
 WRITING TO FILES FUNCTION
 '''
 
-def create_training_files(logic_scripts, surface_logic_mapping, configs):
-    write_all_files = configs['write_all_files']
-
-    if not configs['extend_corpus']:
+def write_to_files(logic_scripts, surface_logic_mapping, configs, fold='training', augmented=False):
+    if not augmented:
         logging.info("Creating training files. No corpus extension required.")
-        dir_path_original = join(parent_dir, "data", "training", "original")
+        dir_path_original = join(parent_dir, "data", fold, "original")
         Path(dir_path_original).mkdir(parents=True, exist_ok=True)
         logging.info(dir_path_original)
 
-        if write_all_files:
-            with open(join(dir_path_original, "original_logic_to_logic.txt"), 'w', encoding='utf-8') as fin:
-                fin.write(''.join(logic_scripts))
+        with open(join(dir_path_original, "original_logic_to_logic.txt"), 'w', encoding='utf-8') as fin:
+            fin.write(''.join(logic_scripts))
 
         logic_to_surface = write_logic_to_surface(
             join(dir_path_original, "original_logic_to_surface.txt"), 
-            surface_logic_mapping, plus_index=1, reverse=False, write_all_files=write_all_files)
+            surface_logic_mapping, plus_index=1, reverse=False)
         surface_to_logic = write_logic_to_surface(
             join(dir_path_original, "original_surface_to_logic.txt"),
-            surface_logic_mapping, plus_index=1, reverse=True, write_all_files=write_all_files)
+            surface_logic_mapping, plus_index=1, reverse=True)
         surface_to_surface = write_surface(
             join(dir_path_original, "original_surface_to_surface.txt"),
-            surface_logic_mapping, plus_index=1, write_all_files=write_all_files)
+            surface_logic_mapping, plus_index=1)
         sandwich = write_sandwich(
             join(dir_path_original, "original_sandwich.txt"),
-            surface_logic_mapping, plus_index=1, write_all_files=write_all_files)
+            surface_logic_mapping, plus_index=1)
 
     else:
         logging.info("Creating training files with corpus extension.")
-        dir_path_augmented = join(parent_dir, "data", "training", "augmented")
+        dir_path_augmented = join(parent_dir, "data", fold, "augmented")
         Path(dir_path_augmented).mkdir(parents=True, exist_ok=True)
 
         if write_all_files:
@@ -205,16 +205,16 @@ def create_training_files(logic_scripts, surface_logic_mapping, configs):
                 fin.write(''.join(logic_scripts))
         logic_to_surface = write_logic_to_surface(
             join(dir_path_augmented, "augmented_logic_to_surface.txt"),
-            surface_logic_mapping, plus_index=1, reverse=False, write_all_files=write_all_files)
+            surface_logic_mapping, plus_index=1, reverse=False)
         surface_to_logic = write_logic_to_surface(
             join(dir_path_augmented, "augmented_surface_to_logic.txt"),
-            surface_logic_mapping, plus_index=1, reverse=True, write_all_files=write_all_files)
+            surface_logic_mapping, plus_index=1, reverse=True)
         surface_to_surface = write_surface(
             join(dir_path_augmented, "augmented_surface_to_surface.txt"),
-            surface_logic_mapping, plus_index=1, write_all_files=write_all_files)
+            surface_logic_mapping, plus_index=1)
         sandwich = write_sandwich(
             join(dir_path_augmented, "augmented_sandwich.txt"),
-            surface_logic_mapping, plus_index=1, write_all_files=write_all_files)
+            surface_logic_mapping, plus_index=1)
 
     return ''.join(logic_scripts), logic_to_surface, surface_to_logic, surface_to_surface, sandwich
 
@@ -231,116 +231,23 @@ if __name__ == "__main__":
     # Extracts all (HUM utterance, BOT utterance) pairs from region_graph.
     surface_logic_utterances = extract_surface_logic_utterances(join(os.path.dirname(parent_dir), "dsc", "region_graphs.json.dsc"))
 
-
     logging.info(f"Chosen parameters:\n{configs}")
 
     if configs['extend_corpus']:
         logging.info("Augmenting corpus...")
+        all_aug_situation_id = increase_the_corpus(configs)
+        logging.info(f'IDS INCREASED {all_aug_situation_id}')
+        config['ids'] = all_aug_situation_id
         original_logic_scripts, original_surface_logic_mapping, all_aug_logic_scripts, all_aug_surface_logic_mapping = \
-            extract_languages(ideallanguage, surface_logic_utterances, configs)
+            extract_data(ideallanguage, surface_logic_utterances, configs, fold="training")
 
         logic_scripts = original_logic_scripts + all_aug_logic_scripts
         surface_logic_mapping= original_surface_logic_mapping + all_aug_surface_logic_mapping
 
     else:
         logging.info("No corpus augmentation required...")
-        logic_scripts, surface_logic_mapping = extract_languages(surface_logic_utterances, configs)
+        logic_scripts, surface_logic_mapping = extract_data(surface_logic_utterances, configs, fold="training")
+        logic_scripts, surface_logic_mapping = extract_data(surface_logic_utterances, configs, fold="testing")
 
-    logic_to_logic_text, logic_to_surface_text, surface_to_logic_text, surface_to_surface_text, sandwich_text = create_training_files(logic_scripts, surface_logic_mapping, configs)
-
-    if configs['permutation_flag']:
-
-        logging.info('Beginning of permutation process')
-
-        substitution_dict = get_conceptnet_hypernyms_synonyms(substitution_terms_list)
-
-        # logging.info('Logic to logic permutation')
-        permuted_logic_to_logic = permutation_surface_logic(extract_situations(logic_to_logic_text), substitution_dict)
-        prompt_logic_to_logic = prompt_surface_logic(permuted_logic_to_logic)
-
-        # logging.info('Surface to surface permutation')
-        permuted_surface_to_surface = permutation_surface_logic(extract_situations(surface_to_surface_text), substitution_dict)
-        prompt_surface_to_surface = prompt_surface_logic(permuted_surface_to_surface)
-
-        # logging.info('Logic to surface permutation')
-        permuted_logic_to_surface = permutation_sandwich_logic_surface_transl(logic_to_surface_text, substitution_dict)
-        prompt_logic_to_surface = prompt_sandwich_logic_surface_transl(logic_to_surface_text)
-
-        # logging.info('Surface to logic permutation')
-        permuted_surface_to_logic = permutation_sandwich_logic_surface_transl(surface_to_logic_text, substitution_dict)
-        prompt_surface_to_logic = prompt_sandwich_logic_surface_transl(surface_to_logic_text)
-
-        # logging.info('Sandwich permutation')
-        permuted_sandwich = permutation_sandwich_logic_surface_transl(sandwich_text, substitution_dict, sandwich_flag=1)
-        prompt_sandwich = prompt_sandwich_logic_surface_transl(sandwich_text, sandwich_flag=1)
-
-        for name in ["permuted_logic_to_logic","permuted_surface_to_surface","permuted_logic_to_surface","permuted_surface_to_logic","permuted_sandwich"]:
-                content = eval(name)
-                os.makedirs(os.path.dirname(
-                    join(parent_dir, "data", "training", "permuted_files", f"{name}.txt")), 
-                    exist_ok=True)
-
-                with open(
-                    join(parent_dir, "data", "training", "permuted_files", f"{name}.txt"),
-                    "w", encoding="utf-8") as f:
-                    f.write(content)
-
-                total_tokens = len(word_tokenize(content))
-                logging.info(f'{name} has {total_tokens} tokens')
-
-        for name in [
-            "prompt_logic_to_logic", "prompt_surface_to_surface", "prompt_logic_to_surface", "prompt_surface_to_logic","prompt_sandwich"]:
-                content = eval(name)
-                os.makedirs(os.path.dirname(
-                    join(parent_dir, "data", "training", "prompt_files", f"{name}.txt")), 
-                    exist_ok=True)
-                with open(
-                    join(parent_dir, "data", "training", "prompt_files", f"{name}.txt"),
-                    "w", encoding="utf-8") as f:
-                    f.write(content)
-                total_tokens = len(word_tokenize(content))
-                logging.info(f'{name} has {total_tokens} tokens')
-
-        if training_and_test_sets is True:
-
-            logging.info('Training and testing split began')
-
-            for name in [
-                "prompt_logic_to_logic", "prompt_surface_to_surface", "prompt_logic_to_surface", "prompt_surface_to_logic", "prompt_sandwich"]:
-                    
-                    specific_dir = join(parent_dir, "data", "training", "prompt_files")
-
-                    with open(join(specific_dir, f"{name}.txt"),"r", encoding="utf-8") as original_file:
-                        content = original_file.read()
-
-                    _, training_scripts, testing_scripts = extract_final_scripts(content, train_split_ratio)
-
-                    # Training data
-                    with open(join(specific_dir, f"{name}.txt"), "w", encoding="utf-8") as training_file:
-                        training_file.write("\n\n".join(script for script in training_scripts))
-
-                    # Testing data
-                    os.makedirs(os.path.dirname(join(parent_dir, "data", "testing", f"testing_{name}.txt")), exist_ok=True)
-
-                    with open(join(parent_dir, "data", "testing", f"testing_{name}.txt"), "w", encoding="utf-8") as testing_file:
-                        testing_file.write("\n\n".join(script for script in testing_scripts))
-
-            for name in [
-                "permuted_logic_to_logic", "permuted_surface_to_surface", "permuted_logic_to_surface", "permuted_surface_to_logic", "permuted_sandwich"]:
-                    
-                    specific_dir = join(parent_dir, "data", "training", "permuted_files")
-
-                    with open(join(specific_dir, f"{name}.txt"),"r", encoding="utf-8") as original_file:
-                        content = original_file.read()
-
-                    _, training_scripts, testing_scripts = extract_final_scripts(content, train_split_ratio)
-
-                    # Training data
-                    with open(join(specific_dir, f"{name}.txt"), "w", encoding="utf-8") as training_file:
-                        training_file.write("\n\n".join(script for script in training_scripts))
-
-                    # Testing data
-                    os.makedirs(os.path.dirname(join(parent_dir, "data", "testing", f"testing_{name}.txt")), exist_ok=True)
-
-                    with open(join(parent_dir, "data", "testing", f"testing_{name}.txt"), "w", encoding="utf-8") as testing_file:
-                        testing_file.write("\n\n".join(script for script in testing_scripts))
+    if configs['apply_permutations']:
+        apply_permutations()
