@@ -86,38 +86,35 @@ from utils_extract_from_corpora import increase_the_corpus
 from utils_permutation_prompt import get_conceptnet_hypernyms_synonyms, generate_random_substitutions
 from utils_permutation_prompt import prompt_surface_logic, permutation_surface_logic, extract_situations
 from utils_permutation_prompt import permutation_sandwich_logic_surface_transl, prompt_sandwich_logic_surface_transl, extract_final_scripts
-from config import ids, extend_corpus, training_and_test_sets, permutation_flag, write_all_files, limited, limited_max_utterances, \
-        test_mode, test_max_situations, min_referent_overlap_ratio, min_target_overlap_ratio, min_content_length, max_content_length, \
-        max_per_referent, substitution_terms_list, train_split_ratio
+from config import configs
 
 '''
 EXTRACT LANGUAGE FROM CORPORA FUNCTION
 '''
-def processing_languages_mappings(ideallanguage_file_path,
-                                  ids_list,
-                                  limited,
-                                  limited_max_utterances,
-                                  surface_logic_utterances,
-                                  augmenting_flag=False):
+def processing_languages_mappings(configs):
 
     logic_scripts = []
 
     surface_logic_mapping = []
     all_entities_map = {}        
 
-    for vg_id, store_id in ids_list:
+    for vg_id, store_id in configs['ids']:
 
         logging.info(f"vg_id={vg_id}, store_id={store_id}")
 
         # 1. Extract surface logic mapping with new_situation_id=None
         entity_properties_map, _, entity_ids, entities_map = extract_logic_language(
-            file_path=ideallanguage_file_path,
+            file_path=ideal_language_path,
             situation_id=vg_id,
             new_situation_id=None,
-            limited=limited,
-            limited_max_utterances=limited_max_utterances,
+            limited=configs['limited'],
+            limited_max_utterances=configs['limited_max_utterances'],
             non_included_ids=None
         )
+
+        # In case ID was not found
+        if not entity_properties_map:
+            continue
 
         region_graph_mapping, ideallanguage_not_corresponding_ids = filter_region_graph_mapping(entity_ids, surface_logic_utterances)
         if len(ideallanguage_not_corresponding_ids) > 0:
@@ -129,18 +126,18 @@ def processing_languages_mappings(ideallanguage_file_path,
 
         # 2. Extract logic scripts with new_situation_id
         logic_script_output = extract_logic_language(
-            file_path=ideallanguage_file_path,
+            file_path=ideal_language_path,
             situation_id=vg_id,
             new_situation_id=store_id,
-            limited=limited,
-            limited_max_utterances=limited_max_utterances,
+            limited=configs['limited'],
+            limited_max_utterances=configs['limited_max_utterances'],
             non_included_ids=ideallanguage_not_corresponding_ids
         )
 
         if logic_script_output:
             logic_scripts.extend(logic_script_output)
         
-    logging.info(f'{len(ids_list)} situation have been saved')
+    logging.info(f"{len(configs['ids'])} situation have been saved")
 
     return logic_scripts, surface_logic_mapping, all_entities_map
 
@@ -148,73 +145,40 @@ def processing_languages_mappings(ideallanguage_file_path,
 EXTRACT MAPPINGS BASED ON PARAMETERS
 '''
 
-def extract_languages(ideallanguage,
-         surface_logic_utterances,
-         ids,
-         limited=False,
-         limited_max_utterances=5,
-         test_mode=False,
-         test_max_situations=3,
+def extract_languages(surface_logic_utterances, configs):
 
-         extend_corpus = False,
-         min_referent_overlap_ratio=None,
-         min_target_overlap_ratio=None,
-         min_content_length=None,
-         max_content_length=None,
-         max_per_referent=None):
+    if configs['test_mode']:
+        ids = configs['ids'][:test_max_situations]
 
-    if test_mode:
-        ids = ids[:test_max_situations]
+    logging.info(f'ORIGINAL IDS {configs['ids']}')
 
-    # logging.info(f'ORIGINAL IDS {ids}')
-
-    logic_scripts, surface_logic_mapping, all_entities_map = processing_languages_mappings(
-        ideallanguage_file_path=ideallanguage,
-        ids_list=ids,
-        limited=limited,
-        limited_max_utterances=limited_max_utterances,
-        surface_logic_utterances=surface_logic_utterances,
-        augmenting_flag=False)
+    logic_scripts, surface_logic_mapping, all_entities_map = processing_languages_mappings(configs)
     # logging.info(f'ALL ENTITIES MAP ORIGINAL {all_entities_map}')
 
-    if extend_corpus is True:
-        all_aug_situation_id = increase_the_corpus(
-            ideallanguage_path=ideallanguage,
-            original_situation_ids=ids,
-            all_entities_map=all_entities_map,
-            min_referent_overlap_ratio=min_referent_overlap_ratio,
-            min_target_overlap_ratio=min_target_overlap_ratio,
-            min_content_length=min_content_length,
-            max_content_length=max_content_length,
-            max_per_referent=max_per_referent,
-        )
+    if configs['extend_corpus']:
+        all_aug_situation_id = increase_the_corpus(configs)
         # logging.info(f'IDS INCREASED {all_aug_situation_id}')
 
-
-        all_aug_logic_scripts, all_aug_surface_logic_mapping, all_aug_all_entities_map = processing_languages_mappings(
-            ideallanguage_file_path=ideallanguage,
-            ids_list=all_aug_situation_id, # To do: Understand how to deal with training/testing/all
-            limited=limited,
-            limited_max_utterances=limited_max_utterances,
-            surface_logic_utterances=surface_logic_utterances,
-            augmenting_flag=extend_corpus)
-
+        all_aug_logic_scripts, all_aug_surface_logic_mapping, all_aug_all_entities_map = processing_languages_mappings(configs)
         return logic_scripts, surface_logic_mapping, all_aug_logic_scripts, all_aug_surface_logic_mapping
 
-    if not extend_corpus:
+    else:
         return logic_scripts, surface_logic_mapping
 
 '''
 WRITING TO FILES FUNCTION
 '''
 
-def create_training_files(logic_scripts, surface_logic_mapping, extend_corpus = False, write_all_files=False):
+def create_training_files(logic_scripts, surface_logic_mapping, configs):
+    write_all_files = configs['write_all_files']
 
-    if extend_corpus is False:
+    if not configs['extend_corpus']:
+        logging.info("Creating training files. No corpus extension required.")
         dir_path_original = join(parent_dir, "data", "training", "original")
         Path(dir_path_original).mkdir(parents=True, exist_ok=True)
+        logging.info(dir_path_original)
 
-        if write_all_files is True:
+        if write_all_files:
             with open(join(dir_path_original, "original_logic_to_logic.txt"), 'w', encoding='utf-8') as fin:
                 fin.write(''.join(logic_scripts))
 
@@ -231,11 +195,12 @@ def create_training_files(logic_scripts, surface_logic_mapping, extend_corpus = 
             join(dir_path_original, "original_sandwich.txt"),
             surface_logic_mapping, plus_index=1, write_all_files=write_all_files)
 
-    if extend_corpus is True:
+    else:
+        logging.info("Creating training files with corpus extension.")
         dir_path_augmented = join(parent_dir, "data", "training", "augmented")
         Path(dir_path_augmented).mkdir(parents=True, exist_ok=True)
 
-        if write_all_files is True:
+        if write_all_files:
             with open(join(dir_path_augmented, "augmented_logic_to_logic.txt"), 'w', encoding='utf-8') as fin:
                 fin.write(''.join(logic_scripts))
         logic_to_surface = write_logic_to_surface(
@@ -261,42 +226,29 @@ if __name__ == "__main__":
 
     script_dir = os.path.dirname(os.path.realpath(__file__))
     parent_dir = os.path.dirname(script_dir)
-    ideallanguage = join(parent_dir, "data", "ideallanguage.txt")
+    ideal_language_path = join(parent_dir, "data", "ideallanguage.txt")
 
     # Extracts all (HUM utterance, BOT utterance) pairs from region_graph.
     surface_logic_utterances = extract_surface_logic_utterances(join(os.path.dirname(parent_dir), "dsc", "region_graphs.json.dsc"))
 
 
-    logging.info(f"Chosen parameters:\nchosen ids: {ids}\nextend_corpus: {extend_corpus}, training_and_test_sets: {training_and_test_sets}, permutation_flag: {permutation_flag}, write_all_files: {write_all_files}, limited: {limited}, limited_max_utterances: {limited_max_utterances}, test_mode: {test_mode}, test_max_situations: {test_max_situations}")
+    logging.info(f"Chosen parameters:\n{configs}")
 
-    if extend_corpus:
-        original_logic_scripts, original_surface_logic_mapping, \
-        all_aug_logic_scripts, all_aug_surface_logic_mapping = \
-            extract_languages(
-                ideallanguage,surface_logic_utterances,ids,limited,limited_max_utterances,test_mode,test_max_situations, extend_corpus,
-                min_referent_overlap_ratio, min_target_overlap_ratio, min_content_length, max_content_length, max_per_referent)
+    if configs['extend_corpus']:
+        logging.info("Augmenting corpus...")
+        original_logic_scripts, original_surface_logic_mapping, all_aug_logic_scripts, all_aug_surface_logic_mapping = \
+            extract_languages(ideallanguage, surface_logic_utterances, configs)
 
         logic_scripts = original_logic_scripts + all_aug_logic_scripts
         surface_logic_mapping= original_surface_logic_mapping + all_aug_surface_logic_mapping
 
-    else: # If not increase flag
-        logic_scripts, surface_logic_mapping = extract_languages(
-            ideallanguage=ideallanguage,
-            surface_logic_utterances=surface_logic_utterances,
-            ids = ids,
-            limited=limited,
-            limited_max_utterances=limited_max_utterances, # If limited, max of utterances/entities per situation
-            test_mode=test_mode,
-            test_max_situations=test_max_situations,  # If test mode true, max of situations extracted from total ids
-            extend_corpus = extend_corpus
-        )
+    else:
+        logging.info("No corpus augmentation required...")
+        logic_scripts, surface_logic_mapping = extract_languages(surface_logic_utterances, configs)
 
-    logic_to_logic_text, logic_to_surface_text, surface_to_logic_text, surface_to_surface_text, sandwich_text = create_training_files(logic_scripts=logic_scripts,
-                          surface_logic_mapping=surface_logic_mapping,
-                          extend_corpus = extend_corpus,
-                          write_all_files=write_all_files)
+    logic_to_logic_text, logic_to_surface_text, surface_to_logic_text, surface_to_surface_text, sandwich_text = create_training_files(logic_scripts, surface_logic_mapping, configs)
 
-    if permutation_flag:
+    if configs['permutation_flag']:
 
         logging.info('Beginning of permutation process')
 
