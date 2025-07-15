@@ -1,5 +1,6 @@
 import re
 import numpy as np
+from nltk.translate.bleu_score import sentence_bleu
 
 
 def read_situations(fname):
@@ -99,6 +100,17 @@ def get_logical_forms(fname):
     return logical_forms
 
 
+def get_tokenized_utterances(fname):
+    tokenized_utterances = []
+    with open(fname, 'r') as fin:
+        situations = read_situations(fname)
+    for sit in situations:
+        sit = re.sub(r'<u speaker=[^>]*>','',sit)
+        sit = re.sub(r'</u>','', sit)
+        tokenized_utterances.append(sit.lower().split()) #TODO REAL TOKENIZATION
+    return tokenized_utterances
+
+
 def mk_matrix(logical_form, verbose=False):
     """
     Creates a small entity-property matrix for a situation.
@@ -131,21 +143,51 @@ def mk_matrix(logical_form, verbose=False):
     m = np.array(m)
     return m, all_properties
 
+
+def compute_bleu(reference, hypothesis):
+    bleu_scores = []
+    for i in range(1,4):
+        weights = [1/i for _ in range(i)]
+        bleu = sentence_bleu([reference], hypothesis, weights=weights)
+        #print("REF", reference)
+        #print("PRED", hypothesis)
+        #print("BLEU",i, bleu)
+        bleu_scores.append(bleu)
+    return bleu_scores
+
+
 if __name__ == "__main__":
-    fname_orig = "/home/aurelie/Projects/PossibleWorlds/seeds/vgnlp/botchen/data/testing/original/original_logic_to_logic.txt"
-    fname_pred = "/home/aurelie/Projects/PossibleWorlds/seeds/vgnlp/botchen/data/testing/predicted/predicted_logic_to_logic.txt"
+    #fname_orig = "/home/aurelie/Projects/PossibleWorlds/seeds/vgnlp/botchen/data/testing/original/original_logic_to_logic.txt"
+    #fname_pred = "/home/aurelie/Projects/PossibleWorlds/seeds/vgnlp/botchen/data/testing/predicted/predicted_logic_to_logic.txt"
     #fname_orig = "/home/aurelie/Projects/PossibleWorlds/seeds/vgnlp/botchen/data/testing/original/original_surface_to_logic.txt"
     #fname_pred = "/home/aurelie/Projects/PossibleWorlds/seeds/vgnlp/botchen/data/testing/predicted/predicted_surface_to_logic.txt"
-   
-    # One logical form per situation 
-    logical_forms_orig = get_logical_forms(fname_orig)
-    logical_forms_pred = get_logical_forms(fname_pred)
+    #fname_orig = "/home/aurelie/Projects/PossibleWorlds/seeds/vgnlp/botchen/data/testing/original/original_surface_to_surface.txt"
+    #fname_pred = "/home/aurelie/Projects/PossibleWorlds/seeds/vgnlp/botchen/data/testing/predicted/predicted_surface_to_surface.txt"
+    fname_orig = "/home/aurelie/Projects/PossibleWorlds/seeds/vgnlp/botchen/data/testing/original/original_logic_to_surface.txt"
+    fname_pred = "/home/aurelie/Projects/PossibleWorlds/seeds/vgnlp/botchen/data/testing/predicted/predicted_logic_to_surface.txt"
+  
+    if fname_orig.endswith("to_logic.txt"):
+        # One logical form per situation 
+        logical_forms_orig = get_logical_forms(fname_orig)
+        logical_forms_pred = get_logical_forms(fname_pred)
 
-    situation_sims = []
-    for i, lf in enumerate(logical_forms_orig):
-        m_orig, props_orig = mk_matrix(logical_forms_orig[i])
-        m_pred, props_pred = mk_matrix(logical_forms_pred[i])
+        situation_sims = []
+        for i, lf in enumerate(logical_forms_orig):
+            m_orig, props_orig = mk_matrix(logical_forms_orig[i])
+            m_pred, props_pred = mk_matrix(logical_forms_pred[i])
 
-        row_sims, col_sims = calculate_similarities(m_orig, m_pred, props_orig, props_pred, property_union=True)
-        situation_sims.append(row_sims.mean())
-    print(f"    Average Row Similarity: {np.array(situation_sims).mean():.3f}")
+            row_sims, col_sims = calculate_similarities(m_orig, m_pred, props_orig, props_pred, property_union=True)
+            situation_sims.append(row_sims.mean())
+        print(f"    Average Row Similarity: {np.array(situation_sims).mean():.3f}")
+
+    else:
+        utterances_orig = get_tokenized_utterances(fname_orig)
+        utterances_pred = get_tokenized_utterances(fname_pred)
+
+        bleu_scores = []
+        for i,u in enumerate(utterances_orig):
+            bleu_scores.append(compute_bleu(utterances_orig[i], utterances_pred[i]))
+
+        bleus = [b[2] for b in bleu_scores] #trigrams
+        print(f"    Average BLEU score (trigrams): {np.array(bleus).mean():.3f}")
+
